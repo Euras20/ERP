@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'status-success-tint': '#EAF5EC', 'border-focus': '#1B6B72', 'restricted-gold': '#B8860B', 'tertiary': '#614500', 'on-tertiary-container': '#ffd892', 'surface-tint': '#16686f', 'primary-hover': '#144F54', 'surface-card': '#FFFFFF', 'on-secondary-container': '#53667d', 'status-warning-tint': '#FEF3C7', 'surface-bright': '#f7f9ff', 'status-warning': '#D97706', 'on-error': '#ffffff', 'primary-container': '#1b6b72', 'background': '#f7f9ff', 'status-critical-tint': '#FEE2E2', 'on-secondary': '#ffffff', 'on-tertiary-fixed': '#271900', 'on-primary-fixed-variant': '#004f55', 'outline-variant': '#bec8c9', 'on-background': '#121c27', 'surface-container': '#e4effe', 'surface-variant': '#d9e3f2', 'secondary-container': '#d0e4ff', 'on-secondary-fixed-variant': '#35485e', 'on-primary-container': '#a1e9f1', 'status-critical': '#DC2626', 'text-muted': '#8A9BA8', 'surface-container-low': '#eef4ff', 'primary-tint': '#E4EFEF', 'status-info': '#2563EB', 'restricted-gold-tint': '#FAF4E8', 'inverse-primary': '#8bd2da', 'surface-subtle': '#F1F5F7', 'status-success': '#1E7E34', 'on-secondary-fixed': '#071d30', 'error': '#ba1a1a', 'on-tertiary-fixed-variant': '#5d4200', 'on-tertiary': '#ffffff', 'surface-container-highest': '#d9e3f2', 'secondary-fixed-dim': '#b5c8e2', 'text-primary': '#1A202C', 'tertiary-fixed-dim': '#f7bd48', 'surface-container-high': '#dfe9f8', 'surface-canvas': '#F8FAFB', 'surface-container-lowest': '#ffffff', 'on-error-container': '#93000a', 'on-primary-fixed': '#002022', 'text-secondary': '#5A6A7E', 'error-container': '#ffdad6', 'tertiary-container': '#7f5b00', 'inverse-surface': '#27313c', 'surface': '#f7f9ff', 'surface-dim': '#d1dbea', 'primary-fixed-dim': '#8bd2da', 'primary': '#005258', 'outline': '#6f797a', 'secondary-fixed': '#d0e4ff', 'on-primary': '#ffffff', 'status-info-tint': '#EFF6FF', 'tertiary-fixed': '#ffdea6', 'inverse-on-surface': '#e9f1ff', 'border-subtle': '#E2E8F0', 'on-surface-variant': '#3f484a', 'secondary': '#4d6076', 'primary-fixed': '#a7eef6', 'on-surface': '#121c27' }, 'borderRadius': { 'DEFAULT': '0.125rem', 'lg': '0.25rem', 'xl': '0.5rem', 'full': '0.75rem' }, 'spacing': { 'gutter': '1.5rem', 'space-xl': '2rem', 'space-sm': '0.5rem', 'gutter-mobile': '0.75rem', 'space-2xl': '3rem', 'space-lg': '1.5rem', 'space-xs': '0.25rem', 'margin': '2rem', 'space-md': '1rem', 'margin-mobile': '1rem' }, 'fontFamily': { 'headline-sm': ['Manrope'], 'kpi-metric-sm': ['Manrope'], 'table-header': ['Inter'], 'headline-lg-mobile': ['Manrope'], 'caption': ['Inter'], 'headline-lg': ['Manrope'], 'label-compact': ['Inter'], 'headline-md': ['Manrope'], 'body-sm': ['Inter'], 'title-sm': ['Inter'], 'financial-tabular': ['Inter'], 'title-md': ['Inter'], 'body-lg': ['Inter'], 'display-hero': ['Manrope'], 'body-md': ['Inter'], 'kpi-metric': ['Manrope'] }, 'fontSize': { 'headline-sm': ['20px', { 'lineHeight': '28px', 'fontWeight': '600' }], 'kpi-metric-sm': ['20px', { 'lineHeight': '28px', 'letterSpacing': '-0.01em', 'fontWeight': '700' }], 'table-header': ['12px', { 'lineHeight': '16px', 'letterSpacing': '0.03em', 'fontWeight': '600' }], 'headline-lg-mobile': ['26px', { 'lineHeight': '34px', 'letterSpacing': '-0.01em', 'fontWeight': '700' }], 'caption': ['12px', { 'lineHeight': '16px', 'fontWeight': '400' }], 'headline-lg': ['32px', { 'lineHeight': '40px', 'letterSpacing': '-0.015em', 'fontWeight': '700' }], 'label-compact': ['11px', { 'lineHeight': '14px', 'letterSpacing': '0.02em', 'fontWeight': '600' }], 'headline-md': ['24px', { 'lineHeight': '32px', 'letterSpacing': '-0.01em', 'fontWeight': '600' }], 'body-sm': ['13px', { 'lineHeight': '18px', 'fontWeight': '400' }], 'title-sm': ['14px', { 'lineHeight': '20px', 'fontWeight': '600' }], 'financial-tabular': ['14px', { 'lineHeight': '20px', 'fontWeight': '500' }], 'title-md': ['16px', { 'lineHeight': '24px', 'fontWeight': '600' }], 'body-lg': ['16px', { 'lineHeight': '24px', 'fontWeight': '400' }], 'display-hero': ['40px', { 'lineHeight': '48px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }], 'body-md': ['14px', { 'lineHeight': '20px', 'fontWeight': '400' }], 'kpi-metric': ['28px', { 'lineHeight': '36px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }] } } } };</script>
+</head>
+
+<body
+  class="min-h-screen bg-surface-canvas text-on-surface font-body-md text-body-md antialiased flex flex-col justify-between selection:bg-primary-tint selection:text-primary">
+  <header class="w-full pt-space-2xl pb-space-lg flex justify-center items-center">
+    <a class="inline-flex items-center gap-space-sm focus:outline-none focus:ring-2 focus:ring-border-focus rounded-lg"
+      data-path="login" href="index.html">
+      <img alt="NGO ERP Logo" class="h-14 w-auto object-contain" src="assets/images/logo/Logo_Mode_Professionnel_Elégant_Simple-removebg-preview(1)(1).png" />
+    </a>
+  </header>
+  <main class="w-full flex-1 flex flex-col items-center justify-center px-margin-mobile md:px-margin py-space-md">
+    <div class="w-full max-w-[700px] mx-auto">
+      <div class="flex flex-col w-full items-center justify-center">
+        <div
+          class="w-full max-w-[700px] bg-surface-card rounded-xl p-space-xl sm:p-space-2xl shadow-sm border border-border-subtle flex flex-col gap-space-lg transition-all">
+          <div class="flex flex-col items-center text-center gap-space-xs">
+
+            <h1 class="font-headline-md text-headline-md text-text-primary tracking-tight font-bold">
+              Create your account
+            </h1>
+            <p class="font-body-md text-body-md text-text-secondary">
+              Start managing your organization .
+            </p>
+          </div>
+          <form class="flex flex-col gap-space-md" id="signup-form"
+            onsubmit="event.preventDefault(); handleFormSubmit();">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+              <div class="flex flex-col gap-space-xs">
+                <label class="font-title-sm text-title-sm text-text-primary" for="first-name">
+                  First name
+                </label>
+                <input
+                  class="w-full h-10 px-3 bg-surface-card rounded border border-[#CBD5E1] text-text-primary placeholder:text-text-muted font-body-md text-body-md focus:outline-none focus:border-border-focus focus:ring-2 focus:ring-border-focus/20 transition-all"
+                  id="first-name" placeholder="Jane" required="" type="text" />
+              </div>
+              <div class="flex flex-col gap-space-xs">
+                <label class="font-title-sm text-title-sm text-text-primary" for="last-name">
+                  Last name
+                </label>
+                <input
+                  class="w-full h-10 px-3 bg-surface-card rounded border border-[#CBD5E1] text-text-primary placeholder:text-text-muted font-body-md text-body-md focus:outline-none focus:border-border-focus focus:ring-2 focus:ring-border-focus/20 transition-all"
+                  id="last-name" placeholder="Doe" required="" type="text" />
+              </div>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <label class="font-title-sm text-title-sm text-text-primary" for="email">
+                Work email
+              </label>
+              <div class="relative flex items-center">
+                <input
+                  class="w-full h-10 pl-3 pr-10 bg-surface-card rounded border border-[#CBD5E1] text-text-primary placeholder:text-text-muted font-body-md text-body-md focus:outline-none focus:border-border-focus focus:ring-2 focus:ring-border-focus/20 transition-all"
+                  id="email" placeholder="name@organization.org" required="" type="email" />
+                <span
+                  class="material-symbols-outlined absolute right-3 text-text-muted pointer-events-none text-[20px]">
+                  mail
+                </span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <label class="font-title-sm text-title-sm text-text-primary" for="phone">
+                Phone number
+              </label>
+              <div class="relative flex items-center">
+                <input
+                  class="w-full h-10 pl-3 pr-10 bg-surface-card rounded border border-[#CBD5E1] text-text-primary placeholder:text-text-muted font-body-md text-body-md focus:outline-none focus:border-border-focus focus:ring-2 focus:ring-border-focus/20 transition-all"
+                  id="phone" type="tel" placeholder="+1 (555) 000-0000" required />
+                <span class="material-symbols-outlined absolute right-3 text-text-muted pointer-events-none text-[20px]">
+                  call
+                </span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <label class="font-title-sm text-title-sm text-text-primary" for="password">
+                Password
+              </label>
+              <div class="relative flex items-center">
+                <input
+                  class="w-full h-10 pl-3 pr-10 bg-surface-card rounded border border-[#CBD5E1] text-text-primary placeholder:text-text-muted font-body-md text-body-md focus:outline-none focus:border-border-focus focus:ring-2 focus:ring-border-focus/20 transition-all"
+                  id="password" oninput="validatePasswordStrength(this.value)" placeholder="Create a strong password"
+                  required="" type="password" />
+                <button aria-label="Toggle password visibility"
+                  class="absolute right-2 p-1 text-text-muted hover:text-text-primary focus:outline-none"
+                  onclick="togglePasswordVisibility('password', 'pwd-toggle-icon')" type="button">
+                  <span class="material-symbols-outlined text-[20px] align-middle" id="pwd-toggle-icon">
+                    visibility
+                  </span>
+                </button>
+              </div>
+              <div class="flex items-center gap-space-sm pt-space-xs text-caption font-caption text-text-secondary">
+                <div class="flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px] text-text-muted"
+                    id="rule-length-icon">circle</span>
+                  <span class="text-text-secondary" id="rule-length-text">8+ characters</span>
+                </div>
+                <span aria-hidden="true" class="text-border-subtle">•</span>
+                <div class="flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px] text-text-muted" id="rule-char-icon">circle</span>
+                  <span class="text-text-secondary" id="rule-char-text">Letters &amp; numbers</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <label class="font-title-sm text-title-sm text-text-primary" for="confirm-password">
+                Confirm password
+              </label>
+              <div class="relative flex items-center">
+                <input
+                  class="w-full h-10 pl-3 pr-10 bg-surface-card rounded border border-[#CBD5E1] text-text-primary placeholder:text-text-muted font-body-md text-body-md focus:outline-none focus:border-border-focus focus:ring-2 focus:ring-border-focus/20 transition-all"
+                  id="confirm-password" oninput="checkPasswordMatch()" placeholder="Re-enter your password" required=""
+                  type="password" />
+                <button aria-label="Toggle confirm password visibility"
+                  class="absolute right-2 p-1 text-text-muted hover:text-text-primary focus:outline-none"
+                  onclick="togglePasswordVisibility('confirm-password', 'confirm-toggle-icon')" type="button">
+                  <span class="material-symbols-outlined text-[20px] align-middle" id="confirm-toggle-icon">
+                    visibility
+                  </span>
+                </button>
+              </div>
+              <p class="hidden text-caption font-caption text-status-critical flex items-center gap-1 pt-0.5"
+                id="password-match-error">
+                <span class="material-symbols-outlined text-[14px]">error</span>
+                Passwords do not match
+              </p>
+            </div>
+            <div class="pt-space-xs">
+              <label class="flex items-start gap-space-sm cursor-pointer select-none">
+                <input
+                  class="mt-1 w-4 h-4 rounded border-[#CBD5E1] text-border-focus focus:ring-border-focus/20 accent-[#1B6B72]"
+                  id="terms" required="" type="checkbox" />
+                <span class="font-body-sm text-body-sm text-text-secondary leading-snug">
+                  I agree to the
+                  <a class="text-border-focus hover:text-primary-hover font-title-sm transition-colors underline underline-offset-2"
+                    href="#">Terms of Service</a>
+                  and
+                  <a class="text-border-focus hover:text-primary-hover font-title-sm transition-colors underline underline-offset-2"
+                    href="#">Privacy Policy</a>.
+                </span>
+              </label>
+            </div>
+            <button
+              class="w-full h-10 mt-space-xs bg-[#1B6B72] hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded transition-all duration-150 flex items-center justify-center gap-space-sm focus:outline-none focus:ring-2 focus:ring-border-focus/30"
+              id="submit-btn" type="submit">
+              <span>Create account</span>
+            </button>
+            <div class="pt-space-sm text-center">
+              <p class="font-body-md text-body-md text-text-secondary">
+                Already have an account?
+                <a class="text-border-focus hover:text-primary-hover font-title-sm transition-colors ml-1"
+                  data-path="login" href="auth/user/signin.html">
+                  Sign in
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
+<script>
+function togglePasswordVisibility(fieldId, iconId) {
+  const field = document.getElementById(fieldId);
+  const icon = document.getElementById(iconId);
+  if (!field || !icon) return;
+
+  if (field.type === 'password') {
+    field.type = 'text';
+    icon.textContent = 'visibility_off';
+  } else {
+    field.type = 'password';
+    icon.textContent = 'visibility';
+  }
+}
+
+function validatePasswordStrength(val) {
+  const hasMinLength = val.length >= 8;
+  const hasLetterAndNumber = /[a-zA-Z]/.test(val) && /[0-9]/.test(val);
+
+  const lengthIcon = document.getElementById('rule-length-icon');
+  const lengthText = document.getElementById('rule-length-text');
+  const charIcon = document.getElementById('rule-char-icon');
+  const charText = document.getElementById('rule-char-text');
+
+  if (hasMinLength) {
+    lengthIcon.textContent = 'check_circle';
+    lengthIcon.className = 'material-symbols-outlined text-[14px] text-status-success';
+    lengthText.className = 'text-status-success font-medium';
+  } else {
+    lengthIcon.textContent = 'circle';
+    lengthIcon.className = 'material-symbols-outlined text-[14px] text-text-muted';
+    lengthText.className = 'text-text-secondary';
+  }
+
+  if (hasLetterAndNumber) {
+    charIcon.textContent = 'check_circle';
+    charIcon.className = 'material-symbols-outlined text-[14px] text-status-success';
+    charText.className = 'text-status-success font-medium';
+  } else {
+    charIcon.textContent = 'circle';
+    charIcon.className = 'material-symbols-outlined text-[14px] text-text-muted';
+    charText.className = 'text-text-secondary';
+  }
+
+  checkPasswordMatch();
+}
+
+function checkPasswordMatch() {
+  const pwd = document.getElementById('password').value;
+  const confirm = document.getElementById('confirm-password').value;
+  const errorMsg = document.getElementById('password-match-error');
+
+  if (confirm && pwd !== confirm) {
+    errorMsg.classList.remove('hidden');
+    return false;
+  } else {
+    errorMsg.classList.add('hidden');
+    return true;
+  }
+}
+
+function handleFormSubmit() {
+  const isMatch = checkPasswordMatch();
+  if (!isMatch) return;
+
+  const emailVal = document.getElementById('email').value;
+  if (emailVal) {
+    document.getElementById('modal-user-email').textContent = emailVal;
+  }
+
+  const submitBtn = document.getElementById('submit-btn');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = `
+    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>
+    <span>Creating account...</span>
+  `;
+
+  // Show modal after simulated process
+  setTimeout(() => {
+    document.getElementById('success-modal-overlay').classList.remove('hidden');
+  }, 400);
+}
+
+function resetFormAndCloseModal() {
+  // Hide the modal
+  document.getElementById('success-modal-overlay').classList.add('hidden');
+
+  // Reset all form inputs
+  const form = document.getElementById('signup-form');
+  if (form) form.reset();
+
+  // Reset submit button state
+  const submitBtn = document.getElementById('submit-btn');
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = `<span>Create account</span>`;
+  }
+
+  // Reset password strength indicators
+  validatePasswordStrength('');
+}
+  </script>
+</div>
+</div>
+</main>
+<footer class="w-full py-space-xl px-margin-mobile md:px-margin">
+  <div
+    class="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-sm text-center font-caption text-caption text-text-secondary">
+    <p>© 2025 <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong>. All rights reserved.</p>
+    <nav class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors"
+        data-path="privacy-policy" href="#">Privacy Policy</a><span aria-hidden="true"
+        class="text-border-subtle">•</span><a class="hover:text-primary transition-colors" data-path="terms-of-service"
+        href="#">Terms of Service</a><span aria-hidden="true" class="text-border-subtle">•</span><a
+        class="hover:text-primary transition-colors" data-path="security-overview" href="#">Security</a></nav>
+  </div>
+</footer>
+
+<!-- Modal overlay hidden by default -->
+<div aria-labelledby="modal-title" aria-modal="true"
+  class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm transition-opacity"
+  id="success-modal-overlay" role="dialog">
+  <div class="relative max-w-md w-full bg-white rounded-xl shadow-2xl border border-slate-200 p-8 text-center">
+    <button aria-label="Close modal"
+      class="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors focus:outline-none"
+      onclick="resetFormAndCloseModal()" type="button">
+      <span class="material-symbols-outlined text-[20px] block">close</span>
+    </button>
+    <div class="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center mx-auto mb-5 shadow-sm">
+      <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <h2 class="text-xl font-bold text-slate-900 mb-2" id="modal-title">Account created successfully</h2>
+    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+      Your individual account has been created. A verification link has been sent to 
+      <span class="font-medium text-slate-800 bg-slate-100 px-2 py-0.5 rounded text-xs border border-slate-200/60 inline-block" id="modal-user-email">
+        jane.doe@organization.org
+      </span>.
+    </p>
+    <div class="bg-slate-50 border border-slate-200/80 rounded-lg p-3.5 text-xs text-slate-600 text-left mb-6 flex gap-2.5 items-start">
+      <span class="material-symbols-outlined text-[18px] text-[#1B6B72] shrink-0 mt-0.5">info</span>
+      <span>Please verify your email before proceeding to organization setup and plan selection.</span>
+    </div>
+    <a class="w-full inline-flex items-center justify-center gap-2 bg-[#1B6B72] hover:bg-[#144F54] text-white font-medium py-2.5 px-4 rounded-lg shadow-sm transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-[#1B6B72]/30"
+      href="auth/user/email_verification.html">
+      <span>Proceed to email verification</span>
+      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </a>
+  </div>
+</div>
+</body>
+</html>

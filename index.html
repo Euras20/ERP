@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Work+Sans:wght@400;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "status-danger-border": "#FECACA", "tertiary-fixed-dim": "#f7bd48", "on-tertiary-fixed": "#271900", "text-inverted": "#FFFFFF", "surface-card": "#FFFFFF", "secondary-fixed": "#b5ecf2", "surface-container-low": "#f0f3ff", "status-info-bg": "#F0F9FF", "surface-container": "#e7eeff", "surface-tint": "#16686f", "surface-bright": "#f9f9ff", "outline": "#6f797a", "surface-container-lowest": "#ffffff", "status-danger-bg": "#FEF2F2", "status-success-border": "#BBF7D0", "error": "#ba1a1a", "status-info-fg": "#0369A1", "on-primary-fixed": "#002022", "tertiary": "#614500", "background": "#f9f9ff", "text-secondary": "#475569", "tertiary-fixed": "#ffdea6", "on-background": "#111c2d", "status-danger-fg": "#B91C1C", "status-warning-border": "#FDE68A", "text-muted": "#94A3B8", "primary-fixed": "#a7eef6", "surface-container-highest": "#d8e3fb", "surface-navy": "#0B192C", "secondary-container": "#b5ecf2", "inverse-primary": "#8bd2da", "on-secondary": "#ffffff", "on-surface": "#111c2d", "border-subtle": "#E2E8F0", "status-info-border": "#BAE6FD", "on-tertiary-container": "#ffd892", "surface-dim": "#cfdaf2", "error-container": "#ffdad6", "inverse-on-surface": "#ecf1ff", "text-primary": "#0F172A", "on-secondary-container": "#376c71", "on-tertiary": "#ffffff", "surface-variant": "#d8e3fb", "tertiary-container": "#7f5b00", "border-strong": "#CBD5E1", "on-secondary-fixed-variant": "#134e53", "surface-container-high": "#dee8ff", "outline-variant": "#bec8c9", "primary-fixed-dim": "#8bd2da", "inverse-surface": "#263143", "on-primary-container": "#a1e9f1", "surface": "#f9f9ff", "canvas-bg": "#F8FAFB", "primary": "#005258", "on-error": "#ffffff", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#5d4200", "on-surface-variant": "#3f484a", "status-success-fg": "#15803D", "status-warning-fg": "#B45309", "status-warning-bg": "#FFFBEB", "on-primary-fixed-variant": "#004f55", "secondary-fixed-dim": "#9ad0d5", "status-success-bg": "#F0FDF4", "on-error-container": "#93000a", "primary-container": "#1b6b72", "surface-neutral-alt": "#F1F5F7", "on-secondary-fixed": "#002022", "secondary": "#30666b", "primary-tint": "#E4EFEF" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-2xl": "4rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-3xl": "6rem", "margin": "2rem", "gutter": "1.5rem", "space-xl": "2.5rem" }, fontFamily: { "headline-lg": ["Hanken Grotesk"], "label-eyebrow": ["Hanken Grotesk"], "headline-xl-mobile": ["Hanken Grotesk"], "body-sm": ["Work Sans"], "display-hero-mobile": ["Hanken Grotesk"], "label-badge": ["Hanken Grotesk"], "headline-xl": ["Hanken Grotesk"], "body-md": ["Work Sans"], "display-hero": ["Hanken Grotesk"], "body-lead": ["Work Sans"], "table-cell-amount": ["Work Sans"], "financial-display-lg": ["Hanken Grotesk"], "financial-metric-md": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "headline-sm": ["Hanken Grotesk"], "label-header": ["Hanken Grotesk"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-eyebrow": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }], "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }], "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lead": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "table-cell-amount": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "600" }], "financial-display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "financial-metric-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0", "fontWeight": "600" }], "label-header": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } }</script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+  <header
+    class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-gutter">
+      <div class="flex items-center gap-space-md shrink-0"><img alt="NGO ERP Logo" class="h-16
+         w-auto object-contain"
+          src="assets/images/logo/Logo_Mode_Professionnel_Elégant_Simple-removebg-preview(1)(1).png" /><span
+          class="font-headline-md text-headline-md tracking-tight text-text-primary uppercase"></span></div>
+      <nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-on-surface font-bold">
+        <div class="relative group py-space-sm"><button
+            class="flex items-center gap-space-xs font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+            type="button"><span>Features</span><span
+              class="material-symbols-outlined text-[16px]">expand_more</span></button>
+          <div class="absolute top-full left-0 hidden group-hover:block w-64 pt-space-xs">
+            <div
+              class="bg-surface-card rounded-lg p-space-sm shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08),0_4px_6px_-1px_rgba(15,23,42,0.04)] border border-border-subtle flex flex-col gap-space-xs">
+              <a class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="finance" href="#">Fund Accounting &amp; GL</a><a
+                class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="grants" href="#">Grant &amp; Donor Management</a><a
+                class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="ghana-payroll" href="#">Statutory Ghana Payroll</a><a
+                class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="procurement" href="#">Procurement &amp; Inventory</a><a
+                class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="field-operations" href="#">Field Operations &amp; M&amp;E</a></div>
+          </div>
+        </div><a
+          class="font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="why-ngo-erp" href="#">Why OMNIS</a><a
+          class="font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="solutions" href="#">Solutions</a><a
+          class="font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="pricing" href="#">Pricing</a><a
+          class="font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="documentation" href="#">Documentation</a>
+      </nav>
+      <div class="flex items-center gap-space-md shrink-0"><a
+          class="hidden sm:inline-block font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="login" href="auth/user/signin.html">Sign in</a><a
+          class="inline-flex items-center justify-center min-h-[44px] px-space-md py-space-xs rounded-lg bg-primary-container text-text-inverted font-label-header text-label-header hover:bg-primary transition-colors"
+          data-path="start-free" href="signup.html">Start for free</a>
+    </div>
+  </header>
+  <main class="w-full pt-20 bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- SECTION 1: HERO SECTION (Split Left/Right, Structural Precision) -->
+      <section class="relative w-full bg-canvas-bg overflow-hidden py-space-xl lg:py-space-2xl">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <!-- Left Column: Value Prop & Fiduciary Framing -->
+            <div class="lg:col-span-5 flex flex-col items-start space-y-space-md z-10">
+              <div
+                class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary-tint text-primary font-label-eyebrow text-label-eyebrow uppercase tracking-widest">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Built for NGOs &amp; Donor-Funded Organizations
+              </div>
+              <h1 class="font-display-hero text-display-hero text-text-primary tracking-tight">
+                Financial clarity for organizations doing good.
+              </h1>
+              <p class="font-body-lead text-body-lead text-text-secondary leading-relaxed">
+                <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> unifies fund accounting, multi-donor grants, GRA and SSNIT statutory compliance, and remote
+                field reconciliations into a single, audit-grade fiduciary ledger.
+              </p>
+              <!-- CTAs -->
+              <div
+                class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm w-full sm:w-auto pt-space-xs">
+                <a class="inline-flex items-center justify-center min-h-[48px] px-6 py-3.5 rounded-lg bg-primary-container text-text-inverted font-label-header text-label-header hover:bg-primary transition-colors shadow-md"
+                  href="signup.html">
+                  Start for free
+                </a>
+                <button
+                  class="inline-flex items-center justify-center min-h-[48px] px-6 py-3.5 rounded-lg bg-surface-neutral-alt text-text-primary font-label-header text-label-header hover:bg-surface-container transition-colors gap-space-xs"
+                  onclick="document.getElementById('interactive-modules').scrollIntoView({ behavior: 'smooth' });"
+                  type="button">
+                  <span class="material-symbols-outlined text-[20px] text-primary">play_circle</span>
+                  Explore live prototype
+                </button>
+              </div>
+              <!-- Trust Sub-annotation -->
+              <div class="flex items-center gap-2 pt-2 text-text-muted font-body-sm text-body-sm">
+                <span class="material-symbols-outlined text-[18px] text-status-success-fg">verified</span>
+                <span>Zero setup fees • Pre-configured for USAID, EU, FCDO &amp; Ghana GRA/SSNIT</span>
+              </div>
+              <!-- Quick Proof Bar -->
+              <div class="grid grid-cols-3 gap-space-md pt-space-md w-full border-t border-border-subtle">
+                <div>
+                  <div class="font-financial-metric-md text-financial-metric-md text-text-primary font-bold">100%</div>
+                  <div class="font-body-sm text-body-sm text-text-secondary">Statutory Compliance</div>
+                </div>
+                <div>
+                  <div class="font-financial-metric-md text-financial-metric-md text-text-primary font-bold">38+</div>
+                  <div class="font-body-sm text-body-sm text-text-secondary">Bilateral Grantees</div>
+                </div>
+                <div>
+                  <div class="font-financial-metric-md text-financial-metric-md text-text-primary font-bold">0%</div>
+                  <div class="font-body-sm text-body-sm text-text-secondary">Earmark Leakage</div>
+                </div>
+              </div>
+            </div>
+            <!-- Right Column: Dimensional Grounded Financial ERP Window -->
+            <div class="lg:col-span-7 relative w-full mt-8 lg:mt-0">
+              <!-- Geometric Architectural Background Rectangles -->
+              <div
+                class="absolute -right-4 -bottom-4 w-4/5 h-4/5 bg-primary rounded-xl translate-x-3 translate-y-3 opacity-95 -z-10">
+              </div>
+              <div
+                class="absolute -left-4 -top-4 w-1/2 h-1/2 bg-primary-tint rounded-xl -translate-x-2 -translate-y-2 -z-10">
+              </div>
+              <!-- Product Simulation Window -->
+              <div class="bg-surface-card rounded-xl shadow-xl overflow-hidden">
+                <!-- Simulated Application Header -->
+                <div class="bg-surface-neutral-alt px-4 py-3 flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-status-danger-border"></div>
+                    <div class="w-3 h-3 rounded-full bg-status-warning-border"></div>
+                    <div class="w-3 h-3 rounded-full bg-status-success-border"></div>
+                    <span
+                      class="ml-3 font-label-header text-label-header text-text-secondary tracking-wide uppercase">ACCRA_HQ
+                      • CONSOLIDATED GL</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="px-2 py-0.5 rounded-full bg-status-success-bg text-status-success-fg font-label-badge text-label-badge flex items-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-status-success-fg"></span> LIVE SYNC
+                    </span>
+                    <span class="font-body-sm text-body-sm text-text-muted">GHS / USD</span>
+                  </div>
+                </div>
+                <!-- Dashboard Content Inside Simulated Frame -->
+                <div class="p-5 space-y-5 bg-surface-container-lowest">
+                  <!-- Fund Balance Cards Grid -->
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <!-- Restricted Fund Card -->
+                    <div class="bg-surface-card p-3 rounded-lg border border-status-warning-border">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="font-label-badge text-label-badge text-tertiary font-semibold uppercase">Restricted
+                          Grants</span>
+                        <span
+                          class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge">Earmarked</span>
+                      </div>
+                      <div class="font-financial-metric-md text-financial-metric-md text-text-primary">GHS 3,850,000
+                      </div>
+                      <div class="text-[11px] text-text-secondary mt-1">4 Grants • USAID / Global Fund</div>
+                    </div>
+                    <!-- Unrestricted Fund Card -->
+                    <div class="bg-surface-card p-3 rounded-lg border border-primary-tint">
+                      <div class="flex items-center justify-between mb-1">
+                        <span
+                          class="font-label-badge text-label-badge text-primary font-semibold uppercase">Unrestricted
+                          Pool</span>
+                        <span
+                          class="px-2 py-0.5 rounded-full bg-primary-tint text-primary font-label-badge text-label-badge">Institutional</span>
+                      </div>
+                      <div class="font-financial-metric-md text-financial-metric-md text-text-primary">GHS 1,420,000
+                      </div>
+                      <div class="text-[11px] text-text-secondary mt-1">Core reserves &amp; overhead</div>
+                    </div>
+                    <!-- Temporarily Restricted Fund Card -->
+                    <div class="bg-surface-card p-3 rounded-lg border border-border-subtle">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="font-label-badge text-label-badge text-text-secondary font-semibold uppercase">Temp
+                          Restricted</span>
+                        <span
+                          class="px-2 py-0.5 rounded-full bg-surface-neutral-alt text-text-secondary font-label-badge text-label-badge">Phase
+                          II</span>
+                      </div>
+                      <div class="font-financial-metric-md text-financial-metric-md text-text-primary">GHS 680,000</div>
+                      <div class="text-[11px] text-text-secondary mt-1">FCDO Wash • Exp. Q4</div>
+                    </div>
+                  </div>
+                  <!-- Grant Budget Burn Progress Bar -->
+                  <div class="bg-surface-neutral-alt p-4 rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                      <div>
+                        <span class="font-headline-sm text-headline-sm text-text-primary block">USAID Maternal Health
+                          Initiative (GH-2024-09)</span>
+                        <span class="font-body-sm text-body-sm text-text-secondary">Sub-recipient: Northern Regional
+                          Health Directorate</span>
+                      </div>
+                      <div class="text-right">
+                        <span
+                          class="font-label-badge text-label-badge text-primary bg-primary-tint px-2 py-0.5 rounded-full">73.6%
+                          Utilized</span>
+                      </div>
+                    </div>
+                    <!-- Progress Meter -->
+                    <div class="w-full bg-border-subtle h-2.5 rounded-full overflow-hidden flex">
+                      <div class="bg-primary-container h-full rounded-full" style="width: 73.6%"></div>
+                    </div>
+                    <div class="flex items-center justify-between mt-2 font-body-sm text-body-sm">
+                      <span class="text-text-secondary">Disbursed: <strong
+                          class="text-text-primary font-table-cell-amount text-table-cell-amount">GHS
+                          1,840,000</strong></span>
+                      <span class="text-text-secondary">Approved Ceiling: <strong
+                          class="text-text-primary font-table-cell-amount text-table-cell-amount">GHS
+                          2,500,000</strong></span>
+                    </div>
+                  </div>
+                  <!-- Transaction Ledger Feed & Approval Pill -->
+                  <div class="space-y-2">
+                    <div class="flex items-center justify-between text-xs text-text-muted px-1">
+                      <span class="font-label-header text-label-header uppercase">Recent Compliance Events</span>
+                      <span class="font-body-sm text-body-sm text-primary cursor-pointer hover:underline">View Journal
+                        (24)</span>
+                    </div>
+                    <div class="p-2.5 rounded bg-surface-card flex items-center justify-between shadow-sm">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded bg-status-warning-bg text-status-warning-fg flex items-center justify-center">
+                          <span class="material-symbols-outlined text-[18px]">verified</span>
+                        </div>
+                        <div>
+                          <div class="font-table-cell-amount text-table-cell-amount text-text-primary">Tamale Rural
+                            Water Station PO-8419</div>
+                          <div class="text-[11px] text-text-secondary">Donor Code: EU-WATER-LOT3 • GHS 42,600</div>
+                        </div>
+                      </div>
+                      <span
+                        class="px-2 py-1 rounded-full bg-status-warning-bg text-status-warning-fg font-label-badge text-label-badge">
+                        Pending Approval
+                      </span>
+                    </div>
+                    <div class="p-2.5 rounded bg-surface-card flex items-center justify-between shadow-sm">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded bg-status-success-bg text-status-success-fg flex items-center justify-center">
+                          <span class="material-symbols-outlined text-[18px]">account_balance</span>
+                        </div>
+                        <div>
+                          <div class="font-table-cell-amount text-table-cell-amount text-text-primary">GRA Direct PAYE /
+                            SSNIT Tier 1 &amp; 2 Remittance</div>
+                          <div class="text-[11px] text-text-secondary">Standard Chartered Accra • Automatic GIP Match
+                          </div>
+                        </div>
+                      </div>
+                      <span
+                        class="px-2 py-1 rounded-full bg-status-success-bg text-status-success-fg font-label-badge text-label-badge">
+                        Reconciled
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 2: CONCEPTUAL ARCHITECTURE (Transformation Comparison) -->
+      <section class="w-full bg-surface py-space-xl lg:py-space-2xl">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <div class="font-label-eyebrow text-label-eyebrow text-primary uppercase tracking-widest mb-2">Fund
+              Architecture</div>
+            <h2 class="font-headline-xl text-headline-xl text-text-primary">
+              Built around the way NGOs actually manage money
+            </h2>
+            <p class="font-body-md text-body-md text-text-secondary mt-2">
+              Commercial accounting packages treat money as an undivided revenue stream. <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> establishes strict
+              dimensional earmarking from receipt to reporting.
+            </p>
+          </div>
+          <!-- Conceptual Pipeline Comparison Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+            <!-- Standard Commercial ERP (The Broken Way) -->
+            <div class="bg-surface-neutral-alt p-space-lg rounded-xl flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-headline-sm text-headline-sm text-text-primary font-bold">Standard Commercial
+                    Accounting</span>
+                  <span
+                    class="px-2 py-1 bg-status-danger-bg text-status-danger-fg font-label-badge text-label-badge rounded">Non-Compliant
+                    for NGOs</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-text-secondary mb-6">
+                  Forces non-profits into generic income statements, resulting in commingled funds, painful spreadsheet
+                  audits, and grant disallowances.
+                </p>
+                <!-- Process Flow -->
+                <div class="space-y-3">
+                  <div
+                    class="p-3 bg-surface-card rounded flex items-center justify-between text-text-secondary font-body-sm text-body-sm">
+                    <span>1. Commercial Sales Invoice</span>
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                  </div>
+                  <div
+                    class="p-3 bg-surface-card rounded flex items-center justify-between text-text-secondary font-body-sm text-body-sm">
+                    <span>2. Undifferentiated Revenue Pool</span>
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                  </div>
+                  <div
+                    class="p-3 bg-surface-card rounded flex items-center justify-between text-text-secondary font-body-sm text-body-sm">
+                    <span>3. Lump-Sum Expenses</span>
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-3 bg-status-danger-bg rounded text-status-danger-fg text-xs">
+                <strong>The Outcome:</strong> Months spent manually carving transaction journals in Excel to satisfy
+                USAID or Global Fund audits.
+              </div>
+            </div>
+            <!-- NGO ERP Dimensional Fund Accounting -->
+            <div class="bg-surface-card p-space-lg rounded-xl shadow-lg relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-primary-tint rounded-bl-full -z-0 opacity-40"></div>
+              <div class="relative z-10">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-headline-sm text-headline-sm text-primary font-bold"><strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> Dimensional Fund
+                    Accounting</span>
+                  <span
+                    class="px-2 py-1 bg-primary-tint text-primary font-label-badge text-label-badge rounded">Audit-Grade
+                    Integrity</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-text-secondary mb-6">
+                  Every pesewa is bound to donor restrictions, grant codes, and allowable direct-cost lines at the
+                  instant of authorization.
+                </p>
+                <!-- Dimensional Flow Pipeline -->
+                <div class="space-y-2 font-body-sm text-body-sm">
+                  <div class="p-2.5 bg-surface-neutral-alt rounded flex items-center justify-between">
+                    <span class="font-semibold text-text-primary">1. Donor Grant Agreement</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-card text-[11px] text-text-secondary">Earmarked
+                      Envelope</span>
+                  </div>
+                  <div class="p-2.5 bg-primary-tint rounded flex items-center justify-between">
+                    <span class="font-semibold text-primary">2. Restriction Partitioning</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-card text-[11px] text-primary">Restricted vs Core</span>
+                  </div>
+                  <div class="p-2.5 bg-surface-neutral-alt rounded flex items-center justify-between">
+                    <span class="font-semibold text-text-primary">3. Project Budget Allocation</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-card text-[11px] text-text-secondary">Activity &amp;
+                      Region</span>
+                  </div>
+                  <div class="p-2.5 bg-surface-neutral-alt rounded flex items-center justify-between">
+                    <span class="font-semibold text-text-primary">4. 3-Way Matched Requisition</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-card text-[11px] text-text-secondary">Preventative
+                      Hold</span>
+                  </div>
+                  <div class="p-2.5 bg-status-success-bg rounded flex items-center justify-between">
+                    <span class="font-semibold text-status-success-fg">5. Instant 1-Click Multi-Donor Report</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-card text-[11px] text-status-success-fg">SF-425 • IPSAS
+                      23</span>
+                  </div>
+                </div>
+                <div class="mt-6 p-3 bg-primary-tint rounded text-primary text-xs">
+                  <strong>The Outcome:</strong> Fiduciary security with zero co-mingling, zero unauthorized transfers,
+                  and real-time donor readiness.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 3: FUND ACCOUNTING MATRIX & RESTRICTION LEDGER -->
+      <section class="w-full bg-canvas-bg py-space-xl lg:py-space-2xl">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <!-- Left: Editorial Context -->
+            <div class="lg:col-span-4 space-y-space-md">
+              <span class="font-label-eyebrow text-label-eyebrow text-primary uppercase">Fiduciary Guardrails</span>
+              <h3 class="font-headline-lg text-headline-lg text-text-primary">
+                Know exactly where every dollar and cedi belongs.
+              </h3>
+              <p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+                Prevent unintentional co-mingling of earmarked bilateral capital. The <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> multi-dimensional chart of
+                accounts checks available donor ceilings before purchase orders or payroll disbursements are committed.
+              </p>
+              <ul class="space-y-3 font-body-sm text-body-sm text-text-primary pt-2">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                  <span>Enforced restriction lockouts on multi-grant lines</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                  <span>Sub-recipient milestone compliance checks</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                  <span>Automated overhead indirect cost recovery (NICRA)</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Right: Real-time ERP Fund Matrix Ledger Table -->
+            <div class="lg:col-span-8 bg-surface-card rounded-xl shadow-md p-space-md overflow-x-auto">
+              <div class="flex items-center justify-between pb-space-sm mb-space-sm border-b border-border-subtle">
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-text-primary">Active Grant Envelopes &amp;
+                    Restrictions</span>
+                  <span class="text-xs text-text-muted block">Filtered by: FY2025 Active Commitments</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 bg-surface-neutral-alt text-text-secondary text-xs rounded">Total: GHS
+                    6,950,000</span>
+                </div>
+              </div>
+              <table class="w-full text-left font-body-sm text-body-sm border-collapse">
+                <thead>
+                  <tr class="bg-surface-neutral-alt text-text-secondary font-label-header text-label-header uppercase">
+                    <th class="p-3">Fund Code</th>
+                    <th class="p-3">Donor / Program</th>
+                    <th class="p-3">Restriction</th>
+                    <th class="p-3 text-right">Budget</th>
+                    <th class="p-3 text-right">Committed</th>
+                    <th class="p-3 text-right">Available</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-border-subtle">
+                  <tr class="hover:bg-surface-neutral-alt/50 transition-colors">
+                    <td class="p-3 font-semibold text-text-primary font-table-cell-amount text-table-cell-amount">
+                      FND-USAID-01</td>
+                    <td class="p-3">
+                      <div class="text-text-primary font-medium">Maternal Nutrition Scale</div>
+                      <div class="text-[11px] text-text-muted">USAID Direct Grant #7200</div>
+                    </td>
+                    <td class="p-3">
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge">
+                        Restricted
+                      </span>
+                    </td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount">2,500,000</td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount text-text-secondary">
+                      1,840,000</td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount text-primary font-bold">
+                      660,000</td>
+                  </tr>
+                  <tr class="hover:bg-surface-neutral-alt/50 transition-colors">
+                    <td class="p-3 font-semibold text-text-primary font-table-cell-amount text-table-cell-amount">
+                      FND-EU-WASH</td>
+                    <td class="p-3">
+                      <div class="text-text-primary font-medium">Volta Basin Sanitation</div>
+                      <div class="text-[11px] text-text-muted">EU Bilateral Fund</div>
+                    </td>
+                    <td class="p-3">
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge">
+                        Restricted
+                      </span>
+                    </td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount">1,350,000</td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount text-text-secondary">912,400
+                    </td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount text-primary font-bold">
+                      437,600</td>
+                  </tr>
+                  <tr class="hover:bg-surface-neutral-alt/50 transition-colors">
+                    <td class="p-3 font-semibold text-text-primary font-table-cell-amount text-table-cell-amount">
+                      FND-CORE-001</td>
+                    <td class="p-3">
+                      <div class="text-text-primary font-medium">Institutional Reserve</div>
+                      <div class="text-[11px] text-text-muted">Unrestricted Board Discretion</div>
+                    </td>
+                    <td class="p-3">
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-primary-tint text-primary font-label-badge text-label-badge">
+                        Unrestricted
+                      </span>
+                    </td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount">1,420,000</td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount text-text-secondary">410,000
+                    </td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount text-primary font-bold">
+                      1,010,000</td>
+                  </tr>
+                  <tr class="hover:bg-surface-neutral-alt/50 transition-colors">
+                    <td class="p-3 font-semibold text-text-primary font-table-cell-amount text-table-cell-amount">
+                      FND-FCDO-ED</td>
+                    <td class="p-3">
+                      <div class="text-text-primary font-medium">Girls STEM Scholarship</div>
+                      <div class="text-[11px] text-text-muted">FCDO Northern Ghana</div>
+                    </td>
+                    <td class="p-3">
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge">
+                        Restricted
+                      </span>
+                    </td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount">1,680,000</td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount text-text-secondary">
+                      1,490,000</td>
+                    <td class="p-3 text-right font-table-cell-amount text-table-cell-amount text-primary font-bold">
+                      190,000</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div
+                class="mt-4 pt-3 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between text-xs text-text-muted gap-2">
+                <span>• Real-time commitment locks enforce zero line-item overspending automatically.</span>
+                <span class="text-primary font-medium">All figures quoted in Ghanaian Cedis (GHS)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 4: INTERACTIVE MODULE SHOWCASE (Tabbed UI) -->
+      <section class="w-full bg-surface py-space-xl lg:py-space-2xl" id="interactive-modules">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="text-center max-w-3xl mx-auto mb-space-lg">
+            <span class="font-label-eyebrow text-label-eyebrow text-primary uppercase">Functional Depth</span>
+            <h2 class="font-headline-xl text-headline-xl text-text-primary">
+              Engineered for every NGO financial lifecycle
+            </h2>
+            <p class="font-body-md text-body-md text-text-secondary mt-2">
+              Select an operational core to see how <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> handles mission-critical accounting workflows.
+            </p>
+          </div>
+          <!-- Tab Buttons Navigation -->
+          <div class="flex flex-wrap items-center justify-center gap-2 mb-space-lg">
+            <button
+              class="module-tab-btn px-4 py-2 rounded-lg font-label-header text-label-header bg-primary-container text-text-inverted shadow-sm transition-all"
+              onclick="switchModuleTab('tab-finance', this)" type="button">
+              Finance &amp; GL
+            </button>
+            <button
+              class="module-tab-btn px-4 py-2 rounded-lg font-label-header text-label-header bg-surface-neutral-alt text-text-secondary hover:text-text-primary transition-all"
+              onclick="switchModuleTab('tab-grants', this)" type="button">
+              Grants &amp; Projects
+            </button>
+            <button
+              class="module-tab-btn px-4 py-2 rounded-lg font-label-header text-label-header bg-surface-neutral-alt text-text-secondary hover:text-text-primary transition-all"
+              onclick="switchModuleTab('tab-ghana-payroll', this)" type="button">
+              Ghana Statutory Payroll
+            </button>
+            <button
+              class="module-tab-btn px-4 py-2 rounded-lg font-label-header text-label-header bg-surface-neutral-alt text-text-secondary hover:text-text-primary transition-all"
+              onclick="switchModuleTab('tab-procurement', this)" type="button">
+              Procurement &amp; Inventory
+            </button>
+            <button
+              class="module-tab-btn px-4 py-2 rounded-lg font-label-header text-label-header bg-surface-neutral-alt text-text-secondary hover:text-text-primary transition-all"
+              onclick="switchModuleTab('tab-field-ops', this)" type="button">
+              Field Operations
+            </button>
+          </div>
+          <!-- Module Content Containers -->
+          <div class="bg-surface-card rounded-2xl shadow-xl p-space-md lg:p-space-lg">
+            <!-- Tab 1: Finance & GL -->
+            <div class="module-tab-pane grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center" id="tab-finance">
+              <div class="lg:col-span-5 space-y-4">
+                <span
+                  class="px-2.5 py-1 bg-primary-tint text-primary font-label-badge text-label-badge rounded-full uppercase">Multi-Currency
+                  General Ledger</span>
+                <h3 class="font-headline-lg text-headline-lg text-text-primary">Accra headquarters, multi-donor foreign
+                  exchanges.</h3>
+                <p class="font-body-md text-body-md text-text-secondary">
+                  Real-time multi-currency revaluations for GHS, USD, EUR, and GBP. Automatically isolates realized vs
+                  unrealized forex variances according to bilateral agreement rules.
+                </p>
+                <div class="space-y-2 pt-2">
+                  <div class="flex items-center gap-2 font-body-sm text-body-sm text-text-primary">
+                    <span class="material-symbols-outlined text-primary text-[18px]">account_balance_wallet</span>
+                    <span>Automated daily Bank of Ghana (BoG) mid-market rates</span>
+                  </div>
+                  <div class="flex items-center gap-2 font-body-sm text-body-sm text-text-primary">
+                    <span class="material-symbols-outlined text-primary text-[18px]">currency_exchange</span>
+                    <span>Sub-grantee foreign exchange risk hedging &amp; reporting</span>
+                  </div>
+                  <div class="flex items-center gap-2 font-body-sm text-body-sm text-text-primary">
+                    <span class="material-symbols-outlined text-primary text-[18px]">sync_alt</span>
+                    <span>Single-click reconciliation with standard MT940 / CSV statements</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-7 bg-surface-neutral-alt p-space-md rounded-xl">
+                <div class="bg-surface-card p-4 rounded-lg shadow-sm space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class="font-label-eyebrow text-label-eyebrow text-text-muted uppercase">Consolidated
+                        Liquidity</span>
+                      <div class="font-financial-display-lg text-financial-display-lg text-text-primary">GHS
+                        8,421,900.50</div>
+                    </div>
+                    <div class="text-right">
+                      <span
+                        class="font-label-badge text-label-badge bg-status-success-bg text-status-success-fg px-2 py-0.5 rounded">All
+                        Accounts Balanced</span>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-3 gap-2 pt-2">
+                    <div class="p-2.5 bg-surface-neutral-alt rounded text-center">
+                      <div class="text-xs text-text-muted">USD Dollar Acct</div>
+                      <div class="font-semibold text-text-primary mt-1">$412,500.00</div>
+                      <div class="text-[10px] text-text-secondary">BoG: 15.65 GHS</div>
+                    </div>
+                    <div class="p-2.5 bg-surface-neutral-alt rounded text-center">
+                      <div class="text-xs text-text-muted">EUR Bilateral Acct</div>
+                      <div class="font-semibold text-text-primary mt-1">€85,200.00</div>
+                      <div class="text-[10px] text-text-secondary">BoG: 16.92 GHS</div>
+                    </div>
+                    <div class="p-2.5 bg-surface-neutral-alt rounded text-center">
+                      <div class="text-xs text-text-muted">GHS Operations</div>
+                      <div class="font-semibold text-text-primary mt-1">GHS 520,310.00</div>
+                      <div class="text-[10px] text-status-success-fg">Stanbic Direct</div>
+                    </div>
+                  </div>
+                  <!-- Mini SVG Cash Flow Line Chart -->
+                  <div class="p-3 bg-canvas-bg rounded">
+                    <div class="flex justify-between items-center mb-1 text-xs text-text-muted">
+                      <span>6-Month Donor Burn Trend</span>
+                      <span class="text-primary font-semibold">+12% project velocity</span>
+                    </div>
+                    <svg class="w-full h-16 text-primary" fill="none" viewbox="0 0 300 60"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 45 L50 40 L100 48 L150 25 L200 32 L250 15 L300 20" stroke="currentColor"
+                        stroke-linecap="round" stroke-width="2.5"></path>
+                      <path d="M0 45 L50 40 L100 48 L150 25 L200 32 L250 15 L300 20 L300 60 L0 60 Z" fill="currentColor"
+                        fill-opacity="0.08"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tab 2: Grants & Projects (Hidden by default) -->
+            <div class="module-tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center"
+              id="tab-grants">
+              <div class="lg:col-span-5 space-y-4">
+                <span
+                  class="px-2.5 py-1 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge rounded-full uppercase">Grant
+                  Lifecycle Management</span>
+                <h3 class="font-headline-lg text-headline-lg text-text-primary">Track grants from agreement signing to
+                  audit sign-off.</h3>
+                <p class="font-body-md text-body-md text-text-secondary">
+                  Map multi-tiered sub-awards, enforce non-reallocatable direct-cost line items, and automate scheduled
+                  progress notifications for field leads.
+                </p>
+                <div class="space-y-2 pt-2">
+                  <div class="flex items-center gap-2 font-body-sm text-body-sm text-text-primary">
+                    <span class="material-symbols-outlined text-primary text-[18px]">task_alt</span>
+                    <span>Deliverable &amp; milestone approval triggers</span>
+                  </div>
+                  <div class="flex items-center gap-2 font-body-sm text-body-sm text-text-primary">
+                    <span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+                    <span>USAID 2 CFR 200 uniform guidance validation</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-7 bg-surface-neutral-alt p-space-md rounded-xl">
+                <div class="bg-surface-card p-4 rounded-lg space-y-3">
+                  <div class="flex justify-between items-center text-sm">
+                    <span class="font-bold text-text-primary">Grant GH-USAID-2024-HEALTH</span>
+                    <span class="text-xs bg-status-success-bg text-status-success-fg px-2 py-0.5 rounded">Active
+                      Milestone 3</span>
+                  </div>
+                  <div class="space-y-2 font-body-sm text-body-sm">
+                    <div class="flex justify-between text-xs text-text-secondary">
+                      <span>Community Water Testing Labs (Tamale)</span>
+                      <span class="text-text-primary font-bold">100% Completed</span>
+                    </div>
+                    <div class="w-full bg-border-subtle h-2 rounded-full overflow-hidden">
+                      <div class="bg-status-success-fg h-full" style="width: 100%"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-text-secondary pt-2">
+                      <span>Solar Pump Installation (Phase 2)</span>
+                      <span class="text-text-primary font-bold">64% Completed</span>
+                    </div>
+                    <div class="w-full bg-border-subtle h-2 rounded-full overflow-hidden">
+                      <div class="bg-primary-container h-full" style="width: 64%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tab 3: Ghana Statutory Payroll (Hidden by default) -->
+            <div class="module-tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center"
+              id="tab-ghana-payroll">
+              <div class="lg:col-span-5 space-y-4">
+                <span
+                  class="px-2.5 py-1 bg-status-info-bg text-status-info-fg font-label-badge text-label-badge rounded-full uppercase">Ghana
+                  Statutory Compliance</span>
+                <h3 class="font-headline-lg text-headline-lg text-text-primary">GRA PAYE &amp; SSNIT computed down to
+                  the pesewa.</h3>
+                <p class="font-body-md text-body-md text-text-secondary">
+                  Calculate cumulative Ghanaian income tax brackets, Tier 1 (13.5% employer) and Tier 2 (5% employee)
+                  mandatory pension splits, and generate direct GRA upload files.
+                </p>
+              </div>
+              <div class="lg:col-span-7 bg-surface-neutral-alt p-space-md rounded-xl">
+                <div class="bg-surface-card p-4 rounded-lg text-sm space-y-3">
+                  <div class="flex justify-between border-b border-border-subtle pb-2">
+                    <span class="font-semibold text-text-primary">Accra Office Monthly Payroll Run</span>
+                    <span class="font-table-cell-amount text-table-cell-amount text-primary font-bold">GHS
+                      124,580.00</span>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="p-2 bg-surface-neutral-alt rounded">
+                      <div class="text-text-secondary">GRA PAYE Schedule</div>
+                      <div class="font-bold text-text-primary mt-1">GHS 24,190.40</div>
+                      <div class="text-[10px] text-status-success-fg">Validated GRA CSV Ready</div>
+                    </div>
+                    <div class="p-2 bg-surface-neutral-alt rounded">
+                      <div class="text-text-secondary">SSNIT Tier 1 &amp; Tier 2</div>
+                      <div class="font-bold text-text-primary mt-1">GHS 23,047.30</div>
+                      <div class="text-[10px] text-primary">Direct Bank Export Available</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tab 4: Procurement & Inventory (Hidden by default) -->
+            <div class="module-tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center"
+              id="tab-procurement">
+              <div class="lg:col-span-5 space-y-4">
+                <span
+                  class="px-2.5 py-1 bg-primary-tint text-primary font-label-badge text-label-badge rounded-full uppercase">Audit-Proof
+                  Supply Chain</span>
+                <h3 class="font-headline-lg text-headline-lg text-text-primary">From requisition to 3-way match.</h3>
+                <p class="font-body-md text-body-md text-text-secondary">
+                  Enforce donor procurement thresholds (e.g., mandatory 3 quotes above $5,000). Automated Goods Receipt
+                  Notes (GRN) eliminate ghost invoicing and discrepancies.
+                </p>
+              </div>
+              <div class="lg:col-span-7 bg-surface-neutral-alt p-space-md rounded-xl">
+                <div class="bg-surface-card p-4 rounded-lg text-sm space-y-3">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary">rule</span>
+                    <div>
+                      <div class="font-bold text-text-primary">Competitive Quotation Analysis PO-4412</div>
+                      <div class="text-xs text-text-secondary">3 Qualified Bidders • Awarded to Lowest Responsive Bidder
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-2.5 bg-status-success-bg text-status-success-fg text-xs rounded">
+                    Three-way match verified: Requisition #1084 • PO #4412 • GRN #991 match exactly.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tab 5: Field Operations (Hidden by default) -->
+            <div class="module-tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center"
+              id="tab-field-ops">
+              <div class="lg:col-span-5 space-y-4">
+                <span
+                  class="px-2.5 py-1 bg-primary-tint text-primary font-label-badge text-label-badge rounded-full uppercase">Offline
+                  Mobile Sync</span>
+                <h3 class="font-headline-lg text-headline-lg text-text-primary">Work in deep field locations without
+                  cellular coverage.</h3>
+                <p class="font-body-md text-body-md text-text-secondary">
+                  Project officers log per-diems, record vehicle fuel expenses, and attach photographic proof with
+                  automatic GPS coordinate stamps.
+                </p>
+              </div>
+              <div class="lg:col-span-7 bg-surface-neutral-alt p-space-md rounded-xl">
+                <div class="bg-surface-card p-4 rounded-lg text-sm space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-text-primary">Field Voucher #FLD-TAMALE-092</span>
+                    <span class="text-[11px] bg-status-warning-bg text-status-warning-fg px-2 py-0.5 rounded">Queued
+                      (Offline)</span>
+                  </div>
+                  <div class="text-xs text-text-secondary">
+                    GPS: 9.4008° N, 0.8393° W (Tamale Outpost) • Photo receipt attached • Syncs on 4G connection.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 5: GHANA SPECIFIC STATUTORY PAYROLL & COMPLIANCE -->
+      <section class="w-full bg-primary-tint/40 py-space-xl lg:py-space-2xl">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <div class="lg:col-span-6 space-y-space-md">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-card text-primary font-label-eyebrow text-label-eyebrow uppercase shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                Built for Ghanaian NGO Finance &amp; HR Teams
+              </div>
+              <h2 class="font-headline-xl text-headline-xl text-text-primary">
+                100% compliant Ghana payroll calculations with zero friction.
+              </h2>
+              <p class="font-body-lead text-body-lead text-text-secondary">
+                Never miscalculate statutory tiers again. <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> incorporates current Ghana Revenue Authority (GRA)
+                income tax bands and SSNIT mandatory pension structures natively.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-2">
+                <div class="bg-surface-card p-4 rounded-lg shadow-sm space-y-1">
+                  <div class="font-headline-sm text-headline-sm text-text-primary">GRA PAYE Schedules</div>
+                  <p class="font-body-sm text-body-sm text-text-secondary">Instant generation of official monthly tax
+                    return CSV formatted for GRA taxpayers portal.</p>
+                </div>
+                <div class="bg-surface-card p-4 rounded-lg shadow-sm space-y-1">
+                  <div class="font-headline-sm text-headline-sm text-text-primary">SSNIT Tier 1 &amp; Tier 2</div>
+                  <p class="font-body-sm text-body-sm text-text-secondary">Automated 13.5% employer and 5.5% employee
+                    splits calculated across multi-grant staff allocations.</p>
+                </div>
+                <div class="bg-surface-card p-4 rounded-lg shadow-sm space-y-1">
+                  <div class="font-headline-sm text-headline-sm text-text-primary">Time &amp; Effort Logs</div>
+                  <p class="font-body-sm text-body-sm text-text-secondary">Split an officer's salary across 3 donor
+                    grants (e.g. 40% USAID, 40% EU, 20% Core) with timesheet backups.</p>
+                </div>
+                <div class="bg-surface-card p-4 rounded-lg shadow-sm space-y-1">
+                  <div class="font-headline-sm text-headline-sm text-text-primary">Direct Bank ACH / GIP</div>
+                  <p class="font-body-sm text-body-sm text-text-secondary">Export batch payment files directly for
+                    Stanbic, Ecobank, Absa, and GCB with no manual re-entry.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Visual Payroll Calculator Snapshot -->
+            <div class="lg:col-span-6 bg-surface-card p-space-md lg:p-space-lg rounded-2xl shadow-xl space-y-space-md">
+              <div class="flex items-center justify-between pb-3 border-b border-border-subtle">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">badge</span>
+                  <div>
+                    <span class="font-bold text-text-primary block text-sm">Staff Allocation: Kwame Mensah (Senior
+                      M&amp;E)</span>
+                    <span class="text-xs text-text-secondary">Base Gross: GHS 18,500.00 / month</span>
+                  </div>
+                </div>
+                <span
+                  class="font-label-badge text-label-badge bg-primary-tint text-primary px-2 py-1 rounded">Multi-Grant
+                  Code</span>
+              </div>
+              <!-- Multi-Grant Split Visualization -->
+              <div class="space-y-2">
+                <span class="text-xs font-semibold text-text-secondary uppercase">Grant Funding Allocations</span>
+                <div class="space-y-1.5 font-body-sm text-body-sm">
+                  <div class="flex justify-between items-center p-2 bg-surface-neutral-alt rounded">
+                    <span>USAID Maternal Nutrition (GH-2024-09)</span>
+                    <span class="font-bold text-text-primary">50% • GHS 9,250.00</span>
+                  </div>
+                  <div class="flex justify-between items-center p-2 bg-surface-neutral-alt rounded">
+                    <span>Global Fund Health Systems (GF-HIV-04)</span>
+                    <span class="font-bold text-text-primary">35% • GHS 6,475.00</span>
+                  </div>
+                  <div class="flex justify-between items-center p-2 bg-surface-neutral-alt rounded">
+                    <span>Core Administrative Overhead</span>
+                    <span class="font-bold text-text-primary">15% • GHS 2,775.00</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Statutory Schedule Computation -->
+              <div class="p-3 bg-surface-neutral-alt rounded-lg space-y-2 font-body-sm text-body-sm">
+                <div class="flex justify-between text-xs text-text-secondary">
+                  <span>Gross Salary:</span>
+                  <span class="font-table-cell-amount text-table-cell-amount text-text-primary">GHS 18,500.00</span>
+                </div>
+                <div class="flex justify-between text-xs text-text-secondary">
+                  <span>GRA Tax Withheld (PAYE):</span>
+                  <span class="font-table-cell-amount text-table-cell-amount text-status-danger-fg">- GHS
+                    4,125.50</span>
+                </div>
+                <div class="flex justify-between text-xs text-text-secondary">
+                  <span>SSNIT Employee Contribution (5.5%):</span>
+                  <span class="font-table-cell-amount text-table-cell-amount text-text-primary">- GHS 1,017.50</span>
+                </div>
+                <div class="flex justify-between text-xs text-text-secondary">
+                  <span>Employer SSNIT Tier 1 &amp; Tier 2 (13%):</span>
+                  <span class="font-table-cell-amount text-table-cell-amount text-text-secondary">+ GHS 2,405.00 (Entity
+                    Cost)</span>
+                </div>
+                <div class="pt-2 border-t border-border-subtle flex justify-between font-bold text-sm">
+                  <span class="text-text-primary">Net Monthly Staff Remittance:</span>
+                  <span class="text-primary font-table-cell-amount text-table-cell-amount">GHS 13,357.00</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-status-success-fg">
+                <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                <span>Automatically balanced against all 3 grant ledger codes without spreadsheet formulas.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 6: CONNECTED PROCUREMENT TO FINANCIAL CONTROL -->
+      <section class="w-full bg-surface py-space-xl lg:py-space-2xl">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <span class="font-label-eyebrow text-label-eyebrow text-primary uppercase">Procurement Discipline</span>
+            <h2 class="font-headline-xl text-headline-xl text-text-primary">
+              From requisition to payment voucher in one sealed chain
+            </h2>
+            <p class="font-body-md text-body-md text-text-secondary mt-2">
+              Operational activity becomes audit-proof financial records. No procurement initiates without an active,
+              unrestricted grant budget line.
+            </p>
+          </div>
+          <!-- Linear Pipeline Visualizer -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3">
+            <!-- Step 1 -->
+            <div class="bg-canvas-bg p-4 rounded-xl flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-8 h-8 rounded bg-primary-tint text-primary font-bold flex items-center justify-center mb-3">1
+                </div>
+                <div class="font-headline-sm text-headline-sm text-text-primary">Field Requisition</div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-1">Initiated by field officer with required
+                  donor project code.</p>
+              </div>
+              <span class="text-[10px] text-text-muted mt-3 block">Budget Check: Automated</span>
+            </div>
+            <!-- Step 2 -->
+            <div class="bg-canvas-bg p-4 rounded-xl flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-8 h-8 rounded bg-primary-tint text-primary font-bold flex items-center justify-center mb-3">2
+                </div>
+                <div class="font-headline-sm text-headline-sm text-text-primary">Approval Matrix</div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-1">Multi-tier signoffs based on donor
+                  threshold regulations.</p>
+              </div>
+              <span class="text-[10px] text-text-muted mt-3 block">Matrix: Role-Based</span>
+            </div>
+            <!-- Step 3 -->
+            <div class="bg-canvas-bg p-4 rounded-xl flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-8 h-8 rounded bg-primary-tint text-primary font-bold flex items-center justify-center mb-3">3
+                </div>
+                <div class="font-headline-sm text-headline-sm text-text-primary">3-Quotes Bidding</div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-1">Comparative bid analysis table stored
+                  directly in the audit trail.</p>
+              </div>
+              <span class="text-[10px] text-text-muted mt-3 block">USAID / EU Compliant</span>
+            </div>
+            <!-- Step 4 -->
+            <div class="bg-canvas-bg p-4 rounded-xl flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-8 h-8 rounded bg-primary-tint text-primary font-bold flex items-center justify-center mb-3">4
+                </div>
+                <div class="font-headline-sm text-headline-sm text-text-primary">Purchase Order</div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-1">Legally binding PO issued with earmarked
+                  encumbrance lock.</p>
+              </div>
+              <span class="text-[10px] text-text-muted mt-3 block">Encumbrance Recorded</span>
+            </div>
+            <!-- Step 5 -->
+            <div class="bg-canvas-bg p-4 rounded-xl flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-8 h-8 rounded bg-primary-tint text-primary font-bold flex items-center justify-center mb-3">5
+                </div>
+                <div class="font-headline-sm text-headline-sm text-text-primary">Goods Receipt (GRN)</div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-1">Verification of quantities and physical
+                  inspection sign-off.</p>
+              </div>
+              <span class="text-[10px] text-text-muted mt-3 block">Inventory Updated</span>
+            </div>
+            <!-- Step 6 -->
+            <div class="bg-primary-tint/60 p-4 rounded-xl flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-8 h-8 rounded bg-primary-container text-text-inverted font-bold flex items-center justify-center mb-3">
+                  6</div>
+                <div class="font-headline-sm text-headline-sm text-primary">Payment Voucher</div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-1">3-Way match verified. Disbursed via bank
+                  file or Mobile Money.</p>
+              </div>
+              <span class="text-[10px] text-status-success-fg font-semibold mt-3 block">✓ 100% Audit-Ready</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 7: FIELD OPERATIONS & OFFLINE CAPABILITY (Desktop + Mobile Split) -->
+      <section class="w-full bg-canvas-bg py-space-xl lg:py-space-2xl">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <!-- Left Narrative -->
+            <div class="lg:col-span-5 space-y-space-md">
+              <span class="font-label-eyebrow text-label-eyebrow text-primary uppercase">Remote Operations</span>
+              <h2 class="font-headline-xl text-headline-xl text-text-primary">
+                From Tamale to the Volta Basin, accountability travels anywhere.
+              </h2>
+              <p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+                NGO fieldwork doesn’t wait for reliable broadband. <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> field apps function entirely offline,
+                capturing photo receipts, GPS coordinates, beneficiary sign-offs, and petty cash disbursements in
+                low-connectivity areas.
+              </p>
+              <div class="space-y-3 pt-2">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">location_on</span>
+                  <div>
+                    <strong class="text-text-primary block font-body-sm text-body-sm">Geo-Fenced Project
+                      Deliverables</strong>
+                    <span class="text-xs text-text-secondary">Capture verifiable proof of site construction, borehole
+                      installations, and medical relief drop-offs.</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">cloud_sync</span>
+                  <div>
+                    <strong class="text-text-primary block font-body-sm text-body-sm">Instant Background
+                      Reconciliation</strong>
+                    <span class="text-xs text-text-secondary">When your field vehicle returns to 3G/4G coverage,
+                      vouchers upload seamlessly to the Accra financial ledger.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right Realistic Mobile UI Mockup -->
+            <div class="lg:col-span-7 flex justify-center lg:justify-end">
+              <!-- Mobile Phone Simulation Container -->
+              <div class="w-full max-w-sm bg-surface-navy p-3 rounded-[32px] shadow-2xl">
+                <div class="bg-surface-card rounded-[24px] overflow-hidden p-4 space-y-4">
+                  <!-- Mobile App Status Header -->
+                  <div
+                    class="flex justify-between items-center text-xs text-text-muted pb-2 border-b border-border-subtle">
+                    <span class="font-bold text-text-primary">NGO Field Operations</span>
+                    <span
+                      class="flex items-center gap-1 text-primary bg-primary-tint px-2 py-0.5 rounded-full font-semibold">
+                      <span class="material-symbols-outlined text-[14px]">offline_pin</span> OFFLINE READY
+                    </span>
+                  </div>
+                  <!-- Field User Badge -->
+                  <div class="flex items-center gap-3 p-2 bg-surface-neutral-alt rounded-lg">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary text-text-inverted flex items-center justify-center font-bold text-xs">
+                      JA
+                    </div>
+                    <div>
+                      <div class="font-bold text-xs text-text-primary">John Appiah • Field Officer</div>
+                      <div class="text-[11px] text-text-secondary">Northern Sector • Tamale Base</div>
+                    </div>
+                  </div>
+                  <!-- New Expense Form Inside App -->
+                  <div class="space-y-3 pt-1">
+                    <span class="text-xs font-bold text-text-primary block">Log Field Expenditure</span>
+                    <div>
+                      <label class="text-[11px] text-text-secondary block mb-1">Grant Project</label>
+                      <div class="p-2 rounded bg-surface-neutral-alt text-xs font-semibold text-text-primary">
+                        GH-USAID-2024-HEALTH
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div>
+                        <label class="text-[11px] text-text-secondary block mb-1">Amount (GHS)</label>
+                        <div class="p-2 rounded bg-surface-neutral-alt text-xs font-bold text-text-primary">
+                          1,450.00
+                        </div>
+                      </div>
+                      <div>
+                        <label class="text-[11px] text-text-secondary block mb-1">Category</label>
+                        <div class="p-2 rounded bg-surface-neutral-alt text-xs text-text-primary">
+                          Vehicle Fuel • Tamale
+                        </div>
+                      </div>
+                    </div>
+                    <!-- GPS Stamp Pill -->
+                    <div class="p-2 rounded bg-primary-tint text-primary text-[11px] flex items-center justify-between">
+                      <div class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[14px]">my_location</span>
+                        <span>9.4008° N, 0.8393° W</span>
+                      </div>
+                      <span class="font-semibold">± 4m Accuracy</span>
+                    </div>
+                    <!-- Photo Attachment simulation -->
+                    <div
+                      class="p-3 border-2 border-dashed border-border-strong rounded-lg text-center cursor-pointer hover:bg-surface-neutral-alt transition-colors">
+                      <span class="material-symbols-outlined text-primary text-[24px]">add_a_photo</span>
+                      <div class="text-[11px] text-text-secondary font-medium mt-1">Receipt Photo Attached
+                        (fuel_receipt_104.jpg)</div>
+                    </div>
+                    <button
+                      class="w-full py-2.5 rounded-lg bg-primary-container text-text-inverted font-label-header text-label-header hover:bg-primary transition-colors text-center text-xs"
+                      type="button">
+                      Queue for Ledger Sync
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 8: FINANCIAL & DONOR REPORTING (One-Click Audit Statements) -->
+      <section class="w-full bg-surface py-space-xl lg:py-space-2xl">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <span class="font-label-eyebrow text-label-eyebrow text-primary uppercase">Audit Preparedness</span>
+            <h2 class="font-headline-xl text-headline-xl text-text-primary">
+              From daily transactions to audit-proof donor reports in seconds
+            </h2>
+            <p class="font-body-md text-body-md text-text-secondary mt-2">
+              Say goodbye to weeks of pre-audit panic. Export standardized reporting templates configured to each donor
+              agency's precise guidelines.
+            </p>
+          </div>
+          <!-- Grid of Specific Reporting Templates -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+            <!-- USAID SF-425 -->
+            <div class="bg-surface-card p-space-md rounded-xl shadow-md flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-primary-tint text-primary flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined">description</span>
+                </div>
+                <div class="font-headline-sm text-headline-sm text-text-primary">USAID SF-425 Federal Financial Report
+                </div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-2">
+                  Auto-populates cash receipts, cash disbursements, and federal share of expenditures with single-click
+                  export.
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-xs text-primary font-semibold">
+                <span>Standard USG Format</span>
+                <span class="material-symbols-outlined text-[16px]">file_download</span>
+              </div>
+            </div>
+            <!-- Global Fund Template -->
+            <div class="bg-surface-card p-space-md rounded-xl shadow-md flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined">analytics</span>
+                </div>
+                <div class="font-headline-sm text-headline-sm text-text-primary">Global Fund Progress Update (PUDR)
+                </div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-2">
+                  Cross-reconciles financial actuals directly against programmatic health deliverables and target
+                  indicators.
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-xs text-tertiary font-semibold">
+                <span>Global Fund Matrix</span>
+                <span class="material-symbols-outlined text-[16px]">file_download</span>
+              </div>
+            </div>
+            <!-- Statement of Functional Expenses -->
+            <div class="bg-surface-card p-space-md rounded-xl shadow-md flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-primary-tint text-primary flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined">table_chart</span>
+                </div>
+                <div class="font-headline-sm text-headline-sm text-text-primary">Statement of Functional Expenses</div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-2">
+                  Pre-built allocation matrix splitting Program Services, Management &amp; General, and Fundraising
+                  overhead.
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-xs text-primary font-semibold">
+                <span>IPSAS / GAAP Standard</span>
+                <span class="material-symbols-outlined text-[16px]">file_download</span>
+              </div>
+            </div>
+            <!-- GRA Annual Statutory Return -->
+            <div class="bg-surface-card p-space-md rounded-xl shadow-md flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-10 h-10 rounded-lg bg-status-success-bg text-status-success-fg flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined">fact_check</span>
+                </div>
+                <div class="font-headline-sm text-headline-sm text-text-primary">GRA Annual Non-Profit Tax Return</div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-2">
+                  Compliant tax-exempt filing packages validating tax relief conditions under Ghana Corporate Tax laws.
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-xs text-status-success-fg font-semibold">
+                <span>GRA Taxpayer Portal</span>
+                <span class="material-symbols-outlined text-[16px]">file_download</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 9: TRANSPARENT PRICING SECTION -->
+      <section class="w-full bg-canvas-bg py-space-xl lg:py-space-2xl" id="pricing">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <span class="font-label-eyebrow text-label-eyebrow text-primary uppercase">Predictable Investment</span>
+            <h2 class="font-headline-xl text-headline-xl text-text-primary">
+              Simple, transparent pricing for every tier of non-profit
+            </h2>
+            <p class="font-body-md text-body-md text-text-secondary mt-2">
+              Billed annually or monthly. All plans include automated GRA/SSNIT tax tables and dimensional fund
+              restrictions.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch">
+            <!-- Starter Plan -->
+            <div class="bg-surface-card p-space-lg rounded-xl shadow-md flex flex-col justify-between">
+              <div class="space-y-4">
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">Starter</h3>
+                  <p class="font-body-sm text-body-sm text-text-secondary mt-1">For growing community-based NGOs</p>
+                </div>
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="font-financial-display-lg text-financial-display-lg text-text-primary font-bold">$35</span>
+                  <span class="font-body-sm text-body-sm text-text-muted">/ month (or GHS equivalent)</span>
+                </div>
+                <ul class="space-y-2.5 font-body-sm text-body-sm text-text-primary pt-2">
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Up to 3 Active Donor Grants</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Standard Fund Accounting &amp; GL</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Ghana GRA &amp; SSNIT Payroll (15 staff)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Mobile Field Expense Logging</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="pt-6 mt-6 border-t border-border-subtle">
+                <a class="w-full inline-flex items-center justify-center min-h-[44px] px-4 py-2.5 rounded-lg bg-surface-neutral-alt text-text-primary font-label-header text-label-header hover:bg-surface-container transition-colors"
+                  href="#start-trial">
+                  Start 14-Day Free Trial
+                </a>
+              </div>
+            </div>
+            <!-- Standard Plan (Featured) -->
+            <div
+              class="bg-surface-card p-space-lg rounded-xl shadow-xl flex flex-col justify-between relative ring-2 ring-primary">
+              <div
+                class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-primary text-text-inverted font-label-badge text-label-badge uppercase tracking-wider">
+                Most Popular
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">Growth</h3>
+                  <p class="font-body-sm text-body-sm text-text-secondary mt-1">For active multi-grant implementing
+                    partners</p>
+                </div>
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="font-financial-display-lg text-financial-display-lg text-text-primary font-bold">$69</span>
+                  <span class="font-body-sm text-body-sm text-text-muted">/ month (or GHS equivalent)</span>
+                </div>
+                <ul class="space-y-2.5 font-body-sm text-body-sm text-text-primary pt-2">
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span><strong>Up to 15 Donor Grants</strong></span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Full Multi-Tier Donor Restrictions</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Ghana Statutory Payroll (Up to 60 staff)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>3-Way Matching Procurement Workflow</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>USAID SF-425 &amp; EU Reporting Formats</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="pt-6 mt-6 border-t border-border-subtle">
+                <a class="w-full inline-flex items-center justify-center min-h-[44px] px-4 py-2.5 rounded-lg bg-primary-container text-text-inverted font-label-header text-label-header hover:bg-primary transition-colors shadow"
+                  href="#start-trial">
+                  Start 14-Day Free Trial
+                </a>
+              </div>
+            </div>
+            <!-- Premium Plan -->
+            <div class="bg-surface-card p-space-lg rounded-xl shadow-md flex flex-col justify-between">
+              <div class="space-y-4">
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">Enterprise</h3>
+                  <p class="font-body-sm text-body-sm text-text-secondary mt-1">For large bilateral &amp; international
+                    NGOs</p>
+                </div>
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="font-financial-display-lg text-financial-display-lg text-text-primary font-bold">$599</span>
+                  <span class="font-body-sm text-body-sm text-text-muted">/ month (or GHS equivalent)</span>
+                </div>
+                <ul class="space-y-2.5 font-body-sm text-body-sm text-text-primary pt-2">
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span><strong>Unlimited Donor Grants</strong></span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Unlimited Staff &amp; Field Accounts</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Sub-Grantee Audit Management Portal</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Dedicated Accra Compliance Specialist</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                    <span>Custom API &amp; Historical Data Migration</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="pt-6 mt-6 border-t border-border-subtle">
+                <a class="w-full inline-flex items-center justify-center min-h-[44px] px-4 py-2.5 rounded-lg bg-surface-neutral-alt text-text-primary font-label-header text-label-header hover:bg-surface-container transition-colors"
+                  href="#contact-sales">
+                  Talk to Compliance Team
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 10: FREQUENTLY ASKED QUESTIONS (Accordion) -->
+      <section class="w-full bg-surface py-space-xl lg:py-space-2xl">
+        <div class="max-w-4xl mx-auto px-margin">
+          <div class="text-center mb-space-xl">
+            <span class="font-label-eyebrow text-label-eyebrow text-primary uppercase">Institutional Trust</span>
+            <h2 class="font-headline-xl text-headline-xl text-text-primary">
+              Frequently asked fiduciary questions
+            </h2>
+            <p class="font-body-md text-body-md text-text-secondary mt-2">
+              Everything your finance directors, board members, and donor auditors need to know.
+            </p>
+          </div>
+          <div class="space-y-space-sm" id="faq-accordion">
+            <!-- FAQ Item 1 -->
+            <div class="bg-surface-card rounded-lg shadow-sm border border-border-subtle overflow-hidden">
+              <button
+                class="w-full p-4 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-text-primary"
+                onclick="toggleFaq(this)" type="button">
+                <span>How does <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> handle USAID 2 CFR 200 uniform guidance audits?</span>
+                <span
+                  class="material-symbols-outlined text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="faq-answer hidden px-4 pb-4 font-body-sm text-body-sm text-text-secondary">
+                <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> enforces explicit direct vs. indirect cost segregations at every transaction entry point. All
+                procurement includes mandatory documentation tags, competitive quotations, and timesheet allocations
+                required under 2 CFR 200 Subpart E (Cost Principles). During an audit, you can grant read-only access to
+                external auditors to inspect transaction trails with zero export lag.
+              </div>
+            </div>
+            <!-- FAQ Item 2 -->
+            <div class="bg-surface-card rounded-lg shadow-sm border border-border-subtle overflow-hidden">
+              <button
+                class="w-full p-4 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-text-primary"
+                onclick="toggleFaq(this)" type="button">
+                <span>Are Ghanaian GRA PAYE tax bands automatically updated when Parliament changes laws?</span>
+                <span
+                  class="material-symbols-outlined text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="faq-answer hidden px-4 pb-4 font-body-sm text-body-sm text-text-secondary">
+                Yes. Our Ghanaian statutory compliance team updates tax bands and SSNIT contribution ceilings whenever
+                the Ghana Revenue Authority or the Ministry of Finance issues new statutory directives. Updates apply
+                automatically without needing expensive software consultants or manual formula changes.
+              </div>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div class="bg-surface-card rounded-lg shadow-sm border border-border-subtle overflow-hidden">
+              <button
+                class="w-full p-4 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-text-primary"
+                onclick="toggleFaq(this)" type="button">
+                <span>How hard is it to migrate our historical data from QuickBooks, Tally, or Excel?</span>
+                <span
+                  class="material-symbols-outlined text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="faq-answer hidden px-4 pb-4 font-body-sm text-body-sm text-text-secondary">
+                We provide pre-built opening balance migration templates specifically designed to convert legacy flat
+                commercial charts of accounts into our dimensional fund accounting structure. Standard onboarding takes
+                5 to 10 business days with our local Accra accounting specialists assisting your team.
+              </div>
+            </div>
+            <!-- FAQ Item 4 -->
+            <div class="bg-surface-card rounded-lg shadow-sm border border-border-subtle overflow-hidden">
+              <button
+                class="w-full p-4 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-text-primary"
+                onclick="toggleFaq(this)" type="button">
+                <span>Can we restrict field staff from viewing consolidated donor budgets?</span>
+                <span
+                  class="material-symbols-outlined text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="faq-answer hidden px-4 pb-4 font-body-sm text-body-sm text-text-secondary">
+                Absolutely. <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong> features granular role-based permissions. A field officer in Tamale only views their
+                specific project activities and requisition quotas, while the Director of Finance in Accra retains
+                360-degree consolidated visibility across all bilateral and core institutional funds.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 11: FINAL HIGH-CONVERSION CTA BANNER -->
+      <section class="w-full bg-surface py-space-xl lg:py-space-2xl">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="bg-primary rounded-2xl p-space-lg lg:p-space-2xl shadow-xl text-center relative overflow-hidden">
+            <!-- Subtle Structural Tint Corner Details -->
+            <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-white/5 rounded-full"></div>
+            <div class="absolute -right-12 -top-12 w-48 h-48 bg-primary-tint/10 rounded-full"></div>
+            <div class="relative z-10 max-w-3xl mx-auto space-y-space-md">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white font-label-eyebrow text-label-eyebrow uppercase">
+                <span class="material-symbols-outlined text-[16px]">lock_reset</span>
+                Zero Setup Risk
+              </div>
+              <h2 class="font-headline-xl text-headline-xl text-text-inverted">
+                Bring your NGO's finances, grants, and field operations together.
+              </h2>
+              <p class="font-body-lead text-body-lead text-text-inverted/85">
+                Join the forward-thinking civil society institutions and bilateral grantees running audit-proof,
+                transparent financial engines.
+              </p>
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-space-sm pt-2">
+                <a class="w-full sm:w-auto inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 rounded-lg bg-surface-card text-primary font-label-header text-label-header hover:bg-surface-container transition-colors shadow-lg"
+                  href="#start-trial" id="start-trial">
+                  Start your free 14-day trial
+                </a>
+                <a class="w-full sm:w-auto inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 rounded-lg bg-white/10 text-text-inverted font-label-header text-label-header hover:bg-white/20 transition-colors"
+                  href="#contact-sales" id="contact-sales">
+                  Schedule a technical walkthrough
+                </a>
+              </div>
+              <div
+                class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-space-sm text-text-inverted/70 text-xs font-body-sm text-body-sm">
+                <span>• No credit card required</span>
+                <span>• Full live access to donor reporting suites</span>
+                <span>• Dedicated Ghanaian onboarding specialist</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Interactive JavaScript logic for tab switching & FAQ accordion -->
+      <script>
+        function switchModuleTab(tabId, buttonElement) {
+          // Hide all tabs
+          const panes = document.querySelectorAll('.module-tab-pane');
+          panes.forEach(pane => pane.classList.add('hidden'));
+
+          // Show targeted tab
+          const targetPane = document.getElementById(tabId);
+          if (targetPane) {
+            targetPane.classList.remove('hidden');
+          }
+
+          // Reset button styles
+          const buttons = document.querySelectorAll('.module-tab-btn');
+          buttons.forEach(btn => {
+            btn.classList.remove('bg-primary-container', 'text-text-inverted', 'shadow-sm');
+            btn.classList.add('bg-surface-neutral-alt', 'text-text-secondary');
+          });
+
+          // Highlight active button
+          buttonElement.classList.remove('bg-surface-neutral-alt', 'text-text-secondary');
+          buttonElement.classList.add('bg-primary-container', 'text-text-inverted', 'shadow-sm');
+        }
+
+        function toggleFaq(btn) {
+          const answer = btn.nextElementSibling;
+          const icon = btn.querySelector('.material-symbols-outlined');
+          const isHidden = answer.classList.contains('hidden');
+
+          // Close all answers
+          document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
+          document.querySelectorAll('#faq-accordion .material-symbols-outlined').forEach(i => i.style.transform = 'rotate(0deg)');
+
+          if (isHidden) {
+            answer.classList.remove('hidden');
+            icon.style.transform = 'rotate(180deg)';
+          }
+        }
+      </script>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-navy text-text-inverted pt-space-2xl pb-space-xl">
+    <div class="max-w-7xl mx-auto px-margin">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-2xl border-b border-white/10">
+        <div class="lg:col-span-2 flex flex-col gap-space-md">
+          <div class="flex items-center gap-space-sm">
+            <span
+              class="font-headline-sm text-headline-sm text-text-inverted uppercase tracking-tight"><strong style="color: #fff;">OM</strong><strong style="color: #128893;">NIS</strong></span>
+          </div>
+          <p class="font-body-sm text-body-sm text-text-muted max-w-sm">Fiduciary precision and audit-grade financial
+            controls engineered specifically for non-governmental organizations, USAID/FCDO bilateral grantees, and
+            Ghanaian statutory institutions.</p>
+          <div class="flex flex-wrap gap-space-xs"><span
+              class="px-space-sm py-space-xs rounded-full bg-white/5 text-text-inverted font-label-badge text-label-badge border border-white/10">GRA
+              PAYE Validated</span><span
+              class="px-space-sm py-space-xs rounded-full bg-white/5 text-text-inverted font-label-badge text-label-badge border border-white/10">SSNIT
+              Tier 1 &amp; 2 Compliant</span><span
+              class="px-space-sm py-space-xs rounded-full bg-white/5 text-text-inverted font-label-badge text-label-badge border border-white/10">2
+              CFR 200 Uniform Guidance</span></div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-label-eyebrow text-label-eyebrow text-text-muted uppercase">Product</h4>
+          <div class="flex flex-col gap-space-xs"><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="finance" href="#">Fund Accounting</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="grants" href="#">Grant Management</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="ghana-payroll" href="#">Statutory Ghana Payroll</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="procurement" href="#">Procurement &amp; Inventory</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="field-operations" href="#">Field Operations</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="finance" href="#">Multi-currency GL</a></div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-label-eyebrow text-label-eyebrow text-text-muted uppercase">Resources</h4>
+          <div class="flex flex-col gap-space-xs"><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="documentation" href="#">Documentation</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="compliance-guide" href="#">Donor Compliance Guide</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="security-audit" href="#">Security &amp; Audit</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="api-reference" href="#">API Reference</a></div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-label-eyebrow text-label-eyebrow text-text-muted uppercase">Company</h4>
+          <div class="flex flex-col gap-space-xs"><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="about-us" href="#">About Us</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="contact" href="#">Contact</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="careers" href="#">Careers</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="privacy-policy" href="#">Privacy Policy</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="terms-of-service" href="#">Terms of Service</a></div>
+        </div>
+      </div>
+      <div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+        <div class="font-body-sm text-body-sm text-text-muted">© 2025 <strong style="color: #fff;">OM</strong><strong style="color: #128893;">NIS</strong> Ltd. Accra &amp; Global. Built for
+          fiduciary transparency.</div>
+        <div class="flex items-center gap-space-md text-text-muted font-body-sm text-body-sm">
+          <div class="flex items-center gap-space-xs"><span
+              class="material-symbols-outlined text-[16px] text-status-success-fg">verified_user</span><span>SOC 2 Type
+              II Certified</span></div>
+          <div class="flex items-center gap-space-xs"><span
+              class="material-symbols-outlined text-[16px] text-status-success-fg">encrypted</span><span>256-Bit
+              Financial Vault</span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
