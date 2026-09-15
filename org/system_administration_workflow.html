@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>System & Audit — Control & Accountability Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f7f9ff", "on-tertiary": "#ffffff", "status-warning-bg": "#FEF3E6", "surface-dim": "#d1dbe7", "status-critical-bg": "#FDF0F0", "primary-fixed": "#a7eef6", "status-neutral-bg": "#ECEFF2", "secondary-container": "#d8e4ef", "status-success-border": "#9DD4B8", "inverse-primary": "#8bd2da", "on-tertiary-container": "#ffd892", "status-critical-border": "#F3A6A9", "nav-border": "#1E3243", "outline-variant": "#bec8c9", "text-muted": "#7B8C9A", "inverse-on-surface": "#e8f2fe", "secondary-fixed-dim": "#bcc8d3", "fund-temp-restricted": "#D99B00", "canvas-bg": "#F7F9FA", "tertiary-fixed": "#ffdea6", "surface-container-low": "#ecf4ff", "nav-text-primary": "#F4F7F9", "on-secondary": "#ffffff", "status-neutral-text": "#384551", "fund-restricted": "#B8860B", "surface-variant": "#d9e4ef", "inverse-surface": "#28313a", "status-success-text": "#0F6848", "on-primary-fixed": "#002022", "surface-container-highest": "#d9e4ef", "on-surface-variant": "#3f484a", "on-surface": "#131d25", "primary": "#005258", "on-error-container": "#93000a", "nav-text-muted": "#8EA2B4", "error-container": "#ffdad6", "outline": "#6f797a", "tertiary-fixed-dim": "#f7bd48", "nav-surface": "#152431", "status-success-bg": "#E8F5EE", "on-secondary-fixed-variant": "#3d4851", "error": "#ba1a1a", "on-secondary-fixed": "#121d25", "primary-fixed-dim": "#8bd2da", "on-primary-container": "#a1e9f1", "surface-secondary": "#F0F4F6", "status-critical-text": "#A81D24", "on-tertiary-fixed-variant": "#5d4200", "secondary-fixed": "#d8e4ef", "secondary": "#556069", "on-primary": "#ffffff", "surface-tint": "#16686f", "text-secondary": "#4E5D6A", "surface": "#f7f9ff", "on-primary-fixed-variant": "#004f55", "status-warning-text": "#914D03", "surface-container-high": "#dfe9f5", "tertiary-container": "#7f5b00", "status-warning-border": "#F6C88D", "tertiary": "#614500", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "text-primary": "#121A21", "border-subtle": "#DCE3E8", "surface-bright": "#f7f9ff", "on-secondary-container": "#5a666f", "surface-container": "#e5effb", "on-background": "#131d25", "border-strong": "#B8C4CE", "on-tertiary-fixed": "#271900", "primary-hover": "#144F54", "primary-container": "#1b6b72", "fund-unrestricted": "#1B6B72", "primary-tint": "#E4EFEF", "surface-card": "#FFFFFF", "status-neutral-border": "#CAD2D8", "nav-bg": "#0D1821" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1rem", "space-2xl": "2rem", "margin-compact": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-xxs": "0.125rem", "margin": "1.5rem", "space-xl": "1.5rem", "gutter-dense": "0.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "label-md": ["IBM Plex Sans"], "title-md": ["IBM Plex Sans"], "caption": ["IBM Plex Sans"], "headline-sm": ["IBM Plex Sans"], "body-sm": ["IBM Plex Sans"], "numeric-table": ["IBM Plex Sans"], "label-sm": ["IBM Plex Sans"], "numeric-table-bold": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "display-lg": ["IBM Plex Sans"], "title-sm": ["IBM Plex Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "numeric-table-bold": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }] } } } };</script>
+  <base target="_blank">
+
+<body class="bg-canvas-bg font-body-md text-text-primary antialiased min-h-screen">
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="fixed top-20 right-8 z-[100] transform transition-all duration-300 translate-y-[-20px] opacity-0 pointer-events-none flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg border border-status-success-border bg-status-success-bg text-status-success-text font-title-sm">
+    <span class="material-symbols-outlined text-[20px]">verified</span>
+    <span id="toastMessage">Audit trail exported successfully.</span>
+  </div>
+
+  <!-- Sidebar -->
+<aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+        <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center gap-2 px-3 py-1.5 rounded bg-primary-container text-on-primary font-title-sm text-title-sm transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Container -->
+  <div id="appMain" class="pl-64 flex flex-col min-h-screen">
+    <!-- Top Header -->
+    <header id="appHeader" class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-6 flex items-center justify-between gap-4 border-b border-border-subtle">
+      <div class="flex items-center flex-1 max-w-xl gap-4">
+        <div class="relative w-full flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span>
+          <input id="globalAuditSearch"
+            class="w-full pl-9 pr-4 py-1.5 bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-xs rounded-lg focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-primary transition-colors"
+            placeholder="Search audit trail by actor, action, record, reference (e.g., JE-2025, Kwesi, INV-00892)..." type="text" />
+        </div>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <!-- Role Awareness Badge -->
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-secondary text-text-secondary font-label-md text-xs">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[15px]">calendar_today</span>
+          <span>FY 2025 (Q2 Closed)</span>
+        </div>
+        <div class="flex items-center px-1 py-0.5 rounded bg-surface-secondary">
+          <span class="text-xs px-2 py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS (GH¢)</span>
+          <span class="text-xs px-2 py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <div class="h-5 w-px bg-border-subtle"></div>
+        <button class="relative p-1.5 rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+          <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-status-critical-text"></span>
+        </button>
+        <button class="p-1.5 rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button" title="Audit Help & Protocol">
+          <span class="material-symbols-outlined text-[20px]">help</span>
+        </button>
+        <div class="flex items-center gap-1 pl-1 cursor-pointer">
+          <div class="w-7 h-7 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-xs">AM</div>
+          <span class="material-symbols-outlined text-text-muted text-[16px]"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Canvas -->
+    <main class="w-full pt-16 bg-canvas-bg flex-1 pb-12">
+      <div class="flex flex-col w-full">
+        <!-- Top Context Header Bar -->
+        <section class="px-8 py-5 bg-surface-card shadow-sm border-b border-border-subtle flex flex-col gap-2">
+          <div class="flex items-center gap-1 text-text-muted text-xs font-caption">
+            <span class="hover:text-text-primary cursor-pointer transition-colors">Governance</span>
+            <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+            <span class="text-text-secondary font-title-sm">Administration</span>
+            <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+            <span class="text-fund-unrestricted font-medium">System & Audit</span>
+          </div>
+
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mt-1">
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-2.5">
+                <h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">System & Audit</h1>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-xs font-semibold border border-status-success-border">
+                  <span class="w-1.5 h-1.5 rounded-full bg-status-success-text animate-pulse"></span>
+                  Immutable Traceability Engine
+                </span>
+                <span class="text-xs px-2 py-0.5 rounded bg-surface-secondary text-text-muted font-mono">IPSAS-25 / USAID Audit Ready</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-0.5 max-w-4xl">
+                 Trace <strong>Who did what &rarr; when &rarr; to which record &rarr; what changed &rarr; what was the result</strong>.
+              </p>
+            </div>
+
+            <!-- Header Quick Action Controls -->
+            <div class="flex flex-wrap items-center gap-2">
+              <button id="viewToggleSystemBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-title-sm bg-surface-secondary text-text-secondary hover:text-text-primary hover:bg-surface-dim/50 border border-border-subtle transition-colors">
+                <span class="material-symbols-outlined text-[16px] text-fund-unrestricted">shield</span>
+                <span>System & Config Activity (8)</span>
+              </button>
+              <button id="refreshAuditBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface-secondary hover:bg-surface-dim/50 text-text-primary rounded text-xs font-title-sm transition-colors border border-border-subtle">
+                <span class="material-symbols-outlined text-[16px] text-text-secondary" id="refreshIcon">sync</span>
+                <span>Refresh Log</span>
+              </button>
+               <button id="exportAuditBtn"
+          class="h-[32px] px-3 bg-surface-secondary hover:bg-surface-dim/60 text-text-primary font-title-sm text-xs rounded-lg flex items-center gap-1.5 transition-colors border border-border-subtle shadow-sm"
+          type="button">
+          <span class="material-symbols-outlined text-[16px] text-text-secondary">file_download</span>
+          <span>Export Dossier</span>
+        </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="px-8 py-6 flex flex-col gap-6 max-w-[1600px] w-full mx-auto">
+          <!-- 1. Four Summary KPI Cards (Clickable Filter Controls) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Card 1: Total Audit Events -->
+            <div id="kpiCardTotal" onclick="applySummaryFilter('all')" class="bg-surface-card rounded-lg p-4 shadow-sm border border-border-subtle hover:border-fund-unrestricted/60 transition-all cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-xs uppercase tracking-wider text-text-muted">Total Audit Events</span>
+                  <span class="w-7 h-7 rounded bg-primary-tint flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-[16px]">history_edu</span>
+                  </span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-1.5">
+                  <span class="font-headline-lg text-headline-lg text-text-primary tracking-tight" id="kpiTotalCount">1,842</span>
+                  <span class="text-xs text-text-muted">persisted</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between text-xs">
+                <span class="text-text-secondary font-medium">Full Ledger & System Lifecycle</span>
+                <span class="text-primary font-semibold group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-0.5">Filter <span class="material-symbols-outlined text-[13px]">arrow_forward</span></span>
+              </div>
+            </div>
+
+            <!-- Card 2: Today's Activity -->
+            <div id="kpiCardToday" onclick="applySummaryFilter('today')" class="bg-surface-card rounded-lg p-4 shadow-sm border border-border-subtle hover:border-fund-unrestricted/60 transition-all cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-xs uppercase tracking-wider text-text-muted">Today's Activity</span>
+                  <span class="w-7 h-7 rounded bg-status-success-bg flex items-center justify-center text-status-success-text group-hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-[16px]">today</span>
+                  </span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-1.5">
+                  <span class="font-headline-lg text-headline-lg text-text-primary tracking-tight">46</span>
+                  <span class="text-xs text-status-success-text font-semibold">+18% vs daily avg</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between text-xs">
+                <span class="text-text-secondary font-medium">24 Jun 2025 (Active GMT)</span>
+                <span class="text-primary font-semibold group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-0.5">Filter <span class="material-symbols-outlined text-[13px]">arrow_forward</span></span>
+              </div>
+            </div>
+
+            <!-- Card 3: Configuration Changes -->
+            <div id="kpiCardConfig" onclick="applySummaryFilter('config')" class="bg-surface-card rounded-lg p-4 shadow-sm border border-border-subtle hover:border-fund-unrestricted/60 transition-all cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-xs uppercase tracking-wider text-text-muted">Configuration Changes</span>
+                  <span class="w-7 h-7 rounded bg-status-warning-bg flex items-center justify-center text-status-warning-text group-hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-[16px]">tune</span>
+                  </span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-1.5">
+                  <span class="font-headline-lg text-headline-lg text-text-primary tracking-tight">14</span>
+                  <span class="text-xs text-status-warning-text font-semibold">Roles, Rules & Dimensions</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between text-xs">
+                <span class="text-text-secondary font-medium">3 administrative revisions</span>
+                <span class="text-primary font-semibold group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-0.5">Filter <span class="material-symbols-outlined text-[13px]">arrow_forward</span></span>
+              </div>
+            </div>
+
+            <!-- Card 4: Approval / Workflow Events -->
+            <div id="kpiCardWorkflow" onclick="applySummaryFilter('workflow')" class="bg-surface-card rounded-lg p-4 shadow-sm border border-border-subtle hover:border-fund-unrestricted/60 transition-all cursor-pointer flex flex-col justify-between group">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-xs uppercase tracking-wider text-text-muted">Approval & Workflow Events</span>
+                  <span class="w-7 h-7 rounded bg-surface-secondary flex items-center justify-center text-text-secondary group-hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-[16px]">fact_check</span>
+                  </span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-1.5">
+                  <span class="font-headline-lg text-headline-lg text-text-primary tracking-tight">328</span>
+                  <span class="text-xs text-text-muted">this quarter</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between text-xs">
+                <span class="text-text-secondary font-medium">100% two-step verified</span>
+                <span class="text-primary font-semibold group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-0.5">Filter <span class="material-symbols-outlined text-[13px]">arrow_forward</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Interactive Search & Multi-Dimensional Filter Bar -->
+          <div class="bg-surface-card rounded-lg p-4 shadow-sm border border-border-subtle flex flex-col gap-3">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+              <!-- Inline Filter Selectors -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 flex-1">
+                <!-- Module Selector -->
+                <div>
+                  <label class="block text-[11px] font-label-md uppercase text-text-muted mb-1">Module / Source</label>
+                  <select id="filterModule" onchange="applyFilters()" class="w-full bg-surface-secondary text-xs font-body-md text-text-primary rounded px-2.5 py-1.5 border border-border-subtle focus:outline-none focus:ring-1 focus:ring-primary">
+                    <option value="">All Modules</option>
+                    <option value="Accounting">Accounting / GL</option>
+                    <option value="Payables">Accounts Payable</option>
+                    <option value="Banking">Banking & Treasury</option>
+                    <option value="Grants">Grants & Projects</option>
+                    <option value="Procurement">Procurement</option>
+                    <option value="Administration">System / Administration</option>
+                  </select>
+                </div>
+
+                <!-- Action Selector -->
+                <div>
+                  <label class="block text-[11px] font-label-md uppercase text-text-muted mb-1">Action Type</label>
+                  <select id="filterAction" onchange="applyFilters()" class="w-full bg-surface-secondary text-xs font-body-md text-text-primary rounded px-2.5 py-1.5 border border-border-subtle focus:outline-none focus:ring-1 focus:ring-primary">
+                    <option value="">All Actions</option>
+                    <option value="Posted">Posted</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Reconciled">Reconciled</option>
+                    <option value="Updated">Updated</option>
+                    <option value="Created">Created</option>
+                    <option value="Permission Changed">Permission Changed</option>
+                  </select>
+                </div>
+
+                <!-- Entity Type -->
+                <div>
+                  <label class="block text-[11px] font-label-md uppercase text-text-muted mb-1">Entity Type</label>
+                  <select id="filterEntity" onchange="applyFilters()" class="w-full bg-surface-secondary text-xs font-body-md text-text-primary rounded px-2.5 py-1.5 border border-border-subtle focus:outline-none focus:ring-1 focus:ring-primary">
+                    <option value="">All Entities</option>
+                    <option value="Journal Entry">Journal Entry</option>
+                    <option value="Supplier Invoice">Supplier Invoice</option>
+                    <option value="Purchase Order">Purchase Order</option>
+                    <option value="Bank Reconciliation">Bank Reconciliation</option>
+                    <option value="Grant Agreement">Grant Agreement</option>
+                    <option value="User Role / Permission">Role / Permission</option>
+                  </select>
+                </div>
+
+                <!-- User / Actor -->
+                <div>
+                  <label class="block text-[11px] font-label-md uppercase text-text-muted mb-1">User / Actor</label>
+                  <select id="filterUser" onchange="applyFilters()" class="w-full bg-surface-secondary text-xs font-body-md text-text-primary rounded px-2.5 py-1.5 border border-border-subtle focus:outline-none focus:ring-1 focus:ring-primary">
+                    <option value="">All Users</option>
+                    <option value="Ama Mensah">Ama Mensah (Finance Mgr)</option>
+                    <option value="Kwesi Appiah">Kwesi Appiah (Logistics Lead)</option>
+                    <option value="Sarah Mensah">Sarah Mensah (Senior Accountant)</option>
+                    <option value="Dr. Emmanuel Osei">Dr. Emmanuel Osei (Medical Dir)</option>
+                    <option value="System Engine">System Engine (Automated)</option>
+                  </select>
+                </div>
+
+                <!-- Fund / Grant Scope -->
+                <div>
+                  <label class="block text-[11px] font-label-md uppercase text-text-muted mb-1">Fund Scope</label>
+                  <select id="filterFund" onchange="applyFilters()" class="w-full bg-surface-secondary text-xs font-body-md text-text-primary rounded px-2.5 py-1.5 border border-border-subtle focus:outline-none focus:ring-1 focus:ring-primary">
+                    <option value="">All Funding</option>
+                    <option value="Restricted">Restricted (USAID / GF)</option>
+                    <option value="Temp Restricted">Temp Restricted (EU)</option>
+                    <option value="Unrestricted">Unrestricted (Core Admin)</option>
+                  </select>
+                </div>
+
+                <!-- Date Range Selector -->
+                <div>
+                  <label class="block text-[11px] font-label-md uppercase text-text-muted mb-1">Date Range</label>
+                  <select id="filterDateRange" onchange="applyFilters()" class="w-full bg-surface-secondary text-xs font-body-md text-text-primary rounded px-2.5 py-1.5 border border-border-subtle focus:outline-none focus:ring-1 focus:ring-primary">
+                    <option value="today">Today (24 Jun 2025)</option>
+                    <option value="week" selected>This Week (18–24 Jun)</option>
+                    <option value="month">Current Month (June)</option>
+                    <option value="all">Full Fiscal Year (FY25)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Clear Filters Button -->
+              <div class="flex items-end shrink-0">
+                <button onclick="clearAllFilters()" class="px-3 py-1.5 text-xs text-text-secondary hover:text-status-critical-text hover:bg-status-critical-bg rounded font-title-sm border border-border-subtle transition-colors flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[15px]">clear_all</span>
+                  <span>Clear All</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Active Filter Chips Row -->
+            <div id="filterChipsRow" class="flex flex-wrap items-center gap-2 pt-2 border-t border-border-subtle/50 text-xs">
+              <span class="text-text-muted text-[11px] font-medium">Active Filters:</span>
+              <span id="chipStatus" class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-tint text-primary font-medium">
+                Scope: All Persistent Events
+              </span>
+              <span id="chipCount" class="text-text-muted text-[11px] ml-auto">Showing <strong id="visibleCountText" class="text-text-primary">8</strong> of 8 audit events</span>
+            </div>
+          </div>
+
+          <!-- 3. Primary Audit Event Table -->
+          <div class="bg-surface-card rounded-lg shadow-sm border border-border-subtle flex flex-col overflow-hidden">
+            <!-- Table Action Header -->
+            <div class="p-4 bg-surface-card flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border-subtle">
+              <div class="flex items-center gap-2">
+                <h2 class="font-headline-sm text-headline-sm text-text-primary">Audit Event Master Register</h2>
+                <span class="px-2 py-0.5 rounded-full bg-primary-tint text-primary font-label-sm text-xs font-bold">Immutable Ledger</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-text-muted">Click row for full field-level delta inspection</span>
+              </div>
+            </div>
+
+            <!-- Table Container -->
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-surface-secondary text-[11px] font-label-md uppercase tracking-wider text-text-secondary select-none border-b border-border-subtle">
+                    <th class="py-3 px-3 font-semibold w-32">Date / Time (GMT)</th>
+                    <th class="py-3 px-3 font-semibold w-40">User / Actor</th>
+                    <th class="py-3 px-3 font-semibold w-36">Action</th>
+                    <th class="py-3 px-3 font-semibold w-32">Entity Type</th>
+                    <th class="py-3 px-3 font-semibold w-48">Entity / Record</th>
+                    <th class="py-3 px-3 font-semibold w-28">Reference</th>
+                    <th class="py-3 px-3 font-semibold">Change / Delta Description</th>
+                    <th class="py-3 px-3 font-semibold w-28">Previous Status</th>
+                    <th class="py-3 px-3 font-semibold w-28">New Status</th>
+                    <th class="py-3 px-3 font-semibold w-28">Module</th>
+                    <th class="py-3 px-3 text-right font-semibold w-20">Inspect</th>
+                  </tr>
+                </thead>
+                <tbody id="auditTableBody" class="divide-y divide-border-subtle/50 text-xs font-body-md text-text-primary">
+                  <!-- Row 1: Journal Entry Posted -->
+                  <tr onclick="openAuditDetail(0)" class="audit-row hover:bg-primary-tint/30 transition-colors cursor-pointer group" data-module="Accounting" data-action="Posted" data-entity="Journal Entry" data-user="Sarah Mensah" data-fund="Restricted">
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <div class="font-numeric-table font-semibold text-text-primary">24 Jun 2025</div>
+                      <div class="text-[11px] text-text-muted font-mono">14:22:18 GMT</div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-primary-tint text-primary text-[10px] font-bold flex items-center justify-center">SM</div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-text-primary leading-tight">Sarah Mensah</span>
+                          <span class="text-[10px] text-text-muted">Senior Grants Acct</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm font-semibold">
+                        <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Journal Entry Posted
+                      </span>
+                    </td>
+                    <td class="py-3 px-3 text-text-secondary font-medium">Journal Entry</td>
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-text-primary truncate max-w-[190px]" title="Escrow USD to GHS Disbursed">Escrow USD to GHS Disbursed</div>
+                      <div class="text-[10px] text-text-muted">USAID-GH-2024-ED09</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono font-semibold text-fund-unrestricted">JE-2025-00109</td>
+                    <td class="py-3 px-3 text-text-secondary">
+                      Posted 2 ledger lines: Dr Cash (StanChart) GHS 82,000 / Cr Escrow
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-medium text-[11px]">Pending Approval</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text font-semibold text-[11px]">Posted</span>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px]">Accounting</span>
+                    </td>
+                    <td class="py-3 px-3 text-right whitespace-nowrap">
+                      <span class="text-primary group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </span>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2: Supplier Invoice Approved -->
+                  <tr onclick="openAuditDetail(1)" class="audit-row hover:bg-primary-tint/30 transition-colors cursor-pointer group" data-module="Payables" data-action="Approved" data-entity="Supplier Invoice" data-user="Ama Mensah" data-fund="Restricted">
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <div class="font-numeric-table font-semibold text-text-primary">24 Jun 2025</div>
+                      <div class="text-[11px] text-text-muted font-mono">11:05:40 GMT</div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-primary-container text-white text-[10px] font-bold flex items-center justify-center">AM</div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-text-primary leading-tight">Ama Mensah</span>
+                          <span class="text-[10px] text-text-muted">Finance Manager</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">check_circle</span> Invoice Approved
+                      </span>
+                    </td>
+                    <td class="py-3 px-3 text-text-secondary font-medium">Supplier Invoice</td>
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-text-primary truncate max-w-[190px]">M&G Pharmaceuticals Med Supplies</div>
+                      <div class="text-[10px] text-text-muted">PO-2025-084 / GF-MAL-2023</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono font-semibold text-fund-unrestricted">INV-2025-00892</td>
+                    <td class="py-3 px-3 text-text-secondary">
+                      Sign-off GHS 68,000.00 following 3-way match validation (GRN-0041)
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-medium text-[11px]">Under Review</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text font-semibold text-[11px]">Approved for Pay</span>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px]">Payables</span>
+                    </td>
+                    <td class="py-3 px-3 text-right whitespace-nowrap">
+                      <span class="text-primary group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </span>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3: Bank Reconciliation Completed -->
+                  <tr onclick="openAuditDetail(2)" class="audit-row hover:bg-primary-tint/30 transition-colors cursor-pointer group" data-module="Banking" data-action="Reconciled" data-entity="Bank Reconciliation" data-user="Sarah Mensah" data-fund="Unrestricted">
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <div class="font-numeric-table font-semibold text-text-primary">24 Jun 2025</div>
+                      <div class="text-[11px] text-text-muted font-mono">09:48:12 GMT</div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-primary-tint text-primary text-[10px] font-bold flex items-center justify-center">SM</div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-text-primary leading-tight">Sarah Mensah</span>
+                          <span class="text-[10px] text-text-muted">Senior Grants Acct</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">done_all</span> Bank Reconciled
+                      </span>
+                    </td>
+                    <td class="py-3 px-3 text-text-secondary font-medium">Bank Reconciliation</td>
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-text-primary truncate max-w-[190px]">Ecobank Ghana (Accra Operating)</div>
+                      <div class="text-[10px] text-text-muted">AC-••••8104 (GL: 1010-01)</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono font-semibold text-fund-unrestricted">REC-2025-06B</td>
+                    <td class="py-3 px-3 text-text-secondary">
+                      Cleared 735 transactions totaling GHS 842,500.00; variance = GHS 0.00
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-medium text-[11px]">Unreconciled</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text font-semibold text-[11px]">Reconciled</span>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px]">Banking</span>
+                    </td>
+                    <td class="py-3 px-3 text-right whitespace-nowrap">
+                      <span class="text-primary group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </span>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4: Purchase Order Updated -->
+                  <tr onclick="openAuditDetail(3)" class="audit-row hover:bg-primary-tint/30 transition-colors cursor-pointer group" data-module="Procurement" data-action="Updated" data-entity="Purchase Order" data-user="Kwesi Appiah" data-fund="Restricted">
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <div class="font-numeric-table font-semibold text-text-primary">23 Jun 2025</div>
+                      <div class="text-[11px] text-text-muted font-mono">16:40:02 GMT</div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-secondary-fixed text-text-secondary text-[10px] font-bold flex items-center justify-center">KA</div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-text-primary leading-tight">Kwesi Appiah</span>
+                          <span class="text-[10px] text-text-muted">Logistics Lead</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-primary font-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">edit</span> PO Updated
+                      </span>
+                    </td>
+                    <td class="py-3 px-3 text-text-secondary font-medium">Purchase Order</td>
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-text-primary truncate max-w-[190px]">40 Solar Distribution Kits (Tamale)</div>
+                      <div class="text-[10px] text-text-muted">Vendor: SunPower Ghana Ltd</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono font-semibold text-fund-unrestricted">PO-2025-095</td>
+                    <td class="py-3 px-3 text-text-secondary">
+                      Warranty terms upgraded to 36 months; delivery schedule shifted to 28 Jun
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-muted font-medium text-[11px]">Draft Approved</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-primary-tint text-primary font-semibold text-[11px]">Active Issued</span>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px]">Procurement</span>
+                    </td>
+                    <td class="py-3 px-3 text-right whitespace-nowrap">
+                      <span class="text-primary group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </span>
+                    </td>
+                  </tr>
+
+                  <!-- Row 5: User Role Updated -->
+                  <tr onclick="openAuditDetail(4)" class="audit-row hover:bg-primary-tint/30 transition-colors cursor-pointer group" data-module="Administration" data-action="Permission Changed" data-entity="User Role / Permission" data-user="Ama Mensah" data-fund="Unrestricted">
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <div class="font-numeric-table font-semibold text-text-primary">23 Jun 2025</div>
+                      <div class="text-[11px] text-text-muted font-mono">14:15:30 GMT</div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-primary-container text-white text-[10px] font-bold flex items-center justify-center">AM</div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-text-primary leading-tight">Ama Mensah</span>
+                          <span class="text-[10px] text-text-muted">Lead Administrator</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">security</span> Role Updated
+                      </span>
+                    </td>
+                    <td class="py-3 px-3 text-text-secondary font-medium">User Role</td>
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-text-primary truncate max-w-[190px]">User: Joseph Danquah (Fleet Lead)</div>
+                      <div class="text-[10px] text-text-muted">Duty Station: Accra Core Depots</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono font-semibold text-fund-unrestricted">SEC-USR-0122</td>
+                    <td class="py-3 px-3 text-text-secondary">
+                      Assigned dual role: 'Warehouse Custodian' + 'Asset Disposal Initiator'
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-muted font-medium text-[11px]">Warehouse Only</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text font-semibold text-[11px]">Privileged Role</span>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px]">Administration</span>
+                    </td>
+                    <td class="py-3 px-3 text-right whitespace-nowrap">
+                      <span class="text-primary group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </span>
+                    </td>
+                  </tr>
+
+                  <!-- Row 6: Approval Rule Changed -->
+                  <tr onclick="openAuditDetail(5)" class="audit-row hover:bg-primary-tint/30 transition-colors cursor-pointer group" data-module="Administration" data-action="Updated" data-entity="Approval Rule Changed" data-user="Ama Mensah" data-fund="Unrestricted">
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <div class="font-numeric-table font-semibold text-text-primary">22 Jun 2025</div>
+                      <div class="text-[11px] text-text-muted font-mono">17:10:44 GMT</div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-primary-container text-white text-[10px] font-bold flex items-center justify-center">AM</div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-text-primary leading-tight">Ama Mensah</span>
+                          <span class="text-[10px] text-text-muted">Finance Lead</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">rule</span> Rule Modified
+                      </span>
+                    </td>
+                    <td class="py-3 px-3 text-text-secondary font-medium">Approval Policy</td>
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-text-primary truncate max-w-[190px]">Purchase Requisition Threshold</div>
+                      <div class="text-[10px] text-text-muted">Policy: POL-PROC-2025-A</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono font-semibold text-fund-unrestricted">RUL-APP-004</td>
+                    <td class="py-3 px-3 text-text-secondary">
+                      Elevated dual-signoff threshold from GHS 50,000 to GHS 75,000 per Board charter
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-muted font-medium text-[11px]">Threshold 50k</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-primary-tint text-primary font-semibold text-[11px]">Threshold 75k</span>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px]">Administration</span>
+                    </td>
+                    <td class="py-3 px-3 text-right whitespace-nowrap">
+                      <span class="text-primary group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </span>
+                    </td>
+                  </tr>
+
+                  <!-- Row 7: Grant Status Changed -->
+                  <tr onclick="openAuditDetail(6)" class="audit-row hover:bg-primary-tint/30 transition-colors cursor-pointer group" data-module="Grants" data-action="Updated" data-entity="Grant Agreement" data-user="Dr. Emmanuel Osei" data-fund="Restricted">
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <div class="font-numeric-table font-semibold text-text-primary">22 Jun 2025</div>
+                      <div class="text-[11px] text-text-muted font-mono">10:14:00 GMT</div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-surface-dim text-text-primary text-[10px] font-bold flex items-center justify-center">EO</div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-text-primary leading-tight">Dr. Emmanuel Osei</span>
+                          <span class="text-[10px] text-text-muted">Medical Director</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">verified</span> Grant Cleared
+                      </span>
+                    </td>
+                    <td class="py-3 px-3 text-text-secondary font-medium">Grant Agreement</td>
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-text-primary truncate max-w-[190px]">Global Fund Health Phase II</div>
+                      <div class="text-[10px] text-text-muted">GF-MAL-2023-GH • Ashanti Hub</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono font-semibold text-fund-unrestricted">GRT-GF-2023</td>
+                    <td class="py-3 px-3 text-text-secondary">
+                      External compliance audit passed; final milestone signed & tranche unlocked
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-medium text-[11px]">Audit Underway</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text font-semibold text-[11px]">Audited & Cleared</span>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px]">Grants</span>
+                    </td>
+                    <td class="py-3 px-3 text-right whitespace-nowrap">
+                      <span class="text-primary group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </span>
+                    </td>
+                  </tr>
+
+                  <!-- Row 8: Fund Configuration Updated -->
+                  <tr onclick="openAuditDetail(7)" class="audit-row hover:bg-primary-tint/30 transition-colors cursor-pointer group" data-module="Administration" data-action="Updated" data-entity="Fund Configuration" data-user="System Engine" data-fund="Temp Restricted">
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <div class="font-numeric-table font-semibold text-text-primary">21 Jun 2025</div>
+                      <div class="text-[11px] text-text-muted font-mono">23:59:50 GMT</div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-nav-surface text-fund-temp-restricted text-[10px] font-bold flex items-center justify-center">SE</div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-text-primary leading-tight">System Engine</span>
+                          <span class="text-[10px] text-text-muted">Automated Daemon</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-primary font-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">settings_backup_restore</span> Dimension Rollover
+                      </span>
+                    </td>
+                    <td class="py-3 px-3 text-text-secondary font-medium">Fund Dimension</td>
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-text-primary truncate max-w-[190px]">EU Climate Action (Savannah)</div>
+                      <div class="text-[10px] text-text-muted">Fund Code: FND-EU-CLIM</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono font-semibold text-fund-unrestricted">FND-CFG-002</td>
+                    <td class="py-3 px-3 text-text-secondary">
+                      Automated rollover of unspent GHS 136,000 to Q3 multi-year capital commitment
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-muted font-medium text-[11px]">Q2 Budget Cap</span>
+                    </td>
+                    <td class="py-3 px-3">
+                      <span class="px-1.5 py-0.5 rounded bg-primary-tint text-primary font-semibold text-[11px]">Q3 Rolled Over</span>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap">
+                      <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px]">Administration</span>
+                    </td>
+                    <td class="py-3 px-3 text-right whitespace-nowrap">
+                      <span class="text-primary group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Empty State Display (Hidden by default) -->
+            <div id="emptyAuditState" class="hidden p-12 flex-col items-center justify-center text-center">
+              <span class="w-12 h-12 rounded-full bg-surface-secondary text-text-muted flex items-center justify-center mb-3">
+                <span class="material-symbols-outlined text-[28px]">manage_search</span>
+              </span>
+              <h3 class="font-title-md text-title-md text-text-primary">No audit activity found</h3>
+              <p class="font-body-sm text-text-muted max-w-sm mt-1">No recorded audit events match the selected filter parameters. Adjust your search keywords or clear the active filter constraints.</p>
+              <button onclick="clearAllFilters()" class="mt-4 px-4 py-1.5 bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-xs rounded transition-colors shadow-sm">
+                Reset All Filters
+              </button>
+            </div>
+
+            <!-- Table Footer Pagination & Ledger Integrity -->
+            <div class="p-3.5 bg-surface-secondary flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-secondary border-t border-border-subtle">
+              <div class="flex items-center gap-2">
+                <span class="inline-flex items-center gap-1 font-semibold text-text-primary">
+                  <span class="w-2 h-2 rounded-full bg-status-success-text"></span>
+                  Cryptographic Hash Chain: SHA-256 Validated
+                </span>
+                <span class="text-text-muted">• Block #849182</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span>Page <strong>1</strong> of 1 (8 displayed)</span>
+                <div class="flex items-center gap-1">
+                  <button class="px-2 py-1 rounded bg-surface-card border border-border-subtle text-text-muted cursor-not-allowed opacity-60">Prev</button>
+                  <button class="px-2 py-1 rounded bg-surface-card border border-border-subtle text-text-muted cursor-not-allowed opacity-60">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Secondary View: System & Configuration Activity (Distinct Tab / Section) -->
+          <div id="systemActivitySection" class="bg-surface-card rounded-lg p-5 shadow-sm border border-border-subtle flex flex-col gap-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-border-subtle">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-headline-sm text-headline-sm text-text-primary">Administrative & System Security Activity</h3>
+                  <span class="px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm text-[11px] font-bold">Admin Level Access</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-text-muted mt-0.5">
+                  Privileged infrastructure logging: authentication events, permission delegations, chart of accounts changes, and automated daemon executions.
+                </p>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="text-text-muted">Separate from day-to-day transactions</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <!-- Security Item 1 -->
+              <div class="p-3.5 rounded bg-surface-secondary border border-border-subtle flex flex-col justify-between gap-2">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-text-muted">LOG-AUTH-8821</span>
+                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-status-success-bg text-status-success-text font-semibold">MFA Verified</span>
+                  </div>
+                  <div class="font-title-sm text-text-primary mt-1">Director of Finance Session Started</div>
+                  <p class="text-xs text-text-secondary mt-0.5">Ama Mensah authenticated via FIDO2 hardware token from Accra HQ subnet (192.168.10.42).</p>
+                </div>
+                <div class="text-[11px] text-text-muted border-t border-border-subtle/60 pt-2 flex items-center justify-between">
+                  <span>24 Jun 2025 • 08:30:12 GMT</span>
+                  <span class="text-primary font-semibold cursor-pointer hover:underline" onclick="openAuditDetail(4)">Inspect</span>
+                </div>
+              </div>
+
+              <!-- Security Item 2 -->
+              <div class="p-3.5 rounded bg-surface-secondary border border-border-subtle flex flex-col justify-between gap-2">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-text-muted">LOG-RULE-0044</span>
+                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-status-warning-bg text-status-warning-text font-semibold">Policy Update</span>
+                  </div>
+                  <div class="font-title-sm text-text-primary mt-1">Approval Matrix Threshold Elevated</div>
+                  <p class="text-xs text-text-secondary mt-0.5">Purchase Requisition threshold adjusted from GHS 50,000 to GHS 75,000. Verified by Audit Committee signoff.</p>
+                </div>
+                <div class="text-[11px] text-text-muted border-t border-border-subtle/60 pt-2 flex items-center justify-between">
+                  <span>22 Jun 2025 • 17:10:44 GMT</span>
+                  <span class="text-primary font-semibold cursor-pointer hover:underline" onclick="openAuditDetail(5)">Inspect</span>
+                </div>
+              </div>
+
+              <!-- Security Item 3 -->
+              <div class="p-3.5 rounded bg-surface-secondary border border-border-subtle flex flex-col justify-between gap-2">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-text-muted">LOG-COA-0199</span>
+                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-surface-card text-text-primary font-semibold border border-border-subtle">GL Dimension</span>
+                  </div>
+                  <div class="font-title-sm text-text-primary mt-1">Account Added: GL-5120-04</div>
+                  <p class="text-xs text-text-secondary mt-0.5">New GL account 'Mobile Solar Field Stations' mapped to cost center CC-401 (Tamale Mission).</p>
+                </div>
+                <div class="text-[11px] text-text-muted border-t border-border-subtle/60 pt-2 flex items-center justify-between">
+                  <span>20 Jun 2025 • 11:24:00 GMT</span>
+                  <span class="text-primary font-semibold cursor-pointer hover:underline" onclick="openAuditDetail(3)">Inspect</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- 5. Audit Event Detail Inspection Drawer (Slide-Over Panel) -->
+  <div id="auditDetailDrawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+    <!-- Backdrop -->
+    <div id="drawerBackdrop" class="absolute inset-0 bg-black/40 backdrop-blur-[1px] transition-opacity" onclick="closeAuditDetail()"></div>
+
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div id="drawerPanel" class="w-screen max-w-2xl bg-surface-card shadow-2xl border-l border-border-subtle flex flex-col justify-between transform transition-transform duration-300 translate-x-full pointer-events-auto">
+        <!-- Drawer Header -->
+        <div class="p-6 bg-surface-secondary border-b border-border-subtle flex items-start justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded bg-fund-unrestricted text-white font-mono text-xs font-semibold" id="drawerRefBadge">JE-2025-00109</span>
+              <span class="text-xs font-label-md px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-semibold" id="drawerActionBadge">Journal Entry Posted</span>
+            </div>
+            <h2 class="font-headline-sm text-headline-sm text-text-primary mt-2" id="drawerTitle">Audit Event Inspection</h2>
+            <p class="text-xs text-text-secondary mt-0.5" id="drawerSubtitle">Full record state before and after modification</p>
+          </div>
+          <button onclick="closeAuditDetail()" class="p-1.5 rounded text-text-secondary hover:text-text-primary hover:bg-surface-dim/40 transition-colors">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+
+        <!-- Drawer Content Body -->
+        <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
+          <!-- 1. Event Information -->
+          <div>
+            <h4 class="text-xs font-label-md uppercase tracking-wider text-text-muted mb-2.5">1. Event Metadata</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3.5 bg-surface-secondary rounded border border-border-subtle text-xs">
+              <div>
+                <span class="text-text-muted block text-[11px]">Timestamp (GMT)</span>
+                <strong class="text-text-primary font-mono" id="drawerTimestamp">24 Jun 2025, 14:22:18</strong>
+              </div>
+              <div>
+                <span class="text-text-muted block text-[11px]">Actor / User</span>
+                <strong class="text-text-primary" id="drawerActor">Sarah Mensah</strong>
+              </div>
+              <div>
+                <span class="text-text-muted block text-[11px]">Originating Module</span>
+                <strong class="text-text-primary" id="drawerModule">Accounting (General Ledger)</strong>
+              </div>
+              <div>
+                <span class="text-text-muted block text-[11px]">Entity Type</span>
+                <strong class="text-text-primary" id="drawerEntityType">Journal Entry</strong>
+              </div>
+              <div>
+                <span class="text-text-muted block text-[11px]">Record Reference</span>
+                <strong class="text-fund-unrestricted font-mono font-semibold" id="drawerRef">JE-2025-00109</strong>
+              </div>
+              <div>
+                <span class="text-text-muted block text-[11px]">Host / IP Address</span>
+                <span class="text-text-secondary font-mono text-[11px]">192.168.10.42 (Accra)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Change Information (Field-by-Field Delta) -->
+          <div>
+            <h4 class="text-xs font-label-md uppercase tracking-wider text-text-muted mb-2.5">2. Field-Level Change Information (Delta)</h4>
+            <div class="border border-border-subtle rounded overflow-hidden">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-surface-secondary text-[11px] font-label-md text-text-secondary uppercase border-b border-border-subtle">
+                  <tr>
+                    <th class="py-2.5 px-3">Field Name</th>
+                    <th class="py-2.5 px-3">Previous Value (Before)</th>
+                    <th class="py-2.5 px-3">New Value (After)</th>
+                  </tr>
+                </thead>
+                <tbody id="drawerDeltaTableBody" class="divide-y divide-border-subtle font-body-sm">
+                  <!-- Dynamic rows inserted by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 3. Related ERP Context (Connected Links) -->
+          <div>
+            <h4 class="text-xs font-label-md uppercase tracking-wider text-text-muted mb-2.5">3. Related Financial & Operational Context</h4>
+            <div class="grid grid-cols-2 gap-2.5" id="drawerContextLinks">
+              <!-- Linked context badges -->
+              <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">account_balance_wallet</span>
+                  <span>Fund: <strong class="text-text-primary">USAID Education Fund</strong></span>
+                </div>
+                <span class="text-[10px] px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-semibold">Restricted</span>
+              </div>
+              <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">award_star</span>
+                  <span>Grant: <strong class="text-text-primary">USAID-GH-2024-ED09</strong></span>
+                </div>
+                <span class="text-primary font-semibold cursor-pointer">View</span>
+              </div>
+              <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">account_balance</span>
+                  <span>Bank Account: <strong class="text-text-primary">StanChart Escrow</strong></span>
+                </div>
+                <span class="text-primary font-semibold cursor-pointer">GL: 1010-02</span>
+              </div>
+              <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">fact_check</span>
+                  <span>Workflow: <strong class="text-text-primary">Two-Step Dual Signoff</strong></span>
+                </div>
+                <span class="text-status-success-text font-semibold">Compliant</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Workflow / Approval History Timeline -->
+          <div>
+            <h4 class="text-xs font-label-md uppercase tracking-wider text-text-muted mb-2.5">4. Sequential Workflow Timeline</h4>
+            <div class="relative pl-6 space-y-4 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-border-subtle text-xs">
+              <div class="relative">
+                <span class="absolute -left-6 top-0.5 w-3 h-3 rounded-full bg-status-success-text ring-4 ring-status-success-bg"></span>
+                <div class="font-title-sm text-text-primary">Draft Prepared & Ledger Matched</div>
+                <div class="text-[11px] text-text-muted">Sarah Mensah • 24 Jun 2025, 13:10 GMT</div>
+              </div>
+              <div class="relative">
+                <span class="absolute -left-6 top-0.5 w-3 h-3 rounded-full bg-status-success-text ring-4 ring-status-success-bg"></span>
+                <div class="font-title-sm text-text-primary">Fiduciary Verification & Supporting Docs Attached</div>
+                <div class="text-[11px] text-text-muted">Dr. Emmanuel Osei • 24 Jun 2025, 13:55 GMT</div>
+              </div>
+              <div class="relative">
+                <span class="absolute -left-6 top-0.5 w-3 h-3 rounded-full bg-fund-unrestricted ring-4 ring-primary-tint"></span>
+                <div class="font-title-sm text-text-primary">Executive Approval & General Ledger Post</div>
+                <div class="text-[11px] text-text-muted">Ama Mensah • 24 Jun 2025, 14:22 GMT (Final Action)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drawer Footer Actions -->
+        <div class="p-4 bg-surface-secondary border-t border-border-subtle flex items-center justify-between">
+          <div class="flex items-center gap-2 text-xs text-text-muted">
+            <span class="material-symbols-outlined text-[16px] text-status-success-text">lock</span>
+            <span>Read-Only Compliance Record</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="exportSingleEventDossier()" class="px-3 py-1.5 bg-surface-card hover:bg-surface-dim/40 border border-border-subtle text-text-primary font-title-sm text-xs rounded transition-colors flex items-center gap-1">
+              <span class="material-symbols-outlined text-[15px]">print</span>
+              <span>Print Audit Proof</span>
+            </button>
+            <button onclick="closeAuditDetail()" class="px-4 py-1.5 bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-xs rounded transition-colors shadow-sm">
+              Close Inspection
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Javascript Interactions & Top Navbar Toggle -->
+ <!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+
+  <script>
+    // Audit Records Dataset for detailed drill-down
+    const auditData = [
+      {
+        ref: "JE-2025-00109",
+        action: "Journal Entry Posted",
+        actionBadgeClass: "bg-status-success-bg text-status-success-text",
+        title: "Escrow Transfer to Operating Account",
+        timestamp: "24 Jun 2025, 14:22:18 GMT",
+        actor: "Sarah Mensah (Senior Grants Accountant)",
+        module: "Accounting / General Ledger",
+        entityType: "Journal Entry",
+        prevStatus: "Pending Approval",
+        newStatus: "Posted to GL",
+        deltas: [
+          { field: "Status", prev: "Pending Approval", next: "Posted (GL Commited)", highlight: true },
+          { field: "Debit GL-1010-01", prev: "GHS 0.00", next: "GHS 82,000.00", highlight: false },
+          { field: "Credit GL-1010-02", prev: "GHS 0.00", next: "GHS 82,000.00", highlight: false },
+          { field: "Approver Signature", prev: "Awaiting Ama Mensah", next: "Signed: AM-2025-06", highlight: true }
+        ],
+        context: { fund: "USAID Education Fund", fundType: "Restricted", grant: "USAID-GH-2024-ED09", entityRef: "StanChart Escrow" }
+      },
+      {
+        ref: "INV-2025-00892",
+        action: "Invoice Approved",
+        actionBadgeClass: "bg-status-success-bg text-status-success-text",
+        title: "Supplier Invoice Approval (M&G Pharma)",
+        timestamp: "24 Jun 2025, 11:05:40 GMT",
+        actor: "Ama Mensah (Finance Manager)",
+        module: "Payables",
+        entityType: "Supplier Invoice",
+        prevStatus: "Under Review",
+        newStatus: "Approved for Payment",
+        deltas: [
+          { field: "Approval Status", prev: "Under Review", next: "Approved for Payment", highlight: true },
+          { field: "3-Way Match Verified", prev: "Pending GRN Match", next: "GRN-0041 Confirmed (100%)", highlight: false },
+          { field: "WHT 3% Withheld", prev: "Uncomputed", next: "GHS 2,040.00 (GRA Code 10)", highlight: false }
+        ],
+        context: { fund: "Global Fund Health Phase II", fundType: "Restricted", grant: "GF-MAL-2023-GH", entityRef: "PO-2025-084" }
+      },
+      {
+        ref: "REC-2025-06B",
+        action: "Bank Reconciliation Completed",
+        actionBadgeClass: "bg-status-success-bg text-status-success-text",
+        title: "Monthly Bank Reconciliation Statement",
+        timestamp: "24 Jun 2025, 09:48:12 GMT",
+        actor: "Sarah Mensah (Senior Grants Accountant)",
+        module: "Banking & Treasury",
+        entityType: "Bank Reconciliation",
+        prevStatus: "Unreconciled",
+        newStatus: "Reconciled & Locked",
+        deltas: [
+          { field: "Reconciliation Status", prev: "In Progress (45 Unmatched)", next: "Reconciled (0 Unmatched)", highlight: true },
+          { field: "Statement Balance", prev: "GHS 842,500.00", next: "GHS 842,500.00", highlight: false },
+          { field: "Unmatched Variance", prev: "GHS 18,450.00", next: "GHS 0.00", highlight: true }
+        ],
+        context: { fund: "Core Operations", fundType: "Unrestricted", grant: "BFF-GH-CORE-25", entityRef: "Ecobank AC-8104" }
+      },
+      {
+        ref: "PO-2025-095",
+        action: "Purchase Order Updated",
+        actionBadgeClass: "bg-surface-secondary text-text-primary",
+        title: "Purchase Order Clause Modification",
+        timestamp: "23 Jun 2025, 16:40:02 GMT",
+        actor: "Kwesi Appiah (Logistics Lead)",
+        module: "Procurement",
+        entityType: "Purchase Order",
+        prevStatus: "Draft Approved",
+        newStatus: "Active Issued",
+        deltas: [
+          { field: "Warranty Term", prev: "12 Months Basic", next: "36 Months Comprehensive", highlight: true },
+          { field: "Delivery Milestone", prev: "20 Jun 2025", next: "28 Jun 2025 (Extended)", highlight: true },
+          { field: "Encumbrance Amount", prev: "GHS 62,300.00", next: "GHS 62,300.00 (Unchanged)", highlight: false }
+        ],
+        context: { fund: "USAID Education Fund", fundType: "Restricted", grant: "USAID-GH-2024-ED09", entityRef: "SunPower Ghana" }
+      },
+      {
+        ref: "SEC-USR-0122",
+        action: "User Role / Permission Changed",
+        actionBadgeClass: "bg-status-warning-bg text-status-warning-text",
+        title: "Access Control Delegation",
+        timestamp: "23 Jun 2025, 14:15:30 GMT",
+        actor: "Ama Mensah (Lead Administrator)",
+        module: "Administration / Security",
+        entityType: "User Role",
+        prevStatus: "Standard Custodian",
+        newStatus: "Privileged Warehouse Initiator",
+        deltas: [
+          { field: "Assigned Roles", prev: "['Warehouse Custodian']", next: "['Warehouse Custodian', 'Asset Disposal Initiator']", highlight: true },
+          { field: "Authorized Scope", prev: "Accra Depots", next: "Accra Depots + Tamale Substation", highlight: true },
+          { field: "Approval By", prev: "System Default", next: "Audit Committee Minutes #44", highlight: false }
+        ],
+        context: { fund: "Administration", fundType: "Unrestricted", grant: "Internal Governance", entityRef: "User Joseph Danquah" }
+      },
+      {
+        ref: "RUL-APP-004",
+        action: "Approval Rule Threshold Elevated",
+        actionBadgeClass: "bg-status-warning-bg text-status-warning-text",
+        title: "Financial Delegation of Authority Rule",
+        timestamp: "22 Jun 2025, 17:10:44 GMT",
+        actor: "Ama Mensah (Finance Lead)",
+        module: "Administration / Governance",
+        entityType: "Approval Rule",
+        prevStatus: "Threshold GHS 50,000",
+        newStatus: "Threshold GHS 75,000",
+        deltas: [
+          { field: "Dual Sign-off Threshold", prev: "GHS 50,000.00", next: "GHS 75,000.00", highlight: true },
+          { field: "Mandatory Second Signer", prev: "Country Director", next: "Country Director OR Board Treasurer", highlight: true },
+          { field: "Effective Date", prev: "01 Jan 2024", next: "23 Jun 2025", highlight: false }
+        ],
+        context: { fund: "Governance Policy", fundType: "Unrestricted", grant: "Constitution 2025", entityRef: "Policy POL-PROC-2025" }
+      },
+      {
+        ref: "GRT-GF-2023",
+        action: "Grant Status Cleared",
+        actionBadgeClass: "bg-status-success-bg text-status-success-text",
+        title: "Global Fund Compliance Audit",
+        timestamp: "22 Jun 2025, 10:14:00 GMT",
+        actor: "Dr. Emmanuel Osei (Medical Director)",
+        module: "Grants & Projects",
+        entityType: "Grant Agreement",
+        prevStatus: "Audit Underway",
+        newStatus: "Audited & Cleared",
+        deltas: [
+          { field: "Statutory Compliance Status", prev: "Audit Underway (Field Inquiries)", next: "Audited & Cleared (Unqualified Opinion)", highlight: true },
+          { field: "Tranche 4 Release Status", prev: "Locked ($180,000 pending)", next: "Unlocked & Released", highlight: true }
+        ],
+        context: { fund: "Global Fund Health Phase II", fundType: "Restricted", grant: "GF-MAL-2023-GH", entityRef: "External Audit Team" }
+      },
+      {
+        ref: "FND-CFG-002",
+        action: "Fund Dimension Rollover",
+        actionBadgeClass: "bg-surface-secondary text-text-primary",
+        title: "Multi-Year Fund Accounting Rollover",
+        timestamp: "21 Jun 2025, 23:59:50 GMT",
+        actor: "System Engine (Automated Daemon)",
+        module: "Administration / Funds",
+        entityType: "Fund Dimension",
+        prevStatus: "Q2 Budget Cap",
+        newStatus: "Q3 Rolled Over",
+        deltas: [
+          { field: "Q2 Ending Unspent Balance", prev: "GHS 136,000.00 (Temp Restricted)", next: "GHS 0.00 (Closed Period)", highlight: true },
+          { field: "Q3 Opening Carried Forward", prev: "GHS 0.00", next: "GHS 136,000.00", highlight: true }
+        ],
+        context: { fund: "EU Climate Action", fundType: "Temp Restricted", grant: "EU-CLIM-2024-GH03", entityRef: "Dimension FND-EU-CLIM" }
+      }
+    ];
+
+    // Drawer Open / Close Functions
+    function openAuditDetail(index) {
+      const item = auditData[index];
+      if (!item) return;
+
+      document.getElementById('drawerRefBadge').innerText = item.ref;
+      document.getElementById('drawerActionBadge').innerText = item.action;
+      document.getElementById('drawerActionBadge').className = `text-xs font-label-md px-2 py-0.5 rounded font-semibold ${item.actionBadgeClass}`;
+      document.getElementById('drawerTitle').innerText = item.title;
+      document.getElementById('drawerTimestamp').innerText = item.timestamp;
+      document.getElementById('drawerActor').innerText = item.actor;
+      document.getElementById('drawerModule').innerText = item.module;
+      document.getElementById('drawerEntityType').innerText = item.entityType;
+      document.getElementById('drawerRef').innerText = item.ref;
+
+      // Delta table
+      const tbody = document.getElementById('drawerDeltaTableBody');
+      tbody.innerHTML = '';
+      item.deltas.forEach(d => {
+        const tr = document.createElement('tr');
+        tr.className = d.highlight ? 'bg-primary-tint/20' : '';
+        tr.innerHTML = `
+          <td class="py-2 px-3 font-semibold text-text-primary">${d.field}</td>
+          <td class="py-2 px-3 text-status-critical-text line-through font-mono text-[11px]">${d.prev}</td>
+          <td class="py-2 px-3 text-status-success-text font-semibold font-mono text-[11px]">${d.next}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Context Links
+      document.getElementById('drawerContextLinks').innerHTML = `
+        <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">account_balance_wallet</span>
+            <span>Fund: <strong class="text-text-primary">${item.context.fund}</strong></span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded ${item.context.fundType === 'Restricted' ? 'bg-[#FCF7E8] text-[#8A6507]' : item.context.fundType === 'Temp Restricted' ? 'bg-[#FEF8E7] text-[#A07200]' : 'bg-primary-tint text-primary'} font-semibold">${item.context.fundType}</span>
+        </div>
+        <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">award_star</span>
+            <span>Grant / Project: <strong class="text-text-primary">${item.context.grant}</strong></span>
+          </div>
+          <span class="text-primary font-semibold cursor-pointer">Linked</span>
+        </div>
+        <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">account_tree</span>
+            <span>Trace Context: <strong class="text-text-primary">${item.context.entityRef}</strong></span>
+          </div>
+          <span class="text-text-muted font-mono text-[10px]">Verified</span>
+        </div>
+        <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-status-success-text text-[16px]">fact_check</span>
+            <span>Audit Result: <strong class="text-status-success-text font-semibold">IPSAS-25 Traceable</strong></span>
+          </div>
+          <span class="text-status-success-text font-semibold">100% Chain</span>
+        </div>
+      `;
+
+      const drawer = document.getElementById('auditDetailDrawer');
+      const panel = document.getElementById('drawerPanel');
+      drawer.classList.remove('pointer-events-none', 'opacity-0');
+      drawer.classList.add('pointer-events-auto', 'opacity-100');
+      panel.classList.remove('translate-x-full');
+      panel.classList.add('translate-x-0');
+    }
+
+    function closeAuditDetail() {
+      const drawer = document.getElementById('auditDetailDrawer');
+      const panel = document.getElementById('drawerPanel');
+      panel.classList.remove('translate-x-0');
+      panel.classList.add('translate-x-full');
+      drawer.classList.remove('pointer-events-auto', 'opacity-100');
+      drawer.classList.add('pointer-events-none', 'opacity-0');
+    }
+
+    // Filter Logic
+    function applyFilters() {
+      const mod = document.getElementById('filterModule').value.toLowerCase();
+      const act = document.getElementById('filterAction').value.toLowerCase();
+      const ent = document.getElementById('filterEntity').value.toLowerCase();
+      const usr = document.getElementById('filterUser').value.toLowerCase();
+      const fnd = document.getElementById('filterFund').value.toLowerCase();
+      const q = document.getElementById('globalAuditSearch').value.toLowerCase().trim();
+
+      const rows = document.querySelectorAll('.audit-row');
+      let visibleCount = 0;
+
+      rows.forEach(r => {
+        const rMod = (r.getAttribute('data-module') || '').toLowerCase();
+        const rAct = (r.getAttribute('data-action') || '').toLowerCase();
+        const rEnt = (r.getAttribute('data-entity') || '').toLowerCase();
+        const rUsr = (r.getAttribute('data-user') || '').toLowerCase();
+        const rFnd = (r.getAttribute('data-fund') || '').toLowerCase();
+        const rText = r.innerText.toLowerCase();
+
+        const matchMod = !mod || rMod.includes(mod);
+        const matchAct = !act || rAct.includes(act);
+        const matchEnt = !ent || rEnt.includes(ent);
+        const matchUsr = !usr || rUsr.includes(usr);
+        const matchFnd = !fnd || rFnd.includes(fnd);
+        const matchQ = !q || rText.includes(q);
+
+        if (matchMod && matchAct && matchEnt && matchUsr && matchFnd && matchQ) {
+          r.style.display = '';
+          visibleCount++;
+        } else {
+          r.style.display = 'none';
+        }
+      });
+
+      document.getElementById('visibleCountText').innerText = visibleCount;
+      const emptyState = document.getElementById('emptyAuditState');
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.remove('flex');
+        emptyState.classList.add('hidden');
+      }
+    }
+
+    function applySummaryFilter(type) {
+      clearAllFilters(false);
+      const rows = document.querySelectorAll('.audit-row');
+      let count = 0;
+
+      rows.forEach(r => {
+        let show = false;
+        if (type === 'all') show = true;
+        else if (type === 'today') {
+          show = r.innerText.includes('24 Jun 2025');
+        } else if (type === 'config') {
+          const mod = r.getAttribute('data-module');
+          show = mod === 'Administration';
+        } else if (type === 'workflow') {
+          const act = r.getAttribute('data-action');
+          show = act === 'Approved' || act === 'Posted' || act === 'Permission Changed';
+        }
+
+        if (show) {
+          r.style.display = '';
+          count++;
+        } else {
+          r.style.display = 'none';
+        }
+      });
+
+      document.getElementById('visibleCountText').innerText = count;
+      document.getElementById('chipStatus').innerText = `Scope: ${type.toUpperCase()}`;
+      showToast(`Filter applied: ${type.toUpperCase()} events (${count} records)`);
+    }
+
+    function clearAllFilters(updateToast = true) {
+      document.getElementById('filterModule').value = '';
+      document.getElementById('filterAction').value = '';
+      document.getElementById('filterEntity').value = '';
+      document.getElementById('filterUser').value = '';
+      document.getElementById('filterFund').value = '';
+      document.getElementById('filterDateRange').value = 'week';
+      document.getElementById('globalAuditSearch').value = '';
+
+      const rows = document.querySelectorAll('.audit-row');
+      rows.forEach(r => r.style.display = '');
+      document.getElementById('visibleCountText').innerText = rows.length;
+      document.getElementById('chipStatus').innerText = 'Scope: All Persistent Events';
+      document.getElementById('emptyAuditState').classList.remove('flex');
+      document.getElementById('emptyAuditState').classList.add('hidden');
+
+      if (updateToast) {
+        showToast('All audit filters have been reset.');
+      }
+    }
+
+    // Toast Notification helper
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastMessage').innerText = msg;
+      toast.classList.remove('translate-y-[-20px]', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-[-20px]', 'opacity-0', 'pointer-events-none');
+      }, 3200);
+    }
+
+    function exportSingleEventDossier() {
+      showToast('Exporting single event compliance certificate (PDF)...');
+    }
+
+    // Event Listeners
+    document.getElementById('globalAuditSearch').addEventListener('input', applyFilters);
+
+    document.getElementById('exportAuditBtn').addEventListener('click', () => {
+      showToast('Full Organization Audit Log Dossier exported (IPSAS-25 / JSON-LD / CSV).');
+    });
+
+    document.getElementById('refreshAuditBtn').addEventListener('click', () => {
+      const icon = document.getElementById('refreshIcon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('Audit Log synchronised with central block hashes.');
+      }, 750);
+    });
+
+    document.getElementById('viewToggleSystemBtn').addEventListener('click', () => {
+      const sec = document.getElementById('systemActivitySection');
+      sec.scrollIntoView({ behavior: 'smooth' });
+      sec.classList.add('ring-2', 'ring-fund-unrestricted');
+      setTimeout(() => sec.classList.remove('ring-2', 'ring-fund-unrestricted'), 2000);
+    });
+  </script>
+</body>
+</html>

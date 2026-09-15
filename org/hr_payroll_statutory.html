@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>People & Payroll Dashboard - NGO Accounting ERP</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f7f9ff", "on-tertiary": "#ffffff", "status-warning-bg": "#FEF3E6", "surface-dim": "#d1dbe7", "status-critical-bg": "#FDF0F0", "primary-fixed": "#a7eef6", "status-neutral-bg": "#ECEFF2", "secondary-container": "#d8e4ef", "status-success-border": "#9DD4B8", "inverse-primary": "#8bd2da", "on-tertiary-container": "#ffd892", "status-critical-border": "#F3A6A9", "nav-border": "#1E3243", "outline-variant": "#bec8c9", "text-muted": "#7B8C9A", "inverse-on-surface": "#e8f2fe", "secondary-fixed-dim": "#bcc8d3", "fund-temp-restricted": "#D99B00", "canvas-bg": "#F7F9FA", "tertiary-fixed": "#ffdea6", "surface-container-low": "#ecf4ff", "nav-text-primary": "#F4F7F9", "on-secondary": "#ffffff", "status-neutral-text": "#384551", "fund-restricted": "#B8860B", "surface-variant": "#d9e4ef", "inverse-surface": "#28313a", "status-success-text": "#0F6848", "on-primary-fixed": "#002022", "surface-container-highest": "#d9e4ef", "on-surface-variant": "#3f484a", "on-surface": "#131d25", "primary": "#005258", "on-error-container": "#93000a", "nav-text-muted": "#8EA2B4", "error-container": "#ffdad6", "outline": "#6f797a", "tertiary-fixed-dim": "#f7bd48", "nav-surface": "#152431", "status-success-bg": "#E8F5EE", "on-secondary-fixed-variant": "#3d4851", "error": "#ba1a1a", "on-secondary-fixed": "#121d25", "primary-fixed-dim": "#8bd2da", "on-primary-container": "#a1e9f1", "surface-secondary": "#F0F4F6", "status-critical-text": "#A81D24", "on-tertiary-fixed-variant": "#5d4200", "secondary-fixed": "#d8e4ef", "secondary": "#556069", "on-primary": "#ffffff", "surface-tint": "#16686f", "text-secondary": "#4E5D6A", "surface": "#f7f9ff", "on-primary-fixed-variant": "#004f55", "status-warning-text": "#914D03", "surface-container-high": "#dfe9f5", "tertiary-container": "#7f5b00", "status-warning-border": "#F6C88D", "tertiary": "#614500", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "text-primary": "#121A21", "border-subtle": "#DCE3E8", "surface-bright": "#f7f9ff", "on-secondary-container": "#5a666f", "surface-container": "#e5effb", "on-background": "#131d25", "border-strong": "#B8C4CE", "on-tertiary-fixed": "#271900", "primary-hover": "#144F54", "primary-container": "#1b6b72", "fund-unrestricted": "#1B6B72", "primary-tint": "#E4EFEF", "surface-card": "#FFFFFF", "status-neutral-border": "#CAD2D8", "nav-bg": "#0D1821" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1rem", "space-2xl": "2rem", "margin-compact": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-xxs": "0.125rem", "margin": "1.5rem", "space-xl": "1.5rem", "gutter-dense": "0.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "label-md": ["IBM Plex Sans"], "title-md": ["IBM Plex Sans"], "caption": ["IBM Plex Sans"], "headline-sm": ["IBM Plex Sans"], "body-sm": ["IBM Plex Sans"], "numeric-table": ["IBM Plex Sans"], "label-sm": ["IBM Plex Sans"], "numeric-table-bold": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "display-lg": ["IBM Plex Sans"], "title-sm": ["IBM Plex Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "numeric-table-bold": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }] } } } };</script>
+  <base target="_blank">
+<body class="bg-canvas-bg font-body-md text-text-primary antialiased min-h-screen">
+
+  <!-- SIDEBAR APPLICATIF CANONIQUE UNTITLED-1.HTML -->
+<aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+          <li><a aria-current="page"
+              class="flex items-center justify-between px-space-md py-space-xs transition-colors bg-primary-container text-on-primary font-title-sm rounded-lg"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center gap-2 px-3 py-1.5 rounded bg-primary-container text-on-primary font-title-sm text-title-sm transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- APP MAIN WRAPPER -->
+  <div id="appMain" class="pl-64 flex flex-col min-h-screen">
+    <!-- APP HEADER FIXE CANONIQUE -->
+    <header id="appHeader" class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md border-b border-border-subtle/50">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span>
+          <input
+            id="globalSearchInput"
+            class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-card border border-transparent focus:border-border-strong transition-colors"
+            placeholder="Search staff, designation, grant allocation, leave requests, duty station..."
+            type="text" />
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span>
+          <span>Pay Period: June 2025 (Open)</span>
+        </div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary">
+          <span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS (GH¢)</span>
+          <span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        
+        <div class="h-5 w-px bg-surface-secondary"></div>
+        <button class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span>
+        </button>
+        <button class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">help</span>
+        </button>
+        <div class="flex items-center gap-space-xs pl-space-xs cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xs">AM</div>
+          <span class="material-symbols-outlined text-text-muted text-[16px]"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT CANVAS -->
+    <main class="w-full pt-16 bg-canvas-bg flex-1 pb-12">
+      <div class="flex flex-col w-full">
+
+        <!-- TOP CONTEXT HEADER -->
+        <section class="px-space-xl py-space-lg bg-surface-card shadow-sm border-b border-border-subtle/50 flex flex-col gap-space-sm">
+          <!-- Breadcrumb -->
+          <div class="flex items-center gap-space-xs text-text-muted font-caption text-caption">
+            <span class="hover:text-text-primary cursor-pointer transition-colors">Home</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="text-text-secondary font-title-sm">People &amp; Payroll</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="text-fund-unrestricted font-medium">HR Dashboard</span>
+          </div>
+
+          <!-- Title and Toolbar -->
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-space-sm">
+                <h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">People &amp; Payroll</h1>
+                <span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-status-success-text animate-pulse"></span>
+                  GRA / SSNIT Tier 1 &amp; 2 Validated
+                </span>
+                <span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-primary-tint text-primary font-label-sm text-label-sm font-semibold">
+                  <span class="material-symbols-outlined text-[13px]">verified_user</span>
+                  Role: HR Executive / Fiduciary Lead
+                </span>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-0.5 max-w-4xl">
+                Operational workforce management connecting employee records to grant allocations.
+              </p>
+            </div>
+
+            <!-- Quick Action Controls -->
+            <div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm">
+              <button id="btnRunPayrollModal"
+                class="inline-flex items-center gap-1.5 px-space-sm py-1.5 bg-surface-secondary hover:bg-surface-dim/50 text-text-primary rounded font-title-sm text-title-sm transition-colors shadow-sm"
+                type="button">
+                <span class="material-symbols-outlined text-[16px] text-fund-unrestricted">receipt_long</span>
+                <span>Run Payroll Batch</span>
+              </button>
+              <button id="btnExportHR"
+                class="inline-flex items-center gap-1.5 px-space-sm py-1.5 bg-surface-secondary hover:bg-surface-dim/50 text-text-primary rounded font-title-sm text-title-sm transition-colors shadow-sm"
+                type="button">
+                <span class="material-symbols-outlined text-[16px] text-text-secondary">download</span>
+                <span>Statutory Staff Roll</span>
+              </button>
+              <button id="openAddEmployeeModal"
+                class="inline-flex items-center gap-1.5 px-space-md py-1.5 bg-primary hover:bg-primary-hover text-on-primary rounded-lg font-title-sm text-title-sm transition-colors shadow-sm"
+                type="button">
+                <span class="material-symbols-outlined text-[16px]">add</span>
+                <span>Add Employee</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- MAIN WORKSPACE -->
+        <div class="px-space-xl py-space-xl flex flex-col gap-space-xl max-w-7xl w-full mx-auto">
+
+          <!-- 1. SUMMARY CARDS (EXACT METRICS FROM DOCUMENT_2) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-space-md">
+            <!-- Card 1: Total Employees -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/50 flex flex-col justify-between hover:border-primary/40 transition-colors cursor-pointer" onclick="filterTableByStatus('all')">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Total Employees</span>
+                <span class="w-6 h-6 rounded bg-primary-tint flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-[14px]">groups</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span class="font-headline-lg text-headline-lg text-text-primary tracking-tight" id="kpiTotalEmployees">78</span>
+              </div>
+              <div class="mt-2 pt-space-xxs flex items-center justify-between font-caption text-caption text-text-muted">
+                <span>Accra &amp; 3 Field Hubs</span>
+                <span class="text-status-success-text font-semibold">+3 this quarter</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Active Employees -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/50 flex flex-col justify-between hover:border-primary/40 transition-colors cursor-pointer" onclick="filterTableByStatus('active')">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Active Staff</span>
+                <span class="w-6 h-6 rounded bg-status-success-bg flex items-center justify-center text-status-success-text">
+                  <span class="material-symbols-outlined text-[14px]">how_to_reg</span>
+                </span>
+              </div>
+              <div class="mt-2 flex items-baseline gap-1">
+                <span class="font-headline-lg text-headline-lg text-text-primary tracking-tight">72</span>
+                <span class="font-caption text-caption text-text-muted">/ 78</span>
+              </div>
+              <div class="mt-2 pt-space-xxs flex items-center justify-between font-caption text-caption text-status-success-text">
+                <span class="font-semibold">92.3% active deployment</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Employees on Leave -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/50 flex flex-col justify-between hover:border-primary/40 transition-colors cursor-pointer" onclick="filterTableByStatus('leave')">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">On Leave</span>
+                <span class="w-6 h-6 rounded bg-[#FCF7E8] flex items-center justify-center text-[#8A6507]">
+                  <span class="material-symbols-outlined text-[14px]">event_busy</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span class="font-headline-lg text-headline-lg text-[#8A6507] tracking-tight">4</span>
+              </div>
+              <div class="mt-2 pt-space-xxs flex items-center justify-between font-caption text-caption text-text-muted">
+                <span>Annual &amp; Maternity</span>
+                <span class="text-status-warning-text font-semibold">2 pending return</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Pending HR Actions -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/50 flex flex-col justify-between hover:border-status-warning-text/40 transition-colors cursor-pointer" onclick="scrollToSection('hrActionsSection')">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Pending Actions</span>
+                <span class="w-6 h-6 rounded bg-status-warning-bg flex items-center justify-center text-status-warning-text">
+                  <span class="material-symbols-outlined text-[14px]">notification_important</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span class="font-headline-lg text-headline-lg text-status-warning-text tracking-tight" id="kpiPendingActions">8</span>
+              </div>
+              <div class="mt-2 pt-space-xxs flex items-center justify-between font-caption text-caption text-status-warning-text font-semibold">
+                <span>Requires Sign-Off</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+              </div>
+            </div>
+
+            <!-- Card 5: Attendance / Timesheet Status -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/50 flex flex-col justify-between hover:border-primary/40 transition-colors cursor-pointer" onclick="showTimesheetModal()">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Timesheet Status</span>
+                <span class="w-6 h-6 rounded bg-surface-secondary flex items-center justify-center text-text-secondary">
+                  <span class="material-symbols-outlined text-[14px]">timelapse</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span class="font-headline-lg text-headline-lg text-text-primary tracking-tight">94.8%</span>
+              </div>
+              <div class="mt-2 pt-space-xxs flex items-center justify-between font-caption text-caption text-text-muted">
+                <span>65 / 78 submitted</span>
+                <span class="text-status-warning-text font-semibold">13 overdue</span>
+              </div>
+            </div>
+
+            <!-- Card 6: Payroll Status -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/50 flex flex-col justify-between hover:border-primary/40 transition-colors cursor-pointer" onclick="openPayrollWorkflow()">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Payroll Status</span>
+                <span class="w-6 h-6 rounded bg-status-success-bg flex items-center justify-center text-status-success-text">
+                  <span class="material-symbols-outlined text-[14px]">account_balance_wallet</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span class="font-title-sm text-title-sm font-bold text-status-success-text inline-flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span>
+                  May Reconciled
+                </span>
+              </div>
+              <div class="mt-2 pt-space-xxs flex items-center justify-between font-caption text-caption text-text-muted">
+                <span>June 2025 Draft</span>
+                <span class="text-primary font-semibold">GH¢ 412k est.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. TWO-COLUMN ANALYTICS: WORKFORCE OVERVIEW & PENDING ACTIONS -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-start">
+
+            <!-- LEFT 2 COLS: WORKFORCE OVERVIEW (Department & Grant Distribution Charts) -->
+            <div class="lg:col-span-2 bg-surface-card rounded-lg p-space-lg shadow-sm border border-border-subtle/50 flex flex-col gap-space-md">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-xs border-b border-border-subtle/40">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-headline-sm text-headline-sm text-text-primary">Workforce Distribution &amp; Grant Encumbrance</h2>
+                    <span class="px-2 py-0.5 rounded-full bg-primary-tint text-primary font-label-sm text-label-sm font-bold">5 Departments</span>
+                  </div>
+                  <p class="font-caption text-caption text-text-muted mt-0.5">Headcount allocation by operational sector, field duty station, and donor grant cost center.</p>
+                </div>
+                <!-- Mini Filter for Chart -->
+                <div class="flex items-center gap-1 bg-surface-secondary p-0.5 rounded text-caption font-label-md">
+                  <button class="px-2 py-1 rounded bg-surface-card text-text-primary font-bold shadow-sm" type="button">By Department</button>
+                  <button class="px-2 py-1 text-text-muted hover:text-text-primary" type="button">By Duty Station</button>
+                  <button class="px-2 py-1 text-text-muted hover:text-text-primary" type="button">By Grant Source</button>
+                </div>
+              </div>
+
+              <!-- Visual Bars / Breakdown -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-lg py-space-xs">
+                <!-- Department Breakdown -->
+                <div class="flex flex-col gap-space-sm">
+                  <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Headcount by Department</span>
+                  
+                  <!-- Dept 1: Programs & Field Operations -->
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between text-body-sm font-title-sm">
+                      <span class="text-text-primary">Programs &amp; Field Delivery</span>
+                      <span class="text-text-secondary font-numeric-table font-semibold">34 staff (43.6%)</span>
+                    </div>
+                    <div class="w-full bg-surface-secondary rounded-full h-2.5 overflow-hidden">
+                      <div class="bg-primary h-2.5 rounded-full" style="width: 43.6%"></div>
+                    </div>
+                    <span class="text-[11px] text-text-muted">Allocated across USAID, Global Fund, and EU Climate Grants</span>
+                  </div>
+
+                  <!-- Dept 2: Health & Nutrition -->
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between text-body-sm font-title-sm">
+                      <span class="text-text-primary">Clinical &amp; Community Health</span>
+                      <span class="text-text-secondary font-numeric-table font-semibold">18 staff (23.1%)</span>
+                    </div>
+                    <div class="w-full bg-surface-secondary rounded-full h-2.5 overflow-hidden">
+                      <div class="bg-[#1B6B72] opacity-80 h-2.5 rounded-full" style="width: 23.1%"></div>
+                    </div>
+                    <span class="text-[11px] text-text-muted">Assigned to Volta &amp; Northern Region Maternal Health Outposts</span>
+                  </div>
+
+                  <!-- Dept 3: Finance, Grants & Compliance -->
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between text-body-sm font-title-sm">
+                      <span class="text-text-primary">Finance, Compliance &amp; Grants</span>
+                      <span class="text-text-secondary font-numeric-table font-semibold">12 staff (15.4%)</span>
+                    </div>
+                    <div class="w-full bg-surface-secondary rounded-full h-2.5 overflow-hidden">
+                      <div class="bg-nav-surface h-2.5 rounded-full" style="width: 15.4%"></div>
+                    </div>
+                    <span class="text-[11px] text-text-muted">HQ Accra Financial Controllers &amp; Field Fiduciary Officers</span>
+                  </div>
+
+                  <!-- Dept 4: Logistics & Supply Chain -->
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between text-body-sm font-title-sm">
+                      <span class="text-text-primary">Logistics &amp; Warehouse Operations</span>
+                      <span class="text-text-secondary font-numeric-table font-semibold">8 staff (10.2%)</span>
+                    </div>
+                    <div class="w-full bg-surface-secondary rounded-full h-2.5 overflow-hidden">
+                      <div class="bg-tertiary-fixed-dim h-2.5 rounded-full" style="width: 10.2%"></div>
+                    </div>
+                    <span class="text-[11px] text-text-muted">Tamale &amp; Volta Depots, Fleet and Asset Custodians</span>
+                  </div>
+
+                  <!-- Dept 5: Executive & HR -->
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between text-body-sm font-title-sm">
+                      <span class="text-text-primary">Executive, HR &amp; Admin</span>
+                      <span class="text-text-secondary font-numeric-table font-semibold">6 staff (7.7%)</span>
+                    </div>
+                    <div class="w-full bg-surface-secondary rounded-full h-2.5 overflow-hidden">
+                      <div class="bg-text-muted h-2.5 rounded-full" style="width: 7.7%"></div>
+                    </div>
+                    <span class="text-[11px] text-text-muted">Core Unrestricted Administration Fund</span>
+                  </div>
+                </div>
+
+                <!-- Right Sub-Column: Funding Source Ratio & Geographic Ratio -->
+                <div class="flex flex-col gap-space-md bg-surface-secondary/60 p-space-md rounded-lg border border-border-subtle/50">
+                  <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Payroll Cost Center Allocation</span>
+                  
+                  <div class="flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-body-sm">
+                      <span class="inline-flex items-center gap-1.5 font-medium text-text-primary">
+                        <span class="w-2.5 h-2.5 rounded-sm bg-[#FCF7E8] border border-[#8A6507]"></span>
+                        Restricted Donor Grants (Direct Charge)
+                      </span>
+                      <span class="font-numeric-table-bold text-text-primary">68.5%</span>
+                    </div>
+                    <p class="text-caption text-text-muted leading-tight">Salaries directly charged to approved USAID, Global Fund, and EU Climate grant budgets with strict timesheet evidence.</p>
+                  </div>
+
+                  <div class="flex flex-col gap-2 pt-space-xs border-t border-border-subtle/40">
+                    <div class="flex items-center justify-between text-body-sm">
+                      <span class="inline-flex items-center gap-1.5 font-medium text-text-primary">
+                        <span class="w-2.5 h-2.5 rounded-sm bg-primary-tint border border-primary"></span>
+                        Unrestricted Core Operations
+                      </span>
+                      <span class="font-numeric-table-bold text-text-primary">31.5%</span>
+                    </div>
+                    <p class="text-caption text-text-muted leading-tight">Shared services, governance, and institutional overhead financed via general operational fund.</p>
+                  </div>
+
+                  <!-- Location Distribution Metric -->
+                  <div class="mt-auto pt-space-xs border-t border-border-subtle/40 flex items-center justify-between text-caption text-text-secondary">
+                    <span>Accra HQ: <strong>26</strong></span>
+                    <span>Tamale Hub: <strong>24</strong></span>
+                    <span>Volta Basin: <strong>16</strong></span>
+                    <span>Savannah: <strong>12</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT 1 COL: HR ACTIONS / PENDING APPROVALS QUEUE -->
+            <div id="hrActionsSection" class="bg-surface-card rounded-lg p-space-lg shadow-sm border border-border-subtle/50 flex flex-col">
+              <div class="flex items-center justify-between pb-space-xs">
+                <div class="flex items-center gap-2">
+                  <h2 class="font-headline-sm text-headline-sm text-text-primary">Pending HR Actions</h2>
+                  <span id="pendingActionCountBadge" class="w-5 h-5 rounded-full bg-status-warning-text text-white text-[11px] font-bold flex items-center justify-center">8</span>
+                </div>
+                <span class="material-symbols-outlined text-[18px] text-text-muted">fact_check</span>
+              </div>
+              <p class="font-caption text-caption text-text-muted mb-space-sm">Urgent leave approvals, contracts due for renewal, and pending timesheet validations.</p>
+
+              <!-- Action Items List -->
+              <div class="flex flex-col gap-space-xs" id="hrActionList">
+                <!-- Action 1: Leave Request -->
+                <div class="p-space-sm rounded bg-surface-secondary flex flex-col gap-1.5 border border-border-subtle/30" id="actionItem-1">
+                  <div class="flex items-start justify-between gap-1">
+                    <div class="flex items-center gap-1.5 min-w-0">
+                      <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">flight_takeoff</span>
+                      <span class="font-title-sm text-title-sm text-text-primary font-semibold truncate">Leave Request: Annual (10d)</span>
+                    </div>
+                    <span class="px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm text-label-sm font-semibold shrink-0">
+                      Pending Approval
+                    </span>
+                  </div>
+                  <div class="text-body-sm text-text-secondary">
+                    <strong>Kwesi Appiah</strong> • Senior Field Logistics Lead (Tamale Hub)
+                  </div>
+                  <div class="text-caption text-text-muted">
+                    Period: 01 Jul – 12 Jul 2025 • Reliever: Joseph Danquah
+                  </div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <button onclick="approveHRAction('actionItem-1', 'Leave request for Kwesi Appiah approved.')" class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors shadow-sm" type="button">Approve</button>
+                    <button onclick="rejectHRAction('actionItem-1', 'Leave request returned for review.')" class="px-2.5 py-1 bg-surface-card hover:bg-surface-dim/40 text-text-secondary rounded font-title-sm text-title-sm transition-colors" type="button">Review</button>
+                  </div>
+                </div>
+
+                <!-- Action 2: Timesheet Approval -->
+                <div class="p-space-sm rounded bg-surface-secondary flex flex-col gap-1.5 border border-border-subtle/30" id="actionItem-2">
+                  <div class="flex items-start justify-between gap-1">
+                    <div class="flex items-center gap-1.5 min-w-0">
+                      <span class="material-symbols-outlined text-fund-restricted text-[16px]">schedule</span>
+                      <span class="font-title-sm text-title-sm text-text-primary font-semibold truncate">Grant Timesheet Approval</span>
+                    </div>
+                    <span class="px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm text-label-sm font-semibold shrink-0">
+                      May Batch
+                    </span>
+                  </div>
+                  <div class="text-body-sm text-text-secondary">
+                    <strong>Hajia Amina Bello</strong> • Health Specialist (Volta Field Office)
+                  </div>
+                  <div class="text-caption text-text-muted">
+                    160 hours charged 100% to Global Fund Malaria (GH-003)
+                  </div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <button onclick="approveHRAction('actionItem-2', 'Timesheet for Hajia Amina Bello validated and signed.')" class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors shadow-sm" type="button">Sign Timesheet</button>
+                    <button onclick="inspectTimesheet('Hajia Amina Bello')" class="px-2.5 py-1 bg-surface-card hover:bg-surface-dim/40 text-text-secondary rounded font-title-sm text-title-sm transition-colors" type="button">View Breakdown</button>
+                  </div>
+                </div>
+
+                <!-- Action 3: Contract Renewal Notice -->
+                <div class="p-space-sm rounded bg-surface-secondary flex flex-col gap-1.5 border border-border-subtle/30" id="actionItem-3">
+                  <div class="flex items-start justify-between gap-1">
+                    <div class="flex items-center gap-1.5 min-w-0">
+                      <span class="material-symbols-outlined text-status-critical-text text-[16px]">contract</span>
+                      <span class="font-title-sm text-title-sm text-text-primary font-semibold truncate">Fixed-Term Contract Expiring</span>
+                    </div>
+                    <span class="px-1.5 py-0.5 rounded bg-status-critical-bg text-status-critical-text font-label-sm text-label-sm font-semibold shrink-0">
+                      Expires in 18d
+                    </span>
+                  </div>
+                  <div class="text-body-sm text-text-secondary">
+                    <strong>Dr. Emmanuel Osei</strong> • Clinical Director (Volta Hub)
+                  </div>
+                  <div class="text-caption text-text-muted">
+                    Contract linked to USAID-ED09 • Extension drafted awaiting sign-off
+                  </div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <button onclick="approveHRAction('actionItem-3', 'Contract extension notice dispatched for Dr. Emmanuel Osei.')" class="px-2.5 py-1 bg-nav-surface hover:bg-nav-border text-white rounded font-title-sm text-title-sm transition-colors shadow-sm" type="button">Extend Contract</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. RECENT HR ACTIVITY AUDIT FEED (COMPLIANCE AUDIT TRAIL) -->
+          <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/50 flex flex-col">
+            <div class="flex items-center justify-between pb-space-xs border-b border-border-subtle/40">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-fund-unrestricted text-[18px]">history_edu</span>
+                <h3 class="font-title-md text-title-md text-text-primary">Recent Fiduciary HR Activity &amp; Audit Trail</h3>
+              </div>
+              <span class="text-caption text-text-muted">Live audit logged under IPSAS-25 / Ghana Labour Act 651</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm pt-space-sm text-body-sm">
+              <div class="p-space-xs rounded bg-surface-secondary flex items-start gap-2">
+                <span class="material-symbols-outlined text-status-success-text text-[18px] shrink-0 mt-0.5">person_add</span>
+                <div class="flex flex-col">
+                  <span class="font-title-sm text-title-sm text-text-primary">Employee Added</span>
+                  <span class="text-caption text-text-muted">Kofi Boateng (Water Engineer) registered under EU Climate grant.</span>
+                  <span class="text-[10px] text-text-secondary font-mono mt-0.5">24 Jun 2025, 09:42 • By Ama Mensah</span>
+                </div>
+              </div>
+
+              <div class="p-space-xs rounded bg-surface-secondary flex items-start gap-2">
+                <span class="material-symbols-outlined text-status-success-text text-[18px] shrink-0 mt-0.5">verified</span>
+                <div class="flex flex-col">
+                  <span class="font-title-sm text-title-sm text-text-primary">Leave Approved</span>
+                  <span class="text-caption text-text-muted">Grace Addo (Maternity leave, 12 weeks) approved &amp; notified.</span>
+                  <span class="text-[10px] text-text-secondary font-mono mt-0.5">23 Jun 2025, 14:15 • By Executive Director</span>
+                </div>
+              </div>
+
+              <div class="p-space-xs rounded bg-surface-secondary flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">fact_check</span>
+                <div class="flex flex-col">
+                  <span class="font-title-sm text-title-sm text-text-primary">Timesheet Batch Posted</span>
+                  <span class="text-caption text-text-muted">Tamale Field cluster (24 staff) timesheet verified for donor report.</span>
+                  <span class="text-[10px] text-text-secondary font-mono mt-0.5">22 Jun 2025, 17:30 • By Program Director</span>
+                </div>
+              </div>
+
+              <div class="p-space-xs rounded bg-surface-secondary flex items-start gap-2">
+                <span class="material-symbols-outlined text-status-warning-text text-[18px] shrink-0 mt-0.5">receipt</span>
+                <div class="flex flex-col">
+                  <span class="font-title-sm text-title-sm text-text-primary">Statutory Return Prepared</span>
+                  <span class="text-caption text-text-muted">GRA PAYE &amp; SSNIT returns for May filed with Bank transfer ref.</span>
+                  <span class="text-[10px] text-text-secondary font-mono mt-0.5">21 Jun 2025, 11:20 • By Finance Manager</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. EMPLOYEE SNAPSHOT TABLE (MAIN REGISTER CONNECTED TO ERP) -->
+          <div class="bg-surface-card rounded-lg shadow-sm border border-border-subtle/50 flex flex-col overflow-hidden">
+            <!-- Table Header Toolbar -->
+            <div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm border-b border-border-subtle/50 bg-surface-card">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h2 class="font-headline-sm text-headline-sm text-text-primary">Organizational Staff Register &amp; Grant Assignment</h2>
+                  <span class="px-2 py-0.5 rounded-full bg-primary-tint text-primary font-label-sm text-label-sm font-bold" id="tableFilterCountBadge">Showing 6 Staff Records</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-text-muted mt-0.5">Staff master records with role-based access, cost center linkages, duty stations, and line manager oversight.</p>
+              </div>
+
+              <!-- Action buttons on top of table -->
+              <div class="flex items-center gap-space-xs">
+                <button onclick="showBulkTimesheetNotice()" class="px-space-sm py-1.5 rounded bg-surface-secondary text-text-secondary hover:text-text-primary font-title-sm text-title-sm transition-colors flex items-center gap-1" type="button">
+                  <span class="material-symbols-outlined text-[16px]">assignment_turned_in</span>
+                  <span>Review All Timesheets</span>
+                </button>
+                <button onclick="document.getElementById('openAddEmployeeModal').click()" class="px-space-md py-1.5 rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm transition-colors flex items-center gap-1 shadow-sm" type="button">
+                  <span class="material-symbols-outlined text-[16px]">add</span>
+                  <span>Add Employee</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Filter Controls Bar -->
+            <div class="p-space-md bg-surface-secondary/50 border-b border-border-subtle/40 flex flex-wrap items-center justify-between gap-space-sm">
+              <div class="flex flex-wrap items-center gap-space-xs">
+                <!-- Search within table -->
+                <div class="relative w-64">
+                  <span class="material-symbols-outlined absolute left-2.5 top-2 text-text-muted text-[16px]">search</span>
+                  <input id="staffTableSearch" oninput="filterStaffTable()" class="w-full pl-8 pr-2 py-1 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary" placeholder="Filter employee or role..." type="text" />
+                </div>
+
+                <!-- Department Filter Dropdown -->
+                <select id="filterDepartment" onchange="filterStaffTable()" class="px-2 py-1 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary text-text-secondary font-medium">
+                  <option value="all">All Departments</option>
+                  <option value="Programs">Programs &amp; Field Delivery</option>
+                  <option value="Clinical">Clinical &amp; Community Health</option>
+                  <option value="Finance">Finance, Compliance &amp; Grants</option>
+                  <option value="Logistics">Logistics &amp; Supply Chain</option>
+                </select>
+
+                <!-- Location Filter Dropdown -->
+                <select id="filterLocation" onchange="filterStaffTable()" class="px-2 py-1 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary text-text-secondary font-medium">
+                  <option value="all">All Duty Stations</option>
+                  <option value="Tamale">Tamale Regional Hub</option>
+                  <option value="Volta">Volta Mission Basin</option>
+                  <option value="Accra">Accra HQ Core</option>
+                  <option value="Savannah">Savannah Mission</option>
+                </select>
+
+                <!-- Status Filter Dropdown -->
+                <select id="filterStatus" onchange="filterStaffTable()" class="px-2 py-1 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary text-text-secondary font-medium">
+                  <option value="all">All Statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="On Leave">On Leave</option>
+                  <option value="Contract Review">Contract Review</option>
+                </select>
+              </div>
+
+              <button onclick="resetFilters()" class="text-caption text-primary hover:text-primary-hover font-semibold inline-flex items-center gap-0.5">
+                <span class="material-symbols-outlined text-[13px]">refresh</span> Reset Filters
+              </button>
+            </div>
+
+            <!-- Table Itself -->
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left border-collapse" id="employeeTable">
+                <thead>
+                  <tr class="bg-surface-secondary font-label-md text-label-md uppercase tracking-wider text-text-secondary select-none">
+                    <th class="py-3 px-4 font-semibold">Employee</th>
+                    <th class="py-3 px-4 font-semibold">Department &amp; Role</th>
+                    <th class="py-3 px-4 font-semibold">Duty Station / Location</th>
+                    <th class="py-3 px-4 font-semibold">Cost Center &amp; Grant Assignment</th>
+                    <th class="py-3 px-4 font-semibold">Line Manager</th>
+                    <th class="py-3 px-4 font-semibold">Status</th>
+                    <th class="py-3 px-4 text-right font-semibold">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-border-subtle/40 font-body-sm text-body-sm text-text-primary" id="employeeTableBody">
+
+                  <!-- Employee 1: Kwesi Appiah -->
+                  <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openEmployeeDetail('Kwesi Appiah', 'EMP-GH-0104', 'Programs & Field Delivery', 'Senior Field Logistics Lead', 'Tamale Regional Hub', 'Active', 'Dr. Emmanuel Osei', 'USAID Education Program (GH-2024-ED09)', 'CC-401 (Tamale Field Operations)', 'kwesi.appiah@fiduciary-ngo.org', '+233 24 411 9021', 'Permanent / Full-Time', '15 Feb 2021', 'Leave Request (Pending Approval)')">
+                    <td class="py-3 px-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+                          KA
+                        </div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-title-sm text-text-primary group-hover:text-primary font-bold">Kwesi Appiah</span>
+                          <span class="font-caption text-caption text-text-muted font-mono">EMP-GH-0104</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="font-title-sm text-title-sm text-text-primary">Senior Field Logistics Lead</span>
+                        <span class="font-caption text-caption text-text-muted">Programs &amp; Field Delivery</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-text-muted text-[15px]">location_on</span>
+                        <span class="text-text-primary font-medium">Tamale Regional Hub</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-caption text-caption font-semibold w-fit">
+                          USAID-ED09 (70%) • Unrestricted (30%)
+                        </span>
+                        <span class="font-caption text-caption text-text-muted mt-0.5">CC-401 • Tamale Operations</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="text-text-secondary">Dr. Emmanuel Osei</span>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+                        <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span>
+                        Active
+                      </span>
+                    </td>
+                    <td class="py-3 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                      <button onclick="openEmployeeDetail('Kwesi Appiah', 'EMP-GH-0104', 'Programs & Field Delivery', 'Senior Field Logistics Lead', 'Tamale Regional Hub', 'Active', 'Dr. Emmanuel Osei', 'USAID Education Program (GH-2024-ED09)', 'CC-401 (Tamale Field Operations)', 'kwesi.appiah@fiduciary-ngo.org', '+233 24 411 9021', 'Permanent / Full-Time', '15 Feb 2021', 'Leave Request (Pending Approval)')" class="text-primary hover:text-primary-hover font-title-sm text-title-sm inline-flex items-center gap-0.5 mr-2">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Employee 2: Hajia Amina Bello -->
+                  <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openEmployeeDetail('Hajia Amina Bello', 'EMP-GH-0089', 'Clinical & Community Health', 'Community Health Specialist', 'Volta Mission Basin', 'Active', 'Dr. Emmanuel Osei', 'Global Fund Malaria Phase II (GH-003)', 'CC-302 (Volta Health Unit)', 'amina.bello@fiduciary-ngo.org', '+233 20 892 4410', 'Fixed-Term / Grant Funded', '01 Aug 2022', 'Timesheet Awaiting Manager Sign-Off')">
+                    <td class="py-3 px-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+                          HB
+                        </div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-title-sm text-text-primary group-hover:text-primary font-bold">Hajia Amina Bello</span>
+                          <span class="font-caption text-caption text-text-muted font-mono">EMP-GH-0089</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="font-title-sm text-title-sm text-text-primary">Community Health Specialist</span>
+                        <span class="font-caption text-caption text-text-muted">Clinical &amp; Community Health</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-text-muted text-[15px]">location_on</span>
+                        <span class="text-text-primary font-medium">Volta Mission Basin (Ho)</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-caption text-caption font-semibold w-fit">
+                          Global Fund Malaria (100%)
+                        </span>
+                        <span class="font-caption text-caption text-text-muted mt-0.5">CC-302 • Clinical Outreach</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="text-text-secondary">Dr. Emmanuel Osei</span>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+                        <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span>
+                        Active
+                      </span>
+                    </td>
+                    <td class="py-3 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                      <button onclick="openEmployeeDetail('Hajia Amina Bello', 'EMP-GH-0089', 'Clinical & Community Health', 'Community Health Specialist', 'Volta Mission Basin', 'Active', 'Dr. Emmanuel Osei', 'Global Fund Malaria Phase II (GH-003)', 'CC-302 (Volta Health Unit)', 'amina.bello@fiduciary-ngo.org', '+233 20 892 4410', 'Fixed-Term / Grant Funded', '01 Aug 2022', 'Timesheet Awaiting Manager Sign-Off')" class="text-primary hover:text-primary-hover font-title-sm text-title-sm inline-flex items-center gap-0.5 mr-2">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Employee 3: Dr. Emmanuel Osei -->
+                  <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openEmployeeDetail('Dr. Emmanuel Osei', 'EMP-GH-0042', 'Clinical & Community Health', 'Medical Director & Field Coordinator', 'Volta Mission Basin', 'Active', 'Country Director', 'Multi-Grant Supervised', 'CC-300 (Directorate)', 'emmanuel.osei@fiduciary-ngo.org', '+233 24 550 1198', 'Permanent Staff', '10 Jan 2019', 'Contract Extension Due for Renewal')">
+                    <td class="py-3 px-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+                          EO
+                        </div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-title-sm text-text-primary group-hover:text-primary font-bold">Dr. Emmanuel Osei</span>
+                          <span class="font-caption text-caption text-text-muted font-mono">EMP-GH-0042</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="font-title-sm text-title-sm text-text-primary">Medical Director &amp; Field Lead</span>
+                        <span class="font-caption text-caption text-text-muted">Clinical &amp; Community Health</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-text-muted text-[15px]">location_on</span>
+                        <span class="text-text-primary font-medium">Volta Mission Basin</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-caption text-caption font-semibold w-fit">
+                          Global Fund (50%) • USAID (50%)
+                        </span>
+                        <span class="font-caption text-caption text-text-muted mt-0.5">CC-300 • Clinical Directorate</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="text-text-secondary">Country Director</span>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm text-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">schedule</span>
+                        Contract Review
+                      </span>
+                    </td>
+                    <td class="py-3 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                      <button onclick="openEmployeeDetail('Dr. Emmanuel Osei', 'EMP-GH-0042', 'Clinical & Community Health', 'Medical Director & Field Coordinator', 'Volta Mission Basin', 'Active', 'Country Director', 'Multi-Grant Supervised', 'CC-300 (Directorate)', 'emmanuel.osei@fiduciary-ngo.org', '+233 24 550 1198', 'Permanent Staff', '10 Jan 2019', 'Contract Extension Due for Renewal')" class="text-primary hover:text-primary-hover font-title-sm text-title-sm inline-flex items-center gap-0.5 mr-2">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Employee 4: Sarah Mensah -->
+                  <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openEmployeeDetail('Sarah Mensah', 'EMP-GH-0078', 'Finance, Compliance & Grants', 'Senior Fiduciary Grants Accountant', 'Accra HQ Core', 'Active', 'Ama Mensah', 'Core Fiduciary & USAID Support', 'CC-102 (Accra Finance)', 'sarah.mensah@fiduciary-ngo.org', '+233 27 662 4589', 'Permanent Staff', '01 Apr 2020', 'All Clear • Next SSNIT submission 15 Jul')">
+                    <td class="py-3 px-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+                          SM
+                        </div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-title-sm text-text-primary group-hover:text-primary font-bold">Sarah Mensah</span>
+                          <span class="font-caption text-caption text-text-muted font-mono">EMP-GH-0078</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="font-title-sm text-title-sm text-text-primary">Senior Grants Accountant</span>
+                        <span class="font-caption text-caption text-text-muted">Finance, Compliance &amp; Grants</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-text-muted text-[15px]">location_on</span>
+                        <span class="text-text-primary font-medium">Accra HQ Core</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold w-fit">
+                          Unrestricted Core (60%) • USAID (40%)
+                        </span>
+                        <span class="font-caption text-caption text-text-muted mt-0.5">CC-102 • Finance Treasury</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="text-text-secondary">Ama Mensah</span>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+                        <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span>
+                        Active
+                      </span>
+                    </td>
+                    <td class="py-3 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                      <button onclick="openEmployeeDetail('Sarah Mensah', 'EMP-GH-0078', 'Finance, Compliance & Grants', 'Senior Fiduciary Grants Accountant', 'Accra HQ Core', 'Active', 'Ama Mensah', 'Core Fiduciary & USAID Support', 'CC-102 (Accra Finance)', 'sarah.mensah@fiduciary-ngo.org', '+233 27 662 4589', 'Permanent Staff', '01 Apr 2020', 'All Clear • Next SSNIT submission 15 Jul')" class="text-primary hover:text-primary-hover font-title-sm text-title-sm inline-flex items-center gap-0.5 mr-2">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Employee 5: Joseph Danquah -->
+                  <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openEmployeeDetail('Joseph Danquah', 'EMP-GH-0122', 'Logistics & Supply Chain', 'Fleet & Warehouse Supervisor', 'Accra HQ Core', 'On Leave', 'Kwesi Appiah', 'General Operations Support', 'CC-201 (Central Logistics)', 'joseph.danquah@fiduciary-ngo.org', '+233 24 883 2217', 'Full-Time Staff', '12 Sep 2021', 'Annual Leave (Returns 28 Jun 2025)')">
+                    <td class="py-3 px-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-surface-secondary text-text-secondary flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+                          JD
+                        </div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-title-sm text-text-primary group-hover:text-primary font-bold">Joseph Danquah</span>
+                          <span class="font-caption text-caption text-text-muted font-mono">EMP-GH-0122</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="font-title-sm text-title-sm text-text-primary">Fleet &amp; Warehouse Supervisor</span>
+                        <span class="font-caption text-caption text-text-muted">Logistics &amp; Supply Chain</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-text-muted text-[15px]">location_on</span>
+                        <span class="text-text-primary font-medium">Accra HQ Core</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold w-fit">
+                          Unrestricted (100%)
+                        </span>
+                        <span class="font-caption text-caption text-text-muted mt-0.5">CC-201 • Fleet &amp; Stores</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="text-text-secondary">Kwesi Appiah</span>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-label-sm text-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">event_busy</span>
+                        On Leave
+                      </span>
+                    </td>
+                    <td class="py-3 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                      <button onclick="openEmployeeDetail('Joseph Danquah', 'EMP-GH-0122', 'Logistics & Supply Chain', 'Fleet & Warehouse Supervisor', 'Accra HQ Core', 'On Leave', 'Kwesi Appiah', 'General Operations Support', 'CC-201 (Central Logistics)', 'joseph.danquah@fiduciary-ngo.org', '+233 24 883 2217', 'Full-Time Staff', '12 Sep 2021', 'Annual Leave (Returns 28 Jun 2025)')" class="text-primary hover:text-primary-hover font-title-sm text-title-sm inline-flex items-center gap-0.5 mr-2">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Employee 6: Grace Addo -->
+                  <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openEmployeeDetail('Grace Addo', 'EMP-GH-0130', 'Programs & Field Delivery', 'M&E Field Officer', 'Savannah Mission', 'On Leave', 'Kwame Mensah', 'EU Climate Adaptation (EU-CLIM-2024)', 'CC-405 (Savannah Mission)', 'grace.addo@fiduciary-ngo.org', '+233 20 119 7784', 'Grant Fixed-Term', '01 Mar 2023', 'Maternity Leave (Returns 15 Sep 2025)')">
+                    <td class="py-3 px-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-surface-secondary text-text-secondary flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+                          GA
+                        </div>
+                        <div class="flex flex-col">
+                          <span class="font-title-sm text-title-sm text-text-primary group-hover:text-primary font-bold">Grace Addo</span>
+                          <span class="font-caption text-caption text-text-muted font-mono">EMP-GH-0130</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="font-title-sm text-title-sm text-text-primary">M&amp;E Field Officer</span>
+                        <span class="font-caption text-caption text-text-muted">Programs &amp; Field Delivery</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-text-muted text-[15px]">location_on</span>
+                        <span class="text-text-primary font-medium">Savannah Mission (Damongo)</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <div class="flex flex-col">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#FEF8E7] text-[#A07200] font-caption text-caption font-semibold w-fit">
+                          Temp Restricted (EU-CLIM 100%)
+                        </span>
+                        <span class="font-caption text-caption text-text-muted mt-0.5">CC-405 • Agroforestry M&amp;E</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="text-text-secondary">Kwame Mensah</span>
+                    </td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-label-sm text-label-sm font-semibold">
+                        <span class="material-symbols-outlined text-[12px]">family_restroom</span>
+                        On Leave (Maternity)
+                      </span>
+                    </td>
+                    <td class="py-3 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                      <button onclick="openEmployeeDetail('Grace Addo', 'EMP-GH-0130', 'Programs & Field Delivery', 'M&E Field Officer', 'Savannah Mission', 'On Leave', 'Kwame Mensah', 'EU Climate Adaptation (EU-CLIM-2024)', 'CC-405 (Savannah Mission)', 'grace.addo@fiduciary-ngo.org', '+233 20 119 7784', 'Grant Fixed-Term', '01 Mar 2023', 'Maternity Leave (Returns 15 Sep 2025)')" class="text-primary hover:text-primary-hover font-title-sm text-title-sm inline-flex items-center gap-0.5 mr-2">
+                        Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Table Footer -->
+            <div class="p-space-md bg-surface-secondary flex flex-col sm:flex-row items-center justify-between gap-space-sm text-caption text-text-secondary border-t border-border-subtle/50">
+              <span class="font-numeric-table">Showing 6 sample master staff records • Total organization workforce: 78 employees</span>
+              <div class="flex items-center gap-4">
+                <span>Active Duty: <strong class="text-status-success-text font-numeric-table-bold">72 Staff</strong></span>
+                <span>On Approved Leave: <strong class="text-[#8A6507] font-numeric-table-bold">4 Staff</strong></span>
+                <span>Pending Approvals: <strong class="text-status-warning-text font-numeric-table-bold">8 Items</strong></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- DRAWER: EMPLOYEE DETAIL WORKFLOW (SLIDE-OVER) -->
+  <div id="employeeDetailDrawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-nav-bg/60 backdrop-blur-sm transition-opacity" onclick="closeEmployeeDetail()"></div>
+
+    <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+      <div class="pointer-events-auto w-screen max-w-2xl bg-surface-card shadow-2xl flex flex-col justify-between overflow-y-auto">
+        <!-- Drawer Header -->
+        <div class="p-space-lg bg-surface-secondary/80 border-b border-border-subtle/60 flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <div id="drawerAvatar" class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-lg shadow">
+              KA
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2">
+                <h2 id="drawerName" class="font-headline-sm text-headline-sm text-text-primary font-bold">Kwesi Appiah</h2>
+                <span id="drawerStatusBadge" class="px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">Active</span>
+              </div>
+              <span id="drawerEmpId" class="text-caption text-text-muted font-mono">EMP-GH-0104 • Biometric ID Verified</span>
+            </div>
+          </div>
+          <button onclick="closeEmployeeDetail()" class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-dim/40 transition-colors" type="button">
+            <span class="material-symbols-outlined text-[22px]">close</span>
+          </button>
+        </div>
+
+        <!-- Drawer Body Content -->
+        <div class="p-space-xl flex-1 flex flex-col gap-space-lg">
+          
+          <!-- Role & Fiduciary Dimensions -->
+          <div class="grid grid-cols-2 gap-space-md p-space-md bg-surface-secondary rounded-lg border border-border-subtle/50">
+            <div class="flex flex-col">
+              <span class="font-caption text-caption text-text-muted">Designation / Role</span>
+              <span id="drawerRole" class="font-title-sm text-title-sm text-text-primary font-bold">Senior Field Logistics Lead</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-caption text-caption text-text-muted">Department</span>
+              <span id="drawerDept" class="font-title-sm text-title-sm text-text-primary font-semibold">Programs &amp; Field Delivery</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-caption text-caption text-text-muted">Duty Station / Location</span>
+              <span id="drawerLocation" class="font-title-sm text-title-sm text-text-primary font-semibold">Tamale Regional Hub</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-caption text-caption text-text-muted">Reporting Line Manager</span>
+              <span id="drawerManager" class="font-title-sm text-title-sm text-text-primary font-semibold">Dr. Emmanuel Osei</span>
+            </div>
+          </div>
+
+          <!-- Grant & Cost Center Accounting Linkage (NGO-ERP Core Requirement) -->
+          <div class="flex flex-col gap-space-xs">
+            <h3 class="font-title-md text-title-md text-text-primary flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-fund-unrestricted text-[18px]">account_tree</span>
+              <span>Grant Encumbrance &amp; Accounting Allocation</span>
+            </h3>
+            <div class="p-space-md rounded-lg bg-surface-secondary/70 border border-border-subtle/40 flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <span class="text-caption text-text-muted">Linked Donor Grant</span>
+                <span id="drawerGrant" class="font-title-sm text-title-sm text-text-primary font-semibold">USAID Education Program (GH-2024-ED09)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-caption text-text-muted">Assigned Cost Center</span>
+                <span id="drawerCostCenter" class="font-title-sm text-title-sm text-text-primary font-semibold">CC-401 (Tamale Operations)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-caption text-text-muted">Payroll General Ledger Imputation</span>
+                <span class="font-mono text-caption text-text-primary font-bold">GL-5100 • Personnel Direct Program Cost</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-caption text-text-muted">Ghana Statutory Tier Deductions</span>
+                <span class="text-caption text-status-success-text font-semibold">SSNIT # 90481284A • GRA TIN: P002819281</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact & Contract Information -->
+          <div class="flex flex-col gap-space-xs">
+            <h3 class="font-title-md text-title-md text-text-primary flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-primary text-[18px]">badge</span>
+              <span>Contract &amp; Employment Specifics</span>
+            </h3>
+            <div class="grid grid-cols-2 gap-space-sm p-space-md rounded-lg bg-surface-card border border-border-subtle/60 text-body-sm">
+              <div>
+                <span class="text-caption text-text-muted block">Contract Type</span>
+                <span id="drawerContractType" class="font-semibold text-text-primary">Permanent / Full-Time</span>
+              </div>
+              <div>
+                <span class="text-caption text-text-muted block">Hire Date</span>
+                <span id="drawerHireDate" class="font-semibold text-text-primary">15 Feb 2021</span>
+              </div>
+              <div>
+                <span class="text-caption text-text-muted block">Corporate Email</span>
+                <span id="drawerEmail" class="font-mono text-caption text-text-secondary">kwesi.appiah@fiduciary-ngo.org</span>
+              </div>
+              <div>
+                <span class="text-caption text-text-muted block">Official Phone</span>
+                <span id="drawerPhone" class="font-mono text-caption text-text-secondary">+233 24 411 9021</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Workflow / Action Notice -->
+          <div class="p-space-md rounded-lg bg-[#FCF7E8] border border-[#F6C88D] flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-[#914D03] text-[20px] shrink-0 mt-0.5">info</span>
+            <div class="flex flex-col">
+              <span class="font-title-sm text-title-sm text-[#914D03] font-bold">Pending Operational Workflow</span>
+              <span id="drawerPendingWorkflow" class="text-caption text-[#8A6507]">Leave Request (Pending Approval) awaiting HR Fiduciary endorsement.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Drawer Action Footer -->
+        <div class="p-space-lg bg-surface-secondary border-t border-border-subtle/60 flex items-center justify-between gap-space-md">
+          <button onclick="closeEmployeeDetail()" class="px-space-md py-2 rounded bg-surface-card hover:bg-surface-dim/40 text-text-primary font-title-sm text-title-sm border border-border-subtle transition-colors" type="button">
+            Close Panel
+          </button>
+          <div class="flex items-center gap-space-sm">
+            <button onclick="recordHRActionToast('Employee records updated and audit hash created.')" class="px-space-md py-2 rounded bg-surface-card hover:bg-surface-dim/50 text-text-primary font-title-sm text-title-sm border border-border-subtle transition-colors flex items-center gap-1" type="button">
+              <span class="material-symbols-outlined text-[16px]">edit</span>
+              <span>Edit Staff Details</span>
+            </button>
+            <button onclick="recordHRActionToast('Leave / Timesheet request processed for this employee.')" class="px-space-md py-2 rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm shadow-sm transition-colors flex items-center gap-1" type="button">
+              <span class="material-symbols-outlined text-[16px]">check_circle</span>
+              <span>Action Pending Items</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD EMPLOYEE FORM (FULL ENTERPRISE NGO HR MODAL) -->
+  <div id="addEmployeeModal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div class="fixed inset-0 bg-nav-bg/60 backdrop-blur-sm transition-opacity" onclick="closeAddEmployeeModal()"></div>
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+      <div class="inline-block align-bottom bg-surface-card rounded-xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full border border-border-subtle">
+        <!-- Modal Header -->
+        <div class="p-space-lg bg-surface-secondary/80 border-b border-border-subtle/60 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+              <span class="material-symbols-outlined text-[18px]">person_add</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">Add New Employee</h3>
+              <p class="font-caption text-caption text-text-muted">Register an employee and link to cost center, grant budget, and Ghana statutory tax profiles.</p>
+            </div>
+          </div>
+          <button onclick="closeAddEmployeeModal()" class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-dim/40 transition-colors" type="button">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+
+        <!-- Modal Form Content -->
+        <form id="newEmployeeForm" onsubmit="submitNewEmployee(event)" class="p-space-xl flex flex-col gap-space-md">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Full Legal Name *</label>
+              <input required id="inputEmpName" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary" placeholder="e.g. Abena Serwaa Boateng" type="text" />
+            </div>
+
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Employee ID / Tag *</label>
+              <input required id="inputEmpTag" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary font-mono" value="EMP-GH-0145" type="text" />
+            </div>
+
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Department *</label>
+              <select required id="inputEmpDept" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary">
+                <option value="Programs & Field Delivery">Programs &amp; Field Delivery</option>
+                <option value="Clinical & Community Health">Clinical &amp; Community Health</option>
+                <option value="Finance, Compliance & Grants">Finance, Compliance &amp; Grants</option>
+                <option value="Logistics & Supply Chain">Logistics &amp; Supply Chain</option>
+                <option value="Executive & Administration">Executive &amp; Administration</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Designation / Role *</label>
+              <input required id="inputEmpRole" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary" placeholder="e.g. Field Nutrition Officer" type="text" />
+            </div>
+
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Duty Station / Location *</label>
+              <select required id="inputEmpLocation" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary">
+                <option value="Tamale Regional Hub">Tamale Regional Hub (Northern Sector)</option>
+                <option value="Volta Mission Basin">Volta Mission Basin (Ho Outpost)</option>
+                <option value="Accra HQ Core">Accra HQ Core Office</option>
+                <option value="Savannah Mission">Savannah Mission (Damongo)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Reporting Line Manager *</label>
+              <input required id="inputEmpManager" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary" value="Kwesi Appiah" type="text" />
+            </div>
+
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Primary Grant Funding Source *</label>
+              <select required id="inputEmpGrant" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary">
+                <option value="USAID Education Program (GH-2024-ED09)">USAID Education Program (GH-2024-ED09)</option>
+                <option value="Global Fund Malaria Phase II (GH-003)">Global Fund Malaria Phase II (GH-003)</option>
+                <option value="EU Climate Adaptation (EU-CLIM-2024)">EU Climate Adaptation (EU-CLIM-2024)</option>
+                <option value="Core Unrestricted Operations">Core Unrestricted Operations</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Assigned Cost Center *</label>
+              <input required id="inputEmpCostCenter" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary" value="CC-401 (Field Delivery)" type="text" />
+            </div>
+
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Employment Status</label>
+              <select id="inputEmpStatus" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary">
+                <option value="Active">Active</option>
+                <option value="On Leave">On Leave</option>
+                <option value="Contract Review">Contract Review</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-label-md text-label-md text-text-primary font-semibold mb-1">Official Work Email</label>
+              <input id="inputEmpEmail" class="w-full px-3 py-1.5 text-body-sm bg-surface-card rounded border border-border-subtle focus:outline-none focus:border-primary" placeholder="a.boateng@fiduciary-ngo.org" type="email" />
+            </div>
+          </div>
+
+          <div class="p-space-sm rounded bg-surface-secondary/70 border border-border-subtle/50 text-caption text-text-secondary flex items-center gap-2">
+            <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">security</span>
+            <span>Staff compensation and sensitive payroll figures remain masked pursuant to role-based access security.</span>
+          </div>
+
+          <!-- Modal Action Buttons -->
+          <div class="pt-space-sm border-t border-border-subtle/50 flex items-center justify-end gap-space-sm">
+            <button onclick="closeAddEmployeeModal()" class="px-space-md py-2 rounded bg-surface-secondary hover:bg-surface-dim/40 text-text-secondary font-title-sm text-title-sm transition-colors" type="button">
+              Cancel
+            </button>
+            <button type="submit" class="px-space-lg py-2 rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm transition-colors shadow-sm flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">save</span>
+              <span>Register Employee</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 px-4 py-3 bg-nav-surface text-white rounded-lg shadow-xl border border-nav-border">
+    <span class="material-symbols-outlined text-status-success-text text-[20px]" id="toastIcon">check_circle</span>
+    <span class="font-body-sm text-body-sm font-medium" id="toastMessage">Action completed successfully.</span>
+  </div>
+
+<!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+
+  <script>
+   
+
+    // 2. Modal Open/Close
+    var addEmpModal = document.getElementById('addEmployeeModal');
+    var openAddEmpBtn = document.getElementById('openAddEmployeeModal');
+    var topAddEmpBtn = document.getElementById('topAddEmployeeBtn');
+
+    if (openAddEmpBtn) openAddEmpBtn.onclick = function() { addEmpModal.classList.remove('hidden'); };
+    if (topAddEmpBtn) topAddEmpBtn.onclick = function() { addEmpModal.classList.remove('hidden'); };
+
+    function closeAddEmployeeModal() {
+      if (addEmpModal) addEmpModal.classList.add('hidden');
+    }
+
+    // 3. Employee Detail Drawer Open/Close
+    var detailDrawer = document.getElementById('employeeDetailDrawer');
+
+    function openEmployeeDetail(name, id, dept, role, loc, status, mgr, grant, cc, email, phone, contract, hireDate, workflow) {
+      document.getElementById('drawerName').textContent = name;
+      document.getElementById('drawerEmpId').textContent = id + ' • Biometric ID Verified';
+      document.getElementById('drawerRole').textContent = role;
+      document.getElementById('drawerDept').textContent = dept;
+      document.getElementById('drawerLocation').textContent = loc;
+      document.getElementById('drawerManager').textContent = mgr;
+      document.getElementById('drawerGrant').textContent = grant;
+      document.getElementById('drawerCostCenter').textContent = cc;
+      document.getElementById('drawerContractType').textContent = contract;
+      document.getElementById('drawerHireDate').textContent = hireDate;
+      document.getElementById('drawerEmail').textContent = email;
+      document.getElementById('drawerPhone').textContent = phone;
+      document.getElementById('drawerPendingWorkflow').textContent = workflow;
+      
+      var badge = document.getElementById('drawerStatusBadge');
+      badge.textContent = status;
+      if (status === 'Active') {
+        badge.className = 'px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold';
+      } else if (status === 'On Leave') {
+        badge.className = 'px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-label-sm text-label-sm font-semibold';
+      } else {
+        badge.className = 'px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm text-label-sm font-semibold';
+      }
+
+      var avatar = document.getElementById('drawerAvatar');
+      var initials = name.split(' ').map(function(n) { return n[0]; }).join('').substring(0, 2);
+      avatar.textContent = initials;
+
+      detailDrawer.classList.remove('hidden');
+    }
+
+    function closeEmployeeDetail() {
+      if (detailDrawer) detailDrawer.classList.add('hidden');
+    }
+
+    // 4. Toast Notification
+    function recordHRActionToast(msg) {
+      var toast = document.getElementById('toastNotification');
+      var text = document.getElementById('toastMessage');
+      if (toast && text) {
+        text.textContent = msg;
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        setTimeout(function() {
+          toast.classList.add('translate-y-24', 'opacity-0');
+        }, 3200);
+      }
+    }
+
+    // 5. Action Card Approval Simulation
+    function approveHRAction(id, successMsg) {
+      var elem = document.getElementById(id);
+      if (elem) {
+        elem.style.transition = 'all 0.3s ease';
+        elem.style.opacity = '0.4';
+        setTimeout(function() {
+          elem.remove();
+          var badge = document.getElementById('pendingActionCountBadge');
+          var kpi = document.getElementById('kpiPendingActions');
+          if (badge && kpi) {
+            var curr = parseInt(badge.textContent, 10) - 1;
+            badge.textContent = curr;
+            kpi.textContent = curr;
+          }
+          recordHRActionToast(successMsg);
+        }, 300);
+      }
+    }
+
+    function rejectHRAction(id, msg) {
+      recordHRActionToast(msg);
+    }
+
+    function inspectTimesheet(name) {
+      recordHRActionToast('Timesheet breakdown opened for ' + name + '. 100% Grant Verified.');
+    }
+
+    function showTimesheetModal() {
+      recordHRActionToast('Opening Timesheet Compliance Register: 65 submitted, 13 pending.');
+    }
+
+    function openPayrollWorkflow() {
+      recordHRActionToast('Routing to Payroll Sub-Ledger: June 2025 calculation batch in progress.');
+    }
+
+    function showBulkTimesheetNotice() {
+      recordHRActionToast('Timesheet verification queue loaded for 78 workforce members.');
+    }
+
+    // 6. Add Employee Submission
+    function submitNewEmployee(e) {
+      e.preventDefault();
+      var name = document.getElementById('inputEmpName').value;
+      var tag = document.getElementById('inputEmpTag').value;
+      var dept = document.getElementById('inputEmpDept').value;
+      var role = document.getElementById('inputEmpRole').value;
+      var loc = document.getElementById('inputEmpLocation').value;
+      var mgr = document.getElementById('inputEmpManager').value;
+      var grant = document.getElementById('inputEmpGrant').value;
+      var cc = document.getElementById('inputEmpCostCenter').value;
+      var status = document.getElementById('inputEmpStatus').value;
+      var email = document.getElementById('inputEmpEmail').value || (name.toLowerCase().replace(/ /g, '.') + '@fiduciary-ngo.org');
+
+      // Create new row
+      var tbody = document.getElementById('employeeTableBody');
+      var tr = document.createElement('tr');
+      tr.className = 'hover:bg-primary-tint/25 transition-colors cursor-pointer group';
+      var initials = name.split(' ').map(function(n) { return n[0]; }).join('').substring(0, 2);
+
+      tr.onclick = function() {
+        openEmployeeDetail(name, tag, dept, role, loc, status, mgr, grant, cc, email, '+233 24 000 0000', 'Permanent Staff', 'Today', 'New Hire Onboarding');
+      };
+
+      tr.innerHTML = `
+        <td class="py-3 px-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+              ${initials}
+            </div>
+            <div class="flex flex-col">
+              <span class="font-title-sm text-title-sm text-text-primary group-hover:text-primary font-bold">${name}</span>
+              <span class="font-caption text-caption text-text-muted font-mono">${tag}</span>
+            </div>
+          </div>
+        </td>
+        <td class="py-3 px-4">
+          <div class="flex flex-col">
+            <span class="font-title-sm text-title-sm text-text-primary">${role}</span>
+            <span class="font-caption text-caption text-text-muted">${dept}</span>
+          </div>
+        </td>
+        <td class="py-3 px-4 whitespace-nowrap">
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-text-muted text-[15px]">location_on</span>
+            <span class="text-text-primary font-medium">${loc}</span>
+          </div>
+        </td>
+        <td class="py-3 px-4">
+          <div class="flex flex-col">
+            <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold w-fit">
+              ${grant}
+            </span>
+            <span class="font-caption text-caption text-text-muted mt-0.5">${cc}</span>
+          </div>
+        </td>
+        <td class="py-3 px-4 whitespace-nowrap">
+          <span class="text-text-secondary">${mgr}</span>
+        </td>
+        <td class="py-3 px-4 whitespace-nowrap">
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span>
+            ${status}
+          </span>
+        </td>
+        <td class="py-3 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+          <button class="text-primary hover:text-primary-hover font-title-sm text-title-sm inline-flex items-center gap-0.5 mr-2">
+            Inspect <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          </button>
+        </td>
+      `;
+
+      tbody.insertBefore(tr, tbody.firstChild);
+
+      // Increment KPI
+      var kpi = document.getElementById('kpiTotalEmployees');
+      if (kpi) kpi.textContent = parseInt(kpi.textContent, 10) + 1;
+
+      closeAddEmployeeModal();
+      recordHRActionToast('Employee ' + name + ' registered successfully.');
+    }
+
+    // 7. Filtering Table
+    function filterStaffTable() {
+      var query = document.getElementById('staffTableSearch').value.toLowerCase();
+      var dept = document.getElementById('filterDepartment').value.toLowerCase();
+      var loc = document.getElementById('filterLocation').value.toLowerCase();
+      var status = document.getElementById('filterStatus').value.toLowerCase();
+
+      var rows = document.querySelectorAll('#employeeTableBody tr');
+      var visibleCount = 0;
+
+      rows.forEach(function(row) {
+        var text = row.textContent.toLowerCase();
+        var matchQuery = !query || text.includes(query);
+        var matchDept = dept === 'all' || text.includes(dept);
+        var matchLoc = loc === 'all' || text.includes(loc);
+        var matchStatus = status === 'all' || text.includes(status);
+
+        if (matchQuery && matchDept && matchLoc && matchStatus) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      var badge = document.getElementById('tableFilterCountBadge');
+      if (badge) badge.textContent = 'Showing ' + visibleCount + ' Staff Records';
+    }
+
+    function filterTableByStatus(target) {
+      var statusSelect = document.getElementById('filterStatus');
+      if (!statusSelect) return;
+      if (target === 'all') statusSelect.value = 'all';
+      else if (target === 'active') statusSelect.value = 'Active';
+      else if (target === 'leave') statusSelect.value = 'On Leave';
+      filterStaffTable();
+      scrollToSection('employeeTable');
+    }
+
+    function resetFilters() {
+      document.getElementById('staffTableSearch').value = '';
+      document.getElementById('filterDepartment').value = 'all';
+      document.getElementById('filterLocation').value = 'all';
+      document.getElementById('filterStatus').value = 'all';
+      filterStaffTable();
+    }
+
+    function scrollToSection(id) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Connect top search bar to filter
+    var topSearch = document.getElementById('globalSearchInput');
+    if (topSearch) {
+      topSearch.addEventListener('input', function(e) {
+        var tableSearch = document.getElementById('staffTableSearch');
+        if (tableSearch) {
+          tableSearch.value = e.target.value;
+          filterStaffTable();
+        }
+      });
+    }
+
+    // Export Handler
+    var exportBtn = document.getElementById('btnExportHR');
+    if (exportBtn) {
+      exportBtn.onclick = function() {
+        recordHRActionToast('Statutory Staff Roll (GRA/SSNIT compliance format) exported.');
+      };
+    }
+
+    var runPayrollBtn = document.getElementById('btnRunPayrollModal');
+    if (runPayrollBtn) {
+      runPayrollBtn.onclick = function() {
+        recordHRActionToast('Payroll calculation batch for June 2025 initiated across 78 employees.');
+      };
+    }
+  </script>
+</body>
+</html>

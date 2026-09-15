@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Milestones &amp; Deliverables - Fiduciary Core</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f7f9ff", "on-tertiary": "#ffffff", "status-warning-bg": "#FEF3E6", "surface-dim": "#d1dbe7", "status-critical-bg": "#FDF0F0", "primary-fixed": "#a7eef6", "status-neutral-bg": "#ECEFF2", "secondary-container": "#d8e4ef", "status-success-border": "#9DD4B8", "inverse-primary": "#8bd2da", "on-tertiary-container": "#ffd892", "status-critical-border": "#F3A6A9", "nav-border": "#1E3243", "outline-variant": "#bec8c9", "text-muted": "#7B8C9A", "inverse-on-surface": "#e8f2fe", "secondary-fixed-dim": "#bcc8d3", "fund-temp-restricted": "#D99B00", "canvas-bg": "#F7F9FA", "tertiary-fixed": "#ffdea6", "surface-container-low": "#ecf4ff", "nav-text-primary": "#F4F7F9", "on-secondary": "#ffffff", "status-neutral-text": "#384551", "fund-restricted": "#B8860B", "surface-variant": "#d9e4ef", "inverse-surface": "#28313a", "status-success-text": "#0F6848", "on-primary-fixed": "#002022", "surface-container-highest": "#d9e4ef", "on-surface-variant": "#3f484a", "on-surface": "#131d25", "primary": "#005258", "on-error-container": "#93000a", "nav-text-muted": "#8EA2B4", "error-container": "#ffdad6", "outline": "#6f797a", "tertiary-fixed-dim": "#f7bd48", "nav-surface": "#152431", "status-success-bg": "#E8F5EE", "on-secondary-fixed-variant": "#3d4851", "error": "#ba1a1a", "on-secondary-fixed": "#121d25", "primary-fixed-dim": "#8bd2da", "on-primary-container": "#a1e9f1", "surface-secondary": "#F0F4F6", "status-critical-text": "#A81D24", "on-tertiary-fixed-variant": "#5d4200", "secondary-fixed": "#d8e4ef", "secondary": "#556069", "on-primary": "#ffffff", "surface-tint": "#16686f", "text-secondary": "#4E5D6A", "surface": "#f7f9ff", "on-primary-fixed-variant": "#004f55", "status-warning-text": "#914D03", "surface-container-high": "#dfe9f5", "tertiary-container": "#7f5b00", "status-warning-border": "#F6C88D", "tertiary": "#614500", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "text-primary": "#121A21", "border-subtle": "#DCE3E8", "surface-bright": "#f7f9ff", "on-secondary-container": "#5a666f", "surface-container": "#e5effb", "on-background": "#131d25", "border-strong": "#B8C4CE", "on-tertiary-fixed": "#271900", "primary-hover": "#144F54", "primary-container": "#1b6b72", "fund-unrestricted": "#1B6B72", "primary-tint": "#E4EFEF", "surface-card": "#FFFFFF", "status-neutral-border": "#CAD2D8", "nav-bg": "#0D1821" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1rem", "space-2xl": "2rem", "margin-compact": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-xxs": "0.125rem", "margin": "1.5rem", "space-xl": "1.5rem", "gutter-dense": "0.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "label-md": ["IBM Plex Sans"], "title-md": ["IBM Plex Sans"], "caption": ["IBM Plex Sans"], "headline-sm": ["IBM Plex Sans"], "body-sm": ["IBM Plex Sans"], "numeric-table": ["IBM Plex Sans"], "label-sm": ["IBM Plex Sans"], "numeric-table-bold": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "display-lg": ["IBM Plex Sans"], "title-sm": ["IBM Plex Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "numeric-table-bold": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }] } } } };</script>
+  <base target="_blank">
+
+<body class="bg-background font-body-md text-text-primary antialiased selection:bg-primary selection:text-on-primary">
+    <!-- Toast Notification -->
+    <div class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm px-space-lg py-space-md rounded bg-surface-card shadow-xl border border-border-subtle max-w-md"
+        id="toastNotification">
+        <div class="w-7 h-7 rounded-full bg-status-success-bg flex items-center justify-center shrink-0"
+            id="toastIconBg">
+            <span class="material-symbols-outlined text-status-success text-[18px]" id="toastIcon">check_circle</span>
+        </div>
+        <div class="flex flex-col min-w-0 pr-space-sm">
+            <p class="font-title-sm text-title-sm text-text-primary truncate" id="toastTitle">Success</p>
+            <p class="font-caption text-caption text-text-secondary truncate" id="toastDesc">Operation completed
+                successfully.</p>
+        </div>
+        <button class="text-text-muted hover:text-text-primary ml-auto" onclick="hideToast()" type="button">
+            <span class="material-symbols-outlined text-[16px]">close</span>
+        </button>
+    </div>
+    <!-- APPLICATION SHELL SIDEBAR -->
+    <aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+    <!-- APPLICATION HEADER -->
+<div id="appMain" class="pl-64 flex flex-col min-h-screen">
+     <header id="appHeader"
+      class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center"><span
+            class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span><input
+            class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-card transition-colors"
+            placeholder="Search transactions, grants, projects, vendors, staff..." type="text" /></div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span><span>FY 2025
+            (Q2 Closed)</span></div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary"><span
+            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS
+            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <div class="h-5 w-px bg-surface-secondary"></div><button
+          class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span
+            class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span></button><button
+          class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">help</span></button>
+        <div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" /><span
+            class="material-symbols-outlined text-text-muted text-[16px]"></span></div>
+      </div>
+    </header>
+    <!-- MAIN CANVAS -->
+    <main class="ml-64 pt-16 min-h-screen bg-background transition-all" id="mainContent">
+        <div class="max-w-[84rem] mx-auto px-space-xl py-space-lg space-y-space-lg">
+            <!-- Breadcrumb & Page Title -->
+            <div class="space-y-space-xs">
+                <nav aria-label="Breadcrumb"
+                    class="flex items-center gap-space-xs font-caption text-caption text-text-muted">
+                    <a class="hover:text-primary transition-colors flex items-center gap-space-xxs" href="#">
+                        <span class="material-symbols-outlined text-[14px]">home</span>
+                        <span>Home</span>
+                    </a>
+                    <span>/</span>
+                    <a class="hover:text-primary transition-colors" href="#">Grants &amp; Projects</a>
+                    <span>/</span>
+                    <span class="text-text-primary font-medium">Milestones &amp; Deliverables</span>
+                    <span>/</span>
+                    <span class="text-text-muted">Workplan Commitments</span>
+                </nav>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+                    <div class="space-y-space-xxs max-w-3xl">
+                        <div class="flex flex-wrap items-center gap-space-sm">
+                            <h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Milestones
+                                &amp; Deliverables</h1>
+                            <span
+                                class="inline-flex items-center gap-space-xxs px-space-sm py-0.5 rounded font-label-sm text-label-sm bg-primary-tint text-primary border border-primary/20 font-semibold">
+                                <span class="material-symbols-outlined text-[14px]">verified_user</span>
+                                IPSAS &amp; Fiduciary Linked
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-space-xxs px-space-sm py-0.5 rounded font-label-sm text-label-sm bg-fund-temp-restricted-bg text-fund-temp-restricted border border-fund-temp-restricted/20 font-semibold">
+                                <span class="material-symbols-outlined text-[14px]">handshake</span>
+                                Donor Accountability
+                            </span>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-text-secondary">
+                            Organization-wide milestone and deliverable tracking workspace, connected to Grants &amp;
+                            Projects, project workplans, and donor reporting requirements.
+                        </p>
+                    </div>
+                    <!-- Actions -->
+                    <div class="flex items-center gap-space-sm shrink-0 self-start md:self-auto">
+                        <button
+                            class="px-space-md h-9 rounded bg-surface-card border border-border-subtle hover:bg-surface-secondary text-text-primary font-title-sm text-title-sm flex items-center gap-space-xs transition-colors shadow-sm"
+                            onclick="triggerExport()" type="button">
+                            <span class="material-symbols-outlined text-[16px] text-text-secondary">download</span>
+                            <span>Export Register</span>
+                        </button>
+                        <button
+                            class="px-space-md h-9 rounded bg-fund-unrestricted hover:bg-primary-hover text-on-primary font-title-sm text-title-sm flex items-center gap-space-xs transition-colors shadow-sm"
+                            onclick="openNewModal()" type="button">
+                            <span class="material-symbols-outlined text-[16px]">add_task</span>
+                            <span>+ New Milestone</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- KPI Summary Bento (4 Cards) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                <!-- Card 1 -->
+                <div
+                    class="bg-surface-card rounded p-space-lg border border-border-subtle shadow-sm hover:border-border-strong transition-all flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Total
+                            Tracked</span>
+                        <span class="p-space-xxs rounded bg-surface-secondary text-text-secondary">
+                            <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                        </span>
+                    </div>
+                    <div class="mt-space-sm">
+                        <div class="flex items-baseline gap-space-xs">
+                            <span class="font-caption text-caption text-text-muted font-bold">QTY</span>
+                            <span
+                                class="font-headline-lg text-headline-lg text-text-primary tracking-tight font-semibold"
+                                id="metricTotal">16</span>
+                        </div>
+                        <div
+                            class="font-caption text-caption text-text-secondary mt-space-xxs flex items-center gap-space-xxs">
+                            <span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+                            <span>100% grant &amp; project connected</span>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-space-md pt-space-xs border-t border-border-subtle flex items-center justify-between font-caption text-caption text-text-muted">
+                        <span>6 Active Grants</span>
+                        <span>9 Projects</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-surface-card rounded p-space-lg border border-border-subtle shadow-sm hover:border-border-strong transition-all flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">In Progress
+                            &amp; On-Track</span>
+                        <span class="p-space-xxs rounded bg-primary-tint text-primary">
+                            <span class="material-symbols-outlined text-[18px]">trending_up</span>
+                        </span>
+                    </div>
+                    <div class="mt-space-sm">
+                        <div class="flex items-baseline gap-space-xs">
+                            <span class="font-caption text-caption text-text-muted font-bold">ACTIVE</span>
+                            <span
+                                class="font-headline-lg text-headline-lg text-fund-unrestricted tracking-tight font-semibold"
+                                id="metricInProgress">7</span>
+                        </div>
+                        <div
+                            class="font-caption text-caption text-text-secondary mt-space-xxs flex items-center gap-space-xxs">
+                            <span class="material-symbols-outlined text-fund-unrestricted text-[14px]">pace</span>
+                            <span>50% portfolio actively executing</span>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-space-md pt-space-xs border-t border-border-subtle flex items-center justify-between font-caption text-caption text-text-muted">
+                        <span>Avg progress: 68%</span>
+                        <span class="text-status-success font-medium">On pace</span>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-surface-card rounded p-space-lg border border-border-subtle shadow-sm hover:border-border-strong transition-all flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Completed
+                            &amp; Verified</span>
+                        <span class="p-space-xxs rounded bg-status-success-bg text-status-success">
+                            <span class="material-symbols-outlined text-[18px]">fact_check</span>
+                        </span>
+                    </div>
+                    <div class="mt-space-sm">
+                        <div class="flex items-baseline gap-space-xs">
+                            <span class="font-caption text-caption text-text-muted font-bold">DONE</span>
+                            <span
+                                class="font-headline-lg text-headline-lg text-status-success tracking-tight font-semibold"
+                                id="metricCompleted">6</span>
+                        </div>
+                        <div
+                            class="font-caption text-caption text-text-secondary mt-space-xxs flex items-center gap-space-xxs">
+                            <span class="material-symbols-outlined text-status-success text-[14px]">check_circle</span>
+                            <span>Audit cleared &amp; evidence attached</span>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-space-md pt-space-xs border-t border-border-subtle flex items-center justify-between font-caption text-caption text-text-muted">
+                        <span>38% fulfillment</span>
+                        <span class="text-status-success font-medium">100% compliant</span>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-surface-card rounded p-space-lg border border-border-subtle shadow-sm hover:border-border-strong transition-all flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Overdue /
+                            Critical Due</span>
+                        <span class="p-space-xxs rounded bg-status-critical-bg text-status-critical">
+                            <span class="material-symbols-outlined text-[18px]">warning</span>
+                        </span>
+                    </div>
+                    <div class="mt-space-sm">
+                        <div class="flex items-baseline gap-space-xs">
+                            <span class="font-caption text-caption text-text-muted font-bold">FLAGGED</span>
+                            <span
+                                class="font-headline-lg text-headline-lg text-status-critical tracking-tight font-semibold"
+                                id="metricOverdue">2</span>
+                        </div>
+                        <div
+                            class="font-caption text-caption text-status-critical mt-space-xxs flex items-center gap-space-xxs font-medium">
+                            <span class="material-symbols-outlined text-[14px]">notification_important</span>
+                            <span>Q3 donor report due in 14 days</span>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-space-md pt-space-xs border-t border-border-subtle flex items-center justify-between font-caption text-caption text-text-muted">
+                        <span>Immediate fiduciary action</span>
+                        <span class="text-status-critical font-medium">Flagged</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Filter Controls & Quick Tabs -->
+            <div class="bg-surface-card rounded p-space-md border border-border-subtle shadow-sm space-y-space-md">
+                <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+                    <!-- Search Input -->
+                    <div class="relative flex-1 max-w-lg">
+                        <span
+                            class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-text-muted text-[18px] pointer-events-none">search</span>
+                        <input
+                            class="w-full h-9 pl-9 pr-space-md bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded border border-transparent focus:border-primary focus:bg-surface-card focus:outline-none transition-all"
+                            id="searchInput" oninput="applyFilters()"
+                            placeholder="Search milestone, grant, project, deliverable, owner..." type="search" />
+                    </div>
+                    <!-- Status Tabs -->
+                    <div class="flex items-center gap-space-xxs p-space-xxs bg-surface-secondary rounded shrink-0 overflow-x-auto"
+                        id="statusPills">
+                        <button
+                            class="status-tab-btn px-space-md py-space-xxs rounded font-label-md text-label-md bg-surface-card text-text-primary shadow-sm font-semibold transition-all"
+                            data-tab="ALL" onclick="setStatusTab('ALL')" type="button">
+                            All (16)
+                        </button>
+                        <button
+                            class="status-tab-btn px-space-md py-space-xxs rounded font-label-md text-label-md text-text-muted hover:text-text-primary transition-all"
+                            data-tab="IN_PROGRESS" onclick="setStatusTab('IN_PROGRESS')" type="button">
+                            In Progress (7)
+                        </button>
+                        <button
+                            class="status-tab-btn px-space-md py-space-xxs rounded font-label-md text-label-md text-text-muted hover:text-text-primary transition-all"
+                            data-tab="COMPLETED" onclick="setStatusTab('COMPLETED')" type="button">
+                            Completed (6)
+                        </button>
+                        <button
+                            class="status-tab-btn px-space-md py-space-xxs rounded font-label-md text-label-md text-text-muted hover:text-text-primary transition-all"
+                            data-tab="OVERDUE" onclick="setStatusTab('OVERDUE')" type="button">
+                            Overdue (2)
+                        </button>
+                    </div>
+                </div>
+                <!-- Detailed Selectors -->
+                <div class="flex flex-wrap items-center gap-space-md pt-space-xs border-t border-border-subtle">
+                    <div class="flex items-center gap-space-xs">
+                        <label class="font-label-md text-label-md uppercase tracking-wider text-text-muted"
+                            for="filterStatus">Status:</label>
+                        <select
+                            class="h-8 pl-space-sm pr-space-lg bg-surface-secondary text-text-primary rounded font-body-md text-body-md border border-transparent focus:border-primary focus:outline-none"
+                            id="filterStatus" onchange="applyFilters()">
+                            <option value="">All Statuses</option>
+                            <option value="Not Started">Not Started</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Overdue">Overdue</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center gap-space-xs">
+                        <label class="font-label-md text-label-md uppercase tracking-wider text-text-muted"
+                            for="filterGrant">Grant:</label>
+                        <select
+                            class="h-8 pl-space-sm pr-space-lg bg-surface-secondary text-text-primary rounded font-body-md text-body-md border border-transparent focus:border-primary focus:outline-none"
+                            id="filterGrant" onchange="applyFilters()">
+                            <option value="">All Grants</option>
+                            <option value="USAID Education Program">USAID Education Program</option>
+                            <option value="Global Fund Malaria">Global Fund Malaria</option>
+                            <option value="EU Climate Adapt">EU Climate Adapt</option>
+                            <option value="FCDO STEM Acceleration">FCDO STEM Acceleration</option>
+                            <option value="Bright Futures Initiative">Bright Futures Initiative</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center gap-space-xs">
+                        <label class="font-label-md text-label-md uppercase tracking-wider text-text-muted"
+                            for="filterProject">Project:</label>
+                        <select
+                            class="h-8 pl-space-sm pr-space-lg bg-surface-secondary text-text-primary rounded font-body-md text-body-md border border-transparent focus:border-primary focus:outline-none"
+                            id="filterProject" onchange="applyFilters()">
+                            <option value="">All Projects</option>
+                            <option value="Northern Literacy Outreach">Northern Literacy Outreach</option>
+                            <option value="Rural Health Posts Sub-grant">Rural Health Posts Sub-grant</option>
+                            <option value="Savannah Agro-Forestry">Savannah Agro-Forestry</option>
+                            <option value="Volta Basin Primary Health">Volta Basin Primary Health</option>
+                            <option value="Secondary STEM Labs">Secondary STEM Labs</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center gap-space-xs">
+                        <label class="font-label-md text-label-md uppercase tracking-wider text-text-muted"
+                            for="filterOwner">Owner:</label>
+                        <select
+                            class="h-8 pl-space-sm pr-space-lg bg-surface-secondary text-text-primary rounded font-body-md text-body-md border border-transparent focus:border-primary focus:outline-none"
+                            id="filterOwner" onchange="applyFilters()">
+                            <option value="">All Owners</option>
+                            <option value="Dr. Emmanuel Osei">Dr. Emmanuel Osei</option>
+                            <option value="Hajia Amina Bello">Hajia Amina Bello</option>
+                            <option value="Kwesi Appiah">Kwesi Appiah</option>
+                            <option value="Sarah Mensah">Sarah Mensah</option>
+                        </select>
+                    </div>
+                    <button
+                        class="ml-auto flex items-center gap-space-xxs text-text-secondary hover:text-text-primary font-title-sm text-title-sm px-space-sm py-1 rounded hover:bg-surface-secondary transition-colors"
+                        onclick="resetFilters()" type="button">
+                        <span class="material-symbols-outlined text-[16px]">restart_alt</span>
+                        <span>Reset Filters</span>
+                    </button>
+                </div>
+            </div>
+            <!-- High-Density Milestones Data Table -->
+            <div class="bg-surface-card rounded border border-border-subtle shadow-sm overflow-hidden flex flex-col">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr
+                                class="bg-surface-secondary border-b border-border-subtle font-label-md text-label-md uppercase tracking-wider text-text-secondary select-none">
+                                <th class="py-space-md px-space-lg w-72" scope="col">Milestone / Deliverable</th>
+                                <th class="py-space-md px-space-md w-36" scope="col">Due Date</th>
+                                <th class="py-space-md px-space-md w-44" scope="col">Responsible Owner</th>
+                                <th class="py-space-md px-space-md w-48" scope="col">Linked Grant</th>
+                                <th class="py-space-md px-space-md w-44" scope="col">Project Workplan</th>
+                                <th class="py-space-md px-space-md w-36" scope="col">Progress</th>
+                                <th class="py-space-md px-space-md w-32" scope="col">Status</th>
+                                <th class="py-space-md px-space-lg text-right w-24" scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-body-md text-body-md divide-y divide-border-subtle/60"
+                            id="deliverablesTableBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                        <tfoot>
+                            <tr
+                                class="bg-surface-container-low border-t-2 border-border-strong font-label-md text-label-md text-text-primary">
+                                <td class="py-space-sm px-space-lg" colspan="4">
+                                    <span class="text-text-secondary">Showing</span> <span id="filteredCount">16</span>
+                                    of <span id="totalCount">16</span> active deliverables
+                                </td>
+                                <td class="py-space-sm px-space-md text-right font-numeric-table-bold" colspan="2">
+                                    Portfolio Completion Avg: <span
+                                        class="text-fund-unrestricted font-semibold">68.75%</span>
+                                </td>
+                                <td class="py-space-sm px-space-lg text-right text-text-secondary" colspan="2">
+                                    Audited Fiduciary Status: <span class="text-status-success font-medium">Valid</span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+    <!-- DETAIL INSPECTOR DRAWER -->
+    <div class="fixed inset-0 bg-nav-bg/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"
+        id="drawerBackdrop" onclick="closeDrawer()"></div>
+    <aside
+        class="fixed right-0 top-0 bottom-0 w-full max-w-xl bg-surface-card shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col border-l border-border-subtle overflow-hidden"
+        id="detailDrawer">
+        <!-- Header -->
+        <div class="p-space-lg bg-surface-secondary border-b border-border-subtle flex items-start justify-between">
+            <div class="space-y-space-xxs min-w-0 pr-space-md">
+                <div class="flex items-center gap-space-xs">
+                    <span
+                        class="font-caption text-caption px-space-xs py-0.5 rounded bg-surface-container font-mono text-text-secondary"
+                        id="drawerCode">MLS-USAID-01</span>
+                    <span
+                        class="inline-flex items-center gap-space-xxs px-space-sm py-0.5 rounded font-label-sm text-label-sm font-semibold"
+                        id="drawerStatusBadge"></span>
+                </div>
+                <h2 class="font-headline-sm text-headline-sm text-text-primary leading-tight line-clamp-2"
+                    id="drawerTitle">Quarterly Teacher Training Pedagogy Benchmark</h2>
+                <p class="font-caption text-caption text-text-secondary" id="drawerType">Technical Deliverable •
+                    Beneficiary Capacity</p>
+            </div>
+            <button
+                class="w-8 h-8 rounded hover:bg-surface-container flex items-center justify-center text-text-muted hover:text-text-primary shrink-0 transition-colors"
+                onclick="closeDrawer()" type="button">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+        </div>
+        <!-- Quick Actions Bar -->
+        <div
+            class="px-space-lg py-space-sm bg-surface-container-lowest border-b border-border-subtle flex flex-wrap items-center gap-space-xs">
+            <button
+                class="px-space-sm h-8 rounded bg-primary-tint text-primary hover:bg-primary/20 font-title-sm text-title-sm flex items-center gap-space-xxs transition-colors"
+                onclick="updateCurrentStatus()" type="button">
+                <span class="material-symbols-outlined text-[16px]">sync_alt</span>
+                <span>Update Status</span>
+            </button>
+            <button
+                class="px-space-sm h-8 rounded bg-surface-secondary hover:bg-surface-container text-text-primary font-title-sm text-title-sm flex items-center gap-space-xxs transition-colors"
+                onclick="openAddEvidencePrompt()" type="button">
+                <span class="material-symbols-outlined text-[16px]">upload_file</span>
+                <span>Add Evidence</span>
+            </button>
+            <button
+                class="px-space-sm h-8 rounded bg-status-success-bg text-status-success hover:bg-status-success/20 font-title-sm text-title-sm flex items-center gap-space-xxs transition-colors"
+                onclick="markCurrentCompleted()" type="button">
+                <span class="material-symbols-outlined text-[16px]">done_all</span>
+                <span>Mark Completed</span>
+            </button>
+            <button
+                class="px-space-sm h-8 rounded bg-surface-card border border-border-subtle hover:bg-surface-secondary text-text-muted hover:text-text-primary font-title-sm text-title-sm flex items-center gap-space-xxs ml-auto"
+                onclick="editCurrentMilestone()" type="button">
+                <span class="material-symbols-outlined text-[16px]">edit</span>
+                <span>Edit</span>
+            </button>
+        </div>
+        <!-- Drawer Body -->
+        <div class="flex-1 overflow-y-auto p-space-lg space-y-space-xl">
+            <!-- Progress Bar Card -->
+            <div class="bg-surface-secondary/50 rounded p-space-md border border-border-subtle space-y-space-md">
+                <div class="flex items-center justify-between">
+                    <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Progress
+                        Completion</span>
+                    <span class="font-numeric-table-bold text-numeric-table-bold text-text-primary"
+                        id="drawerProgressText">75%</span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                    <div class="h-full bg-fund-unrestricted rounded-full transition-all duration-500"
+                        id="drawerProgressBar" style="width: 75%;"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-space-md pt-space-xs text-body-sm">
+                    <div>
+                        <span class="text-text-muted block font-caption text-caption">Due Date</span>
+                        <span class="font-title-sm text-title-sm text-text-primary" id="drawerDueDate">Nov 15,
+                            2025</span>
+                    </div>
+                    <div>
+                        <span class="text-text-muted block font-caption text-caption">Responsible Owner</span>
+                        <span class="font-title-sm text-title-sm text-text-primary" id="drawerOwner">Dr. Emmanuel
+                            Osei</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Description & Targets -->
+            <div class="space-y-space-xs">
+                <h3
+                    class="font-title-sm text-title-sm text-text-primary uppercase tracking-wider flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-[16px] text-text-muted">target</span>
+                    <span>Description &amp; Deliverable Targets</span>
+                </h3>
+                <p class="font-body-md text-body-md text-text-secondary leading-relaxed bg-surface-card p-space-md rounded border border-border-subtle"
+                    id="drawerDesc">
+                    Conduct intensive 5-day competency-based STEM teaching pedagogy workshop across 22 pilot district
+                    education directorates in Northern and Savannah regions. Target: 400 verified certified teachers.
+                </p>
+            </div>
+            <!-- Linked Fiduciary Matrix -->
+            <div class="space-y-space-xs">
+                <h3
+                    class="font-title-sm text-title-sm text-text-primary uppercase tracking-wider flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-[16px] text-text-muted">account_tree</span>
+                    <span>Linked Fiduciary Matrix</span>
+                </h3>
+                <div
+                    class="bg-surface-card rounded border border-border-subtle overflow-hidden font-body-sm text-body-sm">
+                    <div class="p-space-sm border-b border-border-subtle flex items-center justify-between">
+                        <span class="text-text-muted font-caption text-caption">Linked Grant:</span>
+                        <span class="font-title-sm text-title-sm text-fund-unrestricted" id="drawerGrant">USAID
+                            Education Program (USAID-GH-2024-ED09)</span>
+                    </div>
+                    <div class="p-space-sm border-b border-border-subtle flex items-center justify-between">
+                        <span class="text-text-muted font-caption text-caption">Project Workplan:</span>
+                        <span class="font-title-sm text-title-sm text-text-primary" id="drawerProject">Northern Literacy
+                            Outreach (PRJ-TAM-01)</span>
+                    </div>
+                    <div class="p-space-sm border-b border-border-subtle flex items-center justify-between">
+                        <span class="text-text-muted font-caption text-caption">Work Breakdown / Activity:</span>
+                        <span class="font-title-sm text-title-sm text-text-primary font-mono">ACT-102: STEM Pedagogy
+                            Refresher</span>
+                    </div>
+                    <div class="p-space-sm flex items-center justify-between">
+                        <span class="text-text-muted font-caption text-caption">Cost Center Allocation:</span>
+                        <span class="font-mono text-caption text-text-secondary">CC-101 • Northern Field Hub
+                            (Tamale)</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Attached Verification Evidence -->
+            <div class="space-y-space-xs">
+                <div class="flex items-center justify-between">
+                    <h3
+                        class="font-title-sm text-title-sm text-text-primary uppercase tracking-wider flex items-center gap-space-xs">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">attach_file</span>
+                        <span>Verification Evidence Files</span>
+                    </h3>
+                    <span
+                        class="font-caption text-caption px-space-xs py-0.5 rounded bg-surface-secondary text-text-secondary"
+                        id="drawerFileCount">3 Documents</span>
+                </div>
+                <div class="space-y-space-xs" id="drawerFileList"></div>
+            </div>
+            <!-- Approval Chain & Audit Trail -->
+            <div class="space-y-space-xs">
+                <h3
+                    class="font-title-sm text-title-sm text-text-primary uppercase tracking-wider flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-[16px] text-text-muted">history</span>
+                    <span>Approval Chain &amp; Audit Trail</span>
+                </h3>
+                <div class="bg-surface-secondary/40 rounded p-space-md border border-border-subtle space-y-space-md">
+                    <div class="flex items-start gap-space-md">
+                        <div
+                            class="w-6 h-6 rounded-full bg-status-success-bg flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="material-symbols-outlined text-status-success text-[14px]">check</span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="font-title-sm text-title-sm text-text-primary">Field Activity
+                                    Verification</span>
+                                <span class="font-caption text-caption text-text-muted">2 days ago</span>
+                            </div>
+                            <p class="font-caption text-caption text-text-secondary">Signed off by Field Coordinator
+                                (Tamale Sub-office).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-space-md">
+                        <div
+                            class="w-6 h-6 rounded-full bg-primary-tint flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="material-symbols-outlined text-primary text-[14px]">hourglass_top</span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="font-title-sm text-title-sm text-text-primary">M&amp;E Compliance Director
+                                    Review</span>
+                                <span class="font-caption text-caption text-primary font-medium">In Review</span>
+                            </div>
+                            <p class="font-caption text-caption text-text-secondary">Evidence package undergoing audit
+                                compliance verification.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-space-md opacity-60">
+                        <div
+                            class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="material-symbols-outlined text-text-muted text-[14px]">lock</span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="font-title-sm text-title-sm text-text-muted">Finance Lead Final IPSAS
+                                    Closure</span>
+                                <span class="font-caption text-caption text-text-muted">Pending Previous</span>
+                            </div>
+                            <p class="font-caption text-caption text-text-muted">Required before grant disbursement
+                                recognition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Drawer Footer -->
+        <div class="p-space-md bg-surface-secondary border-t border-border-subtle flex items-center justify-between">
+            <span class="font-caption text-caption text-text-muted">Statutory Lock: Audit Window FY2025</span>
+            <button
+                class="px-space-md h-8 rounded bg-surface-card border border-border-subtle font-title-sm text-title-sm text-text-primary hover:bg-surface-secondary transition-colors"
+                onclick="closeDrawer()" type="button">
+                Close Inspector
+            </button>
+        </div>
+    </aside>
+    <!-- NEW / EDIT MILESTONE MODAL -->
+    <div class="fixed inset-0 bg-nav-bg/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-space-md"
+        id="modalBackdrop">
+        <div
+            class="w-full max-w-2xl bg-surface-card rounded border border-border-subtle shadow-2xl flex flex-col overflow-hidden max-h-[90vh]">
+            <!-- Header -->
+            <div
+                class="p-space-lg bg-surface-secondary border-b border-border-subtle flex items-center justify-between">
+                <div class="flex items-center gap-space-sm">
+                    <div class="w-8 h-8 rounded bg-fund-unrestricted flex items-center justify-center text-on-primary">
+                        <span class="material-symbols-outlined text-[18px]">add_task</span>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-sm text-headline-sm text-text-primary">Create New Milestone /
+                            Deliverable</h3>
+                        <p class="font-caption text-caption text-text-secondary">Connect grant agreements, work
+                            breakdown schedules, and audit requirements</p>
+                    </div>
+                </div>
+                <button
+                    class="w-8 h-8 rounded hover:bg-surface-container flex items-center justify-center text-text-muted hover:text-text-primary"
+                    onclick="closeNewModal()" type="button">
+                    <span class="material-symbols-outlined text-[20px]">close</span>
+                </button>
+            </div>
+            <!-- Form -->
+            <form class="flex-1 overflow-y-auto p-space-xl space-y-space-md" id="newMilestoneForm"
+                onsubmit="handleFormSubmit(event)">
+                <div class="space-y-space-xxs">
+                    <label class="font-title-sm text-title-sm text-text-primary" for="formTitle">Deliverable / Milestone
+                        Name <span class="text-status-critical">*</span></label>
+                    <input
+                        class="w-full h-9 px-space-md bg-surface-card text-text-primary rounded border border-border-subtle focus:border-primary focus:outline-none font-body-md text-body-md"
+                        id="formTitle" placeholder="e.g., Q3 Field Beneficiary Audit &amp; Verification Roster"
+                        required="" type="text" />
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div class="space-y-space-xxs">
+                        <label class="font-title-sm text-title-sm text-text-primary" for="formType">Deliverable Type
+                            <span class="text-status-critical">*</span></label>
+                        <select
+                            class="w-full h-9 px-space-md bg-surface-card text-text-primary rounded border border-border-subtle focus:border-primary focus:outline-none font-body-md text-body-md"
+                            id="formType" required="">
+                            <option value="Donor Progress Report">Donor Progress Report</option>
+                            <option value="Field Activity Completion">Field Activity Completion</option>
+                            <option value="Procurement Verification">Procurement Verification</option>
+                            <option value="Audit Sign-off">Audit Sign-off</option>
+                            <option value="Baseline Survey Data">Baseline Survey Data</option>
+                        </select>
+                    </div>
+                    <div class="space-y-space-xxs">
+                        <label class="font-title-sm text-title-sm text-text-primary" for="formOwner">Responsible Owner
+                            <span class="text-status-critical">*</span></label>
+                        <select
+                            class="w-full h-9 px-space-md bg-surface-card text-text-primary rounded border border-border-subtle focus:border-primary focus:outline-none font-body-md text-body-md"
+                            id="formOwner" required="">
+                            <option value="Dr. Emmanuel Osei • Senior Project Lead">Dr. Emmanuel Osei (Project Lead)
+                            </option>
+                            <option value="Hajia Amina Bello • Health Specialist">Hajia Amina Bello (Health Specialist)
+                            </option>
+                            <option value="Kwesi Appiah • Agro-forestry Lead">Kwesi Appiah (Agro-forestry Lead)</option>
+                            <option value="Sarah Mensah • Grants Lead">Sarah Mensah (Grants Lead)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div class="space-y-space-xxs">
+                        <label class="font-title-sm text-title-sm text-text-primary" for="formGrant">Linked Grant <span
+                                class="text-status-critical">*</span></label>
+                        <select
+                            class="w-full h-9 px-space-md bg-surface-card text-text-primary rounded border border-border-subtle focus:border-primary focus:outline-none font-body-md text-body-md"
+                            id="formGrant" required="">
+                            <option value="USAID Education Program">USAID Education Program</option>
+                            <option value="Global Fund Malaria">Global Fund Malaria</option>
+                            <option value="EU Climate Adapt">EU Climate Adapt</option>
+                            <option value="FCDO STEM Acceleration">FCDO STEM Acceleration</option>
+                            <option value="Bright Futures Initiative">Bright Futures Initiative</option>
+                        </select>
+                    </div>
+                    <div class="space-y-space-xxs">
+                        <label class="font-title-sm text-title-sm text-text-primary" for="formProject">Project Workplan
+                            <span class="text-status-critical">*</span></label>
+                        <select
+                            class="w-full h-9 px-space-md bg-surface-card text-text-primary rounded border border-border-subtle focus:border-primary focus:outline-none font-body-md text-body-md"
+                            id="formProject" required="">
+                            <option value="Northern Literacy Outreach">Northern Literacy Outreach</option>
+                            <option value="Rural Health Posts Sub-grant">Rural Health Posts Sub-grant</option>
+                            <option value="Savannah Agro-Forestry">Savannah Agro-Forestry</option>
+                            <option value="Volta Basin Primary Health">Volta Basin Primary Health</option>
+                            <option value="Secondary STEM Labs">Secondary STEM Labs</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="space-y-space-xxs">
+                    <label class="font-title-sm text-title-sm text-text-primary" for="formDesc">Target Metric / Goal
+                        Summary</label>
+                    <textarea
+                        class="w-full p-space-sm bg-surface-card text-text-primary rounded border border-border-subtle focus:border-primary focus:outline-none font-body-md text-body-md"
+                        id="formDesc"
+                        placeholder="e.g. 400 teachers trained across 22 districts with pre- and post-test assessments."
+                        rows="2"></textarea>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+                    <div class="space-y-space-xxs">
+                        <label class="font-title-sm text-title-sm text-text-primary" for="formDueDate">Due Date <span
+                                class="text-status-critical">*</span></label>
+                        <input
+                            class="w-full h-9 px-space-sm bg-surface-card text-text-primary rounded border border-border-subtle focus:border-primary focus:outline-none font-body-md text-body-md"
+                            id="formDueDate" required="" type="date" value="2025-11-30" />
+                    </div>
+                    <div class="space-y-space-xxs">
+                        <label class="font-title-sm text-title-sm text-text-primary" for="formStatus">Initial
+                            Status</label>
+                        <select
+                            class="w-full h-9 px-space-sm bg-surface-card text-text-primary rounded border border-border-subtle focus:border-primary focus:outline-none font-body-md text-body-md"
+                            id="formStatus">
+                            <option value="Not Started">Not Started</option>
+                            <option selected="" value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="space-y-space-xxs">
+                        <label class="font-title-sm text-title-sm text-text-primary" for="formCompletion">Completion
+                            %</label>
+                        <input
+                            class="w-full h-9 px-space-sm bg-surface-card text-text-primary rounded border border-border-subtle focus:border-primary focus:outline-none font-numeric-table text-numeric-table"
+                            id="formCompletion" max="100" min="0" type="number" value="0" />
+                    </div>
+                </div>
+                <!-- Simulated File Dropzone -->
+                <div class="space-y-space-xxs">
+                    <label class="font-title-sm text-title-sm text-text-primary">Supporting Evidence Package (PDF, XLS,
+                        ZIP)</label>
+                    <div class="border-2 border-dashed border-border-subtle hover:border-primary/60 rounded p-space-md text-center bg-surface-secondary/40 cursor-pointer transition-colors"
+                        onclick="document.getElementById('fileMockInput').click()">
+                        <input class="hidden" id="fileMockInput" onchange="handleMockFileAdd(event)" type="file" />
+                        <span class="material-symbols-outlined text-text-muted text-[28px]">cloud_upload</span>
+                        <p class="font-body-sm text-body-sm text-text-primary mt-1">Drag files here or <span
+                                class="text-fund-unrestricted font-semibold underline">browse disk</span></p>
+                        <p class="font-caption text-caption text-text-muted">Biometric rosters, attendance sheets,
+                            procurement sign-offs (Max 25MB)</p>
+                        <div class="hidden mt-space-sm font-label-sm text-label-sm text-status-success font-medium flex items-center justify-center gap-space-xxs"
+                            id="mockFileSelection">
+                            <span class="material-symbols-outlined text-[16px]">attachment</span>
+                            <span id="mockFileName">Attached: Field_Report_V1.pdf</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Actions -->
+                <div class="pt-space-md border-t border-border-subtle flex items-center justify-end gap-space-sm">
+                    <button
+                        class="px-space-md h-9 rounded bg-surface-card border border-border-subtle text-text-secondary hover:bg-surface-secondary font-title-sm text-title-sm"
+                        onclick="closeNewModal()" type="button">
+                        Cancel
+                    </button>
+                    <button
+                        class="px-space-md h-9 rounded bg-surface-secondary text-text-primary hover:bg-surface-container font-title-sm text-title-sm"
+                        onclick="saveDraft()" type="button">
+                        Save Draft
+                    </button>
+                    <button
+                        class="px-space-lg h-9 rounded bg-fund-unrestricted hover:bg-primary-hover text-on-primary font-title-sm text-title-sm flex items-center gap-space-xs shadow-sm"
+                        type="submit">
+                        <span class="material-symbols-outlined text-[18px]">check</span>
+                        <span>Create Milestone</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+    <script>
+        // NGO Ledger Milestones Dataset
+        const INITIAL_DELIVERABLES = [
+            {
+                id: "MLS-USAID-01",
+                title: "Quarterly Teacher Training Pedagogy Benchmark",
+                type: "Field Activity Completion",
+                grant: "USAID Education Program",
+                project: "Northern Literacy Outreach",
+                owner: "Dr. Emmanuel Osei",
+                ownerRole: "Senior Project Lead",
+                dueDate: "2025-11-15",
+                dueDateDisplay: "Nov 15, 2025",
+                dueDays: 14,
+                status: "In Progress",
+                completion: 75,
+                filesCount: 3,
+                files: [
+                    { name: "Q3_Field_Attendance_Signed.pdf", size: "2.4 MB", date: "Oct 24, 2025" },
+                    { name: "Tamale_Training_Photos.zip", size: "18.1 MB", date: "Oct 25, 2025" },
+                    { name: "Independent_M&E_Evaluation.pdf", size: "1.2 MB", date: "Oct 27, 2025" }
+                ],
+                desc: "Conduct intensive 5-day competency-based STEM teaching pedagogy workshop across 22 pilot district education directorates in Northern and Savannah regions. Target: 400 verified certified teachers."
+            },
+            {
+                id: "MLS-GLBF-04",
+                title: "Sub-grantee Rural Health Clinic Distribution Audit",
+                type: "Audit Sign-off",
+                grant: "Global Fund Malaria",
+                project: "Rural Health Posts Sub-grant",
+                owner: "Hajia Amina Bello",
+                ownerRole: "Health Specialist",
+                dueDate: "2025-10-18",
+                dueDateDisplay: "Oct 18, 2025",
+                dueDays: -14,
+                status: "Overdue",
+                completion: 90,
+                filesCount: 2,
+                files: [
+                    { name: "Clinic_Stock_Logistics_Recon.xlsx", size: "940 KB", date: "Oct 10, 2025" },
+                    { name: "Warehouse_Physical_Count_Signed.pdf", size: "3.1 MB", date: "Oct 12, 2025" }
+                ],
+                desc: "Comprehensive physical asset and antimalarial medication audit across 45 primary healthcare posts in Upper West province. Final reconciliation requires sub-grantee clearance."
+            },
+            {
+                id: "MLS-EU-02",
+                title: "Savannah Community Agro-Forestry Nursery Handover",
+                type: "Field Activity Completion",
+                grant: "EU Climate Adapt",
+                project: "Savannah Agro-Forestry",
+                owner: "Kwesi Appiah",
+                ownerRole: "Agro-forestry Lead",
+                dueDate: "2025-09-30",
+                dueDateDisplay: "Sep 30, 2025",
+                dueDays: -32,
+                status: "Completed",
+                completion: 100,
+                filesCount: 4,
+                files: [
+                    { name: "Community_Custody_Transfer_Signed.pdf", size: "4.5 MB", date: "Sep 28, 2025" },
+                    { name: "Tree_Seedling_Survival_GPS_Matrix.geojson", size: "3.2 MB", date: "Sep 29, 2025" },
+                    { name: "Chief_Assemblyman_MoU.pdf", size: "1.1 MB", date: "Sep 25, 2025" },
+                    { name: "Final_Inspection_Signoff.pdf", size: "850 KB", date: "Sep 30, 2025" }
+                ],
+                desc: "Formal fiduciary handover of 12 community-managed tree nurseries to local district assemblies. Verification incorporates GPS tagging of 60,000 planted indigenous seedlings."
+            },
+            {
+                id: "MLS-FCDO-03",
+                title: "Secondary School Digital STEM Lab Equipment Handover",
+                type: "Procurement Verification",
+                grant: "FCDO STEM Acceleration",
+                project: "Secondary STEM Labs",
+                owner: "Dr. Emmanuel Osei",
+                ownerRole: "Senior Project Lead",
+                dueDate: "2025-11-05",
+                dueDateDisplay: "Nov 05, 2025",
+                dueDays: 4,
+                status: "In Progress",
+                completion: 60,
+                filesCount: 1,
+                files: [
+                    { name: "Customs_Clearance_And_Serial_Roster.pdf", size: "5.8 MB", date: "Oct 20, 2025" }
+                ],
+                desc: "Procurement inspection, warranty verification, and power-grid testing for 300 student laptops and 15 solar battery banks allocated to 10 rural secondary schools."
+            },
+            {
+                id: "MLS-BRT-01",
+                title: "Household Socio-Economic Baseline Survey Dataset",
+                type: "Baseline Survey Data",
+                grant: "Bright Futures Initiative",
+                project: "Volta Basin Primary Health",
+                owner: "Sarah Mensah",
+                ownerRole: "Grants Lead",
+                dueDate: "2025-08-15",
+                dueDateDisplay: "Aug 15, 2025",
+                dueDays: -78,
+                status: "Completed",
+                completion: 100,
+                filesCount: 2,
+                files: [
+                    { name: "Cleaned_Household_Baseline_Data.csv", size: "12.4 MB", date: "Aug 14, 2025" },
+                    { name: "IRB_Ethical_Compliance_Protocol.pdf", size: "620 KB", date: "Aug 02, 2025" }
+                ],
+                desc: "Multi-cluster household indicator enumeration covering 1,200 rural households along the lower Volta river basin. Validated against statutory statistical authority standards."
+            },
+            {
+                id: "MLS-USAID-02",
+                title: "Annual Statutory IPSAS Project Audit Sign-off",
+                type: "Audit Sign-off",
+                grant: "USAID Education Program",
+                project: "Northern Literacy Outreach",
+                owner: "Sarah Mensah",
+                ownerRole: "Grants Lead",
+                dueDate: "2025-10-30",
+                dueDateDisplay: "Oct 30, 2025",
+                dueDays: -2,
+                status: "Overdue",
+                completion: 85,
+                filesCount: 3,
+                files: [
+                    { name: "Independent_Auditor_Interim_Findings.pdf", size: "3.4 MB", date: "Oct 28, 2025" },
+                    { name: "Bank_Direct_Confirmation_Certificates.pdf", size: "1.9 MB", date: "Oct 29, 2025" },
+                    { name: "Ledger_Voucher_Crosswalk.xlsx", size: "4.1 MB", date: "Oct 29, 2025" }
+                ],
+                desc: "External certified audit partner validation of grant financial disbursements, non-expandable property registers, and staff timesheet allocations for FY2024-2025."
+            },
+            {
+                id: "MLS-GLBF-05",
+                title: "Community Health Volunteer Training Roster & Stipends",
+                type: "Field Activity Completion",
+                grant: "Global Fund Malaria",
+                project: "Rural Health Posts Sub-grant",
+                owner: "Hajia Amina Bello",
+                ownerRole: "Health Specialist",
+                dueDate: "2025-12-10",
+                dueDateDisplay: "Dec 10, 2025",
+                dueDays: 39,
+                status: "In Progress",
+                completion: 40,
+                filesCount: 1,
+                files: [
+                    { name: "Mobile_Money_Disbursement_Authorization.pdf", size: "1.4 MB", date: "Oct 22, 2025" }
+                ],
+                desc: "Certification and digital mobile money stipend settlement for 180 field volunteers completing community larval source reduction campaigns."
+            },
+            {
+                id: "MLS-EU-03",
+                title: "Bi-Annual Environmental Impact & Reforestation Audit",
+                type: "Donor Progress Report",
+                grant: "EU Climate Adapt",
+                project: "Savannah Agro-Forestry",
+                owner: "Kwesi Appiah",
+                ownerRole: "Agro-forestry Lead",
+                dueDate: "2025-12-20",
+                dueDateDisplay: "Dec 20, 2025",
+                dueDays: 49,
+                status: "In Progress",
+                completion: 30,
+                filesCount: 0,
+                files: [],
+                desc: "Formal statutory donor narrative and satellite vegetation index mapping showing canopy re-growth in conserved riparian corridor zones."
+            },
+            {
+                id: "MLS-FCDO-04",
+                title: "Female STEM Mentorship Cohort 1 Graduation Report",
+                type: "Donor Progress Report",
+                grant: "FCDO STEM Acceleration",
+                project: "Secondary STEM Labs",
+                owner: "Dr. Emmanuel Osei",
+                ownerRole: "Senior Project Lead",
+                dueDate: "2025-07-28",
+                dueDateDisplay: "Jul 28, 2025",
+                dueDays: -96,
+                status: "Completed",
+                completion: 100,
+                filesCount: 3,
+                files: [
+                    { name: "Graduation_Certificates_Roster.pdf", size: "3.2 MB", date: "Jul 26, 2025" },
+                    { name: "Mentorship_Outcomes_Analysis.pdf", size: "1.8 MB", date: "Jul 27, 2025" },
+                    { name: "Photo_Archive_Graduation_Tamale.zip", size: "22.0 MB", date: "Jul 28, 2025" }
+                ],
+                desc: "Documentation of 250 female senior high school students completing 6-month hands-on coding and renewable energy prototyping workshops."
+            },
+            {
+                id: "MLS-BRT-02",
+                title: "Water Filtration Station Commissioning & Water Quality Tests",
+                type: "Procurement Verification",
+                grant: "Bright Futures Initiative",
+                project: "Volta Basin Primary Health",
+                owner: "Sarah Mensah",
+                ownerRole: "Grants Lead",
+                dueDate: "2025-09-12",
+                dueDateDisplay: "Sep 12, 2025",
+                dueDays: -50,
+                status: "Completed",
+                completion: 100,
+                filesCount: 2,
+                files: [
+                    { name: "Water_Quality_Bacteriological_Report.pdf", size: "1.2 MB", date: "Sep 10, 2025" },
+                    { name: "District_Works_Dept_Certificate.pdf", size: "890 KB", date: "Sep 12, 2025" }
+                ],
+                desc: "Statutory bacteriological certification by Ghana Water Research Institute verifying WHO potable thresholds for 8 community solar reverse-osmosis boreholes."
+            },
+            {
+                id: "MLS-USAID-03",
+                title: "Curriculum Adaptation Guide for Dagbani & Gonja Languages",
+                type: "Technical Report",
+                grant: "USAID Education Program",
+                project: "Northern Literacy Outreach",
+                owner: "Dr. Emmanuel Osei",
+                ownerRole: "Senior Project Lead",
+                dueDate: "2025-11-25",
+                dueDateDisplay: "Nov 25, 2025",
+                dueDays: 24,
+                status: "In Progress",
+                completion: 70,
+                filesCount: 2,
+                files: [
+                    { name: "Draft_Primer_Dagbani_Classroom.pdf", size: "8.2 MB", date: "Oct 19, 2025" },
+                    { name: "Ministry_of_Education_Review_Memo.pdf", size: "540 KB", date: "Oct 21, 2025" }
+                ],
+                desc: "Validation workshop and printed copies of primary reading supplementary guides adapted into official indigenous instructional dialects."
+            },
+            {
+                id: "MLS-GLBF-06",
+                title: "Rapid Diagnostic Test (RDT) Inventory Reorder Sign-off",
+                type: "Procurement Verification",
+                grant: "Global Fund Malaria",
+                project: "Rural Health Posts Sub-grant",
+                owner: "Hajia Amina Bello",
+                ownerRole: "Health Specialist",
+                dueDate: "2025-11-10",
+                dueDateDisplay: "Nov 10, 2025",
+                dueDays: 9,
+                status: "In Progress",
+                completion: 55,
+                filesCount: 1,
+                files: [
+                    { name: "Supplier_Proforma_And_Duty_Waiver.pdf", size: "1.7 MB", date: "Oct 26, 2025" }
+                ],
+                desc: "Ministry of Health statutory duty exemption certificate and invoice matching for 50,000 dual-antigen malaria diagnostic kits."
+            },
+            {
+                id: "MLS-EU-04",
+                title: "Solar Water Pumping Irrigation Setup in 3 Farm Clusters",
+                type: "Field Activity Completion",
+                grant: "EU Climate Adapt",
+                project: "Savannah Agro-Forestry",
+                owner: "Kwesi Appiah",
+                ownerRole: "Agro-forestry Lead",
+                dueDate: "2025-12-05",
+                dueDateDisplay: "Dec 05, 2025",
+                dueDays: 34,
+                status: "In Progress",
+                completion: 50,
+                filesCount: 2,
+                files: [
+                    { name: "Engineering_Pump_Test_Sheets.pdf", size: "3.9 MB", date: "Oct 15, 2025" },
+                    { name: "Farmer_Cooperative_Minutes.pdf", size: "980 KB", date: "Oct 18, 2025" }
+                ],
+                desc: "Installation and pressure flow rate sign-off for 3 solar drip micro-irrigation systems supporting vegetable cooperative farmers."
+            },
+            {
+                id: "MLS-FCDO-05",
+                title: "Teacher STEM Facilitator Certification Registry",
+                type: "Field Activity Completion",
+                grant: "FCDO STEM Acceleration",
+                project: "Secondary STEM Labs",
+                owner: "Dr. Emmanuel Osei",
+                ownerRole: "Senior Project Lead",
+                dueDate: "2025-08-30",
+                dueDateDisplay: "Aug 30, 2025",
+                dueDays: -63,
+                status: "Completed",
+                completion: 100,
+                filesCount: 1,
+                files: [
+                    { name: "Certified_Teachers_National_Registry.pdf", size: "2.1 MB", date: "Aug 29, 2025" }
+                ],
+                desc: "Official registry submitted to National Teaching Council (NTC) approving continuous professional development points for 120 educators."
+            },
+            {
+                id: "MLS-BRT-03",
+                title: "Maternal Health Midwife Emergency Response Training",
+                type: "Field Activity Completion",
+                grant: "Bright Futures Initiative",
+                project: "Volta Basin Primary Health",
+                owner: "Sarah Mensah",
+                ownerRole: "Grants Lead",
+                dueDate: "2025-10-05",
+                dueDateDisplay: "Oct 05, 2025",
+                dueDays: -27,
+                status: "Completed",
+                completion: 100,
+                filesCount: 3,
+                files: [
+                    { name: "Midwife_Pre_Post_Scores.xlsx", size: "1.1 MB", date: "Oct 03, 2025" },
+                    { name: "Ministry_Health_Accreditation_Letter.pdf", size: "450 KB", date: "Oct 04, 2025" },
+                    { name: "Emergency_Kit_Distribution_Receipts.pdf", size: "2.8 MB", date: "Oct 05, 2025" }
+                ],
+                desc: "Hands-on obstetrics refresher completed for 60 remote midwives, including distribution of solar headlamps and clean delivery supplies."
+            },
+            {
+                id: "MLS-USAID-04",
+                title: "Annual Project Workplan & M&E Performance Framework FY26",
+                type: "Donor Progress Report",
+                grant: "USAID Education Program",
+                project: "Northern Literacy Outreach",
+                owner: "Sarah Mensah",
+                ownerRole: "Grants Lead",
+                dueDate: "2026-01-15",
+                dueDateDisplay: "Jan 15, 2026",
+                dueDays: 75,
+                status: "Not Started",
+                completion: 0,
+                filesCount: 0,
+                files: [],
+                desc: "Stakeholder consultative drafting and alignment of annual targets with bilateral donor mission agreement benchmarks for Year 2."
+            }
+        ];
+
+        let deliverablesData = [...INITIAL_DELIVERABLES];
+        let activeStatusFilter = "ALL";
+        let selectedMilestoneId = null;
+
+        // Render Table
+        function renderTable() {
+            const tbody = document.getElementById("deliverablesTableBody");
+            const searchVal = (document.getElementById("searchInput").value || "").toLowerCase().trim();
+            const selStatus = document.getElementById("filterStatus").value;
+            const selGrant = document.getElementById("filterGrant").value;
+            const selProject = document.getElementById("filterProject").value;
+            const selOwner = document.getElementById("filterOwner").value;
+
+            const filtered = deliverablesData.filter(item => {
+                if (activeStatusFilter === "IN_PROGRESS" && item.status !== "In Progress") return false;
+                if (activeStatusFilter === "COMPLETED" && item.status !== "Completed") return false;
+                if (activeStatusFilter === "OVERDUE" && item.status !== "Overdue") return false;
+
+                if (selStatus && item.status !== selStatus) return false;
+                if (selGrant && item.grant !== selGrant) return false;
+                if (selProject && item.project !== selProject) return false;
+                if (selOwner && !item.owner.includes(selOwner)) return false;
+
+                if (searchVal) {
+                    const hay = `${item.id} ${item.title} ${item.grant} ${item.project} ${item.owner} ${item.type}`.toLowerCase();
+                    if (!hay.includes(searchVal)) return false;
+                }
+                return true;
+            });
+
+            document.getElementById("filteredCount").textContent = filtered.length;
+            document.getElementById("totalCount").textContent = deliverablesData.length;
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `
+          <tr>
+            <td colspan="8" class="py-space-2xl text-center text-text-muted">
+              <span class="material-symbols-outlined text-[36px] block mb-space-xs text-text-muted/60">filter_list_off</span>
+              <p class="font-title-sm text-title-sm text-text-primary">No deliverables match filter parameters</p>
+              <p class="font-caption text-caption mt-1">Try resetting search keywords or status pills.</p>
+              <button onclick="resetFilters()" class="mt-space-md px-space-md py-1 rounded bg-surface-secondary text-primary font-title-sm hover:bg-surface-container transition-colors">
+                Reset filters
+              </button>
+            </td>
+          </tr>
+        `;
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(item => {
+                let statusClass = "";
+                let statusIcon = "";
+                if (item.status === "Completed") {
+                    statusClass = "bg-status-success-bg text-status-success border-status-success/20";
+                    statusIcon = "check_circle";
+                } else if (item.status === "In Progress") {
+                    statusClass = "bg-primary-tint text-primary border-primary/20";
+                    statusIcon = "pending";
+                } else if (item.status === "Overdue") {
+                    statusClass = "bg-status-critical-bg text-status-critical border-status-critical/20";
+                    statusIcon = "error";
+                } else {
+                    statusClass = "bg-surface-container text-text-secondary border-border-subtle";
+                    statusIcon = "radio_button_unchecked";
+                }
+
+                let dueBadge = "";
+                if (item.status === "Completed") {
+                    dueBadge = `<span class="font-caption text-caption text-status-success flex items-center gap-space-xxs"><span class="material-symbols-outlined text-[13px]">done</span>Archived</span>`;
+                } else if (item.dueDays < 0) {
+                    dueBadge = `<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-status-critical-bg text-status-critical font-semibold">${Math.abs(item.dueDays)}d overdue</span>`;
+                } else if (item.dueDays <= 14) {
+                    dueBadge = `<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-status-warning-bg text-status-warning font-semibold">Due in ${item.dueDays}d</span>`;
+                } else {
+                    dueBadge = `<span class="font-caption text-caption text-text-muted">${item.dueDays} days left</span>`;
+                }
+
+                let barColor = item.status === "Completed" ? "bg-status-success" : (item.status === "Overdue" ? "bg-status-critical" : "bg-fund-unrestricted");
+
+                return `
+          <tr class="hover:bg-primary-tint/20 transition-colors group cursor-pointer" onclick="openDrawer('${item.id}')">
+            <!-- 1: Milestone / Deliverable -->
+            <td class="py-space-md px-space-lg">
+              <div class="space-y-space-xxs min-w-0">
+                <div class="flex items-center gap-space-xs">
+                  <span class="font-caption text-caption text-text-muted font-mono bg-surface-secondary px-space-xs py-0.5 rounded">${item.id}</span>
+                  <span class="font-caption text-caption text-text-muted truncate max-w-[150px]">${item.type}</span>
+                </div>
+                <p class="font-title-sm text-title-sm text-text-primary group-hover:text-primary transition-colors leading-tight line-clamp-2 font-semibold">
+                  ${item.title}
+                </p>
+              </div>
+            </td>
+
+            <!-- 2: Due Date -->
+            <td class="py-space-md px-space-md whitespace-nowrap">
+              <div class="font-numeric-table text-numeric-table text-text-primary">${item.dueDateDisplay}</div>
+              <div class="mt-0.5">${dueBadge}</div>
+            </td>
+
+            <!-- 3: Owner -->
+            <td class="py-space-md px-space-md">
+              <div class="flex items-center gap-space-xs">
+                <div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-text-secondary font-label-sm text-label-sm shrink-0">
+                  ${item.owner.split(' ')[1]?.[0] || 'O'}
+                </div>
+                <div class="min-w-0">
+                  <div class="font-title-sm text-title-sm text-text-primary truncate">${item.owner}</div>
+                  <div class="font-caption text-caption text-text-muted truncate">${item.ownerRole}</div>
+                </div>
+              </div>
+            </td>
+
+            <!-- 4: Linked Grant -->
+            <td class="py-space-md px-space-md">
+              <div class="font-title-sm text-title-sm text-fund-unrestricted truncate font-semibold">${item.grant}</div>
+              <div class="font-caption text-caption text-text-muted">Direct Agreement</div>
+            </td>
+
+            <!-- 5: Project Workplan -->
+            <td class="py-space-md px-space-md">
+              <div class="font-title-sm text-title-sm text-text-primary truncate">${item.project}</div>
+              <div class="font-caption text-caption text-text-muted">Field Activity Matrix</div>
+            </td>
+
+            <!-- 6: Progress -->
+            <td class="py-space-md px-space-md whitespace-nowrap">
+              <div class="space-y-space-xxs w-28">
+                <div class="flex items-center justify-between font-caption text-caption text-text-secondary">
+                  <span>Progress</span>
+                  <span class="font-numeric-table-bold text-text-primary">${item.completion}%</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+                  <div class="h-full ${barColor} rounded-full" style="width: ${item.completion}%;"></div>
+                </div>
+              </div>
+            </td>
+
+            <!-- 7: Status -->
+            <td class="py-space-md px-space-md whitespace-nowrap">
+              <span class="inline-flex items-center gap-space-xxs px-space-sm py-0.5 rounded font-label-sm text-label-sm border font-semibold ${statusClass}">
+                <span class="material-symbols-outlined text-[14px]">${statusIcon}</span>
+                ${item.status}
+              </span>
+            </td>
+
+            <!-- 8: Actions -->
+            <td class="py-space-md px-space-lg text-right whitespace-nowrap" onclick="event.stopPropagation()">
+              <button 
+                type="button" 
+                onclick="openDrawer('${item.id}')" 
+                class="px-space-sm py-1 rounded bg-surface-secondary hover:bg-fund-unrestricted hover:text-on-primary text-text-primary font-title-sm text-title-sm transition-colors border border-border-subtle inline-flex items-center gap-space-xxs shadow-sm"
+                title="Inspect Milestone Details"
+              >
+                <span class="material-symbols-outlined text-[15px]">visibility</span>
+                Inspect
+              </button>
+            </td>
+          </tr>
+        `;
+            }).join("");
+        }
+
+        // Tabs
+        function setStatusTab(tabKey) {
+            activeStatusFilter = tabKey;
+            document.querySelectorAll(".status-tab-btn").forEach(btn => {
+                if (btn.dataset.tab === tabKey) {
+                    btn.className = "status-tab-btn px-space-md py-space-xxs rounded font-label-md text-label-md bg-surface-card text-text-primary shadow-sm font-semibold transition-all";
+                } else {
+                    btn.className = "status-tab-btn px-space-md py-space-xxs rounded font-label-md text-label-md text-text-muted hover:text-text-primary transition-all";
+                }
+            });
+            applyFilters();
+        }
+
+        function applyFilters() {
+            renderTable();
+        }
+
+        function resetFilters() {
+            document.getElementById("searchInput").value = "";
+            document.getElementById("filterStatus").value = "";
+            document.getElementById("filterGrant").value = "";
+            document.getElementById("filterProject").value = "";
+            document.getElementById("filterOwner").value = "";
+            setStatusTab("ALL");
+            showToast("Filters reset to default view", "All 16 portfolio deliverables displayed", "info");
+        }
+
+        // Drawer Controls
+        function openDrawer(id) {
+            const item = deliverablesData.find(m => m.id === id);
+            if (!item) return;
+            selectedMilestoneId = id;
+
+            document.getElementById("drawerCode").textContent = item.id;
+            document.getElementById("drawerTitle").textContent = item.title;
+            document.getElementById("drawerType").textContent = `${item.type} • Deliverable`;
+            document.getElementById("drawerDesc").textContent = item.desc || "No detailed target narrative attached.";
+            document.getElementById("drawerGrant").textContent = `${item.grant} (Direct Fiduciary Ref)`;
+            document.getElementById("drawerProject").textContent = item.project;
+            document.getElementById("drawerDueDate").textContent = item.dueDateDisplay;
+            document.getElementById("drawerOwner").textContent = `${item.owner} (${item.ownerRole})`;
+            document.getElementById("drawerProgressText").textContent = `${item.completion}%`;
+            document.getElementById("drawerProgressBar").style.width = `${item.completion}%`;
+
+            const badge = document.getElementById("drawerStatusBadge");
+            if (item.status === "Completed") {
+                badge.className = "inline-flex items-center gap-space-xxs px-space-sm py-0.5 rounded font-label-sm text-label-sm font-semibold bg-status-success-bg text-status-success border border-status-success/20";
+                badge.innerHTML = `<span class="material-symbols-outlined text-[14px]">check_circle</span>Completed`;
+            } else if (item.status === "Overdue") {
+                badge.className = "inline-flex items-center gap-space-xxs px-space-sm py-0.5 rounded font-label-sm text-label-sm font-semibold bg-status-critical-bg text-status-critical border border-status-critical/20";
+                badge.innerHTML = `<span class="material-symbols-outlined text-[14px]">error</span>Overdue (${Math.abs(item.dueDays)}d)`;
+            } else {
+                badge.className = "inline-flex items-center gap-space-xxs px-space-sm py-0.5 rounded font-label-sm text-label-sm font-semibold bg-primary-tint text-primary border border-primary/20";
+                badge.innerHTML = `<span class="material-symbols-outlined text-[14px]">pending</span>In Progress`;
+            }
+
+            document.getElementById("drawerFileCount").textContent = `${item.files.length} Documents`;
+            const filesContainer = document.getElementById("drawerFileList");
+            if (item.files.length === 0) {
+                filesContainer.innerHTML = `
+          <div class="p-space-md text-center rounded border border-dashed border-border-subtle bg-surface-secondary/30">
+            <p class="font-caption text-caption text-text-muted">No statutory verification package attached yet.</p>
+            <button onclick="openAddEvidencePrompt()" class="mt-space-xs text-fund-unrestricted font-title-sm text-title-sm hover:underline">Upload audit evidence</button>
+          </div>
+        `;
+            } else {
+                filesContainer.innerHTML = item.files.map(f => `
+          <div class="p-space-sm rounded bg-surface-card border border-border-subtle flex items-center justify-between hover:border-border-strong transition-all">
+            <div class="flex items-center gap-space-sm min-w-0">
+              <span class="material-symbols-outlined text-fund-unrestricted text-[20px] shrink-0">picture_as_pdf</span>
+              <div class="min-w-0">
+                <p class="font-title-sm text-title-sm text-text-primary truncate max-w-xs font-semibold">${f.name}</p>
+                <p class="font-caption text-caption text-text-muted">${f.size} &bull; Uploaded ${f.date}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-xs shrink-0">
+              <button type="button" onclick="showToast('Document Viewer', 'Opening secure preview: ${f.name}', 'info')" title="Preview document" class="p-space-xxs rounded hover:bg-surface-secondary text-text-secondary hover:text-text-primary">
+                <span class="material-symbols-outlined text-[16px]">visibility</span>
+              </button>
+              <button type="button" onclick="showToast('File Download', 'Checksum validated for ${f.name}', 'success')" title="Download copy" class="p-space-xxs rounded hover:bg-surface-secondary text-text-secondary hover:text-text-primary">
+                <span class="material-symbols-outlined text-[16px]">download</span>
+              </button>
+            </div>
+          </div>
+        `).join("");
+            }
+
+            const drawer = document.getElementById("detailDrawer");
+            const backdrop = document.getElementById("drawerBackdrop");
+            backdrop.classList.remove("opacity-0", "pointer-events-none");
+            backdrop.classList.add("opacity-100");
+            drawer.classList.remove("translate-x-full");
+            drawer.classList.add("translate-x-0");
+        }
+
+        function closeDrawer() {
+            const drawer = document.getElementById("detailDrawer");
+            const backdrop = document.getElementById("drawerBackdrop");
+            backdrop.classList.remove("opacity-100");
+            backdrop.classList.add("opacity-0", "pointer-events-none");
+            drawer.classList.remove("translate-x-0");
+            drawer.classList.add("translate-x-full");
+            selectedMilestoneId = null;
+        }
+
+        function updateCurrentStatus() {
+            if (!selectedMilestoneId) return;
+            const item = deliverablesData.find(m => m.id === selectedMilestoneId);
+            if (!item) return;
+
+            if (item.status === "In Progress") {
+                item.status = "Completed";
+                item.completion = 100;
+            } else if (item.status === "Overdue") {
+                item.status = "In Progress";
+                item.completion = 75;
+            } else {
+                item.status = "In Progress";
+                item.completion = 50;
+            }
+            updateKPIs();
+            renderTable();
+            openDrawer(item.id);
+            showToast("Status Updated", `${item.id} status is now ${item.status} (${item.completion}%)`, "success");
+        }
+
+        function markCurrentCompleted() {
+            if (!selectedMilestoneId) return;
+            const item = deliverablesData.find(m => m.id === selectedMilestoneId);
+            if (!item) return;
+
+            item.status = "Completed";
+            item.completion = 100;
+            updateKPIs();
+            renderTable();
+            openDrawer(item.id);
+            showToast("Milestone Completed & Verified", `${item.id} signed off with all audit verification records preserved.`, "success");
+        }
+
+        function openAddEvidencePrompt() {
+            if (!selectedMilestoneId) return;
+            const item = deliverablesData.find(m => m.id === selectedMilestoneId);
+            if (!item) return;
+
+            const dummyFileName = `Verification_Cert_Signed_${Date.now().toString().slice(-4)}.pdf`;
+            item.files.unshift({
+                name: dummyFileName,
+                size: "1.7 MB",
+                date: "Today, Just now"
+            });
+            item.filesCount = item.files.length;
+            renderTable();
+            openDrawer(item.id);
+            showToast("Evidence Uploaded", `Appended ${dummyFileName} to audit package`, "success");
+        }
+
+        function editCurrentMilestone() {
+            if (!selectedMilestoneId) return;
+            const item = deliverablesData.find(m => m.id === selectedMilestoneId);
+            if (!item) return;
+
+            closeDrawer();
+            openNewModal();
+
+            document.getElementById("formTitle").value = item.title;
+            document.getElementById("formType").value = item.type;
+            document.getElementById("formGrant").value = item.grant;
+            document.getElementById("formProject").value = item.project;
+            document.getElementById("formDesc").value = item.desc;
+            document.getElementById("formStatus").value = item.status === "Overdue" ? "In Progress" : item.status;
+            document.getElementById("formCompletion").value = item.completion;
+            showToast("Editing Milestone", `Loaded parameters for ${item.id}`, "info");
+        }
+
+        // Modal
+        function openNewModal() {
+            document.getElementById("modalBackdrop").classList.remove("hidden");
+            document.getElementById("newMilestoneForm").reset();
+            document.getElementById("mockFileSelection").classList.add("hidden");
+        }
+
+        function closeNewModal() {
+            document.getElementById("modalBackdrop").classList.add("hidden");
+        }
+
+        function handleMockFileAdd(e) {
+            if (e.target.files && e.target.files[0]) {
+                const name = e.target.files[0].name;
+                document.getElementById("mockFileName").textContent = `Attached: ${name}`;
+                document.getElementById("mockFileSelection").classList.remove("hidden");
+            }
+        }
+
+        function saveDraft() {
+            const title = document.getElementById("formTitle").value.trim() || "Untitled Milestone Draft";
+            closeNewModal();
+            showToast("Draft Saved", `Deliverable draft "${title}" stored to local cache.`, "info");
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const title = document.getElementById("formTitle").value.trim();
+            const type = document.getElementById("formType").value;
+            const ownerFull = document.getElementById("formOwner").value;
+            const grant = document.getElementById("formGrant").value;
+            const project = document.getElementById("formProject").value;
+            const desc = document.getElementById("formDesc").value.trim();
+            const dueDate = document.getElementById("formDueDate").value;
+            const status = document.getElementById("formStatus").value;
+            const completion = parseInt(document.getElementById("formCompletion").value, 10) || 0;
+
+            const ownerParts = ownerFull.split(" • ");
+            const ownerName = ownerParts[0].split(" (")[0];
+            const ownerRole = ownerParts[1] || "Project Officer";
+
+            const newCode = `MLS-${grant.split(" ")[0].toUpperCase()}-${(deliverablesData.length + 1).toString().padStart(2, '0')}`;
+
+            const newMilestone = {
+                id: newCode,
+                title: title,
+                type: type,
+                grant: grant,
+                project: project,
+                owner: ownerName,
+                ownerRole: ownerRole,
+                dueDate: dueDate,
+                dueDateDisplay: dueDate,
+                dueDays: 30,
+                status: status,
+                completion: completion,
+                filesCount: 1,
+                files: [
+                    { name: "Initial_Charter_Approved.pdf", size: "1.1 MB", date: "Today" }
+                ],
+                desc: desc || "Initiated under bilateral fiduciary protocol."
+            };
+
+            deliverablesData.unshift(newMilestone);
+            updateKPIs();
+            renderTable();
+            closeNewModal();
+            showToast("Milestone Created", `${newCode} successfully created and linked to ${grant}`, "success");
+        }
+
+        function updateKPIs() {
+            const total = deliverablesData.length;
+            const inProgress = deliverablesData.filter(d => d.status === "In Progress").length;
+            const completed = deliverablesData.filter(d => d.status === "Completed").length;
+            const overdue = deliverablesData.filter(d => d.status === "Overdue").length;
+
+            document.getElementById("metricTotal").textContent = total;
+            document.getElementById("metricInProgress").textContent = inProgress;
+            document.getElementById("metricCompleted").textContent = completed;
+            document.getElementById("metricOverdue").textContent = overdue;
+
+            const pills = document.querySelectorAll(".status-tab-btn");
+            pills.forEach(p => {
+                if (p.dataset.tab === "ALL") p.textContent = `All (${total})`;
+                if (p.dataset.tab === "IN_PROGRESS") p.textContent = `In Progress (${inProgress})`;
+                if (p.dataset.tab === "COMPLETED") p.textContent = `Completed (${completed})`;
+                if (p.dataset.tab === "OVERDUE") p.textContent = `Overdue (${overdue})`;
+            });
+        }
+
+        function triggerExport() {
+            showToast("Export Initiated", "Generating Statutory Deliverables Register in XLSX and IPSAS PDF...", "info");
+            setTimeout(() => {
+                showToast("Download Complete", "Ghana_Hub_Deliverables_Register_FY2025.xlsx ready.", "success");
+            }, 1200);
+        }
+
+        // Toast
+        let toastTimer = null;
+        function showToast(title, desc, type = "success") {
+            const toast = document.getElementById("toastNotification");
+            const titleEl = document.getElementById("toastTitle");
+            const descEl = document.getElementById("toastDesc");
+            const icon = document.getElementById("toastIcon");
+            const iconBg = document.getElementById("toastIconBg");
+
+            titleEl.textContent = title;
+            descEl.textContent = desc;
+
+            if (type === "success") {
+                icon.textContent = "check_circle";
+                icon.className = "material-symbols-outlined text-status-success text-[18px]";
+                iconBg.className = "w-7 h-7 rounded-full bg-status-success-bg flex items-center justify-center shrink-0";
+            } else if (type === "warning" || type === "error") {
+                icon.textContent = "warning";
+                icon.className = "material-symbols-outlined text-status-critical text-[18px]";
+                iconBg.className = "w-7 h-7 rounded-full bg-status-critical-bg flex items-center justify-center shrink-0";
+            } else {
+                icon.textContent = "info";
+                icon.className = "material-symbols-outlined text-primary text-[18px]";
+                iconBg.className = "w-7 h-7 rounded-full bg-primary-tint flex items-center justify-center shrink-0";
+            }
+
+            toast.classList.remove("translate-y-16", "opacity-0", "pointer-events-none");
+            toast.classList.add("translate-y-0", "opacity-100", "pointer-events-auto");
+
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                hideToast();
+            }, 4000);
+        }
+
+        function hideToast() {
+            const toast = document.getElementById("toastNotification");
+            toast.classList.remove("translate-y-0", "opacity-100", "pointer-events-auto");
+            toast.classList.add("translate-y-16", "opacity-0", "pointer-events-none");
+        }
+
+        // Shell Interactions
+        function toggleSubmenu(menuId, arrowId) {
+            const menu = document.getElementById(menuId);
+            const arrow = document.getElementById(arrowId);
+            if (menu.classList.contains("hidden")) {
+                menu.classList.remove("hidden");
+                arrow.style.transform = "rotate(0deg)";
+            } else {
+                menu.classList.add("hidden");
+                arrow.style.transform = "rotate(-90deg)";
+            }
+        }
+
+        // Init
+        document.addEventListener("DOMContentLoaded", () => {
+            renderTable();
+            updateKPIs();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f7f9ff", "on-tertiary": "#ffffff", "status-warning-bg": "#FEF3E6", "surface-dim": "#d1dbe7", "status-critical-bg": "#FDF0F0", "primary-fixed": "#a7eef6", "status-neutral-bg": "#ECEFF2", "secondary-container": "#d8e4ef", "status-success-border": "#9DD4B8", "inverse-primary": "#8bd2da", "on-tertiary-container": "#ffd892", "status-critical-border": "#F3A6A9", "nav-border": "#1E3243", "outline-variant": "#bec8c9", "text-muted": "#7B8C9A", "inverse-on-surface": "#e8f2fe", "secondary-fixed-dim": "#bcc8d3", "fund-temp-restricted": "#D99B00", "canvas-bg": "#F7F9FA", "tertiary-fixed": "#ffdea6", "surface-container-low": "#ecf4ff", "nav-text-primary": "#F4F7F9", "on-secondary": "#ffffff", "status-neutral-text": "#384551", "fund-restricted": "#B8860B", "surface-variant": "#d9e4ef", "inverse-surface": "#28313a", "status-success-text": "#0F6848", "on-primary-fixed": "#002022", "surface-container-highest": "#d9e4ef", "on-surface-variant": "#3f484a", "on-surface": "#131d25", "primary": "#005258", "on-error-container": "#93000a", "nav-text-muted": "#8EA2B4", "error-container": "#ffdad6", "outline": "#6f797a", "tertiary-fixed-dim": "#f7bd48", "nav-surface": "#152431", "status-success-bg": "#E8F5EE", "on-secondary-fixed-variant": "#3d4851", "error": "#ba1a1a", "on-secondary-fixed": "#121d25", "primary-fixed-dim": "#8bd2da", "on-primary-container": "#a1e9f1", "surface-secondary": "#F0F4F6", "status-critical-text": "#A81D24", "on-tertiary-fixed-variant": "#5d4200", "secondary-fixed": "#d8e4ef", "secondary": "#556069", "on-primary": "#ffffff", "surface-tint": "#16686f", "text-secondary": "#4E5D6A", "surface": "#f7f9ff", "on-primary-fixed-variant": "#004f55", "status-warning-text": "#914D03", "surface-container-high": "#dfe9f5", "tertiary-container": "#7f5b00", "status-warning-border": "#F6C88D", "tertiary": "#614500", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "text-primary": "#121A21", "border-subtle": "#DCE3E8", "surface-bright": "#f7f9ff", "on-secondary-container": "#5a666f", "surface-container": "#e5effb", "on-background": "#131d25", "border-strong": "#B8C4CE", "on-tertiary-fixed": "#271900", "primary-hover": "#144F54", "primary-container": "#1b6b72", "fund-unrestricted": "#1B6B72", "primary-tint": "#E4EFEF", "surface-card": "#FFFFFF", "status-neutral-border": "#CAD2D8", "nav-bg": "#0D1821" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1rem", "space-2xl": "2rem", "margin-compact": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-xxs": "0.125rem", "margin": "1.5rem", "space-xl": "1.5rem", "gutter-dense": "0.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "label-md": ["IBM Plex Sans"], "title-md": ["IBM Plex Sans"], "caption": ["IBM Plex Sans"], "headline-sm": ["IBM Plex Sans"], "body-sm": ["IBM Plex Sans"], "numeric-table": ["IBM Plex Sans"], "label-sm": ["IBM Plex Sans"], "numeric-table-bold": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "display-lg": ["IBM Plex Sans"], "title-sm": ["IBM Plex Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "numeric-table-bold": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }] } } } };</script>
+  <base target="_blank">
+
+<body class="bg-background font-body-md text-text-primary antialiased">
+ <aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+  <div id="appMain" class="pl-64 flex flex-col min-h-screen transition-all">
+    <header id="appHeader"
+      class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center"><span
+            class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span><!-- Update the search input element to include border-0 ring-0: -->
+<input
+  class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg border-0 outline-none ring-0 focus:outline-none focus:bg-surface-card transition-colors"
+  placeholder="Search transactions, grants, projects, vendors, staff..." type="text" /></div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span><span>FY 2025
+            (Q2 Closed)</span></div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary"><span
+            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS
+            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <div class="h-5 w-px bg-surface-secondary"></div><button
+          class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span
+            class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span></button><button
+          class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">help</span></button>
+        <div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" /><span
+            class="material-symbols-outlined text-text-muted text-[16px]"></span></div>
+      </div>
+    </header>
+    <main class="w-full pt-16 bg-background min-h-screen">
+      <div class="flex flex-col w-full">
+        <!-- Subtle decorative ambient gradient layer -->
+        <div class="relative w-full px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[80rem] mx-auto">
+          <!-- CONTEXTUAL HEADER -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+            <div class="flex flex-col gap-space-xxs min-w-0">
+              <!-- Breadcrumb -->
+              <nav aria-label="Breadcrumb"
+                class="flex items-center gap-space-xs font-caption text-caption text-text-muted">
+                <span class="">Finance</span>
+                <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                <span class="">Accounting</span>
+                <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                <span class="font-title-sm text-title-sm text-fund-unrestricted font-semibold">Payables</span>
+              </nav>
+              <!-- Title & Badges -->
+              <div class="flex items-center flex-wrap gap-space-sm mt-space-xxs">
+                <h1 class="font-display-lg text-display-lg text-text-primary tracking-tight">Payables Ledger</h1>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-primary-tint text-primary-container">
+                    <span class="material-symbols-outlined text-[14px]">verified</span>
+                    IPSAS Compliant
+                  </span>
+                  <span
+                    class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-surface-secondary text-text-secondary">
+                    <span class="material-symbols-outlined text-[14px]">account_balance</span>
+                    Fiduciary Ledger
+                  </span>
+                </div>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-secondary max-w-2xl">
+                Manage vendor bills, approvals, payments, and outstanding obligations across donor grants and operating
+                funds.
+              </p>
+            </div>
+            <!-- Header Action Controls -->
+            <div class="flex items-center gap-space-sm shrink-0">
+              <div
+                class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-card rounded shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-status-success"></span>
+                <span class="font-label-md text-label-md text-text-secondary">FY 2025 (Active)</span>
+              </div>
+              <button
+                class="flex items-center gap-space-xs px-space-md py-space-sm rounded bg-surface-card hover:bg-surface-secondary text-text-primary font-title-sm text-title-sm shadow-sm transition-all duration-150"
+                onclick="exportPayablesRegister()" type="button">
+                <span class="material-symbols-outlined text-[18px] text-text-secondary">file_download</span>
+                Export Register
+              </button>
+              <button
+                class="flex items-center gap-space-xs px-space-lg py-space-sm rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm shadow-sm transition-all duration-150"
+                onclick="toggleCreateModal(true)" type="button">
+                <span class="material-symbols-outlined text-[18px]">add</span>
+                + Create Bill
+              </button>
+            </div>
+          </div>
+          <!-- 5 FIDUCIARY KPI SUMMARY CARDS -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+            <!-- KPI 1 -->
+            <div
+              class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between cursor-pointer"
+              onclick="filterByQuickKpi('all')">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Outstanding
+                  Bills</span>
+                <span class="w-7 h-7 rounded bg-primary-tint flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-[16px]">receipt_long</span>
+                </span>
+              </div>
+              <div class="mt-space-md">
+                <div class="font-display-lg text-display-lg text-text-primary font-semibold tabular-nums">GH₵ 185,640.00
+                </div>
+                <div
+                  class="flex items-center justify-between mt-space-xs font-body-sm text-body-sm text-text-secondary">
+                  <span class="">14 Bills Total</span>
+                  <span class="font-caption text-caption text-text-muted">≈ $12,038.90</span>
+                </div>
+              </div>
+            </div>
+            <!-- KPI 2 -->
+            <div
+              class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between cursor-pointer"
+              onclick="filterByQuickKpi('due-soon')">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Due This Week</span>
+                <span class="w-7 h-7 rounded bg-status-warning-bg flex items-center justify-center text-status-warning">
+                  <span class="material-symbols-outlined text-[16px]">alarm</span>
+                </span>
+              </div>
+              <div class="mt-space-md">
+                <div class="font-display-lg text-display-lg text-status-warning font-semibold tabular-nums">GH₵
+                  42,100.00</div>
+                <div
+                  class="flex items-center justify-between mt-space-xs font-body-sm text-body-sm text-text-secondary">
+                  <span class="">4 bills due ≤ 7 days</span>
+                  <span class="font-caption text-caption text-status-warning font-medium">Urgent review</span>
+                </div>
+              </div>
+            </div>
+            <!-- KPI 3 -->
+            <div
+              class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between cursor-pointer"
+              onclick="filterByQuickKpi('overdue')">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Overdue
+                  Obligation</span>
+                <span
+                  class="w-7 h-7 rounded bg-status-critical-bg flex items-center justify-center text-status-critical">
+                  <span class="material-symbols-outlined text-[16px]">warning</span>
+                </span>
+              </div>
+              <div class="mt-space-md">
+                <div class="font-display-lg text-display-lg text-status-critical font-semibold tabular-nums">GH₵
+                  28,450.00</div>
+                <div
+                  class="flex items-center justify-between mt-space-xs font-body-sm text-body-sm text-text-secondary">
+                  <span class="">2 bills &gt; 30 days overdue</span>
+                  <span class="font-caption text-caption text-status-critical font-semibold">Flagged</span>
+                </div>
+              </div>
+            </div>
+            <!-- KPI 4 -->
+            <div
+              class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between cursor-pointer"
+              onclick="filterByQuickKpi('pending')">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Pending
+                  Approval</span>
+                <span
+                  class="w-7 h-7 rounded bg-surface-secondary flex items-center justify-center text-fund-unrestricted">
+                  <span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+                </span>
+              </div>
+              <div class="mt-space-md">
+                <div class="font-display-lg text-display-lg text-text-primary font-semibold tabular-nums">5 Bills</div>
+                <div
+                  class="flex items-center justify-between mt-space-xs font-body-sm text-body-sm text-text-secondary">
+                  <span class="">GH₵ 56,200.00</span>
+                  <span class="font-caption text-caption text-fund-unrestricted font-medium">Awaiting Sign-off</span>
+                </div>
+              </div>
+            </div>
+            <!-- KPI 5 -->
+            <div
+              class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between cursor-pointer">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Total Payables</span>
+                <span class="w-7 h-7 rounded bg-primary-tint flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+                </span>
+              </div>
+              <div class="mt-space-md">
+                <div class="font-display-lg text-display-lg text-text-primary font-semibold tabular-nums">GH₵ 214,090.00
+                </div>
+                <div
+                  class="flex items-center justify-between mt-space-xs font-body-sm text-body-sm text-text-secondary">
+                  <span class="">All pipeline &amp; grants</span>
+                  <span class="font-caption text-caption text-status-success font-medium">Encumbered</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TABS BAR -->
+          <div class="flex items-center justify-between gap-space-md bg-surface-card rounded p-space-xs shadow-sm">
+            <div class="flex items-center gap-space-xs" role="tablist">
+              <!-- Tab: Bills -->
+              <button aria-selected="true"
+                class="payables-tab-btn flex items-center gap-space-xs px-space-md py-space-sm rounded font-title-sm text-title-sm transition-all duration-150 bg-primary text-on-primary shadow-sm"
+                id="tab-btn-bills" onclick="switchPayablesTab('bills')" role="tab" type="button">
+                <span class="material-symbols-outlined text-[18px]">receipt</span>
+                <span class="">Bills</span>
+                <span
+                  class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-primary-hover text-on-primary">6</span>
+              </button>
+              <!-- Tab: Vendors -->
+              <button aria-selected="false"
+                class="payables-tab-btn flex items-center gap-space-xs px-space-md py-space-sm rounded font-title-sm text-title-sm transition-all duration-150 text-text-secondary hover:bg-surface-secondary hover:text-text-primary"
+                id="tab-btn-vendors" onclick="switchPayablesTab('vendors')" role="tab" type="button">
+                <span class="material-symbols-outlined text-[18px]">storefront</span>
+                <span class="">Vendors</span>
+                <span
+                  class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-surface-secondary text-text-secondary">5</span>
+              </button>
+              <!-- Tab: Payments -->
+              <button aria-selected="false"
+                class="payables-tab-btn flex items-center gap-space-xs px-space-md py-space-sm rounded font-title-sm text-title-sm transition-all duration-150 text-text-secondary hover:bg-surface-secondary hover:text-text-primary"
+                id="tab-btn-payments" onclick="switchPayablesTab('payments')" role="tab" type="button">
+                <span class="material-symbols-outlined text-[18px]">payments</span>
+                <span class="">Payments</span>
+                <span
+                  class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-surface-secondary text-text-secondary">5</span>
+              </button>
+              <!-- Tab: Aging -->
+              <button aria-selected="false"
+                class="payables-tab-btn flex items-center gap-space-xs px-space-md py-space-sm rounded font-title-sm text-title-sm transition-all duration-150 text-text-secondary hover:bg-surface-secondary hover:text-text-primary"
+                id="tab-btn-aging" onclick="switchPayablesTab('aging')" role="tab" type="button">
+                <span class="material-symbols-outlined text-[18px]">timelapse</span>
+                <span class="">Aging Schedule</span>
+                <span
+                  class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-surface-secondary text-text-secondary">5
+                  Brackets</span>
+              </button>
+            </div>
+            <!-- Sub-summary quick indicator -->
+            <div class="hidden md:flex items-center gap-space-sm pr-space-sm text-text-muted font-caption text-caption">
+              <span class="">Active Currency: <strong class="text-text-primary font-semibold">Ghanaian Cedi
+                  (GH₵)</strong></span>
+              <span class="w-1 h-1 rounded-full bg-border-strong"></span>
+              <span class="">Statutory WHT Rate: <strong class="text-text-primary font-semibold">3.0%
+                  GRA</strong></span>
+            </div>
+          </div>
+          <!-- ================================================================= -->
+          <!-- TAB CONTENT 1: BILLS (DEFAULT ACTIVE) -->
+          <!-- ================================================================= -->
+          <div class="flex flex-col gap-space-md" id="tab-content-bills">
+            <!-- Toolbar & Filters -->
+            <div
+              class="bg-surface-card p-space-md rounded shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+              <!-- Search bar -->
+              <div class="flex-1 max-w-md relative flex items-center">
+                <span
+                  class="material-symbols-outlined absolute left-space-md text-text-muted text-[18px] pointer-events-none">search</span>
+                <input
+                  class="w-full h-9 pl-9 pr-space-md bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded focus:outline-none focus:ring-2 focus:ring-primary shadow-none"
+                  id="bill-search-input" onkeyup="filterBillsTable()"
+                  placeholder="Filter by bill #, vendor name, or grant..." type="text">
+              </div>
+              <!-- Filter dropdowns -->
+              <div class="flex items-center flex-wrap gap-space-sm">
+                <!-- Fund Class Filter -->
+                <div class="flex items-center gap-space-xs bg-surface-secondary px-space-md py-space-xxs rounded">
+                  <span class="font-label-sm text-label-sm text-text-muted uppercase">Fund:</span>
+                  <select
+                    class="bg-transparent font-title-sm text-title-sm text-text-primary focus:outline-none cursor-pointer py-1"
+                    id="bill-fund-filter" onchange="filterBillsTable()">
+                    <option value="ALL">All Funds</option>
+                    <option value="UNRESTRICTED">Unrestricted</option>
+                    <option value="RESTRICTED">Restricted</option>
+                    <option value="TEMP_RESTRICTED">Temp Restricted</option>
+                  </select>
+                </div>
+                <!-- Status Filter -->
+                <div class="flex items-center gap-space-xs bg-surface-secondary px-space-md py-space-xxs rounded">
+                  <span class="font-label-sm text-label-sm text-text-muted uppercase">Status:</span>
+                  <select
+                    class="bg-transparent font-title-sm text-title-sm text-text-primary focus:outline-none cursor-pointer py-1"
+                    id="bill-status-filter" onchange="filterBillsTable()">
+                    <option value="ALL">All Statuses</option>
+                    <option value="Draft">Draft</option>
+                    <option value="Pending Approval">Pending Approval</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Partially Paid">Partially Paid</option>
+                    <option value="Overdue">Overdue</option>
+                    <option value="Paid">Paid</option>
+                  </select>
+                </div>
+                <!-- Reset Filter -->
+                <button class="p-space-xs text-text-muted hover:text-text-primary rounded hover:bg-surface-secondary"
+                  onclick="resetBillFilters()" title="Reset Filters" type="button">
+                  <span class="material-symbols-outlined text-[20px]">restart_alt</span>
+                </button>
+              </div>
+            </div>
+            <!-- Bills Data Table -->
+            <div class="bg-surface-card rounded shadow-sm overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left" id="payables-bills-table">
+                  <thead>
+                    <tr
+                      class="bg-surface-secondary text-text-secondary font-label-md text-label-md uppercase tracking-wider">
+                      <th class="py-space-md px-space-lg" scope="col">Bill Number</th>
+                      <th class="py-space-md px-space-md" scope="col">Vendor</th>
+                      <th class="py-space-md px-space-md" scope="col">Date</th>
+                      <th class="py-space-md px-space-md" scope="col">Due Date</th>
+                      <th class="py-space-md px-space-md text-right" scope="col">Amount (GHS)</th>
+                      <th class="py-space-md px-space-md" scope="col">Fund Class</th>
+                      <th class="py-space-md px-space-md" scope="col">Grant / Project</th>
+                      <th class="py-space-md px-space-md" scope="col">Status</th>
+                      <th class="py-space-md px-space-lg text-right" scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-border-subtle/40 font-body-md text-body-md" id="bills-table-body">
+                    <!-- Row 1: Volta Logistics -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors cursor-pointer group bill-row"
+                      data-amount="38450.00" data-bill-id="BIL-2025-00142" data-date="2025-02-12" data-due="2025-03-05"
+                      data-fund="RESTRICTED" data-grant="USAID Feed Future (GRA-091)" data-status="Pending Approval"
+                      data-vendor="Volta Logistics Ltd" onclick="openBillDetail('BIL-2025-00142')">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold flex items-center gap-space-xs">
+                        <span class="material-symbols-outlined text-[16px]">receipt</span>
+                        <span class="">BIL-2025-00142</span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">Volta Logistics Ltd</div>
+                        <div class="font-caption text-caption text-text-muted">TIN: C0029188402 • Net 30</div>
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">12
+                        Feb 2025</td>
+                      <td
+                        class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-primary font-medium">
+                        05 Mar 2025</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 38,450.00</td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-semibold">
+                          Restricted
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">USAID Feed Future</div>
+                        <div class="font-caption text-caption text-text-muted">GRA-091 / Act. #3120</div>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-warning-bg text-status-warning font-semibold">
+                          <span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span>
+                          Pending Approval
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-lg text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-space-xxs">
+                          <button class="p-space-xs text-status-success hover:bg-status-success-bg rounded"
+                            onclick="approveBillDirect('BIL-2025-00142')" title="Approve Bill" type="button">
+                            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                          </button>
+                          <button class="p-space-xs text-text-secondary hover:bg-surface-secondary rounded"
+                            onclick="openBillDetail('BIL-2025-00142')" title="Inspect" type="button">
+                            <span class="material-symbols-outlined text-[18px]">visibility</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Row 2: MedLab Ghana -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors cursor-pointer group bill-row"
+                      data-amount="28450.00" data-bill-id="BIL-2025-00139" data-date="2025-01-20" data-due="2025-02-10"
+                      data-fund="TEMP_RESTRICTED" data-grant="Global Fund Malaria R9" data-status="Overdue"
+                      data-vendor="MedLab Ghana Ltd" onclick="openBillDetail('BIL-2025-00139')">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold flex items-center gap-space-xs">
+                        <span class="material-symbols-outlined text-[16px]">receipt</span>
+                        <span class="">BIL-2025-00139</span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">MedLab Ghana Ltd</div>
+                        <div class="font-caption text-caption text-text-muted">TIN: C0004928172 • Net 21</div>
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">20
+                        Jan 2025</td>
+                      <td
+                        class="py-space-md px-space-md font-numeric-table text-numeric-table text-status-critical font-semibold">
+                        10 Feb 2025</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 28,450.00</td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-fund-temp-restricted-bg text-status-warning font-semibold">
+                          Temp Restricted
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">Global Fund Malaria R9</div>
+                        <div class="font-caption text-caption text-text-muted">GF-ML-2024 / Diagnostics</div>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-critical-bg text-status-critical font-semibold">
+                          <span class="material-symbols-outlined text-[13px]">error</span>
+                          Overdue
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-lg text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-space-xxs">
+                          <button
+                            class="px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-critical text-on-error hover:opacity-90"
+                            onclick="recordPaymentModal('BIL-2025-00139')" type="button">
+                            Pay Now
+                          </button>
+                          <button class="p-space-xs text-text-secondary hover:bg-surface-secondary rounded"
+                            onclick="openBillDetail('BIL-2025-00139')" type="button">
+                            <span class="material-symbols-outlined text-[18px]">visibility</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Row 3: Electricity Company of Ghana -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors cursor-pointer group bill-row"
+                      data-amount="14200.00" data-bill-id="BIL-2025-00140" data-date="2025-02-01" data-due="2025-02-28"
+                      data-fund="UNRESTRICTED" data-grant="Core Operating Budget 2025" data-status="Approved"
+                      data-vendor="Electricity Company of Ghana" onclick="openBillDetail('BIL-2025-00140')">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold flex items-center gap-space-xs">
+                        <span class="material-symbols-outlined text-[16px]">receipt</span>
+                        <span class="">BIL-2025-00140</span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">Electricity Company of Ghana</div>
+                        <div class="font-caption text-caption text-text-muted">Statutory Utility • Net 15</div>
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">01
+                        Feb 2025</td>
+                      <td
+                        class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-primary font-medium">
+                        28 Feb 2025</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 14,200.00</td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-primary-tint text-fund-unrestricted font-semibold">
+                          Unrestricted
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">HQ Operational Support</div>
+                        <div class="font-caption text-caption text-text-muted">OPS-FACILITIES-01</div>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                          <span class="material-symbols-outlined text-[13px]">check</span>
+                          Approved
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-lg text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-space-xxs">
+                          <button
+                            class="px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-primary text-on-primary hover:bg-primary-hover"
+                            onclick="recordPaymentModal('BIL-2025-00140')" type="button">
+                            Pay
+                          </button>
+                          <button class="p-space-xs text-text-secondary hover:bg-surface-secondary rounded"
+                            onclick="openBillDetail('BIL-2025-00140')" type="button">
+                            <span class="material-symbols-outlined text-[18px]">visibility</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Row 4: Forestry & Soil Consult -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors cursor-pointer group bill-row"
+                      data-amount="62000.00" data-bill-id="BIL-2025-00143" data-date="2025-02-14" data-due="2025-03-15"
+                      data-fund="RESTRICTED" data-grant="FCDO Climate Resilience (UK-GH-82)"
+                      data-status="Pending Approval" data-vendor="Forestry &amp; Soil Consult"
+                      onclick="openBillDetail('BIL-2025-00143')">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold flex items-center gap-space-xs">
+                        <span class="material-symbols-outlined text-[16px]">receipt</span>
+                        <span class="">BIL-2025-00143</span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">Forestry &amp; Soil Consult</div>
+                        <div class="font-caption text-caption text-text-muted">TIN: C0098271034 • Net 30</div>
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">14
+                        Feb 2025</td>
+                      <td
+                        class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-primary font-medium">
+                        15 Mar 2025</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 62,000.00</td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-semibold">
+                          Restricted
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">FCDO Climate Resilience</div>
+                        <div class="font-caption text-caption text-text-muted">UK-GH-82 / Agroforestry</div>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-warning-bg text-status-warning font-semibold">
+                          <span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span>
+                          Pending Approval
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-lg text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-space-xxs">
+                          <button class="p-space-xs text-status-success hover:bg-status-success-bg rounded"
+                            onclick="approveBillDirect('BIL-2025-00143')" title="Approve Bill" type="button">
+                            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                          </button>
+                          <button class="p-space-xs text-text-secondary hover:bg-surface-secondary rounded"
+                            onclick="openBillDetail('BIL-2025-00143')" type="button">
+                            <span class="material-symbols-outlined text-[18px]">visibility</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Row 5: Stellar Stationery & Print -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors cursor-pointer group bill-row"
+                      data-amount="7840.00" data-bill-id="BIL-2025-00141" data-date="2025-02-05" data-due="2025-02-25"
+                      data-fund="UNRESTRICTED" data-grant="Core Operating Budget 2025" data-status="Partially Paid"
+                      data-vendor="Stellar Stationery &amp; Print" onclick="openBillDetail('BIL-2025-00141')">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold flex items-center gap-space-xs">
+                        <span class="material-symbols-outlined text-[16px]">receipt</span>
+                        <span class="">BIL-2025-00141</span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">Stellar Stationery &amp; Print</div>
+                        <div class="font-caption text-caption text-text-muted">TIN: C0011928091 • Net 20</div>
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">05
+                        Feb 2025</td>
+                      <td
+                        class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-primary font-medium">
+                        25 Feb 2025</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 7,840.00</td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-primary-tint text-fund-unrestricted font-semibold">
+                          Unrestricted
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">Training Curricula M&amp;E</div>
+                        <div class="font-caption text-caption text-text-muted">EDU-CAP-04</div>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-semibold">
+                          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                          Partially Paid
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-lg text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-space-xxs">
+                          <button
+                            class="px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-surface-secondary text-text-primary hover:bg-surface-tertiary"
+                            onclick="recordPaymentModal('BIL-2025-00141')" type="button">
+                            Balance (GH₵ 3,840)
+                          </button>
+                          <button class="p-space-xs text-text-secondary hover:bg-surface-secondary rounded"
+                            onclick="openBillDetail('BIL-2025-00141')" type="button">
+                            <span class="material-symbols-outlined text-[18px]">visibility</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Row 6: Stanbic Fleet Services -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors cursor-pointer group bill-row"
+                      data-amount="34700.00" data-bill-id="BIL-2025-00138" data-date="2025-01-15" data-due="2025-02-15"
+                      data-fund="RESTRICTED" data-grant="EU Human Rights &amp; Rule of Law" data-status="Paid"
+                      data-vendor="Stanbic Fleet Services" onclick="openBillDetail('BIL-2025-00138')">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold flex items-center gap-space-xs">
+                        <span class="material-symbols-outlined text-[16px]">receipt</span>
+                        <span class="">BIL-2025-00138</span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">Stanbic Fleet Services</div>
+                        <div class="font-caption text-caption text-text-muted">TIN: C0044810291 • 4WD Lease</div>
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">15
+                        Jan 2025</td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">15
+                        Feb 2025</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 34,700.00</td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-semibold">
+                          Restricted
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <div class="font-title-sm text-title-sm text-text-primary">EU Human Rights</div>
+                        <div class="font-caption text-caption text-text-muted">EUR-GH-44 / Field Vehicles</div>
+                      </td>
+                      <td class="py-space-md px-space-md">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                          <span class="material-symbols-outlined text-[13px]">done_all</span>
+                          Paid
+                        </span>
+                      </td>
+                      <td class="py-space-md px-space-lg text-right" onclick="event.stopPropagation()">
+                        <div class="flex items-center justify-end gap-space-xxs">
+                          <button class="p-space-xs text-text-secondary hover:bg-surface-secondary rounded"
+                            onclick="openBillDetail('BIL-2025-00138')" title="View Voucher" type="button">
+                            <span class="material-symbols-outlined text-[18px]">receipt_long</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <!-- Table Footer Totals -->
+                  <tfoot>
+                    <tr
+                      class="bg-surface-secondary font-numeric-table-bold text-numeric-table-bold text-text-primary border-t-2 border-border-strong">
+                      <td class="py-space-md px-space-lg font-title-sm text-title-sm" colspan="4">
+                        Displaying 6 of 14 Pipeline Obligations
+                      </td>
+                      <td
+                        class="py-space-md px-space-md text-right font-display-lg text-[16px] text-fund-unrestricted tabular-nums">
+                        GH₵ 185,640.00
+                      </td>
+                      <td class="py-space-md px-space-lg text-right text-text-muted font-caption text-caption"
+                        colspan="4">
+                        Statutory IPSAS Encumbrance Enforced
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- ================================================================= -->
+          <!-- TAB CONTENT 2: VENDORS -->
+          <!-- ================================================================= -->
+          <div class="hidden flex flex-col gap-space-md" id="tab-content-vendors">
+            <div class="bg-surface-card p-space-md rounded shadow-sm flex items-center justify-between">
+              <div class="flex items-center gap-space-sm">
+                <span class="material-symbols-outlined text-fund-unrestricted text-[20px]">verified_user</span>
+                <span class="font-title-md text-title-md text-text-primary font-semibold">Approved INGO Vendors &amp;
+                  Regulatory Status</span>
+              </div>
+              <button
+                class="px-space-md py-space-xs rounded bg-surface-secondary hover:bg-surface-tertiary font-title-sm text-title-sm text-text-primary flex items-center gap-space-xs"
+                onclick="alert('Open new vendor registration requisition')" type="button">
+                <span class="material-symbols-outlined text-[16px]">person_add</span>
+                Add Vendor Profile
+              </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+              <!-- Vendor 1 -->
+              <div
+                class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div>
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Volta Logistics Ltd
+                      </h3>
+                      <p class="font-caption text-caption text-text-muted">Transport, Haulage &amp; Cold-Chain</p>
+                    </div>
+                    <span
+                      class="px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                      GRA WHT 3% Compliant
+                    </span>
+                  </div>
+                  <div class="mt-space-md flex flex-col gap-space-xs font-body-sm text-body-sm">
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Tax ID (TIN):</span>
+                      <span class="font-numeric-table text-text-primary font-medium">C0029188402</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Terms:</span>
+                      <span class="text-text-primary font-medium">Net 30 Days (Bank Transfer)</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Active Bills:</span>
+                      <span class="text-text-primary font-medium">2 Bills in Review</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-space-lg pt-space-sm border-t border-border-subtle flex items-center justify-between">
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-text-muted uppercase">Outstanding Due</span>
+                    <span class="font-headline-sm text-headline-sm text-text-primary font-bold tabular-nums">GH₵
+                      38,450.00</span>
+                  </div>
+                  <button
+                    class="px-space-sm py-space-xs rounded bg-surface-secondary text-primary font-title-sm text-title-sm hover:bg-surface-tertiary"
+                    onclick="switchPayablesTab('bills')" type="button">
+                    View Bills
+                  </button>
+                </div>
+              </div>
+              <!-- Vendor 2 -->
+              <div
+                class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div>
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">MedLab Ghana Ltd
+                      </h3>
+                      <p class="font-caption text-caption text-text-muted">Medical Consumables &amp; Diagnostics</p>
+                    </div>
+                    <span
+                      class="px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-critical-bg text-status-critical font-semibold">
+                      Audit Warning
+                    </span>
+                  </div>
+                  <div class="mt-space-md flex flex-col gap-space-xs font-body-sm text-body-sm">
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Tax ID (TIN):</span>
+                      <span class="font-numeric-table text-text-primary font-medium">C0004928172</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Terms:</span>
+                      <span class="text-text-primary font-medium">Net 21 Days (Letter of Credit)</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Active Bills:</span>
+                      <span class="text-text-primary font-medium">1 Overdue Obligation</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-space-lg pt-space-sm border-t border-border-subtle flex items-center justify-between">
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-text-muted uppercase">Outstanding Due</span>
+                    <span class="font-headline-sm text-headline-sm text-status-critical font-bold tabular-nums">GH₵
+                      28,450.00</span>
+                  </div>
+                  <button
+                    class="px-space-sm py-space-xs rounded bg-status-critical-bg text-status-critical font-title-sm text-title-sm hover:bg-error-container"
+                    onclick="recordPaymentModal('BIL-2025-00139')" type="button">
+                    Clear Balance
+                  </button>
+                </div>
+              </div>
+              <!-- Vendor 3 -->
+              <div
+                class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div>
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Electricity Co. of
+                        Ghana</h3>
+                      <p class="font-caption text-caption text-text-muted">Governmental Statutory Utility</p>
+                    </div>
+                    <span
+                      class="px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-surface-secondary text-text-secondary font-semibold">
+                      Exempt From WHT
+                    </span>
+                  </div>
+                  <div class="mt-space-md flex flex-col gap-space-xs font-body-sm text-body-sm">
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Tax ID (TIN):</span>
+                      <span class="font-numeric-table text-text-primary font-medium">GOG-UTIL-ECG-01</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Terms:</span>
+                      <span class="text-text-primary font-medium">Net 15 Days (Direct Debit)</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Active Bills:</span>
+                      <span class="text-text-primary font-medium">1 Approved</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-space-lg pt-space-sm border-t border-border-subtle flex items-center justify-between">
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-text-muted uppercase">Outstanding Due</span>
+                    <span class="font-headline-sm text-headline-sm text-text-primary font-bold tabular-nums">GH₵
+                      14,200.00</span>
+                  </div>
+                  <button
+                    class="px-space-sm py-space-xs rounded bg-surface-secondary text-primary font-title-sm text-title-sm hover:bg-surface-tertiary"
+                    onclick="switchPayablesTab('bills')" type="button">
+                    View Bills
+                  </button>
+                </div>
+              </div>
+              <!-- Vendor 4 -->
+              <div
+                class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div>
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Forestry &amp; Soil
+                        Consult</h3>
+                      <p class="font-caption text-caption text-text-muted">Agronomic Research &amp; Field Survey</p>
+                    </div>
+                    <span
+                      class="px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                      GRA WHT 3% Compliant
+                    </span>
+                  </div>
+                  <div class="mt-space-md flex flex-col gap-space-xs font-body-sm text-body-sm">
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Tax ID (TIN):</span>
+                      <span class="font-numeric-table text-text-primary font-medium">C0098271034</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Terms:</span>
+                      <span class="text-text-primary font-medium">Milestone Signoff (30 Days)</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Active Bills:</span>
+                      <span class="text-text-primary font-medium">1 Milestone Pending</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-space-lg pt-space-sm border-t border-border-subtle flex items-center justify-between">
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-text-muted uppercase">Outstanding Due</span>
+                    <span class="font-headline-sm text-headline-sm text-text-primary font-bold tabular-nums">GH₵
+                      62,000.00</span>
+                  </div>
+                  <button
+                    class="px-space-sm py-space-xs rounded bg-surface-secondary text-primary font-title-sm text-title-sm hover:bg-surface-tertiary"
+                    onclick="switchPayablesTab('bills')" type="button">
+                    View Bills
+                  </button>
+                </div>
+              </div>
+              <!-- Vendor 5 -->
+              <div
+                class="bg-surface-card p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div>
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Stanbic Fleet
+                        Services</h3>
+                      <p class="font-caption text-caption text-text-muted">Vehicle Leasing &amp; Maintenance</p>
+                    </div>
+                    <span
+                      class="px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                      Direct Corporate Standing
+                    </span>
+                  </div>
+                  <div class="mt-space-md flex flex-col gap-space-xs font-body-sm text-body-sm">
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Tax ID (TIN):</span>
+                      <span class="font-numeric-table text-text-primary font-medium">C0044810291</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Terms:</span>
+                      <span class="text-text-primary font-medium">Monthly Master Agreement</span>
+                    </div>
+                    <div class="flex justify-between text-text-secondary">
+                      <span class="">Active Bills:</span>
+                      <span class="text-text-primary font-medium">Fully Settled (FY25 Q1)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-space-lg pt-space-sm border-t border-border-subtle flex items-center justify-between">
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-text-muted uppercase">Outstanding Due</span>
+                    <span class="font-headline-sm text-headline-sm text-status-success font-bold tabular-nums">GH₵
+                      0.00</span>
+                  </div>
+                  <button
+                    class="px-space-sm py-space-xs rounded bg-surface-secondary text-primary font-title-sm text-title-sm hover:bg-surface-tertiary"
+                    onclick="switchPayablesTab('payments')" type="button">
+                    View Payments
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ================================================================= -->
+          <!-- TAB CONTENT 3: PAYMENTS -->
+          <!-- ================================================================= -->
+          <div class="hidden flex flex-col gap-space-md" id="tab-content-payments">
+            <div
+              class="bg-surface-card p-space-md rounded shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+              <div class="flex items-center gap-space-sm">
+                <span class="material-symbols-outlined text-fund-unrestricted text-[20px]">account_balance</span>
+                <div>
+                  <div class="font-title-md text-title-md text-text-primary font-semibold">Executed Payment Register
+                    &amp; Statutory GL Link</div>
+                  <p class="font-caption text-caption text-text-muted">Direct trace from Disbursement Voucher through
+                    Bank Outflow to General Ledger Journal.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-space-xs">
+                <button
+                  class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-title-sm text-title-sm"
+                  onclick="alert('Exporting payment register to CSV with GL mappings')" type="button">
+                  <span class="material-symbols-outlined text-[16px]">download</span>
+                  Export Audit Trail
+                </button>
+              </div>
+            </div>
+            <div class="bg-surface-card rounded shadow-sm overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                  <thead>
+                    <tr
+                      class="bg-surface-secondary text-text-secondary font-label-md text-label-md uppercase tracking-wider">
+                      <th class="py-space-md px-space-lg" scope="col">Payment Voucher</th>
+                      <th class="py-space-md px-space-md" scope="col">Paid Date</th>
+                      <th class="py-space-md px-space-md" scope="col">Vendor / Payee</th>
+                      <th class="py-space-md px-space-md" scope="col">Settled Bill</th>
+                      <th class="py-space-md px-space-md text-right" scope="col">Net Amount</th>
+                      <th class="py-space-md px-space-md text-right" scope="col">3% WHT GRA</th>
+                      <th class="py-space-md px-space-md" scope="col">Funding Account</th>
+                      <th class="py-space-md px-space-md" scope="col">GL Journal Ref</th>
+                      <th class="py-space-md px-space-lg text-right" scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-border-subtle/40 font-body-md text-body-md">
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold">
+                        PV-2025-00418
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">15
+                        Feb 2025</td>
+                      <td class="py-space-md px-space-md font-title-sm text-title-sm text-text-primary">Stanbic Fleet
+                        Services</td>
+                      <td class="py-space-md px-space-md text-text-secondary">BIL-2025-00138</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 33,659.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        GH₵ 1,041.00</td>
+                      <td class="py-space-md px-space-md font-caption text-caption text-text-secondary">Stanbic GHS Main
+                        (1010-01)</td>
+                      <td
+                        class="py-space-md px-space-md font-title-sm text-title-sm text-primary underline decoration-dotted cursor-pointer"
+                        onclick="alert('Viewing Journal JRN-2025-0812')">JRN-2025-0812</td>
+                      <td class="py-space-md px-space-lg text-right">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                          <span class="material-symbols-outlined text-[13px]">check</span>
+                          Cleared
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold">
+                        PV-2025-00412
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">10
+                        Feb 2025</td>
+                      <td class="py-space-md px-space-md font-title-sm text-title-sm text-text-primary">Stellar
+                        Stationery &amp; Print</td>
+                      <td class="py-space-md px-space-md text-text-secondary">BIL-2025-00141 (Part)</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 3,880.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        GH₵ 120.00</td>
+                      <td class="py-space-md px-space-md font-caption text-caption text-text-secondary">Absa Project GHS
+                        (1010-04)</td>
+                      <td
+                        class="py-space-md px-space-md font-title-sm text-title-sm text-primary underline decoration-dotted cursor-pointer"
+                        onclick="alert('Viewing Journal JRN-2025-0794')">JRN-2025-0794</td>
+                      <td class="py-space-md px-space-lg text-right">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                          <span class="material-symbols-outlined text-[13px]">check</span>
+                          Cleared
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold">
+                        PV-2025-00398
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">28
+                        Jan 2025</td>
+                      <td class="py-space-md px-space-md font-title-sm text-title-sm text-text-primary">Accra City Hotel
+                        Ltd</td>
+                      <td class="py-space-md px-space-md text-text-secondary">BIL-2025-00122</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 18,200.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        GH₵ 562.88</td>
+                      <td class="py-space-md px-space-md font-caption text-caption text-text-secondary">Stanbic GHS Main
+                        (1010-01)</td>
+                      <td
+                        class="py-space-md px-space-md font-title-sm text-title-sm text-primary underline decoration-dotted cursor-pointer"
+                        onclick="alert('Viewing Journal JRN-2025-0710')">JRN-2025-0710</td>
+                      <td class="py-space-md px-space-lg text-right">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                          <span class="material-symbols-outlined text-[13px]">check</span>
+                          Cleared
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold">
+                        PV-2025-00385
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">19
+                        Jan 2025</td>
+                      <td class="py-space-md px-space-md font-title-sm text-title-sm text-text-primary">TotalEnergies
+                        Ghana</td>
+                      <td class="py-space-md px-space-md text-text-secondary">BIL-2025-00114</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 9,450.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        GH₵ 0.00</td>
+                      <td class="py-space-md px-space-md font-caption text-caption text-text-secondary">Stanbic
+                        Operations (1010-02)</td>
+                      <td
+                        class="py-space-md px-space-md font-title-sm text-title-sm text-primary underline decoration-dotted cursor-pointer"
+                        onclick="alert('Viewing Journal JRN-2025-0688')">JRN-2025-0688</td>
+                      <td class="py-space-md px-space-lg text-right">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                          <span class="material-symbols-outlined text-[13px]">check</span>
+                          Cleared
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td
+                        class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold">
+                        PV-2025-00371
+                      </td>
+                      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">12
+                        Jan 2025</td>
+                      <td class="py-space-md px-space-md font-title-sm text-title-sm text-text-primary">MTN Ghana
+                        Enterprise</td>
+                      <td class="py-space-md px-space-md text-text-secondary">BIL-2025-00098</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 5,220.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        GH₵ 161.44</td>
+                      <td class="py-space-md px-space-md font-caption text-caption text-text-secondary">Stanbic GHS Main
+                        (1010-01)</td>
+                      <td
+                        class="py-space-md px-space-md font-title-sm text-title-sm text-primary underline decoration-dotted cursor-pointer"
+                        onclick="alert('Viewing Journal JRN-2025-0655')">JRN-2025-0655</td>
+                      <td class="py-space-md px-space-lg text-right">
+                        <span
+                          class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+                          <span class="material-symbols-outlined text-[13px]">check</span>
+                          Cleared
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- ================================================================= -->
+          <!-- TAB CONTENT 4: AGING SCHEDULE -->
+          <!-- ================================================================= -->
+          <div class="hidden flex flex-col gap-space-md" id="tab-content-aging">
+            <!-- 5 Aging Brackets Top Overview -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+              <div class="bg-surface-card p-space-md rounded shadow-sm flex flex-col justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Current (0-30
+                  Days)</span>
+                <div class="mt-space-sm font-headline-md text-headline-md font-bold text-text-primary tabular-nums">GH₵
+                  114,650.00</div>
+                <div class="mt-space-xs font-caption text-caption text-status-success font-medium">61.7% of Portfolio
+                </div>
+              </div>
+              <div class="bg-surface-card p-space-md rounded shadow-sm flex flex-col justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">31-60 Days</span>
+                <div class="mt-space-sm font-headline-md text-headline-md font-bold text-text-primary tabular-nums">GH₵
+                  42,540.00</div>
+                <div class="mt-space-xs font-caption text-caption text-text-secondary">22.9% of Portfolio</div>
+              </div>
+              <div class="bg-surface-card p-space-md rounded shadow-sm flex flex-col justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">61-90 Days</span>
+                <div class="mt-space-sm font-headline-md text-headline-md font-bold text-status-warning tabular-nums">
+                  GH₵ 18,450.00</div>
+                <div class="mt-space-xs font-caption text-caption text-status-warning font-medium">9.9% of Portfolio
+                </div>
+              </div>
+              <div class="bg-surface-card p-space-md rounded shadow-sm flex flex-col justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">91-120 Days</span>
+                <div class="mt-space-sm font-headline-md text-headline-md font-bold text-status-critical tabular-nums">
+                  GH₵ 10,000.00</div>
+                <div class="mt-space-xs font-caption text-caption text-status-critical font-medium">5.4% of Portfolio
+                </div>
+              </div>
+              <div class="bg-surface-card p-space-md rounded shadow-sm flex flex-col justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">120+ Days</span>
+                <div class="mt-space-sm font-headline-md text-headline-md font-bold text-status-critical tabular-nums">
+                  GH₵ 0.00</div>
+                <div class="mt-space-xs font-caption text-caption text-status-success font-medium">Zero Bad Debt</div>
+              </div>
+            </div>
+            <!-- Aging Schedule Breakdown Table -->
+            <div class="bg-surface-card rounded shadow-sm overflow-hidden">
+              <div class="p-space-md flex items-center justify-between">
+                <span class="font-title-md text-title-md font-semibold text-text-primary">Fiduciary Vendor Aging
+                  Matrix</span>
+                <span class="font-caption text-caption text-text-muted">As of Today • Net terms applied</span>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left font-body-md text-body-md">
+                  <thead>
+                    <tr
+                      class="bg-surface-secondary text-text-secondary font-label-md text-label-md uppercase tracking-wider">
+                      <th class="py-space-md px-space-lg" scope="col">Vendor Name</th>
+                      <th class="py-space-md px-space-md text-right" scope="col">Total Outstanding</th>
+                      <th class="py-space-md px-space-md text-right" scope="col">Current (0-30d)</th>
+                      <th class="py-space-md px-space-md text-right" scope="col">31-60d</th>
+                      <th class="py-space-md px-space-md text-right" scope="col">61-90d</th>
+                      <th class="py-space-md px-space-md text-right" scope="col">91-120d</th>
+                      <th class="py-space-md px-space-lg text-right" scope="col">120d+</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-border-subtle/40">
+                    <tr class="hover:bg-primary-tint/20">
+                      <td class="py-space-md px-space-lg font-title-sm text-title-sm text-text-primary">Forestry &amp;
+                        Soil Consult</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 62,000.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-primary tabular-nums">
+                        GH₵ 62,000.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-lg text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20">
+                      <td class="py-space-md px-space-lg font-title-sm text-title-sm text-text-primary">Volta Logistics
+                        Ltd</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 38,450.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-primary tabular-nums">
+                        GH₵ 38,450.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-lg text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20">
+                      <td class="py-space-md px-space-lg font-title-sm text-title-sm text-text-primary">MedLab Ghana Ltd
+                      </td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-status-critical tabular-nums">
+                        GH₵ 28,450.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-status-warning tabular-nums">
+                        GH₵ 18,450.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-status-critical tabular-nums">
+                        GH₵ 10,000.00</td>
+                      <td
+                        class="py-space-md px-space-lg text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20">
+                      <td class="py-space-md px-space-lg font-title-sm text-title-sm text-text-primary">Electricity
+                        Company of Ghana</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 14,200.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-primary tabular-nums">
+                        GH₵ 14,200.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-lg text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20">
+                      <td class="py-space-md px-space-lg font-title-sm text-title-sm text-text-primary">Stellar
+                        Stationery &amp; Print</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">
+                        GH₵ 3,840.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-primary tabular-nums">
+                        GH₵ 3,840.00</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-md text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                      <td
+                        class="py-space-md px-space-lg text-right font-numeric-table text-numeric-table text-text-muted tabular-nums">
+                        -</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr
+                      class="bg-surface-secondary font-numeric-table-bold text-numeric-table-bold text-text-primary border-t-2 border-border-strong">
+                      <td class="py-space-md px-space-lg">Portfolio Total (GHS)</td>
+                      <td class="py-space-md px-space-md text-right tabular-nums">GH₵ 185,640.00</td>
+                      <td class="py-space-md px-space-md text-right tabular-nums">GH₵ 114,650.00</td>
+                      <td class="py-space-md px-space-md text-right tabular-nums">GH₵ 42,540.00</td>
+                      <td class="py-space-md px-space-md text-right tabular-nums">GH₵ 18,450.00</td>
+                      <td class="py-space-md px-space-md text-right tabular-nums">GH₵ 10,000.00</td>
+                      <td class="py-space-md px-space-lg text-right tabular-nums">GH₵ 0.00</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ================================================================= -->
+        <!-- BILL DETAIL DRAWER (SLIDE OVER FROM RIGHT) -->
+        <!-- ================================================================= -->
+        <div class="fixed inset-0 bg-nav-bg/50 z-50 hidden transition-opacity" id="bill-detail-backdrop"
+          onclick="closeBillDetail()">
+          <div
+            class="absolute right-0 top-0 bottom-0 w-full max-w-2xl bg-surface-card shadow-2xl flex flex-col z-50 overflow-hidden transform transition-transform duration-200"
+            id="bill-detail-panel" onclick="event.stopPropagation()">
+            <!-- Drawer Header -->
+            <div
+              class="h-16 px-space-xl bg-surface-secondary border-b border-border-subtle flex items-center justify-between shrink-0">
+              <div class="flex items-center gap-space-sm min-w-0">
+                <div class="w-8 h-8 rounded bg-primary-tint text-primary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">receipt</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-text-primary font-bold"
+                      id="drawer-bill-id">BIL-2025-00142</span>
+                    <span
+                      class="px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-semibold"
+                      id="drawer-fund-badge">Restricted</span>
+                  </div>
+                  <span class="font-caption text-caption text-text-muted truncate" id="drawer-vendor-name">Volta
+                    Logistics Ltd</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-space-xs">
+                <button class="p-space-xs text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded"
+                  onclick="printBillRecord()" title="Print Fiduciary Voucher" type="button">
+                  <span class="material-symbols-outlined text-[20px]">print</span>
+                </button>
+                <button class="p-space-xs text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded"
+                  onclick="closeBillDetail()" title="Close Panel" type="button">
+                  <span class="material-symbols-outlined text-[20px]">close</span>
+                </button>
+              </div>
+            </div>
+            <!-- Drawer Scrollable Body -->
+            <div class="flex-1 overflow-y-auto p-space-xl flex flex-col gap-space-lg">
+              <!-- Status & Meta Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm p-space-md bg-surface-secondary rounded">
+                <div>
+                  <span class="font-caption text-caption text-text-muted uppercase">Bill Date</span>
+                  <div class="font-title-sm text-title-sm text-text-primary font-semibold" id="drawer-bill-date">12 Feb
+                    2025</div>
+                </div>
+                <div>
+                  <span class="font-caption text-caption text-text-muted uppercase">Due Date</span>
+                  <div class="font-title-sm text-title-sm text-text-primary font-semibold" id="drawer-due-date">05 Mar
+                    2025</div>
+                </div>
+                <div>
+                  <span class="font-caption text-caption text-text-muted uppercase">Status</span>
+                  <div class="font-title-sm text-title-sm text-status-warning font-semibold" id="drawer-status-pill">
+                    Pending Approval</div>
+                </div>
+                <div>
+                  <span class="font-caption text-caption text-text-muted uppercase">PO Match</span>
+                  <div class="font-title-sm text-title-sm text-fund-unrestricted font-semibold">PO-2025-0312</div>
+                </div>
+              </div>
+              <!-- Vendor & Grant Context -->
+              <div class="flex flex-col gap-space-xs">
+                <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Funding &amp;
+                  Procurement Allocation</span>
+                <div class="p-space-md bg-surface-card border border-border-subtle rounded flex flex-col gap-space-sm">
+                  <div class="flex justify-between items-center text-body-sm">
+                    <span class="text-text-secondary">Funding Donor / Grant:</span>
+                    <span class="font-title-sm text-title-sm text-text-primary font-medium" id="drawer-grant-name">USAID
+                      Feed Future (GRA-091)</span>
+                  </div>
+                  <div class="flex justify-between items-center text-body-sm">
+                    <span class="text-text-secondary">Vendor Tax Identification (TIN):</span>
+                    <span class="font-numeric-table text-text-primary font-medium">C0029188402 (GRA Validated)</span>
+                  </div>
+                  <div class="flex justify-between items-center text-body-sm">
+                    <span class="text-text-secondary">Procurement Reference:</span>
+                    <span class="font-numeric-table text-text-primary font-medium">RFQ-2025-VOLTA-44 / Field
+                      Delivery</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Line Item Expense Breakdown -->
+              <div class="flex flex-col gap-space-xs">
+                <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Fiduciary Line Item
+                  Distribution</span>
+                <div class="border border-border-subtle rounded overflow-hidden">
+                  <table class="w-full text-left font-body-sm text-body-sm">
+                    <thead class="bg-surface-secondary text-text-secondary font-label-sm text-label-sm uppercase">
+                      <tr>
+                        <th class="py-space-xs px-space-md">GL Account &amp; Description</th>
+                        <th class="py-space-xs px-space-sm text-right">Qty</th>
+                        <th class="py-space-xs px-space-sm text-right">Unit Rate</th>
+                        <th class="py-space-xs px-space-md text-right">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border-subtle">
+                      <tr>
+                        <td class="py-space-sm px-space-md">
+                          <div class="font-medium text-text-primary">6120 - Distribution Logistics</div>
+                          <div class="font-caption text-caption text-text-muted">Transport of certified sorghum seed to
+                            Tamale Hub</div>
+                        </td>
+                        <td class="py-space-sm px-space-sm text-right font-numeric-table tabular-nums">4 Trips</td>
+                        <td class="py-space-sm px-space-sm text-right font-numeric-table tabular-nums">GH₵ 7,500.00</td>
+                        <td class="py-space-sm px-space-md text-right font-numeric-table-bold tabular-nums">GH₵
+                          30,000.00</td>
+                      </tr>
+                      <tr>
+                        <td class="py-space-sm px-space-md">
+                          <div class="font-medium text-text-primary">6125 - Cold Storage &amp; Handling</div>
+                          <div class="font-caption text-caption text-text-muted">Offloading &amp; temporary refrigerated
+                            warehousing</div>
+                        </td>
+                        <td class="py-space-sm px-space-sm text-right font-numeric-table tabular-nums">1 Lot</td>
+                        <td class="py-space-sm px-space-sm text-right font-numeric-table tabular-nums">GH₵ 8,450.00</td>
+                        <td class="py-space-sm px-space-md text-right font-numeric-table-bold tabular-nums">GH₵ 8,450.00
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- Statutory Withholding Tax Computation (3% GRA) -->
+              <div class="p-space-md bg-surface-secondary rounded flex flex-col gap-space-xs">
+                <div class="flex justify-between text-body-sm text-text-secondary">
+                  <span class="">Subtotal Gross Obligations:</span>
+                  <span class="font-numeric-table text-text-primary tabular-nums">GH₵ 38,450.00</span>
+                </div>
+                <div class="flex justify-between text-body-sm text-status-warning font-medium">
+                  <span class="">Statutory GRA WHT Withheld (3.0% on Services):</span>
+                  <span class="font-numeric-table tabular-nums">- GH₵ 1,153.50</span>
+                </div>
+                <div
+                  class="pt-space-xs border-t border-border-strong/40 flex justify-between font-title-sm text-title-sm text-text-primary font-bold">
+                  <span class="">Net Payable Obligation to Vendor:</span>
+                  <span class="font-headline-sm text-headline-sm text-fund-unrestricted tabular-nums">GH₵
+                    37,296.50</span>
+                </div>
+              </div>
+              <!-- Approval Chain Workflow -->
+              <div class="flex flex-col gap-space-xs">
+                <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Statutory Delegation
+                  of Authority</span>
+                <div class="p-space-md bg-surface-card border border-border-subtle rounded flex flex-col gap-space-sm">
+                  <div class="flex items-center gap-space-md">
+                    <span
+                      class="w-6 h-6 rounded-full bg-status-success text-on-primary flex items-center justify-center text-[14px]">
+                      <span class="material-symbols-outlined text-[14px]">check</span>
+                    </span>
+                    <div class="flex-1">
+                      <div class="font-title-sm text-title-sm text-text-primary font-semibold">1. Field Logistics
+                        Coordinator</div>
+                      <div class="font-caption text-caption text-text-muted">Verified goods received • 13 Feb 2025 by K.
+                        Mensah</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-md">
+                    <span
+                      class="w-6 h-6 rounded-full bg-status-success text-on-primary flex items-center justify-center text-[14px]">
+                      <span class="material-symbols-outlined text-[14px]">check</span>
+                    </span>
+                    <div class="flex-1">
+                      <div class="font-title-sm text-title-sm text-text-primary font-semibold">2. Grant Compliance
+                        Specialist</div>
+                      <div class="font-caption text-caption text-text-muted">USAID eligibility &amp; budget availability
+                        confirmed • 14 Feb 2025</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-md">
+                    <span
+                      class="w-6 h-6 rounded-full bg-status-warning text-on-tertiary flex items-center justify-center text-[14px]">
+                      <span class="material-symbols-outlined text-[14px]">pending</span>
+                    </span>
+                    <div class="flex-1">
+                      <div class="font-title-sm text-title-sm text-text-primary font-semibold">3. Finance Manager
+                        (Sign-off)</div>
+                      <div class="font-caption text-caption text-status-warning font-medium">Awaiting final statutory
+                        approval &amp; voucher authorization</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Drawer Sticky Footer Actions -->
+            <div
+              class="p-space-lg bg-surface-card border-t border-border-subtle flex items-center justify-between shrink-0">
+              <div class="flex items-center gap-space-xs">
+                <button
+                  class="px-space-md py-space-sm rounded bg-surface-secondary text-text-primary font-title-sm text-title-sm hover:bg-surface-tertiary"
+                  onclick="alert('Viewing General Ledger Journal JRN-2025-0819')" type="button">
+                  GL Entry
+                </button>
+                <button
+                  class="px-space-md py-space-sm rounded bg-surface-secondary text-text-primary font-title-sm text-title-sm hover:bg-surface-tertiary"
+                  onclick="alert('Generating Disbursement Voucher PV-DRAFT-0142')" type="button">
+                  Voucher
+                </button>
+              </div>
+              <div class="flex items-center gap-space-xs">
+                <button
+                  class="px-space-lg py-space-sm rounded bg-status-success text-on-primary font-title-sm text-title-sm hover:opacity-90 shadow-sm flex items-center gap-space-xs"
+                  id="drawer-btn-approve" onclick="approveBillFromDrawer()" type="button">
+                  <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                  Approve Bill
+                </button>
+                <button
+                  class="px-space-lg py-space-sm rounded bg-primary text-on-primary font-title-sm text-title-sm hover:bg-primary-hover shadow-sm flex items-center gap-space-xs"
+                  id="drawer-btn-pay" onclick="recordPaymentModal(currentBillId)" type="button">
+                  <span class="material-symbols-outlined text-[18px]">payments</span>
+                  Record Payment
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ================================================================= -->
+        <!-- MODAL: CREATE BILL -->
+        <!-- ================================================================= -->
+        <div class="fixed inset-0 bg-nav-bg/60 z-50 hidden flex items-center justify-center p-space-md"
+          id="create-bill-modal">
+          <div class="bg-surface-card w-full max-w-3xl rounded shadow-2xl flex flex-col max-h-[921px] overflow-hidden"
+            onclick="event.stopPropagation()">
+            <!-- Modal Header -->
+            <div
+              class="px-space-xl py-space-md bg-surface-secondary border-b border-border-subtle flex items-center justify-between">
+              <div class="flex items-center gap-space-sm">
+                <span class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">post_add</span>
+                </span>
+                <div>
+                  <h2 class="font-headline-sm text-headline-sm text-text-primary font-bold">Create Vendor Obligation
+                    Bill</h2>
+                  <p class="font-caption text-caption text-text-muted">Statutory recording of procurement payable
+                    against donor grants</p>
+                </div>
+              </div>
+              <button class="p-space-xs text-text-secondary hover:text-text-primary rounded"
+                onclick="toggleCreateModal(false)" type="button">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+            <!-- Modal Form Body -->
+            <form class="flex-1 overflow-y-auto p-space-xl flex flex-col gap-space-lg" id="new-bill-form"
+              onsubmit="handleCreateBillSubmit(event)">
+              <!-- Row 1: Vendor & External Inv # -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                <div class="flex flex-col gap-space-xxs">
+                  <label class="font-label-md text-label-md text-text-primary" for="modal-vendor-select">Vendor /
+                    Beneficiary <span class="text-status-critical">*</span></label>
+                  <select
+                    class="h-9 px-space-md rounded bg-surface-secondary text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    id="modal-vendor-select" required="">
+                    <option value="">Select an Approved Vendor...</option>
+                    <option value="Volta Logistics Ltd">Volta Logistics Ltd (TIN: C0029188402)</option>
+                    <option value="MedLab Ghana Ltd">MedLab Ghana Ltd (TIN: C0004928172)</option>
+                    <option value="Electricity Company of Ghana">Electricity Company of Ghana (Utility)</option>
+                    <option value="Forestry &amp; Soil Consult">Forestry &amp; Soil Consult (TIN: C0098271034)</option>
+                    <option value="Stellar Stationery &amp; Print">Stellar Stationery &amp; Print (TIN: C0011928091)
+                    </option>
+                    <option value="Stanbic Fleet Services">Stanbic Fleet Services (TIN: C0044810291)</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-space-xxs">
+                  <label class="font-label-md text-label-md text-text-primary" for="modal-vendor-inv">Vendor's Invoice
+                    Number <span class="text-status-critical">*</span></label>
+                  <input
+                    class="h-9 px-space-md rounded bg-surface-secondary text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    id="modal-vendor-inv" placeholder="e.g. INV-VOLTA-2025-998" required="" type="text">
+                </div>
+              </div>
+              <!-- Row 2: Dates & Purchase Order Match -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+                <div class="flex flex-col gap-space-xxs">
+                  <label class="font-label-md text-label-md text-text-primary" for="modal-bill-date">Invoice Date <span
+                      class="text-status-critical">*</span></label>
+                  <input
+                    class="h-9 px-space-md rounded bg-surface-secondary text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    id="modal-bill-date" required="" type="date" value="2025-02-18">
+                </div>
+                <div class="flex flex-col gap-space-xxs">
+                  <label class="font-label-md text-label-md text-text-primary" for="modal-due-date">Payment Due Date
+                    <span class="text-status-critical">*</span></label>
+                  <input
+                    class="h-9 px-space-md rounded bg-surface-secondary text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    id="modal-due-date" required="" type="date" value="2025-03-20">
+                </div>
+                <div class="flex flex-col gap-space-xxs">
+                  <label class="font-label-md text-label-md text-text-primary" for="modal-po-ref">Purchase Order
+                    Ref</label>
+                  <input
+                    class="h-9 px-space-md rounded bg-surface-secondary text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    id="modal-po-ref" placeholder="e.g. PO-2025-0344" type="text">
+                </div>
+              </div>
+              <!-- Row 3: Donor Funding & Restriction Class -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                <div class="flex flex-col gap-space-xxs">
+                  <label class="font-label-md text-label-md text-text-primary" for="modal-fund-class">IPSAS Fund
+                    Classification <span class="text-status-critical">*</span></label>
+                  <select
+                    class="h-9 px-space-md rounded bg-surface-secondary text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    id="modal-fund-class" required="">
+                    <option value="RESTRICTED">Restricted (Designated Donor Grants)</option>
+                    <option value="TEMP_RESTRICTED">Temporarily Restricted (Time/Purpose Bound)</option>
+                    <option value="UNRESTRICTED">Unrestricted (Core Operations &amp; Indirect Cost)</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-space-xxs">
+                  <label class="font-label-md text-label-md text-text-primary" for="modal-grant-project">Donor Grant /
+                    Project Pipeline <span class="text-status-critical">*</span></label>
+                  <select
+                    class="h-9 px-space-md rounded bg-surface-secondary text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    id="modal-grant-project" required="">
+                    <option value="USAID Feed Future (GRA-091)">USAID Feed Future (GRA-091)</option>
+                    <option value="Global Fund Malaria R9">Global Fund Malaria R9 (GF-ML-2024)</option>
+                    <option value="FCDO Climate Resilience (UK-GH-82)">FCDO Climate Resilience (UK-GH-82)</option>
+                    <option value="EU Human Rights &amp; Rule of Law">EU Human Rights &amp; Rule of Law (EUR-GH-44)
+                    </option>
+                    <option value="Core Operating Budget 2025">Core Operating Budget 2025</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Line Item Section -->
+              <div class="flex flex-col gap-space-xs">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Chargeable Items
+                    &amp; GL Line Allocation</span>
+                  <span class="font-caption text-caption text-text-secondary">Statutory WHT 3% calculated on
+                    submission</span>
+                </div>
+                <div class="p-space-md bg-surface-secondary rounded flex flex-col gap-space-sm">
+                  <div class="grid grid-cols-12 gap-space-sm font-label-sm text-label-sm text-text-muted uppercase">
+                    <div class="col-span-5">Expense Description</div>
+                    <div class="col-span-3">GL Account</div>
+                    <div class="col-span-4 text-right">Amount (GHS)</div>
+                  </div>
+                  <div class="grid grid-cols-12 gap-space-sm items-center">
+                    <div class="col-span-5">
+                      <input
+                        class="w-full h-8 px-space-sm rounded bg-surface-card text-text-primary font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                        id="modal-item-desc" placeholder="Description of goods or services" required="" type="text"
+                        value="Agricultural survey and enumeration fieldwork">
+                    </div>
+                    <div class="col-span-3">
+                      <select
+                        class="w-full h-8 px-space-sm rounded bg-surface-card text-text-primary font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                        id="modal-item-gl">
+                        <option value="6120">6120 - Project Logistics</option>
+                        <option value="6130">6130 - Technical Field Consultants</option>
+                        <option value="6210">6210 - Consumables &amp; Supplies</option>
+                        <option value="6300">6300 - Occupancy &amp; Utilities</option>
+                      </select>
+                    </div>
+                    <div class="col-span-4">
+                      <input
+                        class="w-full h-8 px-space-sm rounded bg-surface-card text-text-primary font-numeric-table text-numeric-table text-right focus:outline-none focus:ring-1 focus:ring-primary"
+                        id="modal-item-amount" min="1" placeholder="0.00" required="" step="0.01" type="number"
+                        value="18500.00">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal Footer -->
+              <div class="pt-space-md border-t border-border-subtle flex items-center justify-between">
+                <div class="flex items-center gap-space-xs text-text-muted font-caption text-caption">
+                  <span class="material-symbols-outlined text-[16px] text-fund-unrestricted">lock</span>
+                  <span class="">Audit trail will record: Ama Mensah (Finance Manager)</span>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <button
+                    class="px-space-md py-space-sm rounded bg-surface-secondary hover:bg-surface-tertiary text-text-primary font-title-sm text-title-sm"
+                    onclick="toggleCreateModal(false)" type="button">
+                    Cancel
+                  </button>
+                  <button
+                    class="px-space-lg py-space-sm rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm shadow-sm flex items-center gap-space-xs"
+                    type="submit">
+                    <span class="material-symbols-outlined text-[18px]">save</span>
+                    Save as Pending Approval
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Notification Toast Container -->
+        <div
+          class="fixed bottom-6 right-6 z-50 hidden bg-text-primary text-surface-card px-space-lg py-space-md rounded shadow-xl flex items-center gap-space-sm transition-all duration-200"
+          id="payables-toast">
+          <span class="material-symbols-outlined text-[20px] text-status-success" id="toast-icon">check_circle</span>
+          <span class="font-body-md text-body-md font-medium" id="toast-message">Action completed successfully.</span>
+        </div>
+      </div>
+      <!-- ================================================================= -->
+      <!-- INLINE INTERACTIVE CONTROLLER SCRIPT -->
+      <!-- ================================================================= -->
+        <!-- ===== Finance & Accounting dropdown ===== -->
+<!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-\[80rem\] {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+      <script>
+        let currentBillId = 'BIL-2025-00142';
+
+        // TAB SWITCHER
+        function switchPayablesTab(tabKey) {
+          const tabs = ['bills', 'vendors', 'payments', 'aging'];
+          tabs.forEach(key => {
+            const content = document.getElementById('tab-content-' + key);
+            const btn = document.getElementById('tab-btn-' + key);
+            if (key === tabKey) {
+              content.classList.remove('hidden');
+              btn.setAttribute('aria-selected', 'true');
+              btn.className = 'payables-tab-btn flex items-center gap-space-xs px-space-md py-space-sm rounded font-title-sm text-title-sm transition-all duration-150 bg-primary text-on-primary shadow-sm';
+            } else {
+              content.classList.add('hidden');
+              btn.setAttribute('aria-selected', 'false');
+              btn.className = 'payables-tab-btn flex items-center gap-space-xs px-space-md py-space-sm rounded font-title-sm text-title-sm transition-all duration-150 text-text-secondary hover:bg-surface-secondary hover:text-text-primary';
+            }
+          });
+        }
+
+        // TABLE FILTERING
+        function filterBillsTable() {
+          const searchVal = (document.getElementById('bill-search-input').value || '').toLowerCase();
+          const fundVal = document.getElementById('bill-fund-filter').value;
+          const statusVal = document.getElementById('bill-status-filter').value;
+
+          const rows = document.querySelectorAll('.bill-row');
+          rows.forEach(row => {
+            const bId = row.dataset.billId.toLowerCase();
+            const vendor = row.dataset.vendor.toLowerCase();
+            const grant = row.dataset.grant.toLowerCase();
+            const fund = row.dataset.fund;
+            const status = row.dataset.status;
+
+            const matchesSearch = bId.includes(searchVal) || vendor.includes(searchVal) || grant.includes(searchVal);
+            const matchesFund = (fundVal === 'ALL') || (fund === fundVal);
+            const matchesStatus = (statusVal === 'ALL') || (status === statusVal);
+
+            if (matchesSearch && matchesFund && matchesStatus) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          });
+        }
+
+        function resetBillFilters() {
+          document.getElementById('bill-search-input').value = '';
+          document.getElementById('bill-fund-filter').value = 'ALL';
+          document.getElementById('bill-status-filter').value = 'ALL';
+          filterBillsTable();
+          showToast('Filters reset to show all transactions.');
+        }
+
+        function filterByQuickKpi(type) {
+          switchPayablesTab('bills');
+          const statusFilter = document.getElementById('bill-status-filter');
+          if (type === 'pending') {
+            statusFilter.value = 'Pending Approval';
+          } else if (type === 'overdue') {
+            statusFilter.value = 'Overdue';
+          } else if (type === 'due-soon') {
+            statusFilter.value = 'Approved';
+          } else {
+            statusFilter.value = 'ALL';
+          }
+          filterBillsTable();
+        }
+
+        // DRAWER CONTROLLER
+        function openBillDetail(billId) {
+          currentBillId = billId;
+          const row = document.querySelector(`.bill-row[data-bill-id="${billId}"]`);
+          if (!row) return;
+
+          document.getElementById('drawer-bill-id').textContent = billId;
+          document.getElementById('drawer-vendor-name').textContent = row.dataset.vendor;
+          document.getElementById('drawer-bill-date').textContent = row.dataset.date;
+          document.getElementById('drawer-due-date').textContent = row.dataset.due;
+          document.getElementById('drawer-grant-name').textContent = row.dataset.grant;
+
+          const status = row.dataset.status;
+          const statusPill = document.getElementById('drawer-status-pill');
+          statusPill.textContent = status;
+
+          const approveBtn = document.getElementById('drawer-btn-approve');
+          if (status === 'Approved' || status === 'Paid') {
+            approveBtn.classList.add('hidden');
+          } else {
+            approveBtn.classList.remove('hidden');
+          }
+
+          const backdrop = document.getElementById('bill-detail-backdrop');
+          backdrop.classList.remove('hidden');
+        }
+
+        function closeBillDetail() {
+          const backdrop = document.getElementById('bill-detail-backdrop');
+          backdrop.classList.add('hidden');
+        }
+
+        function approveBillDirect(billId) {
+          const row = document.querySelector(`.bill-row[data-bill-id="${billId}"]`);
+          if (row) {
+            row.dataset.status = 'Approved';
+            const statusCell = row.cells[7];
+            statusCell.innerHTML = `
+        <span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-semibold">
+          <span class="material-symbols-outlined text-[13px]">check</span>
+          Approved
+        </span>
+      `;
+            showToast(`Bill ${billId} has been approved by Finance Manager.`);
+          }
+        }
+
+        function approveBillFromDrawer() {
+          approveBillDirect(currentBillId);
+          document.getElementById('drawer-status-pill').textContent = 'Approved';
+          document.getElementById('drawer-btn-approve').classList.add('hidden');
+        }
+
+        function recordPaymentModal(billId) {
+          showToast(`Payment Voucher generated for ${billId}. Redirecting to GL disbursement...`);
+        }
+
+        function printBillRecord() {
+          window.print();
+        }
+
+        // CREATE BILL MODAL CONTROLLER
+        function toggleCreateModal(open) {
+          const modal = document.getElementById('create-bill-modal');
+          if (open) {
+            modal.classList.remove('hidden');
+          } else {
+            modal.classList.add('hidden');
+          }
+        }
+
+        function handleCreateBillSubmit(e) {
+          e.preventDefault();
+          const vendor = document.getElementById('modal-vendor-select').value;
+          const invNo = document.getElementById('modal-vendor-inv').value;
+          const bDate = document.getElementById('modal-bill-date').value;
+          const dDate = document.getElementById('modal-due-date').value;
+          const fund = document.getElementById('modal-fund-class').value;
+          const grant = document.getElementById('modal-grant-project').value;
+          const amount = parseFloat(document.getElementById('modal-item-amount').value || 0).toFixed(2);
+
+          const newId = 'BIL-2025-00' + Math.floor(144 + Math.random() * 50);
+
+          const tbody = document.getElementById('bills-table-body');
+          const tr = document.createElement('tr');
+          tr.className = 'hover:bg-primary-tint/30 transition-colors cursor-pointer group bill-row';
+          tr.dataset.billId = newId;
+          tr.dataset.vendor = vendor;
+          tr.dataset.date = bDate;
+          tr.dataset.due = dDate;
+          tr.dataset.amount = amount;
+          tr.dataset.fund = fund;
+          tr.dataset.grant = grant;
+          tr.dataset.status = 'Pending Approval';
+          tr.onclick = function () { openBillDetail(newId); };
+
+          tr.innerHTML = `
+      <td class="py-space-md px-space-lg font-title-sm text-title-sm text-fund-unrestricted font-semibold flex items-center gap-space-xs">
+        <span class="material-symbols-outlined text-[16px]">receipt</span>
+        <span>${newId}</span>
+      </td>
+      <td class="py-space-md px-space-md">
+        <div class="font-title-sm text-title-sm text-text-primary">${vendor}</div>
+        <div class="font-caption text-caption text-text-muted">Inv: ${invNo}</div>
+      </td>
+      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-secondary">${bDate}</td>
+      <td class="py-space-md px-space-md font-numeric-table text-numeric-table text-text-primary font-medium">${dDate}</td>
+      <td class="py-space-md px-space-md text-right font-numeric-table-bold text-numeric-table-bold text-text-primary tabular-nums">GH₵ ${Number(amount).toLocaleString('en-US', { minimumFractionDigits: 2 })}</td>
+      <td class="py-space-md px-space-md">
+        <span class="inline-flex items-center px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-semibold">
+          ${fund === 'RESTRICTED' ? 'Restricted' : (fund === 'TEMP_RESTRICTED' ? 'Temp Restricted' : 'Unrestricted')}
+        </span>
+      </td>
+      <td class="py-space-md px-space-md">
+        <div class="font-title-sm text-title-sm text-text-primary">${grant}</div>
+        <div class="font-caption text-caption text-text-muted">Procurement Obligation</div>
+      </td>
+      <td class="py-space-md px-space-md">
+        <span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded font-label-sm text-label-sm bg-status-warning-bg text-status-warning font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span>
+          Pending Approval
+        </span>
+      </td>
+      <td class="py-space-md px-space-lg text-right" onclick="event.stopPropagation()">
+        <div class="flex items-center justify-end gap-space-xxs">
+          <button type="button" onclick="approveBillDirect('${newId}')" class="p-space-xs text-status-success hover:bg-status-success-bg rounded" title="Approve Bill">
+            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+          </button>
+          <button type="button" onclick="openBillDetail('${newId}')" class="p-space-xs text-text-secondary hover:bg-surface-secondary rounded">
+            <span class="material-symbols-outlined text-[18px]">visibility</span>
+          </button>
+        </div>
+      </td>
+    `;
+
+          tbody.insertBefore(tr, tbody.firstChild);
+          toggleCreateModal(false);
+          showToast(`Bill ${newId} created and awaiting compliance sign-off.`);
+        }
+
+        function exportPayablesRegister() {
+          showToast('Exporting Payables Register (FY 2025) in IPSAS statutory CSV format...');
+        }
+
+        // TOAST NOTIFICATIONS
+        function showToast(msg) {
+          const toast = document.getElementById('payables-toast');
+          const text = document.getElementById('toast-message');
+          text.textContent = msg;
+          toast.classList.remove('hidden');
+          setTimeout(() => {
+            toast.classList.add('hidden');
+          }, 3800);
+        }
+
+        // Close modals on Escape
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            closeBillDetail();
+            toggleCreateModal(false);
+          }
+        });
+      </script>
+      <script>
+        function toggleAppLayout() {
+          const nav = document.getElementById('appNav');
+          const header = document.getElementById('appHeader');
+          const main = document.getElementById('appMain');
+          const wrapper = header ? header.parentElement : null;
+          if (nav.classList.contains('hidden')) {
+            nav.classList.remove('hidden');
+            if (header) { header.classList.add('left-64'); header.classList.remove('left-0'); }
+            if (wrapper) { wrapper.classList.add('pl-64'); wrapper.classList.remove('pl-0'); }
+            showToast('Sidebar navigation expanded');
+          } else {
+            nav.classList.add('hidden');
+            if (header) { header.classList.remove('left-64'); header.classList.add('left-0'); }
+            if (wrapper) { wrapper.classList.remove('pl-64'); wrapper.classList.add('pl-0'); }
+            showToast('Sidebar rail collapsed for full-width ledger view');
+          }
+        }
+      </script>
+    </main>
+  </div>
+
+</body>
+
+</html>

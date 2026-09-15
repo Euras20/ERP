@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Grants & Projects - NGO Accounting ERP</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f7f9ff", "on-tertiary": "#ffffff", "status-warning-bg": "#FEF3E6", "surface-dim": "#d1dbe7", "status-critical-bg": "#FDF0F0", "primary-fixed": "#a7eef6", "status-neutral-bg": "#ECEFF2", "secondary-container": "#d8e4ef", "status-success-border": "#9DD4B8", "inverse-primary": "#8bd2da", "on-tertiary-container": "#ffd892", "status-critical-border": "#F3A6A9", "nav-border": "#1E3243", "outline-variant": "#bec8c9", "text-muted": "#7B8C9A", "inverse-on-surface": "#e8f2fe", "secondary-fixed-dim": "#bcc8d3", "fund-temp-restricted": "#D99B00", "canvas-bg": "#F7F9FA", "tertiary-fixed": "#ffdea6", "surface-container-low": "#ecf4ff", "nav-text-primary": "#F4F7F9", "on-secondary": "#ffffff", "status-neutral-text": "#384551", "fund-restricted": "#B8860B", "surface-variant": "#d9e4ef", "inverse-surface": "#28313a", "status-success-text": "#0F6848", "on-primary-fixed": "#002022", "surface-container-highest": "#d9e4ef", "on-surface-variant": "#3f484a", "on-surface": "#131d25", "primary": "#005258", "on-error-container": "#93000a", "nav-text-muted": "#8EA2B4", "error-container": "#ffdad6", "outline": "#6f797a", "tertiary-fixed-dim": "#f7bd48", "nav-surface": "#152431", "status-success-bg": "#E8F5EE", "on-secondary-fixed-variant": "#3d4851", "error": "#ba1a1a", "on-secondary-fixed": "#121d25", "primary-fixed-dim": "#8bd2da", "on-primary-container": "#a1e9f1", "surface-secondary": "#F0F4F6", "status-critical-text": "#A81D24", "on-tertiary-fixed-variant": "#5d4200", "secondary-fixed": "#d8e4ef", "secondary": "#556069", "on-primary": "#ffffff", "surface-tint": "#16686f", "text-secondary": "#4E5D6A", "surface": "#f7f9ff", "on-primary-fixed-variant": "#004f55", "status-warning-text": "#914D03", "surface-container-high": "#dfe9f5", "tertiary-container": "#7f5b00", "status-warning-border": "#F6C88D", "tertiary": "#614500", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "text-primary": "#121A21", "border-subtle": "#DCE3E8", "surface-bright": "#f7f9ff", "on-secondary-container": "#5a666f", "surface-container": "#e5effb", "on-background": "#131d25", "border-strong": "#B8C4CE", "on-tertiary-fixed": "#271900", "primary-hover": "#144F54", "primary-container": "#1b6b72", "fund-unrestricted": "#1B6B72", "primary-tint": "#E4EFEF", "surface-card": "#FFFFFF", "status-neutral-border": "#CAD2D8", "nav-bg": "#0D1821" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1rem", "space-2xl": "2rem", "margin-compact": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-xxs": "0.125rem", "margin": "1.5rem", "space-xl": "1.5rem", "gutter-dense": "0.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "label-md": ["IBM Plex Sans"], "title-md": ["IBM Plex Sans"], "caption": ["IBM Plex Sans"], "headline-sm": ["IBM Plex Sans"], "body-sm": ["IBM Plex Sans"], "numeric-table": ["IBM Plex Sans"], "label-sm": ["IBM Plex Sans"], "numeric-table-bold": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "display-lg": ["IBM Plex Sans"], "title-sm": ["IBM Plex Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "numeric-table-bold": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }] } } } };</script>
+  <base target="_blank">
+</head>
+<body class="bg-canvas-bg font-sans text-text-primary antialiased min-h-screen text-[13px]">
+
+  <!-- Canonical Shell: Fixed Sidebar -->
+  <aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+         <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Container -->
+  <div id="appMain" class="pl-64 flex flex-col min-h-screen">
+    <!-- Fixed Top Header -->
+    <header id="appHeader"
+      class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center"><span
+            class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span><!-- Update the search input element to include border-0 ring-0: -->
+<input
+  class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg border-0 outline-none ring-0 focus:outline-none focus:bg-surface-card transition-colors"
+  placeholder="Search transactions, grants, projects, vendors, staff..." type="text" /></div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span><span>FY 2025
+            (Q2 Closed)</span></div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary"><span
+            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS
+            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <div class="h-5 w-px bg-surface-secondary"></div><button
+          class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span
+            class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span></button><button
+          class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">help</span></button>
+        <div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" /><span
+            class="material-symbols-outlined text-text-muted text-[16px]"></span></div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Content -->
+    <main class="w-full pt-16 bg-canvas-bg flex-1 flex flex-col">
+      <!-- Section Header -->
+      <section class="px-8 py-5 bg-surface-card border-b border-border-subtle shadow-xs flex flex-col gap-2">
+        <div class="flex items-center gap-2 text-text-muted text-[11px]">
+          <span class="hover:text-text-primary cursor-pointer transition-colors">Home</span>
+          <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+          <span class="text-text-secondary font-medium">Grants &amp; Projects</span>
+          <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+          <span class="text-primary font-semibold">Grant Portfolio Register</span>
+        </div>
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <h1 class="text-[22px] font-bold text-text-primary tracking-tight">Grants &amp; Projects</h1>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold border border-status-success-border/50">
+                <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span>
+                Fiduciary Ledger Connected
+              </span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-tint text-primary text-[11px] font-semibold">
+                IPSAS &amp; Donor Compliance
+              </span>
+            </div>
+            <p class="text-[12px] text-text-secondary mt-0.5 max-w-4xl">
+              Operational center for managing donor-funded work.
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="exportRegisterBtn" class="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors" type="button">
+              <span class="material-symbols-outlined text-[16px] text-text-secondary">file_download</span>
+              <span>Export Portfolio Pack</span>
+            </button>
+            <button id="openNewGrantBtn" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary hover:bg-primary-hover text-white rounded-lg text-[12px] font-semibold transition-colors shadow-xs" type="button">
+              <span class="material-symbols-outlined text-[16px]">add_circle</span>
+              <span>New Grant</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Canvas Body -->
+      <div class="px-8 py-6 flex flex-col gap-6 max-w-[1520px] w-full mx-auto">
+
+        <!-- 4. SUMMARY METRIC CARDS (6 Master Specification Metrics) -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
+          <!-- Metric 1: Active Grants -->
+          <div onclick="filterByMetric('Active')" class="cursor-pointer bg-surface-card rounded-lg p-3.5 border border-border-subtle hover:border-primary transition-all shadow-xs flex flex-col justify-between group">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-text-muted">Active Grants</span>
+              <span class="w-7 h-7 rounded bg-primary-tint flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-[16px]">award_star</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-[22px] font-bold text-text-primary tracking-tight" id="metricActiveCount">6 Grants</div>
+              <span class="text-[11px] text-status-success-text font-medium flex items-center gap-0.5 mt-0.5">
+                <span class="material-symbols-outlined text-[13px]">check_circle</span> 100% compliant
+              </span>
+            </div>
+          </div>
+
+          <!-- Metric 2: Total Award Value -->
+          <div class="bg-surface-card rounded-lg p-3.5 border border-border-subtle shadow-xs flex flex-col justify-between">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-text-muted">Total Award Value</span>
+              <span class="w-7 h-7 rounded bg-surface-secondary flex items-center justify-center text-text-secondary">
+                <span class="material-symbols-outlined text-[16px]">monetization_on</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-[20px] font-bold text-text-primary tracking-tight">GH₵ 7,420,000</div>
+              <span class="text-[11px] text-text-muted truncate">Multi-donor portfolio</span>
+            </div>
+          </div>
+
+          <!-- Metric 3: Funds Received -->
+          <div class="bg-surface-card rounded-lg p-3.5 border border-border-subtle shadow-xs flex flex-col justify-between">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-text-muted">Funds Received</span>
+              <span class="w-7 h-7 rounded bg-status-success-bg flex items-center justify-center text-status-success-text">
+                <span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-[20px] font-bold text-text-primary tracking-tight">GH₵ 5,520,000</div>
+              <span class="text-[11px] text-status-success-text font-medium">74.4% disbursed</span>
+            </div>
+          </div>
+
+          <!-- Metric 4: Total Spent -->
+          <div class="bg-surface-card rounded-lg p-3.5 border border-border-subtle shadow-xs flex flex-col justify-between">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-text-muted">Total Spent</span>
+              <span class="w-7 h-7 rounded bg-surface-secondary flex items-center justify-center text-text-secondary">
+                <span class="material-symbols-outlined text-[16px]">receipt_long</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-[20px] font-bold text-text-primary tracking-tight">GH₵ 4,025,500</div>
+              <span class="text-[11px] text-text-muted">Avg 54.2% burn</span>
+            </div>
+          </div>
+
+          <!-- Metric 5: Upcoming Reports -->
+          <div onclick="filterByMetric('upcoming_reports')" class="cursor-pointer bg-surface-card rounded-lg p-3.5 border border-border-subtle hover:border-status-warning-border transition-all shadow-xs flex flex-col justify-between group">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-text-muted">Upcoming Reports</span>
+              <span class="w-7 h-7 rounded bg-status-warning-bg flex items-center justify-center text-status-warning-text group-hover:bg-status-warning-text group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-[16px]">pending_actions</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-[22px] font-bold text-text-primary tracking-tight">2 Reports</div>
+              <span class="text-[11px] text-status-warning-text font-semibold flex items-center gap-0.5 mt-0.5">
+                <span class="material-symbols-outlined text-[13px]">alarm</span> USAID in 14 days
+              </span>
+            </div>
+          </div>
+
+          <!-- Metric 6: Grants Closing Soon -->
+          <div onclick="filterByMetric('Closing Soon')" class="cursor-pointer bg-surface-card rounded-lg p-3.5 border border-border-subtle hover:border-status-critical-border transition-all shadow-xs flex flex-col justify-between group">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-text-muted">Grants Closing Soon</span>
+              <span class="w-7 h-7 rounded bg-status-critical-bg flex items-center justify-center text-status-critical-text group-hover:bg-status-critical-text group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-[16px]">hourglass_bottom</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-[22px] font-bold text-status-critical-text tracking-tight">1 Grant</div>
+              <span class="text-[11px] text-status-critical-text font-medium truncate mt-0.5">EU Climate (38 days)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. FILTERS & SEARCH CONTROL BAR -->
+        <div class="bg-surface-card rounded-lg border border-border-subtle shadow-xs p-4 flex flex-col gap-3">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+            <!-- Search Input -->
+            <div class="relative flex-1 max-w-md">
+              <span class="material-symbols-outlined absolute left-3 top-2.5 text-text-muted text-[17px] pointer-events-none">search</span>
+              <input id="grantFilterSearch" oninput="applyFilters()" type="text" placeholder="Filter by grant name, donor, code, or project..." class="w-full pl-9 pr-4 py-1.5 bg-surface-secondary border border-border-subtle/80 rounded-lg text-[13px] text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+            </div>
+
+            <!-- Filter Dropdowns -->
+            <div class="flex flex-wrap items-center gap-2">
+              <!-- Donor Filter -->
+              <div class="relative">
+                <select id="filterDonor" onchange="applyFilters()" class="appearance-none bg-surface-secondary border border-border-subtle px-3 py-1.5 pr-8 rounded-lg text-[12px] font-medium text-text-primary hover:border-primary focus:outline-none focus:border-primary transition-colors cursor-pointer">
+                  <option value="ALL">Donor: All Donors</option>
+                  <option value="USAID West Africa">USAID West Africa</option>
+                  <option value="The Global Fund">The Global Fund</option>
+                  <option value="European Commission">European Commission (EU)</option>
+                  <option value="FCDO UK">FCDO UK (Foreign Office)</option>
+                  <option value="Bright Futures Foundation">Bright Futures Foundation</option>
+                  <option value="UNICEF Ghana">UNICEF Ghana</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-2 top-2 text-text-muted text-[16px] pointer-events-none">expand_more</span>
+              </div>
+
+              <!-- Fund Type Filter -->
+              <div class="relative">
+                <select id="filterFundType" onchange="applyFilters()" class="appearance-none bg-surface-secondary border border-border-subtle px-3 py-1.5 pr-8 rounded-lg text-[12px] font-medium text-text-primary hover:border-primary focus:outline-none focus:border-primary transition-colors cursor-pointer">
+                  <option value="ALL">Fund Type: All</option>
+                  <option value="Restricted">Restricted (Earmarked)</option>
+                  <option value="Temporarily Restricted">Temporarily Restricted</option>
+                  <option value="Unrestricted">Unrestricted Core</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-2 top-2 text-text-muted text-[16px] pointer-events-none">expand_more</span>
+              </div>
+
+              <!-- Status Filter -->
+              <div class="relative">
+                <select id="filterStatus" onchange="applyFilters()" class="appearance-none bg-surface-secondary border border-border-subtle px-3 py-1.5 pr-8 rounded-lg text-[12px] font-medium text-text-primary hover:border-primary focus:outline-none focus:border-primary transition-colors cursor-pointer">
+                  <option value="ALL">Status: All States</option>
+                  <option value="Active">Active</option>
+                  <option value="Upcoming">Upcoming</option>
+                  <option value="Closing Soon">Closing Soon</option>
+                  <option value="Closed">Closed</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-2 top-2 text-text-muted text-[16px] pointer-events-none">expand_more</span>
+              </div>
+
+              <!-- Currency Filter -->
+              <div class="relative">
+                <select id="filterCurrency" onchange="applyFilters()" class="appearance-none bg-surface-secondary border border-border-subtle px-3 py-1.5 pr-8 rounded-lg text-[12px] font-medium text-text-primary hover:border-primary focus:outline-none focus:border-primary transition-colors cursor-pointer">
+                  <option value="ALL">Currency: All (GHS/USD/EUR)</option>
+                  <option value="GHS">GHS (GH₵)</option>
+                  <option value="USD">USD ($)</option>
+                  <option value="EUR">EUR (€)</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-2 top-2 text-text-muted text-[16px] pointer-events-none">expand_more</span>
+              </div>
+
+              <!-- Reset Button -->
+              <button onclick="resetFilters()" class="px-2.5 py-1.5 rounded-lg bg-surface-secondary hover:bg-surface-dim/50 text-text-secondary text-[12px] font-medium flex items-center gap-1 transition-colors" title="Reset all filters" type="button">
+                <span class="material-symbols-outlined text-[15px]">restart_alt</span>
+                <span>Reset</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Active Filter Chips -->
+          <div id="filterChipsContainer" class="flex flex-wrap items-center gap-1.5 pt-1 border-t border-border-subtle/40 text-[11px]">
+            <span class="text-text-muted font-medium">Active Filters:</span>
+            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-tint text-primary font-medium">
+              Portfolio: FY 2025 All Active
+            </span>
+            <span id="dynamicChips"></span>
+          </div>
+        </div>
+
+        <!-- 5. PRIMARY GRANTS TABLE -->
+        <div class="bg-surface-card rounded-lg border border-border-subtle shadow-xs overflow-hidden flex flex-col">
+          <div class="px-5 py-3.5 border-b border-border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-surface-card">
+            <div class="flex items-center gap-2">
+              <h2 class="text-[15px] font-bold text-text-primary">Fiduciary Grants Register</h2>
+              <span id="tableRecordCount" class="px-2 py-0.5 rounded-full bg-primary-tint text-primary font-bold text-[11px]">6 Grants Loaded</span>
+            </div>
+            <div class="flex items-center gap-3 text-[12px] text-text-muted">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-fund-restricted"></span>
+                <span>Restricted</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-fund-temp-restricted"></span>
+                <span>Temp Restricted</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-fund-unrestricted"></span>
+                <span>Unrestricted</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto w-full">
+            <table class="w-full text-left border-collapse" id="grantsTable">
+              <thead>
+                <tr class="bg-surface-secondary text-[11px] font-semibold uppercase tracking-wider text-text-secondary select-none border-b border-border-subtle">
+                  <th class="py-3 px-4">Grant &amp; Agreement</th>
+                  <th class="py-3 px-4">Donor</th>
+                  <th class="py-3 px-4">Fund Type</th>
+                  <th class="py-3 px-4 text-right">Award Amount</th>
+                  <th class="py-3 px-4 text-center">CCY</th>
+                  <th class="py-3 px-4 text-right">Spent</th>
+                  <th class="py-3 px-4 text-right">Available</th>
+                  <th class="py-3 px-4 w-40">Utilization</th>
+                  <th class="py-3 px-4">Reporting Deadline</th>
+                  <th class="py-3 px-4">Status</th>
+                  <th class="py-3 px-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="grantsTableBody" class="divide-y divide-border-subtle/50 text-[12px] text-text-primary">
+                <!-- Row 1: USAID Education Program -->
+                <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openGrantDetail('GRANT-001')">
+                  <td class="py-3.5 px-4">
+                    <div class="flex flex-col">
+                      <span class="font-semibold text-text-primary text-[13px] group-hover:text-primary transition-colors">USAID Education Program (Ghana Northern Sector)</span>
+                      <div class="flex items-center gap-1 text-[11px] text-text-muted mt-0.5">
+                        <span class="font-mono text-primary font-semibold">USAID-GH-2024-ED09</span>
+                        <span>•</span>
+                        <span>PRJ-TAM-01 (Literacy Outreach)</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[15px] text-text-secondary">account_balance</span>
+                      <span class="font-medium text-text-primary">USAID West Africa</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[11px] font-semibold border border-[#B8860B]/20">
+                      Restricted
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right font-semibold whitespace-nowrap">2,000,000.00</td>
+                  <td class="py-3.5 px-4 text-center whitespace-nowrap">
+                    <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-bold">GHS</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right text-text-secondary font-medium whitespace-nowrap">1,420,000.00</td>
+                  <td class="py-3.5 px-4 text-right font-bold text-text-primary whitespace-nowrap">580,000.00</td>
+                  <td class="py-3.5 px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-full bg-surface-secondary rounded-full h-2 overflow-hidden">
+                        <div class="bg-primary h-2 rounded-full" style="width: 71%"></div>
+                      </div>
+                      <span class="text-[11px] font-semibold text-text-secondary w-8 text-right">71%</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text text-[11px] font-semibold border border-status-warning-border/40">
+                      <span class="material-symbols-outlined text-[13px]">alarm</span> 15 Jul 2025 (14d)
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
+                      <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                    <button onclick="openGrantDetail('GRANT-001')" class="px-2.5 py-1 rounded bg-surface-secondary hover:bg-primary-tint hover:text-primary text-text-primary text-[11px] font-semibold transition-colors" type="button">
+                      Inspect
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 2: Community Health Initiative (Global Fund) -->
+                <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openGrantDetail('GRANT-002')">
+                  <td class="py-3.5 px-4">
+                    <div class="flex flex-col">
+                      <span class="font-semibold text-text-primary text-[13px] group-hover:text-primary transition-colors">Community Health Initiative Phase II (Malaria &amp; Sanitation)</span>
+                      <div class="flex items-center gap-1 text-[11px] text-text-muted mt-0.5">
+                        <span class="font-mono text-primary font-semibold">GF-MAL-2023-GH</span>
+                        <span>•</span>
+                        <span>PRJ-VOL-03 (Volta &amp; Ashanti Hubs)</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[15px] text-text-secondary">account_balance</span>
+                      <span class="font-medium text-text-primary">The Global Fund</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[11px] font-semibold border border-[#B8860B]/20">
+                      Restricted
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right font-semibold whitespace-nowrap">1,500,000.00</td>
+                  <td class="py-3.5 px-4 text-center whitespace-nowrap">
+                    <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-bold">GHS</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right text-text-secondary font-medium whitespace-nowrap">930,000.00</td>
+                  <td class="py-3.5 px-4 text-right font-bold text-text-primary whitespace-nowrap">570,000.00</td>
+                  <td class="py-3.5 px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-full bg-surface-secondary rounded-full h-2 overflow-hidden">
+                        <div class="bg-primary h-2 rounded-full" style="width: 62%"></div>
+                      </div>
+                      <span class="text-[11px] font-semibold text-text-secondary w-8 text-right">62%</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">event</span> 30 Sep 2025
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
+                      <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                    <button onclick="openGrantDetail('GRANT-002')" class="px-2.5 py-1 rounded bg-surface-secondary hover:bg-primary-tint hover:text-primary text-text-primary text-[11px] font-semibold transition-colors" type="button">
+                      Inspect
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 3: Emergency Response Fund (EU Climate) -->
+                <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openGrantDetail('GRANT-003')">
+                  <td class="py-3.5 px-4">
+                    <div class="flex flex-col">
+                      <span class="font-semibold text-text-primary text-[13px] group-hover:text-primary transition-colors">Emergency Response Fund &amp; Climate Adaptation</span>
+                      <div class="flex items-center gap-1 text-[11px] text-text-muted mt-0.5">
+                        <span class="font-mono text-primary font-semibold">EU-CLIM-2024-GH03</span>
+                        <span>•</span>
+                        <span>PRJ-SAV-02 (Savannah Flood Relief)</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[15px] text-text-secondary">account_balance</span>
+                      <span class="font-medium text-text-primary">European Commission</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded bg-[#FEF8E7] text-[#A07200] text-[11px] font-semibold border border-[#D99B00]/20">
+                      Temporarily Restricted
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right font-semibold whitespace-nowrap">850,000.00</td>
+                  <td class="py-3.5 px-4 text-center whitespace-nowrap">
+                    <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-bold">GHS</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right text-text-secondary font-medium whitespace-nowrap">714,000.00</td>
+                  <td class="py-3.5 px-4 text-right font-bold text-text-primary whitespace-nowrap">136,000.00</td>
+                  <td class="py-3.5 px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-full bg-surface-secondary rounded-full h-2 overflow-hidden">
+                        <div class="bg-status-warning-text h-2 rounded-full" style="width: 84%"></div>
+                      </div>
+                      <span class="text-[11px] font-semibold text-status-warning-text w-8 text-right">84%</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-critical-bg text-status-critical-text text-[11px] font-semibold border border-status-critical-border/40">
+                      <span class="material-symbols-outlined text-[13px]">warning</span> 10 Aug 2025 (Final)
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text text-[11px] font-semibold">
+                      <span class="w-1.5 h-1.5 rounded-full bg-status-warning-text"></span> Closing Soon
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                    <button onclick="openGrantDetail('GRANT-003')" class="px-2.5 py-1 rounded bg-surface-secondary hover:bg-primary-tint hover:text-primary text-text-primary text-[11px] font-semibold transition-colors" type="button">
+                      Inspect
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 4: Girls' Education Support Grant -->
+                <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openGrantDetail('GRANT-004')">
+                  <td class="py-3.5 px-4">
+                    <div class="flex flex-col">
+                      <span class="font-semibold text-text-primary text-[13px] group-hover:text-primary transition-colors">Girls' Education Support Grant (STEM &amp; Retention)</span>
+                      <div class="flex items-center gap-1 text-[11px] text-text-muted mt-0.5">
+                        <span class="font-mono text-primary font-semibold">FCDO-UK-STEM-25</span>
+                        <span>•</span>
+                        <span>PRJ-ACC-04 (STEM Training Hubs)</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[15px] text-text-secondary">account_balance</span>
+                      <span class="font-medium text-text-primary">FCDO UK</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[11px] font-semibold border border-[#B8860B]/20">
+                      Restricted
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right font-semibold whitespace-nowrap">1,200,000.00</td>
+                  <td class="py-3.5 px-4 text-center whitespace-nowrap">
+                    <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-bold">GHS</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right text-text-secondary font-medium whitespace-nowrap">480,000.00</td>
+                  <td class="py-3.5 px-4 text-right font-bold text-text-primary whitespace-nowrap">720,000.00</td>
+                  <td class="py-3.5 px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-full bg-surface-secondary rounded-full h-2 overflow-hidden">
+                        <div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+                      </div>
+                      <span class="text-[11px] font-semibold text-text-secondary w-8 text-right">40%</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">event</span> 15 Nov 2025
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
+                      <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                    <button onclick="openGrantDetail('GRANT-004')" class="px-2.5 py-1 rounded bg-surface-secondary hover:bg-primary-tint hover:text-primary text-text-primary text-[11px] font-semibold transition-colors" type="button">
+                      Inspect
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 5: Community Vocational Training Initiative -->
+                <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openGrantDetail('GRANT-005')">
+                  <td class="py-3.5 px-4">
+                    <div class="flex flex-col">
+                      <span class="font-semibold text-text-primary text-[13px] group-hover:text-primary transition-colors">Community Vocational &amp; Apprenticeship Core Fund</span>
+                      <div class="flex items-center gap-1 text-[11px] text-text-muted mt-0.5">
+                        <span class="font-mono text-primary font-semibold">BFF-GH-CORE-25</span>
+                        <span>•</span>
+                        <span>PRJ-ACC-01 (HQ Vocational Center)</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[15px] text-text-secondary">account_balance</span>
+                      <span class="font-medium text-text-primary">Bright Futures Foundation</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded bg-primary-tint text-primary text-[11px] font-semibold border border-primary/20">
+                      Unrestricted Core
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right font-semibold whitespace-nowrap">470,000.00</td>
+                  <td class="py-3.5 px-4 text-center whitespace-nowrap">
+                    <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-bold">GHS</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right text-text-secondary font-medium whitespace-nowrap">211,500.00</td>
+                  <td class="py-3.5 px-4 text-right font-bold text-text-primary whitespace-nowrap">258,500.00</td>
+                  <td class="py-3.5 px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-full bg-surface-secondary rounded-full h-2 overflow-hidden">
+                        <div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+                      </div>
+                      <span class="text-[11px] font-semibold text-text-secondary w-8 text-right">45%</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">done_all</span> Milestone Met
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
+                      <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                    <button onclick="openGrantDetail('GRANT-005')" class="px-2.5 py-1 rounded bg-surface-secondary hover:bg-primary-tint hover:text-primary text-text-primary text-[11px] font-semibold transition-colors" type="button">
+                      Inspect
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 6: Maternal Healthcare Emergency Response -->
+                <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openGrantDetail('GRANT-006')">
+                  <td class="py-3.5 px-4">
+                    <div class="flex flex-col">
+                      <span class="font-semibold text-text-primary text-[13px] group-hover:text-primary transition-colors">Maternal &amp; Child Health Emergency Diagnostic Grant</span>
+                      <div class="flex items-center gap-1 text-[11px] text-text-muted mt-0.5">
+                        <span class="font-mono text-primary font-semibold">UNICEF-GH-2025</span>
+                        <span>•</span>
+                        <span>PRJ-TAM-05 (Savannah Health Posts)</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <div class="flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[15px] text-text-secondary">account_balance</span>
+                      <span class="font-medium text-text-primary">UNICEF Ghana</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[11px] font-semibold border border-[#B8860B]/20">
+                      Restricted
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right font-semibold whitespace-nowrap">1,400,000.00</td>
+                  <td class="py-3.5 px-4 text-center whitespace-nowrap">
+                    <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-bold">GHS</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right text-text-secondary font-medium whitespace-nowrap">270,000.00</td>
+                  <td class="py-3.5 px-4 text-right font-bold text-text-primary whitespace-nowrap">1,130,000.00</td>
+                  <td class="py-3.5 px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-full bg-surface-secondary rounded-full h-2 overflow-hidden">
+                        <div class="bg-primary h-2 rounded-full" style="width: 19%"></div>
+                      </div>
+                      <span class="text-[11px] font-semibold text-text-secondary w-8 text-right">19%</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">event</span> 20 Dec 2025
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 whitespace-nowrap">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-tint text-primary text-[11px] font-semibold">
+                      <span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Upcoming
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+                    <button onclick="openGrantDetail('GRANT-006')" class="px-2.5 py-1 rounded bg-surface-secondary hover:bg-primary-tint hover:text-primary text-text-primary text-[11px] font-semibold transition-colors" type="button">
+                      Inspect
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty State (Hidden by default) -->
+          <div id="tableEmptyState" class="hidden p-12 text-center flex-col items-center justify-center">
+            <span class="w-12 h-12 rounded-full bg-surface-secondary flex items-center justify-center text-text-muted mb-3">
+              <span class="material-symbols-outlined text-[24px]">folder_off</span>
+            </span>
+            <h3 class="text-[15px] font-bold text-text-primary">No grants match your criteria</h3>
+            <p class="text-[12px] text-text-secondary max-w-sm mt-1">Try modifying your search keywords or resetting your filter criteria to view the portfolio.</p>
+            <button onclick="resetFilters()" class="mt-4 px-3.5 py-1.5 rounded-lg bg-primary text-white text-[12px] font-semibold hover:bg-primary-hover transition-colors" type="button">
+              Clear All Filters
+            </button>
+          </div>
+
+          <!-- Table Footer / Accounting Balance Ribbon -->
+          <div class="px-5 py-3.5 bg-surface-secondary border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-2 text-[12px] text-text-secondary">
+            <div class="flex items-center gap-2">
+              <span class="font-medium text-text-primary">6 Active Grants Loaded</span>
+              <span>•</span>
+              <span>IPSAS Encumbrance Enforced</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-5">
+              <span>Total Awarded: <strong class="text-text-primary font-bold">GH₵ 7,420,000.00</strong></span>
+              <span>Total Disbursed: <strong class="text-text-primary font-bold">GH₵ 5,520,000.00</strong></span>
+              <span>Total Spent: <strong class="text-text-primary font-bold">GH₵ 4,025,500.00</strong></span>
+              <span>Total Available: <strong class="text-primary font-bold">GH₵ 3,394,500.00</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fiduciary Chain Explanation Ribbon -->
+        <div class="p-4 rounded-lg bg-surface-card border border-border-subtle shadow-xs flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="w-9 h-9 rounded-lg bg-primary-tint flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined text-[20px]">account_tree</span>
+            </span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-bold text-text-primary text-[13px]">NGO Fiduciary Architecture Workflow</span>
+              <span class="text-text-secondary text-[11px] truncate">
+                Grant Agreement → Donor Escrow → Restricted Fund → Project Workplan → Budget Lines → Spending Vouchers → Statutory Donor Reporting
+              </span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <a href="#" class="px-3 py-1.5 rounded-lg bg-surface-secondary hover:bg-primary-tint hover:text-primary text-text-primary text-[11px] font-semibold transition-colors flex items-center gap-1">
+              <span>View Accounting Dimensions</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ==================== 8. GRANT DETAIL DRAWER ==================== -->
+  <div id="grantDetailBackdrop" onclick="closeGrantDetail()" class="fixed inset-0 bg-nav-bg/40 z-50 opacity-0 pointer-events-none transition-opacity duration-200"></div>
+
+  <div id="grantDetailDrawer" class="fixed right-0 top-0 h-full w-full max-w-2xl bg-surface-card z-50 shadow-2xl border-l border-border-subtle transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between select-none">
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-border-subtle bg-surface-secondary/40 flex items-start justify-between gap-3">
+      <div class="flex flex-col min-w-0">
+        <div class="flex items-center gap-2">
+          <span id="drawerFundBadge" class="inline-flex items-center px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[11px] font-semibold border border-[#B8860B]/20">Restricted</span>
+          <span id="drawerStatusCode" class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">Active</span>
+        </div>
+        <h2 id="drawerGrantTitle" class="text-[17px] font-bold text-text-primary mt-1.5 leading-snug">USAID Education Program (Ghana Northern Sector)</h2>
+        <span id="drawerGrantCode" class="font-mono text-[11px] text-primary font-semibold mt-0.5">USAID-GH-2024-ED09</span>
+      </div>
+      <button onclick="closeGrantDetail()" class="p-1 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <!-- Drawer Body -->
+    <div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+      <!-- Financial Overview Cards -->
+      <div class="grid grid-cols-3 gap-3">
+        <div class="p-3 rounded-lg bg-surface-secondary border border-border-subtle/80 flex flex-col">
+          <span class="text-[11px] text-text-muted uppercase font-semibold">Award Amount</span>
+          <span id="drawerAward" class="text-[16px] font-bold text-text-primary mt-1">GH₵ 2,000,000</span>
+          <span class="text-[10px] text-text-secondary">Ceiling approved</span>
+        </div>
+        <div class="p-3 rounded-lg bg-surface-secondary border border-border-subtle/80 flex flex-col">
+          <span class="text-[11px] text-text-muted uppercase font-semibold">Actual Spent</span>
+          <span id="drawerSpent" class="text-[16px] font-bold text-text-secondary mt-1">GH₵ 1,420,000</span>
+          <span id="drawerBurnRate" class="text-[10px] text-primary font-semibold">71.0% Burn Rate</span>
+        </div>
+        <div class="p-3 rounded-lg bg-primary-tint border border-primary/20 flex flex-col">
+          <span class="text-[11px] text-primary uppercase font-semibold">Available Discretionary</span>
+          <span id="drawerAvailable" class="text-[16px] font-bold text-primary mt-1">GH₵ 580,000</span>
+          <span class="text-[10px] text-primary/80">Committed in GL</span>
+        </div>
+      </div>
+
+      <!-- Fiduciary Connection Architecture -->
+      <div class="flex flex-col gap-2.5">
+        <h3 class="text-[13px] font-bold text-text-primary uppercase tracking-wider text-text-muted">Linked Accounting Dimensions</h3>
+        <div class="bg-surface-secondary/60 rounded-lg p-3.5 border border-border-subtle/80 flex flex-col gap-2">
+          <div class="flex items-center justify-between text-[12px]">
+            <span class="text-text-muted">Primary Donor Entity:</span>
+            <span id="drawerDonor" class="font-semibold text-text-primary">USAID West Africa Regional Mission</span>
+          </div>
+          <div class="flex items-center justify-between text-[12px]">
+            <span class="text-text-muted">Dedicated Fund Account:</span>
+            <span id="drawerFundAccount" class="font-semibold text-text-primary">FND-002 (USAID Restricted Fund)</span>
+          </div>
+          <div class="flex items-center justify-between text-[12px]">
+            <span class="text-text-muted">Linked Operational Project:</span>
+            <span id="drawerProject" class="font-semibold text-text-primary">PRJ-TAM-01 (Northern Literacy Outreach)</span>
+          </div>
+          <div class="flex items-center justify-between text-[12px]">
+            <span class="text-text-muted">Cost Centers / Hubs:</span>
+            <span id="drawerCostCenter" class="font-semibold text-text-primary">CC-101 (Tamale), CC-102 (Savannah Hub)</span>
+          </div>
+          <div class="flex items-center justify-between text-[12px]">
+            <span class="text-text-muted">Responsible Grant Manager:</span>
+            <span id="drawerManager" class="font-semibold text-text-primary">Dr. Emmanuel Osei (Programs Director)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reporting Urgency & Compliance Status -->
+      <div class="flex flex-col gap-2.5">
+        <h3 class="text-[13px] font-bold text-text-primary uppercase tracking-wider text-text-muted">Compliance &amp; Reporting Milestones</h3>
+        <div class="p-3.5 rounded-lg bg-status-warning-bg/40 border border-status-warning-border/50 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[12px] font-bold text-status-warning-text flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px]">alarm</span> Next Donor Financial Report
+            </span>
+            <span id="drawerDeadlineBadge" class="px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text text-[11px] font-bold">Due 15 Jul 2025</span>
+          </div>
+          <p class="text-[11px] text-text-secondary">
+            Quarterly programmatic financial return (Standard Form SF-425) required. General overhead allocation capped at 8% per donor charter agreement.
+          </p>
+        </div>
+      </div>
+
+      <!-- Recent Related General Ledger Postings -->
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center justify-between">
+          <h3 class="text-[13px] font-bold text-text-primary uppercase tracking-wider text-text-muted">Recent Grant Disbursements (GL)</h3>
+          <a href="#" class="text-primary hover:underline text-[11px] font-semibold">Full GL Audit Trail</a>
+        </div>
+        <div class="border border-border-subtle rounded-lg overflow-hidden">
+          <table class="w-full text-left text-[11px]">
+            <thead class="bg-surface-secondary text-text-secondary font-semibold border-b border-border-subtle">
+              <tr>
+                <th class="py-2 px-3">Date &amp; Ref</th>
+                <th class="py-2 px-3">Description</th>
+                <th class="py-2 px-3 text-right">Debit (GHS)</th>
+                <th class="py-2 px-3 text-right">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border-subtle/40 text-text-primary">
+              <tr>
+                <td class="py-2 px-3 font-mono">24 Jun • TRX-0842</td>
+                <td class="py-2 px-3">Vehicle Charter for Tamale Monitoring</td>
+                <td class="py-2 px-3 text-right font-semibold">18,450.00</td>
+                <td class="py-2 px-3 text-right text-status-success-text font-semibold">Audited</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono">18 Jun • BIL-00142</td>
+                <td class="py-2 px-3">Primary Grade 3 Reading Materials</td>
+                <td class="py-2 px-3 text-right font-semibold">38,450.00</td>
+                <td class="py-2 px-3 text-right text-status-warning-text font-semibold">Pending Pay</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono">02 Jun • TRX-0810</td>
+                <td class="py-2 px-3">Teacher Training Workshops Per Diem</td>
+                <td class="py-2 px-3 text-right font-semibold">12,200.00</td>
+                <td class="py-2 px-3 text-right text-status-success-text font-semibold">Cleared</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer Footer Actions -->
+    <div class="p-4 border-t border-border-subtle bg-surface-card flex items-center justify-between gap-3">
+      <button onclick="closeGrantDetail()" class="px-4 py-2 rounded-lg bg-surface-secondary hover:bg-surface-dim/40 text-text-primary text-[12px] font-semibold transition-colors" type="button">
+        Close
+      </button>
+      <div class="flex items-center gap-2">
+        <button onclick="showToast('Exporting Donor Financial Report (SF-425)...')" class="px-3.5 py-2 rounded-lg bg-surface-secondary hover:bg-surface-dim/40 text-text-primary text-[12px] font-semibold transition-colors flex items-center gap-1.5" type="button">
+          <span class="material-symbols-outlined text-[16px]">download</span>
+          <span>Download SF-425</span>
+        </button>
+        <button onclick="editCurrentGrant()" class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-hover text-white text-[12px] font-semibold transition-colors shadow-xs" type="button">
+          Edit Grant Agreement
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 10. CREATE NEW GRANT MODAL WORKFLOW ==================== -->
+  <div id="newGrantModal" class="fixed inset-0 bg-nav-bg/50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-surface-card w-full max-w-2xl rounded-xl shadow-2xl border border-border-subtle overflow-hidden flex flex-col max-h-[90vh]">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-border-subtle bg-surface-secondary/50 flex items-center justify-between">
+        <div>
+          <h3 class="text-[17px] font-bold text-text-primary">Create New Donor Grant Agreement</h3>
+          <p class="text-[11px] text-text-secondary mt-0.5">Register donor agreement, fund restrictions, currency ceiling, and linked project dimensions.</p>
+        </div>
+        <button onclick="closeNewGrantModal()" class="p-1 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Form Body -->
+      <form id="newGrantForm" onsubmit="handleCreateGrant(event)" class="p-6 overflow-y-auto flex flex-col gap-4 text-[12px]">
+        <!-- Grant Title & Code -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="md:col-span-2 flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Grant Title / Program Name <span class="text-status-critical-text">*</span></label>
+            <input required id="formGrantTitle" type="text" placeholder="e.g. Clean Water &amp; Sanitation Project Phase 1" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary" />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Grant Reference Code <span class="text-status-critical-text">*</span></label>
+            <input required id="formGrantCode" type="text" placeholder="e.g. USAID-GH-2025-WASH" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary font-mono" />
+          </div>
+        </div>
+
+        <!-- Donor & Fund Type -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Primary Donor Entity <span class="text-status-critical-text">*</span></label>
+            <select required id="formDonor" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary">
+              <option value="USAID West Africa">USAID West Africa</option>
+              <option value="The Global Fund">The Global Fund</option>
+              <option value="European Commission">European Commission (EU)</option>
+              <option value="FCDO UK">FCDO UK (Foreign Office)</option>
+              <option value="Bright Futures Foundation">Bright Futures Foundation</option>
+              <option value="UNICEF Ghana">UNICEF Ghana</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Fund Classification <span class="text-status-critical-text">*</span></label>
+            <select required id="formFundType" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary">
+              <option value="Restricted">Restricted (Earmarked for Specific Outputs)</option>
+              <option value="Temporarily Restricted">Temporarily Restricted (Time-bound)</option>
+              <option value="Unrestricted">Unrestricted (Core Strategic Support)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Award Amount, Currency, Initial Tranche -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Total Award Amount <span class="text-status-critical-text">*</span></label>
+            <input required id="formAward" type="number" step="0.01" placeholder="e.g. 1500000" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary font-mono" />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Operating Currency <span class="text-status-critical-text">*</span></label>
+            <select required id="formCurrency" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary">
+              <option value="GHS">GHS - Ghanaian Cedi (GH₵)</option>
+              <option value="USD">USD - US Dollar ($)</option>
+              <option value="EUR">EUR - Euro (€)</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">First Tranche Received</label>
+            <input id="formReceived" type="number" step="0.01" placeholder="e.g. 500000" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary font-mono" />
+          </div>
+        </div>
+
+        <!-- Dates -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Grant Start Date <span class="text-status-critical-text">*</span></label>
+            <input required id="formStartDate" type="date" value="2025-07-01" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary" />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Grant End Date <span class="text-status-critical-text">*</span></label>
+            <input required id="formEndDate" type="date" value="2026-06-30" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary" />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">First Reporting Deadline <span class="text-status-critical-text">*</span></label>
+            <input required id="formDeadline" type="date" value="2025-10-15" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary" />
+          </div>
+        </div>
+
+        <!-- Linked Project & Manager -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Linked Project / Cost Center</label>
+            <input id="formProject" type="text" placeholder="e.g. PRJ-SAV-04 (Savannah Community WASH)" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary" />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-text-primary">Designated Manager</label>
+            <input id="formManager" type="text" placeholder="e.g. Kwesi Appiah (Field Officer)" class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary" />
+          </div>
+        </div>
+
+        <!-- Notes / Restrictions -->
+        <div class="flex flex-col gap-1">
+          <label class="font-semibold text-text-primary">Fiduciary Restrictions &amp; Compliance Notes</label>
+          <textarea id="formNotes" rows="2" placeholder="Specific donor conditions, overhead caps, procurement thresholds, or eligible expense categories..." class="px-3 py-2 bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:border-primary text-text-primary resize-none"></textarea>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="pt-3 border-t border-border-subtle flex items-center justify-between">
+          <button onclick="closeNewGrantModal()" type="button" class="px-4 py-2 rounded-lg bg-surface-secondary hover:bg-surface-dim/40 text-text-primary font-semibold transition-colors">
+            Cancel
+          </button>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="showToast('Draft agreement saved to local cache.')" class="px-4 py-2 rounded-lg bg-surface-secondary hover:bg-surface-dim/40 text-text-primary font-semibold transition-colors">
+              Save Draft
+            </button>
+            <button type="submit" class="px-5 py-2 rounded-lg bg-primary hover:bg-primary-hover text-white font-semibold transition-colors shadow-xs">
+              Register Grant
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== 11. CONFIRMATION DIALOG ==================== -->
+  <div id="confirmDialog" class="fixed inset-0 bg-nav-bg/60 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-surface-card w-full max-w-md rounded-xl shadow-2xl border border-border-subtle p-5 flex flex-col gap-4">
+      <div class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full bg-status-warning-bg flex items-center justify-center text-status-warning-text shrink-0">
+          <span class="material-symbols-outlined text-[22px]">help</span>
+        </span>
+        <div class="flex flex-col">
+          <h4 id="confirmTitle" class="text-[15px] font-bold text-text-primary">Confirm Action</h4>
+          <p id="confirmDesc" class="text-[12px] text-text-secondary mt-0.5">Are you sure you want to proceed with this operation?</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-border-subtle">
+        <button onclick="closeConfirm()" type="button" class="px-3.5 py-1.5 rounded-lg bg-surface-secondary hover:bg-surface-dim/40 text-text-primary text-[12px] font-semibold transition-colors">
+          Cancel
+        </button>
+        <button id="confirmActionBtn" type="button" class="px-4 py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-[12px] font-semibold transition-colors shadow-xs">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 11. SUCCESS TOAST ==================== -->
+  <div id="appToast" class="fixed bottom-6 right-6 bg-nav-bg text-white px-4 py-3 rounded-lg shadow-xl z-50 flex items-center gap-3 transform translate-y-16 opacity-0 transition-all duration-200 pointer-events-none">
+    <span class="material-symbols-outlined text-status-success-border text-[20px]">check_circle</span>
+    <span id="toastMessage" class="text-[12px] font-medium">Operation completed successfully.</span>
+  </div>
+
+ <!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+
+  <!-- JavaScript Application Logic -->
+  <script>
+    // In-memory Grants Dataset
+    let grantsData = [
+      {
+        id: "GRANT-001",
+        title: "USAID Education Program (Ghana Northern Sector)",
+        code: "USAID-GH-2024-ED09",
+        donor: "USAID West Africa",
+        fundType: "Restricted",
+        award: 2000000,
+        currency: "GHS",
+        spent: 1420000,
+        available: 580000,
+        burn: 71,
+        startDate: "2024-01-15",
+        endDate: "2025-12-31",
+        deadline: "15 Jul 2025",
+        deadlineDays: 14,
+        status: "Active",
+        project: "PRJ-TAM-01 (Literacy Outreach)",
+        costCenter: "CC-101 (Tamale Hub), CC-102 (Savannah)",
+        manager: "Dr. Emmanuel Osei (Programs Director)",
+        fundAccount: "FND-002 (USAID Restricted Fund)",
+        restrictions: "Direct expenditures restricted to Northern Sector primary literacy kits, training per diems, and local M&E vehicles. Max 8% indirect overhead."
+      },
+      {
+        id: "GRANT-002",
+        title: "Community Health Initiative Phase II (Malaria & Sanitation)",
+        code: "GF-MAL-2023-GH",
+        donor: "The Global Fund",
+        fundType: "Restricted",
+        award: 1500000,
+        currency: "GHS",
+        spent: 930000,
+        available: 570000,
+        burn: 62,
+        startDate: "2023-09-01",
+        endDate: "2025-12-31",
+        deadline: "30 Sep 2025",
+        deadlineDays: 91,
+        status: "Active",
+        project: "PRJ-VOL-03 (Volta & Ashanti Health Hubs)",
+        costCenter: "CC-201 (Volta Hub), CC-202 (Ashanti Post)",
+        manager: "Kwesi Appiah (Health Lead)",
+        fundAccount: "FND-004 (Global Fund Resilient Systems)",
+        restrictions: "Reagent kits and cold-chain diagnostics must be procured via tender-committee approved suppliers. Subject to GF Geneva audit."
+      },
+      {
+        id: "GRANT-003",
+        title: "Emergency Response Fund & Climate Adaptation",
+        code: "EU-CLIM-2024-GH03",
+        donor: "European Commission",
+        fundType: "Temporarily Restricted",
+        award: 850000,
+        currency: "GHS",
+        spent: 714000,
+        available: 136000,
+        burn: 84,
+        startDate: "2024-03-01",
+        endDate: "2025-08-31",
+        deadline: "10 Aug 2025",
+        deadlineDays: 40,
+        status: "Closing Soon",
+        project: "PRJ-SAV-02 (Savannah Flood Relief)",
+        costCenter: "CC-301 (Savannah Regional Office)",
+        manager: "Abena Mansa (Field Coordinator)",
+        fundAccount: "FND-003 (Disaster Relief Contingency)",
+        restrictions: "Temporary restriction expires upon completion of shelter and agricultural seedling distribution. Unspent balance returns to EU reserve."
+      },
+      {
+        id: "GRANT-004",
+        title: "Girls' Education Support Grant (STEM & Retention)",
+        code: "FCDO-UK-STEM-25",
+        donor: "FCDO UK",
+        fundType: "Restricted",
+        award: 1200000,
+        currency: "GHS",
+        spent: 480000,
+        available: 720000,
+        burn: 40,
+        startDate: "2025-01-01",
+        endDate: "2026-12-31",
+        deadline: "15 Nov 2025",
+        deadlineDays: 137,
+        status: "Active",
+        project: "PRJ-ACC-04 (STEM Training Hubs)",
+        costCenter: "CC-105 (Accra Training Hub)",
+        manager: "Grace Addo (Education Advisor)",
+        fundAccount: "FND-006 (FCDO Human Rights & STEM)",
+        restrictions: "Ring-fenced for secondary girls scholarship stipends and teacher STEM training modules."
+      },
+      {
+        id: "GRANT-005",
+        title: "Community Vocational & Apprenticeship Core Fund",
+        code: "BFF-GH-CORE-25",
+        donor: "Bright Futures Foundation",
+        fundType: "Unrestricted",
+        award: 470000,
+        currency: "GHS",
+        spent: 211500,
+        available: 258500,
+        burn: 45,
+        startDate: "2025-01-01",
+        endDate: "2025-12-31",
+        deadline: "31 Dec 2025",
+        deadlineDays: 183,
+        status: "Active",
+        project: "PRJ-ACC-01 (HQ Vocational Center)",
+        costCenter: "CC-001 (HQ Admin & Core Operations)",
+        manager: "Ama Mensah (Finance Manager)",
+        fundAccount: "FND-001 (Core Discretionary Reserve)",
+        restrictions: "General NGO capacity and technical vocational core curriculum. No donor ring-fencing."
+      },
+      {
+        id: "GRANT-006",
+        title: "Maternal & Child Health Emergency Diagnostic Grant",
+        code: "UNICEF-GH-2025",
+        donor: "UNICEF Ghana",
+        fundType: "Restricted",
+        award: 1400000,
+        currency: "GHS",
+        spent: 270000,
+        available: 1130000,
+        burn: 19,
+        startDate: "2025-06-01",
+        endDate: "2026-05-31",
+        deadline: "20 Dec 2025",
+        deadlineDays: 172,
+        status: "Upcoming",
+        project: "PRJ-TAM-05 (Savannah Health Posts)",
+        costCenter: "CC-102 (Savannah Hub)",
+        manager: "Dr. Emmanuel Osei",
+        fundAccount: "FND-005 (Maternal Health Escrow)",
+        restrictions: "Rapid diagnostic maternal tests and rural midwife training per diems."
+      }
+    ];
+
+    let currentSelectedGrantId = "GRANT-001";
+
+    // Format currency
+    function formatMoney(amount) {
+      return Number(amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    // Render Table
+    function renderGrantsTable(data) {
+      const tbody = document.getElementById("grantsTableBody");
+      const emptyState = document.getElementById("tableEmptyState");
+      const countEl = document.getElementById("tableRecordCount");
+
+      if (data.length === 0) {
+        tbody.innerHTML = "";
+        emptyState.classList.remove("hidden");
+        countEl.textContent = "0 Grants Found";
+        return;
+      }
+
+      emptyState.classList.add("hidden");
+      countEl.textContent = `${data.length} Grants Loaded`;
+
+      tbody.innerHTML = data.map(grant => {
+        let fundClassBadge = "";
+        if (grant.fundType === "Restricted") {
+          fundClassBadge = `<span class="inline-flex items-center px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[11px] font-semibold border border-[#B8860B]/20">Restricted</span>`;
+        } else if (grant.fundType === "Temporarily Restricted") {
+          fundClassBadge = `<span class="inline-flex items-center px-2 py-0.5 rounded bg-[#FEF8E7] text-[#A07200] text-[11px] font-semibold border border-[#D99B00]/20">Temp Restricted</span>`;
+        } else {
+          fundClassBadge = `<span class="inline-flex items-center px-2 py-0.5 rounded bg-primary-tint text-primary text-[11px] font-semibold border border-primary/20">Unrestricted Core</span>`;
+        }
+
+        let statusBadge = "";
+        if (grant.status === "Active") {
+          statusBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active</span>`;
+        } else if (grant.status === "Closing Soon") {
+          statusBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text text-[11px] font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-status-warning-text"></span> Closing Soon</span>`;
+        } else if (grant.status === "Upcoming") {
+          statusBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-tint text-primary text-[11px] font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Upcoming</span>`;
+        } else {
+          statusBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-neutral-bg text-status-neutral-text text-[11px] font-semibold">Closed</span>`;
+        }
+
+        let deadlineBadge = "";
+        if (grant.deadlineDays <= 30) {
+          deadlineBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text text-[11px] font-semibold border border-status-warning-border/40"><span class="material-symbols-outlined text-[13px]">alarm</span> ${grant.deadline} (${grant.deadlineDays}d)</span>`;
+        } else {
+          deadlineBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-semibold"><span class="material-symbols-outlined text-[13px]">event</span> ${grant.deadline}</span>`;
+        }
+
+        let burnColor = grant.burn > 80 ? "bg-status-warning-text" : "bg-primary";
+
+        return `
+          <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openGrantDetail('${grant.id}')">
+            <td class="py-3.5 px-4">
+              <div class="flex flex-col">
+                <span class="font-semibold text-text-primary text-[13px] group-hover:text-primary transition-colors">${grant.title}</span>
+                <div class="flex items-center gap-1 text-[11px] text-text-muted mt-0.5">
+                  <span class="font-mono text-primary font-semibold">${grant.code}</span>
+                  <span>•</span>
+                  <span>${grant.project}</span>
+                </div>
+              </div>
+            </td>
+            <td class="py-3.5 px-4 whitespace-nowrap">
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px] text-text-secondary">account_balance</span>
+                <span class="font-medium text-text-primary">${grant.donor}</span>
+              </div>
+            </td>
+            <td class="py-3.5 px-4 whitespace-nowrap">${fundClassBadge}</td>
+            <td class="py-3.5 px-4 text-right font-semibold whitespace-nowrap">${formatMoney(grant.award)}</td>
+            <td class="py-3.5 px-4 text-center whitespace-nowrap">
+              <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary text-[11px] font-bold">${grant.currency}</span>
+            </td>
+            <td class="py-3.5 px-4 text-right text-text-secondary font-medium whitespace-nowrap">${formatMoney(grant.spent)}</td>
+            <td class="py-3.5 px-4 text-right font-bold text-text-primary whitespace-nowrap">${formatMoney(grant.available)}</td>
+            <td class="py-3.5 px-4">
+              <div class="flex items-center gap-2">
+                <div class="w-full bg-surface-secondary rounded-full h-2 overflow-hidden">
+                  <div class="${burnColor} h-2 rounded-full" style="width: ${grant.burn}%"></div>
+                </div>
+                <span class="text-[11px] font-semibold text-text-secondary w-8 text-right">${grant.burn}%</span>
+              </div>
+            </td>
+            <td class="py-3.5 px-4 whitespace-nowrap">${deadlineBadge}</td>
+            <td class="py-3.5 px-4 whitespace-nowrap">${statusBadge}</td>
+            <td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+              <button onclick="openGrantDetail('${grant.id}')" class="px-2.5 py-1 rounded bg-surface-secondary hover:bg-primary-tint hover:text-primary text-text-primary text-[11px] font-semibold transition-colors" type="button">
+                Inspect
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    // Apply Filter Logic
+    function applyFilters() {
+      const searchVal = document.getElementById("grantFilterSearch").value.toLowerCase().trim();
+      const donorVal = document.getElementById("filterDonor").value;
+      const fundTypeVal = document.getElementById("filterFundType").value;
+      const statusVal = document.getElementById("filterStatus").value;
+      const ccyVal = document.getElementById("filterCurrency").value;
+
+      const filtered = grantsData.filter(g => {
+        const matchesSearch = !searchVal || 
+          g.title.toLowerCase().includes(searchVal) ||
+          g.code.toLowerCase().includes(searchVal) ||
+          g.donor.toLowerCase().includes(searchVal) ||
+          g.project.toLowerCase().includes(searchVal);
+
+        const matchesDonor = donorVal === "ALL" || g.donor === donorVal;
+        const matchesFund = fundTypeVal === "ALL" || g.fundType === fundTypeVal;
+        const matchesStatus = statusVal === "ALL" || g.status === statusVal;
+        const matchesCcy = ccyVal === "ALL" || g.currency === ccyVal;
+
+        return matchesSearch && matchesDonor && matchesFund && matchesStatus && matchesCcy;
+      });
+
+      renderGrantsTable(filtered);
+      updateFilterChips(donorVal, fundTypeVal, statusVal, ccyVal, searchVal);
+    }
+
+    function updateFilterChips(donor, fund, status, ccy, search) {
+      const container = document.getElementById("dynamicChips");
+      let chipsHtml = "";
+      if (donor !== "ALL") chipsHtml += `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-primary border border-border-subtle">Donor: ${donor}</span>`;
+      if (fund !== "ALL") chipsHtml += `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-primary border border-border-subtle">Fund: ${fund}</span>`;
+      if (status !== "ALL") chipsHtml += `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-primary border border-border-subtle">Status: ${status}</span>`;
+      if (ccy !== "ALL") chipsHtml += `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-primary border border-border-subtle">CCY: ${ccy}</span>`;
+      if (search) chipsHtml += `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-primary border border-border-subtle">Keyword: "${search}"</span>`;
+      container.innerHTML = chipsHtml;
+    }
+
+    function resetFilters() {
+      document.getElementById("grantFilterSearch").value = "";
+      document.getElementById("filterDonor").value = "ALL";
+      document.getElementById("filterFundType").value = "ALL";
+      document.getElementById("filterStatus").value = "ALL";
+      document.getElementById("filterCurrency").value = "ALL";
+      applyFilters();
+      showToast("Filters cleared. Displaying all active grants.");
+    }
+
+    function filterByMetric(type) {
+      if (type === "Active") {
+        document.getElementById("filterStatus").value = "Active";
+      } else if (type === "Closing Soon") {
+        document.getElementById("filterStatus").value = "Closing Soon";
+      } else if (type === "upcoming_reports") {
+        document.getElementById("filterStatus").value = "ALL";
+        document.getElementById("grantFilterSearch").value = "USAID";
+      }
+      applyFilters();
+    }
+
+    // Drawer Functions
+    function openGrantDetail(grantId) {
+      const grant = grantsData.find(g => g.id === grantId) || grantsData[0];
+      currentSelectedGrantId = grant.id;
+
+      document.getElementById("drawerGrantTitle").textContent = grant.title;
+      document.getElementById("drawerGrantCode").textContent = grant.code;
+      document.getElementById("drawerAward").textContent = `${grant.currency} ${formatMoney(grant.award)}`;
+      document.getElementById("drawerSpent").textContent = `${grant.currency} ${formatMoney(grant.spent)}`;
+      document.getElementById("drawerAvailable").textContent = `${grant.currency} ${formatMoney(grant.available)}`;
+      document.getElementById("drawerBurnRate").textContent = `${grant.burn}% Burn Trajectory`;
+
+      document.getElementById("drawerDonor").textContent = grant.donor;
+      document.getElementById("drawerFundAccount").textContent = grant.fundAccount;
+      document.getElementById("drawerProject").textContent = grant.project;
+      document.getElementById("drawerCostCenter").textContent = grant.costCenter;
+      document.getElementById("drawerManager").textContent = grant.manager;
+      document.getElementById("drawerDeadlineBadge").textContent = `Due ${grant.deadline}`;
+
+      const drawerFundBadge = document.getElementById("drawerFundBadge");
+      drawerFundBadge.textContent = grant.fundType;
+      if (grant.fundType === "Restricted") {
+        drawerFundBadge.className = "inline-flex items-center px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[11px] font-semibold border border-[#B8860B]/20";
+      } else if (grant.fundType === "Temporarily Restricted") {
+        drawerFundBadge.className = "inline-flex items-center px-2 py-0.5 rounded bg-[#FEF8E7] text-[#A07200] text-[11px] font-semibold border border-[#D99B00]/20";
+      } else {
+        drawerFundBadge.className = "inline-flex items-center px-2 py-0.5 rounded bg-primary-tint text-primary text-[11px] font-semibold border border-primary/20";
+      }
+
+      const drawerStatus = document.getElementById("drawerStatusCode");
+      drawerStatus.textContent = grant.status;
+
+      // Open UI
+      document.getElementById("grantDetailBackdrop").classList.remove("opacity-0", "pointer-events-none");
+      document.getElementById("grantDetailDrawer").classList.remove("translate-x-full");
+    }
+
+    function closeGrantDetail() {
+      document.getElementById("grantDetailBackdrop").classList.add("opacity-0", "pointer-events-none");
+      document.getElementById("grantDetailDrawer").classList.add("translate-x-full");
+    }
+
+    function editCurrentGrant() {
+      closeGrantDetail();
+      const grant = grantsData.find(g => g.id === currentSelectedGrantId);
+      if (grant) {
+        document.getElementById("formGrantTitle").value = grant.title;
+        document.getElementById("formGrantCode").value = grant.code;
+        document.getElementById("formDonor").value = grant.donor;
+        document.getElementById("formFundType").value = grant.fundType;
+        document.getElementById("formAward").value = grant.award;
+        document.getElementById("formCurrency").value = grant.currency;
+        document.getElementById("formReceived").value = grant.spent;
+        document.getElementById("formProject").value = grant.project;
+        document.getElementById("formManager").value = grant.manager;
+        document.getElementById("formNotes").value = grant.restrictions;
+        openNewGrantModal();
+      }
+    }
+
+    // Modal Workflow
+    function openNewGrantModal() {
+      document.getElementById("newGrantModal").classList.remove("hidden");
+    }
+
+    function closeNewGrantModal() {
+      document.getElementById("newGrantModal").classList.add("hidden");
+    }
+
+    function handleCreateGrant(e) {
+      e.preventDefault();
+      const title = document.getElementById("formGrantTitle").value.trim();
+      const code = document.getElementById("formGrantCode").value.trim();
+      const donor = document.getElementById("formDonor").value;
+      const fundType = document.getElementById("formFundType").value;
+      const award = parseFloat(document.getElementById("formAward").value) || 0;
+      const currency = document.getElementById("formCurrency").value;
+      const received = parseFloat(document.getElementById("formReceived").value) || 0;
+      const deadline = document.getElementById("formDeadline").value || "15 Dec 2025";
+      const project = document.getElementById("formProject").value || "PRJ-NEW-01";
+      const manager = document.getElementById("formManager").value || "Ama Mensah";
+
+      const newGrant = {
+        id: "GRANT-" + String(grantsData.length + 1).padStart(3, '0'),
+        title: title,
+        code: code,
+        donor: donor,
+        fundType: fundType,
+        award: award,
+        currency: currency,
+        spent: 0,
+        available: award,
+        burn: 0,
+        startDate: "2025-07-01",
+        endDate: "2026-06-30",
+        deadline: deadline,
+        deadlineDays: 90,
+        status: "Active",
+        project: project,
+        costCenter: "CC-101 (Accra HQ)",
+        manager: manager,
+        fundAccount: `FND-00${grantsData.length + 1} (${donor} Earmarked Fund)`,
+        restrictions: document.getElementById("formNotes").value || "Donor earmarked funding under standard compliance regulations."
+      };
+
+      grantsData.unshift(newGrant);
+      closeNewGrantModal();
+      applyFilters();
+      showToast(`Grant "${title}" created successfully and registered in General Ledger.`);
+    }
+
+    // Toast Notification
+    function showToast(msg) {
+      const toast = document.getElementById("appToast");
+      document.getElementById("toastMessage").textContent = msg;
+      toast.classList.remove("translate-y-16", "opacity-0", "pointer-events-none");
+      setTimeout(() => {
+        toast.classList.add("translate-y-16", "opacity-0", "pointer-events-none");
+      }, 3500);
+    }
+
+    // Confirm dialog
+    function openConfirm(title, desc, onConfirm) {
+      document.getElementById("confirmTitle").textContent = title;
+      document.getElementById("confirmDesc").textContent = desc;
+      const btn = document.getElementById("confirmActionBtn");
+      btn.onclick = function() {
+        closeConfirm();
+        if (onConfirm) onConfirm();
+      };
+      document.getElementById("confirmDialog").classList.remove("hidden");
+    }
+
+    function closeConfirm() {
+      document.getElementById("confirmDialog").classList.add("hidden");
+    }
+
+    // Bind event listeners on page load
+    document.addEventListener("DOMContentLoaded", function() {
+      // Buttons
+      document.getElementById("openNewGrantBtn").addEventListener("click", openNewGrantModal);
+      document.getElementById("primaryNewGrantHeader").addEventListener("click", openNewGrantModal);
+      document.getElementById("exportRegisterBtn").addEventListener("click", function() {
+        showToast("Exporting Fiduciary Grants Portfolio (PDF & Excel Matrix)...");
+      });
+
+      // Finance dropdown in sidebar
+      const finToggle = document.getElementById("finToggle");
+      const finSubmenu = document.getElementById("finSubmenu");
+      const finChevron = document.getElementById("finChevron");
+      if (finToggle && finSubmenu) {
+        finToggle.addEventListener("click", function(e) {
+          e.preventDefault();
+          const isOpen = finSubmenu.classList.toggle("hidden");
+          finChevron.style.transform = isOpen ? "" : "rotate(180deg)";
+        });
+      }
+
+      // Initial Render
+      renderGrantsTable(grantsData);
+    });
+  </script>
+</body>
+</html>

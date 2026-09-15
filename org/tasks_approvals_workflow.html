@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Tasks & Approvals — Workflow Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#f7f9ff",
+            "on-tertiary": "#ffffff",
+            "status-warning-bg": "#FEF3E6",
+            "surface-dim": "#d1dbe7",
+            "status-critical-bg": "#FDF0F0",
+            "primary-fixed": "#a7eef6",
+            "status-neutral-bg": "#ECEFF2",
+            "secondary-container": "#d8e4ef",
+            "status-success-border": "#9DD4B8",
+            "inverse-primary": "#8bd2da",
+            "on-tertiary-container": "#ffd892",
+            "status-critical-border": "#F3A6A9",
+            "nav-border": "#1E3243",
+            "outline-variant": "#bec8c9",
+            "text-muted": "#7B8C9A",
+            "inverse-on-surface": "#e8f2fe",
+            "secondary-fixed-dim": "#bcc8d3",
+            "fund-temp-restricted": "#D99B00",
+            "canvas-bg": "#F7F9FA",
+            "tertiary-fixed": "#ffdea6",
+            "surface-container-low": "#ecf4ff",
+            "nav-text-primary": "#F4F7F9",
+            "on-secondary": "#ffffff",
+            "status-neutral-text": "#384551",
+            "fund-restricted": "#B8860B",
+            "surface-variant": "#d9e4ef",
+            "inverse-surface": "#28313a",
+            "status-success-text": "#0F6848",
+            "on-primary-fixed": "#002022",
+            "surface-container-highest": "#d9e4ef",
+            "on-surface-variant": "#3f484a",
+            "on-surface": "#131d25",
+            "primary": "#005258",
+            "on-error-container": "#93000a",
+            "nav-text-muted": "#8EA2B4",
+            "error-container": "#ffdad6",
+            "outline": "#6f797a",
+            "tertiary-fixed-dim": "#f7bd48",
+            "nav-surface": "#152431",
+            "status-success-bg": "#E8F5EE",
+            "on-secondary-fixed-variant": "#3d4851",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#121d25",
+            "primary-fixed-dim": "#8bd2da",
+            "on-primary-container": "#a1e9f1",
+            "surface-secondary": "#F0F4F6",
+            "status-critical-text": "#A81D24",
+            "on-tertiary-fixed-variant": "#5d4200",
+            "secondary-fixed": "#d8e4ef",
+            "secondary": "#556069",
+            "on-primary": "#ffffff",
+            "surface-tint": "#16686f",
+            "text-secondary": "#4E5D6A",
+            "surface": "#f7f9ff",
+            "on-primary-fixed-variant": "#004f55",
+            "status-warning-text": "#914D03",
+            "surface-container-high": "#dfe9f5",
+            "tertiary-container": "#7f5b00",
+            "status-warning-border": "#F6C88D",
+            "tertiary": "#614500",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "text-primary": "#121A21",
+            "border-subtle": "#DCE3E8",
+            "surface-bright": "#f7f9ff",
+            "on-secondary-container": "#5a666f",
+            "surface-container": "#e5effb",
+            "on-background": "#131d25",
+            "border-strong": "#B8C4CE",
+            "on-tertiary-fixed": "#271900",
+            "primary-hover": "#144F54",
+            "primary-container": "#1b6b72",
+            "fund-unrestricted": "#1B6B72",
+            "primary-tint": "#E4EFEF",
+            "surface-card": "#FFFFFF",
+            "status-neutral-border": "#CAD2D8",
+            "nav-bg": "#0D1821"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "gutter": "1rem",
+            "space-lg": "1rem",
+            "space-2xl": "2rem",
+            "margin-compact": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xxs": "0.125rem",
+            "margin": "1.5rem",
+            "space-xl": "1.5rem",
+            "gutter-dense": "0.5rem",
+            "space-sm": "0.5rem"
+          },
+          fontFamily: {
+            "headline-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "title-md": ["IBM Plex Sans"],
+            "caption": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "numeric-table": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "numeric-table-bold": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "display-lg": ["IBM Plex Sans"],
+            "title-sm": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "title-md": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "caption": ["11px", { lineHeight: "14px", fontWeight: "400" }],
+            "headline-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+            "numeric-table": ["13px", { lineHeight: "18px", letterSpacing: "0", fontWeight: "500" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "numeric-table-bold": ["13px", { lineHeight: "18px", letterSpacing: "0", fontWeight: "700" }],
+            "body-lg": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+            "body-md": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "title-sm": ["13px", { lineHeight: "18px", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-canvas-bg font-body-md text-text-primary antialiased min-h-screen">
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="fixed top-20 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Sidebar Navigation (#appNav) -->
+  <aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Workspace Wrapper (#appMain) -->
+  <div id="appMain" class="pl-64 flex flex-col min-h-screen">
+    <!-- Fixed Top Header (#appHeader) -->
+    <header id="appHeader" class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md border-b border-border-subtle/50">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span>
+          <input id="globalTaskSearch"
+            class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-primary transition-all"
+            placeholder="Search tasks, reference codes, requesters, grants, vendors, amounts..." type="text" />
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span>
+          <span>FY 2025 (Q2 Closed)</span>
+        </div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary">
+          <span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS (GH¢)</span>
+          <span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <!-- Primary Header Action -->
+        <div class="h-5 w-px bg-surface-secondary"></div>
+        <button class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span>
+        </button>
+        <button class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">help</span>
+        </button>
+        <div class="flex items-center gap-space-xs pl-space-xs">
+          <div class="w-8 h-8 rounded-full bg-primary-container text-white font-bold flex items-center justify-center text-xs">AM</div>
+          <span class="material-symbols-outlined text-text-muted text-[16px]"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="w-full pt-16 bg-canvas-bg flex-1">
+      <div class="flex flex-col w-full">
+        <!-- Top Context Header Bar -->
+        <section class="px-space-xl py-space-lg bg-surface-card shadow-sm flex flex-col gap-space-sm border-b border-border-subtle/40">
+          <div class="flex items-center gap-space-xs text-text-muted font-caption text-caption">
+            <span class="hover:text-text-primary cursor-pointer transition-colors">Home</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="hover:text-text-primary cursor-pointer transition-colors">Governance</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="text-text-secondary font-title-sm">Workflow</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="text-fund-unrestricted font-medium">Tasks &amp; Approvals</span>
+          </div>
+          
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-space-sm">
+                <h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Tasks &amp; Approvals</h1>
+                <span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm text-label-sm font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-status-warning-text animate-pulse"></span>
+                  12 Items Requiring Sign-Off
+                </span>
+                <span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-primary-tint text-primary font-label-sm text-label-sm font-semibold">
+                  <span class="material-symbols-outlined text-[13px]">verified_user</span>
+                  Role: Authorized Approver
+                </span>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-0.5 max-w-4xl">
+                Organization-wide workflow and approval center. 
+              </p>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm">
+              <button id="refreshBtn"
+                class="inline-flex items-center gap-1.5 px-space-sm py-1.5 bg-surface-secondary hover:bg-surface-dim/50 text-text-primary rounded font-title-sm text-title-sm transition-colors shadow-sm"
+                type="button">
+                <span class="material-symbols-outlined text-[16px] text-text-secondary">sync</span>
+                <span>Refresh Queue</span>
+              </button>
+              <button id="exportAuditBtn"
+                class="inline-flex items-center gap-1.5 px-space-sm py-1.5 bg-surface-secondary hover:bg-surface-dim/50 text-text-primary rounded font-title-sm text-title-sm transition-colors shadow-sm"
+                type="button">
+                <span class="material-symbols-outlined text-[16px] text-text-secondary">file_download</span>
+                <span>Export Audit Log</span>
+              </button>
+                <button id="headerBatchApproveBtn"
+          class="h-[34px] px-space-md bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg flex items-center gap-space-xs transition-colors shadow-sm"
+          type="button">
+          <span class="material-symbols-outlined text-[16px]">task_alt</span>
+          <span>Batch Approvals</span>
+        </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main Body Container -->
+        <div class="px-space-xl py-space-xl flex flex-col gap-space-lg max-w-7xl w-full mx-auto">
+          
+          <!-- Summary Cards: 4 Primary Workflow Indicators -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+            <!-- Card 1: My Pending Approvals -->
+            <div id="kpiPendingCard" class="kpi-card bg-surface-card rounded-lg p-space-lg shadow-sm border border-border-subtle/50 hover:border-primary transition-all cursor-pointer group flex flex-col justify-between" data-filter="Approvals">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted group-hover:text-primary transition-colors">My Pending Approvals</span>
+                  <span class="w-8 h-8 rounded bg-status-warning-bg text-status-warning-text flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">pending_actions</span>
+                  </span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-2">
+                  <span id="kpiPendingCount" class="font-display-lg text-display-lg text-text-primary tracking-tight font-bold">12</span>
+                  <span class="font-caption text-caption text-status-warning-text font-semibold">Action Required</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-space-xs border-t border-border-subtle/40 flex items-center justify-between font-caption text-caption text-text-muted">
+                <span>GH¢ 384,150.00 aggregate</span>
+                <span class="text-primary font-semibold group-hover:underline flex items-center gap-0.5">Filter <span class="material-symbols-outlined text-[13px]">arrow_forward</span></span>
+              </div>
+            </div>
+
+            <!-- Card 2: Overdue -->
+            <div id="kpiOverdueCard" class="kpi-card bg-surface-card rounded-lg p-space-lg shadow-sm border border-border-subtle/50 hover:border-status-critical-text transition-all cursor-pointer group flex flex-col justify-between" data-filter="Overdue">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted group-hover:text-status-critical-text transition-colors">Overdue</span>
+                  <span class="w-8 h-8 rounded bg-status-critical-bg text-status-critical-text flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">warning</span>
+                  </span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-2">
+                  <span id="kpiOverdueCount" class="font-display-lg text-display-lg text-status-critical-text tracking-tight font-bold">3</span>
+                  <span class="font-caption text-caption text-status-critical-text font-semibold">SLA Breached</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-space-xs border-t border-border-subtle/40 flex items-center justify-between font-caption text-caption text-text-muted">
+                <span>Urgent donor milestones</span>
+                <span class="text-status-critical-text font-semibold group-hover:underline flex items-center gap-0.5">Filter <span class="material-symbols-outlined text-[13px]">arrow_forward</span></span>
+              </div>
+            </div>
+
+            <!-- Card 3: Due Today -->
+            <div id="kpiDueTodayCard" class="kpi-card bg-surface-card rounded-lg p-space-lg shadow-sm border border-border-subtle/50 hover:border-primary transition-all cursor-pointer group flex flex-col justify-between" data-filter="DueToday">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted group-hover:text-primary transition-colors">Due Today</span>
+                  <span class="w-8 h-8 rounded bg-primary-tint text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">today</span>
+                  </span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-2">
+                  <span id="kpiDueTodayCount" class="font-display-lg text-display-lg text-text-primary tracking-tight font-bold">5</span>
+                  <span class="font-caption text-caption text-text-secondary font-semibold">Expires 17:00 GMT</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-space-xs border-t border-border-subtle/40 flex items-center justify-between font-caption text-caption text-text-muted">
+                <span>GH¢ 94,800.00 statutory</span>
+                <span class="text-primary font-semibold group-hover:underline flex items-center gap-0.5">Filter <span class="material-symbols-outlined text-[13px]">arrow_forward</span></span>
+              </div>
+            </div>
+
+            <!-- Card 4: Recently Completed -->
+            <div id="kpiCompletedCard" class="kpi-card bg-surface-card rounded-lg p-space-lg shadow-sm border border-border-subtle/50 hover:border-status-success-text transition-all cursor-pointer group flex flex-col justify-between" data-filter="Completed">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted group-hover:text-status-success-text transition-colors">Recently Completed</span>
+                  <span class="w-8 h-8 rounded bg-status-success-bg text-status-success-text flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                  </span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-2">
+                  <span id="kpiCompletedCount" class="font-display-lg text-display-lg text-text-primary tracking-tight font-bold">28</span>
+                  <span class="font-caption text-caption text-status-success-text font-semibold">This Week</span>
+                </div>
+              </div>
+              <div class="mt-3 pt-space-xs border-t border-border-subtle/40 flex items-center justify-between font-caption text-caption text-text-muted">
+                <span>100% audit audit-trail</span>
+                <span class="text-status-success-text font-semibold group-hover:underline flex items-center gap-0.5">View <span class="material-symbols-outlined text-[13px]">arrow_forward</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workflow Center Table Card -->
+          <div class="bg-surface-card rounded-lg shadow-sm border border-border-subtle/60 flex flex-col overflow-hidden">
+            <!-- Tabs Bar -->
+            <div class="px-space-lg pt-space-md border-b border-border-subtle/50 flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-card">
+              <div class="flex items-center gap-6 overflow-x-auto">
+                <button class="tab-btn py-3 border-b-2 font-title-sm text-title-sm transition-colors flex items-center gap-2 border-primary text-primary" data-tab="all">
+                  <span>All Tasks</span>
+                  <span id="tabCountAll" class="px-2 py-0.5 rounded-full text-caption font-bold bg-surface-secondary text-text-secondary">16</span>
+                </button>
+                <button class="tab-btn py-3 border-b-2 border-transparent font-title-sm text-title-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2" data-tab="my-tasks">
+                  <span>My Tasks</span>
+                  <span id="tabCountMyTasks" class="px-2 py-0.5 rounded-full text-caption font-bold bg-surface-secondary text-text-secondary">7</span>
+                </button>
+                <button class="tab-btn py-3 border-b-2 border-transparent font-title-sm text-title-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2" data-tab="approvals">
+                  <span>Pending Approvals</span>
+                  <span id="tabCountApprovals" class="px-2 py-0.5 rounded-full text-caption font-bold bg-status-warning-bg text-status-warning-text">12</span>
+                </button>
+                <button class="tab-btn py-3 border-b-2 border-transparent font-title-sm text-title-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2" data-tab="completed">
+                  <span>Completed</span>
+                  <span id="tabCountCompleted" class="px-2 py-0.5 rounded-full text-caption font-bold bg-status-success-bg text-status-success-text">28</span>
+                </button>
+              </div>
+
+              <!-- Quick Table Actions -->
+              <div class="flex items-center gap-2 pb-2 sm:pb-0">
+                <button id="toggleFilterPanelBtn" class="px-space-sm py-1.5 rounded bg-surface-secondary hover:bg-surface-dim/50 text-text-secondary hover:text-text-primary font-title-sm text-title-sm transition-colors flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[16px]">filter_list</span>
+                  <span>Filters</span>
+                  <span id="activeFilterBadge" class="w-2 h-2 rounded-full bg-primary hidden"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Expandable Filters Panel -->
+            <div id="filterPanel" class="p-space-lg bg-surface-secondary/40 border-b border-border-subtle/50 flex flex-col gap-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-space-sm">
+                <!-- Filter: Task Type -->
+                <div class="flex flex-col gap-1">
+                  <label class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Task Type</label>
+                  <select id="filterType" class="px-2.5 py-1.5 bg-surface-card border border-border-subtle rounded text-body-sm font-body-sm text-text-primary focus:outline-none focus:border-primary">
+                    <option value="">All Types</option>
+                    <option value="Purchase Requisition Approval">Purchase Requisition</option>
+                    <option value="Invoice Approval">Invoice Approval</option>
+                    <option value="Payment Approval">Payment Approval</option>
+                    <option value="Grant Approval">Grant Approval</option>
+                    <option value="Journal Approval">Journal Approval</option>
+                    <option value="Procurement Review">Procurement Review</option>
+                    <option value="Expense Approval">Expense Approval</option>
+                  </select>
+                </div>
+                <!-- Filter: Status -->
+                <div class="flex flex-col gap-1">
+                  <label class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Status</label>
+                  <select id="filterStatus" class="px-2.5 py-1.5 bg-surface-card border border-border-subtle rounded text-body-sm font-body-sm text-text-primary focus:outline-none focus:border-primary">
+                    <option value="">All Statuses</option>
+                    <option value="Pending Approval">Pending Approval</option>
+                    <option value="Overdue">Overdue</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </div>
+                <!-- Filter: Fund -->
+                <div class="flex flex-col gap-1">
+                  <label class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Fund</label>
+                  <select id="filterFund" class="px-2.5 py-1.5 bg-surface-card border border-border-subtle rounded text-body-sm font-body-sm text-text-primary focus:outline-none focus:border-primary">
+                    <option value="">All Funds</option>
+                    <option value="Restricted">Restricted</option>
+                    <option value="Temporarily Restricted">Temp Restricted</option>
+                    <option value="Unrestricted">Unrestricted</option>
+                  </select>
+                </div>
+                <!-- Filter: Grant -->
+                <div class="flex flex-col gap-1">
+                  <label class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Grant / Project</label>
+                  <select id="filterGrant" class="px-2.5 py-1.5 bg-surface-card border border-border-subtle rounded text-body-sm font-body-sm text-text-primary focus:outline-none focus:border-primary">
+                    <option value="">All Grants</option>
+                    <option value="USAID Education">USAID Education Program</option>
+                    <option value="Global Fund">Global Fund Health</option>
+                    <option value="EU Climate">EU Climate Action</option>
+                    <option value="Core Operations">Core Operations</option>
+                  </select>
+                </div>
+                <!-- Filter: Requester -->
+                <div class="flex flex-col gap-1">
+                  <label class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Requester</label>
+                  <input id="filterRequester" type="text" placeholder="e.g. Kwesi, Hajia..." class="px-2.5 py-1.5 bg-surface-card border border-border-subtle rounded text-body-sm font-body-sm text-text-primary focus:outline-none focus:border-primary" />
+                </div>
+                <!-- Filter: Approver -->
+                <div class="flex flex-col gap-1">
+                  <label class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Current Approver</label>
+                  <select id="filterApprover" class="px-2.5 py-1.5 bg-surface-card border border-border-subtle rounded text-body-sm font-body-sm text-text-primary focus:outline-none focus:border-primary">
+                    <option value="">All Approvers</option>
+                    <option value="Ama Mensah">Ama Mensah (Me)</option>
+                    <option value="Country Director">Country Director</option>
+                    <option value="Finance Lead">Finance Lead</option>
+                  </select>
+                </div>
+                <!-- Reset Button -->
+                <div class="flex flex-col justify-end">
+                  <button id="clearFiltersBtn" class="w-full py-1.5 px-3 bg-surface-card hover:bg-surface-secondary border border-border-subtle rounded text-title-sm font-title-sm text-text-secondary hover:text-text-primary transition-colors flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[15px]">close</span>
+                    <span>Clear All</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Active Filter Chips -->
+              <div id="filterChipsContainer" class="flex flex-wrap items-center gap-2 pt-1">
+                <span class="font-caption text-caption text-text-muted">Active Filters:</span>
+                <span class="px-2 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold flex items-center gap-1">
+                  Status: Pending Approval &amp; Overdue
+                  <span class="material-symbols-outlined text-[12px] cursor-pointer hover:text-error" onclick="clearFilterChip('status')">cancel</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Task List Table -->
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left border-collapse" id="tasksTable">
+                <thead>
+                  <tr class="bg-surface-secondary font-label-md text-label-md uppercase tracking-wider text-text-secondary select-none border-b border-border-subtle/60">
+                    <th class="py-3 px-4 font-semibold">Task &amp; Reference</th>
+                    <th class="py-3 px-4 font-semibold">Type</th>
+                    <th class="py-3 px-4 font-semibold">Requester</th>
+                    <th class="py-3 px-4 text-right font-semibold">Amount (GHS)</th>
+                    <th class="py-3 px-4 font-semibold">Fund Restriction</th>
+                    <th class="py-3 px-4 font-semibold">Grant / Project</th>
+                    <th class="py-3 px-4 font-semibold">Submitted</th>
+                    <th class="py-3 px-4 font-semibold">Due Date</th>
+                    <th class="py-3 px-4 font-semibold">Current Approver</th>
+                    <th class="py-3 px-4 font-semibold">Status</th>
+                    <th class="py-3 px-4 text-right font-semibold">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="tasksTableBody" class="divide-y divide-border-subtle/40 font-body-sm text-body-sm text-text-primary">
+                  <!-- Injected via JavaScript with realistic NGO records -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Table Footer -->
+            <div class="p-space-md bg-surface-secondary/60 border-t border-border-subtle/50 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-caption text-text-secondary">
+              <div class="flex items-center gap-2">
+                <span id="showingCountText" class="font-numeric-table font-medium">Showing 16 workflow tasks</span>
+                <span class="text-text-muted">•</span>
+                <span class="text-text-muted">Workflow SLA: Standard 48 Hours</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <span>Aggregate Approval Exposure: <strong id="totalExposureAmount" class="text-text-primary font-numeric-table-bold">GHS 562,750.00</strong></span>
+                <div class="flex items-center gap-1">
+                  <button class="px-2 py-1 bg-surface-card border border-border-subtle rounded text-caption font-semibold text-text-muted hover:text-text-primary disabled:opacity-40" disabled>&lt; Prev</button>
+                  <span class="px-2 py-1 font-numeric-table font-semibold text-text-primary">Page 1 of 1</span>
+                  <button class="px-2 py-1 bg-surface-card border border-border-subtle rounded text-caption font-semibold text-text-muted hover:text-text-primary disabled:opacity-40" disabled>Next &gt;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Originating Business Process Traceability Banner -->
+          <div class="bg-surface-card rounded-lg p-space-lg shadow-sm border border-border-subtle/50 flex flex-col gap-space-sm">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-fund-unrestricted text-[18px]">account_tree</span>
+                <h3 class="font-title-md text-title-md text-text-primary">End-to-End Enterprise NGO Workflow Continuity</h3>
+              </div>
+              <span class="font-caption text-caption text-text-muted">IPSAS-Compliant Fiduciary Governance</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-secondary">
+              Every workflow task maintains bidirectional linkage from field activity through accounting postings:
+            </p>
+            <div class="overflow-x-auto py-2">
+              <div class="flex items-center gap-2 min-w-max text-caption font-label-md">
+                <span class="px-2.5 py-1 rounded bg-surface-secondary text-text-primary font-semibold border border-border-subtle">1. Purchase Requisition</span>
+                <span class="material-symbols-outlined text-text-muted text-[14px]">arrow_forward</span>
+                <span class="px-2.5 py-1 rounded bg-primary-tint text-primary font-bold border border-primary/20">2. Approval Sign-Off</span>
+                <span class="material-symbols-outlined text-text-muted text-[14px]">arrow_forward</span>
+                <span class="px-2.5 py-1 rounded bg-surface-secondary text-text-primary font-semibold border border-border-subtle">3. Tender Quotes</span>
+                <span class="material-symbols-outlined text-text-muted text-[14px]">arrow_forward</span>
+                <span class="px-2.5 py-1 rounded bg-surface-secondary text-text-primary font-semibold border border-border-subtle">4. Purchase Order</span>
+                <span class="material-symbols-outlined text-text-muted text-[14px]">arrow_forward</span>
+                <span class="px-2.5 py-1 rounded bg-surface-secondary text-text-primary font-semibold border border-border-subtle">5. Goods Receipt (GRN)</span>
+                <span class="material-symbols-outlined text-text-muted text-[14px]">arrow_forward</span>
+                <span class="px-2.5 py-1 rounded bg-surface-secondary text-text-primary font-semibold border border-border-subtle">6. Invoice 3-Way Match</span>
+                <span class="material-symbols-outlined text-text-muted text-[14px]">arrow_forward</span>
+                <span class="px-2.5 py-1 rounded bg-surface-secondary text-text-primary font-semibold border border-border-subtle">7. Payment Voucher</span>
+                <span class="material-symbols-outlined text-text-muted text-[14px]">arrow_forward</span>
+                <span class="px-2.5 py-1 rounded bg-status-success-bg text-status-success-text font-bold border border-status-success-border">8. General Ledger Journal</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Full Workflow Detail Modal/Drawer (#taskDetailModal) -->
+  <div id="taskDetailModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-end hidden transition-opacity">
+    <div class="w-full max-w-2xl bg-surface-card h-full shadow-2xl flex flex-col justify-between overflow-y-auto border-l border-border-subtle animate-in slide-in-from-right duration-200">
+      <!-- Detail Header -->
+      <div class="p-space-xl border-b border-border-subtle/70 bg-surface-card sticky top-0 z-10 flex flex-col gap-space-xs">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span id="detailBadgeStatus" class="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold">Pending Approval</span>
+            <span id="detailRefCode" class="font-numeric-table font-mono font-bold text-text-primary">PR-2025-00418</span>
+          </div>
+          <button id="closeDetailModalBtn" class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+        <h2 id="detailTaskTitle" class="font-headline-sm text-headline-sm text-text-primary mt-1">Purchase Requisition Approval — 40 Solar Panels for Northern Clinics</h2>
+        <p id="detailTaskDescription" class="font-body-sm text-body-sm text-text-secondary">
+          Request initiated by Tamale Field Operations Hub for off-grid cold chain vaccination clinics under USAID Basic Education & Maternal Support Grant.
+        </p>
+      </div>
+
+      <!-- Detail Body Content -->
+      <div class="p-space-xl flex flex-col gap-space-lg flex-1">
+        <!-- Financial & Funding Context Card -->
+        <div class="p-space-md rounded-lg bg-surface-secondary/60 border border-border-subtle/50 flex flex-col gap-space-sm">
+          <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted font-bold">Fiduciary &amp; Grant Encumbrance</span>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+            <div class="flex flex-col">
+              <span class="font-caption text-caption text-text-muted">Total Amount</span>
+              <span id="detailAmount" class="font-headline-sm text-headline-sm text-text-primary font-bold">GH¢ 72,500.00</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-caption text-caption text-text-muted">Fund Classification</span>
+              <span id="detailFund" class="font-title-sm text-title-sm font-semibold text-fund-restricted">Restricted (Earmarked)</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-caption text-caption text-text-muted">Grant Award</span>
+              <span id="detailGrant" class="font-title-sm text-title-sm font-semibold text-text-primary">USAID-GH-2024-ED09</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-caption text-caption text-text-muted">Cost Center</span>
+              <span id="detailCostCenter" class="font-title-sm text-title-sm font-semibold text-text-primary">CC-401 (Tamale)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requester & Audit Ownership -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+          <div class="p-space-md rounded-lg bg-surface-card border border-border-subtle flex flex-col gap-1">
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Requester</span>
+            <div class="flex items-center gap-2 mt-1">
+              <div class="w-7 h-7 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-bold text-xs">KA</div>
+              <div class="flex flex-col">
+                <span id="detailRequester" class="font-title-sm text-title-sm text-text-primary">Kwesi Appiah</span>
+                <span class="font-caption text-caption text-text-muted">Senior Logistics Lead (Tamale)</span>
+              </div>
+            </div>
+            <span class="font-caption text-caption text-text-muted mt-2">Submitted: <strong id="detailSubmittedDate" class="text-text-primary">22 Jun 2025, 09:30 GMT</strong></span>
+          </div>
+
+          <div class="p-space-md rounded-lg bg-surface-card border border-border-subtle flex flex-col gap-1">
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">SLA &amp; Due Date</span>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="material-symbols-outlined text-[20px] text-fund-temp-restricted">schedule</span>
+              <div class="flex flex-col">
+                <span id="detailDueDate" class="font-title-sm text-title-sm text-text-primary">Today, 17:00 GMT</span>
+                <span id="detailDueStatus" class="font-caption text-caption text-status-warning-text font-semibold">Priority SLA • 4 Hours Remaining</span>
+              </div>
+            </div>
+            <span class="font-caption text-caption text-text-muted mt-2">Assigned Approver: <strong id="detailApprover" class="text-text-primary">Ama Mensah (Finance Manager)</strong></span>
+          </div>
+        </div>
+
+        <!-- Workflow Step History / Traceability Timeline -->
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-title-md text-title-md text-text-primary">Approval Lifecycle &amp; Audit Trail</h4>
+          <div class="border-l-2 border-border-subtle pl-4 ml-2 flex flex-col gap-4 text-body-sm">
+            <div class="relative">
+              <span class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-status-success-text ring-4 ring-status-success-bg"></span>
+              <div class="flex items-center justify-between">
+                <span class="font-title-sm text-title-sm text-text-primary">Requisition Drafted &amp; Validated</span>
+                <span class="font-caption text-caption text-text-muted">22 Jun, 09:30</span>
+              </div>
+              <p class="font-caption text-caption text-text-muted">Kwesi Appiah submitted requisition with 3 competitive supplier quotations attached.</p>
+            </div>
+            <div class="relative">
+              <span class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-status-success-text ring-4 ring-status-success-bg"></span>
+              <div class="flex items-center justify-between">
+                <span class="font-title-sm text-title-sm text-text-primary">Technical Committee Review</span>
+                <span class="font-caption text-caption text-text-muted">23 Jun, 11:15</span>
+              </div>
+              <p class="font-caption text-caption text-text-muted">Procurement Lead approved SunPower Ghana Ltd specifications.</p>
+            </div>
+            <div class="relative">
+              <span class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-fund-temp-restricted ring-4 ring-status-warning-bg animate-pulse"></span>
+              <div class="flex items-center justify-between">
+                <span class="font-title-sm text-title-sm text-fund-temp-restricted font-bold">Fiduciary &amp; Budget Authorization (Current Stage)</span>
+                <span class="font-caption text-caption text-status-warning-text font-bold">Pending Sign-off</span>
+              </div>
+              <p class="font-caption text-caption text-text-muted">Awaiting Ama Mensah (Finance Manager) grant budget sign-off and fund reservation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evidence & Supporting Documents -->
+        <div class="flex flex-col gap-space-xs">
+          <h4 class="font-title-md text-title-md text-text-primary">Supporting Attachments (3)</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+            <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="material-symbols-outlined text-text-muted text-[18px]">picture_as_pdf</span>
+                <span class="font-body-sm text-body-sm text-text-primary truncate">SunPower_Quote_Validated.pdf</span>
+              </div>
+              <span class="font-caption text-caption text-text-muted">1.4 MB</span>
+            </div>
+            <div class="p-2.5 rounded bg-surface-secondary border border-border-subtle flex items-center justify-between">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="material-symbols-outlined text-text-muted text-[18px]">description</span>
+                <span class="font-body-sm text-body-sm text-text-primary truncate">Tender_Evaluation_Report.pdf</span>
+              </div>
+              <span class="font-caption text-caption text-text-muted">840 KB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Approval Action Comment Box -->
+        <div class="flex flex-col gap-1.5">
+          <label class="font-label-md text-label-md uppercase tracking-wider text-text-muted font-semibold">Approver Decision Notes / Delegated Rationale</label>
+          <textarea id="approverCommentInput" rows="2" placeholder="Optional fiduciary comments or instructions for next processing stage..."
+            class="w-full p-2.5 bg-surface-card border border-border-subtle rounded text-body-sm font-body-sm text-text-primary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+        </div>
+      </div>
+
+      <!-- Detail Action Footer -->
+      <div class="p-space-lg border-t border-border-subtle bg-surface-card sticky bottom-0 z-10 flex flex-wrap items-center justify-between gap-space-sm">
+        <div class="flex items-center gap-2">
+          <button id="actionRejectBtn" class="px-3 py-2 bg-surface-card hover:bg-status-critical-bg text-status-critical-text border border-status-critical-border rounded font-title-sm text-title-sm transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">close</span>
+            <span>Reject</span>
+          </button>
+          <button id="actionRequestChangesBtn" class="px-3 py-2 bg-surface-card hover:bg-status-warning-bg text-status-warning-text border border-status-warning-border rounded font-title-sm text-title-sm transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">edit_note</span>
+            <span>Request Changes</span>
+          </button>
+          <button id="actionDelegateBtn" class="px-3 py-2 bg-surface-card hover:bg-surface-secondary text-text-secondary border border-border-subtle rounded font-title-sm text-title-sm transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">forward</span>
+            <span>Delegate</span>
+          </button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="closeDetailModalBtn2" class="px-3 py-2 bg-surface-secondary hover:bg-surface-dim/50 text-text-primary rounded font-title-sm text-title-sm transition-colors">
+            Cancel
+          </button>
+          <button id="actionApproveBtn" class="px-4 py-2 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors shadow-sm flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px]">check</span>
+            <span>Approve Request</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Batch Approval Confirmation Modal -->
+  <div id="batchApprovalModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center hidden">
+    <div class="w-full max-w-lg bg-surface-card rounded-lg shadow-2xl p-space-xl flex flex-col gap-space-md border border-border-subtle animate-in fade-in zoom-in-95 duration-150">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-primary-tint text-primary flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[24px]">task_alt</span>
+        </div>
+        <div class="flex flex-col">
+          <h3 class="font-headline-sm text-headline-sm text-text-primary">Confirm Batch Authorization</h3>
+          <p class="font-caption text-caption text-text-muted">Batch Sign-Off for Approved NGO Items</p>
+        </div>
+      </div>
+      <p class="font-body-sm text-body-sm text-text-secondary">
+        You are about to sign off <strong id="batchSelectedCountText">12 pending workflow items</strong> totaling <strong class="text-text-primary font-numeric-table-bold">GH¢ 384,150.00</strong>. This will release purchase requisitions for procurement RFQs and forward invoices for bank voucher generation.
+      </p>
+      <div class="p-3 bg-surface-secondary rounded border border-border-subtle flex flex-col gap-1 text-caption text-text-secondary">
+        <span>• Audit trail logged under Ama Mensah (Finance Manager)</span>
+        <span>• Grant encumbrances will be posted to GL accounts automatically</span>
+      </div>
+      <div class="flex items-center justify-end gap-space-sm pt-2">
+        <button id="cancelBatchBtn" class="px-4 py-2 rounded bg-surface-secondary hover:bg-surface-dim/60 text-text-primary font-title-sm text-title-sm transition-colors">
+          Cancel
+        </button>
+        <button id="confirmBatchBtn" class="px-4 py-2 rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm transition-colors shadow-sm flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">done_all</span>
+          <span>Execute Batch Approval</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout & Submenu CSS Styles -->
+<!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+
+  <!-- Complete Interactive Workflow Center JavaScript -->
+  <script>
+    // Initial Realistic NGO Workflow Dataset
+    const initialTasks = [
+      {
+        id: "task-1",
+        ref: "PR-2025-00418",
+        title: "Purchase Requisition — 40 Solar Panels for Tamale Clinics",
+        type: "Purchase Requisition Approval",
+        requester: "Kwesi Appiah",
+        requesterRole: "Senior Logistics Lead",
+        amount: 72500.00,
+        fund: "Restricted",
+        grant: "USAID Education",
+        grantCode: "USAID-GH-2024-ED09",
+        costCenter: "CC-401 (Tamale)",
+        submittedDate: "22 Jun 2025",
+        dueDate: "Today",
+        dueStatus: "Due Today",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Pending Approval",
+        description: "Requisition for 40 solar off-grid energy units for rural clinics and schools in the Tamale cluster. 3 supplier quotes verified."
+      },
+      {
+        id: "task-2",
+        ref: "INV-2025-00892",
+        title: "Supplier Invoice — M&G Pharmaceuticals Medical Consumables",
+        type: "Invoice Approval",
+        requester: "Hajia Amina Bello",
+        requesterRole: "Health Specialist (Volta)",
+        amount: 68000.00,
+        fund: "Restricted",
+        grant: "Global Fund",
+        grantCode: "GF-MAL-2023-GH",
+        costCenter: "CC-302 (Clinical)",
+        submittedDate: "18 Jun 2025",
+        dueDate: "20 Jun 2025",
+        dueStatus: "Overdue",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Overdue",
+        description: "3-Way matched invoice against PO-2025-084 for 14,200 rapid diagnostic kits delivered to Ho warehouse depot."
+      },
+      {
+        id: "task-3",
+        ref: "PAY-2025-00341",
+        title: "Payment Voucher — Volta Logistics Vehicle Monitoring Charter",
+        type: "Payment Approval",
+        requester: "Kwame Mensah",
+        requesterRole: "Transport Officer",
+        amount: 18450.00,
+        fund: "Restricted",
+        grant: "USAID Education",
+        grantCode: "USAID-GH-2024-ED09",
+        costCenter: "CC-405 (Field Ops)",
+        submittedDate: "23 Jun 2025",
+        dueDate: "Today",
+        dueStatus: "Due Today",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Pending Approval",
+        description: "Quarterly field vehicle charter and fuel voucher for Tamale and Savelugu education monitoring visits."
+      },
+      {
+        id: "task-4",
+        ref: "JE-2025-00104",
+        title: "Journal Adjustment — Agroforestry Seedling Grant Allocation",
+        type: "Journal Approval",
+        requester: "Sarah Mensah",
+        requesterRole: "Senior Grants Accountant",
+        amount: 15300.00,
+        fund: "Temporarily Restricted",
+        grant: "EU Climate",
+        grantCode: "EU-CLIM-2024-GH03",
+        costCenter: "CC-405 (Savannah)",
+        submittedDate: "19 Jun 2025",
+        dueDate: "21 Jun 2025",
+        dueStatus: "Overdue",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Overdue",
+        description: "Reclassification journal voucher for community nursery vendor advance clearing."
+      },
+      {
+        id: "task-5",
+        ref: "GRN-2025-00058",
+        title: "Procurement Review — Cold Chain Refrigeration Equipment",
+        type: "Procurement Review",
+        requester: "Joseph Danquah",
+        requesterRole: "Fleet & Warehouse Lead",
+        amount: 44200.00,
+        fund: "Restricted",
+        grant: "Global Fund",
+        grantCode: "GF-MAL-2023-GH",
+        costCenter: "CC-300 (Volta Hub)",
+        submittedDate: "24 Jun 2025",
+        dueDate: "26 Jun 2025",
+        dueStatus: "Upcoming",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Pending Approval",
+        description: "Tender evaluation committee review and compliance checklist sign-off for portable solar refrigerators."
+      },
+      {
+        id: "task-6",
+        ref: "EXP-2025-00512",
+        title: "Field Expense — Community Health Worker Per-Diems (Volta)",
+        type: "Expense Approval",
+        requester: "Dr. Emmanuel Osei",
+        requesterRole: "Medical Director",
+        amount: 9800.00,
+        fund: "Restricted",
+        grant: "Global Fund",
+        grantCode: "GF-MAL-2023-GH",
+        costCenter: "CC-302 (Clinical)",
+        submittedDate: "24 Jun 2025",
+        dueDate: "Today",
+        dueStatus: "Due Today",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Pending Approval",
+        description: "14-day field outreach per-diem batch for 18 community health nurses in Ho and Kpando districts."
+      },
+      {
+        id: "task-7",
+        ref: "GA-2025-00019",
+        title: "Grant Sub-Award Approval — Savelugu Community Development",
+        type: "Grant Approval",
+        requester: "Grace Addo",
+        requesterRole: "M&E Field Officer",
+        amount: 120000.00,
+        fund: "Restricted",
+        grant: "USAID Education",
+        grantCode: "USAID-GH-2024-ED09",
+        costCenter: "CC-401 (Tamale)",
+        submittedDate: "15 Jun 2025",
+        dueDate: "19 Jun 2025",
+        dueStatus: "Overdue",
+        approver: "Country Director",
+        isMyTask: false,
+        status: "Overdue",
+        description: "Tranche 2 disbursement approval for primary school rehabilitation sub-grant partner."
+      },
+      {
+        id: "task-8",
+        ref: "INV-2025-00895",
+        title: "Supplier Invoice — Electricity Company of Ghana (ECG Utilities)",
+        type: "Invoice Approval",
+        requester: "Kwame Mensah",
+        requesterRole: "Admin Supervisor",
+        amount: 4220.00,
+        fund: "Unrestricted",
+        grant: "Core Operations",
+        grantCode: "BFF-GH-CORE-25",
+        costCenter: "CC-101 (Accra HQ)",
+        submittedDate: "23 Jun 2025",
+        dueDate: "Today",
+        dueStatus: "Due Today",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Pending Approval",
+        description: "Tamale Regional Office and Accra Headquarters monthly utility billing vouchers."
+      },
+      {
+        id: "task-9",
+        ref: "PAY-2025-00344",
+        title: "Statutory Tax Remittance — GRA PAYE & SSNIT Tier 1/2",
+        type: "Payment Approval",
+        requester: "Sarah Mensah",
+        requesterRole: "Senior Grants Accountant",
+        amount: 94800.00,
+        fund: "Unrestricted",
+        grant: "Core Operations",
+        grantCode: "BFF-GH-CORE-25",
+        costCenter: "CC-102 (Finance)",
+        submittedDate: "24 Jun 2025",
+        dueDate: "Today",
+        dueStatus: "Due Today",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Pending Approval",
+        description: "Statutory staff deductions and employer contributions for 78 Ghanaian employees."
+      },
+      {
+        id: "task-10",
+        ref: "PR-2025-00422",
+        title: "Purchase Requisition — 3 Ultrasound Clinical Probes",
+        type: "Purchase Requisition Approval",
+        requester: "Dr. Emmanuel Osei",
+        requesterRole: "Medical Director",
+        amount: 32600.00,
+        fund: "Restricted",
+        grant: "Global Fund",
+        grantCode: "GF-MAL-2023-GH",
+        costCenter: "CC-300 (Clinical)",
+        submittedDate: "24 Jun 2025",
+        dueDate: "27 Jun 2025",
+        dueStatus: "Upcoming",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Pending Approval",
+        description: "Replacement transducer probes for portable Sonosite M-Turbo ultrasound scanners."
+      },
+      {
+        id: "task-11",
+        ref: "EXP-2025-00518",
+        title: "Travel Advance Reconciliation — Savanna Tree Planting Mission",
+        type: "Expense Approval",
+        requester: "Kofi Boateng",
+        requesterRole: "Water Engineer",
+        amount: 6200.00,
+        fund: "Temporarily Restricted",
+        grant: "EU Climate",
+        grantCode: "EU-CLIM-2024-GH03",
+        costCenter: "CC-405 (Savannah)",
+        submittedDate: "22 Jun 2025",
+        dueDate: "25 Jun 2025",
+        dueStatus: "Upcoming",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Pending Approval",
+        description: "Field mission per-diem and seedling transport fuel receipts reconciliation."
+      },
+      {
+        id: "task-12",
+        ref: "JE-2025-00109",
+        title: "Inter-Account Transfer — Escrow USD to Local GHS Operating",
+        type: "Journal Approval",
+        requester: "Sarah Mensah",
+        requesterRole: "Senior Grants Accountant",
+        amount: 82000.00,
+        fund: "Restricted",
+        grant: "USAID Education",
+        grantCode: "USAID-GH-2024-ED09",
+        costCenter: "CC-102 (Treasury)",
+        submittedDate: "23 Jun 2025",
+        dueDate: "25 Jun 2025",
+        dueStatus: "Upcoming",
+        approver: "Country Director",
+        isMyTask: false,
+        status: "Pending Approval",
+        description: "Forex liquidation voucher from Standard Chartered USD escrow into Ecobank GHS operating ledger."
+      },
+      // Completed sample records for tab switching
+      {
+        id: "task-13",
+        ref: "PAY-2025-00329",
+        title: "Payment Voucher — Buck Press Educational Books Delivery",
+        type: "Payment Approval",
+        requester: "Kwesi Appiah",
+        requesterRole: "Logistics Lead",
+        amount: 54200.00,
+        fund: "Restricted",
+        grant: "USAID Education",
+        grantCode: "USAID-GH-2024-ED09",
+        costCenter: "CC-401 (Tamale)",
+        submittedDate: "17 Jun 2025",
+        dueDate: "19 Jun 2025",
+        dueStatus: "Completed",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Completed",
+        description: "Disbursement executed via Stanbic bank transfer for primary school mathematics textbooks."
+      },
+      {
+        id: "task-14",
+        ref: "INV-2025-00870",
+        title: "Supplier Invoice — Toyota Ghana Vehicle Servicing",
+        type: "Invoice Approval",
+        requester: "Joseph Danquah",
+        requesterRole: "Fleet Supervisor",
+        amount: 8450.00,
+        fund: "Unrestricted",
+        grant: "Core Operations",
+        grantCode: "BFF-GH-CORE-25",
+        costCenter: "CC-201 (Fleet)",
+        submittedDate: "18 Jun 2025",
+        dueDate: "20 Jun 2025",
+        dueStatus: "Completed",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Completed",
+        description: "Scheduled 100,000km major maintenance for Land Cruiser HZJ78 fleet."
+      },
+      {
+        id: "task-15",
+        ref: "PR-2025-00405",
+        title: "Purchase Requisition — Community Learning Center Laptops",
+        type: "Purchase Requisition Approval",
+        requester: "Hajia Amina Bello",
+        requesterRole: "Health Specialist",
+        amount: 28000.00,
+        fund: "Unrestricted",
+        grant: "Core Operations",
+        grantCode: "BFF-GH-CORE-25",
+        costCenter: "CC-101 (Accra HQ)",
+        submittedDate: "16 Jun 2025",
+        dueDate: "18 Jun 2025",
+        dueStatus: "Completed",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Approved",
+        description: "10 refurbished Dell laptops for youth coding workshop in Ho Central hub."
+      },
+      {
+        id: "task-16",
+        ref: "EXP-2025-00502",
+        title: "Travel Advance — Damongo Agroforestry Assessment",
+        type: "Expense Approval",
+        requester: "Grace Addo",
+        requesterRole: "M&E Lead",
+        amount: 4500.00,
+        fund: "Temporarily Restricted",
+        grant: "EU Climate",
+        grantCode: "EU-CLIM-2024-GH03",
+        costCenter: "CC-405 (Savannah)",
+        submittedDate: "14 Jun 2025",
+        dueDate: "16 Jun 2025",
+        dueStatus: "Completed",
+        approver: "Ama Mensah",
+        isMyTask: true,
+        status: "Approved",
+        description: "Assessment mission advance for Damongo community nursery."
+      }
+    ];
+
+    let currentTasks = [...initialTasks];
+    let activeTab = "all";
+    let selectedTaskId = null;
+
+    // Toast Feedback Utility
+    function showToast(message, type = "success") {
+      const container = document.getElementById("toastContainer");
+      const toast = document.createElement("div");
+      toast.className = `px-4 py-3 rounded-lg shadow-lg border text-title-sm font-title-sm flex items-center gap-2.5 transition-all duration-300 pointer-events-auto transform translate-y-2 opacity-0 ${
+        type === "success" 
+          ? "bg-status-success-bg text-status-success-text border-status-success-border" 
+          : type === "warning"
+          ? "bg-status-warning-bg text-status-warning-text border-status-warning-border"
+          : "bg-status-critical-bg text-status-critical-text border-status-critical-border"
+      }`;
+      const icon = type === "success" ? "check_circle" : type === "warning" ? "warning" : "error";
+      toast.innerHTML = `<span class="material-symbols-outlined text-[18px]">${icon}</span><span>${message}</span>`;
+      container.appendChild(toast);
+      
+      requestAnimationFrame(() => {
+        toast.classList.remove("translate-y-2", "opacity-0");
+      });
+
+      setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-2");
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+
+    // Status Badge Formatter
+    function getStatusBadge(status) {
+      if (status === "Pending Approval") {
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm text-label-sm font-semibold border border-status-warning-border/40">
+          <span class="w-1.5 h-1.5 rounded-full bg-status-warning-text animate-pulse"></span>
+          Pending Approval
+        </span>`;
+      } else if (status === "Overdue") {
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-critical-bg text-status-critical-text font-label-sm text-label-sm font-semibold border border-status-critical-border/40">
+          <span class="material-symbols-outlined text-[12px]">warning</span>
+          Overdue
+        </span>`;
+      } else if (status === "Approved" || status === "Completed") {
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold border border-status-success-border/40">
+          <span class="material-symbols-outlined text-[12px]">check</span>
+          ${status}
+        </span>`;
+      } else if (status === "Rejected") {
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-critical-bg text-status-critical-text font-label-sm text-label-sm font-semibold border border-status-critical-border/40">
+          <span class="material-symbols-outlined text-[12px]">close</span>
+          Rejected
+        </span>`;
+      }
+      return `<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-label-sm text-label-sm font-semibold">${status}</span>`;
+    }
+
+    // Fund Badge Formatter
+    function getFundBadge(fund) {
+      if (fund === "Restricted") {
+        return `<span class="inline-block px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-caption text-caption font-semibold" title="Restricted Earmarked">Restricted</span>`;
+      } else if (fund === "Temporarily Restricted") {
+        return `<span class="inline-block px-2 py-0.5 rounded bg-[#FEF8E7] text-[#A07200] font-caption text-caption font-semibold" title="Temporarily Restricted">Temp Restricted</span>`;
+      }
+      return `<span class="inline-block px-2 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold" title="Unrestricted General">Unrestricted</span>`;
+    }
+
+    // Currency Formatter
+    function formatCurrency(val) {
+      return val.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    // Recalculate Dashboard Counts and KPIs
+    function updateCountsAndKPIs() {
+      const pendingCount = currentTasks.filter(t => t.status === "Pending Approval").length;
+      const overdueCount = currentTasks.filter(t => t.status === "Overdue").length;
+      const dueTodayCount = currentTasks.filter(t => t.dueStatus === "Due Today" && t.status !== "Completed" && t.status !== "Approved").length;
+      const completedCount = currentTasks.filter(t => t.status === "Completed" || t.status === "Approved").length;
+      const myTasksCount = currentTasks.filter(t => t.isMyTask && (t.status === "Pending Approval" || t.status === "Overdue")).length;
+
+      document.getElementById("kpiPendingCount").textContent = pendingCount;
+      document.getElementById("kpiOverdueCount").textContent = overdueCount;
+      document.getElementById("kpiDueTodayCount").textContent = dueTodayCount;
+      document.getElementById("kpiCompletedCount").textContent = completedCount;
+
+      document.getElementById("tabCountAll").textContent = currentTasks.length;
+      document.getElementById("tabCountMyTasks").textContent = myTasksCount;
+      document.getElementById("tabCountApprovals").textContent = pendingCount;
+      document.getElementById("tabCountCompleted").textContent = completedCount;
+
+      document.getElementById("navPendingBadge").textContent = pendingCount;
+      document.getElementById("navOverdueBadge").textContent = overdueCount;
+
+      // Calculate total exposure of active tasks
+      const activePendingTotal = currentTasks
+        .filter(t => t.status === "Pending Approval" || t.status === "Overdue")
+        .reduce((sum, t) => sum + t.amount, 0);
+      document.getElementById("totalExposureAmount").textContent = "GHS " + formatCurrency(activePendingTotal);
+    }
+
+    // Render Table Based on Active Tab, Search, and Filters
+    function renderTasksTable() {
+      const tbody = document.getElementById("tasksTableBody");
+      const searchVal = document.getElementById("globalTaskSearch").value.toLowerCase().trim();
+      const filterType = document.getElementById("filterType").value;
+      const filterStatus = document.getElementById("filterStatus").value;
+      const filterFund = document.getElementById("filterFund").value;
+      const filterGrant = document.getElementById("filterGrant").value;
+      const filterRequester = document.getElementById("filterRequester").value.toLowerCase().trim();
+      const filterApprover = document.getElementById("filterApprover").value;
+
+      let filtered = currentTasks.filter(task => {
+        // Tab Filter
+        if (activeTab === "my-tasks") {
+          if (!task.isMyTask) return false;
+        } else if (activeTab === "approvals") {
+          if (task.status !== "Pending Approval") return false;
+        } else if (activeTab === "completed") {
+          if (task.status !== "Completed" && task.status !== "Approved") return false;
+        }
+
+        // Global Search
+        if (searchVal) {
+          const match = task.title.toLowerCase().includes(searchVal) ||
+                        task.ref.toLowerCase().includes(searchVal) ||
+                        task.requester.toLowerCase().includes(searchVal) ||
+                        task.type.toLowerCase().includes(searchVal) ||
+                        task.grant.toLowerCase().includes(searchVal) ||
+                        task.amount.toString().includes(searchVal);
+          if (!match) return false;
+        }
+
+        // Specific Filters
+        if (filterType && task.type !== filterType) return false;
+        if (filterStatus && task.status !== filterStatus) return false;
+        if (filterFund && task.fund !== filterFund) return false;
+        if (filterGrant && !task.grant.toLowerCase().includes(filterGrant.toLowerCase())) return false;
+        if (filterRequester && !task.requester.toLowerCase().includes(filterRequester)) return false;
+        if (filterApprover && task.approver !== filterApprover) return false;
+
+        return true;
+      });
+
+      document.getElementById("showingCountText").textContent = `Showing ${filtered.length} of ${currentTasks.length} workflow tasks`;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="11" class="py-12 text-center">
+              <div class="flex flex-col items-center justify-center gap-2 text-text-muted">
+                <span class="material-symbols-outlined text-[36px] text-text-muted/60">task_alt</span>
+                <span class="font-title-md text-title-md text-text-primary">No tasks match your current criteria</span>
+                <span class="font-body-sm text-body-sm max-w-sm text-text-secondary">Try adjusting your search query or reset active filters to view all approval queues.</span>
+                <button onclick="resetAllFilters()" class="mt-2 px-3 py-1.5 rounded bg-primary text-on-primary font-title-sm text-title-sm hover:bg-primary-hover transition-colors">Clear Filters</button>
+              </div>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(task => {
+        return `
+          <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" onclick="openTaskDetail('${task.id}')">
+            <td class="py-3 px-4">
+              <div class="flex flex-col">
+                <span class="font-title-sm text-title-sm text-text-primary group-hover:text-primary transition-colors">${task.title}</span>
+                <span class="font-caption text-caption text-text-muted font-mono">${task.ref}</span>
+              </div>
+            </td>
+            <td class="py-3 px-4 whitespace-nowrap">
+              <span class="font-caption text-caption text-text-secondary">${task.type}</span>
+            </td>
+            <td class="py-3 px-4 whitespace-nowrap">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-bold text-[10px]">
+                  ${task.requester.split(' ').map(n=>n[0]).join('')}
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-body-sm text-body-sm font-medium text-text-primary">${task.requester}</span>
+                  <span class="font-caption text-caption text-text-muted text-[10px]">${task.requesterRole}</span>
+                </div>
+              </div>
+            </td>
+            <td class="py-3 px-4 text-right font-numeric-table font-semibold text-text-primary whitespace-nowrap">
+              ${formatCurrency(task.amount)}
+            </td>
+            <td class="py-3 px-4 whitespace-nowrap">
+              ${getFundBadge(task.fund)}
+            </td>
+            <td class="py-3 px-4 whitespace-nowrap">
+              <div class="flex flex-col">
+                <span class="font-caption text-caption font-semibold text-text-primary">${task.grant}</span>
+                <span class="font-caption text-caption text-text-muted text-[10px] font-mono">${task.grantCode}</span>
+              </div>
+            </td>
+            <td class="py-3 px-4 whitespace-nowrap font-caption text-caption text-text-muted">
+              ${task.submittedDate}
+            </td>
+            <td class="py-3 px-4 whitespace-nowrap">
+              <span class="font-body-sm text-body-sm ${task.status === 'Overdue' ? 'text-status-critical-text font-bold' : task.dueStatus === 'Due Today' ? 'text-status-warning-text font-semibold' : 'text-text-secondary'}">
+                ${task.dueDate}
+              </span>
+            </td>
+            <td class="py-3 px-4 whitespace-nowrap">
+              <span class="font-caption text-caption font-medium ${task.approver.includes('Ama') ? 'text-primary font-bold' : 'text-text-secondary'}">
+                ${task.approver}
+              </span>
+            </td>
+            <td class="py-3 px-4 whitespace-nowrap">
+              ${getStatusBadge(task.status)}
+            </td>
+            <td class="py-3 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+              <button onclick="openTaskDetail('${task.id}')" class="px-2.5 py-1 bg-surface-card hover:bg-primary-tint hover:text-primary text-text-primary border border-border-subtle rounded font-title-sm text-title-sm transition-colors inline-flex items-center gap-1 shadow-xs">
+                <span>View</span>
+                <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // Open Task Detail Workflow Drawer
+    function openTaskDetail(taskId) {
+      const task = currentTasks.find(t => t.id === taskId);
+      if (!task) return;
+      selectedTaskId = taskId;
+
+      document.getElementById("detailRefCode").textContent = task.ref;
+      document.getElementById("detailTaskTitle").textContent = task.title;
+      document.getElementById("detailTaskDescription").textContent = task.description;
+      document.getElementById("detailAmount").textContent = "GH¢ " + formatCurrency(task.amount);
+      document.getElementById("detailFund").textContent = task.fund + (task.fund === "Restricted" ? " (Earmarked)" : "");
+      document.getElementById("detailGrant").textContent = task.grantCode + " (" + task.grant + ")";
+      document.getElementById("detailCostCenter").textContent = task.costCenter;
+      document.getElementById("detailRequester").textContent = task.requester;
+      document.getElementById("detailSubmittedDate").textContent = task.submittedDate + ", 09:30 GMT";
+      document.getElementById("detailDueDate").textContent = task.dueDate + " (17:00 GMT)";
+      document.getElementById("detailApprover").textContent = task.approver;
+
+      const badge = document.getElementById("detailBadgeStatus");
+      badge.className = "px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold";
+      if (task.status === "Pending Approval") {
+        badge.classList.add("bg-status-warning-bg", "text-status-warning-text");
+        badge.textContent = "Pending Approval";
+      } else if (task.status === "Overdue") {
+        badge.classList.add("bg-status-critical-bg", "text-status-critical-text");
+        badge.textContent = "Overdue — SLA Breached";
+      } else if (task.status === "Approved" || task.status === "Completed") {
+        badge.classList.add("bg-status-success-bg", "text-status-success-text");
+        badge.textContent = task.status;
+      } else {
+        badge.classList.add("bg-surface-secondary", "text-text-secondary");
+        badge.textContent = task.status;
+      }
+
+      // Reset comment
+      document.getElementById("approverCommentInput").value = "";
+
+      // Show Modal Drawer
+      document.getElementById("taskDetailModal").classList.remove("hidden");
+    }
+
+    function closeTaskDetail() {
+      document.getElementById("taskDetailModal").classList.add("hidden");
+      selectedTaskId = null;
+    }
+
+    // Approve Action Handlers
+    document.getElementById("actionApproveBtn").addEventListener("click", () => {
+      if (!selectedTaskId) return;
+      const task = currentTasks.find(t => t.id === selectedTaskId);
+      if (task) {
+        task.status = "Approved";
+        task.dueStatus = "Completed";
+        showToast(`Request ${task.ref} approved successfully. Journal encumbrance posted.`);
+        updateCountsAndKPIs();
+        renderTasksTable();
+        closeTaskDetail();
+      }
+    });
+
+    document.getElementById("actionRejectBtn").addEventListener("click", () => {
+      if (!selectedTaskId) return;
+      const task = currentTasks.find(t => t.id === selectedTaskId);
+      if (task) {
+        task.status = "Rejected";
+        showToast(`Request ${task.ref} rejected. Notified requester.`, "critical");
+        updateCountsAndKPIs();
+        renderTasksTable();
+        closeTaskDetail();
+      }
+    });
+
+    document.getElementById("actionRequestChangesBtn").addEventListener("click", () => {
+      if (!selectedTaskId) return;
+      const task = currentTasks.find(t => t.id === selectedTaskId);
+      if (task) {
+        showToast(`Changes requested for ${task.ref}. Returned to draft.`, "warning");
+        task.status = "Pending Approval";
+        updateCountsAndKPIs();
+        renderTasksTable();
+        closeTaskDetail();
+      }
+    });
+
+    document.getElementById("actionDelegateBtn").addEventListener("click", () => {
+      if (!selectedTaskId) return;
+      const task = currentTasks.find(t => t.id === selectedTaskId);
+      if (task) {
+        task.approver = "Country Director";
+        showToast(`Request ${task.ref} delegated to Country Director.`, "warning");
+        updateCountsAndKPIs();
+        renderTasksTable();
+        closeTaskDetail();
+      }
+    });
+
+    // Close Modal Listeners
+    document.getElementById("closeDetailModalBtn").addEventListener("click", closeTaskDetail);
+    document.getElementById("closeDetailModalBtn2").addEventListener("click", closeTaskDetail);
+    document.getElementById("taskDetailModal").addEventListener("click", (e) => {
+      if (e.target === document.getElementById("taskDetailModal")) closeTaskDetail();
+    });
+
+    // Batch Approvals Modal Handlers
+    document.getElementById("headerBatchApproveBtn").addEventListener("click", () => {
+      const pendingItems = currentTasks.filter(t => t.status === "Pending Approval" && t.isMyTask);
+      document.getElementById("batchSelectedCountText").textContent = `${pendingItems.length} pending workflow items`;
+      document.getElementById("batchApprovalModal").classList.remove("hidden");
+    });
+
+    document.getElementById("cancelBatchBtn").addEventListener("click", () => {
+      document.getElementById("batchApprovalModal").classList.add("hidden");
+    });
+
+    document.getElementById("confirmBatchBtn").addEventListener("click", () => {
+      currentTasks.forEach(task => {
+        if (task.status === "Pending Approval" && task.isMyTask) {
+          task.status = "Approved";
+          task.dueStatus = "Completed";
+        }
+      });
+      document.getElementById("batchApprovalModal").classList.add("hidden");
+      showToast("Batch approvals executed successfully. 12 requests cleared.");
+      updateCountsAndKPIs();
+      renderTasksTable();
+    });
+
+    // Tab Switching Handlers
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach(b => {
+          b.classList.remove("border-primary", "text-primary");
+          b.classList.add("border-transparent", "text-text-secondary");
+        });
+        btn.classList.remove("border-transparent", "text-text-secondary");
+        btn.classList.add("border-primary", "text-primary");
+
+        activeTab = btn.dataset.tab;
+        renderTasksTable();
+      });
+    });
+
+    // Summary Card Click Filtering Handlers
+    document.getElementById("kpiPendingCard").addEventListener("click", () => {
+      document.querySelector('[data-tab="approvals"]').click();
+    });
+    document.getElementById("kpiOverdueCard").addEventListener("click", () => {
+      document.getElementById("filterStatus").value = "Overdue";
+      document.querySelector('[data-tab="all"]').click();
+      renderTasksTable();
+    });
+    document.getElementById("kpiDueTodayCard").addEventListener("click", () => {
+      document.getElementById("globalTaskSearch").value = "Today";
+      document.querySelector('[data-tab="all"]').click();
+      renderTasksTable();
+    });
+    document.getElementById("kpiCompletedCard").addEventListener("click", () => {
+      document.querySelector('[data-tab="completed"]').click();
+    });
+
+    // Search and Input Filter Listeners
+    document.getElementById("globalTaskSearch").addEventListener("input", renderTasksTable);
+    document.getElementById("filterType").addEventListener("change", renderTasksTable);
+    document.getElementById("filterStatus").addEventListener("change", renderTasksTable);
+    document.getElementById("filterFund").addEventListener("change", renderTasksTable);
+    document.getElementById("filterGrant").addEventListener("change", renderTasksTable);
+    document.getElementById("filterRequester").addEventListener("input", renderTasksTable);
+    document.getElementById("filterApprover").addEventListener("change", renderTasksTable);
+
+    function resetAllFilters() {
+      document.getElementById("globalTaskSearch").value = "";
+      document.getElementById("filterType").value = "";
+      document.getElementById("filterStatus").value = "";
+      document.getElementById("filterFund").value = "";
+      document.getElementById("filterGrant").value = "";
+      document.getElementById("filterRequester").value = "";
+      document.getElementById("filterApprover").value = "";
+      activeTab = "all";
+      document.querySelector('[data-tab="all"]').click();
+      renderTasksTable();
+    }
+
+    document.getElementById("clearFiltersBtn").addEventListener("click", resetAllFilters);
+
+    function clearFilterChip(type) {
+      if (type === 'status') {
+        document.getElementById("filterStatus").value = "";
+        document.getElementById("filterChipsContainer").style.display = "none";
+        renderTasksTable();
+      }
+    }
+
+    // Toggle Filter Drawer
+    document.getElementById("toggleFilterPanelBtn").addEventListener("click", () => {
+      const panel = document.getElementById("filterPanel");
+      panel.classList.toggle("hidden");
+    });
+
+    // Refresh Queue Action
+    document.getElementById("refreshBtn").addEventListener("click", () => {
+      showToast("Workflow queue refreshed. Latest sync: Just now.");
+      renderTasksTable();
+    });
+
+    // Export Audit Log Action
+    document.getElementById("exportAuditBtn").addEventListener("click", () => {
+      showToast("Exporting Workflow Audit Log CSV...");
+    });
+
+  </script>
+</body>
+</html>

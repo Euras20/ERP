@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "text-secondary": "#4E5D6A", "nav-surface": "#152431", "on-primary-container": "#a1e9f1", "on-surface-variant": "#3f484a", "nav-bg": "#0D1821", "on-primary-fixed": "#002022", "nav-border": "#1E3243", "primary-container": "#1b6b72", "secondary-container": "#d2e2f1", "surface-bright": "#f8fafb", "on-secondary-fixed": "#0e1d28", "error": "#ba1a1a", "outline": "#6f797a", "surface-container": "#eceeef", "tertiary-fixed": "#ffdea6", "secondary-fixed-dim": "#b9c8d8", "on-error-container": "#93000a", "surface-tint": "#16686f", "surface-container-lowest": "#ffffff", "secondary-fixed": "#d5e4f4", "on-tertiary": "#ffffff", "surface-container-highest": "#e1e3e4", "tertiary-fixed-dim": "#f7bd48", "nav-text-primary": "#F4F7F9", "on-error": "#ffffff", "primary-tint": "#E4EFEF", "text-muted": "#7B8C9A", "surface-card": "#FFFFFF", "inverse-on-surface": "#eff1f2", "surface": "#f8fafb", "status-success": "#0F6848", "status-warning": "#914D03", "error-container": "#ffdad6", "fund-unrestricted": "#1B6B72", "status-warning-bg": "#FEF3E6", "tertiary": "#614500", "surface-secondary": "#F0F4F6", "on-background": "#191c1d", "primary-hover": "#144F54", "on-tertiary-fixed": "#271900", "border-strong": "#B8C4CE", "nav-text-muted": "#8EA2B4", "on-primary-fixed-variant": "#004f55", "outline-variant": "#bec8c9", "primary": "#005258", "surface-tertiary": "#ECEFF2", "on-secondary": "#ffffff", "border-subtle": "#DCE3E8", "on-tertiary-container": "#ffd892", "fund-restricted-bg": "#FCF7E8", "fund-temp-restricted-bg": "#FEF8E7", "on-surface": "#191c1d", "primary-fixed-dim": "#8bd2da", "on-tertiary-fixed-variant": "#5d4200", "surface-container-high": "#e6e8e9", "surface-variant": "#e1e3e4", "status-critical-bg": "#FDF0F0", "on-primary": "#ffffff", "background": "#f8fafb", "inverse-surface": "#2e3132", "surface-container-low": "#f2f4f5", "status-critical": "#A81D24", "inverse-primary": "#8bd2da", "surface-dim": "#d8dadb", "secondary": "#51606d", "fund-temp-restricted": "#D99B00", "tertiary-container": "#7f5b00", "on-secondary-fixed-variant": "#3a4855", "fund-restricted": "#B8860B", "on-secondary-container": "#556472", "text-primary": "#121A21", "status-success-bg": "#E8F5EE", "primary-fixed": "#a7eef6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-2xl": "2rem", "gutter": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1rem", "gutter-dense": "0.5rem", "space-xl": "1.5rem", "space-xxs": "0.125rem", "space-md": "0.75rem", "margin": "1.5rem", "margin-compact": "1rem" }, "fontFamily": { "headline-md": ["IBM Plex Sans"], "numeric-table": ["IBM Plex Sans"], "body-sm": ["IBM Plex Sans"], "display-lg": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "label-md": ["IBM Plex Sans"], "title-md": ["IBM Plex Sans"], "title-sm": ["IBM Plex Sans"], "numeric-table-bold": ["IBM Plex Sans"], "label-sm": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "headline-sm": ["IBM Plex Sans"], "caption": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "title-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "600" }], "numeric-table-bold": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-text-primary antialiased">
+<aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+  <div id="appMain" class="pl-64 flex flex-col min-h-screen transition-all">
+    <header id="appHeader"
+      class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center"><span
+            class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span><!-- Update the search input element to include border-0 ring-0: -->
+<input
+  class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg border-0 outline-none ring-0 focus:outline-none focus:bg-surface-card transition-colors"
+  placeholder="Search transactions, grants, projects, vendors, staff..." type="text" /></div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span><span>FY 2025
+            (Q2 Closed)</span></div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary"><span
+            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS
+            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <div class="h-5 w-px bg-surface-secondary"></div><button
+          class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span
+            class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span></button><button
+          class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">help</span></button>
+        <div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" /><span
+            class="material-symbols-outlined text-text-muted text-[16px]"></span></div>
+      </div>
+    </header>
+    <main class="w-full pt-16 bg-surface min-h-screen">
+      <div class="max-w-[80rem] mx-auto p-space-xl">
+        <div class="flex flex-col w-full">
+          <div class="flex flex-col md:flex-row md:items-center justify-between pb-space-lg gap-space-md">
+            <div class="flex items-center gap-space-md">
+              <div class="w-10 h-10 rounded bg-primary-container/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-[24px]">notifications_active</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-space-sm">
+                  <h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Audit &amp;
+                    Notification Center</h1>
+                  <span
+                    class="px-space-xs py-0.5 rounded-full font-label-sm text-label-sm bg-status-critical text-on-error font-medium"
+                    id="unread-counter-badge">7 Unread</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Statutory fiduciary notifications,
+                  budget compliance alerts, and multi-tier approval dispatches</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-sm flex-wrap">
+              <button
+                class="h-9 px-space-md bg-surface-card hover:bg-surface-secondary text-text-primary rounded font-title-sm text-title-sm flex items-center gap-space-xs shadow-sm transition-all"
+                id="mark-all-read-btn" type="button">
+                <span class="material-symbols-outlined text-[18px] text-text-secondary">done_all</span>
+                <span>Mark all as read</span>
+              </button>
+              <button
+                class="h-9 px-space-md bg-surface-card hover:bg-surface-secondary text-text-primary rounded font-title-sm text-title-sm flex items-center gap-space-xs shadow-sm transition-all"
+                id="settings-btn" type="button">
+                <span class="material-symbols-outlined text-[18px] text-text-secondary">tune</span>
+                <span>Notification Rules</span>
+              </button>
+              <div class="h-9 w-px bg-surface-container-high hidden md:block"></div>
+              <div class="flex items-center bg-surface-secondary rounded px-space-sm py-1 gap-space-xs">
+                <span class="w-2 h-2 rounded-full bg-status-success"></span>
+                <span class="font-label-sm text-label-sm text-text-secondary">Webhook Listener: Synced</span>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-xl">
+            <div class="bg-surface-card rounded p-space-md shadow-sm flex items-center gap-space-md">
+              <div
+                class="w-9 h-9 rounded bg-status-critical-bg text-status-critical flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[20px]">warning</span>
+              </div>
+              <div class="min-w-0">
+                <div class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Immediate
+                  Action</div>
+                <div class="font-headline-sm text-headline-sm text-text-primary mt-0.5">3 Critical Items</div>
+              </div>
+            </div>
+            <div class="bg-surface-card rounded p-space-md shadow-sm flex items-center gap-space-md">
+              <div
+                class="w-9 h-9 rounded bg-fund-temp-restricted-bg text-fund-temp-restricted flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[20px]">gavel</span>
+              </div>
+              <div class="min-w-0">
+                <div class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Approval
+                  Backlog</div>
+                <div class="font-headline-sm text-headline-sm text-text-primary mt-0.5">4 Requisitions</div>
+              </div>
+            </div>
+            <div class="bg-surface-card rounded p-space-md shadow-sm flex items-center gap-space-md">
+              <div class="w-9 h-9 rounded bg-primary-tint text-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+              </div>
+              <div class="min-w-0">
+                <div class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Pending
+                  Exposure</div>
+                <div class="font-headline-sm text-headline-sm text-text-primary mt-0.5">GHS 158,950.00</div>
+              </div>
+            </div>
+            <div class="bg-surface-card rounded p-space-md shadow-sm flex items-center gap-space-md">
+              <div
+                class="w-9 h-9 rounded bg-status-success-bg text-status-success flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[20px]">verified_user</span>
+              </div>
+              <div class="min-w-0">
+                <div class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Statutory
+                  SLA Rate</div>
+                <div class="font-headline-sm text-headline-sm text-text-primary mt-0.5">98.4% On Schedule</div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-surface-card rounded shadow-sm flex flex-col mb-space-xl">
+            <div
+              class="p-space-md bg-surface-secondary/40 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+              <div class="relative flex-1 max-w-lg">
+                <span
+                  class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+                <input
+                  class="w-full pl-9 pr-space-md py-space-xs bg-surface-card rounded font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:bg-surface-card shadow-sm"
+                  id="search-input" placeholder="Search by voucher ID, grant name, actor, or amount..." type="text" />
+              </div>
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <div class="inline-flex rounded p-0.5 bg-surface-container">
+                  <button
+                    class="px-space-sm py-1 rounded font-label-sm text-label-sm bg-surface-card text-text-primary shadow-sm flex items-center gap-1"
+                    id="toggle-dense-btn" type="button">
+                    <span class="material-symbols-outlined text-[14px]">density_medium</span> Compact
+                  </button>
+                  <button
+                    class="px-space-sm py-1 rounded font-label-sm text-label-sm text-text-secondary hover:text-text-primary flex items-center gap-1"
+                    id="toggle-filter-btn" type="button">
+                    <span class="material-symbols-outlined text-[14px]">filter_list</span> Fast Filter
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="overflow-x-auto bg-surface-card">
+              <div class="flex items-center px-space-md py-space-xs min-w-max gap-space-xs">
+                <button
+                  class="filter-tab active-tab px-space-md py-space-xs rounded font-title-sm text-title-sm transition-colors flex items-center gap-space-xs bg-primary text-on-primary"
+                  data-category="all">
+                  <span>All</span>
+                  <span class="tab-count bg-white/20 px-1.5 py-0.2 rounded-full text-caption font-semibold">14</span>
+                </button>
+                <button
+                  class="filter-tab px-space-md py-space-xs rounded font-title-sm text-title-sm transition-colors flex items-center gap-space-xs text-text-secondary hover:bg-surface-secondary"
+                  data-category="unread">
+                  <span>Unread</span>
+                  <span
+                    class="tab-count bg-status-critical text-on-error px-1.5 py-0.2 rounded-full text-caption font-semibold">7</span>
+                </button>
+                <button
+                  class="filter-tab px-space-md py-space-xs rounded font-title-sm text-title-sm transition-colors flex items-center gap-space-xs text-text-secondary hover:bg-surface-secondary"
+                  data-category="mentions">
+                  <span>Mentions / Direct</span>
+                  <span
+                    class="tab-count bg-surface-secondary px-1.5 py-0.2 rounded-full text-caption font-semibold text-text-secondary">2</span>
+                </button>
+                <button
+                  class="filter-tab px-space-md py-space-xs rounded font-title-sm text-title-sm transition-colors flex items-center gap-space-xs text-text-secondary hover:bg-surface-secondary"
+                  data-category="approvals">
+                  <span>Approvals</span>
+                  <span
+                    class="tab-count bg-surface-secondary px-1.5 py-0.2 rounded-full text-caption font-semibold text-text-secondary">4</span>
+                </button>
+                <button
+                  class="filter-tab px-space-md py-space-xs rounded font-title-sm text-title-sm transition-colors flex items-center gap-space-xs text-text-secondary hover:bg-surface-secondary"
+                  data-category="finance">
+                  <span>Finance</span>
+                  <span
+                    class="tab-count bg-surface-secondary px-1.5 py-0.2 rounded-full text-caption font-semibold text-text-secondary">3</span>
+                </button>
+                <button
+                  class="filter-tab px-space-md py-space-xs rounded font-title-sm text-title-sm transition-colors flex items-center gap-space-xs text-text-secondary hover:bg-surface-secondary"
+                  data-category="grants">
+                  <span>Grants &amp; Projects</span>
+                  <span
+                    class="tab-count bg-surface-secondary px-1.5 py-0.2 rounded-full text-caption font-semibold text-text-secondary">2</span>
+                </button>
+                <button
+                  class="filter-tab px-space-md py-space-xs rounded font-title-sm text-title-sm transition-colors flex items-center gap-space-xs text-text-secondary hover:bg-surface-secondary"
+                  data-category="procurement">
+                  <span>Procurement</span>
+                  <span
+                    class="tab-count bg-surface-secondary px-1.5 py-0.2 rounded-full text-caption font-semibold text-text-secondary">2</span>
+                </button>
+                <button
+                  class="filter-tab px-space-md py-space-xs rounded font-title-sm text-title-sm transition-colors flex items-center gap-space-xs text-text-secondary hover:bg-surface-secondary"
+                  data-category="operations">
+                  <span>Operations</span>
+                  <span
+                    class="tab-count bg-surface-secondary px-1.5 py-0.2 rounded-full text-caption font-semibold text-text-secondary">1</span>
+                </button>
+                <button
+                  class="filter-tab px-space-md py-space-xs rounded font-title-sm text-title-sm transition-colors flex items-center gap-space-xs text-text-secondary hover:bg-surface-secondary"
+                  data-category="system">
+                  <span>System</span>
+                  <span
+                    class="tab-count bg-surface-secondary px-1.5 py-0.2 rounded-full text-caption font-semibold text-text-secondary">1</span>
+                </button>
+              </div>
+            </div>
+            <div class="divide-y divide-surface-container" id="notifications-container">
+              <div
+                class="group-header px-space-md py-space-xs bg-surface-secondary/60 flex items-center justify-between"
+                data-group="today">
+                <span
+                  class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider font-semibold">Today •
+                  17 October 2025</span>
+                <span class="font-caption text-caption text-text-muted">4 Notifications</span>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-bright hover:bg-primary-tint/25 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="approvals finance" data-id="ntf-01" data-unread="true"
+                onclick="openNotificationDetail('ntf-01')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-primary block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-status-critical-bg text-status-critical flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">priority_high</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-status-critical-bg text-status-critical font-medium">Action
+                        Required</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-medium">USAID
+                        Restricted Fund</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">INV-1048</span>
+                      <span class="font-caption text-caption text-text-muted">• 26m ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-semibold truncate">
+                      Emergency Field Cold-Chain Disbursement Awaiting CFO Approval</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">Disbursement
+                      requisition submitted by Ama Mensah requires dual-authorization before batch clearance cut-off at
+                      16:00 UTC.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1 font-semibold text-text-primary">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">payments</span> GHS
+                        68,000.00
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Initiated by:
+                        Ama Mensah (Field Accountant)
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">verified</span> Grant:
+                        USAID-GH-2024-ED09
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-primary hover:bg-primary-hover text-on-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('Approve Voucher INV-1048')" type="button">Authorize</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-01')" title="Mark as read" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-01')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-bright hover:bg-primary-tint/25 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="mentions finance" data-id="ntf-02" data-unread="true"
+                onclick="openNotificationDetail('ntf-02')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-primary block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-primary-tint text-primary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-primary-tint text-primary font-medium">Important</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-temp-restricted-bg text-fund-temp-restricted font-medium">Temp
+                        Restricted</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">REC-2025-06B</span>
+                      <span class="font-caption text-caption text-text-muted">• 1h 42m ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-semibold truncate">
+                      Sarah Mensah mentioned you in Bank Reconciliation Query</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">“@Kofi Mensah please
+                      confirm if the matching foreign exchange variance should be posted against GL-7710 or the hedging
+                      reserve.”</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1 font-semibold text-text-primary">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">account_balance</span> GHS
+                        18,450.00 (Variance)
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Sarah Mensah
+                        (Senior Internal Auditor)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('Reply to Sarah Mensah')" type="button">Reply in Thread</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-02')" title="Mark as read" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-02')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-bright hover:bg-primary-tint/25 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="procurement approvals" data-id="ntf-03" data-unread="true"
+                onclick="openNotificationDetail('ntf-03')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-primary block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-status-warning-bg text-status-warning flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">shopping_cart_checkout</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-status-warning-bg text-status-warning font-medium">Action
+                        Required</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-primary-tint text-primary font-medium">Unrestricted
+                        Fund</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">PR-00241</span>
+                      <span class="font-caption text-caption text-text-muted">• 3h ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-semibold truncate">
+                      Sole Source Justification for Solar Storage Array Installation</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">Procurement committee
+                      submission from Kwesi Appiah requires secondary authorization prior to vendor contracting.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1 font-semibold text-text-primary">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">payments</span> GHS
+                        72,500.00
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Kwesi Appiah
+                        (Procurement Lead)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-primary hover:bg-primary-hover text-on-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('Review PR-00241')" type="button">Review Waiver</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-03')" title="Mark as read" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-03')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-card hover:bg-surface-secondary/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="grants system" data-id="ntf-04" data-unread="false"
+                onclick="openNotificationDetail('ntf-04')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-transparent block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-surface-secondary text-text-secondary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">sync</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-text-secondary font-medium">Informational</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-medium">Global
+                        Fund</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">GF-MAL-2025</span>
+                      <span class="font-caption text-caption text-text-muted">• 5h ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-medium truncate">
+                      Automated Ledger Depreciation Schedule Processed (Run #409)</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">Asset register
+                      depreciation cycle for clinical equipment completed without unallocated discrepancies.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">memory</span> System Daemon
+                        (ERP Core)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('View Log #409')" type="button">View Log</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-04')" title="Mark as unread" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-04')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="group-header px-space-md py-space-xs bg-surface-secondary/60 flex items-center justify-between"
+                data-group="yesterday">
+                <span
+                  class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider font-semibold">Yesterday
+                  • 16 October 2025</span>
+                <span class="font-caption text-caption text-text-muted">4 Notifications</span>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-bright hover:bg-primary-tint/25 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="approvals finance" data-id="ntf-05" data-unread="true"
+                onclick="openNotificationDetail('ntf-05')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-primary block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-status-critical-bg text-status-critical flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">assignment_late</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-status-critical-bg text-status-critical font-medium">Action
+                        Required</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-medium">EU
+                        Climate</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">PAY-00821</span>
+                      <span class="font-caption text-caption text-text-muted">• 1d ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-semibold truncate">
+                      Payroll Withholding Tax Reclassification (GRA Compliance)</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">Statutory remittance
+                      voucher ready for sign-off prior to Ghana Revenue Authority midnight filing window.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1 font-semibold text-text-primary">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">payments</span> GHS
+                        41,200.00
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Dr. Emmanuel
+                        Osei (Director of Operations)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-primary hover:bg-primary-hover text-on-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('Approve Tax Voucher PAY-00821')" type="button">Sign &amp; Post</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-05')" title="Mark as read" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-05')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-bright hover:bg-primary-tint/25 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="grants" data-id="ntf-06" data-unread="true" onclick="openNotificationDetail('ntf-06')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-primary block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-primary-tint text-primary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">pie_chart</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-primary-tint text-primary font-medium">Important</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-temp-restricted-bg text-fund-temp-restricted font-medium">USAID
+                        Grant</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">ACT-TM-084</span>
+                      <span class="font-caption text-caption text-text-muted">• 1d 4h ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-semibold truncate">
+                      Quarterly Burn-Rate Threshold Warning: Project Alpha-North</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">Budget actuals have
+                      exceeded 85% of Q2 threshold with 14 operating days remaining in period.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Ama Mensah
+                        (Field Operations)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('View Variance Report ACT-TM-084')" type="button">View Variance</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-06')" title="Mark as read" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-06')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-card hover:bg-surface-secondary/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="procurement" data-id="ntf-07" data-unread="false"
+                onclick="openNotificationDetail('ntf-07')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-transparent block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-surface-secondary text-text-secondary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">local_shipping</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-text-secondary font-medium">Informational</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-primary-tint text-primary font-medium">Unrestricted</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">PO-1192</span>
+                      <span class="font-caption text-caption text-text-muted">• 1d 8h ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-medium truncate">
+                      Goods Receipt Note Confirmed: Tamale Field Office IT Supplies</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">Physical inspection
+                      verified and assets mapped to regional field inventory registry.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1 font-semibold text-text-primary">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">payments</span> GHS
+                        24,100.00
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Kwesi Appiah
+                        (Procurement Lead)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('Inspect GRN PO-1192')" type="button">Inspect GRN</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-07')" title="Mark as unread" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-07')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-card hover:bg-surface-secondary/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="operations" data-id="ntf-08" data-unread="false"
+                onclick="openNotificationDetail('ntf-08')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-transparent block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-status-success-bg text-status-success flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-medium">Informational</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-medium">Internal
+                        Core</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">SEC-AUD-09</span>
+                      <span class="font-caption text-caption text-text-muted">• 1d 11h ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-medium truncate">
+                      Mandatory Bi-Annual Access Control Certification Completed</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">Segregation of duties
+                      matrix verified for all general ledger voucher posting authorizers.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Dr. Emmanuel
+                        Osei (Director of Operations)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('Download Audit Certificate')" type="button">View Certificate</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-08')" title="Mark as unread" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-08')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="group-header px-space-md py-space-xs bg-surface-secondary/60 flex items-center justify-between"
+                data-group="earlier">
+                <span
+                  class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider font-semibold">Earlier
+                  This Week • 14 – 15 October 2025</span>
+                <span class="font-caption text-caption text-text-muted">3 Notifications</span>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-bright hover:bg-primary-tint/25 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="approvals finance" data-id="ntf-09" data-unread="true"
+                onclick="openNotificationDetail('ntf-09')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-primary block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-status-warning-bg text-status-warning flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">rule_folder</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-status-warning-bg text-status-warning font-medium">Action
+                        Required</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-medium">EU
+                        Climate</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">POL-APP-004</span>
+                      <span class="font-caption text-caption text-text-muted">• 2d ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-semibold truncate">
+                      Sub-Grantee Milestone Verification: Volta Basin Restoration Phase 2</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">Interim progress
+                      certifier requires Comptroller counter-signature before release of second tranche fund transfer.
+                    </p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1 font-semibold text-text-primary">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">payments</span> GHS
+                        52,000.00
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Sarah Mensah
+                        (Auditor)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-primary hover:bg-primary-hover text-on-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('Counter-sign POL-APP-004')" type="button">Verify &amp; Sign</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-09')" title="Mark as read" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-09')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-bright hover:bg-primary-tint/25 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="mentions" data-id="ntf-10" data-unread="true" onclick="openNotificationDetail('ntf-10')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-primary block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-primary-tint text-primary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-primary-tint text-primary font-medium">Important</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-temp-restricted-bg text-fund-temp-restricted font-medium">Global
+                        Fund</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">AUD-TASK-12</span>
+                      <span class="font-caption text-caption text-text-muted">• 3d ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-semibold truncate">
+                      Dr. Emmanuel Osei tagged you in External Auditor Data Pack</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">“@Kofi Mensah please
+                      confirm the closing balances for Q1 before PwC accesses the vault tomorrow morning.”</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Dr. Emmanuel
+                        Osei (Director of Operations)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('Open Audit Vault Pack')" type="button">Open Vault</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-10')" title="Mark as read" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-10')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-card hover:bg-surface-secondary/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="finance" data-id="ntf-11" data-unread="false" onclick="openNotificationDetail('ntf-11')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-transparent block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-surface-secondary text-text-secondary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-text-secondary font-medium">Informational</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-primary-tint text-primary font-medium">Unrestricted</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">FX-UPDATE</span>
+                      <span class="font-caption text-caption text-text-muted">• 3d ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-medium truncate">
+                      Bank of Ghana Official Mid-Rate Table Synchronized</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">FX rate book updated:
+                      USD/GHS mid-rate set to 15.65. Multi-currency transaction repricing executed.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">memory</span> System Daemon
+                        (FX Sync)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('View FX Table')" type="button">View FX Table</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-11')" title="Mark as unread" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-11')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="group-header px-space-md py-space-xs bg-surface-secondary/60 flex items-center justify-between"
+                data-group="older">
+                <span
+                  class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider font-semibold">Older •
+                  Prior Fiscal Weeks</span>
+                <span class="font-caption text-caption text-text-muted">3 Notifications</span>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-card hover:bg-surface-secondary/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="grants" data-id="ntf-12" data-unread="false" onclick="openNotificationDetail('ntf-12')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-transparent block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-surface-secondary text-text-secondary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-text-secondary font-medium">Informational</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-medium">USAID
+                        Grant</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">USAID-GH-2024</span>
+                      <span class="font-caption text-caption text-text-muted">• 8d ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-medium truncate">
+                      Grant Milestone Certificate Formally Accepted by Donor</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">USAID technical lead
+                      sign-off confirmed. Next disbursement tranche scheduled for release on November 1.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Ama Mensah
+                        (Field Operations)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('View Grant Dashboard')" type="button">View Grant</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-12')" title="Mark as unread" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-12')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-card hover:bg-surface-secondary/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="system" data-id="ntf-13" data-unread="false" onclick="openNotificationDetail('ntf-13')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-transparent block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-surface-secondary text-text-secondary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">cloud_done</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-text-secondary font-medium">Informational</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-primary-tint text-primary font-medium">Core
+                        System</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">SYS-BAK-10</span>
+                      <span class="font-caption text-caption text-text-muted">• 11d ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-medium truncate">
+                      Immutable Cold Ledger Backup Verified: AWS Cape Town Archive</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">SHA-256 integrity hash
+                      verification successfully matched off-site cold vault storage replica.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">memory</span> System Daemon
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('View SHA Hash')" type="button">View Hash</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-13')" title="Mark as unread" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-13')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="notification-row group p-space-md bg-surface-card hover:bg-surface-secondary/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer relative"
+                data-category="approvals finance" data-id="ntf-14" data-unread="false"
+                onclick="openNotificationDetail('ntf-14')">
+                <div class="flex items-start gap-space-md min-w-0 flex-1">
+                  <div class="pt-1">
+                    <span class="w-2 h-2 rounded-full bg-transparent block unread-pip"></span>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded bg-status-success-bg text-status-success flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">done_all</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-space-xs flex-wrap mb-1">
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-status-success-bg text-status-success font-medium">Informational</span>
+                      <span
+                        class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-medium">Global
+                        Fund</span>
+                      <span class="font-caption text-caption text-text-muted font-mono">DISB-0881</span>
+                      <span class="font-caption text-caption text-text-muted">• 14d ago</span>
+                    </div>
+                    <h2
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors font-medium truncate">
+                      Quarterly Vendor Retainers Released to Direct Bank Clearing</h2>
+                    <p class="font-body-sm text-body-sm text-text-secondary line-clamp-1 mt-0.5">Automated clearing
+                      house (ACH) batch completed for all vetted healthcare logistics providers.</p>
+                    <div
+                      class="flex items-center gap-space-md mt-space-xs text-text-secondary font-body-sm text-body-sm">
+                      <span class="flex items-center gap-1 font-semibold text-text-primary">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">payments</span> GHS
+                        118,500.00
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-text-muted">person</span> Ama Mensah
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs self-end md:self-center" onclick="event.stopPropagation()">
+                  <button
+                    class="h-8 px-space-md bg-surface-secondary hover:bg-surface-tertiary text-text-primary rounded font-label-md text-label-md transition-colors shadow-sm"
+                    onclick="triggerAction('View ACH Batch')" type="button">View ACH</button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="toggleReadState(this, 'ntf-14')" title="Mark as unread" type="button">
+                    <span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+                  </button>
+                  <button
+                    class="h-8 w-8 rounded bg-surface hover:bg-surface-secondary text-text-secondary flex items-center justify-center transition-colors"
+                    onclick="dismissRow('ntf-14')" title="Dismiss" type="button">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="hidden p-space-2xl text-center flex flex-col items-center justify-center" id="empty-state">
+              <div
+                class="w-14 h-14 rounded-full bg-surface-secondary flex items-center justify-center text-text-muted mb-space-md">
+                <span class="material-symbols-outlined text-[32px]">drafts</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">No notifications match this
+                filter</h3>
+              <p class="font-body-sm text-body-sm text-text-secondary max-w-sm mt-space-xs mb-space-md">There are no
+                notifications matching your current filter selections or search keywords in the active fiscal period.
+              </p>
+              <button
+                class="h-9 px-space-md bg-primary text-on-primary rounded font-title-sm text-title-sm flex items-center gap-space-xs"
+                onclick="resetFilters()" type="button">
+                <span class="material-symbols-outlined text-[18px]">refresh</span>
+                <span>Clear All Filters</span>
+              </button>
+            </div>
+          </div>
+          <div class="fixed inset-0 bg-nav-bg/50 backdrop-blur-sm z-50 hidden transition-opacity opacity-0"
+            id="drawer-backdrop" onclick="closeNotificationDetail()"></div>
+          <aside
+            class="fixed right-0 top-0 bottom-0 w-full max-w-lg bg-surface-card z-50 shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out"
+            id="detail-drawer">
+            <div class="h-16 px-space-lg bg-surface-secondary/80 flex items-center justify-between">
+              <div class="flex items-center gap-space-sm">
+                <div class="w-8 h-8 rounded bg-status-critical-bg text-status-critical flex items-center justify-center"
+                  id="drawer-icon-wrap">
+                  <span class="material-symbols-outlined text-[18px]" id="drawer-icon">priority_high</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-mono text-label-sm text-text-muted" id="drawer-entity-id">INV-1048</span>
+                  <span class="font-title-sm text-title-sm text-text-primary">Fiduciary Audit Event Record</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-space-xs">
+                <button class="p-1.5 rounded hover:bg-surface text-text-secondary" id="drawer-toggle-read"
+                  onclick="drawerToggleRead()" title="Toggle read status" type="button">
+                  <span class="material-symbols-outlined text-[20px]">mark_email_read</span>
+                </button>
+                <button class="p-1.5 rounded hover:bg-surface text-text-secondary" onclick="closeNotificationDetail()"
+                  title="Close drawer" type="button">
+                  <span class="material-symbols-outlined text-[20px]">close</span>
+                </button>
+              </div>
+            </div>
+            <div class="flex-1 overflow-y-auto p-space-lg space-y-space-lg">
+              <div>
+                <div class="flex items-center gap-space-xs mb-space-xs">
+                  <span
+                    class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-status-critical-bg text-status-critical font-medium"
+                    id="drawer-priority">Action Required</span>
+                  <span
+                    class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-fund-restricted-bg text-fund-restricted font-medium"
+                    id="drawer-fund-tag">USAID Restricted Fund</span>
+                </div>
+                <h2 class="font-headline-sm text-headline-sm text-text-primary font-semibold" id="drawer-title">
+                  Emergency Field Cold-Chain Disbursement Awaiting CFO Approval</h2>
+                <p class="font-body-md text-body-md text-text-secondary mt-space-xs" id="drawer-desc">Disbursement
+                  requisition submitted by Ama Mensah requires dual-authorization before batch clearance cut-off at
+                  16:00 UTC today. Unrestricted clearing balances will be quarantined until verified.</p>
+              </div>
+              <div class="bg-surface-secondary/70 rounded p-space-md space-y-space-sm">
+                <div class="flex items-center justify-between text-body-sm">
+                  <span class="text-text-muted">Fiduciary Amount:</span>
+                  <span class="font-semibold text-text-primary font-numeric-table-bold text-base" id="drawer-amount">GHS
+                    68,000.00</span>
+                </div>
+                <div class="flex items-center justify-between text-body-sm">
+                  <span class="text-text-muted">Target General Ledger:</span>
+                  <span class="font-mono text-text-primary text-body-sm" id="drawer-ledger">GL-4010-09 (Cold Chain
+                    Log)</span>
+                </div>
+                <div class="flex items-center justify-between text-body-sm">
+                  <span class="text-text-muted">Grant ID:</span>
+                  <span class="text-text-primary font-medium" id="drawer-grant-code">USAID-GH-2024-ED09</span>
+                </div>
+                <div class="flex items-center justify-between text-body-sm">
+                  <span class="text-text-muted">Originating Hub:</span>
+                  <span class="text-text-primary">Accra Operational Directorate</span>
+                </div>
+                <div class="flex items-center justify-between text-body-sm">
+                  <span class="text-text-muted">Audit Hash:</span>
+                  <span class="font-mono text-caption text-text-muted">d91b…84f2c0</span>
+                </div>
+              </div>
+              <div>
+                <h4
+                  class="font-label-md text-label-md text-text-muted uppercase tracking-wider font-semibold mb-space-sm">
+                  Authorizing Actor</h4>
+                <div class="flex items-center gap-space-md bg-surface-card rounded p-space-sm shadow-sm">
+                  <div
+                    class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-semibold text-title-sm">
+                    <span id="drawer-actor-avatar">AM</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="font-title-sm text-title-sm text-text-primary" id="drawer-actor-name">Ama Mensah</div>
+                    <div class="font-caption text-caption text-text-muted" id="drawer-actor-role">Field Accounting Lead
+                      • Tamale Hub</div>
+                  </div>
+                  <a class="text-primary hover:text-primary-hover p-1" href="#" title="View Profile">
+                    <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <h4
+                  class="font-label-md text-label-md text-text-muted uppercase tracking-wider font-semibold mb-space-sm">
+                  Workflow Timeline</h4>
+                <div class="space-y-space-sm pl-2">
+                  <div class="flex gap-space-sm items-start">
+                    <div class="flex flex-col items-center">
+                      <span class="w-2.5 h-2.5 rounded-full bg-status-success mt-1.5"></span>
+                      <span class="w-0.5 h-10 bg-surface-container-high my-0.5"></span>
+                    </div>
+                    <div class="min-w-0 flex-1 pb-2">
+                      <div class="font-title-sm text-title-sm text-text-primary">Disbursement Requested</div>
+                      <div class="font-caption text-caption text-text-muted">Today at 08:34 AM • Voucher created &amp;
+                        supporting invoices attached</div>
+                    </div>
+                  </div>
+                  <div class="flex gap-space-sm items-start">
+                    <div class="flex flex-col items-center">
+                      <span class="w-2.5 h-2.5 rounded-full bg-status-success mt-1.5"></span>
+                      <span class="w-0.5 h-10 bg-surface-container-high my-0.5"></span>
+                    </div>
+                    <div class="min-w-0 flex-1 pb-2">
+                      <div class="font-title-sm text-title-sm text-text-primary">Donor Budget Line Validation</div>
+                      <div class="font-caption text-caption text-text-muted">Today at 08:36 AM • Automated rule check
+                        passed against USAID alloc.</div>
+                    </div>
+                  </div>
+                  <div class="flex gap-space-sm items-start">
+                    <div class="flex flex-col items-center">
+                      <span class="w-2.5 h-2.5 rounded-full bg-status-critical mt-1.5"></span>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <div class="font-title-sm text-title-sm text-status-critical font-medium">Pending Level-3
+                        Authorization (You)</div>
+                      <div class="font-caption text-caption text-text-muted">Awaiting Comptroller digital certificate
+                        signature</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-surface-secondary/40 rounded p-space-md">
+                <h4
+                  class="font-label-md text-label-md text-text-muted uppercase tracking-wider font-semibold mb-space-xs">
+                  Associated Vouchers &amp; Docs</h4>
+                <div class="flex flex-col gap-space-xs">
+                  <a class="flex items-center justify-between p-space-xs rounded bg-surface-card hover:bg-surface-tertiary transition-colors text-text-primary font-body-sm shadow-sm"
+                    href="#">
+                    <div class="flex items-center gap-space-xs">
+                      <span class="material-symbols-outlined text-primary text-[18px]">receipt</span>
+                      <span class="font-mono">INV-1048-ColdChain-Signed.pdf</span>
+                    </div>
+                    <span class="material-symbols-outlined text-text-muted text-[16px]">download</span>
+                  </a>
+                  <a class="flex items-center justify-between p-space-xs rounded bg-surface-card hover:bg-surface-tertiary transition-colors text-text-primary font-body-sm shadow-sm"
+                    href="#">
+                    <div class="flex items-center gap-space-xs">
+                      <span class="material-symbols-outlined text-primary text-[18px]">contract</span>
+                      <span class="font-mono">Donor-Grant-Pact-ED09.pdf</span>
+                    </div>
+                    <span class="material-symbols-outlined text-text-muted text-[16px]">download</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="p-space-md bg-surface-secondary/90 flex items-center justify-between gap-space-sm">
+              <button
+                class="flex-1 h-10 px-space-md bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm flex items-center justify-center gap-space-xs shadow-sm transition-colors"
+                id="drawer-action-btn" onclick="executeDrawerAction()" type="button">
+                <span class="material-symbols-outlined text-[18px]">task_alt</span>
+                <span id="drawer-action-text">Authorize &amp; Post</span>
+              </button>
+              <button
+                class="h-10 px-space-md bg-surface-card hover:bg-surface-secondary text-text-primary rounded font-title-sm text-title-sm transition-colors shadow-sm"
+                onclick="closeNotificationDetail()" type="button">
+                Close
+              </button>
+            </div>
+          </aside>
+          <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-space-xs pointer-events-none" id="toast-container">
+          </div>
+        </div>
+
+         <!-- ===== Finance & Accounting dropdown ===== -->
+<!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+        <script>
+          const notificationDetails = {
+            'ntf-01': {
+              entity: 'INV-1048',
+              title: 'Emergency Field Cold-Chain Disbursement Awaiting CFO Approval',
+              desc: 'Disbursement requisition submitted by Ama Mensah requires dual-authorization before batch clearance cut-off at 16:00 UTC today. Unrestricted clearing balances will be quarantined until verified.',
+              amount: 'GHS 68,000.00',
+              grant: 'USAID-GH-2024-ED09',
+              fundType: 'USAID Restricted Fund',
+              priority: 'Action Required',
+              priorityColor: 'status-critical',
+              actorName: 'Ama Mensah',
+              actorInitials: 'AM',
+              actorRole: 'Field Accounting Lead • Tamale Hub',
+              ledger: 'GL-4010-09 (Cold Chain Log)',
+              actionText: 'Authorize & Post'
+            },
+            'ntf-02': {
+              entity: 'REC-2025-06B',
+              title: 'Sarah Mensah mentioned you in Bank Reconciliation Query',
+              desc: 'Foreign exchange variance identified during matching of standard chartered clearing ledger. Requires Comptroller guidance before final close of period reconciliations.',
+              amount: 'GHS 18,450.00',
+              grant: 'Unrestricted Reserves',
+              fundType: 'Temp Restricted',
+              priority: 'Important',
+              priorityColor: 'primary',
+              actorName: 'Sarah Mensah',
+              actorInitials: 'SM',
+              actorRole: 'Senior Internal Auditor • Accra HQ',
+              ledger: 'GL-7710 (Forex Realization Res)',
+              actionText: 'Post Direct Response'
+            },
+            'ntf-03': {
+              entity: 'PR-00241',
+              title: 'Sole Source Justification for Solar Storage Array Installation',
+              desc: 'Procurement committee exception submitted by Kwesi Appiah for micro-grid storage at Keta regional health clinic. Dual audit signoff needed.',
+              amount: 'GHS 72,500.00',
+              grant: 'Global Fund Health Resilience',
+              fundType: 'Unrestricted Fund',
+              priority: 'Action Required',
+              priorityColor: 'status-warning',
+              actorName: 'Kwesi Appiah',
+              actorInitials: 'KA',
+              actorRole: 'Procurement Director',
+              ledger: 'GL-1820 (Capital Works WIP)',
+              actionText: 'Approve Sole Source'
+            },
+            'ntf-04': {
+              entity: 'GF-MAL-2025',
+              title: 'Automated Ledger Depreciation Schedule Processed (Run #409)',
+              desc: 'System executed standard straight-line asset depreciation run for clinical hardware across 6 health centers.',
+              amount: 'GHS 12,380.00',
+              grant: 'Global Fund GF-MAL-2025',
+              fundType: 'Global Fund',
+              priority: 'Informational',
+              priorityColor: 'text-secondary',
+              actorName: 'System Daemon',
+              actorInitials: 'SYS',
+              actorRole: 'Automated Job Runner',
+              ledger: 'GL-1900 (Accumulated Depr)',
+              actionText: 'View Audit Log'
+            },
+            'ntf-05': {
+              entity: 'PAY-00821',
+              title: 'Payroll Withholding Tax Reclassification (GRA Compliance)',
+              desc: 'Monthly statutory remittance voucher prepared for filing. Confirmation required to release tax withheld from Tamale sub-office staff.',
+              amount: 'GHS 41,200.00',
+              grant: 'EU Climate Sub-Grant',
+              fundType: 'EU Climate',
+              priority: 'Action Required',
+              priorityColor: 'status-critical',
+              actorName: 'Dr. Emmanuel Osei',
+              actorInitials: 'EO',
+              actorRole: 'Director of Operations',
+              ledger: 'GL-2110 (GRA Statutory Taxes)',
+              actionText: 'Sign & Authorize'
+            },
+            'ntf-06': {
+              entity: 'ACT-TM-084',
+              title: 'Quarterly Burn-Rate Threshold Warning: Project Alpha-North',
+              desc: 'Budget versus actual automated analysis detected spending acceleration exceeding 85% of quarterly allocation.',
+              amount: 'GHS 31,400.00 Remaining',
+              grant: 'USAID-GH-2024-ED09',
+              fundType: 'USAID Grant',
+              priority: 'Important',
+              priorityColor: 'primary',
+              actorName: 'Ama Mensah',
+              actorInitials: 'AM',
+              actorRole: 'Field Operations Lead',
+              ledger: 'GL-5300 (Grant Program Outlay)',
+              actionText: 'View Budget Analysis'
+            },
+            'ntf-07': {
+              entity: 'PO-1192',
+              title: 'Goods Receipt Note Confirmed: Tamale Field Office IT Supplies',
+              desc: 'Physical receipt and barcode labeling completed for 18 rugged laptops and satellite communicators.',
+              amount: 'GHS 24,100.00',
+              grant: 'Internal Institutional Fund',
+              fundType: 'Unrestricted',
+              priority: 'Informational',
+              priorityColor: 'text-secondary',
+              actorName: 'Kwesi Appiah',
+              actorInitials: 'KA',
+              actorRole: 'Procurement Director',
+              ledger: 'GL-1740 (Computer Equip Registry)',
+              actionText: 'Open Asset Ledger'
+            },
+            'ntf-08': {
+              entity: 'SEC-AUD-09',
+              title: 'Mandatory Bi-Annual Access Control Certification Completed',
+              desc: 'Quarterly audit matrix checks confirm strict segregation of duties between payment requesters and authorizers.',
+              amount: 'N/A (Compliance)',
+              grant: 'Statutory Core Framework',
+              fundType: 'Internal Core',
+              priority: 'Informational',
+              priorityColor: 'status-success',
+              actorName: 'Dr. Emmanuel Osei',
+              actorInitials: 'EO',
+              actorRole: 'Director of Operations',
+              ledger: 'Audit Log Chain v4',
+              actionText: 'Download Certificate'
+            },
+            'ntf-09': {
+              entity: 'POL-APP-004',
+              title: 'Sub-Grantee Milestone Verification: Volta Basin Restoration Phase 2',
+              desc: 'Field verification team submitted photographic evidence and water quality monitoring reports for Phase 2 signoff.',
+              amount: 'GHS 52,000.00',
+              grant: 'EU Climate Framework 2024',
+              fundType: 'EU Climate',
+              priority: 'Action Required',
+              priorityColor: 'status-warning',
+              actorName: 'Sarah Mensah',
+              actorInitials: 'SM',
+              actorRole: 'Auditor',
+              ledger: 'GL-5820 (Sub-grantee Escrow)',
+              actionText: 'Verify & Release'
+            },
+            'ntf-10': {
+              entity: 'AUD-TASK-12',
+              title: 'Dr. Emmanuel Osei tagged you in External Auditor Data Pack',
+              desc: 'Financial period closing files requested by independent external auditor PwC for annual institutional evaluation.',
+              amount: 'Comprehensive FY Review',
+              grant: 'Institutional Multi-donor',
+              fundType: 'Global Fund',
+              priority: 'Important',
+              priorityColor: 'primary',
+              actorName: 'Dr. Emmanuel Osei',
+              actorInitials: 'EO',
+              actorRole: 'Director of Operations',
+              ledger: 'All Segment Accounts',
+              actionText: 'Open Audit Portal'
+            },
+            'ntf-11': {
+              entity: 'FX-UPDATE',
+              title: 'Bank of Ghana Official Mid-Rate Table Synchronized',
+              desc: 'Automated ingestion of central bank daily forex table for dual-currency reporting and conversion revaluation.',
+              amount: '1 USD = 15.65 GHS',
+              grant: 'Treasury Framework',
+              fundType: 'Unrestricted',
+              priority: 'Informational',
+              priorityColor: 'text-secondary',
+              actorName: 'System Daemon',
+              actorInitials: 'SYS',
+              actorRole: 'Automated Job Runner',
+              ledger: 'GL-1010 (Forex Cash Clearing)',
+              actionText: 'Review Rates'
+            },
+            'ntf-12': {
+              entity: 'USAID-GH-2024',
+              title: 'Grant Milestone Certificate Formally Accepted by Donor',
+              desc: 'Formal validation letter from USAID Regional Contracting Officer received and archived.',
+              amount: 'GHS 480,000 Tranche Allocation',
+              grant: 'USAID-GH-2024-ED09',
+              fundType: 'USAID Grant',
+              priority: 'Informational',
+              priorityColor: 'text-secondary',
+              actorName: 'Ama Mensah',
+              actorInitials: 'AM',
+              actorRole: 'Field Operations Lead',
+              ledger: 'GL-3100 (Restricted Contrib)',
+              actionText: 'View Grant Dashboard'
+            },
+            'ntf-13': {
+              entity: 'SYS-BAK-10',
+              title: 'Immutable Cold Ledger Backup Verified: AWS Cape Town Archive',
+              desc: 'Zero-knowledge verification of cryptographic audit logs confirmed against AWS S3 glacier vault lock.',
+              amount: 'N/A',
+              grant: 'Core Infrastructure',
+              fundType: 'Core System',
+              priority: 'Informational',
+              priorityColor: 'text-secondary',
+              actorName: 'System Daemon',
+              actorInitials: 'SYS',
+              actorRole: 'Infra Automation',
+              ledger: 'S3-GLACIER-VAULT-AFRICA',
+              actionText: 'View Verification Hash'
+            },
+            'ntf-14': {
+              entity: 'DISB-0881',
+              title: 'Quarterly Vendor Retainers Released to Direct Bank Clearing',
+              desc: 'Final bulk ACH clearance processed via Bank of Ghana automated clearing house for field logistics vendors.',
+              amount: 'GHS 118,500.00',
+              grant: 'Global Fund Health Resilience',
+              fundType: 'Global Fund',
+              priority: 'Informational',
+              priorityColor: 'status-success',
+              actorName: 'Ama Mensah',
+              actorInitials: 'AM',
+              actorRole: 'Field Operations Lead',
+              ledger: 'GL-2010 (Vendor Payables)',
+              actionText: 'View Clearing Batch'
+            }
+          };
+
+          let activeNotificationId = null;
+          let currentFilter = 'all';
+
+          function updateUnreadCount() {
+            const unreadRows = document.querySelectorAll('.notification-row[data-unread="true"]');
+            const count = unreadRows.length;
+            const badge = document.getElementById('unread-counter-badge');
+            const unreadTabBadge = document.querySelector('.filter-tab[data-category="unread"] .tab-count');
+
+            if (badge) {
+              if (count > 0) {
+                badge.textContent = `${count} Unread`;
+                badge.classList.remove('hidden');
+              } else {
+                badge.textContent = '0 Unread';
+                badge.classList.add('opacity-70');
+              }
+            }
+            if (unreadTabBadge) {
+              unreadTabBadge.textContent = count;
+            }
+          }
+
+          function showToast(message, icon = 'check_circle') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'pointer-events-auto flex items-center gap-space-sm bg-nav-bg text-nav-text-primary px-space-md py-space-sm rounded shadow-xl border-l-4 border-primary transition-all duration-300 transform translate-y-2 opacity-0 font-body-sm';
+            toast.innerHTML = `
+      <span class="material-symbols-outlined text-primary-fixed text-[18px]">${icon}</span>
+      <span>${message}</span>
+    `;
+            container.appendChild(toast);
+            setTimeout(() => {
+              toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+            setTimeout(() => {
+              toast.classList.add('opacity-0', 'translate-x-4');
+              setTimeout(() => toast.remove(), 300);
+            }, 3200);
+          }
+
+          function toggleReadState(button, id) {
+            const row = document.querySelector(`.notification-row[data-id="${id}"]`);
+            if (!row) return;
+            const isCurrentlyUnread = row.getAttribute('data-unread') === 'true';
+            const newUnreadState = !isCurrentlyUnread;
+            setRowReadState(row, newUnreadState);
+            showToast(newUnreadState ? 'Marked as unread' : 'Notification marked as read', newUnreadState ? 'mark_email_unread' : 'mark_email_read');
+            applyFilters();
+          }
+
+          function setRowReadState(row, isUnread) {
+            row.setAttribute('data-unread', isUnread ? 'true' : 'false');
+            const pip = row.querySelector('.unread-pip');
+            const title = row.querySelector('h2');
+            const readToggleBtn = row.querySelector('button[title*="read"]');
+
+            if (isUnread) {
+              row.classList.add('bg-surface-bright');
+              row.classList.remove('bg-surface-card');
+              if (pip) {
+                pip.classList.add('bg-primary');
+                pip.classList.remove('bg-transparent');
+              }
+              if (title) {
+                title.classList.add('font-semibold');
+                title.classList.remove('font-medium');
+              }
+              if (readToggleBtn) {
+                readToggleBtn.title = 'Mark as read';
+                readToggleBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">mark_email_read</span>';
+              }
+            } else {
+              row.classList.remove('bg-surface-bright');
+              row.classList.add('bg-surface-card');
+              if (pip) {
+                pip.classList.remove('bg-primary');
+                pip.classList.add('bg-transparent');
+              }
+              if (title) {
+                title.classList.remove('font-semibold');
+                title.classList.add('font-medium');
+              }
+              if (readToggleBtn) {
+                readToggleBtn.title = 'Mark as unread';
+                readToggleBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>';
+              }
+            }
+            updateUnreadCount();
+          }
+
+          function dismissRow(id) {
+            const row = document.querySelector(`.notification-row[data-id="${id}"]`);
+            if (row) {
+              row.style.opacity = '0';
+              row.style.transform = 'translateX(20px)';
+              setTimeout(() => {
+                row.remove();
+                updateUnreadCount();
+                updateTabCounts();
+                applyFilters();
+                showToast('Notification dismissed');
+              }, 250);
+            }
+          }
+
+          function triggerAction(actionName) {
+            showToast(`Action dispatched: ${actionName}`, 'bolt');
+          }
+
+          function openNotificationDetail(id) {
+            activeNotificationId = id;
+            const data = notificationDetails[id];
+            if (!data) return;
+
+            document.getElementById('drawer-entity-id').textContent = data.entity;
+            document.getElementById('drawer-title').textContent = data.title;
+            document.getElementById('drawer-desc').textContent = data.desc;
+            document.getElementById('drawer-amount').textContent = data.amount;
+            document.getElementById('drawer-grant-code').textContent = data.grant;
+            document.getElementById('drawer-fund-tag').textContent = data.fundType;
+            document.getElementById('drawer-priority').textContent = data.priority;
+            document.getElementById('drawer-actor-name').textContent = data.actorName;
+            document.getElementById('drawer-actor-avatar').textContent = data.actorInitials;
+            document.getElementById('drawer-actor-role').textContent = data.actorRole;
+            document.getElementById('drawer-ledger').textContent = data.ledger;
+            document.getElementById('drawer-action-text').textContent = data.actionText;
+
+            const row = document.querySelector(`.notification-row[data-id="${id}"]`);
+            if (row && row.getAttribute('data-unread') === 'true') {
+              setRowReadState(row, false);
+            }
+
+            const backdrop = document.getElementById('drawer-backdrop');
+            const drawer = document.getElementById('detail-drawer');
+            backdrop.classList.remove('hidden');
+            setTimeout(() => {
+              backdrop.classList.remove('opacity-0');
+              drawer.classList.remove('translate-x-full');
+            }, 10);
+          }
+
+          function closeNotificationDetail() {
+            const backdrop = document.getElementById('drawer-backdrop');
+            const drawer = document.getElementById('detail-drawer');
+            backdrop.classList.add('opacity-0');
+            drawer.classList.add('translate-x-full');
+            setTimeout(() => {
+              backdrop.classList.add('hidden');
+              activeNotificationId = null;
+            }, 300);
+          }
+
+          function drawerToggleRead() {
+            if (!activeNotificationId) return;
+            const row = document.querySelector(`.notification-row[data-id="${activeNotificationId}"]`);
+            if (row) {
+              const isUnread = row.getAttribute('data-unread') === 'true';
+              setRowReadState(row, !isUnread);
+              showToast(!isUnread ? 'Marked as unread' : 'Marked as read');
+            }
+          }
+
+          function executeDrawerAction() {
+            if (!activeNotificationId) return;
+            const data = notificationDetails[activeNotificationId];
+            showToast(`Executed: ${data.actionText} for ${data.entity}`, 'task_alt');
+            closeNotificationDetail();
+          }
+
+          function updateTabCounts() {
+            const rows = document.querySelectorAll('.notification-row');
+            const counts = {
+              all: rows.length,
+              unread: 0,
+              mentions: 0,
+              approvals: 0,
+              finance: 0,
+              grants: 0,
+              procurement: 0,
+              operations: 0,
+              system: 0
+            };
+
+            rows.forEach(r => {
+              if (r.getAttribute('data-unread') === 'true') counts.unread++;
+              const cats = (r.getAttribute('data-category') || '').split(' ');
+              cats.forEach(c => {
+                if (counts[c] !== undefined) counts[c]++;
+              });
+            });
+
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+              const cat = tab.getAttribute('data-category');
+              const countSpan = tab.querySelector('.tab-count');
+              if (countSpan && counts[cat] !== undefined) {
+                countSpan.textContent = counts[cat];
+              }
+            });
+          }
+
+          function applyFilters() {
+            const searchVal = document.getElementById('search-input').value.toLowerCase().trim();
+            const rows = document.querySelectorAll('.notification-row');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+              const isUnread = row.getAttribute('data-unread') === 'true';
+              const categories = (row.getAttribute('data-category') || '').split(' ');
+              const text = row.innerText.toLowerCase();
+
+              let categoryMatch = false;
+              if (currentFilter === 'all') categoryMatch = true;
+              else if (currentFilter === 'unread') categoryMatch = isUnread;
+              else categoryMatch = categories.includes(currentFilter);
+
+              let searchMatch = true;
+              if (searchVal.length > 0) {
+                searchMatch = text.includes(searchVal);
+              }
+
+              if (categoryMatch && searchMatch) {
+                row.style.display = '';
+                visibleCount++;
+              } else {
+                row.style.display = 'none';
+              }
+            });
+
+            const headers = document.querySelectorAll('.group-header');
+            headers.forEach(header => {
+              const groupType = header.getAttribute('data-group');
+              let hasVisibleChild = false;
+              let el = header.nextElementSibling;
+              while (el && !el.classList.contains('group-header')) {
+                if (el.classList.contains('notification-row') && el.style.display !== 'none') {
+                  hasVisibleChild = true;
+                  break;
+                }
+                el = el.nextElementSibling;
+              }
+              header.style.display = hasVisibleChild ? '' : 'none';
+            });
+
+            const emptyState = document.getElementById('empty-state');
+            if (visibleCount === 0) {
+              emptyState.classList.remove('hidden');
+            } else {
+              emptyState.classList.add('hidden');
+            }
+          }
+
+          function resetFilters() {
+            document.getElementById('search-input').value = '';
+            const allTab = document.querySelector('.filter-tab[data-category="all"]');
+            if (allTab) allTab.click();
+            else {
+              currentFilter = 'all';
+              applyFilters();
+            }
+          }
+
+          document.addEventListener('DOMContentLoaded', () => {
+            updateUnreadCount();
+            updateTabCounts();
+
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+              tab.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tab').forEach(t => {
+                  t.classList.remove('bg-primary', 'text-on-primary', 'active-tab');
+                  t.classList.add('text-text-secondary', 'hover:bg-surface-secondary');
+                });
+                tab.classList.add('bg-primary', 'text-on-primary', 'active-tab');
+                tab.classList.remove('text-text-secondary', 'hover:bg-surface-secondary');
+                currentFilter = tab.getAttribute('data-category');
+                applyFilters();
+              });
+            });
+
+            document.getElementById('mark-all-read-btn').addEventListener('click', () => {
+              const rows = document.querySelectorAll('.notification-row[data-unread="true"]');
+              rows.forEach(r => setRowReadState(r, false));
+              showToast('All notifications marked as read', 'done_all');
+              applyFilters();
+            });
+
+            document.getElementById('search-input').addEventListener('input', () => {
+              applyFilters();
+            });
+
+            document.getElementById('settings-btn').addEventListener('click', () => {
+              showToast('Opening notification routing and dispatch parameters...', 'tune');
+            });
+
+            document.getElementById('toggle-dense-btn').addEventListener('click', function () {
+              const rows = document.querySelectorAll('.notification-row');
+              rows.forEach(r => {
+                r.classList.toggle('p-space-md');
+                r.classList.toggle('py-space-xs');
+                r.classList.toggle('px-space-md');
+              });
+              showToast('Compact density toggled');
+            });
+
+            document.getElementById('toggle-filter-btn').addEventListener('click', function () {
+              const unreadTab = document.querySelector('.filter-tab[data-category="unread"]');
+              if (unreadTab) unreadTab.click();
+            });
+
+            document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape') closeNotificationDetail();
+            });
+          });
+        </script>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

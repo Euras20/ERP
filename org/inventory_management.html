@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Inventory Management | FIDUCIARY ERP - INGO Global Treasury</title>
+  <!-- Google Fonts: IBM Plex Sans & IBM Plex Mono -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f7f9ff", "on-tertiary": "#ffffff", "status-warning-bg": "#FEF3E6", "surface-dim": "#d1dbe7", "status-critical-bg": "#FDF0F0", "primary-fixed": "#a7eef6", "status-neutral-bg": "#ECEFF2", "secondary-container": "#d8e4ef", "status-success-border": "#9DD4B8", "inverse-primary": "#8bd2da", "on-tertiary-container": "#ffd892", "status-critical-border": "#F3A6A9", "nav-border": "#1E3243", "outline-variant": "#bec8c9", "text-muted": "#7B8C9A", "inverse-on-surface": "#e8f2fe", "secondary-fixed-dim": "#bcc8d3", "fund-temp-restricted": "#D99B00", "canvas-bg": "#F7F9FA", "tertiary-fixed": "#ffdea6", "surface-container-low": "#ecf4ff", "nav-text-primary": "#F4F7F9", "on-secondary": "#ffffff", "status-neutral-text": "#384551", "fund-restricted": "#B8860B", "surface-variant": "#d9e4ef", "inverse-surface": "#28313a", "status-success-text": "#0F6848", "on-primary-fixed": "#002022", "surface-container-highest": "#d9e4ef", "on-surface-variant": "#3f484a", "on-surface": "#131d25", "primary": "#005258", "on-error-container": "#93000a", "nav-text-muted": "#8EA2B4", "error-container": "#ffdad6", "outline": "#6f797a", "tertiary-fixed-dim": "#f7bd48", "nav-surface": "#152431", "status-success-bg": "#E8F5EE", "on-secondary-fixed-variant": "#3d4851", "error": "#ba1a1a", "on-secondary-fixed": "#121d25", "primary-fixed-dim": "#8bd2da", "on-primary-container": "#a1e9f1", "surface-secondary": "#F0F4F6", "status-critical-text": "#A81D24", "on-tertiary-fixed-variant": "#5d4200", "secondary-fixed": "#d8e4ef", "secondary": "#556069", "on-primary": "#ffffff", "surface-tint": "#16686f", "text-secondary": "#4E5D6A", "surface": "#f7f9ff", "on-primary-fixed-variant": "#004f55", "status-warning-text": "#914D03", "surface-container-high": "#dfe9f5", "tertiary-container": "#7f5b00", "status-warning-border": "#F6C88D", "tertiary": "#614500", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "text-primary": "#121A21", "border-subtle": "#DCE3E8", "surface-bright": "#f7f9ff", "on-secondary-container": "#5a666f", "surface-container": "#e5effb", "on-background": "#131d25", "border-strong": "#B8C4CE", "on-tertiary-fixed": "#271900", "primary-hover": "#144F54", "primary-container": "#1b6b72", "fund-unrestricted": "#1B6B72", "primary-tint": "#E4EFEF", "surface-card": "#FFFFFF", "status-neutral-border": "#CAD2D8", "nav-bg": "#0D1821" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1rem", "space-2xl": "2rem", "margin-compact": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-xxs": "0.125rem", "margin": "1.5rem", "space-xl": "1.5rem", "gutter-dense": "0.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "label-md": ["IBM Plex Sans"], "title-md": ["IBM Plex Sans"], "caption": ["IBM Plex Sans"], "headline-sm": ["IBM Plex Sans"], "body-sm": ["IBM Plex Sans"], "numeric-table": ["IBM Plex Sans"], "label-sm": ["IBM Plex Sans"], "numeric-table-bold": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "display-lg": ["IBM Plex Sans"], "title-sm": ["IBM Plex Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "numeric-table-bold": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }] } } } };</script>
+  <base target="_blank">
+
+<body
+  class="h-full bg-canvas-bg font-sans text-slate-800 antialiased selection:bg-primary selection:text-white flex overflow-hidden">
+  <!-- BEGIN: Application Shell Sidebar -->
+  <aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+  <!-- END: Application Shell Sidebar -->
+  <!-- BEGIN: Main Application Content Frame -->
+  <div id="appMain" class="pl-64 flex flex-col min-h-screen transition-all">
+    <!-- BEGIN: App Header Bar -->
+    <header id="appHeader"
+      class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center"><span
+            class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span><!-- Update the search input element to include border-0 ring-0: -->
+<input
+  class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg border-0 outline-none ring-0 focus:outline-none focus:bg-surface-card transition-colors"
+  placeholder="Search transactions, grants, projects, vendors, staff..." type="text" /></div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span><span>FY 2025
+            (Q2 Closed)</span></div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary"><span
+            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS
+            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <div class="h-5 w-px bg-surface-secondary"></div><button
+          class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span
+            class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span></button><button
+          class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">help</span></button>
+        <div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" /><span
+            class="material-symbols-outlined text-text-muted text-[16px]"></span></div>
+      </div>
+    </header>
+    <!-- END: App Header Bar -->
+    <!-- BEGIN: Main Scrollable Workspace -->
+    <main class="flex-1 overflow-y-auto p-6 space-y-6">
+      <!-- BEGIN: Context Header & Procurement Traceability Banner -->
+      <section class="space-y-3" data-purpose="context-header">
+        <!-- Breadcrumb & Badges -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2 text-xs text-slate-500">
+            <span>Home</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span>Operations</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="font-semibold text-slate-800">Inventory</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-teal-50 text-teal-800 border border-teal-200 uppercase tracking-wide">
+              IPSAS-12 Inventories Compliant
+            </span>
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200 uppercase tracking-wide">
+              Procurement Traceable
+            </span>
+          </div>
+        </div>
+        <!-- Title, Description & Action Buttons -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Inventory Management</h1>
+            <p class="text-xs text-slate-500 mt-1 max-w-3xl leading-relaxed">
+              Track organizational stock, warehouse quantities, programmatic movements, relief distributions, and
+              inventory reconciliation across field mission hubs.
+            </p>
+          </div>
+          <div class="flex items-center space-x-2.5 flex-shrink-0">
+            <button
+              class="flex items-center space-x-1.5 px-3 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg shadow-xs transition-colors"
+              id="exportStockBtn">
+              <span class="material-symbols-outlined text-[17px] text-slate-500">file_download</span>
+              <span>Export Stock Register</span>
+            </button>
+            <button
+              class="flex items-center space-x-1.5 px-3.5 py-2 bg-white border border-primary text-primary hover:bg-primary-container text-xs font-semibold rounded-lg shadow-xs transition-colors"
+              id="openRecordMovementModalBtn">
+              <span class="material-symbols-outlined text-[17px]">sync_alt</span>
+              <span>Record Stock Movement</span>
+            </button>
+            <button
+              class="flex items-center space-x-1.5 px-3.5 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-semibold rounded-lg shadow-sm transition-colors"
+              id="quickAddItemBtn">
+              <span class="material-symbols-outlined text-[17px]">add_box</span>
+              <span>+ Add Item</span>
+            </button>
+          </div>
+        </div>
+        <!-- Continuous Procurement Lifecycle Trace Banner -->
+        <div
+          class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-lg bg-teal-50 text-primary flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined">hub</span>
+            </div>
+            <div>
+              <span class="font-semibold text-slate-800 block text-xs">Operations Continuity Workflow:</span>
+              <span class="text-slate-500 text-[11px]">Integrated General Ledger Account 1300 (Inventories) with
+                encumbrance release and GRN verification.</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-1 overflow-x-auto py-1 font-mono text-[11px]">
+            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded border border-slate-200 font-semibold">1.
+              Purchase Order</span>
+            <span class="text-slate-400">→</span>
+            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded border border-slate-200 font-semibold">2. Goods
+              Receipt (GRN)</span>
+            <span class="text-slate-400">→</span>
+            <span class="px-2.5 py-1 bg-primary text-white rounded border border-teal-700 font-semibold shadow-xs">3.
+              Inventory Update</span>
+            <span class="text-slate-400">→</span>
+            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded border border-slate-200 font-semibold">4.
+              Program Distribution</span>
+          </div>
+        </div>
+      </section>
+      <!-- END: Context Header & Banner -->
+      <!-- BEGIN: Summary KPI Cards (5 Enterprise NGO Cards) -->
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" data-purpose="kpi-metrics-grid">
+        <!-- Card 1: Total Stock Items -->
+        <div class="bg-surface-card p-4 rounded-xl border border-border-subtle shadow-xs relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Stock Items</span>
+            <span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[17px]">inventory</span>
+            </span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-2xl font-bold font-mono text-slate-900">148</span>
+            <span class="text-[11px] text-slate-500 font-medium">SKUs active</span>
+          </div>
+          <p class="text-[11px] text-slate-500 mt-1 flex items-center space-x-1">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+            <span>12 Active Program Workplans</span>
+          </p>
+        </div>
+        <!-- Card 2: Total Stock Valuation -->
+        <div class="bg-surface-card p-4 rounded-xl border border-border-subtle shadow-xs relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Stock Valuation</span>
+            <span class="w-7 h-7 rounded-lg bg-teal-50 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[17px]">account_balance_wallet</span>
+            </span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-1">
+            <span class="text-xs font-bold text-slate-400 font-mono">GH₵</span>
+            <span class="text-2xl font-bold font-mono text-slate-900">1,485,200</span>
+          </div>
+          <p class="text-[11px] text-amber-700 font-medium mt-1 truncate"
+            title="GH₵ 920,400 Restricted Donor Earmarked">
+            GH₵ 920.4k Restricted Donor
+          </p>
+        </div>
+        <!-- Card 3: Low Stock Alert -->
+        <div
+          class="bg-surface-card p-4 rounded-xl border border-amber-200 bg-amber-50/20 shadow-xs relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-amber-800 uppercase tracking-wider">Low Stock Alerts</span>
+            <span class="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[17px]">warning</span>
+            </span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-2xl font-bold font-mono text-amber-900">7</span>
+            <span
+              class="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-100 text-amber-800">
+              Reorder Needed
+            </span>
+          </div>
+          <p class="text-[11px] text-slate-600 mt-1">Tamale &amp; Volta Mission Hubs</p>
+        </div>
+        <!-- Card 4: Inbound Receipts (PO -> GRN) -->
+        <div class="bg-surface-card p-4 rounded-xl border border-border-subtle shadow-xs relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Pending Receipts</span>
+            <span class="w-7 h-7 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[17px]">local_shipping</span>
+            </span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-2xl font-bold font-mono text-slate-900">4</span>
+            <span class="text-[11px] text-slate-500 font-medium">Shipments</span>
+          </div>
+          <p class="text-[11px] text-slate-600 mt-1 font-mono">
+            GH₵ 184,500 en route
+          </p>
+        </div>
+        <!-- Card 5: Distributed YTD -->
+        <div class="bg-surface-card p-4 rounded-xl border border-border-subtle shadow-xs relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Distributed (YTD)</span>
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[17px]">check_circle</span>
+            </span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-1">
+            <span class="text-2xl font-bold font-mono text-emerald-800">42,850</span>
+            <span class="text-[11px] text-slate-500">Units</span>
+          </div>
+          <p class="text-[11px] text-slate-600 mt-1 font-mono">
+            GH₵ 640,200 dispatches
+          </p>
+        </div>
+      </section>
+      <!-- END: Summary KPI Cards -->
+      <!-- BEGIN: Search, Filters & Category Tab Bar -->
+      <section class="bg-surface-card rounded-xl border border-border-subtle p-4 space-y-3 shadow-xs"
+        data-purpose="table-controls">
+        <!-- Top Row: Tab Navigation -->
+        <div class="flex flex-wrap items-center justify-between border-b border-border-subtle pb-3 gap-3">
+          <div class="flex items-center space-x-2" id="inventoryTabs">
+            <button class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary text-white shadow-xs"
+              data-tab="all">
+              All Inventory (38)
+            </button>
+            <button
+              class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
+              data-tab="low">
+              Low Stock &amp; Alerts (7)
+            </button>
+            <button
+              class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
+              data-tab="inbound">
+              Inbound Receipts (4)
+            </button>
+            <button
+              class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
+              data-tab="distribution">
+              Distributions (12)
+            </button>
+            <button
+              class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
+              data-tab="reconciliation">
+              Stock Reconciliation
+            </button>
+          </div>
+          <!-- Compliance Audit Indicator -->
+          <div class="flex items-center space-x-1 text-[11px] text-slate-500 font-mono">
+            <span class="material-symbols-outlined text-[15px] text-emerald-600">verified_user</span>
+            <span>Audit Enforced: 100% Traceability to Donor Grants</span>
+          </div>
+        </div>
+        <!-- Filter Dropdowns Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 pt-1 text-xs">
+          <!-- Filter Category -->
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Category</label>
+            <select
+              class="w-full py-1.5 px-2.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary"
+              id="filterCategory">
+              <option value="">All Categories</option>
+              <option value="Medical">Medical Supplies</option>
+              <option value="Education">Educational Materials</option>
+              <option value="WASH">WASH &amp; Relief Kits</option>
+              <option value="IT">IT &amp; Fleet Spares</option>
+              <option value="Nutrition">Nutrition &amp; Food</option>
+            </select>
+          </div>
+          <!-- Filter Warehouse / Hub -->
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Warehouse /
+              Hub</label>
+            <select
+              class="w-full py-1.5 px-2.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary"
+              id="filterWarehouse">
+              <option value="">All Warehouses</option>
+              <option value="Tamale">Tamale Regional Depot</option>
+              <option value="Accra">Accra Central Store</option>
+              <option value="Volta">Volta Mission Warehouse</option>
+              <option value="Savannah">Savannah Field Post</option>
+            </select>
+          </div>
+          <!-- Filter Stock Status -->
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Stock Status</label>
+            <select
+              class="w-full py-1.5 px-2.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary"
+              id="filterStatus">
+              <option value="">All Statuses</option>
+              <option value="In Stock">In Stock</option>
+              <option value="Low Stock">Low Stock</option>
+              <option value="Out of Stock">Out of Stock</option>
+              <option value="Reserved">Reserved</option>
+            </select>
+          </div>
+          <!-- Filter Linked Grant -->
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Grant /
+              Project</label>
+            <select
+              class="w-full py-1.5 px-2.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary"
+              id="filterGrant">
+              <option value="">All Grants</option>
+              <option value="Global Fund">Global Fund Malaria (GH-003)</option>
+              <option value="USAID">USAID Education (US-ED-24)</option>
+              <option value="EU Climate">EU Climate Resilient Hub</option>
+              <option value="DFID">DFID Rural Livelihoods</option>
+            </select>
+          </div>
+          <!-- Filter Reset & Active Counts -->
+          <div class="flex items-end">
+            <button
+              class="w-full py-1.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center space-x-1"
+              id="resetFiltersBtn">
+              <span class="material-symbols-outlined text-[16px]">restart_alt</span>
+              <span>Reset Filters</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- END: Search, Filters & Category Tab Bar -->
+      <!-- BEGIN: Primary Inventory Overview Table -->
+      <section class="bg-surface-card rounded-xl border border-border-subtle shadow-xs overflow-hidden"
+        data-purpose="inventory-register-table">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr
+                class="bg-slate-50/80 border-b border-border-subtle text-slate-500 font-semibold uppercase tracking-wider text-[10px]">
+                <th class="py-3 px-4">Item &amp; Code</th>
+                <th class="py-3 px-3">Category</th>
+                <th class="py-3 px-3">Warehouse / Location</th>
+                <th class="py-3 px-3 text-right">Qty on Hand</th>
+                <th class="py-3 px-3 text-right">Available</th>
+                <th class="py-3 px-2">Unit</th>
+                <th class="py-3 px-3 text-right">Unit Cost</th>
+                <th class="py-3 px-4 text-right">Stock Value (GHS)</th>
+                <th class="py-3 px-3">Reorder Buffer</th>
+                <th class="py-3 px-3">Status</th>
+                <th class="py-3 px-3">Linked Grant</th>
+                <th class="py-3 px-4 text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700 font-normal" id="inventoryTableBody">
+              <!-- Row 1: Rapid Diagnostic Tests (Low Stock) -->
+              <tr class="hover:bg-slate-50/75 transition-colors cursor-pointer inventory-row" data-category="Medical"
+                data-grant="Global Fund" data-sku="MED-RDT-003" data-status="Low Stock" data-warehouse="Volta">
+                <td class="py-3 px-4">
+                  <div class="font-semibold text-slate-900">Rapid Diagnostic Tests (RDT) Malaria Pf/Pv</div>
+                  <div class="font-mono text-[10px] text-slate-500 flex items-center space-x-1.5 mt-0.5">
+                    <span class="bg-slate-100 px-1 py-0.5 rounded text-slate-600 font-semibold">SKU: MED-RDT-003</span>
+                    <span>• Lot: BN-2024-991A</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-blue-700">Medical
+                    Supplies</span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-medium text-slate-800">Volta Mission Hub</div>
+                  <div class="text-[10px] text-slate-400">Bay 4 • Cold Zone A</div>
+                </td>
+                <td class="py-3 px-3 text-right font-mono font-bold text-amber-700">18</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">6</td>
+                <td class="py-3 px-2 text-slate-500">Boxes (50s)</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">GH₵ 420.00</td>
+                <td class="py-3 px-4 text-right font-mono font-bold text-slate-900">GH₵ 7,560.00</td>
+                <td class="py-3 px-3">
+                  <div class="flex items-center space-x-1.5">
+                    <div class="w-12 bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                      <div class="bg-amber-500 h-1.5 rounded-full" style="width: 36%"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-amber-800 font-semibold">50 min</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mr-1.5"></span>
+                    Low Stock
+                  </span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-semibold text-slate-800 text-[11px]">Global Fund Malaria</div>
+                  <span
+                    class="text-[9px] font-bold text-donor-gold bg-donor-gold-bg px-1.5 py-0.5 rounded border border-donor-gold-border uppercase">Restricted</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                    class="inspect-btn text-primary hover:text-primary-hover font-semibold text-xs py-1 px-2.5 rounded hover:bg-primary-container/40 transition-colors">
+                    Inspect
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 2: Solar Mobile Vaccine Fridges (In Stock) -->
+              <tr class="hover:bg-slate-50/75 transition-colors cursor-pointer inventory-row" data-category="Medical"
+                data-grant="Global Fund" data-sku="MED-MAL-012" data-status="In Stock" data-warehouse="Tamale">
+                <td class="py-3 px-4">
+                  <div class="font-semibold text-slate-900">Solar Mobile Vaccine Refrigerators 45L</div>
+                  <div class="font-mono text-[10px] text-slate-500 flex items-center space-x-1.5 mt-0.5">
+                    <span class="bg-slate-100 px-1 py-0.5 rounded text-slate-600 font-semibold">SKU: MED-MAL-012</span>
+                    <span>• PO-2025-0142</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-blue-700">Medical
+                    Supplies</span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-medium text-slate-800">Tamale Regional Depot</div>
+                  <div class="text-[10px] text-slate-400">Zone B-12 • Heavy Equip</div>
+                </td>
+                <td class="py-3 px-3 text-right font-mono font-bold text-slate-900">24</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">20</td>
+                <td class="py-3 px-2 text-slate-500">Units</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">GH₵ 11,500.00</td>
+                <td class="py-3 px-4 text-right font-mono font-bold text-slate-900">GH₵ 276,000.00</td>
+                <td class="py-3 px-3">
+                  <div class="flex items-center space-x-1.5">
+                    <div class="w-12 bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                      <div class="bg-emerald-500 h-1.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-600">10 min</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
+                    In Stock
+                  </span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-semibold text-slate-800 text-[11px]">Global Fund Malaria</div>
+                  <span
+                    class="text-[9px] font-bold text-donor-gold bg-donor-gold-bg px-1.5 py-0.5 rounded border border-donor-gold-border uppercase">Restricted</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                    class="inspect-btn text-primary hover:text-primary-hover font-semibold text-xs py-1 px-2.5 rounded hover:bg-primary-container/40 transition-colors">
+                    Inspect
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 3: Primary Literacy Kits (Reserved) -->
+              <tr class="hover:bg-slate-50/75 transition-colors cursor-pointer inventory-row" data-category="Education"
+                data-grant="USAID" data-sku="EDU-KIT-045" data-status="Reserved" data-warehouse="Accra">
+                <td class="py-3 px-4">
+                  <div class="font-semibold text-slate-900">Primary Literacy Workbooks &amp; Teacher Guides</div>
+                  <div class="font-mono text-[10px] text-slate-500 flex items-center space-x-1.5 mt-0.5">
+                    <span class="bg-slate-100 px-1 py-0.5 rounded text-slate-600 font-semibold">SKU: EDU-KIT-045</span>
+                    <span>• PO-2025-0089</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span
+                    class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-purple-50 text-purple-700">Educational</span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-medium text-slate-800">Accra Central Store</div>
+                  <div class="text-[10px] text-slate-400">Room 3 • Pallet 8</div>
+                </td>
+                <td class="py-3 px-3 text-right font-mono font-bold text-slate-900">1,200</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">200</td>
+                <td class="py-3 px-2 text-slate-500">Kits</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">GH₵ 85.00</td>
+                <td class="py-3 px-4 text-right font-mono font-bold text-slate-900">GH₵ 102,000.00</td>
+                <td class="py-3 px-3">
+                  <div class="flex items-center space-x-1.5">
+                    <div class="w-12 bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                      <div class="bg-blue-500 h-1.5 rounded-full" style="width: 70%"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-600">300 min</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200">
+                    <span class="material-symbols-outlined text-[13px] mr-1">lock</span>
+                    Reserved
+                  </span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-semibold text-slate-800 text-[11px]">USAID Education</div>
+                  <span
+                    class="text-[9px] font-bold text-amber-800 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 uppercase">Temp
+                    Restricted</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                    class="inspect-btn text-primary hover:text-primary-hover font-semibold text-xs py-1 px-2.5 rounded hover:bg-primary-container/40 transition-colors">
+                    Inspect
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 4: Solar Borehole Submersible Pumps (In Stock) -->
+              <tr class="hover:bg-slate-50/75 transition-colors cursor-pointer inventory-row" data-category="WASH"
+                data-grant="EU Climate" data-sku="WSH-SOL-088" data-status="In Stock" data-warehouse="Savannah">
+                <td class="py-3 px-4">
+                  <div class="font-semibold text-slate-900">Solar Submersible Water Pumps 2.5kW</div>
+                  <div class="font-mono text-[10px] text-slate-500 flex items-center space-x-1.5 mt-0.5">
+                    <span class="bg-slate-100 px-1 py-0.5 rounded text-slate-600 font-semibold">SKU: WSH-SOL-088</span>
+                    <span>• GRN-2025-0054</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">WASH /
+                    Relief</span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-medium text-slate-800">Savannah Field Post</div>
+                  <div class="text-[10px] text-slate-400">Warehouse B • Yard 1</div>
+                </td>
+                <td class="py-3 px-3 text-right font-mono font-bold text-slate-900">16</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">14</td>
+                <td class="py-3 px-2 text-slate-500">Sets</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">GH₵ 14,200.00</td>
+                <td class="py-3 px-4 text-right font-mono font-bold text-slate-900">GH₵ 227,200.00</td>
+                <td class="py-3 px-3">
+                  <div class="flex items-center space-x-1.5">
+                    <div class="w-12 bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                      <div class="bg-emerald-500 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-600">5 min</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
+                    In Stock
+                  </span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-semibold text-slate-800 text-[11px]">EU Climate Resilient</div>
+                  <span
+                    class="text-[9px] font-bold text-donor-gold bg-donor-gold-bg px-1.5 py-0.5 rounded border border-donor-gold-border uppercase">Restricted</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                    class="inspect-btn text-primary hover:text-primary-hover font-semibold text-xs py-1 px-2.5 rounded hover:bg-primary-container/40 transition-colors">
+                    Inspect
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 5: Artemether Lumefantrine Antimalarials (Out of Stock Alert) -->
+              <tr class="hover:bg-slate-50/75 transition-colors cursor-pointer inventory-row bg-rose-50/20"
+                data-category="Medical" data-grant="Global Fund" data-sku="MED-ACT-015" data-status="Out of Stock"
+                data-warehouse="Tamale">
+                <td class="py-3 px-4">
+                  <div class="font-semibold text-slate-900">Artemether-Lumefantrine 20/120mg (ALU)</div>
+                  <div class="font-mono text-[10px] text-slate-500 flex items-center space-x-1.5 mt-0.5">
+                    <span class="bg-slate-100 px-1 py-0.5 rounded text-slate-600 font-semibold">SKU: MED-ACT-015</span>
+                    <span class="text-rose-600 font-bold">• Stock Depleted</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-blue-700">Medical
+                    Supplies</span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-medium text-slate-800">Tamale Regional Depot</div>
+                  <div class="text-[10px] text-slate-400">Pharma Room 2</div>
+                </td>
+                <td class="py-3 px-3 text-right font-mono font-bold text-rose-600">0</td>
+                <td class="py-3 px-3 text-right font-mono text-rose-600">0</td>
+                <td class="py-3 px-2 text-slate-500">Cartons (500s)</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">GH₵ 1,850.00</td>
+                <td class="py-3 px-4 text-right font-mono font-bold text-slate-900">GH₵ 0.00</td>
+                <td class="py-3 px-3">
+                  <div class="flex items-center space-x-1.5">
+                    <div class="w-12 bg-rose-200 h-1.5 rounded-full overflow-hidden">
+                      <div class="bg-rose-500 h-1.5 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-rose-700 font-bold">120 min</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-rose-50 text-rose-800 border border-rose-200">
+                    <span class="material-symbols-outlined text-[12px] mr-1">close</span>
+                    Out of Stock
+                  </span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-semibold text-slate-800 text-[11px]">Global Fund Malaria</div>
+                  <span
+                    class="text-[9px] font-bold text-donor-gold bg-donor-gold-bg px-1.5 py-0.5 rounded border border-donor-gold-border uppercase">Restricted</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                    class="inspect-btn text-rose-700 hover:text-rose-900 font-semibold text-xs py-1 px-2.5 rounded hover:bg-rose-100 transition-colors">
+                    Inspect
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 6: Emergency Dignity & Hygiene Kits (In Stock) -->
+              <tr class="hover:bg-slate-50/75 transition-colors cursor-pointer inventory-row" data-category="WASH"
+                data-grant="DFID" data-sku="WSH-DIG-009" data-status="In Stock" data-warehouse="Tamale">
+                <td class="py-3 px-4">
+                  <div class="font-semibold text-slate-900">Emergency Dignity &amp; Hygiene Kits</div>
+                  <div class="font-mono text-[10px] text-slate-500 flex items-center space-x-1.5 mt-0.5">
+                    <span class="bg-slate-100 px-1 py-0.5 rounded text-slate-600 font-semibold">SKU: WSH-DIG-009</span>
+                    <span>• PO-2025-0112</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">WASH /
+                    Relief</span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-medium text-slate-800">Tamale Regional Depot</div>
+                  <div class="text-[10px] text-slate-400">Bay 1 • Racks 3-6</div>
+                </td>
+                <td class="py-3 px-3 text-right font-mono font-bold text-slate-900">650</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">500</td>
+                <td class="py-3 px-2 text-slate-500">Kits</td>
+                <td class="py-3 px-3 text-right font-mono text-slate-600">GH₵ 140.00</td>
+                <td class="py-3 px-4 text-right font-mono font-bold text-slate-900">GH₵ 91,000.00</td>
+                <td class="py-3 px-3">
+                  <div class="flex items-center space-x-1.5">
+                    <div class="w-12 bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                      <div class="bg-emerald-500 h-1.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-600">200 min</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
+                    In Stock
+                  </span>
+                </td>
+                <td class="py-3 px-3">
+                  <div class="font-semibold text-slate-800 text-[11px]">DFID Livelihoods</div>
+                  <span
+                    class="text-[9px] font-bold text-amber-800 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 uppercase">Temp
+                    Restricted</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                    class="inspect-btn text-primary hover:text-primary-hover font-semibold text-xs py-1 px-2.5 rounded hover:bg-primary-container/40 transition-colors">
+                    Inspect
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Table Pagination & Total Committed Subtotal Footer -->
+        <div
+          class="bg-slate-50 border-t border-border-subtle p-3.5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-600">
+          <div class="flex items-center space-x-2">
+            <span>Showing <span class="font-semibold text-slate-900">1</span> to <span
+                class="font-semibold text-slate-900">6</span> of <span class="font-semibold text-slate-900">38</span>
+              stock lines across 4 Field Hubs</span>
+          </div>
+          <!-- Quick Ledger Allocation Summary -->
+          <div class="flex items-center space-x-4">
+            <div class="text-right">
+              <span class="text-[10px] text-slate-400 uppercase font-mono block">Inventory Balance (Page 1):</span>
+              <span class="text-sm font-bold font-mono text-slate-900">GH₵ 703,760.00</span>
+            </div>
+            <div class="flex items-center space-x-1 font-mono">
+              <button
+                class="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-400 cursor-not-allowed">Prev</button>
+              <button class="px-2.5 py-1 rounded bg-primary text-white font-bold">1</button>
+              <button
+                class="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-700 hover:bg-slate-100">2</button>
+              <button
+                class="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-700 hover:bg-slate-100">3</button>
+              <button
+                class="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-700 hover:bg-slate-100">Next</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END: Primary Inventory Overview Table -->
+      <!-- BEGIN: Bottom Section - Movements & Inbound Goods Receipts -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6" data-purpose="procurement-continuity-section">
+        <!-- Left Column: Recent Stock Activity (2/3 width) -->
+        <div class="lg:col-span-2 bg-surface-card rounded-xl border border-border-subtle p-4 space-y-3 shadow-xs">
+          <div class="flex items-center justify-between border-b border-border-subtle pb-3">
+            <div>
+              <h2 class="text-sm font-bold text-slate-900">Recent Stock Activity &amp; Movement Logs</h2>
+              <p class="text-[11px] text-slate-500">Real-time ledger updates reflecting Goods Receipts (GRN) and
+                programmatic dispatches.</p>
+            </div>
+            <button class="text-primary hover:text-primary-hover text-xs font-semibold flex items-center space-x-1">
+              <span>View Movement Audit Trail</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr
+                  class="bg-slate-50/80 text-slate-500 font-semibold uppercase tracking-wider text-[10px] border-b border-slate-100">
+                  <th class="py-2.5 px-3">Date &amp; Ref</th>
+                  <th class="py-2.5 px-3">Movement Type</th>
+                  <th class="py-2.5 px-3">Item &amp; Quantity</th>
+                  <th class="py-2.5 px-3">Warehouse / Route</th>
+                  <th class="py-2.5 px-3">Officer</th>
+                  <th class="py-2.5 px-3 text-right">GL Account</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 font-normal text-slate-700">
+                <tr class="hover:bg-slate-50/50">
+                  <td class="py-2.5 px-3 font-mono">
+                    <span class="font-bold text-slate-900">GRN-2025-0054</span>
+                    <span class="block text-[10px] text-slate-400">20 Oct 2025</span>
+                  </td>
+                  <td class="py-2.5 px-3">
+                    <span
+                      class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-800">
+                      Receipt (PO-0089)
+                    </span>
+                  </td>
+                  <td class="py-2.5 px-3">
+                    <div class="font-semibold text-slate-800">Solar Mobile Fridges</div>
+                    <span class="font-mono text-emerald-700 font-bold text-[11px]">+5 Units received</span>
+                  </td>
+                  <td class="py-2.5 px-3 text-slate-600">Tamale Depot • Zone B</td>
+                  <td class="py-2.5 px-3 text-slate-600">Kwesi Appiah</td>
+                  <td class="py-2.5 px-3 text-right font-mono text-[11px] text-slate-600">1310 - Med Stock</td>
+                </tr>
+                <tr class="hover:bg-slate-50/50">
+                  <td class="py-2.5 px-3 font-mono">
+                    <span class="font-bold text-slate-900">DST-2025-0094</span>
+                    <span class="block text-[10px] text-slate-400">19 Oct 2025</span>
+                  </td>
+                  <td class="py-2.5 px-3">
+                    <span
+                      class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-50 text-blue-800">
+                      Distribution
+                    </span>
+                  </td>
+                  <td class="py-2.5 px-3">
+                    <div class="font-semibold text-slate-800">Literacy Workbooks</div>
+                    <span class="font-mono text-rose-600 font-bold text-[11px]">-400 Kits issued</span>
+                  </td>
+                  <td class="py-2.5 px-3 text-slate-600">Accra -&gt; Northern Schools</td>
+                  <td class="py-2.5 px-3 text-slate-600">Dr. Emmanuel Osei</td>
+                  <td class="py-2.5 px-3 text-right font-mono text-[11px] text-slate-600">5210 - Relief Ops</td>
+                </tr>
+                <tr class="hover:bg-slate-50/50">
+                  <td class="py-2.5 px-3 font-mono">
+                    <span class="font-bold text-slate-900">TRF-2025-0041</span>
+                    <span class="block text-[10px] text-slate-400">18 Oct 2025</span>
+                  </td>
+                  <td class="py-2.5 px-3">
+                    <span
+                      class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-purple-50 text-purple-800">
+                      Inter-Warehouse
+                    </span>
+                  </td>
+                  <td class="py-2.5 px-3">
+                    <div class="font-semibold text-slate-800">Dignity &amp; Hygiene Kits</div>
+                    <span class="font-mono text-slate-700 font-bold text-[11px]">150 Kits in transit</span>
+                  </td>
+                  <td class="py-2.5 px-3 text-slate-600">Tamale -&gt; Savannah Hub</td>
+                  <td class="py-2.5 px-3 text-slate-600">Sarah Mensah</td>
+                  <td class="py-2.5 px-3 text-right font-mono text-[11px] text-slate-600">1300 - Transit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Right Column: Pending Inbound Goods Receipts from PO (1/3 width) -->
+        <div
+          class="bg-surface-card rounded-xl border border-border-subtle p-4 space-y-3 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-border-subtle pb-3">
+              <div>
+                <h2 class="text-sm font-bold text-slate-900">Inbound Receipts (PO Trace)</h2>
+                <p class="text-[11px] text-slate-500">Verified POs en route to hub stores</p>
+              </div>
+              <span class="text-[10px] font-mono bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded">2 Active
+                POs</span>
+            </div>
+            <!-- Inbound PO Cards -->
+            <div class="space-y-3 mt-3">
+              <!-- PO Card 1 -->
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono font-bold text-primary">PO-2025-0089</span>
+                  <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded">En
+                    Route</span>
+                </div>
+                <div class="text-slate-800 font-medium">Star Education Supplies Accra</div>
+                <div class="text-[11px] text-slate-500 flex items-center justify-between">
+                  <span>1,200 Workbooks • Ghana Post Waybill</span>
+                  <span class="font-mono font-bold text-slate-700">GH₵ 142,000</span>
+                </div>
+                <div
+                  class="pt-1 flex items-center justify-between border-t border-slate-200 text-[10px] text-slate-500">
+                  <span>ETA: 28 Oct 2025</span>
+                  <button
+                    class="px-2 py-1 bg-primary text-white rounded font-medium hover:bg-primary-hover transition-colors">
+                    Receive (GRN)
+                  </button>
+                </div>
+              </div>
+              <!-- PO Card 2 -->
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono font-bold text-primary">PO-2025-0072</span>
+                  <span class="text-[10px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded">Customs
+                    Inspection</span>
+                </div>
+                <div class="text-slate-800 font-medium">Volta Medical Logistics Ltd</div>
+                <div class="text-[11px] text-slate-500 flex items-center justify-between">
+                  <span>50 Maternal Delivery Kits</span>
+                  <span class="font-mono font-bold text-slate-700">GH₵ 42,500</span>
+                </div>
+                <div
+                  class="pt-1 flex items-center justify-between border-t border-slate-200 text-[10px] text-slate-500">
+                  <span>ETA: 30 Oct 2025</span>
+                  <button
+                    class="px-2 py-1 bg-slate-200 text-slate-700 rounded font-medium hover:bg-slate-300 transition-colors">
+                    Track Cargo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom Notice -->
+          <div
+            class="bg-primary-container/40 p-2.5 rounded-lg border border-teal-200/60 text-[11px] text-teal-950 flex items-start space-x-2">
+            <span class="material-symbols-outlined text-[16px] text-primary mt-0.5">policy</span>
+            <span>Goods Receipts automatically trigger 3-Way Match verification with Purchase Orders and Vendor
+              Invoices.</span>
+          </div>
+        </div>
+      </section>
+      <!-- END: Bottom Section -->
+    </main>
+    <!-- END: Main Scrollable Workspace -->
+  </div>
+  <!-- END: Main Application Content Frame -->
+  <!-- BEGIN: Interactive Slide-Over Drawer: Item Detail & Batch Traceability -->
+  <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-40 hidden transition-opacity opacity-0"
+    id="drawerBackdrop"></div>
+  <div
+    class="fixed inset-y-0 right-0 w-full max-w-xl bg-surface-card border-l border-border-medium shadow-2xl z-50 transform translate-x-full drawer-transition flex flex-col justify-between"
+    data-purpose="item-detail-slideover" id="itemDrawer">
+    <!-- Drawer Header -->
+    <div class="p-6 border-b border-border-subtle bg-slate-50/50 flex-shrink-0">
+      <div class="flex items-start justify-between">
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="px-2 py-0.5 bg-slate-200 text-slate-800 rounded font-mono font-bold text-xs"
+              id="drawerItemSKU">MED-RDT-003</span>
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300"
+              id="drawerStatusBadge">
+              Low Stock Alert
+            </span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 mt-2" id="drawerItemName">Rapid Diagnostic Tests (RDT) Malaria
+            Pf/Pv</h2>
+          <p class="text-xs text-slate-500 mt-0.5">WHO Prequalified Antigen Detection Diagnostic Kits</p>
+        </div>
+        <button class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
+          id="closeDrawerBtn">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <!-- Quick Stats Strip inside Header -->
+      <div class="grid grid-cols-3 gap-3 mt-4 pt-4 border-t border-slate-200 text-xs">
+        <div>
+          <span class="text-[10px] text-slate-500 uppercase tracking-wide block">Total On Hand</span>
+          <span class="text-base font-bold font-mono text-amber-700" id="drawerQtyOnHand">18 Boxes</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-slate-500 uppercase tracking-wide block">Available Free</span>
+          <span class="text-base font-bold font-mono text-slate-800" id="drawerQtyAvail">6 Boxes</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-slate-500 uppercase tracking-wide block">Inventory Value</span>
+          <span class="text-base font-bold font-mono text-slate-900" id="drawerTotalValue">GH₵ 7,560.00</span>
+        </div>
+      </div>
+    </div>
+    <!-- Drawer Body Scrollable Content -->
+    <div class="p-6 space-y-6 overflow-y-auto flex-1 text-xs">
+      <!-- Fiduciary & Donor Program Mapping -->
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+        <h3 class="font-bold text-slate-900 flex items-center space-x-1.5 text-xs">
+          <span class="material-symbols-outlined text-primary text-[17px]">account_balance</span>
+          <span>Fiduciary Ledger &amp; Donor Earmarking</span>
+        </h3>
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div>
+            <span class="text-[10px] text-slate-500 uppercase">Grant Instrument</span>
+            <div class="font-semibold text-slate-800">Global Fund Malaria (GH-003)</div>
+          </div>
+          <div>
+            <span class="text-[10px] text-slate-500 uppercase">Fund Classification</span>
+            <div><span
+                class="text-[10px] font-bold text-donor-gold bg-donor-gold-bg px-1.5 py-0.5 rounded border border-donor-gold-border uppercase">Restricted
+                Donor Fund</span></div>
+          </div>
+          <div>
+            <span class="text-[10px] text-slate-500 uppercase">Operating Project / Workplan</span>
+            <div class="font-semibold text-slate-800">PRJ-VOL-03 • Rural Health Posts</div>
+          </div>
+          <div>
+            <span class="text-[10px] text-slate-500 uppercase">Cost Center &amp; Hub</span>
+            <div class="font-semibold text-slate-800">CC-401 • Volta Medical Hub</div>
+          </div>
+          <div class="col-span-2 pt-2 border-t border-slate-200">
+            <span class="text-[10px] text-slate-500 uppercase">General Ledger Asset Code</span>
+            <div class="font-mono text-slate-800 font-semibold mt-0.5">1310 - Medical &amp; Clinical Inventories
+              (Encumbered)</div>
+          </div>
+        </div>
+      </div>
+      <!-- Batch & Expiry Management Table -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-slate-900 flex items-center space-x-1.5 text-xs">
+            <span class="material-symbols-outlined text-teal-600 text-[17px]">barcode_scanner</span>
+            <span>Batch Lots &amp; Expiry Tracking</span>
+          </h3>
+          <span class="text-[10px] font-mono text-slate-500">FEFO Policy Enforced</span>
+        </div>
+        <div class="border border-slate-200 rounded-lg overflow-hidden">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-100 text-slate-600 font-semibold text-[10px] uppercase">
+              <tr>
+                <th class="py-2 px-3">Batch / Lot</th>
+                <th class="py-2 px-2">Quantity</th>
+                <th class="py-2 px-2">Expiry Date</th>
+                <th class="py-2 px-3">Bin Location</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 font-mono text-[11px]">
+              <tr>
+                <td class="py-2 px-3 font-semibold text-slate-800">BN-2024-991A</td>
+                <td class="py-2 px-2 text-slate-700">12 Boxes</td>
+                <td class="py-2 px-2 text-rose-700 font-bold">14 Dec 2025</td>
+                <td class="py-2 px-3 text-slate-600">Volta • Zone B</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-semibold text-slate-800">BN-2024-442C</td>
+                <td class="py-2 px-2 text-slate-700">6 Boxes</td>
+                <td class="py-2 px-2 text-slate-700">30 Mar 2026</td>
+                <td class="py-2 px-3 text-slate-600">Volta • Cold A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Historical Trace: GRN to Distribution -->
+      <div class="space-y-2">
+        <h3 class="font-bold text-slate-900 flex items-center space-x-1.5 text-xs">
+          <span class="material-symbols-outlined text-slate-600 text-[17px]">history</span>
+          <span>Recent Goods Receipt &amp; Distribution Trace</span>
+        </h3>
+        <div class="space-y-2">
+          <!-- Trace Item 1 -->
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between text-xs">
+            <div>
+              <div class="font-semibold text-slate-900 flex items-center space-x-1.5">
+                <span class="text-emerald-700 font-mono">GRN-2025-0021</span>
+                <span class="text-slate-400">• Received from PO-2025-0044</span>
+              </div>
+              <div class="text-[11px] text-slate-500 mt-0.5">Supplier: Volta Medical Logistics Ltd • 50 Boxes</div>
+            </div>
+            <span class="font-mono text-slate-500 text-[10px]">15 May 2025</span>
+          </div>
+          <!-- Trace Item 2 -->
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between text-xs">
+            <div>
+              <div class="font-semibold text-slate-900 flex items-center space-x-1.5">
+                <span class="text-rose-700 font-mono">DST-2025-0088</span>
+                <span class="text-slate-400">• Distributed to Save the Children Clinic</span>
+              </div>
+              <div class="text-[11px] text-slate-500 mt-0.5">Authorizer: Dr. Emmanuel Osei • 32 Boxes issued</div>
+            </div>
+            <span class="font-mono text-slate-500 text-[10px]">18 Jun 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Drawer Footer Actions -->
+    <div class="p-4 border-t border-border-subtle bg-slate-50 flex items-center justify-between gap-3 flex-shrink-0">
+      <button
+        class="flex-1 py-2 px-3 bg-white border border-amber-300 text-amber-900 hover:bg-amber-50 font-semibold text-xs rounded-lg shadow-xs transition-colors flex items-center justify-center space-x-1.5"
+        id="triggerPRBtn">
+        <span class="material-symbols-outlined text-[16px]">shopping_cart_checkout</span>
+        <span>Initiate Requisition (PR)</span>
+      </button>
+      <button
+        class="flex-1 py-2 px-3 bg-primary hover:bg-primary-hover text-white font-semibold text-xs rounded-lg shadow-sm transition-colors flex items-center justify-center space-x-1.5"
+        id="drawerRecordMovementBtn">
+        <span class="material-symbols-outlined text-[16px]">sync_alt</span>
+        <span>Record Movement</span>
+      </button>
+    </div>
+  </div>
+  <!-- END: Interactive Slide-Over Drawer -->
+  <!-- BEGIN: Modal 1 - + Add Item Modal -->
+  <div class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs"
+    id="addItemModal">
+    <div
+      class="bg-surface-card rounded-xl border border-border-subtle shadow-2xl w-full max-w-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-border-subtle flex items-center justify-between bg-slate-50">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center">
+            <span class="material-symbols-outlined text-[18px]">add_box</span>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-slate-900">Add New Inventory Stock Line</h3>
+            <p class="text-[11px] text-slate-500">Define item master record, GL account allocation, and donor
+              restrictions.</p>
+          </div>
+        </div>
+        <button class="text-slate-400 hover:text-slate-700 p-1 rounded-lg" id="closeAddItemModal">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <!-- Modal Form Content -->
+      <form class="p-6 space-y-4 text-xs" id="addItemForm">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Item Name -->
+          <div class="md:col-span-2">
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Item Title / Description *</label>
+            <input
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs"
+              placeholder="e.g. Solar Deep-Freezer 60L DC Battery Powered" required="" type="text" />
+          </div>
+          <!-- SKU Code -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Stock Keeping Unit (SKU) *</label>
+            <input
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs font-mono"
+              placeholder="e.g. MED-CLD-099" required="" type="text" />
+          </div>
+          <!-- Category -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Commodity Category *</label>
+            <select
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs"
+              required="">
+              <option value="">Select Category</option>
+              <option value="Medical">Medical Supplies</option>
+              <option value="Education">Educational Materials</option>
+              <option value="WASH">WASH &amp; Relief Kits</option>
+              <option value="IT">IT &amp; Fleet Spares</option>
+              <option value="Nutrition">Nutrition &amp; Food Security</option>
+            </select>
+          </div>
+          <!-- Unit of Measure -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Unit of Measure (UOM) *</label>
+            <input
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs"
+              placeholder="e.g. Kits, Cartons (100s), Sets, Units" required="" type="text" />
+          </div>
+          <!-- Initial Quantity -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Initial Opening Quantity</label>
+            <input
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs font-mono"
+              type="number" value="0" />
+          </div>
+          <!-- Unit Cost (GHS) -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Standard Unit Cost (GH₵) *</label>
+            <input
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs font-mono"
+              placeholder="0.00" required="" step="0.01" type="number" />
+          </div>
+          <!-- Reorder Threshold -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Reorder Safety Level</label>
+            <input
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs font-mono"
+              placeholder="e.g. 20" type="number" />
+          </div>
+          <!-- Warehouse Location -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Primary Warehouse Depot *</label>
+            <select
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs"
+              required="">
+              <option value="Tamale">Tamale Regional Depot</option>
+              <option value="Accra">Accra Central Store</option>
+              <option value="Volta">Volta Mission Warehouse</option>
+              <option value="Savannah">Savannah Field Post</option>
+            </select>
+          </div>
+          <!-- Linked Donor Grant -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Linked Donor Grant Agreement</label>
+            <select
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs">
+              <option value="Global Fund">Global Fund Malaria (GH-003)</option>
+              <option value="USAID">USAID Education Literacy (US-ED-24)</option>
+              <option value="EU Climate">EU Climate Resilient Hub (CRH-04)</option>
+              <option value="DFID">DFID Rural Livelihoods</option>
+              <option value="Unrestricted">Unrestricted Core Operational Pool</option>
+            </select>
+          </div>
+        </div>
+        <!-- Fiduciary Confirmation Notice -->
+        <div
+          class="bg-amber-50 border border-amber-200 p-3 rounded-lg text-amber-900 text-[11px] flex items-start space-x-2">
+          <span class="material-symbols-outlined text-[16px] text-amber-700 mt-0.5">verified</span>
+          <span>New items are automatically mapped to IPSAS-12 Inventory Ledger 1300 and require double-sign off for
+            quantity adjustments.</span>
+        </div>
+        <!-- Buttons -->
+        <div class="pt-3 border-t border-slate-200 flex items-center justify-end space-x-2">
+          <button
+            class="px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg font-semibold text-xs transition-colors"
+            id="cancelAddItemModal" type="button">
+            Cancel
+          </button>
+          <button
+            class="px-4 py-2 bg-primary hover:bg-primary-hover text-white rounded-lg font-semibold text-xs shadow-sm transition-colors"
+            type="submit">
+            Save Item to Inventory
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END: Modal 1 -->
+  <!-- BEGIN: Modal 2 - Record Stock Movement Modal -->
+  <div class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs"
+    id="recordMovementModal">
+    <div
+      class="bg-surface-card rounded-xl border border-border-subtle shadow-2xl w-full max-w-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-border-subtle flex items-center justify-between bg-slate-50">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-teal-50 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[18px]">sync_alt</span>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-slate-900">Record Stock Movement &amp; Dispatch</h3>
+            <p class="text-[11px] text-slate-500">Record receipts, distributions to clinics, or inter-warehouse
+              transfers.</p>
+          </div>
+        </div>
+        <button class="text-slate-400 hover:text-slate-700 p-1 rounded-lg" id="closeRecordMovementModal">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <!-- Movement Form -->
+      <form class="p-6 space-y-4 text-xs" id="recordMovementForm">
+        <!-- Movement Type Selection -->
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-700 mb-1">Transaction Movement Type *</label>
+          <select
+            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs"
+            required="">
+            <option value="GRN">Goods Receipt (From Vendor Purchase Order)</option>
+            <option selected="" value="DST">Program Distribution (Beneficiary / Health Clinic)</option>
+            <option value="TRF">Inter-Warehouse Transfer</option>
+            <option value="ADJ">Stock Adjustment (Damaged / Expired / Reconciled)</option>
+          </select>
+        </div>
+        <!-- Item Selector -->
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-700 mb-1">Select Item SKU *</label>
+          <select
+            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs"
+            required="">
+            <option value="MED-RDT-003">Rapid Diagnostic Tests (RDT) Malaria - SKU: MED-RDT-003</option>
+            <option value="MED-MAL-012">Solar Mobile Vaccine Refrigerators - SKU: MED-MAL-012</option>
+            <option value="EDU-KIT-045">Primary Literacy Workbooks - SKU: EDU-KIT-045</option>
+            <option value="WSH-SOL-088">Solar Submersible Water Pumps - SKU: WSH-SOL-088</option>
+            <option value="WSH-DIG-009">Emergency Dignity &amp; Hygiene Kits - SKU: WSH-DIG-009</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Source Warehouse -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Source Depot *</label>
+            <select
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs">
+              <option value="Tamale">Tamale Regional Depot</option>
+              <option value="Accra">Accra Central Store</option>
+              <option selected="" value="Volta">Volta Mission Warehouse</option>
+              <option value="Savannah">Savannah Field Post</option>
+            </select>
+          </div>
+          <!-- Quantity -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Quantity to Move *</label>
+            <input
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs font-mono"
+              min="1" required="" type="number" value="5" />
+          </div>
+          <!-- Waybill / Ref -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Waybill / Dispatch Voucher Ref</label>
+            <input
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs font-mono"
+              placeholder="e.g. DST-2025-0102" type="text" />
+          </div>
+          <!-- Authorized Officer -->
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Authorizing Logistics Officer</label>
+            <input
+              class="w-full px-3 py-2 bg-slate-100 border border-slate-200 rounded-lg text-xs font-medium text-slate-600"
+              readonly="" type="text" value="Ama Mensah" />
+          </div>
+        </div>
+        <!-- Program Workplan Destination -->
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-700 mb-1">Destination Workplan / Recipient
+            Entity</label>
+          <input
+            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary text-xs"
+            placeholder="e.g. Save the Children Field Clinic • Volta District" type="text" />
+        </div>
+        <!-- Buttons -->
+        <div class="pt-3 border-t border-slate-200 flex items-center justify-end space-x-2">
+          <button
+            class="px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg font-semibold text-xs transition-colors"
+            id="cancelRecordMovementModal" type="button">
+            Cancel
+          </button>
+          <button
+            class="px-4 py-2 bg-primary hover:bg-primary-hover text-white rounded-lg font-semibold text-xs shadow-sm transition-colors"
+            type="submit">
+            Confirm Stock Movement
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END: Modal 2 -->
+  <!-- BEGIN: Toast Notification Popover -->
+  <div
+    class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-3 border border-slate-700 max-w-sm"
+    id="toastNotification">
+    <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+      <span class="material-symbols-outlined text-[18px]">check_circle</span>
+    </div>
+    <div class="text-xs">
+      <span class="font-bold block text-white" id="toastTitle">Stock Movement Recorded</span>
+      <span class="text-slate-300 text-[11px]" id="toastDesc">General Ledger Account 1300 and field balances
+        updated.</span>
+    </div>
+  </div>
+  <!-- END: Toast Notification Popover -->
+  <!-- BEGIN: Interactive Logic Script -->
+
+<!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+  <script data-purpose="interaction-controller">
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Sidebar Collapsible Submenu
+      const finMenuBtn = document.getElementById('finMenuBtn');
+      const finSubmenu = document.getElementById('finSubmenu');
+      const finChevron = document.getElementById('finChevron');
+
+      if (finMenuBtn && finSubmenu) {
+        finMenuBtn.addEventListener('click', () => {
+          finSubmenu.classList.toggle('hidden');
+          finChevron.classList.toggle('rotate-180');
+        });
+      }
+
+
+      // 3. Drawer Management
+      const itemDrawer = document.getElementById('itemDrawer');
+      const drawerBackdrop = document.getElementById('drawerBackdrop');
+      const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+      const inspectButtons = document.querySelectorAll('.inspect-btn');
+      const inventoryRows = document.querySelectorAll('.inventory-row');
+
+      function openDrawer(sku, name, status, qty, avail, val) {
+        if (!itemDrawer || !drawerBackdrop) return;
+
+        // Populate Drawer Info
+        const drawerSKU = document.getElementById('drawerItemSKU');
+        const drawerName = document.getElementById('drawerItemName');
+        const drawerStatus = document.getElementById('drawerStatusBadge');
+        const drawerQty = document.getElementById('drawerQtyOnHand');
+        const drawerAvail = document.getElementById('drawerQtyAvail');
+        const drawerVal = document.getElementById('drawerTotalValue');
+
+        if (drawerSKU && sku) drawerSKU.textContent = sku;
+        if (drawerName && name) drawerName.textContent = name;
+        if (drawerStatus && status) drawerStatus.textContent = status;
+        if (drawerQty && qty) drawerQty.textContent = qty;
+        if (drawerAvail && avail) drawerAvail.textContent = avail;
+        if (drawerVal && val) drawerVal.textContent = val;
+
+        drawerBackdrop.classList.remove('hidden');
+        setTimeout(() => {
+          drawerBackdrop.classList.remove('opacity-0');
+          itemDrawer.classList.remove('translate-x-full');
+        }, 10);
+      }
+
+      function closeDrawer() {
+        if (!itemDrawer || !drawerBackdrop) return;
+        itemDrawer.classList.add('translate-x-full');
+        drawerBackdrop.classList.add('opacity-0');
+        setTimeout(() => {
+          drawerBackdrop.classList.add('hidden');
+        }, 300);
+      }
+
+      // Row clicks trigger drawer
+      inventoryRows.forEach(row => {
+        row.addEventListener('click', (e) => {
+          if (e.target.closest('button') && !e.target.closest('.inspect-btn')) return;
+          const sku = row.getAttribute('data-sku');
+          const name = row.querySelector('.font-semibold.text-slate-900')?.textContent || 'Inventory Item';
+          const status = row.getAttribute('data-status');
+          const qty = row.querySelector('td:nth-child(4)')?.textContent + ' On Hand';
+          const avail = row.querySelector('td:nth-child(5)')?.textContent + ' Free';
+          const val = row.querySelector('td:nth-child(8)')?.textContent;
+
+          openDrawer(sku, name, status, qty, avail, val);
+        });
+      });
+
+      if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+      if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+      // 4. Modal 1: + Add Item
+      const openAddModalBtns = [
+        document.getElementById('openAddItemModalBtn'),
+        document.getElementById('quickAddItemBtn')
+      ];
+      const addItemModal = document.getElementById('addItemModal');
+      const closeAddItemModal = document.getElementById('closeAddItemModal');
+      const cancelAddItemModal = document.getElementById('cancelAddItemModal');
+      const addItemForm = document.getElementById('addItemForm');
+
+      openAddModalBtns.forEach(btn => {
+        if (btn) btn.addEventListener('click', () => addItemModal.classList.remove('hidden'));
+      });
+
+      function hideAddModal() {
+        if (addItemModal) addItemModal.classList.add('hidden');
+      }
+
+      if (closeAddItemModal) closeAddItemModal.addEventListener('click', hideAddModal);
+      if (cancelAddItemModal) cancelAddItemModal.addEventListener('click', hideAddModal);
+
+      if (addItemForm) {
+        addItemForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          hideAddModal();
+          showToast("Item Added to Catalog", "IPSAS-12 Inventory Master record created successfully.");
+          addItemForm.reset();
+        });
+      }
+
+      // 5. Modal 2: Record Movement
+      const recordMovementModal = document.getElementById('recordMovementModal');
+      const openMovementBtn = document.getElementById('openRecordMovementModalBtn');
+      const drawerMovementBtn = document.getElementById('drawerRecordMovementBtn');
+      const closeMovementBtn = document.getElementById('closeRecordMovementModal');
+      const cancelMovementBtn = document.getElementById('cancelRecordMovementModal');
+      const recordMovementForm = document.getElementById('recordMovementForm');
+
+      function showMovementModal() {
+        closeDrawer();
+        if (recordMovementModal) recordMovementModal.classList.remove('hidden');
+      }
+
+      function hideMovementModal() {
+        if (recordMovementModal) recordMovementModal.classList.add('hidden');
+      }
+
+      if (openMovementBtn) openMovementBtn.addEventListener('click', showMovementModal);
+      if (drawerMovementBtn) drawerMovementBtn.addEventListener('click', showMovementModal);
+      if (closeMovementBtn) closeMovementBtn.addEventListener('click', hideMovementModal);
+      if (cancelMovementBtn) cancelMovementBtn.addEventListener('click', hideMovementModal);
+
+      if (recordMovementForm) {
+        recordMovementForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          hideMovementModal();
+          showToast("Stock Movement Recorded", "Inventory ledger updated and waybill voucher queued for approval.");
+          recordMovementForm.reset();
+        });
+      }
+
+      // 6. PR Trigger from Drawer
+      const triggerPRBtn = document.getElementById('triggerPRBtn');
+      if (triggerPRBtn) {
+        triggerPRBtn.addEventListener('click', () => {
+          closeDrawer();
+          showToast("Procurement Requisition Initiated", "Draft PR generated in Operations > Procurement module.");
+        });
+      }
+
+      // 7. Toast Feedback Helper
+      function showToast(title, desc) {
+        const toast = document.getElementById('toastNotification');
+        const toastTitle = document.getElementById('toastTitle');
+        const toastDesc = document.getElementById('toastDesc');
+        if (!toast) return;
+
+        if (title && toastTitle) toastTitle.textContent = title;
+        if (desc && toastDesc) toastDesc.textContent = desc;
+
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        setTimeout(() => {
+          toast.classList.add('translate-y-24', 'opacity-0');
+        }, 4000);
+      }
+
+      // 8. Tab & Filter Interactions
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('bg-primary', 'text-white', 'shadow-xs');
+            t.classList.add('text-slate-600', 'hover:bg-slate-100');
+          });
+          tab.classList.remove('text-slate-600', 'hover:bg-slate-100');
+          tab.classList.add('bg-primary', 'text-white', 'shadow-xs');
+
+          const tabType = tab.getAttribute('data-tab');
+          filterRows(tabType);
+        });
+      });
+
+      // Filter logic
+      const searchInput = document.getElementById('globalInventorySearch');
+      const categoryFilter = document.getElementById('filterCategory');
+      const warehouseFilter = document.getElementById('filterWarehouse');
+      const statusFilter = document.getElementById('filterStatus');
+      const grantFilter = document.getElementById('filterGrant');
+      const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+
+      function filterRows(activeTab = 'all') {
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        const catVal = categoryFilter ? categoryFilter.value : '';
+        const whVal = warehouseFilter ? warehouseFilter.value : '';
+        const stVal = statusFilter ? statusFilter.value : '';
+        const grVal = grantFilter ? grantFilter.value : '';
+
+        inventoryRows.forEach(row => {
+          const rowText = row.textContent.toLowerCase();
+          const rowCategory = row.getAttribute('data-category') || '';
+          const rowWarehouse = row.getAttribute('data-warehouse') || '';
+          const rowStatus = row.getAttribute('data-status') || '';
+          const rowGrant = row.getAttribute('data-grant') || '';
+
+          let matchesQuery = !query || rowText.includes(query);
+          let matchesCategory = !catVal || rowCategory === catVal;
+          let matchesWarehouse = !whVal || rowWarehouse === whVal;
+          let matchesStatus = !stVal || rowStatus === stVal;
+          let matchesGrant = !grVal || rowGrant.includes(grVal);
+
+          let matchesTab = true;
+          if (activeTab === 'low') {
+            matchesTab = (rowStatus === 'Low Stock' || rowStatus === 'Out of Stock');
+          } else if (activeTab === 'inbound') {
+            matchesTab = rowText.includes('po-');
+          } else if (activeTab === 'distribution') {
+            matchesTab = (rowStatus === 'Reserved' || rowStatus === 'In Stock');
+          }
+
+          if (matchesQuery && matchesCategory && matchesWarehouse && matchesStatus && matchesGrant && matchesTab) {
+            row.classList.remove('hidden');
+          } else {
+            row.classList.add('hidden');
+          }
+        });
+      }
+
+      if (searchInput) searchInput.addEventListener('input', () => filterRows());
+      if (categoryFilter) categoryFilter.addEventListener('change', () => filterRows());
+      if (warehouseFilter) warehouseFilter.addEventListener('change', () => filterRows());
+      if (statusFilter) statusFilter.addEventListener('change', () => filterRows());
+      if (grantFilter) grantFilter.addEventListener('change', () => filterRows());
+
+      if (resetFiltersBtn) {
+        resetFiltersBtn.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          if (categoryFilter) categoryFilter.value = '';
+          if (warehouseFilter) warehouseFilter.value = '';
+          if (statusFilter) statusFilter.value = '';
+          if (grantFilter) grantFilter.value = '';
+          filterRows();
+        });
+      }
+
+      // Export stock action
+      const exportStockBtn = document.getElementById('exportStockBtn');
+      if (exportStockBtn) {
+        exportStockBtn.addEventListener('click', () => {
+          showToast("Stock Register Exported", "CSV spreadsheet downloaded with batch expiry schedules.");
+        });
+      }
+    });
+  </script>
+  <!-- END: Interactive Logic Script -->
+</body>
+
+</html>

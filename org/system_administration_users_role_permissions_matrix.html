@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>System Settings — ERP Configuration Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F0F4F6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CAD2D8;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7B8C9A;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#f7f9ff",
+            "on-tertiary": "#ffffff",
+            "status-warning-bg": "#FEF3E6",
+            "surface-dim": "#d1dbe7",
+            "status-critical-bg": "#FDF0F0",
+            "primary-fixed": "#a7eef6",
+            "status-neutral-bg": "#ECEFF2",
+            "secondary-container": "#d8e4ef",
+            "status-success-border": "#9DD4B8",
+            "inverse-primary": "#8bd2da",
+            "on-tertiary-container": "#ffd892",
+            "status-critical-border": "#F3A6A9",
+            "nav-border": "#1E3243",
+            "outline-variant": "#bec8c9",
+            "text-muted": "#7B8C9A",
+            "inverse-on-surface": "#e8f2fe",
+            "secondary-fixed-dim": "#bcc8d3",
+            "fund-temp-restricted": "#D99B00",
+            "canvas-bg": "#F7F9FA",
+            "tertiary-fixed": "#ffdea6",
+            "surface-container-low": "#ecf4ff",
+            "nav-text-primary": "#F4F7F9",
+            "on-secondary": "#ffffff",
+            "status-neutral-text": "#384551",
+            "fund-restricted": "#B8860B",
+            "surface-variant": "#d9e4ef",
+            "inverse-surface": "#28313a",
+            "status-success-text": "#0F6848",
+            "on-primary-fixed": "#002022",
+            "surface-container-highest": "#d9e4ef",
+            "on-surface-variant": "#3f484a",
+            "on-surface": "#131d25",
+            "primary": "#005258",
+            "on-error-container": "#93000a",
+            "nav-text-muted": "#8EA2B4",
+            "error-container": "#ffdad6",
+            "outline": "#6f797a",
+            "tertiary-fixed-dim": "#f7bd48",
+            "nav-surface": "#152431",
+            "status-success-bg": "#E8F5EE",
+            "on-secondary-fixed-variant": "#3d4851",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#121d25",
+            "primary-fixed-dim": "#8bd2da",
+            "on-primary-container": "#a1e9f1",
+            "surface-secondary": "#F0F4F6",
+            "status-critical-text": "#A81D24",
+            "on-tertiary-fixed-variant": "#5d4200",
+            "secondary-fixed": "#d8e4ef",
+            "secondary": "#556069",
+            "on-primary": "#ffffff",
+            "surface-tint": "#16686f",
+            "text-secondary": "#4E5D6A",
+            "surface": "#f7f9ff",
+            "on-primary-fixed-variant": "#004f55",
+            "status-warning-text": "#914D03",
+            "surface-container-high": "#dfe9f5",
+            "tertiary-container": "#7f5b00",
+            "status-warning-border": "#F6C88D",
+            "tertiary": "#614500",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "text-primary": "#121A21",
+            "border-subtle": "#DCE3E8",
+            "surface-bright": "#f7f9ff",
+            "on-secondary-container": "#5a666f",
+            "surface-container": "#e5effb",
+            "on-background": "#131d25",
+            "border-strong": "#B8C4CE",
+            "on-tertiary-fixed": "#271900",
+            "primary-hover": "#144F54",
+            "primary-container": "#1b6b72",
+            "fund-unrestricted": "#1B6B72",
+            "primary-tint": "#E4EFEF",
+            "surface-card": "#FFFFFF",
+            "status-neutral-border": "#CAD2D8",
+            "nav-bg": "#0D1821"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "gutter": "1rem",
+            "space-lg": "1rem",
+            "space-2xl": "2rem",
+            "margin-compact": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xxs": "0.125rem",
+            "margin": "1.5rem",
+            "space-xl": "1.5rem",
+            "gutter-dense": "0.5rem",
+            "space-sm": "0.5rem"
+          },
+          fontFamily: {
+            "headline-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "title-md": ["IBM Plex Sans"],
+            "caption": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "numeric-table": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "numeric-table-bold": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "display-lg": ["IBM Plex Sans"],
+            "title-sm": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "title-md": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "caption": ["11px", { lineHeight: "14px", fontWeight: "400" }],
+            "headline-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+            "numeric-table": ["13px", { lineHeight: "18px", letterSpacing: "0", fontWeight: "500" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "numeric-table-bold": ["13px", { lineHeight: "18px", letterSpacing: "0", fontWeight: "700" }],
+            "body-lg": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+            "body-md": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "title-sm": ["13px", { lineHeight: "18px", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-canvas-bg font-body-md text-text-primary antialiased min-h-screen">
+  <!-- CANONICAL APP SHELL SIDEBAR -->
+<aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+         <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center gap-2 px-3 py-1.5 rounded bg-primary-container text-on-primary font-title-sm text-title-sm transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT CONTAINER -->
+  <div id="appMain" class="pl-64 flex flex-col min-h-screen">
+    <!-- TOP HEADER -->
+    <header id="appHeader"
+      class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center"><span
+            class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span><!-- Update the search input element to include border-0 ring-0: -->
+<input
+  class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg border-0 outline-none ring-0 focus:outline-none focus:bg-surface-card transition-colors"
+  placeholder="Search transactions, grants, projects, vendors, staff..." type="text" /></div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span><span>FY 2025
+            (Q2 Closed)</span></div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary"><span
+            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS
+            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <div class="h-5 w-px bg-surface-secondary"></div><button
+          class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span
+            class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span></button><button
+          class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">help</span></button>
+        <div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" /><span
+            class="material-symbols-outlined text-text-muted text-[16px]"></span></div>
+      </div>
+    </header>
+
+    <!-- MAIN SETTINGS WORKSPACE CANVAS -->
+    <main class="w-full pt-16 bg-canvas-bg flex-1 flex flex-col">
+      <!-- CONTEXT HEADER -->
+      <section class="px-space-xl py-space-lg bg-surface-card border-b border-border-subtle shadow-sm flex flex-col gap-space-xs">
+        <div class="flex items-center gap-space-xs text-text-muted font-caption text-caption">
+          <span class="hover:text-text-primary cursor-pointer transition-colors">Governance</span>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <span class="hover:text-text-primary cursor-pointer transition-colors">Administration</span>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <span class="text-text-primary font-title-sm">System Settings — ERP Configuration Center</span>
+        </div>
+
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-sm pt-1">
+          <div class="flex flex-col min-w-0">
+            <div class="flex items-center gap-space-sm">
+              <h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">System Settings</h1>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-tint text-primary font-label-sm text-label-sm font-semibold border border-primary-container/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                ERP Configuration Center
+              </span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-label-sm text-label-sm font-medium border border-[#F6C88D]/40">
+                <span class="material-symbols-outlined text-[14px]">verified</span>
+                IPSAS-25 / Donor Compliance Active
+              </span>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-secondary mt-1 max-w-4xl">
+              Central parameter management.
+            </p>
+          </div>
+
+          <!-- Configuration Status & Audit Link -->
+          <div class="flex items-center gap-space-sm">
+            <div class="hidden sm:flex flex-col text-right pr-space-sm border-r border-border-subtle">
+              <span class="font-caption text-caption text-text-muted">Last Audit Snapshot</span>
+              <span class="font-numeric-table font-semibold text-text-primary text-xs">24 Jun 2025 • 17:10 GMT by Ama Mensah</span>
+            </div>
+            <button id="viewAuditTrailBtn" class="inline-flex items-center gap-1.5 px-space-sm py-1.5 bg-surface-secondary hover:bg-surface-dim/40 text-text-primary rounded font-title-sm text-title-sm transition-colors border border-border-subtle shadow-sm" type="button">
+              <span class="material-symbols-outlined text-[16px] text-text-secondary">history</span>
+              <span>Configuration Audit</span>
+            </button>
+             <button id="topSaveConfigBtn" class="h-[34px] px-space-md bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg flex items-center gap-space-xs transition-colors shadow-sm cursor-pointer" type="button">
+          <span class="material-symbols-outlined text-[16px]">save</span>
+          <span>Save Configuration</span>
+        </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TWO-COLUMN WORKSPACE: LEFT SETTINGS NAV + RIGHT CONFIGURATION PANEL -->
+      <div class="flex-1 flex flex-col lg:flex-row w-full max-w-7xl mx-auto px-space-xl py-space-xl gap-space-xl">
+        
+        <!-- 1. LEFT SETTINGS NAVIGATION ARCHITECTURE -->
+        <aside class="w-full lg:w-72 shrink-0 flex flex-col gap-space-md">
+          <div class="bg-surface-card rounded-lg border border-border-subtle p-space-sm shadow-sm flex flex-col">
+            <div class="px-space-sm py-space-xs flex items-center justify-between border-b border-border-subtle/60 pb-2 mb-1">
+              <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted font-bold">Categories</span>
+              <span class="font-caption text-caption text-text-muted font-mono">6 Sections</span>
+            </div>
+
+            <nav class="flex flex-col gap-space-xs text-body-sm" id="settingsNavTree">
+              <!-- Category 1: Organization -->
+              <div class="nav-group">
+                <button class="settings-nav-item w-full flex items-center justify-between px-space-sm py-2 rounded text-left transition-colors hover:bg-surface-secondary text-text-secondary font-medium" data-target="panel-organization">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <span class="material-symbols-outlined text-[18px] text-text-muted">domain</span>
+                    <span class="truncate">Organization Profile</span>
+                  </div>
+                  <span class="material-symbols-outlined text-[16px] text-text-muted">chevron_right</span>
+                </button>
+              </div>
+
+              <!-- Category 2: Users & Roles -->
+              <div class="nav-group">
+                <button class="settings-nav-item w-full flex items-center justify-between px-space-sm py-2 rounded text-left transition-colors hover:bg-surface-secondary text-text-secondary font-medium" data-target="panel-users-roles">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <span class="material-symbols-outlined text-[18px] text-text-muted">manage_accounts</span>
+                    <span class="truncate">Users &amp; Roles</span>
+                  </div>
+                  <span class="material-symbols-outlined text-[16px] text-text-muted">chevron_right</span>
+                </button>
+              </div>
+
+              <!-- Category 3: Approval Rules (DEFAULT ACTIVE) -->
+              <div class="nav-group">
+                <button class="settings-nav-item active w-full flex items-center justify-between px-space-sm py-2 rounded text-left transition-colors bg-primary-tint text-primary font-semibold border-l-4 border-primary" data-target="panel-approval-rules">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <span class="material-symbols-outlined text-[18px] text-primary">policy</span>
+                    <span class="truncate">Approval Rules &amp; Chains</span>
+                  </div>
+                  <span class="material-symbols-outlined text-[16px] text-primary">chevron_right</span>
+                </button>
+              </div>
+
+              <!-- Category 4: Accounting -->
+              <div class="nav-group">
+                <button class="settings-nav-item w-full flex items-center justify-between px-space-sm py-2 rounded text-left transition-colors hover:bg-surface-secondary text-text-secondary font-medium" data-target="panel-accounting">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <span class="material-symbols-outlined text-[18px] text-text-muted">menu_book</span>
+                    <span class="truncate">Accounting &amp; Currency</span>
+                  </div>
+                  <span class="material-symbols-outlined text-[16px] text-text-muted">chevron_right</span>
+                </button>
+              </div>
+
+              <!-- Category 5: Funds & Dimensions -->
+              <div class="nav-group">
+                <button class="settings-nav-item w-full flex items-center justify-between px-space-sm py-2 rounded text-left transition-colors hover:bg-surface-secondary text-text-secondary font-medium" data-target="panel-funds-dimensions">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <span class="material-symbols-outlined text-[18px] text-text-muted">account_tree</span>
+                    <span class="truncate">Funds &amp; Cost Centers</span>
+                  </div>
+                  <span class="material-symbols-outlined text-[16px] text-text-muted">chevron_right</span>
+                </button>
+              </div>
+
+              <!-- Category 6: Compliance & Tax Tables -->
+              <div class="nav-group">
+                <button class="settings-nav-item w-full flex items-center justify-between px-space-sm py-2 rounded text-left transition-colors hover:bg-surface-secondary text-text-secondary font-medium" data-target="panel-compliance-tax">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <span class="material-symbols-outlined text-[18px] text-text-muted">gavel</span>
+                    <span class="truncate">Compliance &amp; Tax Tables</span>
+                  </div>
+                  <span class="px-1.5 py-0.2 rounded bg-primary-tint text-primary font-mono text-[10px] font-bold">v2025</span>
+                </button>
+              </div>
+            </nav>
+          </div>
+
+          <!-- Configuration Change Protection Callout -->
+          <div class="p-space-md bg-surface-card rounded-lg border border-border-subtle shadow-sm flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-status-warning-text font-title-sm">
+              <span class="material-symbols-outlined text-[18px]">security</span>
+              <span>Fiduciary Protection Level</span>
+            </div>
+            <p class="font-caption text-caption text-text-secondary">
+              Consequential settings (default currencies, approval chains, fiscal calendar locks) trigger an immutable cryptographic audit event and require two-step confirmation.
+            </p>
+            <div class="pt-2 border-t border-border-subtle flex items-center justify-between text-caption font-mono text-text-muted">
+              <span>Audit Chain:</span>
+              <span class="text-primary font-semibold">Active &amp; Guarded</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- 2. MAIN SETTINGS PANEL (DYNAMICALLY SWITCHABLE SECTIONS) -->
+        <section class="flex-1 min-w-0 flex flex-col gap-space-lg" id="mainSettingsWorkspace">
+          
+          <!-- ========================================================
+               PANEL 1: APPROVAL RULES & CHAINS (DEFAULT ACTIVE)
+               ======================================================== -->
+          <div class="settings-content-panel flex flex-col gap-space-lg" id="panel-approval-rules">
+            <!-- Panel Header -->
+            <div class="bg-surface-card rounded-lg border border-border-subtle p-space-lg shadow-sm flex flex-col gap-space-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+                <div>
+                  <h2 class="font-headline-sm text-headline-sm text-text-primary">Approval Rules &amp; Tiered Delegation Chains</h2>
+                  <p class="font-body-sm text-body-sm text-text-secondary mt-0.5">
+                    Configure multi-level delegation thresholds, donor-mandated approval workflows, and separation of duties for requisitions, disbursements, and journal postings.
+                  </p>
+                </div>
+                <div class="flex items-center gap-space-xs shrink-0">
+                  <button id="addRuleBtn" class="px-space-md py-1.5 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add</span>
+                    <span>Create Approval Rule</span>
+                  </button>
+                </div>
+              </div>
+              <div class="mt-2 pt-2 border-t border-border-subtle/50 flex flex-wrap items-center justify-between gap-2 text-caption text-text-muted">
+                <div class="flex items-center gap-3">
+                  <span>Active Policies: <strong class="text-text-primary font-semibold">4 Threshold Tiers</strong></span>
+                  <span>•</span>
+                  <span>Donor Matrix: <strong class="text-text-primary font-semibold">USAID, Global Fund, EU Compliance</strong></span>
+                </div>
+                <span class="text-text-secondary">Last updated: 22 Jun 2025 by Ama Mensah (Rule Modified RUL-APP-004)</span>
+              </div>
+            </div>
+
+            <!-- Approval Thresholds Table -->
+            <div class="bg-surface-card rounded-lg border border-border-subtle shadow-sm flex flex-col overflow-hidden">
+              <div class="p-space-md border-b border-border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-secondary/40">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+                  <h3 class="font-title-md text-title-md text-text-primary">Expenditure &amp; Requisition Thresholds (Ghana Operations)</h3>
+                </div>
+                <span class="px-2 py-0.5 rounded bg-status-neutral-bg text-status-neutral-text font-label-sm text-label-sm">Board Policy POL-PROC-2025-A</span>
+              </div>
+
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse" id="approvalRulesTable">
+                  <thead>
+                    <tr class="bg-surface-secondary font-label-md text-label-md uppercase tracking-wider text-text-secondary border-b border-border-subtle">
+                      <th class="py-3 px-4 font-semibold">Tier / Scope</th>
+                      <th class="py-3 px-4 font-semibold">Threshold Range (GHS)</th>
+                      <th class="py-3 px-4 font-semibold">Required Sign-off Chain</th>
+                      <th class="py-3 px-4 font-semibold">Procurement Requirement</th>
+                      <th class="py-3 px-4 font-semibold">Status</th>
+                      <th class="py-3 px-4 text-right font-semibold">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-border-subtle/50 font-body-sm text-body-sm text-text-primary" id="approvalRulesBody">
+                    <!-- Tier 1 -->
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td class="py-3 px-4">
+                        <div class="font-semibold text-text-primary">Micro Procurement &amp; Travel</div>
+                        <div class="font-caption text-caption text-text-muted">Field Station Level (Tamale / Volta)</div>
+                      </td>
+                      <td class="py-3 px-4 font-numeric-table font-medium whitespace-nowrap">Up to GH₵ 5,000.00</td>
+                      <td class="py-3 px-4">
+                        <div class="flex items-center gap-1">
+                          <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-primary text-xs font-medium">Field Lead</span>
+                          <span class="material-symbols-outlined text-[14px] text-text-muted">arrow_forward</span>
+                          <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-primary text-xs font-medium">Project Manager</span>
+                        </div>
+                      </td>
+                      <td class="py-3 px-4 text-caption text-text-secondary">Direct Purchase Voucher</td>
+                      <td class="py-3 px-4 whitespace-nowrap">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+                          <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active
+                        </span>
+                      </td>
+                      <td class="py-3 px-4 text-right whitespace-nowrap">
+                        <button class="edit-rule-btn text-primary hover:text-primary-hover font-title-sm text-title-sm transition-colors cursor-pointer mr-2" data-tier="Tier 1">Edit</button>
+                        <button class="text-text-muted hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">more_vert</span></button>
+                      </td>
+                    </tr>
+
+                    <!-- Tier 2 -->
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td class="py-3 px-4">
+                        <div class="font-semibold text-text-primary">Standard Operational Purchases</div>
+                        <div class="font-caption text-caption text-text-muted">Accra Core &amp; Zonal Hubs</div>
+                      </td>
+                      <td class="py-3 px-4 font-numeric-table font-medium whitespace-nowrap">GH₵ 5,001.00 – GH₵ 25,000.00</td>
+                      <td class="py-3 px-4">
+                        <div class="flex items-center gap-1">
+                          <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-primary text-xs font-medium">Project Manager</span>
+                          <span class="material-symbols-outlined text-[14px] text-text-muted">arrow_forward</span>
+                          <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-primary text-xs font-medium">Finance Officer</span>
+                        </div>
+                      </td>
+                      <td class="py-3 px-4 text-caption text-text-secondary">3 Written Competitive Quotes</td>
+                      <td class="py-3 px-4 whitespace-nowrap">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+                          <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active
+                        </span>
+                      </td>
+                      <td class="py-3 px-4 text-right whitespace-nowrap">
+                        <button class="edit-rule-btn text-primary hover:text-primary-hover font-title-sm text-title-sm transition-colors cursor-pointer mr-2" data-tier="Tier 2">Edit</button>
+                        <button class="text-text-muted hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">more_vert</span></button>
+                      </td>
+                    </tr>
+
+                    <!-- Tier 3: RECENTLY UPDATED -->
+                    <tr class="hover:bg-primary-tint/20 transition-colors bg-surface-secondary/20">
+                      <td class="py-3 px-4">
+                        <div class="flex items-center gap-1.5">
+                          <span class="font-semibold text-text-primary">Major Program Supply Orders</span>
+                          <span class="px-1.5 py-0.2 rounded bg-status-warning-bg text-status-warning-text font-mono text-[10px] font-bold">Modified</span>
+                        </div>
+                        <div class="font-caption text-caption text-text-muted">Donor Grants (USAID / Global Fund)</div>
+                      </td>
+                      <td class="py-3 px-4 font-numeric-table font-semibold text-text-primary whitespace-nowrap">
+                        GH₵ 25,001.00 – GH₵ 75,000.00
+                      </td>
+                      <td class="py-3 px-4">
+                        <div class="flex items-center gap-1">
+                          <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-primary text-xs font-medium">Finance Lead</span>
+                          <span class="material-symbols-outlined text-[14px] text-text-muted">arrow_forward</span>
+                          <span class="px-1.5 py-0.5 rounded bg-primary-tint text-primary text-xs font-semibold">Finance Director</span>
+                        </div>
+                      </td>
+                      <td class="py-3 px-4 text-caption text-text-secondary">Tender Committee Evaluation + GRN 3-Way Match</td>
+                      <td class="py-3 px-4 whitespace-nowrap">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+                          <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active
+                        </span>
+                      </td>
+                      <td class="py-3 px-4 text-right whitespace-nowrap">
+                        <button class="edit-rule-btn text-primary hover:text-primary-hover font-title-sm text-title-sm transition-colors cursor-pointer mr-2" data-tier="Tier 3">Edit</button>
+                        <button class="text-text-muted hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">more_vert</span></button>
+                      </td>
+                    </tr>
+
+                    <!-- Tier 4 -->
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td class="py-3 px-4">
+                        <div class="font-semibold text-text-primary">Capital Assets &amp; Strategic Contracts</div>
+                        <div class="font-caption text-caption text-text-muted">Vehicles, Medical Equipment, Solar Hubs</div>
+                      </td>
+                      <td class="py-3 px-4 font-numeric-table font-medium whitespace-nowrap">Above GH₵ 75,000.00</td>
+                      <td class="py-3 px-4">
+                        <div class="flex items-center gap-1">
+                          <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-primary text-xs font-medium">Finance Director</span>
+                          <span class="material-symbols-outlined text-[14px] text-text-muted">arrow_forward</span>
+                          <span class="px-1.5 py-0.5 rounded bg-nav-surface text-white text-xs font-semibold">Executive Director / Board</span>
+                        </div>
+                      </td>
+                      <td class="py-3 px-4 text-caption text-text-secondary">Formal Public Tender + Board Fiduciary Sign-off</td>
+                      <td class="py-3 px-4 whitespace-nowrap">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+                          <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active
+                        </span>
+                      </td>
+                      <td class="py-3 px-4 text-right whitespace-nowrap">
+                        <button class="edit-rule-btn text-primary hover:text-primary-hover font-title-sm text-title-sm transition-colors cursor-pointer mr-2" data-tier="Tier 4">Edit</button>
+                        <button class="text-text-muted hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">more_vert</span></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Donor-Specific & Journal Approval Settings -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+              <!-- Donor-Specific Approval Rules -->
+              <div class="bg-surface-card rounded-lg border border-border-subtle p-space-lg shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between pb-2 border-b border-border-subtle">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-fund-temp-restricted text-[18px]">verified</span>
+                      <h4 class="font-title-md text-title-md text-text-primary">Donor-Specific Approval Rules</h4>
+                    </div>
+                    <span class="font-caption text-caption text-text-muted font-mono">3 Active Covenants</span>
+                  </div>
+                  <div class="mt-3 flex flex-col gap-3 font-body-sm text-body-sm">
+                    <div class="flex items-start justify-between p-2 rounded bg-surface-secondary/60">
+                      <div>
+                        <div class="font-semibold text-text-primary">USAID (Grant Code: USAID-GH-2024-ED09)</div>
+                        <div class="text-text-secondary text-xs">Mandatory prior approval for international travel and capital equipment &gt; $5,000.</div>
+                      </div>
+                      <span class="px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-xs font-semibold shrink-0">Strict</span>
+                    </div>
+                    <div class="flex items-start justify-between p-2 rounded bg-surface-secondary/60">
+                      <div>
+                        <div class="font-semibold text-text-primary">Global Fund (Grant Code: GF-MAL-2023-GH)</div>
+                        <div class="text-text-secondary text-xs">Principal Recipient dual signature required on all medical consumable disbursements.</div>
+                      </div>
+                      <span class="px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-xs font-semibold shrink-0">Dual-Sign</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="mt-4 w-full py-1.5 bg-surface-secondary hover:bg-surface-dim/40 text-text-primary rounded font-title-sm text-title-sm transition-colors border border-border-subtle text-center" type="button">
+                  Configure Donor Approval Matrix
+                </button>
+              </div>
+
+              <!-- General Ledger & Finance Approval Constraints -->
+              <div class="bg-surface-card rounded-lg border border-border-subtle p-space-lg shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between pb-2 border-b border-border-subtle">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-primary text-[18px]">account_balance_wallet</span>
+                      <h4 class="font-title-md text-title-md text-text-primary">Financial &amp; Journal Controls</h4>
+                    </div>
+                    <span class="font-caption text-caption text-status-success-text font-semibold">Enforced</span>
+                  </div>
+                  <div class="mt-3 flex flex-col gap-3 font-body-sm text-body-sm">
+                    <label class="flex items-center justify-between cursor-pointer">
+                      <div class="flex flex-col pr-2">
+                        <span class="font-semibold text-text-primary">Prevent Self-Approval of Journal Entries</span>
+                        <span class="text-text-secondary text-xs">The creator of a journal voucher cannot approve or post it.</span>
+                      </div>
+                      <input type="checkbox" checked class="w-4 h-4 text-primary rounded border-border-strong focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between cursor-pointer">
+                      <div class="flex flex-col pr-2">
+                        <span class="font-semibold text-text-primary">Strict Fund Balance Lock</span>
+                        <span class="text-text-secondary text-xs">Disallow purchase requisitions exceeding available uncommitted fund balance.</span>
+                      </div>
+                      <input type="checkbox" checked class="w-4 h-4 text-primary rounded border-border-strong focus:ring-primary" />
+                    </label>
+                  </div>
+                </div>
+                <div class="mt-4 pt-2 border-t border-border-subtle flex items-center justify-between text-caption text-text-muted">
+                  <span>Audit Event on change:</span>
+                  <span class="font-mono text-xs text-text-primary">LOG-RULE-0044</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               PANEL 2: ORGANIZATION PROFILE & FISCAL STRUCTURE
+               ======================================================== -->
+          <div class="settings-content-panel hidden flex-col gap-space-lg" id="panel-organization">
+            <div class="bg-surface-card rounded-lg border border-border-subtle p-space-lg shadow-sm flex flex-col gap-space-xs">
+              <h2 class="font-headline-sm text-headline-sm text-text-primary">Organization Profile &amp; Governance Identity</h2>
+              <p class="font-body-sm text-body-sm text-text-secondary">
+                Master identity record, primary legal charter, headquarters coordinates, and default operating parameters for the global NGO entity.
+              </p>
+            </div>
+
+            <div class="bg-surface-card rounded-lg border border-border-subtle p-space-lg shadow-sm flex flex-col gap-space-md">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                <div>
+                  <label class="block font-label-md text-label-md text-text-primary mb-1">Organization Legal Name *</label>
+                  <input type="text" value="International Humanitarian Foundation — West Africa (IHG)" class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                </div>
+                <div>
+                  <label class="block font-label-md text-label-md text-text-primary mb-1">Entity Registration / NGO Board Number</label>
+                  <input type="text" value="NGO-DSW-GH-2018-0941" class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                </div>
+                <div>
+                  <label class="block font-label-md text-label-md text-text-primary mb-1">Headquarters Duty Station Address</label>
+                  <input type="text" value="Plot 42, Independence Avenue, Airport Residential Area, Accra, Ghana" class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                </div>
+                <div>
+                  <label class="block font-label-md text-label-md text-text-primary mb-1">Official Fiduciary Contact Email</label>
+                  <input type="email" value="finance.accra@fiduciary-ngo.org" class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                </div>
+                <div>
+                  <label class="block font-label-md text-label-md text-text-primary mb-1">Primary Base Currency</label>
+                  <div class="flex items-center gap-2">
+                    <input type="text" disabled value="GHS (Ghana Cedi — GH¢)" class="w-full px-3 py-2 bg-surface-dim/30 border border-border-subtle rounded text-body-sm text-text-primary font-semibold" />
+                    <button class="px-2.5 py-2 bg-surface-secondary hover:bg-surface-dim/40 text-text-secondary text-xs rounded border border-border-subtle whitespace-nowrap" type="button" title="Currency alteration requires high-level confirmation">Change</button>
+                  </div>
+                  <span class="font-caption text-caption text-text-muted mt-1 block">Affects all historical general ledger vouchers and reporting books.</span>
+                </div>
+                <div>
+                  <label class="block font-label-md text-label-md text-text-primary mb-1">Active Fiscal Year Cycle</label>
+                  <div class="flex items-center gap-2">
+                    <input type="text" disabled value="Calendar Year (01 January – 31 December)" class="w-full px-3 py-2 bg-surface-dim/30 border border-border-subtle rounded text-body-sm text-text-primary font-semibold" />
+                    <span class="px-2 py-1 rounded bg-status-success-bg text-status-success-text text-xs font-semibold whitespace-nowrap">Active Period</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-border-subtle flex items-center justify-between">
+                <span class="font-caption text-caption text-text-muted">Last modified by Ama Mensah on 15 Jan 2025</span>
+                <div class="flex items-center gap-2">
+                  <button class="px-space-md py-1.5 bg-surface-secondary hover:bg-surface-dim/40 text-text-primary rounded font-title-sm text-title-sm transition-colors border border-border-subtle" type="button">Cancel</button>
+                  <button class="save-panel-btn px-space-md py-1.5 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors shadow-sm" type="button">Save Changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               PANEL 3: USERS & ROLES
+               ======================================================== -->
+          <div class="settings-content-panel hidden flex-col gap-space-lg" id="panel-users-roles">
+            <div class="bg-surface-card rounded-lg border border-border-subtle p-space-lg shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+              <div>
+                <h2 class="font-headline-sm text-headline-sm text-text-primary">Users, Roles &amp; Delegated Authority Matrix</h2>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-0.5">
+                  Manage staff role bindings, multi-factor authentication requirements, and permissions according to IPSAS separation of duties.
+                </p>
+              </div>
+              <button class="px-space-md py-1.5 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+                <span class="material-symbols-outlined text-[16px]">person_add</span>
+                <span>Invite User</span>
+              </button>
+            </div>
+
+            <div class="bg-surface-card rounded-lg border border-border-subtle shadow-sm overflow-hidden">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-surface-secondary font-label-md text-label-md uppercase tracking-wider text-text-secondary border-b border-border-subtle">
+                    <th class="py-3 px-4 font-semibold">User / Staff Name</th>
+                    <th class="py-3 px-4 font-semibold">Assigned System Role</th>
+                    <th class="py-3 px-4 font-semibold">Duty Station / Hub</th>
+                    <th class="py-3 px-4 font-semibold">Access Scope</th>
+                    <th class="py-3 px-4 font-semibold">MFA Status</th>
+                    <th class="py-3 px-4 text-right font-semibold">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-border-subtle/50 font-body-sm text-body-sm text-text-primary">
+                  <tr class="hover:bg-primary-tint/20 transition-colors">
+                    <td class="py-3 px-4">
+                      <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">AM</div>
+                        <div>
+                          <div class="font-semibold text-text-primary">Ama Mensah</div>
+                          <div class="font-caption text-caption text-text-muted">ama.mensah@fiduciary-ngo.org</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-primary-tint text-primary font-semibold text-xs">System Administrator &amp; Controller</span></td>
+                    <td class="py-3 px-4">Accra Core Hub (HQ)</td>
+                    <td class="py-3 px-4 text-xs text-text-secondary">Full Organization-wide</td>
+                    <td class="py-3 px-4"><span class="inline-flex items-center gap-1 text-status-success-text font-semibold text-xs"><span class="material-symbols-outlined text-[14px]">check_circle</span> Hardware FIDO2</span></td>
+                    <td class="py-3 px-4 text-right"><button class="text-primary hover:underline font-medium text-xs">Edit Role</button></td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/20 transition-colors">
+                    <td class="py-3 px-4">
+                      <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-full bg-surface-secondary text-text-secondary flex items-center justify-center font-bold text-xs">SM</div>
+                        <div>
+                          <div class="font-semibold text-text-primary">Sarah Mensah</div>
+                          <div class="font-caption text-caption text-text-muted">sarah.m@fiduciary-ngo.org</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-surface-secondary text-text-primary font-semibold text-xs">Senior Grants Accountant</span></td>
+                    <td class="py-3 px-4">Accra Core Hub (HQ)</td>
+                    <td class="py-3 px-4 text-xs text-text-secondary">USAID &amp; Global Fund Ledgers</td>
+                    <td class="py-3 px-4"><span class="inline-flex items-center gap-1 text-status-success-text font-semibold text-xs"><span class="material-symbols-outlined text-[14px]">check_circle</span> Authenticator App</span></td>
+                    <td class="py-3 px-4 text-right"><button class="text-primary hover:underline font-medium text-xs">Edit Role</button></td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/20 transition-colors">
+                    <td class="py-3 px-4">
+                      <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-full bg-surface-secondary text-text-secondary flex items-center justify-center font-bold text-xs">KA</div>
+                        <div>
+                          <div class="font-semibold text-text-primary">Kwesi Appiah</div>
+                          <div class="font-caption text-caption text-text-muted">kwesi.a@fiduciary-ngo.org</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-surface-secondary text-text-primary font-semibold text-xs">Senior Logistics &amp; Field Lead</span></td>
+                    <td class="py-3 px-4">Tamale Regional Hub</td>
+                    <td class="py-3 px-4 text-xs text-text-secondary">Field Hub Requisitions</td>
+                    <td class="py-3 px-4"><span class="inline-flex items-center gap-1 text-status-success-text font-semibold text-xs"><span class="material-symbols-outlined text-[14px]">check_circle</span> SMS + App</span></td>
+                    <td class="py-3 px-4 text-right"><button class="text-primary hover:underline font-medium text-xs">Edit Role</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               PANEL 4: ACCOUNTING & CURRENCY
+               ======================================================== -->
+          <div class="settings-content-panel hidden flex-col gap-space-lg" id="panel-accounting">
+            <div class="bg-surface-card rounded-lg border border-border-subtle p-space-lg shadow-sm flex flex-col gap-space-xs">
+              <h2 class="font-headline-sm text-headline-sm text-text-primary">Accounting System, Exchange Rates &amp; Chart of Accounts</h2>
+              <p class="font-body-sm text-body-sm text-text-secondary">
+                Manage statutory fiscal periods, numbering sequences, active foreign currencies, and Bank of Ghana benchmark exchange rates.
+              </p>
+            </div>
+
+            <!-- Multi-Currency & FX Rate Table -->
+            <div class="bg-surface-card rounded-lg border border-border-subtle shadow-sm flex flex-col overflow-hidden">
+              <div class="p-space-md border-b border-border-subtle flex items-center justify-between bg-surface-secondary/40">
+                <h3 class="font-title-md text-title-md text-text-primary">Configured Operating Currencies &amp; Fixed Revaluation Rates</h3>
+                <span class="font-caption text-caption text-text-muted">Source: Bank of Ghana Official Fixing</span>
+              </div>
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-surface-secondary font-label-md text-label-md uppercase tracking-wider text-text-secondary border-b border-border-subtle">
+                    <th class="py-3 px-4 font-semibold">Currency Code</th>
+                    <th class="py-3 px-4 font-semibold">Designation</th>
+                    <th class="py-3 px-4 font-semibold">Standard Peg to Base (GHS)</th>
+                    <th class="py-3 px-4 font-semibold">Type</th>
+                    <th class="py-3 px-4 font-semibold">Auto-Revaluation</th>
+                    <th class="py-3 px-4 text-right font-semibold">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-border-subtle/50 font-body-sm text-body-sm text-text-primary">
+                  <tr>
+                    <td class="py-3 px-4 font-bold">GHS</td>
+                    <td class="py-3 px-4">Ghana Cedi (GH¢)</td>
+                    <td class="py-3 px-4 font-numeric-table">1.0000 (Base)</td>
+                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-primary-tint text-primary font-semibold text-xs">Functional Base</span></td>
+                    <td class="py-3 px-4 text-text-muted">N/A</td>
+                    <td class="py-3 px-4 text-right"><span class="text-status-success-text font-semibold text-xs">Active Master</span></td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-bold">USD</td>
+                    <td class="py-3 px-4">United States Dollar ($)</td>
+                    <td class="py-3 px-4 font-numeric-table font-semibold">15.4200 GHS</td>
+                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-semibold text-xs">Donor Primary</span></td>
+                    <td class="py-3 px-4 text-status-success-text text-xs">Daily Midnight Sync</td>
+                    <td class="py-3 px-4 text-right"><span class="text-status-success-text font-semibold text-xs">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-bold">EUR</td>
+                    <td class="py-3 px-4">Euro (€)</td>
+                    <td class="py-3 px-4 font-numeric-table font-semibold">16.8500 GHS</td>
+                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-surface-secondary text-text-primary font-semibold text-xs">EU Climate Grant</span></td>
+                    <td class="py-3 px-4 text-status-success-text text-xs">Daily Midnight Sync</td>
+                    <td class="py-3 px-4 text-right"><span class="text-status-success-text font-semibold text-xs">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               PANEL 5: FUNDS & DIMENSIONS
+               ======================================================== -->
+          <div class="settings-content-panel hidden flex-col gap-space-lg" id="panel-funds-dimensions">
+            <div class="bg-surface-card rounded-lg border border-border-subtle p-space-lg shadow-sm flex flex-col gap-space-xs">
+              <h2 class="font-headline-sm text-headline-sm text-text-primary">Fund Accounting Hierarchy &amp; Cost Center Allocations</h2>
+              <p class="font-body-sm text-body-sm text-text-secondary">
+                Governance rules for Unrestricted, Restricted, and Temporarily Restricted funds in compliance with international NGO accounting principles.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+              <div class="bg-surface-card rounded-lg border border-border-subtle p-space-md shadow-sm flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded bg-primary-tint text-primary font-bold text-xs">Unrestricted</span>
+                  <span class="font-mono text-xs text-text-muted">GL: 3100</span>
+                </div>
+                <div class="font-title-sm text-title-sm text-text-primary">General Operating Fund</div>
+                <p class="font-caption text-caption text-text-secondary">Core institutional reserves, board discretionary allocations, and administrative overheads.</p>
+                <div class="pt-2 border-t border-border-subtle text-caption text-text-muted flex justify-between">
+                  <span>Deficit Policy:</span>
+                  <span class="font-semibold text-text-primary">Allowed with Warning</span>
+                </div>
+              </div>
+
+              <div class="bg-surface-card rounded-lg border border-border-subtle p-space-md shadow-sm flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-bold text-xs">Restricted</span>
+                  <span class="font-mono text-xs text-text-muted">GL: 3200</span>
+                </div>
+                <div class="font-title-sm text-title-sm text-text-primary">Donor Earmarked Grants</div>
+                <p class="font-caption text-caption text-text-secondary">USAID, Global Fund, and institutional grants bound by legal covenants. Cannot be co-mingled.</p>
+                <div class="pt-2 border-t border-border-subtle text-caption text-text-muted flex justify-between">
+                  <span>Deficit Policy:</span>
+                  <span class="font-semibold text-status-critical-text">Strict Lock (No Overspend)</span>
+                </div>
+              </div>
+
+              <div class="bg-surface-card rounded-lg border border-border-subtle p-space-md shadow-sm flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded bg-[#FEF8E7] text-[#A07200] font-bold text-xs">Temporarily Restricted</span>
+                  <span class="font-mono text-xs text-text-muted">GL: 3300</span>
+                </div>
+                <div class="font-title-sm text-title-sm text-text-primary">Time / Purpose Bound Funds</div>
+                <p class="font-caption text-caption text-text-secondary">Funds released upon milestone completion or specific fiscal period expiration.</p>
+                <div class="pt-2 border-t border-border-subtle text-caption text-text-muted flex justify-between">
+                  <span>Deficit Policy:</span>
+                  <span class="font-semibold text-status-warning-text">Conditional Release</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               PANEL 6: COMPLIANCE & VERSIONED TAX TABLES
+               ======================================================== -->
+          <div class="settings-content-panel hidden flex-col gap-space-lg" id="panel-compliance-tax">
+            <div class="bg-surface-card rounded-lg border border-border-subtle p-space-lg shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h2 class="font-headline-sm text-headline-sm text-text-primary">Configurable, Versioned Statutory &amp; Tax Tables</h2>
+                  <span class="px-2 py-0.5 rounded bg-primary-tint text-primary font-mono text-xs font-semibold">GRA Compliant</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-text-secondary mt-0.5">
+                  Statutory tax brackets for Withholding Tax (WHT), PAYE employee tax bands, and SSNIT social security contributions with effective dates and version history.
+                </p>
+              </div>
+              <button id="newTaxVersionBtn" class="px-space-md py-1.5 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+                <span class="material-symbols-outlined text-[16px]">add_circle</span>
+                <span>Publish New Tax Band Version</span>
+              </button>
+            </div>
+
+            <!-- Tax Tables Master List -->
+            <div class="bg-surface-card rounded-lg border border-border-subtle shadow-sm overflow-hidden flex flex-col">
+              <div class="p-space-md border-b border-border-subtle flex items-center justify-between bg-surface-secondary/40">
+                <h3 class="font-title-md text-title-md text-text-primary">Active Statutory Tax Bands (Ghana Revenue Authority &amp; SSNIT)</h3>
+                <span class="font-caption text-caption text-text-muted">Effective Date: 01 Jan 2025</span>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr class="bg-surface-secondary font-label-md text-label-md uppercase tracking-wider text-text-secondary border-b border-border-subtle">
+                      <th class="py-3 px-4 font-semibold">Statutory Category</th>
+                      <th class="py-3 px-4 font-semibold">Rate / Band Description</th>
+                      <th class="py-3 px-4 font-semibold">Effective Date</th>
+                      <th class="py-3 px-4 font-semibold">Table Version</th>
+                      <th class="py-3 px-4 font-semibold">Statutory Authority</th>
+                      <th class="py-3 px-4 font-semibold">Status</th>
+                      <th class="py-3 px-4 text-right font-semibold">Inspect</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-border-subtle/50 font-body-sm text-body-sm text-text-primary">
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td class="py-3 px-4">
+                        <div class="font-semibold text-text-primary">WHT — Goods &amp; Relief Supplies</div>
+                        <div class="font-caption text-caption text-text-muted">Local Vendor Purchases &gt; GH₵ 2,000</div>
+                      </td>
+                      <td class="py-3 px-4 font-numeric-table font-semibold">3.0% Standard Withholding</td>
+                      <td class="py-3 px-4 text-xs font-mono">01 Jan 2024</td>
+                      <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-surface-secondary text-text-primary font-mono text-xs font-semibold">v2024.1</span></td>
+                      <td class="py-3 px-4 text-text-secondary">Ghana Revenue Authority (GRA)</td>
+                      <td class="py-3 px-4"><span class="inline-flex items-center gap-1 text-status-success-text font-semibold text-xs"><span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active</span></td>
+                      <td class="py-3 px-4 text-right"><button class="text-primary hover:underline font-medium text-xs">Edit Table</button></td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td class="py-3 px-4">
+                        <div class="font-semibold text-text-primary">WHT — Technical &amp; Consultancies</div>
+                        <div class="font-caption text-caption text-text-muted">Training &amp; External Program Audits</div>
+                      </td>
+                      <td class="py-3 px-4 font-numeric-table font-semibold">7.5% Professional Services</td>
+                      <td class="py-3 px-4 text-xs font-mono">01 Jan 2024</td>
+                      <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-surface-secondary text-text-primary font-mono text-xs font-semibold">v2024.2</span></td>
+                      <td class="py-3 px-4 text-text-secondary">Ghana Revenue Authority (GRA)</td>
+                      <td class="py-3 px-4"><span class="inline-flex items-center gap-1 text-status-success-text font-semibold text-xs"><span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active</span></td>
+                      <td class="py-3 px-4 text-right"><button class="text-primary hover:underline font-medium text-xs">Edit Table</button></td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td class="py-3 px-4">
+                        <div class="font-semibold text-text-primary">GRA PAYE Multi-Tier Band</div>
+                        <div class="font-caption text-caption text-text-muted">Staff Monthly Payroll Remittance</div>
+                      </td>
+                      <td class="py-3 px-4 font-numeric-table font-semibold">0% to 35% Graduated Scale</td>
+                      <td class="py-3 px-4 text-xs font-mono">01 Jan 2025</td>
+                      <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-primary-tint text-primary font-mono text-xs font-semibold">v2025.1 (Current)</span></td>
+                      <td class="py-3 px-4 text-text-secondary">GRA Income Tax Act 896</td>
+                      <td class="py-3 px-4"><span class="inline-flex items-center gap-1 text-status-success-text font-semibold text-xs"><span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active</span></td>
+                      <td class="py-3 px-4 text-right"><button class="text-primary hover:underline font-medium text-xs">Edit Table</button></td>
+                    </tr>
+                    <tr class="hover:bg-primary-tint/20 transition-colors">
+                      <td class="py-3 px-4">
+                        <div class="font-semibold text-text-primary">SSNIT Social Security Tier 1 &amp; Tier 2</div>
+                        <div class="font-caption text-caption text-text-muted">Mandatory Pension Contributions</div>
+                      </td>
+                      <td class="py-3 px-4 font-numeric-table font-semibold">13.5% Employer • 5.5% Employee</td>
+                      <td class="py-3 px-4 text-xs font-mono">01 Jan 2023</td>
+                      <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-surface-secondary text-text-primary font-mono text-xs font-semibold">v2023.0</span></td>
+                      <td class="py-3 px-4 text-text-secondary">National Pensions Reg. (NPRA)</td>
+                      <td class="py-3 px-4"><span class="inline-flex items-center gap-1 text-status-success-text font-semibold text-xs"><span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span> Active</span></td>
+                      <td class="py-3 px-4 text-right"><button class="text-primary hover:underline font-medium text-xs">Edit Table</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- ========================================================
+       MODAL: CONSEQUENTIAL CHANGE CONFIRMATION (PROTECTION)
+       ======================================================== -->
+  <div id="confirmationModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center hidden p-4">
+    <div class="bg-surface-card rounded-lg border border-border-subtle shadow-xl max-w-lg w-full p-space-lg flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-150">
+      <div class="flex items-start gap-3">
+        <div class="w-10 h-10 rounded-full bg-status-warning-bg text-status-warning-text flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[24px]">gavel</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <h3 class="font-headline-sm text-headline-sm text-text-primary" id="modalTitle">Confirm Consequential Configuration Change</h3>
+          <span class="font-caption text-caption text-text-muted font-mono" id="modalRef">Event Ref: CFG-MOD-2025-0814</span>
+        </div>
+      </div>
+
+      <div class="p-space-sm bg-surface-secondary rounded border border-border-subtle text-body-sm text-text-secondary flex flex-col gap-2">
+        <p id="modalDescription">
+          You are updating the expenditure threshold for <strong>Tier 3 Procurement Approvals</strong> from GH₵ 50,000 to GH₵ 75,000.
+        </p>
+        <div class="p-2 bg-white rounded border border-border-subtle text-caption text-text-primary">
+          <strong>Fiduciary Impact:</strong> This modification relaxes executive dual sign-off on grant disbursements between GH₵ 50,000 and GH₵ 75,000 across all 4 donor agreements. An immutable audit entry will be generated and signed with your credentials.
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-space-sm pt-2 border-t border-border-subtle">
+        <button id="cancelModalBtn" class="px-space-md py-2 bg-surface-secondary hover:bg-surface-dim/40 text-text-primary rounded font-title-sm text-title-sm transition-colors border border-border-subtle" type="button">
+          Cancel &amp; Revert
+        </button>
+        <button id="confirmSaveBtn" class="px-space-md py-2 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors shadow-sm flex items-center gap-1.5" type="button">
+          <span class="material-symbols-outlined text-[16px]">check_circle</span>
+          <span>Authorize &amp; Commit to Audit Log</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       DRAWER: EDIT / CREATE APPROVAL RULE
+       ======================================================== -->
+  <div id="ruleDrawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-surface-card z-50 border-l border-border-subtle shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300">
+    <div class="p-space-lg border-b border-border-subtle flex items-center justify-between bg-surface-secondary/40">
+      <div class="flex flex-col">
+        <h3 class="font-title-md text-title-md text-text-primary" id="drawerTitle">Configure Approval Rule</h3>
+        <span class="font-caption text-caption text-text-muted">Delegation matrix &amp; separation of duties</span>
+      </div>
+      <button id="closeDrawerBtn" class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <div class="p-space-lg flex-1 overflow-y-auto flex flex-col gap-space-md">
+      <div>
+        <label class="block font-label-md text-label-md text-text-primary mb-1">Approval Tier Title *</label>
+        <input type="text" id="drawerTierInput" value="Major Program Supply Orders (Tier 3)" class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+      </div>
+
+      <div class="grid grid-cols-2 gap-space-sm">
+        <div>
+          <label class="block font-label-md text-label-md text-text-primary mb-1">Minimum Amount (GHS)</label>
+          <input type="number" id="drawerMinInput" value="25000" class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary font-numeric-table" />
+        </div>
+        <div>
+          <label class="block font-label-md text-label-md text-text-primary mb-1">Maximum Amount (GHS) *</label>
+          <input type="number" id="drawerMaxInput" value="75000" class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary font-numeric-table font-semibold" />
+        </div>
+      </div>
+
+      <div>
+        <label class="block font-label-md text-label-md text-text-primary mb-1">Required Approval Workflow Chain *</label>
+        <select class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary focus:outline-none focus:border-primary">
+          <option>Finance Lead &rarr; Finance Director</option>
+          <option>Project Manager &rarr; Finance Officer</option>
+          <option>Finance Director &rarr; Executive Director</option>
+          <option>Full Tender Committee + Executive Board</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-label-md text-label-md text-text-primary mb-1">Associated Donor Restriction Scope</label>
+        <select class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary focus:outline-none focus:border-primary">
+          <option>All Donor Grants (USAID / Global Fund / EU)</option>
+          <option>USAID Only (USAID-GH-2024-ED09)</option>
+          <option>Global Fund Only (GF-MAL-2023-GH)</option>
+          <option>Unrestricted Institutional Funds Only</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-label-md text-label-md text-text-primary mb-1">Procurement Quotation Mandate</label>
+        <input type="text" value="3 Written Competitive Quotes + Tender Committee Minuted Review" class="w-full px-3 py-2 bg-surface-secondary border border-border-subtle rounded text-body-sm text-text-primary focus:outline-none focus:border-primary" />
+      </div>
+
+      <div class="p-3 bg-surface-secondary rounded border border-border-subtle text-caption text-text-secondary">
+        <span class="font-semibold text-text-primary block mb-1">Audit Traceability Note:</span>
+        Modifying this tier will be submitted to the Board Audit Committee as policy change <strong>POL-APP-004</strong>.
+      </div>
+    </div>
+
+    <div class="p-space-md border-t border-border-subtle bg-surface-secondary/40 flex items-center justify-end gap-space-sm">
+      <button id="cancelDrawerBtn" class="px-space-md py-2 bg-surface-secondary hover:bg-surface-dim/40 text-text-primary rounded font-title-sm text-title-sm transition-colors border border-border-subtle" type="button">
+        Cancel
+      </button>
+      <button id="saveDrawerRuleBtn" class="px-space-md py-2 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors shadow-sm" type="button">
+        Save &amp; Request Authorization
+      </button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- ========================================================
+       JAVASCRIPT FOR INTERACTION & BEHAVIOR
+       ======================================================== -->
+  <!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      // 1. Toast Notification Helper
+      function showToast(message, type = 'success') {
+        const container = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = `pointer-events-auto flex items-center gap-2 px-4 py-3 rounded-lg shadow-lg border text-sm font-medium transition-all duration-300 transform translate-y-2 opacity-0 ${
+          type === 'success' ? 'bg-surface-card text-status-success-text border-status-success-border' :
+          type === 'warning' ? 'bg-surface-card text-status-warning-text border-status-warning-border' :
+          'bg-surface-card text-text-primary border-border-subtle'
+        }`;
+        
+        const icon = type === 'success' ? 'check_circle' : type === 'warning' ? 'warning' : 'info';
+        toast.innerHTML = `
+          <span class="material-symbols-outlined text-[18px]">${icon}</span>
+          <span>${message}</span>
+        `;
+        container.appendChild(toast);
+        
+        requestAnimationFrame(() => {
+          toast.classList.remove('translate-y-2', 'opacity-0');
+        });
+
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'translate-y-2');
+          setTimeout(() => toast.remove(), 300);
+        }, 4000);
+      }
+
+      // 2. Navigation Tabs (Left Sidebar Category Switching)
+      const navButtons = document.querySelectorAll('.settings-nav-item');
+      const panels = document.querySelectorAll('.settings-content-panel');
+
+      navButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('data-target');
+          if (!targetId) return;
+
+          // Update active state in nav tree
+          navButtons.forEach(b => {
+            b.classList.remove('active', 'bg-primary-tint', 'text-primary', 'font-semibold', 'border-l-4', 'border-primary');
+            b.classList.add('text-text-secondary', 'font-medium');
+            const icon = b.querySelector('.material-symbols-outlined');
+            if (icon) icon.classList.remove('text-primary');
+            if (icon) icon.classList.add('text-text-muted');
+          });
+
+          this.classList.add('active', 'bg-primary-tint', 'text-primary', 'font-semibold', 'border-l-4', 'border-primary');
+          this.classList.remove('text-text-secondary', 'font-medium');
+          const activeIcon = this.querySelector('.material-symbols-outlined');
+          if (activeIcon) {
+            activeIcon.classList.remove('text-text-muted');
+            activeIcon.classList.add('text-primary');
+          }
+
+          // Toggle visibility of panels
+          panels.forEach(p => {
+            if (p.id === targetId) {
+              p.classList.remove('hidden');
+              p.classList.add('flex');
+            } else {
+              p.classList.remove('flex');
+              p.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 3. Drawer logic for Edit/Create Rule
+      const drawer = document.getElementById('ruleDrawer');
+      const openDrawerBtns = document.querySelectorAll('.edit-rule-btn, #addRuleBtn');
+      const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+      const cancelDrawerBtn = document.getElementById('cancelDrawerBtn');
+      const saveDrawerRuleBtn = document.getElementById('saveDrawerRuleBtn');
+
+      function openDrawer(title = 'Configure Approval Rule') {
+        document.getElementById('drawerTitle').textContent = title;
+        drawer.classList.remove('translate-x-full');
+      }
+      function closeDrawer() {
+        drawer.classList.add('translate-x-full');
+      }
+
+      openDrawerBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tier = btn.getAttribute('data-tier') || 'New Approval Rule';
+          openDrawer(`Configure ${tier}`);
+        });
+      });
+
+      if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+      if (cancelDrawerBtn) cancelDrawerBtn.addEventListener('click', closeDrawer);
+
+      // 4. Consequential Change Confirmation Modal
+      const modal = document.getElementById('confirmationModal');
+      const confirmSaveBtn = document.getElementById('confirmSaveBtn');
+      const cancelModalBtn = document.getElementById('cancelModalBtn');
+      const topSaveBtn = document.getElementById('topSaveConfigBtn');
+
+      function openConfirmationModal(title, desc) {
+        if (title) document.getElementById('modalTitle').textContent = title;
+        if (desc) document.getElementById('modalDescription').innerHTML = desc;
+        modal.classList.remove('hidden');
+      }
+
+      function closeConfirmationModal() {
+        modal.classList.add('hidden');
+      }
+
+      if (saveDrawerRuleBtn) {
+        saveDrawerRuleBtn.addEventListener('click', () => {
+          closeDrawer();
+          openConfirmationModal(
+            'Confirm Threshold Rule Modification',
+            'You are modifying the expenditure delegation threshold for <strong>Major Program Supply Orders</strong> from GH₵ 50,000 to GH₵ 75,000.'
+          );
+        });
+      }
+
+      if (topSaveBtn) {
+        topSaveBtn.addEventListener('click', () => {
+          openConfirmationModal(
+            'Confirm Global ERP Configuration Update',
+            'You are committing updated system parameters across Organization Profile, Approval Chains, and Statutory Tax Tables.'
+          );
+        });
+      }
+
+      if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeConfirmationModal);
+
+      if (confirmSaveBtn) {
+        confirmSaveBtn.addEventListener('click', () => {
+          closeConfirmationModal();
+          showToast('Settings updated successfully. Audit event CFG-MOD-2025-0814 created in System & Audit log.', 'success');
+        });
+      }
+
+      // 5. Save buttons in panels
+      document.querySelectorAll('.save-panel-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          showToast('Organization settings updated successfully.', 'success');
+        });
+      });
+
+      // 6. View Audit Trail Button
+      const auditBtn = document.getElementById('viewAuditTrailBtn');
+      if (auditBtn) {
+        auditBtn.addEventListener('click', () => {
+          showToast('Redirecting to Administration > System & Audit trace logs...', 'info');
+        });
+      }
+
+      // 7. Global Search Filter Demo
+      const searchInput = document.getElementById('globalSettingsSearch');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const val = e.target.value.toLowerCase().trim();
+          if (val.length > 2) {
+            // Find matches in active table
+            const rows = document.querySelectorAll('#approvalRulesBody tr');
+            rows.forEach(r => {
+              const text = r.textContent.toLowerCase();
+              r.style.display = text.includes(val) ? '' : 'none';
+            });
+          } else {
+            document.querySelectorAll('#approvalRulesBody tr').forEach(r => r.style.display = '');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

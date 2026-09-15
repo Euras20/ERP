@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Asset Management - NGO Accounting ERP</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#f7f9ff",
+            "on-tertiary": "#ffffff",
+            "status-warning-bg": "#FEF3E6",
+            "surface-dim": "#d1dbe7",
+            "status-critical-bg": "#FDF0F0",
+            "primary-fixed": "#a7eef6",
+            "status-neutral-bg": "#ECEFF2",
+            "secondary-container": "#d8e4ef",
+            "status-success-border": "#9DD4B8",
+            "inverse-primary": "#8bd2da",
+            "on-tertiary-container": "#ffd892",
+            "status-critical-border": "#F3A6A9",
+            "nav-border": "#1E3243",
+            "outline-variant": "#bec8c9",
+            "text-muted": "#7B8C9A",
+            "inverse-on-surface": "#e8f2fe",
+            "secondary-fixed-dim": "#bcc8d3",
+            "fund-temp-restricted": "#D99B00",
+            "canvas-bg": "#F7F9FA",
+            "tertiary-fixed": "#ffdea6",
+            "surface-container-low": "#ecf4ff",
+            "nav-text-primary": "#F4F7F9",
+            "on-secondary": "#ffffff",
+            "status-neutral-text": "#384551",
+            "fund-restricted": "#B8860B",
+            "surface-variant": "#d9e4ef",
+            "inverse-surface": "#28313a",
+            "status-success-text": "#0F6848",
+            "on-primary-fixed": "#002022",
+            "surface-container-highest": "#d9e4ef",
+            "on-surface-variant": "#3f484a",
+            "on-surface": "#131d25",
+            "primary": "#005258",
+            "on-error-container": "#93000a",
+            "nav-text-muted": "#8EA2B4",
+            "error-container": "#ffdad6",
+            "outline": "#6f797a",
+            "tertiary-fixed-dim": "#f7bd48",
+            "nav-surface": "#152431",
+            "status-success-bg": "#E8F5EE",
+            "on-secondary-fixed-variant": "#3d4851",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#121d25",
+            "primary-fixed-dim": "#8bd2da",
+            "on-primary-container": "#a1e9f1",
+            "surface-secondary": "#F0F4F6",
+            "status-critical-text": "#A81D24",
+            "on-tertiary-fixed-variant": "#5d4200",
+            "secondary-fixed": "#d8e4ef",
+            "secondary": "#556069",
+            "on-primary": "#ffffff",
+            "surface-tint": "#16686f",
+            "text-secondary": "#4E5D6A",
+            "surface": "#f7f9ff",
+            "on-primary-fixed-variant": "#004f55",
+            "status-warning-text": "#914D03",
+            "surface-container-high": "#dfe9f5",
+            "tertiary-container": "#7f5b00",
+            "status-warning-border": "#F6C88D",
+            "tertiary": "#614500",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "text-primary": "#121A21",
+            "border-subtle": "#DCE3E8",
+            "surface-bright": "#f7f9ff",
+            "on-secondary-container": "#5a666f",
+            "surface-container": "#e5effb",
+            "on-background": "#131d25",
+            "border-strong": "#B8C4CE",
+            "on-tertiary-fixed": "#271900",
+            "primary-hover": "#144F54",
+            "primary-container": "#1b6b72",
+            "fund-unrestricted": "#1B6B72",
+            "primary-tint": "#E4EFEF",
+            "surface-card": "#FFFFFF",
+            "status-neutral-border": "#CAD2D8",
+            "nav-bg": "#0D1821"
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem"
+          },
+          spacing: {
+            gutter: "1rem",
+            "space-lg": "1rem",
+            "space-2xl": "2rem",
+            "margin-compact": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xxs": "0.125rem",
+            margin: "1.5rem",
+            "space-xl": "1.5rem",
+            "gutter-dense": "0.5rem",
+            "space-sm": "0.5rem"
+          },
+          fontFamily: {
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "title-md": ["IBM Plex Sans", "sans-serif"],
+            "caption": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "numeric-table": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "numeric-table-bold": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "display-lg": ["IBM Plex Sans", "sans-serif"],
+            "title-sm": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "title-md": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "caption": ["11px", { lineHeight: "14px", fontWeight: "400" }],
+            "headline-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+            "numeric-table": ["13px", { lineHeight: "18px", letterSpacing: "0", fontWeight: "500" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "numeric-table-bold": ["13px", { lineHeight: "18px", letterSpacing: "0", fontWeight: "700" }],
+            "body-lg": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+            "body-md": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "title-sm": ["13px", { lineHeight: "18px", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-canvas-bg font-body-md text-text-primary antialiased min-h-screen">
+  <!-- SIDEBAR SHELL (EXACT UNTITLED-1.HTML WITH FIXED ASSETS / OPERATIONS ACTIVE) -->
+  <aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+        <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN WRAPPER -->
+  <div id="appMain" class="pl-64 flex flex-col min-h-screen">
+    <!-- TOP HEADER -->
+    <header id="appHeader" class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md border-b border-border-subtle/70">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span>
+          <input id="globalSearchInput"
+            class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-primary transition-colors"
+            placeholder="Search assets by tag, serial, custodian, donor grant, location..." type="text" />
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span>
+          <span>FY 2025 (Q2 Closed)</span>
+        </div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary">
+          <span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS (GH¢)</span>
+          <span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <button id="openAddAssetTopBtn" class="h-[34px] px-space-md bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg flex items-center gap-space-xs transition-colors shadow-sm" type="button">
+          <span class="material-symbols-outlined text-[16px]">add</span>
+          <span>Add Asset</span>
+        </button>
+        <div class="h-5 w-px bg-surface-secondary"></div>
+        <button class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span>
+        </button>
+        <button class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">help</span>
+        </button>
+        <div class="flex items-center gap-space-xs pl-space-xs cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs shrink-0">AM</div>
+          <span class="material-symbols-outlined text-text-muted text-[16px]"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT CANVAS -->
+    <main class="w-full pt-16 bg-canvas-bg flex-1">
+      <div class="flex flex-col w-full">
+        <!-- TOP CONTEXT HEADER BAR -->
+        <section class="px-space-xl py-space-lg bg-surface-card shadow-sm border-b border-border-subtle/70 flex flex-col gap-space-sm">
+          <!-- Breadcrumb -->
+          <div class="flex items-center gap-space-xs text-text-muted font-caption text-caption">
+            <span class="hover:text-text-primary cursor-pointer transition-colors">Home</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="text-text-secondary font-title-sm">Operations</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="text-fund-unrestricted font-medium">Assets</span>
+          </div>
+          <!-- Title and Actions -->
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-space-sm">
+                <h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Assets</h1>
+                <span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-primary-tint text-primary font-label-sm text-label-sm font-semibold">
+                  <span class="material-symbols-outlined text-[13px]">verified_user</span>
+                  IPSAS-17 Fixed Assets Compliant
+                </span>
+                <span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span>
+                  PO &rarr; GRN Traceable
+                </span>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-0.5 max-w-3xl">
+                Track organizational assets, funding sources, locations, depreciation and lifecycle status across Accra HQ and field mission hubs.
+              </p>
+            </div>
+            <!-- Action Controls -->
+            <div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm">
+              <button id="exportRegisterBtn" class="inline-flex items-center gap-1.5 px-space-sm py-1.5 bg-surface-secondary hover:bg-surface-dim/50 text-text-primary rounded font-title-sm text-title-sm transition-colors shadow-sm" type="button">
+                <span class="material-symbols-outlined text-[16px] text-text-secondary">file_download</span>
+                <span>Export Register</span>
+              </button>
+              <button id="runDeprBatchBtn" class="inline-flex items-center gap-1.5 px-space-sm py-1.5 bg-surface-secondary hover:bg-surface-dim/50 text-text-primary rounded font-title-sm text-title-sm transition-colors shadow-sm" type="button">
+                <span class="material-symbols-outlined text-[16px] text-primary">calculate</span>
+                <span>Run Monthly Depreciation</span>
+              </button>
+              <button id="openAddAssetPrimaryBtn" class="inline-flex items-center gap-1.5 px-space-md py-1.5 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors shadow-sm" type="button">
+                <span class="material-symbols-outlined text-[16px]">add_circle</span>
+                <span>Add Asset</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- CANVAS CONTENT AREA -->
+        <div class="px-space-xl py-space-xl flex flex-col gap-space-xl max-w-7xl w-full mx-auto">
+          
+          <!-- ASSET LIFECYCLE CONTINUITY WORKFLOW BANNER -->
+          <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/80 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded bg-primary-tint flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">account_tree</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-title-sm text-title-sm text-text-primary font-semibold">Asset Lifecycle &amp; Procurement Continuity</span>
+                <span class="font-caption text-caption text-text-muted">Originating from Purchase Order &rarr; Goods Receipt &rarr; Fixed Asset Register &rarr; Custody &rarr; Depr / Disposal</span>
+              </div>
+            </div>
+            <!-- Lifecycle Steps -->
+            <div class="flex items-center gap-1 text-caption overflow-x-auto py-1">
+              <span class="px-2 py-1 rounded bg-surface-secondary text-text-secondary font-medium whitespace-nowrap">1. Purchased (PO)</span>
+              <span class="text-text-muted">&rarr;</span>
+              <span class="px-2 py-1 rounded bg-surface-secondary text-text-secondary font-medium whitespace-nowrap">2. Received (GRN)</span>
+              <span class="text-text-muted">&rarr;</span>
+              <span class="px-2 py-1 rounded bg-primary-container text-on-primary font-semibold whitespace-nowrap">3. Registered</span>
+              <span class="text-text-muted">&rarr;</span>
+              <span class="px-2 py-1 rounded bg-surface-secondary text-text-secondary font-medium whitespace-nowrap">4. Assigned</span>
+              <span class="text-text-muted">&rarr;</span>
+              <span class="px-2 py-1 rounded bg-surface-secondary text-text-secondary font-medium whitespace-nowrap">5. Maintained</span>
+              <span class="text-text-muted">&rarr;</span>
+              <span class="px-2 py-1 rounded bg-surface-secondary text-text-secondary font-medium whitespace-nowrap">6. Disposed</span>
+            </div>
+          </div>
+
+          <!-- SUMMARY CARDS: EXACTLY THE 5 CORE KPIS REQUIRED BY MASTER SPEC -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+            <!-- 1. Total Assets -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Total Assets</span>
+                <span class="w-7 h-7 rounded bg-surface-secondary flex items-center justify-center text-text-secondary">
+                  <span class="material-symbols-outlined text-[16px]">domain</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span id="kpiTotalAssets" class="font-headline-lg text-headline-lg text-text-primary tracking-tight font-bold">142</span>
+                <div class="font-caption text-caption text-text-muted mt-0.5">Asset book value: <strong class="text-text-primary font-numeric-table">GH₵ 3.84M</strong></div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between font-caption text-caption text-text-muted">
+                <span>Vehicles, IT, Generators</span>
+                <span class="text-primary font-semibold">100% Tagged</span>
+              </div>
+            </div>
+
+            <!-- 2. Active Assets -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Active Assets</span>
+                <span class="w-7 h-7 rounded bg-status-success-bg flex items-center justify-center text-status-success-text">
+                  <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span id="kpiActiveAssets" class="font-headline-lg text-headline-lg text-status-success-text tracking-tight font-bold">124</span>
+                <div class="font-caption text-caption text-text-muted mt-0.5">Assigned to active field workplans</div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between font-caption text-caption text-status-success-text font-medium">
+                <span>87.3% operational</span>
+                <span class="material-symbols-outlined text-[14px]">verified</span>
+              </div>
+            </div>
+
+            <!-- 3. Donor-Funded Assets -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Donor-Funded Assets</span>
+                <span class="w-7 h-7 rounded bg-[#FCF7E8] flex items-center justify-center text-[#8A6507]">
+                  <span class="material-symbols-outlined text-[16px]">award_star</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span id="kpiDonorFunded" class="font-headline-lg text-headline-lg text-text-primary tracking-tight font-bold">98</span>
+                <div class="font-caption text-caption text-text-muted mt-0.5">USAID, Global Fund, EU Climate</div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between font-caption text-caption text-[#8A6507] font-semibold">
+                <span>Restricted Covenants</span>
+                <span class="font-numeric-table">GH₵ 2.92M</span>
+              </div>
+            </div>
+
+            <!-- 4. Assets Due for Depreciation -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Due for Depreciation</span>
+                <span class="w-7 h-7 rounded bg-status-warning-bg flex items-center justify-center text-status-warning-text">
+                  <span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span id="kpiDueDepr" class="font-headline-lg text-headline-lg text-status-warning-text tracking-tight font-bold">18</span>
+                <div class="font-caption text-caption text-text-muted mt-0.5">End-of-Month June 2025 run</div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between font-caption text-caption text-status-warning-text font-medium">
+                <span>Straight Line (SLM)</span>
+                <span>Due in 4 days</span>
+              </div>
+            </div>
+
+            <!-- 5. Assets Pending Disposal -->
+            <div class="bg-surface-card rounded-lg p-space-md shadow-sm border border-border-subtle/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Pending Disposal</span>
+                <span class="w-7 h-7 rounded bg-status-critical-bg flex items-center justify-center text-status-critical-text">
+                  <span class="material-symbols-outlined text-[16px]">delete_sweep</span>
+                </span>
+              </div>
+              <div class="mt-2">
+                <span id="kpiPendingDisposal" class="font-headline-lg text-headline-lg text-status-critical-text tracking-tight font-bold">4</span>
+                <div class="font-caption text-caption text-text-muted mt-0.5">Awaiting donor board sign-off</div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between font-caption text-caption text-status-critical-text font-medium">
+                <span>Salvage Value: GH₵ 28k</span>
+                <span class="material-symbols-outlined text-[14px]">warning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ASSET REGISTER WORKSPACE (SEARCH, FILTERS, TABLE, TABS) -->
+          <div class="bg-surface-card rounded-lg shadow-sm border border-border-subtle/80 flex flex-col overflow-hidden">
+            <!-- Header bar & Tabs -->
+            <div class="p-space-lg flex flex-col gap-space-md bg-surface-card border-b border-border-subtle/70">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+                <div>
+                  <h2 class="font-headline-sm text-headline-sm text-text-primary">Organizational Fixed Asset Register</h2>
+                  <p class="font-body-sm text-body-sm text-text-muted mt-0.5">Central register linking physical tags, custodians, locations, funding sources, and depreciation schedules.</p>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <button id="refreshRegisterBtn" class="p-1.5 rounded bg-surface-secondary text-text-secondary hover:text-text-primary hover:bg-surface-dim/40 transition-colors" title="Reload data">
+                    <span class="material-symbols-outlined text-[18px]">refresh</span>
+                  </button>
+                  <button id="openAddAssetInCardBtn" class="px-space-sm py-1.5 bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded transition-colors shadow-sm flex items-center gap-1" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add</span>
+                    <span>Add Asset</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Quick Status Tabs -->
+              <div class="flex items-center gap-2 overflow-x-auto pb-1 border-b border-border-subtle/40 text-title-sm">
+                <button class="status-tab-btn active px-3 py-1.5 rounded font-semibold text-primary bg-primary-tint border border-primary/20" data-status="ALL">
+                  All Assets (<span id="countTabAll">6</span>)
+                </button>
+                <button class="status-tab-btn px-3 py-1.5 rounded text-text-secondary hover:bg-surface-secondary transition-colors" data-status="Active">
+                  Active (4)
+                </button>
+                <button class="status-tab-btn px-3 py-1.5 rounded text-text-secondary hover:bg-surface-secondary transition-colors" data-status="Under Maintenance">
+                  Under Maintenance (1)
+                </button>
+                <button class="status-tab-btn px-3 py-1.5 rounded text-text-secondary hover:bg-surface-secondary transition-colors" data-status="Pending Disposal">
+                  Pending Disposal (1)
+                </button>
+                <button class="status-tab-btn px-3 py-1.5 rounded text-text-secondary hover:bg-surface-secondary transition-colors" data-status="Donor-Funded">
+                  Donor-Funded (5)
+                </button>
+              </div>
+
+              <!-- Filter Bar & Search Controls -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-space-xs items-center">
+                <!-- Search input -->
+                <div class="sm:col-span-2 relative">
+                  <span class="material-symbols-outlined absolute left-2.5 top-2 text-text-muted text-[16px]">search</span>
+                  <input id="assetSearchInput" type="text" placeholder="Search asset tag, name, custodian..."
+                    class="w-full pl-8 pr-2 py-1.5 bg-surface-secondary border border-border-subtle/80 rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:bg-surface-card focus:border-primary transition-colors" />
+                </div>
+
+                <!-- Category filter -->
+                <div>
+                  <select id="filterCategory" class="w-full px-2.5 py-1.5 bg-surface-secondary border border-border-subtle/80 rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                    <option value="">All Categories</option>
+                    <option value="Vehicles & Transport">Vehicles &amp; Transport</option>
+                    <option value="IT & Computing Equipment">IT &amp; Computing Equipment</option>
+                    <option value="Power & Energy (Generators/Solar)">Power &amp; Energy</option>
+                    <option value="Medical & Clinical Equipment">Medical &amp; Clinical</option>
+                    <option value="Office Equipment & Furniture">Office Equipment</option>
+                  </select>
+                </div>
+
+                <!-- Location filter -->
+                <div>
+                  <select id="filterLocation" class="w-full px-2.5 py-1.5 bg-surface-secondary border border-border-subtle/80 rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                    <option value="">All Locations</option>
+                    <option value="Accra HQ">Accra HQ Office</option>
+                    <option value="Tamale Regional Hub">Tamale Regional Hub</option>
+                    <option value="Volta Field Office">Volta Field Office</option>
+                    <option value="Savannah Mission Station">Savannah Mission Station</option>
+                  </select>
+                </div>
+
+                <!-- Fund / Grant filter -->
+                <div>
+                  <select id="filterGrant" class="w-full px-2.5 py-1.5 bg-surface-secondary border border-border-subtle/80 rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                    <option value="">All Grants / Funds</option>
+                    <option value="USAID Education Program">USAID Education</option>
+                    <option value="Global Fund Malaria">Global Fund Malaria</option>
+                    <option value="EU Climate Action">EU Climate Action</option>
+                    <option value="General Operations (Unrestricted)">Core Unrestricted</option>
+                  </select>
+                </div>
+
+                <!-- Clear / Reset filters -->
+                <div class="flex items-center gap-1">
+                  <button id="clearFiltersBtn" class="w-full px-2 py-1.5 rounded bg-surface-secondary hover:bg-surface-dim/50 text-text-secondary font-title-sm text-title-sm transition-colors flex items-center justify-center gap-1" type="button">
+                    <span class="material-symbols-outlined text-[16px]">filter_alt_off</span>
+                    <span>Clear All</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Active Filter Chips Area -->
+              <div id="activeFilterChipsContainer" class="flex flex-wrap items-center gap-2 pt-1 hidden">
+                <span class="font-caption text-caption text-text-muted">Active Filters:</span>
+                <span id="activeFilterChipsList" class="flex flex-wrap items-center gap-1.5"></span>
+              </div>
+            </div>
+
+            <!-- ASSET REGISTER TABLE (ALL SPECIFIED COLUMNS) -->
+            <div class="overflow-x-auto w-full">
+              <table id="assetTable" class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-surface-secondary font-label-md text-label-md uppercase tracking-wider text-text-secondary select-none border-b border-border-subtle/70">
+                    <th class="py-3 px-3 font-semibold">Asset ID &amp; Name</th>
+                    <th class="py-3 px-3 font-semibold">Category</th>
+                    <th class="py-3 px-3 font-semibold">Location</th>
+                    <th class="py-3 px-3 font-semibold">Custodian</th>
+                    <th class="py-3 px-3 font-semibold">Purchase Date</th>
+                    <th class="py-3 px-3 text-right font-semibold">Original Value (GHS)</th>
+                    <th class="py-3 px-3 font-semibold">Fund &amp; Grant Scope</th>
+                    <th class="py-3 px-3 font-semibold">Depreciation</th>
+                    <th class="py-3 px-3 font-semibold">Status</th>
+                    <th class="py-3 px-3 text-right font-semibold">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="assetTableBody" class="divide-y divide-border-subtle/40 font-body-sm text-body-sm text-text-primary">
+                  <!-- Dynamic rows rendered via JavaScript -->
+                </tbody>
+              </table>
+
+              <!-- Filtered Empty State Container -->
+              <div id="filteredEmptyState" class="p-space-2xl flex flex-col items-center justify-center text-center hidden">
+                <div class="w-12 h-12 rounded-full bg-surface-secondary flex items-center justify-center text-text-muted mb-3">
+                  <span class="material-symbols-outlined text-[28px]">search_off</span>
+                </div>
+                <h3 class="font-title-md text-title-md text-text-primary font-semibold">No assets match your current filters.</h3>
+                <p class="font-body-sm text-body-sm text-text-muted mt-1 max-w-sm">Try relaxing your search query, category, location or funding filters to see more results.</p>
+                <button id="emptyClearFiltersBtn" class="mt-4 px-space-md py-1.5 bg-surface-secondary hover:bg-surface-dim/60 text-text-primary font-title-sm text-title-sm rounded transition-colors" type="button">
+                  Clear All Filters
+                </button>
+              </div>
+            </div>
+
+            <!-- Table Footer -->
+            <div class="p-space-md bg-surface-secondary border-t border-border-subtle/70 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-caption text-text-secondary">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+                <span>IPSAS-17 Audit Standard: 100% of Fixed Assets assigned to responsible staff custodians.</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <span>Active Register: <strong id="footerCountDisplay" class="text-text-primary font-numeric-table-bold">6 assets shown</strong></span>
+                <span>Cumulative Net Book Value: <strong class="text-primary font-numeric-table-bold">GH₵ 547,400.00</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- COMPACT DEPRECIATION SNAPSHOT SECTION (REQUIRED BY SPEC) -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-start">
+            <div class="lg:col-span-2 bg-surface-card rounded-lg p-space-lg shadow-sm border border-border-subtle/80 flex flex-col">
+              <div class="flex items-center justify-between pb-space-sm border-b border-border-subtle/60">
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-text-primary">Depreciation &amp; Fiduciary Financial Snapshot</h3>
+                  <p class="font-caption text-caption text-text-muted">Consolidated straight-line depreciation schedule across all active capital asset classes.</p>
+                </div>
+                <span class="px-2 py-0.5 rounded bg-primary-tint text-primary font-label-sm text-label-sm font-semibold">Straight-Line Method</span>
+              </div>
+
+              <!-- Financial Metric Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm my-space-md p-space-sm bg-surface-secondary rounded border border-border-subtle/50">
+                <div class="flex flex-col">
+                  <span class="font-caption text-caption text-text-muted">Original Acquisition Cost</span>
+                  <span class="font-numeric-table-bold text-numeric-table-bold text-text-primary">GH₵ 815,000.00</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-caption text-caption text-text-muted">Accumulated Depreciation</span>
+                  <span class="font-numeric-table-bold text-numeric-table-bold text-status-warning-text">-GH₵ 267,600.00</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-caption text-caption text-text-muted">Current Net Book Value</span>
+                  <span class="font-numeric-table-bold text-numeric-table-bold text-primary">GH₵ 547,400.00</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-caption text-caption text-text-muted">Next Scheduled Run Date</span>
+                  <span class="font-numeric-table-bold text-numeric-table-bold text-text-primary">30 Jun 2025</span>
+                </div>
+              </div>
+
+              <!-- Depreciation Progress & Useful Life Distribution -->
+              <div class="flex flex-col gap-space-xs mt-1">
+                <div class="flex items-center justify-between text-caption font-medium text-text-secondary">
+                  <span>Overall Capital Asset Useful Life Consumed: <strong>32.8%</strong></span>
+                  <span>Estimated Residual Value: <strong>GH₵ 72,000.00</strong></span>
+                </div>
+                <div class="w-full bg-surface-secondary h-2.5 rounded-full overflow-hidden border border-border-subtle/60">
+                  <div class="bg-primary h-full rounded-full" style="width: 32.8%"></div>
+                </div>
+                <div class="flex items-center justify-between font-caption text-caption text-text-muted mt-1">
+                  <span>Useful Life Baseline: Vehicles (5 yrs) • IT (3 yrs) • Generators (7 yrs) • Clinical Equip (5 yrs)</span>
+                  <a href="#" class="text-primary hover:text-primary-hover font-semibold inline-flex items-center gap-0.5">
+                    View Full Schedule <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Procurement Integration & Source of Acquisition -->
+            <div class="bg-surface-card rounded-lg p-space-lg shadow-sm border border-border-subtle/80 flex flex-col">
+              <div class="flex items-center justify-between pb-space-xs border-b border-border-subtle/60">
+                <h3 class="font-headline-sm text-headline-sm text-text-primary">Procurement Linkages</h3>
+                <span class="material-symbols-outlined text-[18px] text-text-muted">receipt_long</span>
+              </div>
+              <p class="font-caption text-caption text-text-muted my-2">Recent goods receipts from verified procurement orders automatically mapped to the fixed asset register.</p>
+
+              <div class="flex flex-col gap-2 mt-1">
+                <!-- Receipt 1 -->
+                <div class="p-2 rounded bg-surface-secondary flex items-center justify-between text-caption">
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-title-sm text-title-sm text-text-primary truncate">PO-2025-0089 &rarr; GRN-2025-0054</span>
+                    <span class="text-text-muted truncate">Toyota Land Cruiser HZJ78 (Tamale Hub)</span>
+                  </div>
+                  <span class="px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text font-semibold shrink-0">Registered</span>
+                </div>
+                <!-- Receipt 2 -->
+                <div class="p-2 rounded bg-surface-secondary flex items-center justify-between text-caption">
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-title-sm text-title-sm text-text-primary truncate">PO-2025-0072 &rarr; GRN-2025-0041</span>
+                    <span class="text-text-muted truncate">Perkins 45kVA Silent Diesel Generator</span>
+                  </div>
+                  <span class="px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text font-semibold shrink-0">Registered</span>
+                </div>
+                <!-- Receipt 3 -->
+                <div class="p-2 rounded bg-surface-secondary flex items-center justify-between text-caption">
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-title-sm text-title-sm text-text-primary truncate">PO-2025-0104 &rarr; GRN-2025-0062</span>
+                    <span class="text-text-muted truncate">Ultrasound Diagnostic Scanner Sonosite</span>
+                  </div>
+                  <span class="px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-semibold shrink-0">Tagging Pending</span>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2 border-t border-border-subtle/60 flex items-center justify-between font-caption text-text-muted">
+                <span>Traceable to GL 1400 (Plant &amp; Equip)</span>
+                <a href="#" class="text-primary hover:text-primary-hover font-semibold inline-flex items-center gap-0.5">
+                  Procurement Hub <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- SLIDE-OVER DETAIL DRAWER: ASSET DETAIL WORKFLOW -->
+  <div id="assetDetailDrawerOverlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 transition-opacity duration-300 hidden opacity-0">
+    <div id="assetDetailDrawer" class="fixed top-0 right-0 h-full w-full max-w-2xl bg-surface-card shadow-2xl z-50 flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out border-l border-border-subtle">
+      <!-- Drawer Header -->
+      <div class="p-space-lg bg-surface-secondary border-b border-border-subtle/80 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-10 h-10 rounded bg-primary-tint flex items-center justify-center text-primary shrink-0">
+            <span class="material-symbols-outlined text-[20px]" id="drawerAssetIcon">local_shipping</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <div class="flex items-center gap-2">
+              <span id="drawerAssetTag" class="font-numeric-table-bold text-title-sm text-primary font-mono">AST-2024-001</span>
+              <span id="drawerAssetStatusBadge" class="px-2 py-0.5 rounded text-caption font-semibold bg-status-success-bg text-status-success-text">Active</span>
+            </div>
+            <h2 id="drawerAssetName" class="font-headline-sm text-headline-sm text-text-primary truncate">Toyota Land Cruiser Hardtop 4x4</h2>
+          </div>
+        </div>
+        <button id="closeDrawerBtn" class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-dim/40 transition-colors" type="button" title="Close Drawer">
+          <span class="material-symbols-outlined text-[22px]">close</span>
+        </button>
+      </div>
+
+      <!-- Drawer Scrollable Content -->
+      <div class="flex-1 overflow-y-auto p-space-lg flex flex-col gap-space-lg">
+        
+        <!-- Fiduciary & NGO Funding Context Banner -->
+        <div class="p-space-md rounded bg-[#FCF7E8] border border-[#F6C88D] flex flex-col gap-1.5">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md uppercase tracking-wider text-[#8A6507] font-bold flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">verified</span>
+              Fiduciary Donor Grant Earmarking
+            </span>
+            <span id="drawerFundBadge" class="px-2 py-0.5 rounded text-caption font-semibold bg-[#8A6507] text-white">Restricted Earmarked</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-caption mt-1">
+            <div>
+              <span class="text-text-muted block">Donor Instrument:</span>
+              <strong id="drawerDonor" class="text-text-primary font-title-sm">USAID West Africa Regional Mission</strong>
+            </div>
+            <div>
+              <span class="text-text-muted block">Grant Project:</span>
+              <strong id="drawerGrantProject" class="text-text-primary font-title-sm">USAID-GH-2024-ED09 (Northern Literacy)</strong>
+            </div>
+            <div>
+              <span class="text-text-muted block">Purchase Continuity:</span>
+              <strong id="drawerProcurementRef" class="text-text-primary font-mono">PO-2024-0089 &rarr; GRN-2024-0054</strong>
+            </div>
+            <div>
+              <span class="text-text-muted block">Disposal Covenant:</span>
+              <span class="text-text-secondary">Requires USAID Agreement Officer Approval</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Asset Overview Grid -->
+        <div class="grid grid-cols-2 gap-space-md p-space-md rounded bg-surface-secondary border border-border-subtle/70">
+          <div>
+            <span class="font-caption text-caption text-text-muted block">Category</span>
+            <span id="drawerCategory" class="font-title-sm text-title-sm text-text-primary font-semibold">Vehicles &amp; Transport</span>
+          </div>
+          <div>
+            <span class="font-caption text-caption text-text-muted block">Serial Number / Chassis</span>
+            <span id="drawerSerial" class="font-numeric-table text-title-sm text-text-primary font-mono">JT711HZJ-9823410</span>
+          </div>
+          <div>
+            <span class="font-caption text-caption text-text-muted block">Location / Operational Base</span>
+            <span id="drawerLocation" class="font-title-sm text-title-sm text-text-primary">Tamale Regional Hub</span>
+          </div>
+          <div>
+            <span class="font-caption text-caption text-text-muted block">Designated Custodian</span>
+            <span id="drawerCustodian" class="font-title-sm text-title-sm text-text-primary font-semibold">Kwesi Appiah (Senior Field Logistics Officer)</span>
+          </div>
+          <div>
+            <span class="font-caption text-caption text-text-muted block">Purchase Date</span>
+            <span id="drawerPurchaseDate" class="font-title-sm text-title-sm text-text-primary">15 Jan 2024</span>
+          </div>
+          <div>
+            <span class="font-caption text-caption text-text-muted block">Supplier</span>
+            <span id="drawerSupplier" class="font-title-sm text-title-sm text-text-primary">Toyota Ghana Ltd (Accra Branch)</span>
+          </div>
+        </div>
+
+        <!-- Depreciation Snapshot Detail -->
+        <div class="flex flex-col gap-2 p-space-md rounded bg-surface-card border border-border-subtle/80">
+          <div class="flex items-center justify-between pb-1 border-b border-border-subtle/50">
+            <span class="font-title-sm text-title-sm text-text-primary font-semibold">Depreciation Profile (IPSAS-17)</span>
+            <span class="font-caption text-caption text-primary font-medium">SLM • 5 Years (20% p.a.)</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-caption pt-1">
+            <div>
+              <span class="text-text-muted block">Original Cost:</span>
+              <strong id="drawerOriginalCost" class="text-text-primary font-numeric-table-bold">GH₵ 380,000.00</strong>
+            </div>
+            <div>
+              <span class="text-text-muted block">Accum. Depreciation:</span>
+              <strong id="drawerAccumDepr" class="text-status-warning-text font-numeric-table-bold">-GH₵ 114,000.00</strong>
+            </div>
+            <div>
+              <span class="text-text-muted block">Current Book Value:</span>
+              <strong id="drawerBookValue" class="text-primary font-numeric-table-bold">GH₵ 266,000.00</strong>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-caption pt-2 border-t border-border-subtle/40">
+            <div>
+              <span class="text-text-muted block">Depr. Start Date:</span>
+              <span id="drawerDeprStart">01 Feb 2024</span>
+            </div>
+            <div>
+              <span class="text-text-muted block">Next Depr. Run:</span>
+              <span id="drawerNextDepr">30 Jun 2025</span>
+            </div>
+            <div>
+              <span class="text-text-muted block">Useful Life Remaining:</span>
+              <span id="drawerLifeRemaining">3.5 Years</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supporting Documents & Audit Verification -->
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <span class="font-title-sm text-title-sm text-text-primary font-semibold">Supporting Documentation &amp; Audit Trail</span>
+            <span class="font-caption text-caption text-text-muted">3 documents verified</span>
+          </div>
+          <div class="flex flex-col gap-1.5 text-caption">
+            <div class="p-2 rounded bg-surface-secondary flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-text-secondary">description</span>
+                <span>Original Purchase Invoice &amp; DVLA Registration Certificate</span>
+              </div>
+              <a href="#" class="text-primary hover:underline font-medium">View PDF</a>
+            </div>
+            <div class="p-2 rounded bg-surface-secondary flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-text-secondary">assignment_turned_in</span>
+                <span>Signed Physical Custody Handover Protocol (Tamale)</span>
+              </div>
+              <a href="#" class="text-primary hover:underline font-medium">View PDF</a>
+            </div>
+            <div class="p-2 rounded bg-surface-secondary flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-text-secondary">verified_user</span>
+                <span>USAID Asset Tagging Verification Protocol</span>
+              </div>
+              <a href="#" class="text-primary hover:underline font-medium">Verified</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lifecycle History Timeline -->
+        <div class="flex flex-col gap-2">
+          <span class="font-title-sm text-title-sm text-text-primary font-semibold">Asset Lifecycle Milestones</span>
+          <div class="pl-3 border-l-2 border-primary/30 flex flex-col gap-3 text-caption">
+            <div class="relative pl-3">
+              <span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-primary"></span>
+              <strong class="text-text-primary block">Purchased &amp; Received via PO-2024-0089</strong>
+              <span class="text-text-muted">15 Jan 2024 • Inspected and certified by Central Stores Accra</span>
+            </div>
+            <div class="relative pl-3">
+              <span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-primary"></span>
+              <strong class="text-text-primary block">Registered &amp; Tagged AST-2024-001</strong>
+              <span class="text-text-muted">22 Jan 2024 • Barcode plate affixed, donor covenant logged</span>
+            </div>
+            <div class="relative pl-3">
+              <span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-primary"></span>
+              <strong class="text-text-primary block">Transferred &amp; Assigned to Tamale Regional Hub</strong>
+              <span class="text-text-muted">05 Feb 2024 • Assigned to Kwesi Appiah for Northern Literacy Outreach</span>
+            </div>
+            <div class="relative pl-3">
+              <span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-status-success-text"></span>
+              <strong class="text-text-primary block">Periodic Maintenance Completed (50,000 km Service)</strong>
+              <span class="text-text-muted">12 Apr 2025 • Toyota Authorized Service Centre Tamale</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drawer Footer Actions -->
+      <div class="p-space-md bg-surface-secondary border-t border-border-subtle/80 flex items-center justify-between shrink-0">
+        <button id="drawerTransferBtn" class="px-space-sm py-1.5 bg-surface-card hover:bg-surface-dim/40 text-text-primary border border-border-subtle rounded font-title-sm text-title-sm transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+          <span>Assign / Transfer</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button id="drawerMaintBtn" class="px-space-sm py-1.5 bg-surface-card hover:bg-surface-dim/40 text-text-primary border border-border-subtle rounded font-title-sm text-title-sm transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">build</span>
+            <span>Record Maint.</span>
+          </button>
+          <button id="drawerDisposalBtn" class="px-space-sm py-1.5 bg-status-critical-bg text-status-critical-text hover:bg-status-critical-border/40 rounded font-title-sm text-title-sm transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">delete</span>
+            <span>Initiate Disposal</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD ASSET WORKFLOW -->
+  <div id="addAssetModalOverlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <div id="addAssetModal" class="bg-surface-card rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] flex flex-col border border-border-subtle transform scale-95 transition-transform duration-300">
+      <!-- Modal Header -->
+      <div class="p-space-lg border-b border-border-subtle/80 flex items-center justify-between bg-surface-secondary">
+        <div>
+          <h2 class="font-headline-sm text-headline-sm text-text-primary">Add New Organizational Asset</h2>
+          <p class="font-caption text-caption text-text-muted mt-0.5">Register fixed asset, capture donor funding restrictions, and establish depreciation parameters.</p>
+        </div>
+        <button id="closeAddAssetModalBtn" class="p-1 text-text-muted hover:text-text-primary rounded transition-colors" type="button">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body (Form) -->
+      <form id="addAssetForm" class="flex-1 overflow-y-auto p-space-lg flex flex-col gap-space-md">
+        <!-- Section 1: Basic Asset Identity -->
+        <div class="flex flex-col gap-2">
+          <span class="font-title-sm text-title-sm text-text-primary font-semibold border-b border-border-subtle/50 pb-1">1. Asset Identification</span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+            <div class="sm:col-span-2 flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Asset Name <span class="text-status-critical-text">*</span></label>
+              <input type="text" id="formAssetName" required placeholder="e.g. Toyota Hilux 4WD Double Cabin"
+                class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary focus:bg-surface-card" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Asset ID / Tag <span class="text-status-critical-text">*</span></label>
+              <input type="text" id="formAssetTag" required placeholder="e.g. AST-2025-048"
+                class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary font-mono focus:outline-none focus:border-primary focus:bg-surface-card" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Category <span class="text-status-critical-text">*</span></label>
+              <select id="formCategory" required class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                <option value="Vehicles & Transport">Vehicles &amp; Transport</option>
+                <option value="IT & Computing Equipment">IT &amp; Computing Equipment</option>
+                <option value="Power & Energy (Generators/Solar)">Power &amp; Energy (Generators/Solar)</option>
+                <option value="Medical & Clinical Equipment">Medical &amp; Clinical Equipment</option>
+                <option value="Office Equipment & Furniture">Office Equipment &amp; Furniture</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Serial Number / VIN</label>
+              <input type="text" id="formSerial" placeholder="e.g. SN-892400192A"
+                class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary font-mono focus:outline-none focus:border-primary" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Supplier / Vendor</label>
+              <input type="text" id="formSupplier" placeholder="e.g. Mechanical Lloyd Ltd"
+                class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Procurement Continuity Linkage -->
+        <div class="flex flex-col gap-2 p-space-sm bg-primary-tint/30 rounded border border-primary/20">
+          <div class="flex items-center justify-between">
+            <span class="font-title-sm text-title-sm text-primary font-semibold flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">link</span>
+              2. Procurement Continuity (PO &rarr; Goods Receipt Link)
+            </span>
+            <span class="font-caption text-caption text-text-muted">Auto-populates purchase value &amp; date</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Purchase Order Ref</label>
+              <select id="formPORef" class="px-2.5 py-1.5 bg-surface-card border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                <option value="PO-2025-0089">PO-2025-0089 (Volta Logistics)</option>
+                <option value="PO-2025-0072">PO-2025-0072 (Zenith IT)</option>
+                <option value="PO-2025-0104">PO-2025-0104 (SunPower Ghana)</option>
+                <option value="DIRECT">Direct Capital Inward / Gift</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Purchase Date <span class="text-status-critical-text">*</span></label>
+              <input type="date" id="formPurchaseDate" required value="2025-06-20"
+                class="px-2.5 py-1.5 bg-surface-card border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Purchase Value (GHS) <span class="text-status-critical-text">*</span></label>
+              <input type="number" id="formPurchaseValue" required step="0.01" placeholder="75000.00"
+                class="px-2.5 py-1.5 bg-surface-card border border-border-subtle rounded font-body-sm text-body-sm text-text-primary font-numeric-table font-semibold focus:outline-none focus:border-primary" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: NGO Funding, Custody & Location -->
+        <div class="flex flex-col gap-2">
+          <span class="font-title-sm text-title-sm text-text-primary font-semibold border-b border-border-subtle/50 pb-1">3. Custody &amp; Donor Funding</span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Operational Location <span class="text-status-critical-text">*</span></label>
+              <select id="formLocation" required class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                <option value="Accra HQ">Accra HQ Office</option>
+                <option value="Tamale Regional Hub">Tamale Regional Hub</option>
+                <option value="Volta Field Office">Volta Field Office</option>
+                <option value="Savannah Mission Station">Savannah Mission Station</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Designated Custodian <span class="text-status-critical-text">*</span></label>
+              <input type="text" id="formCustodian" required placeholder="e.g. Dr. Emmanuel Osei"
+                class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Fund Type</label>
+              <select id="formFundType" class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                <option value="Restricted">Restricted (Earmarked Donor)</option>
+                <option value="Temporarily Restricted">Temporarily Restricted</option>
+                <option value="Unrestricted">Unrestricted (Core Operations)</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2 flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Donor Grant / Project Allocation <span class="text-status-critical-text">*</span></label>
+              <select id="formGrant" required class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                <option value="USAID Education Program (USAID-GH-2024-ED09)">USAID Education Program (USAID-GH-2024-ED09)</option>
+                <option value="Global Fund Malaria (GF-MAL-2023-GH)">Global Fund Malaria (GF-MAL-2023-GH)</option>
+                <option value="EU Climate Action (EU-CLIM-2024-GH03)">EU Climate Action (EU-CLIM-2024-GH03)</option>
+                <option value="General Operations (Unrestricted)">General Operations (Unrestricted)</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Initial Status</label>
+              <select id="formStatus" class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                <option value="Active">Active</option>
+                <option value="Under Maintenance">Under Maintenance</option>
+                <option value="Transferred">Transferred</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Depreciation Parameters -->
+        <div class="flex flex-col gap-2">
+          <span class="font-title-sm text-title-sm text-text-primary font-semibold border-b border-border-subtle/50 pb-1">4. Depreciation (IPSAS-17)</span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Depreciation Method</label>
+              <select id="formDeprMethod" class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary">
+                <option value="Straight Line (SLM)">Straight Line (SLM)</option>
+                <option value="Reducing Balance">Reducing Balance</option>
+                <option value="No Depreciation">No Depreciation (Land/Work-in-Progress)</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Useful Life (Years)</label>
+              <input type="number" id="formUsefulLife" value="5" min="1" max="50"
+                class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-caption text-text-secondary font-medium">Depreciation Start Date</label>
+              <input type="date" id="formDeprStart" value="2025-07-01"
+                class="px-2.5 py-1.5 bg-surface-secondary border border-border-subtle rounded font-body-sm text-body-sm text-text-primary focus:outline-none focus:border-primary" />
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Modal Footer -->
+      <div class="p-space-md border-t border-border-subtle/80 bg-surface-secondary flex items-center justify-end gap-2">
+        <button id="cancelAddAssetBtn" type="button" class="px-space-md py-1.5 bg-surface-card hover:bg-surface-dim/40 text-text-secondary font-title-sm text-title-sm rounded border border-border-subtle transition-colors">
+          Cancel
+        </button>
+        <button id="submitAddAssetBtn" type="button" class="px-space-lg py-1.5 bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded transition-colors shadow-sm flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">save</span>
+          <span>Register Asset</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CONFIRMATION FOR ACTION (DISPOSAL / TRANSFER) -->
+  <div id="confirmActionModalOverlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-surface-card rounded-lg shadow-2xl max-w-md w-full p-space-lg flex flex-col gap-space-md border border-border-subtle">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-status-critical-bg text-status-critical-text flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[20px]" id="confirmModalIcon">warning</span>
+        </div>
+        <div>
+          <h3 id="confirmModalTitle" class="font-headline-sm text-headline-sm text-text-primary">Confirm Action</h3>
+          <p id="confirmModalDesc" class="font-caption text-caption text-text-muted mt-0.5">This action impacts organizational asset custody and compliance.</p>
+        </div>
+      </div>
+      <p id="confirmModalMessage" class="font-body-sm text-body-sm text-text-secondary">
+        Are you sure you want to initiate disposal for this asset? Disposal of donor-funded assets requires agreement officer sign-off.
+      </p>
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-border-subtle/60">
+        <button id="confirmModalCancelBtn" class="px-space-md py-1.5 rounded bg-surface-secondary hover:bg-surface-dim/50 text-text-secondary font-title-sm text-title-sm">
+          Cancel
+        </button>
+        <button id="confirmModalExecuteBtn" class="px-space-md py-1.5 rounded bg-status-critical-text text-white hover:opacity-90 font-title-sm text-title-sm">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-nav-surface text-on-primary px-space-md py- space-sm rounded-lg shadow-2xl border border-nav-border flex items-center gap-3 text-body-sm">
+      <div class="w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[16px]">check</span>
+      </div>
+      <span id="toastMessage" class="font-title-sm text-title-sm">Asset added successfully.</span>
+    </div>
+  </div>
+
+  <!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+  <!-- INTERACTIVE APPLICATION SCRIPT -->
+  <script>
+    (function () {
+      // 1. Initial Master Assets Dataset (Realistic Ghanaian & International NGO assets)
+      const initialAssets = [
+        {
+          id: "AST-2024-001",
+          name: "Toyota Land Cruiser Hardtop 4x4 (Field HZJ78)",
+          category: "Vehicles & Transport",
+          location: "Tamale Regional Hub",
+          custodian: "Kwesi Appiah (Senior Logistics Lead)",
+          purchaseDate: "15 Jan 2024",
+          value: 380000,
+          currency: "GHS",
+          fundType: "Restricted",
+          grant: "USAID Education Program",
+          donor: "USAID West Africa",
+          project: "Northern Literacy Outreach",
+          depreciationMethod: "Straight Line (SLM)",
+          usefulLife: "5 Years",
+          accumDepr: 114000,
+          bookValue: 266000,
+          deprStart: "01 Feb 2024",
+          nextDepr: "30 Jun 2025",
+          serial: "JT711HZJ-9823410",
+          supplier: "Toyota Ghana Ltd",
+          poRef: "PO-2024-0089",
+          status: "Active",
+          icon: "directions_car"
+        },
+        {
+          id: "AST-2024-004",
+          name: "Perkins 45kVA Silent Soundproof Diesel Generator",
+          category: "Power & Energy (Generators/Solar)",
+          location: "Volta Field Office",
+          custodian: "Hajia Amina Bello (Health Specialist)",
+          purchaseDate: "20 Mar 2024",
+          value: 145000,
+          currency: "GHS",
+          fundType: "Restricted",
+          grant: "Global Fund Malaria",
+          donor: "The Global Fund",
+          project: "Rural Health Posts Cold-Chain",
+          depreciationMethod: "Straight Line (SLM)",
+          usefulLife: "7 Years",
+          accumDepr: 31070,
+          bookValue: 113930,
+          deprStart: "01 Apr 2024",
+          nextDepr: "30 Jun 2025",
+          serial: "PERK-45KVA-88129",
+          supplier: "Mantrac Ghana Ltd",
+          poRef: "PO-2024-0072",
+          status: "Active",
+          icon: "bolt"
+        },
+        {
+          id: "AST-2024-012",
+          name: "Sonosite M-Turbo Portable Ultrasound Clinical Scanner",
+          category: "Medical & Clinical Equipment",
+          location: "Volta Field Office",
+          custodian: "Dr. Emmanuel Osei (Senior Medical Lead)",
+          purchaseDate: "12 May 2024",
+          value: 125000,
+          currency: "GHS",
+          fundType: "Restricted",
+          grant: "Global Fund Malaria",
+          donor: "The Global Fund",
+          project: "Maternal & Child Health Post",
+          depreciationMethod: "Straight Line (SLM)",
+          usefulLife: "5 Years",
+          accumDepr: 29166,
+          bookValue: 95834,
+          deprStart: "01 Jun 2024",
+          nextDepr: "30 Jun 2025",
+          serial: "FUJI-SONO-99120",
+          supplier: "Volta Medical Logistics Ltd",
+          poRef: "PO-2024-0104",
+          status: "Under Maintenance",
+          icon: "medical_services"
+        },
+        {
+          id: "AST-2024-025",
+          name: "Dell PowerEdge R750 Central Server & SAN Storage",
+          category: "IT & Computing Equipment",
+          location: "Accra HQ",
+          custodian: "Sarah Mensah (Systems Administrator)",
+          purchaseDate: "05 Jun 2024",
+          value: 85000,
+          currency: "GHS",
+          fundType: "Unrestricted",
+          grant: "General Operations (Unrestricted)",
+          donor: "Institutional Core",
+          project: "Core Systems ERP Infrastructure",
+          depreciationMethod: "Straight Line (SLM)",
+          usefulLife: "3 Years",
+          accumDepr: 28333,
+          bookValue: 56667,
+          deprStart: "01 Jul 2024",
+          nextDepr: "30 Jun 2025",
+          serial: "DELL-PE-750-X204",
+          supplier: "Zenith IT Infrastructure Hub",
+          poRef: "PO-2024-0122",
+          status: "Active",
+          icon: "dns"
+        },
+        {
+          id: "AST-2023-018",
+          name: "Nissan Patrol 4x4 Station Wagon (Savannah Mission)",
+          category: "Vehicles & Transport",
+          location: "Savannah Mission Station",
+          custodian: "Kwesi Appiah (Agro-forestry Lead)",
+          purchaseDate: "14 Oct 2023",
+          value: 320000,
+          currency: "GHS",
+          fundType: "Temporarily Restricted",
+          grant: "EU Climate Action",
+          donor: "European Union Development Fund",
+          project: "Savannah Nursery Solar & Forestry",
+          depreciationMethod: "Straight Line (SLM)",
+          usefulLife: "5 Years",
+          accumDepr: 106666,
+          bookValue: 213334,
+          deprStart: "01 Nov 2023",
+          nextDepr: "30 Jun 2025",
+          serial: "JN1TBNY61Z00192",
+          supplier: "Japan Motors Ghana",
+          poRef: "PO-2023-0045",
+          status: "Active",
+          icon: "directions_car"
+        },
+        {
+          id: "AST-2021-009",
+          name: "Ford Everest 3.2L 4WD (Decommissioned Outreach)",
+          category: "Vehicles & Transport",
+          location: "Accra HQ",
+          custodian: "Joseph Danquah (Fleet Supervisor)",
+          purchaseDate: "10 Feb 2021",
+          value: 260000,
+          currency: "GHS",
+          fundType: "Restricted",
+          grant: "USAID Education Program",
+          donor: "USAID West Africa",
+          project: "Former Education Outreach Phase 1",
+          depreciationMethod: "Straight Line (SLM)",
+          usefulLife: "4 Years",
+          accumDepr: 245000,
+          bookValue: 15000,
+          deprStart: "01 Mar 2021",
+          nextDepr: "Fully Depreciated",
+          serial: "MNBXXMD44A0091",
+          supplier: "Mechanical Lloyd Ghana",
+          poRef: "PO-2021-0012",
+          status: "Pending Disposal",
+          icon: "no_crash"
+        }
+      ];
+
+      let assets = [...initialAssets];
+      let activeStatusFilter = "ALL";
+      let selectedAsset = null;
+
+      // DOM Elements
+      const assetTableBody = document.getElementById("assetTableBody");
+      const globalSearchInput = document.getElementById("globalSearchInput");
+      const assetSearchInput = document.getElementById("assetSearchInput");
+      const filterCategory = document.getElementById("filterCategory");
+      const filterLocation = document.getElementById("filterLocation");
+      const filterGrant = document.getElementById("filterGrant");
+      const clearFiltersBtn = document.getElementById("clearFiltersBtn");
+      const filteredEmptyState = document.getElementById("filteredEmptyState");
+      const footerCountDisplay = document.getElementById("footerCountDisplay");
+      const activeFilterChipsContainer = document.getElementById("activeFilterChipsContainer");
+      const activeFilterChipsList = document.getElementById("activeFilterChipsList");
+      const countTabAll = document.getElementById("countTabAll");
+
+      // Modals & Drawer
+      const assetDetailDrawerOverlay = document.getElementById("assetDetailDrawerOverlay");
+      const assetDetailDrawer = document.getElementById("assetDetailDrawer");
+      const closeDrawerBtn = document.getElementById("closeDrawerBtn");
+
+      const addAssetModalOverlay = document.getElementById("addAssetModalOverlay");
+      const addAssetModal = document.getElementById("addAssetModal");
+      const closeAddAssetModalBtn = document.getElementById("closeAddAssetModalBtn");
+      const cancelAddAssetBtn = document.getElementById("cancelAddAssetBtn");
+      const submitAddAssetBtn = document.getElementById("submitAddAssetBtn");
+      const addAssetForm = document.getElementById("addAssetForm");
+
+      const confirmActionModalOverlay = document.getElementById("confirmActionModalOverlay");
+      const confirmModalCancelBtn = document.getElementById("confirmModalCancelBtn");
+      const confirmModalExecuteBtn = document.getElementById("confirmModalExecuteBtn");
+      const confirmModalTitle = document.getElementById("confirmModalTitle");
+      const confirmModalMessage = document.getElementById("confirmModalMessage");
+
+      const toastNotification = document.getElementById("toastNotification");
+      const toastMessage = document.getElementById("toastMessage");
+
+      // Toast notification helper
+      function showToast(msg) {
+        toastMessage.textContent = msg;
+        toastNotification.classList.remove("translate-y-20", "opacity-0", "pointer-events-none");
+        setTimeout(() => {
+          toastNotification.classList.add("translate-y-20", "opacity-0", "pointer-events-none");
+        }, 4000);
+      }
+
+      // Format currency
+      function fmtCurrency(num) {
+        return "GH₵ " + Number(num).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+
+      // Render Asset Table Rows
+      function renderTable() {
+        const query = (assetSearchInput.value || globalSearchInput.value || "").toLowerCase().trim();
+        const cat = filterCategory.value;
+        const loc = filterLocation.value;
+        const grnt = filterGrant.value;
+
+        const filtered = assets.filter(item => {
+          // Status Tab Filter
+          if (activeStatusFilter === "Donor-Funded") {
+            if (item.fundType !== "Restricted" && item.fundType !== "Temporarily Restricted") return false;
+          } else if (activeStatusFilter !== "ALL") {
+            if (item.status !== activeStatusFilter) return false;
+          }
+
+          // Category
+          if (cat && item.category !== cat) return false;
+
+          // Location
+          if (loc && !item.location.includes(loc)) return false;
+
+          // Grant
+          if (grnt && !item.grant.includes(grnt)) return false;
+
+          // Search query
+          if (query) {
+            const matchText = (item.id + " " + item.name + " " + item.custodian + " " + item.location + " " + item.grant + " " + (item.serial || "")).toLowerCase();
+            if (!matchText.includes(query)) return false;
+          }
+
+          return true;
+        });
+
+        // Update counts
+        footerCountDisplay.textContent = `${filtered.length} asset${filtered.length === 1 ? '' : 's'} shown`;
+        countTabAll.textContent = assets.length;
+
+        // Render chips
+        renderActiveChips();
+
+        if (filtered.length === 0) {
+          assetTableBody.innerHTML = "";
+          filteredEmptyState.classList.remove("hidden");
+          return;
+        }
+
+        filteredEmptyState.classList.add("hidden");
+
+        let html = "";
+        filtered.forEach(item => {
+          // Status badge
+          let statusBadge = "";
+          if (item.status === "Active") {
+            statusBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-status-success-text"></span>Active</span>`;
+          } else if (item.status === "Under Maintenance") {
+            statusBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-warning-bg text-status-warning-text font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[13px]">build</span>Under Maint.</span>`;
+          } else if (item.status === "Pending Disposal") {
+            statusBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-critical-bg text-status-critical-text font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[13px]">warning</span>Pending Disposal</span>`;
+          } else if (item.status === "Disposed") {
+            statusBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-secondary text-text-muted font-label-sm text-label-sm font-semibold">Disposed</span>`;
+          } else {
+            statusBadge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-tint text-primary font-label-sm text-label-sm font-semibold">${item.status}</span>`;
+          }
+
+          // Fund Tag
+          let fundTag = "";
+          if (item.fundType === "Restricted") {
+            fundTag = `<span class="inline-block px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-caption text-caption font-semibold">Restricted</span>`;
+          } else if (item.fundType === "Temporarily Restricted") {
+            fundTag = `<span class="inline-block px-1.5 py-0.5 rounded bg-[#FEF8E7] text-[#A07200] font-caption text-caption font-semibold">Temp Restricted</span>`;
+          } else {
+            fundTag = `<span class="inline-block px-1.5 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold">Unrestricted</span>`;
+          }
+
+          html += `
+            <tr class="hover:bg-primary-tint/25 transition-colors cursor-pointer group" data-asset-id="${item.id}">
+              <td class="py-3 px-3">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded bg-surface-secondary flex items-center justify-center text-text-secondary shrink-0 group-hover:bg-primary-tint group-hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">${item.icon || 'domain'}</span>
+                  </div>
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-title-sm text-title-sm text-text-primary group-hover:text-primary font-semibold truncate max-w-xs">${item.name}</span>
+                    <span class="font-caption text-caption text-text-muted font-mono">${item.id} &bull; ${item.serial || 'SN: Verified'}</span>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-3 whitespace-nowrap">
+                <span class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary text-caption font-medium">${item.category}</span>
+              </td>
+              <td class="py-3 px-3 text-caption whitespace-nowrap">
+                <div class="flex items-center gap-1 text-text-primary">
+                  <span class="material-symbols-outlined text-[14px] text-text-muted">location_on</span>
+                  <span>${item.location}</span>
+                </div>
+              </td>
+              <td class="py-3 px-3 text-caption">
+                <div class="text-text-primary font-medium truncate max-w-[160px]">${item.custodian}</div>
+              </td>
+              <td class="py-3 px-3 text-caption text-text-muted whitespace-nowrap">
+                ${item.purchaseDate}
+              </td>
+              <td class="py-3 px-3 text-right font-numeric-table font-semibold text-text-primary whitespace-nowrap">
+                ${fmtCurrency(item.value)}
+              </td>
+              <td class="py-3 px-3">
+                <div class="flex flex-col gap-0.5">
+                  <div class="flex items-center gap-1.5">
+                    ${fundTag}
+                    <span class="font-title-sm text-title-sm text-text-primary truncate max-w-[150px]">${item.grant}</span>
+                  </div>
+                  <span class="font-caption text-caption text-text-muted truncate max-w-[180px]">${item.donor || 'Core Institutional'}</span>
+                </div>
+              </td>
+              <td class="py-3 px-3 text-caption whitespace-nowrap">
+                <div class="flex flex-col">
+                  <span class="font-numeric-table text-text-primary font-medium">${fmtCurrency(item.bookValue || (item.value * 0.7))}</span>
+                  <span class="text-text-muted font-caption text-[11px]">${item.depreciationMethod}</span>
+                </div>
+              </td>
+              <td class="py-3 px-3 whitespace-nowrap">
+                ${statusBadge}
+              </td>
+              <td class="py-3 px-3 text-right whitespace-nowrap">
+                <button class="view-detail-btn px-2.5 py-1 rounded bg-surface-secondary hover:bg-primary hover:text-white text-text-primary font-title-sm text-title-sm transition-colors inline-flex items-center gap-0.5" data-id="${item.id}" type="button">
+                  <span>View</span>
+                  <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                </button>
+              </td>
+            </tr>
+          `;
+        });
+
+        assetTableBody.innerHTML = html;
+
+        // Attach row click handlers
+        document.querySelectorAll("#assetTableBody tr").forEach(row => {
+          row.addEventListener("click", function (e) {
+            const assetId = this.getAttribute("data-asset-id");
+            openAssetDetail(assetId);
+          });
+        });
+
+        document.querySelectorAll(".view-detail-btn").forEach(btn => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const assetId = this.getAttribute("data-id");
+            openAssetDetail(assetId);
+          });
+        });
+      }
+
+      // Render Active Filter Chips
+      function renderActiveChips() {
+        const query = assetSearchInput.value.trim();
+        const cat = filterCategory.value;
+        const loc = filterLocation.value;
+        const grnt = filterGrant.value;
+
+        const chips = [];
+        if (query) chips.push({ label: `Search: "${query}"`, type: "query" });
+        if (cat) chips.push({ label: `Category: ${cat}`, type: "cat" });
+        if (loc) chips.push({ label: `Location: ${loc}`, type: "loc" });
+        if (grnt) chips.push({ label: `Grant: ${grnt}`, type: "grnt" });
+
+        if (chips.length > 0) {
+          activeFilterChipsContainer.classList.remove("hidden");
+          activeFilterChipsList.innerHTML = chips.map(c => `
+            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-tint text-primary text-caption font-semibold">
+              ${c.label}
+              <button class="remove-chip-btn hover:text-status-critical-text text-[14px]" data-type="${c.type}">&times;</button>
+            </span>
+          `).join("");
+
+          document.querySelectorAll(".remove-chip-btn").forEach(b => {
+            b.addEventListener("click", function () {
+              const type = this.getAttribute("data-type");
+              if (type === "query") { assetSearchInput.value = ""; globalSearchInput.value = ""; }
+              if (type === "cat") filterCategory.value = "";
+              if (type === "loc") filterLocation.value = "";
+              if (type === "grnt") filterGrant.value = "";
+              renderTable();
+            });
+          });
+        } else {
+          activeFilterChipsContainer.classList.add("hidden");
+          activeFilterChipsList.innerHTML = "";
+        }
+      }
+
+      // Open Asset Detail Drawer
+      function openAssetDetail(assetId) {
+        const asset = assets.find(a => a.id === assetId);
+        if (!asset) return;
+        selectedAsset = asset;
+
+        document.getElementById("drawerAssetTag").textContent = asset.id;
+        document.getElementById("drawerAssetName").textContent = asset.name;
+        document.getElementById("drawerCategory").textContent = asset.category;
+        document.getElementById("drawerSerial").textContent = asset.serial || "SN-VERIFIED-N/A";
+        document.getElementById("drawerLocation").textContent = asset.location;
+        document.getElementById("drawerCustodian").textContent = asset.custodian;
+        document.getElementById("drawerPurchaseDate").textContent = asset.purchaseDate;
+        document.getElementById("drawerSupplier").textContent = asset.supplier || "Official Tender Supplier";
+        document.getElementById("drawerDonor").textContent = asset.donor || "Core Organization Fund";
+        document.getElementById("drawerGrantProject").textContent = `${asset.grant} (${asset.project})`;
+        document.getElementById("drawerProcurementRef").textContent = `${asset.poRef || 'PO-2024-0089'} → GRN Inward`;
+        document.getElementById("drawerOriginalCost").textContent = fmtCurrency(asset.value);
+        document.getElementById("drawerAccumDepr").textContent = "-" + fmtCurrency(asset.accumDepr || (asset.value * 0.3));
+        document.getElementById("drawerBookValue").textContent = fmtCurrency(asset.bookValue || (asset.value * 0.7));
+        document.getElementById("drawerDeprStart").textContent = asset.deprStart || "01 Jan 2024";
+        document.getElementById("drawerNextDepr").textContent = asset.nextDepr || "30 Jun 2025";
+        document.getElementById("drawerLifeRemaining").textContent = asset.usefulLife || "5 Years";
+        document.getElementById("drawerAssetIcon").textContent = asset.icon || "domain";
+
+        // Status badge
+        const badge = document.getElementById("drawerAssetStatusBadge");
+        badge.textContent = asset.status;
+        if (asset.status === "Active") {
+          badge.className = "px-2 py-0.5 rounded text-caption font-semibold bg-status-success-bg text-status-success-text";
+        } else if (asset.status === "Under Maintenance") {
+          badge.className = "px-2 py-0.5 rounded text-caption font-semibold bg-status-warning-bg text-status-warning-text";
+        } else if (asset.status === "Pending Disposal") {
+          badge.className = "px-2 py-0.5 rounded text-caption font-semibold bg-status-critical-bg text-status-critical-text";
+        } else {
+          badge.className = "px-2 py-0.5 rounded text-caption font-semibold bg-surface-secondary text-text-muted";
+        }
+
+        // Fund Badge
+        const fbadge = document.getElementById("drawerFundBadge");
+        fbadge.textContent = asset.fundType + " Earmarked";
+        if (asset.fundType === "Restricted") {
+          fbadge.className = "px-2 py-0.5 rounded text-caption font-semibold bg-[#8A6507] text-white";
+        } else if (asset.fundType === "Temporarily Restricted") {
+          fbadge.className = "px-2 py-0.5 rounded text-caption font-semibold bg-[#A07200] text-white";
+        } else {
+          fbadge.className = "px-2 py-0.5 rounded text-caption font-semibold bg-primary text-white";
+        }
+
+        // Show Drawer
+        assetDetailDrawerOverlay.classList.remove("hidden");
+        setTimeout(() => {
+          assetDetailDrawerOverlay.classList.remove("opacity-0");
+          assetDetailDrawer.classList.remove("translate-x-full");
+        }, 10);
+      }
+
+      function closeAssetDetail() {
+        assetDetailDrawerOverlay.classList.add("opacity-0");
+        assetDetailDrawer.classList.add("translate-x-full");
+        setTimeout(() => {
+          assetDetailDrawerOverlay.classList.add("hidden");
+        }, 300);
+      }
+
+      // Add Asset Modal
+      function openAddAssetModal() {
+        addAssetModalOverlay.classList.remove("hidden");
+        setTimeout(() => {
+          addAssetModalOverlay.classList.remove("opacity-0");
+          addAssetModal.classList.remove("scale-95");
+        }, 10);
+      }
+
+      function closeAddAssetModal() {
+        addAssetModalOverlay.classList.add("opacity-0");
+        addAssetModal.classList.add("scale-95");
+        setTimeout(() => {
+          addAssetModalOverlay.classList.add("hidden");
+          addAssetForm.reset();
+        }, 300);
+      }
+
+      // Confirmation Modal
+      let pendingConfirmCallback = null;
+      function showConfirm(title, message, callback) {
+        confirmModalTitle.textContent = title;
+        confirmModalMessage.textContent = message;
+        pendingConfirmCallback = callback;
+        confirmActionModalOverlay.classList.remove("hidden");
+        setTimeout(() => {
+          confirmActionModalOverlay.classList.remove("opacity-0");
+        }, 10);
+      }
+
+      function closeConfirm() {
+        confirmActionModalOverlay.classList.add("opacity-0");
+        setTimeout(() => {
+          confirmActionModalOverlay.classList.add("hidden");
+          pendingConfirmCallback = null;
+        }, 300);
+      }
+
+      // Event Listeners for Filters
+      assetSearchInput.addEventListener("input", renderTable);
+      globalSearchInput.addEventListener("input", function () {
+        assetSearchInput.value = this.value;
+        renderTable();
+      });
+      filterCategory.addEventListener("change", renderTable);
+      filterLocation.addEventListener("change", renderTable);
+      filterGrant.addEventListener("change", renderTable);
+
+      clearFiltersBtn.addEventListener("click", function () {
+        assetSearchInput.value = "";
+        globalSearchInput.value = "";
+        filterCategory.value = "";
+        filterLocation.value = "";
+        filterGrant.value = "";
+        activeStatusFilter = "ALL";
+        document.querySelectorAll(".status-tab-btn").forEach(b => {
+          b.classList.remove("active", "font-semibold", "text-primary", "bg-primary-tint", "border", "border-primary/20");
+          b.classList.add("text-text-secondary");
+        });
+        document.querySelector('.status-tab-btn[data-status="ALL"]').classList.add("active", "font-semibold", "text-primary", "bg-primary-tint", "border", "border-primary/20");
+        renderTable();
+      });
+
+      document.getElementById("emptyClearFiltersBtn").addEventListener("click", function () {
+        clearFiltersBtn.click();
+      });
+
+      // Quick Status Tabs
+      document.querySelectorAll(".status-tab-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".status-tab-btn").forEach(b => {
+            b.classList.remove("active", "font-semibold", "text-primary", "bg-primary-tint", "border", "border-primary/20");
+            b.classList.add("text-text-secondary");
+          });
+          this.classList.add("active", "font-semibold", "text-primary", "bg-primary-tint", "border", "border-primary/20");
+          this.classList.remove("text-text-secondary");
+          activeStatusFilter = this.getAttribute("data-status");
+          renderTable();
+        });
+      });
+
+      // Modal open / close handlers
+      document.getElementById("openAddAssetTopBtn").addEventListener("click", openAddAssetModal);
+      document.getElementById("openAddAssetPrimaryBtn").addEventListener("click", openAddAssetModal);
+      document.getElementById("openAddAssetInCardBtn").addEventListener("click", openAddAssetModal);
+      closeAddAssetModalBtn.addEventListener("click", closeAddAssetModal);
+      cancelAddAssetBtn.addEventListener("click", closeAddAssetModal);
+      closeDrawerBtn.addEventListener("click", closeAssetDetail);
+
+      // Close on backdrop click
+      assetDetailDrawerOverlay.addEventListener("click", function (e) {
+        if (e.target === this) closeAssetDetail();
+      });
+      addAssetModalOverlay.addEventListener("click", function (e) {
+        if (e.target === this) closeAddAssetModal();
+      });
+      confirmActionModalOverlay.addEventListener("click", function (e) {
+        if (e.target === this) closeConfirm();
+      });
+      confirmModalCancelBtn.addEventListener("click", closeConfirm);
+      confirmModalExecuteBtn.addEventListener("click", function () {
+        if (pendingConfirmCallback) pendingConfirmCallback();
+        closeConfirm();
+      });
+
+      // Submit Add Asset
+      submitAddAssetBtn.addEventListener("click", function () {
+        const name = document.getElementById("formAssetName").value.trim();
+        const tag = document.getElementById("formAssetTag").value.trim();
+        const val = parseFloat(document.getElementById("formPurchaseValue").value);
+
+        if (!name || !tag || isNaN(val)) {
+          alert("Please fill in Asset Name, Tag ID, and a valid Purchase Value.");
+          return;
+        }
+
+        const cat = document.getElementById("formCategory").value;
+        const loc = document.getElementById("formLocation").value;
+        const cust = document.getElementById("formCustodian").value.trim() || "Unassigned";
+        const ftype = document.getElementById("formFundType").value;
+        const grnt = document.getElementById("formGrant").value;
+        const pdate = document.getElementById("formPurchaseDate").value;
+        const poref = document.getElementById("formPORef").value;
+        const serial = document.getElementById("formSerial").value.trim() || "SN-" + Math.floor(100000 + Math.random() * 900000);
+        const supplier = document.getElementById("formSupplier").value.trim() || "Accra Capital Procurement";
+        const deprMethod = document.getElementById("formDeprMethod").value;
+        const life = document.getElementById("formUsefulLife").value + " Years";
+        const status = document.getElementById("formStatus").value;
+
+        // Icon mapping
+        let icon = "domain";
+        if (cat.includes("Vehicles")) icon = "directions_car";
+        else if (cat.includes("Power")) icon = "bolt";
+        else if (cat.includes("Medical")) icon = "medical_services";
+        else if (cat.includes("IT")) icon = "laptop_chromebook";
+
+        const newAsset = {
+          id: tag,
+          name: name,
+          category: cat,
+          location: loc,
+          custodian: cust,
+          purchaseDate: pdate,
+          value: val,
+          currency: "GHS",
+          fundType: ftype,
+          grant: grnt.split("(")[0].trim(),
+          donor: grnt.includes("USAID") ? "USAID West Africa" : (grnt.includes("Global Fund") ? "The Global Fund" : (grnt.includes("EU") ? "European Union" : "Core Organization")),
+          project: "Field Mission Allocation",
+          depreciationMethod: deprMethod,
+          usefulLife: life,
+          accumDepr: 0,
+          bookValue: val,
+          deprStart: document.getElementById("formDeprStart").value,
+          nextDepr: "30 Jun 2025",
+          serial: serial,
+          supplier: supplier,
+          poRef: poref,
+          status: status,
+          icon: icon
+        };
+
+        // Insert at beginning
+        assets.unshift(newAsset);
+
+        // Update KPIs
+        const totalElem = document.getElementById("kpiTotalAssets");
+        totalElem.textContent = parseInt(totalElem.textContent) + 1;
+
+        if (status === "Active") {
+          const actElem = document.getElementById("kpiActiveAssets");
+          actElem.textContent = parseInt(actElem.textContent) + 1;
+        }
+        if (ftype !== "Unrestricted") {
+          const donorElem = document.getElementById("kpiDonorFunded");
+          donorElem.textContent = parseInt(donorElem.textContent) + 1;
+        }
+
+        closeAddAssetModal();
+        renderTable();
+        showToast("Asset added successfully.");
+      });
+
+      // Drawer Actions: Transfer & Disposal
+      document.getElementById("drawerTransferBtn").addEventListener("click", function () {
+        if (!selectedAsset) return;
+        showConfirm(
+          "Transfer Asset Custody",
+          `Transfer custody and physical base for ${selectedAsset.id} (${selectedAsset.name}). This will generate a physical handover protocol.`,
+          function () {
+            selectedAsset.custodian = "Ama Mensah (Finance Custody Temporary)";
+            selectedAsset.status = "Active";
+            renderTable();
+            openAssetDetail(selectedAsset.id);
+            showToast("Asset transfer recorded successfully.");
+          }
+        );
+      });
+
+      document.getElementById("drawerMaintBtn").addEventListener("click", function () {
+        if (!selectedAsset) return;
+        selectedAsset.status = "Under Maintenance";
+        renderTable();
+        openAssetDetail(selectedAsset.id);
+        showToast("Asset status updated to Under Maintenance.");
+      });
+
+      document.getElementById("drawerDisposalBtn").addEventListener("click", function () {
+        if (!selectedAsset) return;
+        showConfirm(
+          "Initiate Asset Disposal",
+          `Initiate statutory disposal workflow for ${selectedAsset.id}. If this is a donor-funded asset (${selectedAsset.grant}), formal agreement officer clearance will be required.`,
+          function () {
+            selectedAsset.status = "Pending Disposal";
+            renderTable();
+            openAssetDetail(selectedAsset.id);
+            showToast("Asset disposal request logged for Tender & Board Review.");
+          }
+        );
+      });
+
+      // Monthly Depreciation Run
+      document.getElementById("runDeprBatchBtn").addEventListener("click", function () {
+        showConfirm(
+          "Run Monthly Straight-Line Depreciation",
+          "This will post calculated monthly depreciation vouchers for all 142 fixed assets into General Ledger Account 5400 (Depreciation Expense) and credit Account 1450 (Accumulated Depreciation).",
+          function () {
+            showToast("Monthly depreciation posted successfully. 18 asset schedules reconciled.");
+          }
+        );
+      });
+
+      // Export Register Button
+      document.getElementById("exportRegisterBtn").addEventListener("click", function () {
+        showToast("Exporting fixed asset register (Excel/PDF) with complete audit trail...");
+      });
+
+      // Refresh Button
+      document.getElementById("refreshRegisterBtn").addEventListener("click", function () {
+        renderTable();
+        showToast("Asset register refreshed.");
+      });
+
+      // Initial table render
+      renderTable();
+    })();
+  </script>
+</body>
+</html>

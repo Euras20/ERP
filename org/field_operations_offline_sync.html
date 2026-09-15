@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Field Operations - Fiduciary Core ERP</title>
+  <!-- Google Fonts: IBM Plex Sans & IBM Plex Mono -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f7f9ff", "on-tertiary": "#ffffff", "status-warning-bg": "#FEF3E6", "surface-dim": "#d1dbe7", "status-critical-bg": "#FDF0F0", "primary-fixed": "#a7eef6", "status-neutral-bg": "#ECEFF2", "secondary-container": "#d8e4ef", "status-success-border": "#9DD4B8", "inverse-primary": "#8bd2da", "on-tertiary-container": "#ffd892", "status-critical-border": "#F3A6A9", "nav-border": "#1E3243", "outline-variant": "#bec8c9", "text-muted": "#7B8C9A", "inverse-on-surface": "#e8f2fe", "secondary-fixed-dim": "#bcc8d3", "fund-temp-restricted": "#D99B00", "canvas-bg": "#F7F9FA", "tertiary-fixed": "#ffdea6", "surface-container-low": "#ecf4ff", "nav-text-primary": "#F4F7F9", "on-secondary": "#ffffff", "status-neutral-text": "#384551", "fund-restricted": "#B8860B", "surface-variant": "#d9e4ef", "inverse-surface": "#28313a", "status-success-text": "#0F6848", "on-primary-fixed": "#002022", "surface-container-highest": "#d9e4ef", "on-surface-variant": "#3f484a", "on-surface": "#131d25", "primary": "#005258", "on-error-container": "#93000a", "nav-text-muted": "#8EA2B4", "error-container": "#ffdad6", "outline": "#6f797a", "tertiary-fixed-dim": "#f7bd48", "nav-surface": "#152431", "status-success-bg": "#E8F5EE", "on-secondary-fixed-variant": "#3d4851", "error": "#ba1a1a", "on-secondary-fixed": "#121d25", "primary-fixed-dim": "#8bd2da", "on-primary-container": "#a1e9f1", "surface-secondary": "#F0F4F6", "status-critical-text": "#A81D24", "on-tertiary-fixed-variant": "#5d4200", "secondary-fixed": "#d8e4ef", "secondary": "#556069", "on-primary": "#ffffff", "surface-tint": "#16686f", "text-secondary": "#4E5D6A", "surface": "#f7f9ff", "on-primary-fixed-variant": "#004f55", "status-warning-text": "#914D03", "surface-container-high": "#dfe9f5", "tertiary-container": "#7f5b00", "status-warning-border": "#F6C88D", "tertiary": "#614500", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "text-primary": "#121A21", "border-subtle": "#DCE3E8", "surface-bright": "#f7f9ff", "on-secondary-container": "#5a666f", "surface-container": "#e5effb", "on-background": "#131d25", "border-strong": "#B8C4CE", "on-tertiary-fixed": "#271900", "primary-hover": "#144F54", "primary-container": "#1b6b72", "fund-unrestricted": "#1B6B72", "primary-tint": "#E4EFEF", "surface-card": "#FFFFFF", "status-neutral-border": "#CAD2D8", "nav-bg": "#0D1821" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1rem", "space-2xl": "2rem", "margin-compact": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-xxs": "0.125rem", "margin": "1.5rem", "space-xl": "1.5rem", "gutter-dense": "0.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "label-md": ["IBM Plex Sans"], "title-md": ["IBM Plex Sans"], "caption": ["IBM Plex Sans"], "headline-sm": ["IBM Plex Sans"], "body-sm": ["IBM Plex Sans"], "numeric-table": ["IBM Plex Sans"], "label-sm": ["IBM Plex Sans"], "numeric-table-bold": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "display-lg": ["IBM Plex Sans"], "title-sm": ["IBM Plex Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "numeric-table-bold": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }] } } } };</script>
+  <base target="_blank">
+
+<body
+  class="h-full font-sans text-text-primary antialiased bg-background flex flex-col selection:bg-primary-tint selection:text-primary">
+  <!-- BEGIN: App Root Container -->
+  <div class="min-h-full flex" id="shellContainer">
+    <!-- BEGIN: Exact Canonical Navigation Sidebar (#appNav) -->
+<aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+    <!-- END: Navigation Sidebar -->
+    <!-- BEGIN: Main Page Shell Container -->
+   <div id="appMain" class="pl-64 flex flex-col min-h-screen transition-all">
+      <!-- BEGIN: Exact Canonical Fixed Top Header (#appHeader) -->
+     <header id="appHeader"
+      class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center"><span
+            class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span><!-- Update the search input element to include border-0 ring-0: -->
+<input
+  class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg border-0 outline-none ring-0 focus:outline-none focus:bg-surface-card transition-colors"
+  placeholder="Search transactions, grants, projects, vendors, staff..." type="text" /></div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span><span>FY 2025
+            (Q2 Closed)</span></div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary"><span
+            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS
+            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <div class="h-5 w-px bg-surface-secondary"></div><button
+          class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span
+            class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span></button><button
+          class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">help</span></button>
+        <div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" /><span
+            class="material-symbols-outlined text-text-muted text-[16px]"></span></div>
+      </div>
+    </header>
+      <!-- END: Top Header -->
+      <!-- BEGIN: Main Dashboard Content Area -->
+      <main class="flex-1 p-6 space-y-6">
+        <!-- Canonical Context Header Section -->
+        <section class="space-y-2">
+          <!-- Breadcrumbs -->
+          <nav class="flex items-center gap-2 text-xs text-text-muted">
+            <a class="hover:text-text-primary transition-colors" href="#">Home</a>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <a class="hover:text-text-primary transition-colors" href="#">Operations</a>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="text-text-primary font-medium">Field Operations</span>
+          </nav>
+          <!-- Title & Badges & Action Buttons -->
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pt-1">
+            <div>
+              <div class="flex items-center gap-3 flex-wrap">
+                <h1 class="text-2xl font-bold text-text-primary tracking-tight">Field Operations</h1>
+                <span
+                  class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-status-success"></span>
+                  Field-to-Ledger Synchronized
+                </span>
+                <span
+                  class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-warning-bg text-status-warning border border-status-warning/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-status-warning pulse-indicator"></span>
+                  Offline-First Engine Active
+                </span>
+              </div>
+              <p class="text-xs text-text-secondary mt-1 max-w-3xl">
+                Monitor field activities, staff activity, beneficiaries reached, expenses and synchronization status
+                across Ghana regional field hubs.
+              </p>
+            </div>
+            <!-- Header Action Buttons -->
+            <div class="flex items-center gap-2.5 flex-shrink-0">
+              <button
+                class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface border border-border-subtle hover:bg-surface-secondary text-text-secondary text-xs font-semibold shadow-xs transition-colors"
+                onclick="exportFieldLog()">
+                <span class="material-symbols-outlined text-[18px]">download</span>
+                <span>Export Field Log</span>
+              </button>
+              <button
+                class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-xs transition-colors"
+                onclick="openRecordModal()">
+                <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                <span>+ Record Field Activity</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Visual Operational Workflow Ribbon -->
+        <section class="bg-surface border border-border-subtle rounded-xl p-4 shadow-xs">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-primary"></span>
+              <span class="text-xs font-bold uppercase tracking-wider text-text-primary font-mono">Field Operational
+                Workflow &amp; Ledger Integration</span>
+            </div>
+            <span class="text-[11px] text-text-muted font-medium hidden sm:inline">Standard Operating Procedure • IPSAS
+              &amp; Donor Audit Compliant</span>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2 text-center">
+            <div class="p-2.5 rounded-lg border bg-surface-secondary border-border-subtle">
+              <div class="text-[10px] font-mono text-text-muted font-semibold">STEP 1</div>
+              <div class="text-xs font-bold text-text-primary mt-0.5">Field Activity</div>
+              <div class="text-[10px] text-text-secondary">Initiate in field</div>
+            </div>
+            <div class="p-2.5 rounded-lg border bg-surface-secondary border-border-subtle">
+              <div class="text-[10px] font-mono text-text-muted font-semibold">STEP 2</div>
+              <div class="text-xs font-bold text-text-primary mt-0.5">Offline Save</div>
+              <div class="text-[10px] text-text-secondary">IndexedDB local</div>
+            </div>
+            <div class="p-2.5 rounded-lg border bg-status-warning-bg border-status-warning/30">
+              <div class="text-[10px] font-mono text-status-warning font-semibold">STEP 3</div>
+              <div class="text-xs font-bold text-status-warning mt-0.5">Sync Queue</div>
+              <div class="text-[10px] text-status-warning">4 awaiting uplink</div>
+            </div>
+            <div class="p-2.5 rounded-lg border bg-primary-tint border-primary/30 ring-1 ring-primary">
+              <div class="text-[10px] font-mono text-primary font-semibold">STEP 4</div>
+              <div class="text-xs font-bold text-primary mt-0.5">Expense Capture</div>
+              <div class="text-[10px] text-primary">Voucher &amp; per-diem</div>
+            </div>
+            <div class="p-2.5 rounded-lg border bg-surface-secondary border-border-subtle">
+              <div class="text-[10px] font-mono text-text-muted font-semibold">STEP 5</div>
+              <div class="text-xs font-bold text-text-primary mt-0.5">Cost Center</div>
+              <div class="text-[10px] text-text-secondary">Auto project match</div>
+            </div>
+            <div class="p-2.5 rounded-lg border bg-surface-secondary border-border-subtle">
+              <div class="text-[10px] font-mono text-text-muted font-semibold">STEP 6</div>
+              <div class="text-xs font-bold text-text-primary mt-0.5">Manager Review</div>
+              <div class="text-[10px] text-text-secondary">8 pending review</div>
+            </div>
+            <div class="p-2.5 rounded-lg border bg-surface-secondary border-border-subtle">
+              <div class="text-[10px] font-mono text-text-muted font-semibold">STEP 7</div>
+              <div class="text-xs font-bold text-text-primary mt-0.5">Approval</div>
+              <div class="text-[10px] text-text-secondary">Ledger posting</div>
+            </div>
+            <div class="p-2.5 rounded-lg border bg-status-success-bg border-status-success/30">
+              <div class="text-[10px] font-mono text-status-success font-semibold">STEP 8</div>
+              <div class="text-xs font-bold text-status-success mt-0.5">Grant Reporting</div>
+              <div class="text-[10px] text-status-success">USAID/GF format</div>
+            </div>
+          </div>
+        </section>
+        <!-- 7 Required Summary KPI Cards -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-3.5">
+          <!-- KPI 1: Today's Activities -->
+          <div
+            class="bg-surface p-4 rounded-xl border border-border-subtle shadow-xs flex flex-col justify-between hover:border-border-strong transition-colors">
+            <div class="flex items-center justify-between text-text-secondary">
+              <span class="text-[11px] font-bold uppercase tracking-wider">Today's Activities</span>
+              <span class="p-1 rounded bg-primary-tint text-primary">
+                <span class="material-symbols-outlined text-[16px]">schedule</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-2xl font-bold text-text-primary">18</div>
+              <div class="text-[11px] text-status-success font-medium flex items-center gap-1 mt-0.5">
+                <span>12 completed</span> • <span class="text-status-warning">6 in progress</span>
+              </div>
+            </div>
+          </div>
+          <!-- KPI 2: Activities This Week -->
+          <div
+            class="bg-surface p-4 rounded-xl border border-border-subtle shadow-xs flex flex-col justify-between hover:border-border-strong transition-colors">
+            <div class="flex items-center justify-between text-text-secondary">
+              <span class="text-[11px] font-bold uppercase tracking-wider">Activities This Week</span>
+              <span class="p-1 rounded bg-surface-secondary text-text-secondary">
+                <span class="material-symbols-outlined text-[16px]">date_range</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-2xl font-bold text-text-primary">74</div>
+              <div class="text-[11px] text-text-muted truncate mt-0.5">
+                Northern, Volta, Savannah clusters
+              </div>
+            </div>
+          </div>
+          <!-- KPI 3: Pending Reviews -->
+          <div
+            class="bg-surface p-4 rounded-xl border border-border-subtle shadow-xs flex flex-col justify-between hover:border-border-strong transition-colors">
+            <div class="flex items-center justify-between text-text-secondary">
+              <span class="text-[11px] font-bold uppercase tracking-wider">Pending Reviews</span>
+              <span class="p-1 rounded bg-status-warning-bg text-status-warning">
+                <span class="material-symbols-outlined text-[16px]">pending_actions</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-2xl font-bold text-status-warning">8</div>
+              <div class="text-[11px] text-text-secondary mt-0.5">Awaiting manager sign-off</div>
+            </div>
+          </div>
+          <!-- KPI 4: Unsynced Records (Highlight) -->
+          <div
+            class="bg-surface p-4 rounded-xl border border-status-warning/40 bg-status-warning-bg/20 shadow-xs flex flex-col justify-between hover:border-status-warning transition-colors">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-status-warning">Unsynced Records</span>
+              <span class="p-1 rounded bg-status-warning-bg text-status-warning">
+                <span class="material-symbols-outlined text-[16px]">sync_problem</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-baseline justify-between">
+                <span class="text-2xl font-bold text-status-warning" id="kpiUnsyncedCount">4</span>
+                <button
+                  class="text-[10px] font-semibold text-status-warning bg-status-warning-bg hover:bg-status-warning/20 border border-status-warning/30 px-2 py-0.5 rounded transition-colors"
+                  onclick="syncAllOfflineRecords()">
+                  Sync All
+                </button>
+              </div>
+              <div class="text-[10px] text-status-warning mt-0.5 truncate">Saved offline — waiting to sync</div>
+            </div>
+          </div>
+          <!-- KPI 5: Field Expenses -->
+          <div
+            class="bg-surface p-4 rounded-xl border border-border-subtle shadow-xs flex flex-col justify-between hover:border-border-strong transition-colors">
+            <div class="flex items-center justify-between text-text-secondary">
+              <span class="text-[11px] font-bold uppercase tracking-wider">Field Expenses</span>
+              <span class="p-1 rounded bg-primary-tint text-primary font-mono text-xs font-bold">GH¢</span>
+            </div>
+            <div class="mt-2">
+              <div class="text-xl font-bold text-text-primary font-mono">86,450.00</div>
+              <div class="text-[10px] text-text-muted mt-0.5">Voucher &amp; per-diem captured</div>
+            </div>
+          </div>
+          <!-- KPI 6: Beneficiaries Reached -->
+          <div
+            class="bg-surface p-4 rounded-xl border border-border-subtle shadow-xs flex flex-col justify-between hover:border-border-strong transition-colors">
+            <div class="flex items-center justify-between text-text-secondary">
+              <span class="text-[11px] font-bold uppercase tracking-wider">Beneficiaries</span>
+              <span class="p-1 rounded bg-surface-secondary text-primary">
+                <span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-2xl font-bold text-text-primary">4,820</div>
+              <div class="text-[11px] text-primary font-medium mt-0.5">1,240 verified households</div>
+            </div>
+          </div>
+          <!-- KPI 7: Active Field Staff -->
+          <div
+            class="bg-surface p-4 rounded-xl border border-border-subtle shadow-xs flex flex-col justify-between hover:border-border-strong transition-colors">
+            <div class="flex items-center justify-between text-text-secondary">
+              <span class="text-[11px] font-bold uppercase tracking-wider">Active Field Staff</span>
+              <span class="p-1 rounded bg-status-success-bg text-status-success">
+                <span class="material-symbols-outlined text-[16px]">badge</span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <div class="text-2xl font-bold text-status-success">28</div>
+              <div class="text-[11px] text-text-muted mt-0.5">Deployed across 4 clusters</div>
+            </div>
+          </div>
+        </section>
+        <!-- Operational Geographic Hubs & Real-time Field Clusters -->
+        <section class="bg-surface border border-border-subtle rounded-xl p-4 shadow-xs">
+          <div
+            class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-3 border-b border-border-subtle gap-2">
+            <div>
+              <h2 class="text-sm font-bold text-text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[18px]">public</span>
+                Operational Geographic Hubs &amp; Real-time Field Clusters
+              </h2>
+              <p class="text-xs text-text-secondary">Ghana Regional Field Network • Active GPS telemetry and offline
+                device synchronizations</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span
+                class="inline-flex items-center gap-1.5 text-xs text-status-success bg-status-success-bg px-2.5 py-1 rounded-full font-medium border border-status-success/20">
+                <span class="w-2 h-2 rounded-full bg-status-success pulse-indicator"></span>
+                4 Hub Uplinks Live
+              </span>
+            </div>
+          </div>
+          <!-- 4 Cluster Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+            <!-- Cluster 1: Tamale -->
+            <div
+              class="relative overflow-hidden p-3.5 rounded-lg border border-border-subtle bg-background hover:border-primary transition-colors">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] text-text-muted font-semibold">NORTHERN CLUSTER</span>
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-tint text-primary">8 Active
+                  Staff</span>
+              </div>
+              <div class="mt-2">
+                <div class="font-bold text-text-primary text-sm">Tamale Regional Hub</div>
+                <div class="text-xs text-text-secondary font-mono mt-0.5">Lat: 9.4075° N • Long: 0.8533° W</div>
+              </div>
+              <div class="mt-3 pt-2.5 border-t border-border-subtle flex items-center justify-between text-xs">
+                <span class="text-text-secondary">USAID &amp; Climate Work</span>
+                <span class="font-semibold text-text-primary">24 Activities</span>
+              </div>
+            </div>
+            <!-- Cluster 2: Volta -->
+            <div
+              class="relative overflow-hidden p-3.5 rounded-lg border border-border-subtle bg-background hover:border-primary transition-colors">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] text-text-muted font-semibold">EASTERN BASIN</span>
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-tint text-primary">7 Active
+                  Staff</span>
+              </div>
+              <div class="mt-2">
+                <div class="font-bold text-text-primary text-sm">Volta Mission Basin (Ho)</div>
+                <div class="text-xs text-text-secondary font-mono mt-0.5">Lat: 6.6101° N • Long: 0.4786° E</div>
+              </div>
+              <div class="mt-3 pt-2.5 border-t border-border-subtle flex items-center justify-between text-xs">
+                <span class="text-text-secondary">Global Fund Malaria</span>
+                <span class="font-semibold text-text-primary">22 Activities</span>
+              </div>
+            </div>
+            <!-- Cluster 3: Savannah -->
+            <div
+              class="relative overflow-hidden p-3.5 rounded-lg border border-status-warning/30 bg-status-warning-bg/15 hover:border-status-warning transition-colors">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] text-status-warning font-semibold">SAVANNAH SECTOR</span>
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-status-warning-bg text-status-warning border border-status-warning/30">6
+                  Active Staff</span>
+              </div>
+              <div class="mt-2">
+                <div class="font-bold text-text-primary text-sm">Savannah Mission (Damongo)</div>
+                <div class="text-xs text-text-secondary font-mono mt-0.5">Lat: 9.0833° N • Long: 1.8167° W</div>
+              </div>
+              <div class="mt-3 pt-2.5 border-t border-status-warning/20 flex items-center justify-between text-xs">
+                <span class="text-status-warning font-medium">3 Offline devices pending</span>
+                <span class="font-semibold text-text-primary">16 Activities</span>
+              </div>
+            </div>
+            <!-- Cluster 4: Accra -->
+            <div
+              class="relative overflow-hidden p-3.5 rounded-lg border border-border-subtle bg-background hover:border-primary transition-colors">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] text-text-muted font-semibold">GREATER ACCRA</span>
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-tint text-primary">7 Active
+                  Staff</span>
+              </div>
+              <div class="mt-2">
+                <div class="font-bold text-text-primary text-sm">Accra HQ Outreach Hub</div>
+                <div class="text-xs text-text-secondary font-mono mt-0.5">Lat: 5.6037° N • Long: 0.1870° W</div>
+              </div>
+              <div class="mt-3 pt-2.5 border-t border-border-subtle flex items-center justify-between text-xs">
+                <span class="text-text-secondary">Urban WASH &amp; Youth</span>
+                <span class="font-semibold text-text-primary">12 Activities</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Two Column Operational Split / Attention Queue -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Panel A: Pending Reviews Queue -->
+          <div class="bg-surface border border-border-subtle rounded-xl p-5 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-border-subtle">
+                <div class="flex items-center gap-2.5">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-status-warning-bg border border-status-warning/20 flex items-center justify-center text-status-warning">
+                    <span class="material-symbols-outlined text-[18px]">rule</span>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-bold text-text-primary">Pending Manager Reviews (8 Activities)</h3>
+                    <p class="text-xs text-text-secondary">Field logs requiring programmatic verification and financial
+                      voucher sign-off</p>
+                  </div>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded text-[11px] font-bold bg-status-warning-bg text-status-warning border border-status-warning/30">Requires
+                  Sign-off</span>
+              </div>
+              <!-- List of Pending Items -->
+              <div class="mt-4 space-y-3" id="pendingReviewsContainer">
+                <!-- Item 1 -->
+                <div
+                  class="p-3.5 rounded-lg border border-border-subtle hover:border-primary bg-background transition-colors flex items-center justify-between gap-3"
+                  id="pending-item-1">
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                      <span class="font-semibold text-text-primary text-xs truncate">Hohoe Clinic LLIN Net
+                        Distribution</span>
+                      <span class="text-[10px] font-mono text-text-muted">ACT-2025-0413</span>
+                    </div>
+                    <div class="text-[11px] text-text-secondary mt-1">
+                      Lead: <span class="text-text-primary font-medium">Dr. Emmanuel Osei</span> • Cost: <span
+                        class="font-mono text-text-primary font-semibold">GH¢ 14,800.00</span> • 1,120 Beneficiaries
+                    </div>
+                    <div class="text-[10px] text-primary mt-0.5">Linked: Global Fund Malaria (GR-GFATM-2023-01)</div>
+                  </div>
+                  <div class="flex items-center gap-2 flex-shrink-0">
+                    <button
+                      class="px-2.5 py-1 text-xs border border-border-subtle rounded-md hover:bg-surface text-text-secondary font-medium transition-colors"
+                      onclick="openDrawer('ACT-2025-0413')">Details</button>
+                    <button
+                      class="px-3 py-1 text-xs bg-primary hover:bg-primary-hover text-white rounded-md font-semibold transition-colors"
+                      onclick="approveDirectly('ACT-2025-0413')">Review &amp; Approve</button>
+                  </div>
+                </div>
+                <!-- Item 2 -->
+                <div
+                  class="p-3.5 rounded-lg border border-border-subtle hover:border-primary bg-background transition-colors flex items-center justify-between gap-3"
+                  id="pending-item-2">
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                      <span class="font-semibold text-text-primary text-xs truncate">Yendi Mobile Ultrasound
+                        Screening</span>
+                      <span class="text-[10px] font-mono text-text-muted">ACT-2025-0416</span>
+                    </div>
+                    <div class="text-[11px] text-text-secondary mt-1">
+                      Lead: <span class="text-text-primary font-medium">Dr. Emmanuel Osei</span> • Cost: <span
+                        class="font-mono text-text-primary font-semibold">GH¢ 12,400.00</span> • 640 Beneficiaries
+                    </div>
+                    <div class="text-[10px] text-primary mt-0.5">Linked: Global Fund Malaria (GR-GFATM-2023-01)</div>
+                  </div>
+                  <div class="flex items-center gap-2 flex-shrink-0">
+                    <button
+                      class="px-2.5 py-1 text-xs border border-border-subtle rounded-md hover:bg-surface text-text-secondary font-medium transition-colors"
+                      onclick="openDrawer('ACT-2025-0416')">Details</button>
+                    <button
+                      class="px-3 py-1 text-xs bg-primary hover:bg-primary-hover text-white rounded-md font-semibold transition-colors"
+                      onclick="approveDirectly('ACT-2025-0416')">Review &amp; Approve</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-xs">
+              <span class="text-text-muted">6 additional backlog items awaiting sign-off</span>
+              <a class="text-primary hover:underline font-semibold" href="#">Open Full Review Queue →</a>
+            </div>
+          </div>
+          <!-- Panel B: Unsynced Records & Offline Buffer Table -->
+          <div
+            class="bg-surface border border-status-warning/40 rounded-xl p-5 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-status-warning/20">
+                <div class="flex items-center gap-2.5">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-status-warning-bg border border-status-warning/30 flex items-center justify-center text-status-warning">
+                    <span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-bold text-text-primary">Unsynced Records &amp; Offline Buffer (4 Pending)
+                    </h3>
+                    <p class="text-xs text-text-secondary">IndexedDB local device telemetry awaiting Accra Gateway
+                      uplink</p>
+                  </div>
+                </div>
+                <button
+                  class="px-3 py-1 rounded-md text-[11px] font-bold bg-status-warning hover:bg-status-warning/90 text-white shadow-xs transition-colors"
+                  onclick="syncAllOfflineRecords()">
+                  Sync All (4) to HQ
+                </button>
+              </div>
+              <!-- List of Unsynced Items -->
+              <div class="mt-4 space-y-3" id="unsyncedRecordsContainer">
+                <!-- Item 1 -->
+                <div
+                  class="p-3.5 rounded-lg border border-status-warning/30 bg-status-warning-bg/20 flex items-center justify-between gap-3"
+                  id="unsynced-item-1">
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                      <span class="font-semibold text-text-primary text-xs truncate">Damongo Agro-Forestry Farmer
+                        Cohort</span>
+                      <span class="text-[10px] font-mono text-status-warning">ACT-2025-0414</span>
+                    </div>
+                    <div class="text-[11px] text-text-secondary mt-1">
+                      Staff: <span class="font-medium text-text-primary">Kwesi Appiah</span> • Location: <span
+                        class="text-text-primary">Savannah Hub (Damongo)</span>
+                    </div>
+                    <div class="text-[10px] text-status-warning font-mono mt-0.5 flex items-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span>
+                      Local Cache: Samsung Tab Active4 (Last offline write: 1h ago)
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 flex-shrink-0">
+                    <button
+                      class="px-3 py-1.5 text-xs bg-primary hover:bg-primary-hover text-white font-semibold rounded-md shadow-xs transition-colors flex items-center gap-1.5"
+                      id="btn-sync-ACT-2025-0414" onclick="syncSingleRecord('ACT-2025-0414')">
+                      <span class="material-symbols-outlined text-[16px]">sync</span>
+                      <span>Sync to HQ</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Item 2 -->
+                <div
+                  class="p-3.5 rounded-lg border border-border-subtle bg-background flex items-center justify-between gap-3">
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                      <span class="font-semibold text-text-primary text-xs truncate">Bole Water Borehole Geochemical
+                        Test</span>
+                      <span class="text-[10px] font-mono text-text-muted">ACT-2025-0410</span>
+                    </div>
+                    <div class="text-[11px] text-text-secondary mt-1">
+                      Staff: <span class="font-medium text-text-primary">Joseph Danquah</span> • Location: <span
+                        class="text-text-primary">Savannah (Bole)</span>
+                    </div>
+                    <div class="text-[10px] text-text-muted font-mono mt-0.5">Awaiting 4G cellular coverage window</div>
+                  </div>
+                  <div class="flex items-center gap-2 flex-shrink-0">
+                    <span
+                      class="px-2.5 py-1 text-xs bg-surface-secondary text-text-muted font-mono font-medium rounded-md">Queued</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-xs text-text-muted">
+              <span>Automated sync cycle triggers every 15 minutes</span>
+              <span class="font-mono text-status-success font-medium">SSL Encrypted Payload</span>
+            </div>
+          </div>
+        </section>
+        <!-- Master Field Activities Register Table -->
+        <section class="bg-surface border border-border-subtle rounded-xl shadow-xs overflow-hidden">
+          <!-- Table Action & Filtering Header -->
+          <div class="p-4 border-b border-border-subtle flex flex-col gap-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="text-base font-bold text-text-primary">Master Field Activities Register</h3>
+                <p class="text-xs text-text-secondary">Live registry connecting field operations, staff custody, project
+                  budgets, and ledger vouchers.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button
+                  class="p-2 border border-border-subtle rounded-lg hover:bg-surface-secondary text-text-secondary transition-colors"
+                  onclick="refreshRegister()" title="Refresh Telemetry">
+                  <span class="material-symbols-outlined text-[18px]">refresh</span>
+                </button>
+                <button
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-xs transition-colors"
+                  onclick="openRecordModal()">
+                  <span class="material-symbols-outlined text-[16px]">add</span>
+                  <span>+ New Activity</span>
+                </button>
+              </div>
+            </div>
+            <!-- Filter Tabs and Controls -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+              <!-- Filter Tabs -->
+              <div class="flex items-center gap-1 bg-surface-secondary p-1 rounded-lg text-xs font-medium">
+                <button class="tab-btn px-3 py-1.5 rounded-md bg-surface text-primary font-semibold shadow-xs"
+                  id="tab-all" onclick="filterByTab('all')">
+                  All Activities (7)
+                </button>
+                <button class="tab-btn px-3 py-1.5 rounded-md text-text-secondary hover:text-text-primary"
+                  id="tab-approved" onclick="filterByTab('approved')">
+                  Approved (4)
+                </button>
+                <button class="tab-btn px-3 py-1.5 rounded-md text-text-secondary hover:text-text-primary"
+                  id="tab-pending" onclick="filterByTab('pending')">
+                  Pending Review (2)
+                </button>
+                <button
+                  class="tab-btn px-3 py-1.5 rounded-md text-status-warning hover:bg-status-warning-bg font-medium"
+                  id="tab-unsynced" onclick="filterByTab('unsynced')">
+                  Unsynced (1)
+                </button>
+              </div>
+              <!-- Search + Filter Dropdowns -->
+              <div class="flex flex-wrap items-center gap-2 flex-1 sm:flex-initial">
+                <div class="relative min-w-[200px] flex-1 sm:flex-initial">
+                  <input
+                    class="w-full pl-8 pr-3 py-1.5 text-xs bg-background border border-border-subtle rounded-lg focus:outline-none focus:ring-1 focus:ring-primary"
+                    id="tableFilterSearch" oninput="applyFilters()" placeholder="Filter activities..." type="text" />
+                  <span
+                    class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-text-muted text-[16px]">search</span>
+                </div>
+                <select
+                  class="text-xs py-1.5 pl-2.5 pr-7 bg-surface border border-border-subtle rounded-lg text-text-secondary focus:ring-primary"
+                  id="typeFilter" onchange="applyFilters()">
+                  <option value="">All Activity Types</option>
+                  <option value="Community Visit">Community Visit</option>
+                  <option value="Training">Training</option>
+                  <option value="Distribution">Distribution</option>
+                  <option value="Monitoring Visit">Monitoring Visit</option>
+                  <option value="Outreach">Outreach</option>
+                  <option value="Assessment">Assessment</option>
+                </select>
+                <select
+                  class="text-xs py-1.5 pl-2.5 pr-7 bg-surface border border-border-subtle rounded-lg text-text-secondary focus:ring-primary"
+                  id="hubFilter" onchange="applyFilters()">
+                  <option value="">All Hubs</option>
+                  <option value="Tamale">Tamale Hub</option>
+                  <option value="Volta">Volta Hub</option>
+                  <option value="Savannah">Savannah Hub</option>
+                  <option value="Accra">Accra Hub</option>
+                </select>
+                <button
+                  class="px-2.5 py-1.5 text-xs text-text-muted hover:text-text-primary border border-border-subtle rounded-lg hover:bg-surface-secondary transition-colors"
+                  onclick="resetFilters()">
+                  Clear
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Master Responsive Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead
+                class="bg-surface-secondary text-text-secondary font-semibold border-b border-border-subtle uppercase tracking-wider text-[10px]">
+                <tr>
+                  <th class="py-3 px-4">Activity &amp; ID</th>
+                  <th class="py-3 px-3">Project &amp; Grant</th>
+                  <th class="py-3 px-3">Location / Hub</th>
+                  <th class="py-3 px-3">Field Staff</th>
+                  <th class="py-3 px-3">Date / Time</th>
+                  <th class="py-3 px-3">Activity Type</th>
+                  <th class="py-3 px-3 text-right">Beneficiaries</th>
+                  <th class="py-3 px-3 text-right font-mono">Field Exp (GHS)</th>
+                  <th class="py-3 px-3">Sync Status</th>
+                  <th class="py-3 px-3">Review Status</th>
+                  <th class="py-3 px-4 text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-border-subtle text-text-secondary font-normal" id="activityTableBody">
+                <!-- Row 1 -->
+                <tr class="hover:bg-primary-tint/30 cursor-pointer transition-colors"
+                  onclick="openDrawer('ACT-2025-0412')">
+                  <td class="py-3.5 px-4 font-medium text-text-primary">
+                    <div class="font-semibold text-text-primary">Sagnarigu Maternal Health Session</div>
+                    <div class="text-[10px] text-text-muted font-mono">ACT-2025-0412 • GHS-TAM-08</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span class="font-medium text-text-primary">USAID Community Resil.</span>
+                    <div class="text-[10px] text-text-muted font-mono">GR-USAID-2024-03</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="flex items-center gap-1.5 text-text-primary">
+                      <span class="material-symbols-outlined text-[15px] text-text-muted">location_on</span>
+                      <span>Tamale Hub (Sagnarigu)</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="font-medium text-text-primary">Kwesi Appiah</div>
+                    <div class="text-[10px] text-text-muted">Senior Logistics Officer</div>
+                  </td>
+                  <td class="py-3.5 px-3 text-text-secondary">
+                    <div>24 May 2025</div>
+                    <div class="text-[10px] text-text-muted">09:30 AM</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex px-2 py-0.5 rounded text-[11px] font-medium bg-primary-tint text-primary border border-primary/20">
+                      Community Visit
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-semibold text-text-primary">
+                    340
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-mono font-medium text-text-primary">
+                    GH¢ 4,250.00
+                  </td>
+                  <td class="py-3.5 px-3" id="sync-col-ACT-2025-0412">
+                    <span
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      <span class="material-symbols-outlined text-[13px] fill">check_circle</span>
+                      Synced
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      Approved
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-center" onclick="event.stopPropagation()">
+                    <button class="text-primary hover:text-primary-hover font-semibold text-[11px] hover:underline"
+                      onclick="openDrawer('ACT-2025-0412')">
+                      View / Inspect
+                    </button>
+                  </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="hover:bg-primary-tint/30 cursor-pointer transition-colors"
+                  onclick="openDrawer('ACT-2025-0413')">
+                  <td class="py-3.5 px-4 font-medium text-text-primary">
+                    <div class="font-semibold text-text-primary">Hohoe Clinic LLIN Net Distribution</div>
+                    <div class="text-[10px] text-text-muted font-mono">ACT-2025-0413 • GHS-VOL-19</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span class="font-medium text-text-primary">Global Fund Malaria</span>
+                    <div class="text-[10px] text-text-muted font-mono">GR-GFATM-2023-01</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="flex items-center gap-1.5 text-text-primary">
+                      <span class="material-symbols-outlined text-[15px] text-text-muted">location_on</span>
+                      <span>Volta Hub (Hohoe)</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="font-medium text-text-primary">Dr. Emmanuel Osei</div>
+                    <div class="text-[10px] text-text-muted">Senior Medical Officer</div>
+                  </td>
+                  <td class="py-3.5 px-3 text-text-secondary">
+                    <div>24 May 2025</div>
+                    <div class="text-[10px] text-text-muted">11:15 AM</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex px-2 py-0.5 rounded text-[11px] font-medium bg-primary-tint text-primary border border-primary/20">
+                      Distribution
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-semibold text-text-primary">
+                    1,120
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-mono font-medium text-text-primary">
+                    GH¢ 14,800.00
+                  </td>
+                  <td class="py-3.5 px-3" id="sync-col-ACT-2025-0413">
+                    <span
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      <span class="material-symbols-outlined text-[13px] fill">check_circle</span>
+                      Synced
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-status-warning-bg text-status-warning border border-status-warning/20">
+                      Pending Review
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-center" onclick="event.stopPropagation()">
+                    <button
+                      class="px-2 py-1 bg-primary-tint hover:bg-primary/20 text-primary rounded text-[11px] font-semibold transition-colors"
+                      onclick="approveDirectly('ACT-2025-0413')">
+                      Approve
+                    </button>
+                  </td>
+                </tr>
+                <!-- Row 3 (Unsynced Example) -->
+                <tr class="hover:bg-status-warning-bg/40 cursor-pointer transition-colors bg-status-warning-bg/15"
+                  onclick="openDrawer('ACT-2025-0414')">
+                  <td class="py-3.5 px-4 font-medium text-text-primary">
+                    <div class="font-semibold text-text-primary">Damongo Agro-Forestry Farmer Cohort</div>
+                    <div class="text-[10px] text-status-warning font-mono">ACT-2025-0414 • GHS-SAV-04</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span class="font-medium text-text-primary">EU Climate Adaptation</span>
+                    <div class="text-[10px] text-text-muted font-mono">GR-EU-2024-09</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="flex items-center gap-1.5 text-text-primary">
+                      <span class="material-symbols-outlined text-[15px] text-status-warning">location_on</span>
+                      <span>Savannah Hub (Damongo)</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="font-medium text-text-primary">Kwesi Appiah</div>
+                    <div class="text-[10px] text-text-muted">Agro-Forestry Officer</div>
+                  </td>
+                  <td class="py-3.5 px-3 text-text-secondary">
+                    <div>24 May 2025</div>
+                    <div class="text-[10px] text-text-muted">01:40 PM</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex px-2 py-0.5 rounded text-[11px] font-medium bg-primary-tint text-primary border border-primary/20">
+                      Training
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-semibold text-text-primary">
+                    185
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-mono font-medium text-text-primary">
+                    GH¢ 6,320.00
+                  </td>
+                  <td class="py-3.5 px-3" id="sync-col-ACT-2025-0414">
+                    <span
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-warning-bg text-status-warning border border-status-warning/30">
+                      <span class="material-symbols-outlined text-[13px] animate-spin">sync</span>
+                      Saved offline — waiting to sync
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-secondary text-text-secondary">
+                      Under Assessment
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-center" onclick="event.stopPropagation()">
+                    <button
+                      class="px-2 py-1 bg-status-warning hover:bg-status-warning/90 text-white rounded text-[11px] font-semibold transition-colors"
+                      onclick="syncSingleRecord('ACT-2025-0414')">
+                      Sync Now
+                    </button>
+                  </td>
+                </tr>
+                <!-- Row 4 -->
+                <tr class="hover:bg-primary-tint/30 cursor-pointer transition-colors"
+                  onclick="openDrawer('ACT-2025-0415')">
+                  <td class="py-3.5 px-4 font-medium text-text-primary">
+                    <div class="font-semibold text-text-primary">Chorkor Urban Water Point Monitoring</div>
+                    <div class="text-[10px] text-text-muted font-mono">ACT-2025-0415 • GHS-ACC-11</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span class="font-medium text-text-primary">USAID Community Resil.</span>
+                    <div class="text-[10px] text-text-muted font-mono">GR-USAID-2024-03</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="flex items-center gap-1.5 text-text-primary">
+                      <span class="material-symbols-outlined text-[15px] text-text-muted">location_on</span>
+                      <span>Accra Hub (Chorkor)</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="font-medium text-text-primary">Hajia Amina Bello</div>
+                    <div class="text-[10px] text-text-muted">Health Specialist</div>
+                  </td>
+                  <td class="py-3.5 px-3 text-text-secondary">
+                    <div>23 May 2025</div>
+                    <div class="text-[10px] text-text-muted">03:00 PM</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex px-2 py-0.5 rounded text-[11px] font-medium bg-primary-tint text-primary border border-primary/20">
+                      Monitoring Visit
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-semibold text-text-primary">
+                    890
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-mono font-medium text-text-primary">
+                    GH¢ 2,800.00
+                  </td>
+                  <td class="py-3.5 px-3" id="sync-col-ACT-2025-0415">
+                    <span
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      <span class="material-symbols-outlined text-[13px] fill">check_circle</span>
+                      Synced
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      Approved
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-center" onclick="event.stopPropagation()">
+                    <button class="text-primary hover:text-primary-hover font-semibold text-[11px] hover:underline"
+                      onclick="openDrawer('ACT-2025-0415')">
+                      View / Inspect
+                    </button>
+                  </td>
+                </tr>
+                <!-- Row 5 -->
+                <tr class="hover:bg-primary-tint/30 cursor-pointer transition-colors"
+                  onclick="openDrawer('ACT-2025-0416')">
+                  <td class="py-3.5 px-4 font-medium text-text-primary">
+                    <div class="font-semibold text-text-primary">Yendi Mobile Ultrasound Screening</div>
+                    <div class="text-[10px] text-text-muted font-mono">ACT-2025-0416 • GHS-TAM-12</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span class="font-medium text-text-primary">Global Fund Malaria</span>
+                    <div class="text-[10px] text-text-muted font-mono">GR-GFATM-2023-01</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="flex items-center gap-1.5 text-text-primary">
+                      <span class="material-symbols-outlined text-[15px] text-text-muted">location_on</span>
+                      <span>Tamale Hub (Yendi)</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="font-medium text-text-primary">Dr. Emmanuel Osei</div>
+                    <div class="text-[10px] text-text-muted">Senior Medical Officer</div>
+                  </td>
+                  <td class="py-3.5 px-3 text-text-secondary">
+                    <div>23 May 2025</div>
+                    <div class="text-[10px] text-text-muted">10:00 AM</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex px-2 py-0.5 rounded text-[11px] font-medium bg-primary-tint text-primary border border-primary/20">
+                      Outreach
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-semibold text-text-primary">
+                    640
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-mono font-medium text-text-primary">
+                    GH¢ 12,400.00
+                  </td>
+                  <td class="py-3.5 px-3" id="sync-col-ACT-2025-0416">
+                    <span
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      <span class="material-symbols-outlined text-[13px] fill">check_circle</span>
+                      Synced
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-status-warning-bg text-status-warning border border-status-warning/20">
+                      Pending Review
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-center" onclick="event.stopPropagation()">
+                    <button
+                      class="px-2 py-1 bg-primary-tint hover:bg-primary/20 text-primary rounded text-[11px] font-semibold transition-colors"
+                      onclick="approveDirectly('ACT-2025-0416')">
+                      Approve
+                    </button>
+                  </td>
+                </tr>
+                <!-- Row 6 -->
+                <tr class="hover:bg-primary-tint/30 cursor-pointer transition-colors"
+                  onclick="openDrawer('ACT-2025-0417')">
+                  <td class="py-3.5 px-4 font-medium text-text-primary">
+                    <div class="font-semibold text-text-primary">Keta Sea Wall Community Assessment</div>
+                    <div class="text-[10px] text-text-muted font-mono">ACT-2025-0417 • GHS-VOL-22</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span class="font-medium text-text-primary">EU Climate Adaptation</span>
+                    <div class="text-[10px] text-text-muted font-mono">GR-EU-2024-09</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="flex items-center gap-1.5 text-text-primary">
+                      <span class="material-symbols-outlined text-[15px] text-text-muted">location_on</span>
+                      <span>Volta Hub (Keta)</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="font-medium text-text-primary">Sarah Mensah</div>
+                    <div class="text-[10px] text-text-muted">Field Monitoring Officer</div>
+                  </td>
+                  <td class="py-3.5 px-3 text-text-secondary">
+                    <div>22 May 2025</div>
+                    <div class="text-[10px] text-text-muted">02:30 PM</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex px-2 py-0.5 rounded text-[11px] font-medium bg-primary-tint text-primary border border-primary/20">
+                      Assessment
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-semibold text-text-primary">
+                    910
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-mono font-medium text-text-primary">
+                    GH¢ 8,100.00
+                  </td>
+                  <td class="py-3.5 px-3" id="sync-col-ACT-2025-0417">
+                    <span
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      <span class="material-symbols-outlined text-[13px] fill">check_circle</span>
+                      Synced
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      Approved
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-center" onclick="event.stopPropagation()">
+                    <button class="text-primary hover:text-primary-hover font-semibold text-[11px] hover:underline"
+                      onclick="openDrawer('ACT-2025-0417')">
+                      View / Inspect
+                    </button>
+                  </td>
+                </tr>
+                <!-- Row 7 -->
+                <tr class="hover:bg-primary-tint/30 cursor-pointer transition-colors"
+                  onclick="openDrawer('ACT-2025-0418')">
+                  <td class="py-3.5 px-4 font-medium text-text-primary">
+                    <div class="font-semibold text-text-primary">Ga South Water Quality Validation</div>
+                    <div class="text-[10px] text-text-muted font-mono">ACT-2025-0418 • GHS-ACC-14</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span class="font-medium text-text-primary">USAID Community Resil.</span>
+                    <div class="text-[10px] text-text-muted font-mono">GR-USAID-2024-03</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="flex items-center gap-1.5 text-text-primary">
+                      <span class="material-symbols-outlined text-[15px] text-text-muted">location_on</span>
+                      <span>Accra Hub (Ga South)</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <div class="font-medium text-text-primary">Joseph Danquah</div>
+                    <div class="text-[10px] text-text-muted">Fleet &amp; Tech Lead</div>
+                  </td>
+                  <td class="py-3.5 px-3 text-text-secondary">
+                    <div>21 May 2025</div>
+                    <div class="text-[10px] text-text-muted">08:45 AM</div>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex px-2 py-0.5 rounded text-[11px] font-medium bg-primary-tint text-primary border border-primary/20">
+                      Monitoring Visit
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-semibold text-text-primary">
+                    735
+                  </td>
+                  <td class="py-3.5 px-3 text-right font-mono font-medium text-text-primary">
+                    GH¢ 3,750.00
+                  </td>
+                  <td class="py-3.5 px-3" id="sync-col-ACT-2025-0418">
+                    <span
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      <span class="material-symbols-outlined text-[13px] fill">check_circle</span>
+                      Synced
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-3">
+                    <span
+                      class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+                      Approved
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-center" onclick="event.stopPropagation()">
+                    <button class="text-primary hover:text-primary-hover font-semibold text-[11px] hover:underline"
+                      onclick="openDrawer('ACT-2025-0418')">
+                      View / Inspect
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Table Summary Footer -->
+          <div
+            class="px-4 py-3 bg-surface-secondary border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between text-xs text-text-secondary gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-primary"></span>
+              <span>Audit Standard: IPSAS-17 &amp; Donor workplan linkage active for all records</span>
+            </div>
+            <div class="flex items-center gap-4 font-medium">
+              <span>Active Register: <strong class="text-text-primary" id="totalShownCounter">7 records
+                  shown</strong></span>
+              <span>Cumulative Field Spend: <strong class="text-text-primary font-mono">GH¢ 53,420.00</strong></span>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- END: Main Dashboard Content Area -->
+    </div>
+    <!-- END: Main Page Shell Container -->
+  </div>
+  <!-- END: App Root Container -->
+  <!-- BEGIN: Interactive Right Drawer (Field Activity Detail) -->
+  <div class="drawer-overlay fixed inset-0 bg-slate-900/40 z-40 hidden opacity-0 transition-opacity duration-200"
+    id="drawerBackdrop" onclick="closeDrawer()"></div>
+  <aside
+    class="drawer-panel fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-surface shadow-2xl border-l border-border-subtle flex flex-col transform translate-x-full transition-transform duration-300"
+    id="activityDrawer">
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-border-subtle flex items-center justify-between bg-surface-secondary">
+      <div>
+        <div class="flex items-center gap-2">
+          <span
+            class="text-xs font-mono font-bold text-primary bg-primary-tint px-2 py-0.5 rounded border border-primary/30"
+            id="drawerActivityID">ACT-2025-0412</span>
+          <span
+            class="text-[10px] font-semibold bg-status-success-bg text-status-success px-2 py-0.5 rounded-full border border-status-success/20"
+            id="drawerSyncBadge">Synced</span>
+        </div>
+        <h3 class="text-base font-bold text-text-primary mt-1 truncate" id="drawerTitle">Sagnarigu Maternal Health
+          Session</h3>
+      </div>
+      <button class="p-1.5 text-text-muted hover:text-text-primary rounded-lg hover:bg-surface transition-colors"
+        onclick="closeDrawer()">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <!-- Drawer Body Scroll -->
+    <div class="p-5 overflow-y-auto flex-1 space-y-5 text-xs">
+      <!-- Meta Box -->
+      <div class="bg-surface-secondary p-3.5 rounded-lg border border-border-subtle space-y-2">
+        <div class="flex justify-between">
+          <span class="text-text-muted">Project / Grant:</span>
+          <span class="font-semibold text-text-primary" id="drawerGrant">USAID Community Resilience
+            (GR-USAID-2024-03)</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-text-muted">Hub &amp; District:</span>
+          <span class="font-semibold text-text-primary" id="drawerLocation">Tamale Hub (Sagnarigu)</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-text-muted">Field Supervisor:</span>
+          <span class="font-semibold text-text-primary" id="drawerStaff">Kwesi Appiah</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-text-muted">Date &amp; Time:</span>
+          <span class="font-mono text-text-primary" id="drawerDateTime">24 May 2025, 09:30 AM</span>
+        </div>
+      </div>
+      <!-- Field Verification Data -->
+      <div>
+        <h4 class="font-bold text-text-primary mb-2 uppercase tracking-wider text-[11px]">Field Verification Data</h4>
+        <div class="grid grid-cols-2 gap-2.5">
+          <div class="p-3 border border-border-subtle rounded-lg bg-surface">
+            <div class="text-text-muted text-[10px] uppercase tracking-wider">Verified Beneficiaries</div>
+            <div class="text-lg font-bold text-text-primary mt-0.5" id="drawerBeneficiaries">340 Persons</div>
+            <div class="text-[10px] text-status-success mt-0.5">100% ID Verified</div>
+          </div>
+          <div class="p-3 border border-border-subtle rounded-lg bg-surface">
+            <div class="text-text-muted text-[10px] uppercase tracking-wider">GPS Telemetry</div>
+            <div class="text-xs font-mono font-bold text-text-primary mt-1" id="drawerGPS">9.4075° N, 0.8533° W</div>
+            <div class="text-[10px] text-primary mt-0.5">Accuracy ± 3.2m</div>
+          </div>
+        </div>
+      </div>
+      <!-- Financial Voucher Breakdown -->
+      <div>
+        <h4 class="font-bold text-text-primary mb-2 uppercase tracking-wider text-[11px]">Financial Voucher &amp; Cost
+          Center</h4>
+        <div class="border border-border-subtle rounded-lg overflow-hidden">
+          <div class="p-3 bg-surface-secondary flex items-center justify-between border-b border-border-subtle">
+            <span class="text-text-secondary font-medium">Field Operational Total:</span>
+            <span class="font-bold font-mono text-sm text-text-primary" id="drawerExpense">GH¢ 4,250.00</span>
+          </div>
+          <div class="p-3 space-y-1.5 text-text-secondary">
+            <div class="flex justify-between">
+              <span>Per-Diem Allowance (4 staff):</span>
+              <span class="font-mono text-text-primary font-medium">GH¢ 1,600.00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Local Logistics &amp; Transport:</span>
+              <span class="font-mono text-text-primary font-medium">GH¢ 1,450.00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Community Refreshment / Venue:</span>
+              <span class="font-mono text-text-primary font-medium">GH¢ 1,200.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Evidence & Documentation -->
+      <div>
+        <h4 class="font-bold text-text-primary mb-2 uppercase tracking-wider text-[11px]">Evidence &amp; Documentation
+        </h4>
+        <div class="space-y-2">
+          <div
+            class="p-2.5 border border-border-subtle rounded-lg flex items-center justify-between hover:bg-surface-secondary transition-colors cursor-pointer">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-status-critical text-[20px]">picture_as_pdf</span>
+              <span class="font-medium text-text-primary">signed_beneficiary_roll.pdf</span>
+            </div>
+            <span class="text-[10px] text-text-muted font-mono">1.4 MB</span>
+          </div>
+          <div
+            class="p-2.5 border border-border-subtle rounded-lg flex items-center justify-between hover:bg-surface-secondary transition-colors cursor-pointer">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">image</span>
+              <span class="font-medium text-text-primary">field_photo_session_01.jpg</span>
+            </div>
+            <span class="text-[10px] text-text-muted font-mono">3.8 MB</span>
+          </div>
+        </div>
+      </div>
+      <!-- Audit Trail & Sync Log -->
+      <div class="pt-2">
+        <h4 class="font-bold text-text-primary mb-1.5 uppercase tracking-wider text-[10px]">Sync &amp; Audit Trail</h4>
+        <div class="text-[11px] text-text-secondary space-y-1 font-mono">
+          <div>• Created on Device (IndexedDB): 24-May 09:31:04</div>
+          <div>• Uplink Synchronized: 24-May 09:45:12 (Accra Gateway)</div>
+          <div>• Fiduciary Review: Pending Operations Lead</div>
+        </div>
+      </div>
+    </div>
+    <!-- Drawer Footer Actions -->
+    <div class="p-4 border-t border-border-subtle bg-surface-secondary flex items-center justify-between gap-3">
+      <button
+        class="px-4 py-2 border border-border-subtle rounded-lg hover:bg-surface text-text-secondary text-xs font-semibold transition-colors"
+        onclick="closeDrawer()">
+        Close
+      </button>
+      <button
+        class="px-4 py-2 bg-primary hover:bg-primary-hover text-white rounded-lg text-xs font-semibold shadow-xs transition-colors"
+        onclick="approveCurrentDrawer()">
+        Approve Activity
+      </button>
+    </div>
+  </aside>
+  <!-- END: Interactive Right Drawer -->
+  <!-- BEGIN: Interactive Modal (Record Field Activity) -->
+  <div
+    class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4"
+    id="recordModal">
+    <div class="bg-surface rounded-2xl shadow-2xl border border-border-subtle w-full max-w-xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-border-subtle bg-surface-secondary flex items-center justify-between">
+        <div>
+          <h3 class="text-base font-bold text-text-primary">Record Field Activity</h3>
+          <p class="text-xs text-text-secondary">Submits operational logs to the field register with offline-first
+            indexing</p>
+        </div>
+        <button class="text-text-muted hover:text-text-primary p-1.5 rounded-lg" onclick="closeRecordModal()">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <!-- Modal Form -->
+      <form class="p-6 space-y-4 text-xs" id="recordActivityForm" onsubmit="handleFormSubmit(event)">
+        <div>
+          <label class="block font-semibold text-text-primary mb-1">Activity Title / Description *</label>
+          <input
+            class="w-full text-xs px-3 py-2 border border-border-subtle rounded-lg focus:ring-1 focus:ring-primary focus:border-primary"
+            id="modalTitle" placeholder="e.g. Navrongo Community Nutrition Outreach" required="" type="text" />
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-text-primary mb-1">Activity Type *</label>
+            <select class="w-full text-xs px-3 py-2 border border-border-subtle rounded-lg bg-surface" id="modalType"
+              required="">
+              <option value="Community Visit">Community Visit</option>
+              <option value="Training">Training</option>
+              <option value="Distribution">Distribution</option>
+              <option value="Monitoring Visit">Monitoring Visit</option>
+              <option value="Outreach">Outreach</option>
+              <option value="Assessment">Assessment</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-text-primary mb-1">Linked Grant / Project *</label>
+            <select class="w-full text-xs px-3 py-2 border border-border-subtle rounded-lg bg-surface" id="modalGrant"
+              required="">
+              <option value="USAID Community Resil.">USAID Community Resil. (GR-USAID-2024-03)</option>
+              <option value="Global Fund Malaria">Global Fund Malaria (GR-GFATM-2023-01)</option>
+              <option value="EU Climate Adaptation">EU Climate Adaptation (GR-EU-2024-09)</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-text-primary mb-1">Operational Hub / Location *</label>
+            <select class="w-full text-xs px-3 py-2 border border-border-subtle rounded-lg bg-surface" id="modalHub"
+              required="">
+              <option value="Tamale Hub">Tamale Regional Hub</option>
+              <option value="Volta Hub">Volta Mission Basin</option>
+              <option value="Savannah Hub">Savannah Mission (Damongo)</option>
+              <option value="Accra Hub">Accra HQ Outreach Hub</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-text-primary mb-1">Lead Field Staff *</label>
+            <input class="w-full text-xs px-3 py-2 border border-border-subtle rounded-lg" id="modalStaff" required=""
+              type="text" value="Ama Mensah" />
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="block font-semibold text-text-primary mb-1">Beneficiaries Headcount *</label>
+            <input class="w-full text-xs px-3 py-2 border border-border-subtle rounded-lg" id="modalBeneficiaries"
+              min="1" placeholder="e.g. 250" required="" type="number" />
+          </div>
+          <div>
+            <label class="block font-semibold text-text-primary mb-1">Field Expense (GH¢) *</label>
+            <input class="w-full text-xs px-3 py-2 border border-border-subtle rounded-lg font-mono" id="modalExpense"
+              min="0" placeholder="e.g. 3500.00" required="" step="0.01" type="number" />
+          </div>
+          <div>
+            <label class="block font-semibold text-text-primary mb-1">Activity Date *</label>
+            <input class="w-full text-xs px-3 py-2 border border-border-subtle rounded-lg" id="modalDate" required=""
+              type="date" value="2025-05-24" />
+          </div>
+        </div>
+        <!-- Offline Simulation Checkbox -->
+        <div
+          class="p-3 bg-status-warning-bg/40 border border-status-warning/30 rounded-lg flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <input class="rounded text-primary focus:ring-primary border-border-strong" id="modalOfflineToggle"
+              type="checkbox" />
+            <label class="font-medium text-status-warning cursor-pointer" for="modalOfflineToggle">
+              Simulate Offline Mode Save (Delay uplink sync)
+            </label>
+          </div>
+          <span class="text-[10px] text-status-warning font-mono">PWA Cache</span>
+        </div>
+        <!-- Attachment Preview -->
+        <div>
+          <label class="block font-semibold text-text-primary mb-1">Attach Signed Attendance / Receipts</label>
+          <div
+            class="border-2 border-dashed border-border-subtle rounded-lg p-3 text-center hover:bg-surface-secondary transition-colors cursor-pointer">
+            <span class="text-text-secondary">Click to upload photo evidence or PDF register</span>
+            <div class="text-[10px] text-text-muted mt-0.5">JPEG, PNG, PDF up to 10MB</div>
+          </div>
+        </div>
+        <!-- Modal Footer -->
+        <div class="pt-4 border-t border-border-subtle flex items-center justify-end gap-2.5">
+          <button
+            class="px-4 py-2 border border-border-subtle rounded-lg text-text-secondary hover:bg-surface-secondary font-semibold"
+            onclick="closeRecordModal()" type="button">
+            Cancel
+          </button>
+          <button
+            class="px-5 py-2 bg-primary hover:bg-primary-hover text-white rounded-lg font-semibold shadow-xs transition-colors"
+            type="submit">
+            Save Activity Log
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END: Interactive Modal -->
+  <!-- BEGIN: Toast Notification -->
+  <div
+    class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 px-4 py-3 bg-[#0D1821] text-white rounded-xl shadow-2xl border border-nav-border text-xs"
+    id="toastNotification">
+    <span class="material-symbols-outlined text-primary-fixed-dim text-[18px]" id="toastIcon">check_circle</span>
+    <span class="font-medium" id="toastMessage">Field activity recorded successfully.</span>
+  </div>
+  <!-- END: Toast Notification -->
+  <!-- BEGIN: JavaScript Logic -->
+    <!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+  <script>
+    // Data Store for activities
+    const activityDataStore = {
+      'ACT-2025-0412': {
+        id: 'ACT-2025-0412',
+        title: 'Sagnarigu Maternal Health Session',
+        grant: 'USAID Community Resilience (GR-USAID-2024-03)',
+        hub: 'Tamale Hub (Sagnarigu)',
+        staff: 'Kwesi Appiah (Senior Logistics Officer)',
+        dateTime: '24 May 2025, 09:30 AM',
+        type: 'Community Visit',
+        beneficiaries: 340,
+        expense: 'GH¢ 4,250.00',
+        synced: true,
+        status: 'Approved',
+        gps: '9.4075° N, 0.8533° W'
+      },
+      'ACT-2025-0413': {
+        id: 'ACT-2025-0413',
+        title: 'Hohoe Clinic LLIN Net Distribution',
+        grant: 'Global Fund Malaria (GR-GFATM-2023-01)',
+        hub: 'Volta Hub (Hohoe)',
+        staff: 'Dr. Emmanuel Osei (Senior Medical Officer)',
+        dateTime: '24 May 2025, 11:15 AM',
+        type: 'Distribution',
+        beneficiaries: 1120,
+        expense: 'GH¢ 14,800.00',
+        synced: true,
+        status: 'Pending Review',
+        gps: '7.1519° N, 0.4736° E'
+      },
+      'ACT-2025-0414': {
+        id: 'ACT-2025-0414',
+        title: 'Damongo Agro-Forestry Farmer Cohort',
+        grant: 'EU Climate Adaptation (GR-EU-2024-09)',
+        hub: 'Savannah Hub (Damongo)',
+        staff: 'Kwesi Appiah (Agro-Forestry Officer)',
+        dateTime: '24 May 2025, 01:40 PM',
+        type: 'Training',
+        beneficiaries: 185,
+        expense: 'GH¢ 6,320.00',
+        synced: false,
+        status: 'Under Assessment',
+        gps: '9.0833° N, 1.8167° W'
+      },
+      'ACT-2025-0415': {
+        id: 'ACT-2025-0415',
+        title: 'Chorkor Urban Water Point Monitoring',
+        grant: 'USAID Community Resilience (GR-USAID-2024-03)',
+        hub: 'Accra Hub (Chorkor)',
+        staff: 'Hajia Amina Bello (Health Specialist)',
+        dateTime: '23 May 2025, 03:00 PM',
+        type: 'Monitoring Visit',
+        beneficiaries: 890,
+        expense: 'GH¢ 2,800.00',
+        synced: true,
+        status: 'Approved',
+        gps: '5.5312° N, 0.2319° W'
+      },
+      'ACT-2025-0416': {
+        id: 'ACT-2025-0416',
+        title: 'Yendi Mobile Ultrasound Screening',
+        grant: 'Global Fund Malaria (GR-GFATM-2023-01)',
+        hub: 'Tamale Hub (Yendi)',
+        staff: 'Dr. Emmanuel Osei (Senior Medical Officer)',
+        dateTime: '23 May 2025, 10:00 AM',
+        type: 'Outreach',
+        beneficiaries: 640,
+        expense: 'GH¢ 12,400.00',
+        synced: true,
+        status: 'Pending Review',
+        gps: '9.4427° N, 0.0099° E'
+      },
+      'ACT-2025-0417': {
+        id: 'ACT-2025-0417',
+        title: 'Keta Sea Wall Community Assessment',
+        grant: 'EU Climate Adaptation (GR-EU-2024-09)',
+        hub: 'Volta Hub (Keta)',
+        staff: 'Sarah Mensah (Field Monitoring Officer)',
+        dateTime: '22 May 2025, 02:30 PM',
+        type: 'Assessment',
+        beneficiaries: 910,
+        expense: 'GH¢ 8,100.00',
+        synced: true,
+        status: 'Approved',
+        gps: '5.9179° N, 0.9923° E'
+      },
+      'ACT-2025-0418': {
+        id: 'ACT-2025-0418',
+        title: 'Ga South Water Quality Validation',
+        grant: 'USAID Community Resilience (GR-USAID-2024-03)',
+        hub: 'Accra Hub (Ga South)',
+        staff: 'Joseph Danquah (Fleet & Tech Lead)',
+        dateTime: '21 May 2025, 08:45 AM',
+        type: 'Monitoring Visit',
+        beneficiaries: 735,
+        expense: 'GH¢ 3,750.00',
+        synced: true,
+        status: 'Approved',
+        gps: '5.5560° N, 0.3540° W'
+      }
+    };
+
+    let currentSelectedActivityId = 'ACT-2025-0412';
+
+    // Toast Functionality
+    function showToast(msg, isWarning = false) {
+      const toast = document.getElementById('toastNotification');
+      const text = document.getElementById('toastMessage');
+      const icon = document.getElementById('toastIcon');
+
+      text.textContent = msg;
+      if (isWarning) {
+        icon.textContent = 'warning';
+        icon.className = 'material-symbols-outlined text-status-warning text-[18px]';
+      } else {
+        icon.textContent = 'check_circle';
+        icon.className = 'material-symbols-outlined text-primary-fixed-dim text-[18px]';
+      }
+
+      toast.classList.remove('opacity-0', 'translate-y-20', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-20', 'pointer-events-none');
+      }, 3500);
+    }
+
+    // Right Drawer Open/Close
+    function openDrawer(activityId) {
+      currentSelectedActivityId = activityId;
+      const data = activityDataStore[activityId] || {
+        id: activityId,
+        title: 'Field Activity Details',
+        grant: 'USAID Community Resilience (GR-USAID-2024-03)',
+        hub: 'Tamale Hub',
+        staff: 'Ama Mensah',
+        dateTime: 'Today',
+        beneficiaries: 250,
+        expense: 'GH¢ 3,500.00',
+        synced: true,
+        gps: '9.4075° N, 0.8533° W'
+      };
+
+      document.getElementById('drawerActivityID').textContent = data.id;
+      document.getElementById('drawerTitle').textContent = data.title;
+      document.getElementById('drawerGrant').textContent = data.grant;
+      document.getElementById('drawerLocation').textContent = data.hub;
+      document.getElementById('drawerStaff').textContent = data.staff;
+      document.getElementById('drawerDateTime').textContent = data.dateTime;
+      document.getElementById('drawerBeneficiaries').textContent = data.beneficiaries + ' Persons';
+      document.getElementById('drawerExpense').textContent = data.expense;
+      document.getElementById('drawerGPS').textContent = data.gps;
+
+      const syncBadge = document.getElementById('drawerSyncBadge');
+      if (data.synced) {
+        syncBadge.textContent = 'Synced';
+        syncBadge.className = 'text-[10px] font-semibold bg-status-success-bg text-status-success px-2 py-0.5 rounded-full border border-status-success/20';
+      } else {
+        syncBadge.textContent = 'Saved offline — waiting to sync';
+        syncBadge.className = 'text-[10px] font-semibold bg-status-warning-bg text-status-warning px-2 py-0.5 rounded-full border border-status-warning/30';
+      }
+
+      const backdrop = document.getElementById('drawerBackdrop');
+      const drawer = document.getElementById('activityDrawer');
+
+      backdrop.classList.remove('hidden');
+      setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+      drawer.classList.remove('translate-x-full');
+    }
+
+    function closeDrawer() {
+      const backdrop = document.getElementById('drawerBackdrop');
+      const drawer = document.getElementById('activityDrawer');
+
+      drawer.classList.add('translate-x-full');
+      backdrop.classList.add('opacity-0');
+      setTimeout(() => backdrop.classList.add('hidden'), 250);
+    }
+
+    function approveDirectly(actId) {
+      if (activityDataStore[actId]) {
+        activityDataStore[actId].status = 'Approved';
+      }
+      showToast(`Field activity approved and posted to project ledger.`);
+
+      // Remove from pending reviews container
+      const p1 = document.getElementById('pending-item-1');
+      const p2 = document.getElementById('pending-item-2');
+      if (actId === 'ACT-2025-0413' && p1) p1.remove();
+      if (actId === 'ACT-2025-0416' && p2) p2.remove();
+    }
+
+    function approveCurrentDrawer() {
+      approveDirectly(currentSelectedActivityId);
+      closeDrawer();
+    }
+
+    // Single Record Sync
+    function syncSingleRecord(actId) {
+      const btn = document.getElementById(`btn-sync-${actId}`);
+      if (btn) {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Syncing...</span>`;
+      }
+
+      setTimeout(() => {
+        if (activityDataStore[actId]) {
+          activityDataStore[actId].synced = true;
+        }
+
+        const col = document.getElementById(`sync-col-${actId}`);
+        if (col) {
+          col.innerHTML = `
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20">
+            <span class="material-symbols-outlined text-[13px] fill">check_circle</span>
+            Synced
+          </span>
+        `;
+        }
+
+        const unsyncedItem = document.getElementById('unsynced-item-1');
+        if (unsyncedItem) unsyncedItem.remove();
+
+        const kpi = document.getElementById('kpiUnsyncedCount');
+        if (kpi) {
+          const val = parseInt(kpi.textContent, 10);
+          if (val > 0) kpi.textContent = val - 1;
+        }
+
+        showToast(`Record ${actId} synced with Accra HQ server successfully.`);
+      }, 1000);
+    }
+
+    function syncAllOfflineRecords() {
+      showToast("Triggered global sync for 4 offline field devices...", false);
+      setTimeout(() => {
+        syncSingleRecord('ACT-2025-0414');
+        const kpi = document.getElementById('kpiUnsyncedCount');
+        if (kpi) kpi.textContent = '0';
+        showToast("All offline records successfully uploaded and verified.");
+      }, 1200);
+    }
+
+    // Modal Functions
+    function openRecordModal() {
+      document.getElementById('recordModal').classList.remove('hidden');
+    }
+
+    function closeRecordModal() {
+      document.getElementById('recordModal').classList.add('hidden');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const title = document.getElementById('modalTitle').value;
+      const type = document.getElementById('modalType').value;
+      const grant = document.getElementById('modalGrant').value;
+      const hub = document.getElementById('modalHub').value;
+      const staff = document.getElementById('modalStaff').value;
+      const beneficiaries = document.getElementById('modalBeneficiaries').value;
+      const expense = parseFloat(document.getElementById('modalExpense').value || 0).toFixed(2);
+      const date = document.getElementById('modalDate').value;
+      const isOffline = document.getElementById('modalOfflineToggle').checked;
+
+      const newId = `ACT-2025-${Math.floor(1000 + Math.random() * 9000)}`;
+
+      activityDataStore[newId] = {
+        id: newId,
+        title: title,
+        grant: grant,
+        hub: hub,
+        staff: staff,
+        dateTime: `${date}, 12:00 PM`,
+        type: type,
+        beneficiaries: parseInt(beneficiaries, 10),
+        expense: `GH¢ ${Number(expense).toLocaleString('en-US', { minimumFractionDigits: 2 })}`,
+        synced: !isOffline,
+        status: 'Pending Review',
+        gps: '5.6037° N, 0.1870° W'
+      };
+
+      const tbody = document.getElementById('activityTableBody');
+      const newRow = document.createElement('tr');
+      newRow.className = "hover:bg-primary-tint/30 cursor-pointer transition-colors bg-primary-tint/15";
+      newRow.onclick = () => openDrawer(newId);
+
+      newRow.innerHTML = `
+      <td class="py-3.5 px-4 font-medium text-text-primary">
+        <div class="font-semibold text-text-primary">${title}</div>
+        <div class="text-[10px] text-text-muted font-mono">${newId} • GHS-NEW</div>
+      </td>
+      <td class="py-3.5 px-3">
+        <span class="font-medium text-text-primary">${grant}</span>
+      </td>
+      <td class="py-3.5 px-3">
+        <div class="flex items-center gap-1.5 text-text-primary">
+          <span class="material-symbols-outlined text-[15px] text-text-muted">location_on</span>
+          <span>${hub}</span>
+        </div>
+      </td>
+      <td class="py-3.5 px-3">
+        <div class="font-medium text-text-primary">${staff}</div>
+      </td>
+      <td class="py-3.5 px-3 text-text-secondary">
+        <div>${date}</div>
+        <div class="text-[10px] text-text-muted">Just Now</div>
+      </td>
+      <td class="py-3.5 px-3">
+        <span class="inline-flex px-2 py-0.5 rounded text-[11px] font-medium bg-primary-tint text-primary border border-primary/20">
+          ${type}
+        </span>
+      </td>
+      <td class="py-3.5 px-3 text-right font-semibold text-text-primary">
+        ${beneficiaries}
+      </td>
+      <td class="py-3.5 px-3 text-right font-mono font-medium text-text-primary">
+        GH¢ ${Number(expense).toLocaleString('en-US', { minimumFractionDigits: 2 })}
+      </td>
+      <td class="py-3.5 px-3" id="sync-col-${newId}">
+        ${!isOffline
+          ? '<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-success-bg text-status-success border border-status-success/20"><span class="material-symbols-outlined text-[13px] fill">check_circle</span> Synced</span>'
+          : '<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-status-warning-bg text-status-warning border border-status-warning/30"><span class="material-symbols-outlined text-[13px] animate-spin">sync</span> Saved offline — waiting to sync</span>'
+        }
+      </td>
+      <td class="py-3.5 px-3">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-status-warning-bg text-status-warning border border-status-warning/20">
+          Pending Review
+        </span>
+      </td>
+      <td class="py-3.5 px-4 text-center" onclick="event.stopPropagation()">
+        <button onclick="openDrawer('${newId}')" class="text-primary hover:text-primary-hover font-semibold text-[11px] hover:underline">
+          View / Inspect
+        </button>
+      </td>
+    `;
+
+      tbody.prepend(newRow);
+      closeRecordModal();
+      document.getElementById('recordActivityForm').reset();
+      showToast("Field activity recorded successfully.");
+    }
+
+    // Filter tabs and inputs
+    let activeFilterTab = 'all';
+
+    function filterByTab(tab) {
+      activeFilterTab = tab;
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.className = "tab-btn px-3 py-1.5 rounded-md text-text-secondary hover:text-text-primary";
+      });
+      const activeBtn = document.getElementById(`tab-${tab}`);
+      if (activeBtn) {
+        activeBtn.className = "tab-btn px-3 py-1.5 rounded-md bg-surface text-primary font-semibold shadow-xs";
+      }
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const searchVal = document.getElementById('tableFilterSearch').value.toLowerCase();
+      const typeVal = document.getElementById('typeFilter').value.toLowerCase();
+      const hubVal = document.getElementById('hubFilter').value.toLowerCase();
+      const rows = document.querySelectorAll('#activityTableBody tr');
+
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        let matchesTab = true;
+
+        if (activeFilterTab === 'approved') matchesTab = text.includes('approved');
+        else if (activeFilterTab === 'pending') matchesTab = text.includes('pending review');
+        else if (activeFilterTab === 'unsynced') matchesTab = text.includes('saved offline');
+
+        const matchesSearch = !searchVal || text.includes(searchVal);
+        const matchesType = !typeVal || text.includes(typeVal);
+        const matchesHub = !hubVal || text.includes(hubVal);
+
+        if (matchesTab && matchesSearch && matchesType && matchesHub) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      document.getElementById('totalShownCounter').textContent = `${visibleCount} records shown`;
+    }
+
+    function resetFilters() {
+      document.getElementById('tableFilterSearch').value = '';
+      document.getElementById('typeFilter').value = '';
+      document.getElementById('hubFilter').value = '';
+      filterByTab('all');
+    }
+
+    function refreshRegister() {
+      showToast("Refreshing field register telemetry...", false);
+      setTimeout(() => showToast("Register refreshed with newest satellite & gateway data."), 600);
+    }
+
+    function exportFieldLog() {
+      showToast("Generating IPSAS-Compliant CSV & Audit Package...");
+      setTimeout(() => showToast("Field log exported (Ghana_Field_Log_FY2025.csv)"), 1000);
+    }
+
+    // Currency Pill Toggles
+    document.getElementById('currGHS').addEventListener('click', function () {
+      this.className = "px-2.5 py-1 rounded font-bold bg-surface text-primary shadow-xs";
+      document.getElementById('currUSD').className = "px-2 py-1 rounded text-text-muted hover:text-text-primary transition-colors";
+    });
+
+    document.getElementById('currUSD').addEventListener('click', function () {
+      this.className = "px-2.5 py-1 rounded font-bold bg-surface text-primary shadow-xs";
+      document.getElementById('currGHS').className = "px-2 py-1 rounded text-text-muted hover:text-text-primary transition-colors";
+      showToast("Reporting rate locked at 1 USD = 15.42 GHS.");
+    });
+
+    // Finance & Accounting Submenu Toggle with Escape and Click-outside
+    const finToggle = document.getElementById('finToggle');
+    const finSubmenu = document.getElementById('finSubmenu');
+    const finChevron = document.getElementById('finChevron');
+
+    finToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = finSubmenu.classList.toggle('hidden');
+      finChevron.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (!finSubmenu.classList.contains('hidden')) {
+          finSubmenu.classList.add('hidden');
+          finChevron.style.transform = 'rotate(0deg)';
+        }
+        closeDrawer();
+        closeRecordModal();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!finToggle.contains(e.target) && !finSubmenu.contains(e.target)) {
+        finSubmenu.classList.add('hidden');
+        finChevron.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // Sidebar Layout Toggle
+    document.getElementById('layoutToggle').addEventListener('click', () => {
+      const nav = document.getElementById('appNav');
+      const wrapper = document.getElementById('mainContentWrapper');
+      if (nav.classList.contains('w-64')) {
+        nav.classList.replace('w-64', 'w-20');
+        wrapper.classList.replace('pl-64', 'pl-20');
+      } else {
+        nav.classList.replace('w-20', 'w-64');
+        wrapper.classList.replace('pl-20', 'pl-64');
+      }
+    });
+  </script>
+  <!-- END: JavaScript Logic -->
+</body>
+
+</html>

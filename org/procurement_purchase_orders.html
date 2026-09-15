@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Procurement &amp; Supply Chain - Fiduciary ERP</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "nav-bg": "#0D1821",
+            "nav-surface": "#152431",
+            "nav-border": "#1E3243",
+            "nav-text-primary": "#F4F7F9",
+            "nav-text-muted": "#8EA2B4",
+            "primary": "#005258",
+            "primary-hover": "#144F54",
+            "primary-container": "#1b6b72",
+            "on-primary": "#ffffff",
+            "primary-tint": "#E4EFEF",
+            "primary-fixed-dim": "#8bd2da",
+            "canvas-bg": "#f8fafb",
+            "surface": "#f8fafb",
+            "surface-card": "#FFFFFF",
+            "surface-secondary": "#F0F4F6",
+            "surface-tertiary": "#ECEFF2",
+            "surface-container": "#eceeef",
+            "surface-container-low": "#f2f4f5",
+            "surface-container-high": "#e6e8e9",
+            "surface-container-highest": "#e1e3e4",
+            "surface-container-lowest": "#ffffff",
+            "text-primary": "#121A21",
+            "text-secondary": "#4E5D6A",
+            "text-muted": "#7B8C9A",
+            "border-subtle": "#DCE3E8",
+            "border-strong": "#B8C4CE",
+            "fund-restricted": "#B8860B",
+            "fund-restricted-bg": "#FCF7E8",
+            "fund-temp-restricted": "#D99B00",
+            "fund-temp-restricted-bg": "#FEF8E7",
+            "fund-unrestricted": "#1B6B72",
+            "status-success": "#0F6848",
+            "status-success-bg": "#E8F5EE",
+            "status-warning": "#914D03",
+            "status-warning-bg": "#FEF3E6",
+            "status-critical": "#A81D24",
+            "status-critical-bg": "#FDF0F0"
+          },
+          fontFamily: {
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "title-md": ["IBM Plex Sans", "sans-serif"],
+            "title-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans", "sans-serif"],
+            "caption": ["IBM Plex Sans", "sans-serif"],
+            "numeric-table": ["IBM Plex Sans", "sans-serif"],
+            "numeric-table-bold": ["IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }],
+            "title-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "600" }],
+            "title-sm": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "600" }],
+            "body-lg": ["15px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }],
+            "body-md": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }],
+            "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0em", fontWeight: "400" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "caption": ["11px", { lineHeight: "14px", letterSpacing: "0em", fontWeight: "400" }],
+            "numeric-table": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "500" }],
+            "numeric-table-bold": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "700" }],
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }]
+          },
+          spacing: {
+            "space-xxs": "0.125rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "sm": "0.125rem",
+            "md": "0.25rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    /* Accordion animation */
+    .fin-submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease-out;
+    }
+
+    .fin-submenu.open {
+      max-height: 400px;
+      transition: max-height 0.35s ease-in;
+    }
+
+    /* Top Layout mode override */
+    body.layout-top #appNav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100% !important;
+      height: 3.5rem !important;
+      flex-direction: row !important;
+      z-index: 50;
+      border-right: none !important;
+      border-bottom: 1px solid #1E3243;
+      padding: 0 1rem;
+    }
+
+    body.layout-top #appNav .nav-scroll-area {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0;
+    }
+
+    body.layout-top #appNav .nav-section-title {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-office-scope,
+    body.layout-top #appNav .nav-user-footer {
+      display: none;
+    }
+
+    body.layout-top #appHeader {
+      left: 0 !important;
+      top: 3.5rem !important;
+      border-top: 1px solid #DCE3E8;
+    }
+
+    body.layout-top #appMain {
+      margin-left: 0 !important;
+      padding-top: 7.5rem !important;
+    }
+  </style>
+</head>
+
+<body class="bg-canvas-bg font-body-md text-body-md text-text-primary antialiased min-h-screen flex flex-col">
+  <!-- ============================== -->
+  <!-- NAVIGATION SHELL (ASIDE) -->
+  <!-- ============================== -->
+<aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+        <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="insights" href="#">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+  <!-- ============================== -->
+  <!-- APPLICATION HEADER -->
+  <!-- ============================== -->
+   <div id="appMain" class="pl-64 flex flex-col min-h-screen transition-all">
+   <header id="appHeader"
+      class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center"><span
+            class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span><input
+            class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-card transition-colors"
+            placeholder="Search transactions, grants, projects, vendors, staff..." type="text" /></div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-secondary text-text-secondary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span><span>FY 2025
+            (Q2 Closed)</span></div>
+        <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary"><span
+            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS
+            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+        </div>
+        <div class="h-5 w-px bg-surface-secondary"></div><button
+          class="relative p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span
+            class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-critical-text"></span></button><button
+          class="p-space-xs rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          type="button"><span class="material-symbols-outlined text-[20px]">help</span></button>
+        <div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" /><span
+            class="material-symbols-outlined text-text-muted text-[16px]"></span></div>
+      </div>
+    </header>
+  <!-- ============================== -->
+  <!-- MAIN CONTENT AREA -->
+  <!-- ============================== -->
+<main class="w-full pt-16 bg-canvas-bg flex-1">
+    <div class="max-w-[80rem] mx-auto px-space-lg py-space-md flex flex-col gap-space-md">
+      <!-- ============================== -->
+      <!-- TOP CONTEXT HEADER & METADATA -->
+      <!-- ============================== -->
+      <div class="flex flex-col gap-space-xs">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center gap-1.5 font-caption text-caption text-text-muted uppercase tracking-wider">
+          <span>Home</span>
+          <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+          <span>Operations</span>
+          <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+          <span>Procurement</span>
+          <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+          <span class="text-fund-unrestricted font-semibold">Purchase &amp; Supply Chain</span>
+        </div>
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm mt-0.5">
+          <div class="flex flex-col">
+            <div class="flex items-center gap-space-xs flex-wrap">
+              <h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Procurement</h1>
+              <span
+                class="px-2 py-0.5 rounded bg-primary-tint text-fund-unrestricted font-label-sm text-label-sm uppercase tracking-wide font-semibold">
+                IPSAS Procurement &amp; Fiduciary Controls
+              </span>
+              <span
+                class="px-2 py-0.5 rounded bg-fund-temp-restricted-bg text-fund-temp-restricted font-label-sm text-label-sm uppercase tracking-wide font-semibold">
+                Competitive Sourcing Enforced
+              </span>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-secondary mt-0.5 max-w-3xl leading-relaxed">
+              Procurement controls purchasing from initial request through quotes, approval, receipt, 3-way invoice
+              matching, payment, and general ledger journal entry.
+            </p>
+          </div>
+          <!-- Quick Action Controls -->
+          <div class="flex items-center gap-space-xs self-start lg:self-center shrink-0 flex-wrap">
+            <button
+              class="h-[34px] px-space-sm bg-surface-card hover:bg-surface-secondary border border-border-subtle text-text-primary rounded font-title-sm text-title-sm font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
+              id="btnExportTop" type="button">
+              <span class="material-symbols-outlined text-[16px]">file_download</span>
+              <span>Export Procurement Register</span>
+            </button>
+            <button
+              class="h-[34px] px-space-sm bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
+              id="btnNewReqPage" type="button">
+              <span class="material-symbols-outlined text-[16px]">add</span>
+              <span>+ New Requisition</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- ============================== -->
+      <!-- STATUTORY POLICY NOTICE BANNER -->
+      <!-- ============================== -->
+      <div
+        class="p-space-sm rounded bg-surface-card border border-border-subtle flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-sm shadow-xs">
+        <div class="flex items-start gap-space-sm">
+          <div
+            class="w-7 h-7 rounded bg-fund-temp-restricted-bg text-fund-temp-restricted flex items-center justify-center shrink-0 mt-0.5">
+            <span class="material-symbols-outlined text-[17px]">policy</span>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-space-xs flex-wrap">
+              <span class="font-title-sm text-title-sm text-text-primary font-semibold">Statutory Fiduciary Policy:
+                Thresholds &amp; Approvals</span>
+              <span
+                class="px-1.5 py-0.2 rounded bg-surface-secondary text-text-secondary font-label-sm text-label-sm font-semibold">Standard
+                Operating Procedure 2025.04</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-secondary mt-0.5 leading-relaxed">
+              Purchases <span class="font-numeric-table-bold text-numeric-table-bold text-text-primary">&gt; GH₵
+                20,000.00</span> require minimum 3 independent competitive quotes. Purchases <span
+                class="font-numeric-table-bold text-numeric-table-bold text-text-primary">&gt; GH₵ 100,000.00</span>
+              require Statutory Tender Committee sign-off prior to PO generation.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex items-center gap-space-xs bg-surface-secondary px-space-sm py-1 rounded text-text-muted font-caption text-caption shrink-0">
+          <span class="text-fund-unrestricted font-numeric-table-bold text-numeric-table-bold">Procurement</span>
+          <span class="material-symbols-outlined text-[11px]">trending_flat</span>
+          <span>Fund Allocation</span>
+          <span class="material-symbols-outlined text-[11px]">trending_flat</span>
+          <span>Grant Project</span>
+          <span class="material-symbols-outlined text-[11px]">trending_flat</span>
+          <span>3-Way Match</span>
+          <span class="material-symbols-outlined text-[11px]">trending_flat</span>
+          <span class="text-status-success font-numeric-table-bold text-numeric-table-bold">GL Journal</span>
+        </div>
+      </div>
+      <!-- ============================== -->
+      <!-- 6 KPI METRIC CARDS -->
+      <!-- ============================== -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-space-sm">
+        <!-- KPI 1: Requisitions -->
+        <div
+          class="cursor-pointer p-space-sm rounded bg-surface-card border border-border-subtle hover:border-fund-unrestricted transition-all shadow-xs flex flex-col justify-between group"
+          onclick="filterByKpi('Requisition')">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Requisitions</span>
+            <span class="w-5 h-5 rounded bg-primary-tint text-fund-unrestricted flex items-center justify-center">
+              <span class="material-symbols-outlined text-[13px]">assignment</span>
+            </span>
+          </div>
+          <div class="mt-space-xs">
+            <div class="font-headline-lg text-headline-lg text-text-primary tracking-tight">24</div>
+            <div class="font-numeric-table-bold text-numeric-table-bold text-fund-unrestricted mt-0.5">
+              <span class="font-caption text-caption text-text-muted font-bold mr-0.5">GHS</span>842,500.00
+            </div>
+          </div>
+          <div
+            class="font-caption text-caption text-text-muted mt-space-xs pt-space-xs border-t border-border-subtle/50 truncate">
+            Across 6 active hubs</div>
+        </div>
+        <!-- KPI 2: Pending Approvals -->
+        <div
+          class="cursor-pointer p-space-sm rounded bg-surface-card border border-border-subtle hover:border-status-warning transition-all shadow-xs flex flex-col justify-between group"
+          onclick="filterByKpi('Pending Approval')">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md uppercase tracking-wider text-status-warning">Pending
+              Approvals</span>
+            <span class="w-5 h-5 rounded bg-status-warning-bg text-status-warning flex items-center justify-center">
+              <span class="material-symbols-outlined text-[13px]">pending_actions</span>
+            </span>
+          </div>
+          <div class="mt-space-xs">
+            <div class="font-headline-lg text-headline-lg text-status-warning tracking-tight">5</div>
+            <div class="font-numeric-table-bold text-numeric-table-bold text-text-primary mt-0.5">
+              <span class="font-caption text-caption text-text-muted font-bold mr-0.5">GHS</span>218,400.00
+            </div>
+          </div>
+          <div
+            class="font-caption text-caption text-status-warning mt-space-xs pt-space-xs border-t border-border-subtle/50 truncate font-semibold">
+            2 Tender Board Level</div>
+        </div>
+        <!-- KPI 3: Active POs -->
+        <div
+          class="cursor-pointer p-space-sm rounded bg-surface-card border border-border-subtle hover:border-fund-unrestricted transition-all shadow-xs flex flex-col justify-between group"
+          onclick="filterByKpi('Purchase Order')">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Active POs</span>
+            <span class="w-5 h-5 rounded bg-surface-secondary text-text-secondary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[13px]">shopping_cart</span>
+            </span>
+          </div>
+          <div class="mt-space-xs">
+            <div class="font-headline-lg text-headline-lg text-text-primary tracking-tight">12</div>
+            <div class="font-numeric-table-bold text-numeric-table-bold text-fund-unrestricted mt-0.5">
+              <span class="font-caption text-caption text-text-muted font-bold mr-0.5">GHS</span>514,200.00
+            </div>
+          </div>
+          <div
+            class="font-caption text-caption text-text-muted mt-space-xs pt-space-xs border-t border-border-subtle/50 truncate">
+            Verified INGO vendors</div>
+        </div>
+        <!-- KPI 4: Awaiting Goods Receipt -->
+        <div
+          class="cursor-pointer p-space-sm rounded bg-surface-card border border-border-subtle hover:border-text-secondary transition-all shadow-xs flex flex-col justify-between group"
+          onclick="filterByKpi('Goods Receipt')">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Awaiting Receipt</span>
+            <span class="w-5 h-5 rounded bg-surface-secondary text-text-secondary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[13px]">local_shipping</span>
+            </span>
+          </div>
+          <div class="mt-space-xs">
+            <div class="font-headline-lg text-headline-lg text-text-primary tracking-tight">4</div>
+            <div class="font-title-sm text-title-sm text-text-secondary font-semibold mt-0.5">Shipments En Route</div>
+          </div>
+          <div
+            class="font-caption text-caption text-text-muted mt-space-xs pt-space-xs border-t border-border-subtle/50 truncate">
+            Tamale &amp; Volta Hubs</div>
+        </div>
+        <!-- KPI 5: Invoices to Match -->
+        <div
+          class="cursor-pointer p-space-sm rounded bg-surface-card border border-border-subtle hover:border-status-warning transition-all shadow-xs flex flex-col justify-between group"
+          onclick="filterByKpi('Invoice Match')">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md uppercase tracking-wider text-status-warning">Invoices to
+              Match</span>
+            <span class="w-5 h-5 rounded bg-status-warning-bg text-status-warning flex items-center justify-center">
+              <span class="material-symbols-outlined text-[13px]">difference</span>
+            </span>
+          </div>
+          <div class="mt-space-xs">
+            <div class="font-headline-lg text-headline-lg text-text-primary tracking-tight">6</div>
+            <div class="font-title-sm text-title-sm text-status-warning font-semibold mt-0.5">3-Way Matching</div>
+          </div>
+          <div
+            class="font-caption text-caption text-text-muted mt-space-xs pt-space-xs border-t border-border-subtle/50 truncate">
+            GRN variance checks</div>
+        </div>
+        <!-- KPI 6: Payments Pending -->
+        <div
+          class="cursor-pointer p-space-sm rounded bg-surface-card border border-border-subtle hover:border-status-success transition-all shadow-xs flex flex-col justify-between group"
+          onclick="filterByKpi('Payment')">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md uppercase tracking-wider text-status-success">Payments
+              Pending</span>
+            <span class="w-5 h-5 rounded bg-status-success-bg text-status-success flex items-center justify-center">
+              <span class="material-symbols-outlined text-[13px]">task_alt</span>
+            </span>
+          </div>
+          <div class="mt-space-xs">
+            <div class="font-headline-lg text-headline-lg text-status-success tracking-tight">3</div>
+            <div class="font-numeric-table-bold text-numeric-table-bold text-status-success mt-0.5">
+              <span class="font-caption text-caption text-text-muted font-bold mr-0.5">GHS</span>118,650.00
+            </div>
+          </div>
+          <div
+            class="font-caption text-caption text-text-muted mt-space-xs pt-space-xs border-t border-border-subtle/50 truncate">
+            Cash Voucher Prepared</div>
+        </div>
+      </div>
+      <!-- ============================== -->
+      <!-- 9-STEP HORIZONTAL WORKFLOW BAR -->
+      <!-- ============================== -->
+      <div class="p-space-sm rounded bg-surface-card border border-border-subtle shadow-xs">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-xs">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">alt_route</span>
+            <h2 class="font-title-md text-title-md text-text-primary font-semibold">Fiduciary 9-Step Purchasing
+              Lifecycle</h2>
+          </div>
+          <div
+            class="px-2 py-0.5 rounded bg-primary-tint text-fund-unrestricted font-label-sm text-label-sm font-semibold"
+            id="activeStepIndicator">
+            Showing: All 9 Workflow Stages
+          </div>
+        </div>
+        <!-- 9 Step Horizontal Grid -->
+        <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-1.5">
+          <button
+            class="step-card text-left p-space-xs rounded bg-surface-secondary hover:bg-primary-tint/50 border border-transparent hover:border-border-subtle transition-all flex flex-col justify-between h-[70px]"
+            onclick="selectStep('Requisition', this)" type="button">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-label-sm text-label-sm text-text-secondary font-semibold">01. REQ</span>
+              <span
+                class="w-4 h-4 rounded-full bg-surface-container text-text-secondary font-label-sm text-label-sm flex items-center justify-center font-bold text-[10px]">8</span>
+            </div>
+            <div>
+              <span
+                class="font-title-sm text-title-sm text-text-primary block leading-tight font-semibold">Requisition</span>
+              <span class="font-caption text-caption text-text-muted block">Draft &amp; Submit</span>
+            </div>
+          </button>
+          <button
+            class="step-card text-left p-space-xs rounded bg-surface-secondary hover:bg-primary-tint/50 border border-transparent hover:border-border-subtle transition-all flex flex-col justify-between h-[70px]"
+            onclick="selectStep('Approval', this)" type="button">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-label-sm text-label-sm text-text-secondary font-semibold">02. APPR</span>
+              <span
+                class="w-4 h-4 rounded-full bg-status-warning-bg text-status-warning font-label-sm text-label-sm flex items-center justify-center font-bold text-[10px]">5</span>
+            </div>
+            <div>
+              <span
+                class="font-title-sm text-title-sm text-text-primary block leading-tight font-semibold">Approval</span>
+              <span class="font-caption text-caption text-text-muted block">Dept &amp; Grant</span>
+            </div>
+          </button>
+          <button
+            class="step-card text-left p-space-xs rounded bg-surface-secondary hover:bg-primary-tint/50 border border-transparent hover:border-border-subtle transition-all flex flex-col justify-between h-[70px]"
+            onclick="selectStep('Quotes', this)" type="button">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-label-sm text-label-sm text-text-secondary font-semibold">03. RFQ</span>
+              <span
+                class="w-4 h-4 rounded-full bg-surface-container text-text-secondary font-label-sm text-label-sm flex items-center justify-center font-bold text-[10px]">3</span>
+            </div>
+            <div>
+              <span
+                class="font-title-sm text-title-sm text-text-primary block leading-tight font-semibold">Quotes</span>
+              <span class="font-caption text-caption text-text-muted block">3-Bid Market</span>
+            </div>
+          </button>
+          <button
+            class="step-card text-left p-space-xs rounded bg-surface-secondary hover:bg-primary-tint/50 border border-transparent hover:border-border-subtle transition-all flex flex-col justify-between h-[70px]"
+            onclick="selectStep('Purchase Order', this)" type="button">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-label-sm text-label-sm text-text-secondary font-semibold">04. PO</span>
+              <span
+                class="w-4 h-4 rounded-full bg-primary-tint text-fund-unrestricted font-label-sm text-label-sm flex items-center justify-center font-bold text-[10px]">12</span>
+            </div>
+            <div>
+              <span class="font-title-sm text-title-sm text-text-primary block leading-tight font-semibold">PO
+                Issued</span>
+              <span class="font-caption text-caption text-text-muted block">Vendor Binding</span>
+            </div>
+          </button>
+          <button
+            class="step-card text-left p-space-xs rounded bg-surface-secondary hover:bg-primary-tint/50 border border-transparent hover:border-border-subtle transition-all flex flex-col justify-between h-[70px]"
+            onclick="selectStep('Goods Receipt', this)" type="button">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-label-sm text-label-sm text-text-secondary font-semibold">05. GRN</span>
+              <span
+                class="w-4 h-4 rounded-full bg-surface-container text-text-secondary font-label-sm text-label-sm flex items-center justify-center font-bold text-[10px]">4</span>
+            </div>
+            <div>
+              <span class="font-title-sm text-title-sm text-text-primary block leading-tight font-semibold">GRN
+                Receipt</span>
+              <span class="font-caption text-caption text-text-muted block">Store Inward</span>
+            </div>
+          </button>
+          <button
+            class="step-card text-left p-space-xs rounded bg-surface-secondary hover:bg-primary-tint/50 border border-transparent hover:border-border-subtle transition-all flex flex-col justify-between h-[70px]"
+            onclick="selectStep('Invoice Match', this)" type="button">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-label-sm text-label-sm text-text-secondary font-semibold">06. MATCH</span>
+              <span
+                class="w-4 h-4 rounded-full bg-status-warning-bg text-status-warning font-label-sm text-label-sm flex items-center justify-center font-bold text-[10px]">6</span>
+            </div>
+            <div>
+              <span class="font-title-sm text-title-sm text-text-primary block leading-tight font-semibold">3-Way
+                Match</span>
+              <span class="font-caption text-caption text-text-muted block">PO/GRN/INV</span>
+            </div>
+          </button>
+          <button
+            class="step-card text-left p-space-xs rounded bg-surface-secondary hover:bg-primary-tint/50 border border-transparent hover:border-border-subtle transition-all flex flex-col justify-between h-[70px]"
+            onclick="selectStep('Pay-Approval', this)" type="button">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-label-sm text-label-sm text-text-secondary font-semibold">07. SIGN</span>
+              <span
+                class="w-4 h-4 rounded-full bg-surface-container text-text-secondary font-label-sm text-label-sm flex items-center justify-center font-bold text-[10px]">3</span>
+            </div>
+            <div>
+              <span class="font-title-sm text-title-sm text-text-primary block leading-tight font-semibold">Sign Pay
+                Appr</span>
+              <span class="font-caption text-caption text-text-muted block">FM Sign-off</span>
+            </div>
+          </button>
+          <button
+            class="step-card text-left p-space-xs rounded bg-surface-secondary hover:bg-primary-tint/50 border border-transparent hover:border-border-subtle transition-all flex flex-col justify-between h-[70px]"
+            onclick="selectStep('Payment', this)" type="button">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-label-sm text-label-sm text-text-secondary font-semibold">08. DISB</span>
+              <span
+                class="w-4 h-4 rounded-full bg-status-success-bg text-status-success font-label-sm text-label-sm flex items-center justify-center font-bold text-[10px]">3</span>
+            </div>
+            <div>
+              <span class="font-title-sm text-title-sm text-text-primary block leading-tight font-semibold">Disburse
+                Bank</span>
+              <span class="font-caption text-caption text-text-muted block">Voucher Match</span>
+            </div>
+          </button>
+          <button
+            class="step-card text-left p-space-xs rounded bg-surface-secondary hover:bg-primary-tint/50 border border-transparent hover:border-border-subtle transition-all flex flex-col justify-between h-[70px]"
+            onclick="selectStep('Journal Entry', this)" type="button">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-label-sm text-label-sm text-status-success font-semibold">09. GL</span>
+              <span
+                class="w-4 h-4 rounded-full bg-status-success-bg text-status-success font-label-sm text-label-sm flex items-center justify-center font-bold text-[10px]">✓</span>
+            </div>
+            <div>
+              <span class="font-title-sm text-title-sm text-status-success block leading-tight font-semibold">GL
+                Journal</span>
+              <span class="font-caption text-caption text-text-muted block">Auto Posted</span>
+            </div>
+          </button>
+        </div>
+      </div>
+      <!-- ============================== -->
+      <!-- PROCUREMENT REGISTER CARD -->
+      <!-- ============================== -->
+      <div class="rounded bg-surface-card border border-border-subtle shadow-xs overflow-hidden">
+        <!-- Filter Toolbar -->
+        <div class="p-space-sm border-b border-border-subtle flex flex-col gap-space-xs">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-xs">
+            <!-- Tabs -->
+            <div class="flex items-center gap-1 bg-surface-secondary p-0.5 rounded overflow-x-auto">
+              <button
+                class="tab-pill px-space-sm py-1 rounded bg-surface-card text-fund-unrestricted font-title-sm text-title-sm shadow-xs font-semibold"
+                onclick="filterTab('ALL', this)" type="button">All Records (32)</button>
+              <button
+                class="tab-pill px-space-sm py-1 rounded text-text-secondary hover:text-text-primary font-title-sm text-title-sm transition-colors"
+                onclick="filterTab('Requisition', this)" type="button">Requisitions (11)</button>
+              <button
+                class="tab-pill px-space-sm py-1 rounded text-text-secondary hover:text-text-primary font-title-sm text-title-sm transition-colors"
+                onclick="filterTab('Purchase Order', this)" type="button">Purchase Orders (9)</button>
+              <button
+                class="tab-pill px-space-sm py-1 rounded text-text-secondary hover:text-text-primary font-title-sm text-title-sm transition-colors"
+                onclick="filterTab('Goods Receipt', this)" type="button">Goods Receipts (6)</button>
+              <button
+                class="tab-pill px-space-sm py-1 rounded text-text-secondary hover:text-text-primary font-title-sm text-title-sm transition-colors"
+                onclick="filterTab('Vendor Invoice', this)" type="button">Vendor Invoices (6)</button>
+            </div>
+            <!-- Audit Assurance Notice -->
+            <div class="flex items-center gap-space-xs text-text-muted font-caption text-caption">
+              <span class="material-symbols-outlined text-[14px] text-fund-unrestricted">verified_user</span>
+              <span>Audit Enforced: 100% Traceability to Donor Grants</span>
+            </div>
+          </div>
+          <!-- Filters Form Row -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-space-xs pt-1">
+            <div class="relative md:col-span-5">
+              <span
+                class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-text-muted text-[16px]">search</span>
+              <input
+                class="w-full h-[34px] pl-8 pr-space-sm bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm placeholder:text-text-muted focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-primary"
+                id="registerSearchInput" onkeyup="handleFilterChange()"
+                placeholder="Search reference, vendor, requester, or grant..." type="text" />
+            </div>
+            <div class="md:col-span-3">
+              <select
+                class="w-full h-[34px] px-space-xs bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-card"
+                id="registerFundFilter" onchange="handleFilterChange()">
+                <option value="">Fund: All Classes</option>
+                <option value="Restricted">Restricted Fund</option>
+                <option value="Temporarily Restricted">Temporarily Restricted</option>
+                <option value="Unrestricted">Unrestricted Core</option>
+              </select>
+            </div>
+            <div class="md:col-span-3">
+              <select
+                class="w-full h-[34px] px-space-xs bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-card"
+                id="registerStepDropdown" onchange="handleFilterChange()">
+                <option value="">Workflow Step: All</option>
+                <option value="Requisition">01 - Requisition</option>
+                <option value="Approval">02 - Approval</option>
+                <option value="Quotes">03 - Competitive Quotes</option>
+                <option value="Purchase Order">04 - Purchase Order</option>
+                <option value="Goods Receipt">05 - Goods Receipt</option>
+                <option value="Invoice Match">06 - 3-Way Match</option>
+                <option value="Pay-Approval">07 - Pay Approval</option>
+                <option value="Payment">08 - Disburse Payment</option>
+                <option value="Journal Entry">09 - GL Posted</option>
+              </select>
+            </div>
+            <div class="md:col-span-1 flex items-center justify-end">
+              <button
+                class="h-[34px] w-full px-space-xs text-text-secondary hover:text-text-primary font-body-sm text-body-sm flex items-center justify-center gap-space-xxs rounded hover:bg-surface-secondary border border-border-subtle"
+                onclick="resetAllFilters()" title="Reset Filters" type="button">
+                <span class="material-symbols-outlined text-[15px]">refresh</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Data Table -->
+        <div class="w-full overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr
+                class="bg-surface-secondary text-text-secondary font-label-md text-label-md uppercase tracking-wider border-b border-border-subtle select-none">
+                <th class="py-2.5 px-space-md font-semibold">Reference</th>
+                <th class="py-2.5 px-space-sm font-semibold">Type</th>
+                <th class="py-2.5 px-space-sm font-semibold">Vendor / Counterparty</th>
+                <th class="py-2.5 px-space-sm font-semibold">Requester</th>
+                <th class="py-2.5 px-space-sm font-semibold">Grant / Workplan</th>
+                <th class="py-2.5 px-space-sm font-semibold">Fund Category</th>
+                <th class="py-2.5 px-space-sm text-right font-semibold">Amount (GHS)</th>
+                <th class="py-2.5 px-space-sm font-semibold">Current Step</th>
+                <th class="py-2.5 px-space-sm font-semibold">Status</th>
+                <th class="py-2.5 px-space-sm font-semibold">Date</th>
+                <th class="py-2.5 px-space-md text-right font-semibold">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border-subtle/50 font-body-sm text-body-sm text-text-primary"
+              id="procurementTableBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+            <tfoot>
+              <tr
+                class="bg-surface-secondary/70 border-t border-border-subtle text-text-primary font-numeric-table-bold text-numeric-table-bold">
+                <td
+                  class="py-space-sm px-space-md text-text-secondary uppercase tracking-wider font-label-sm text-label-sm"
+                  colspan="6">
+                  Active Procurement Subtotal (Displayed Records)
+                </td>
+                <td
+                  class="py-space-sm px-space-sm text-right font-numeric-table-bold text-numeric-table-bold text-fund-unrestricted"
+                  id="tableSubtotalAmount">
+                  GH₵ 473,250.00
+                </td>
+                <td class="py-space-sm px-space-md font-caption text-caption text-text-muted text-right" colspan="4">
+                  Commitments linked to GL Control Account 2100 (Accounts Payable Accrual)
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- Table Footer Pagination -->
+        <div
+          class="p-space-sm bg-surface-card border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-xs">
+          <span class="font-body-sm text-body-sm text-text-secondary" id="pageCountDisplay">Showing 1 to 6 of 32
+            transactions across 4 Field Offices</span>
+          <div class="flex items-center gap-space-xxs">
+            <button
+              class="px-space-sm py-1 rounded border border-border-subtle bg-surface-secondary text-text-muted font-body-sm text-body-sm opacity-60 cursor-not-allowed"
+              disabled="" type="button">Previous</button>
+            <button
+              class="px-space-sm py-1 rounded bg-primary-tint text-fund-unrestricted font-numeric-table-bold text-numeric-table-bold border border-primary-container/20"
+              type="button">1</button>
+            <button
+              class="px-space-sm py-1 rounded hover:bg-surface-secondary text-text-secondary font-body-sm text-body-sm border border-border-subtle"
+              type="button">2</button>
+            <button
+              class="px-space-sm py-1 rounded hover:bg-surface-secondary text-text-secondary font-body-sm text-body-sm border border-border-subtle"
+              type="button">3</button>
+            <button
+              class="px-space-sm py-1 rounded bg-surface-secondary text-text-primary hover:bg-surface-container font-body-sm text-body-sm border border-border-subtle"
+              type="button">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+  <!-- ============================== -->
+  <!-- INSPECTOR DRAWER (SLIDING) -->
+  <!-- ============================== -->
+  <div class="fixed inset-0 bg-nav-bg/50 backdrop-blur-xs z-50 hidden transition-opacity" id="inspectorDrawerOverlay"
+    onclick="closeDrawer()"></div>
+  <aside
+    class="fixed top-0 right-0 h-full w-full max-w-xl bg-surface-card z-50 shadow-2xl flex flex-col translate-x-full transition-transform duration-300 ease-in-out border-l border-border-subtle"
+    id="inspectorDrawer">
+    <!-- Drawer Header -->
+    <div class="p-space-md bg-surface-secondary border-b border-border-subtle flex items-start justify-between">
+      <div class="flex flex-col">
+        <div class="flex items-center gap-space-xs">
+          <span class="font-headline-sm text-headline-sm text-text-primary font-numeric-table-bold"
+            id="drawerRef">PR-2025-0142</span>
+          <span
+            class="px-2 py-0.5 rounded bg-primary-tint text-fund-unrestricted font-label-sm text-label-sm font-semibold"
+            id="drawerTypeBadge">Requisition</span>
+          <span
+            class="px-2 py-0.5 rounded bg-status-warning-bg text-status-warning font-label-sm text-label-sm font-semibold"
+            id="drawerStatusBadge">Under Quote Review</span>
+        </div>
+        <span class="font-caption text-caption text-text-secondary mt-1" id="drawerVendor">Volta Medical Logistics
+          Ltd</span>
+      </div>
+      <div class="flex items-center gap-space-sm">
+        <div class="text-right">
+          <span class="font-caption text-caption text-text-muted block uppercase tracking-wider">Total Value</span>
+          <span class="font-headline-sm text-headline-sm text-fund-unrestricted font-numeric-table-bold"
+            id="drawerAmount">GH₵ 72,500.00</span>
+        </div>
+        <button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-card transition-colors"
+          onclick="closeDrawer()" type="button">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+    </div>
+    <!-- Drawer Body -->
+    <div class="flex-1 overflow-y-auto p-space-md space-y-space-md">
+      <!-- Lifecycle Progress Tracker -->
+      <div class="p-space-sm rounded bg-surface-secondary border border-border-subtle">
+        <span
+          class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted block mb-space-xs font-semibold">Lifecycle
+          Step Progression</span>
+        <div class="flex items-center justify-between text-center gap-1">
+          <div class="flex flex-col items-center flex-1">
+            <span
+              class="w-5 h-5 rounded-full bg-status-success text-on-primary font-caption text-caption flex items-center justify-center font-bold">✓</span>
+            <span class="font-caption text-caption text-text-primary mt-1 font-semibold">1. Req</span>
+          </div>
+          <div class="h-0.5 flex-1 bg-status-success"></div>
+          <div class="flex flex-col items-center flex-1">
+            <span
+              class="w-5 h-5 rounded-full bg-status-success text-on-primary font-caption text-caption flex items-center justify-center font-bold">✓</span>
+            <span class="font-caption text-caption text-text-primary mt-1 font-semibold">2. Appr</span>
+          </div>
+          <div class="h-0.5 flex-1 bg-status-warning"></div>
+          <div class="flex flex-col items-center flex-1">
+            <span
+              class="w-5 h-5 rounded-full bg-status-warning text-on-primary font-caption text-caption flex items-center justify-center font-bold">3</span>
+            <span class="font-caption text-caption text-status-warning font-semibold mt-1">3. Quotes</span>
+          </div>
+          <div class="h-0.5 flex-1 bg-border-strong"></div>
+          <div class="flex flex-col items-center flex-1 opacity-50">
+            <span
+              class="w-5 h-5 rounded-full bg-surface-container text-text-secondary font-caption text-caption flex items-center justify-center font-bold">4</span>
+            <span class="font-caption text-caption text-text-muted mt-1">4. PO</span>
+          </div>
+          <div class="h-0.5 flex-1 bg-border-strong"></div>
+          <div class="flex flex-col items-center flex-1 opacity-50">
+            <span
+              class="w-5 h-5 rounded-full bg-surface-container text-text-secondary font-caption text-caption flex items-center justify-center font-bold">5</span>
+            <span class="font-caption text-caption text-text-muted mt-1">5. GRN</span>
+          </div>
+          <div class="h-0.5 flex-1 bg-border-strong"></div>
+          <div class="flex flex-col items-center flex-1 opacity-50">
+            <span
+              class="w-5 h-5 rounded-full bg-surface-container text-text-secondary font-caption text-caption flex items-center justify-center font-bold">6</span>
+            <span class="font-caption text-caption text-text-muted mt-1">6. Match</span>
+          </div>
+        </div>
+      </div>
+      <!-- Financial Ledger & Donor Commitments -->
+      <div class="p-space-sm rounded bg-surface-card border border-border-subtle shadow-xs">
+        <div class="flex items-center justify-between mb-space-xs pb-space-xxs border-b border-border-subtle">
+          <span class="font-title-sm text-title-sm text-text-primary flex items-center gap-space-xs font-semibold">
+            <span class="material-symbols-outlined text-fund-unrestricted text-[15px]">hub</span>
+            Financial Ledger &amp; Donor Commitments
+          </span>
+          <span
+            class="px-2 py-0.5 rounded bg-fund-restricted-bg text-fund-restricted font-label-sm text-label-sm uppercase font-semibold"
+            id="drawerFundBadge">Restricted Fund</span>
+        </div>
+        <div class="grid grid-cols-2 gap-space-xs text-body-sm">
+          <div>
+            <span class="text-text-muted block font-caption text-caption">Grant Instrument</span>
+            <span class="font-title-sm text-title-sm text-text-primary font-semibold" id="drawerGrant">Global Fund
+              Malaria (GH-003)</span>
+          </div>
+          <div>
+            <span class="text-text-muted block font-caption text-caption">Approved Workplan Activity</span>
+            <span class="font-body-sm text-body-sm text-text-primary" id="drawerActivity">Act 2.1 - Rural Clinics Cold
+              Chain</span>
+          </div>
+          <div>
+            <span class="text-text-muted block font-caption text-caption">Fiduciary Cost Center</span>
+            <span class="font-numeric-table text-numeric-table text-text-primary">CC-401 (Volta Field Office)</span>
+          </div>
+          <div>
+            <span class="text-text-muted block font-caption text-caption">Debit Ledger Account</span>
+            <span class="font-numeric-table text-numeric-table text-text-primary">5210 - Medical Supplies &amp;
+              Logistics</span>
+          </div>
+        </div>
+      </div>
+      <!-- Line Items Breakdown -->
+      <div class="p-space-sm rounded bg-surface-card border border-border-subtle shadow-xs">
+        <span class="font-title-sm text-title-sm text-text-primary block mb-space-xxs font-semibold">Requisition Line
+          Items</span>
+        <table class="w-full text-left font-body-sm text-body-sm">
+          <thead>
+            <tr class="bg-surface-secondary text-text-secondary font-label-sm text-label-sm uppercase">
+              <th class="py-1 px-2 font-semibold">Description</th>
+              <th class="py-1 px-2 text-right font-semibold">Qty</th>
+              <th class="py-1 px-2 text-right font-semibold">Unit Price</th>
+              <th class="py-1 px-2 text-right font-semibold">Total (GHS)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border-subtle/50">
+            <tr>
+              <td class="py-1.5 px-2 text-text-primary font-body-sm text-body-sm">Solar Mobile Vaccine Refrigerators 45L
+              </td>
+              <td class="py-1.5 px-2 text-right font-numeric-table text-numeric-table">5 Units</td>
+              <td class="py-1.5 px-2 text-right font-numeric-table text-numeric-table">GH₵ 11,500.00</td>
+              <td class="py-1.5 px-2 text-right font-numeric-table-bold text-numeric-table-bold">GH₵ 57,500.00</td>
+            </tr>
+            <tr>
+              <td class="py-1.5 px-2 text-text-primary font-body-sm text-body-sm">Digital Temperature Loggers &amp;
+                Backup Cells</td>
+              <td class="py-1.5 px-2 text-right font-numeric-table text-numeric-table">15 Pcs</td>
+              <td class="py-1.5 px-2 text-right font-numeric-table text-numeric-table">GH₵ 1,000.00</td>
+              <td class="py-1.5 px-2 text-right font-numeric-table-bold text-numeric-table-bold">GH₵ 15,000.00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="bg-surface-secondary/70 font-numeric-table-bold text-numeric-table-bold">
+              <td class="py-1 px-2 text-text-secondary" colspan="3">Subtotal Committed Amount</td>
+              <td class="py-1 px-2 text-right text-fund-unrestricted font-numeric-table-bold text-numeric-table-bold"
+                id="drawerSubtotalAmount">GH₵ 72,500.00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <!-- Competitive Quotation Evaluation Table -->
+      <div class="p-space-sm rounded bg-surface-card border border-border-subtle shadow-xs">
+        <div class="flex items-center justify-between mb-space-xxs">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-fund-temp-restricted text-[15px]">gavel</span>
+            <span class="font-title-sm text-title-sm text-text-primary font-semibold">Competitive Quotation
+              Evaluation</span>
+          </div>
+          <span
+            class="px-2 py-0.5 rounded bg-status-success-bg text-status-success font-label-sm text-label-sm font-semibold">Threshold
+            Met: 3 Bids</span>
+        </div>
+        <p class="font-caption text-caption text-text-secondary mb-space-xs">Per INGO statutory policy, purchases &gt;
+          GH₵ 20,000 require 3 independent supplier quotes.</p>
+        <div class="space-y-space-xxs">
+          <div
+            class="p-space-xs rounded bg-surface-secondary border border-status-success/30 flex items-center justify-between font-body-sm text-body-sm">
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="w-3.5 h-3.5 rounded-full bg-status-success text-on-primary font-caption text-caption flex items-center justify-center text-[9px]">★</span>
+              <div>
+                <span class="font-title-sm text-title-sm text-text-primary font-semibold">Volta Medical Logistics
+                  Ltd</span>
+                <span class="font-caption text-caption text-text-muted block">Selected Bid • Delivery: 7 days •
+                  Warranty: 2 yrs</span>
+              </div>
+            </div>
+            <span class="font-numeric-table-bold text-numeric-table-bold text-status-success">GH₵ 72,500.00</span>
+          </div>
+          <div
+            class="p-space-xs rounded bg-surface-container-low flex items-center justify-between font-body-sm text-body-sm opacity-85">
+            <div>
+              <span class="font-body-sm text-body-sm text-text-primary">Accra Cold Chain Distributors</span>
+              <span class="font-caption text-caption text-text-muted block">Quote #Q-981 • Delivery: 14 days</span>
+            </div>
+            <span class="font-numeric-table text-numeric-table text-text-secondary">GH₵ 78,400.00</span>
+          </div>
+          <div
+            class="p-space-xs rounded bg-surface-container-low flex items-center justify-between font-body-sm text-body-sm opacity-85">
+            <div>
+              <span class="font-body-sm text-body-sm text-text-primary">Savannah Health Hardware</span>
+              <span class="font-caption text-caption text-text-muted block">Quote #SH-402 • Delivery: 21 days</span>
+            </div>
+            <span class="font-numeric-table text-numeric-table text-text-secondary">GH₵ 81,200.00</span>
+          </div>
+        </div>
+      </div>
+      <!-- 3-Way Match Verification Card -->
+      <div class="p-space-sm rounded bg-surface-card border border-border-subtle shadow-xs">
+        <span class="font-title-sm text-title-sm text-text-primary block mb-space-xxs font-semibold">3-Way Verification
+          Controls</span>
+        <div class="grid grid-cols-3 gap-space-xs text-center font-caption text-caption">
+          <div class="p-space-xs rounded bg-status-success-bg text-status-success border border-status-success/20">
+            <span class="font-semibold block">PO Status</span>
+            <span>PO-2025-0089 Match</span>
+          </div>
+          <div class="p-space-xs rounded bg-status-success-bg text-status-success border border-status-success/20">
+            <span class="font-semibold block">Goods Receipt</span>
+            <span>GRN-2025-0054 (100%)</span>
+          </div>
+          <div class="p-space-xs rounded bg-status-warning-bg text-status-warning border border-status-warning/20">
+            <span class="font-semibold block">Vendor Invoice</span>
+            <span>Awaiting Matching</span>
+          </div>
+        </div>
+      </div>
+      <!-- Audit & Approval Timestamp Chain -->
+      <div class="p-space-sm rounded bg-surface-secondary border border-border-subtle">
+        <span
+          class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted block mb-space-xxs font-semibold">Governance
+          Audit Log</span>
+        <ul class="space-y-space-xxs text-text-secondary font-caption text-caption">
+          <li class="flex items-center justify-between">
+            <span>Requisition Initiated by Dr. Emmanuel Osei</span>
+            <span class="text-text-muted font-numeric-table text-numeric-table">24 Oct 2025 09:15 GMT</span>
+          </li>
+          <li class="flex items-center justify-between">
+            <span>Grant Compliance Verified by Ama Mensah</span>
+            <span class="text-text-muted font-numeric-table text-numeric-table">24 Oct 2025 11:30 GMT</span>
+          </li>
+          <li class="flex items-center justify-between">
+            <span>Tender Committee Review Triggered (&gt; GH₵ 20,000)</span>
+            <span class="text-status-warning font-numeric-table text-numeric-table font-semibold">Pending Final
+              Sign-off</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Drawer Footer Actions -->
+    <div
+      class="p-space-sm bg-surface-secondary border-t border-border-subtle flex items-center justify-between gap-space-xs">
+      <button
+        class="h-[34px] px-space-md bg-surface-card hover:bg-surface-container border border-border-subtle text-text-secondary rounded font-title-sm text-title-sm font-semibold transition-colors"
+        onclick="closeDrawer()" type="button">
+        Close Inspector
+      </button>
+      <div class="flex items-center gap-space-xs">
+        <button
+          class="h-[34px] px-space-md bg-status-success text-on-primary hover:opacity-90 rounded font-title-sm text-title-sm font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
+          onclick="triggerApprovalToast()" type="button">
+          <span class="material-symbols-outlined text-[16px]">check_circle</span>
+          <span>Approve Stage</span>
+        </button>
+        <button
+          class="h-[34px] px-space-md bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
+          onclick="generatePoAction()" type="button">
+          <span class="material-symbols-outlined text-[16px]">send</span>
+          <span>Advance Workflow</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+  <!-- ============================== -->
+  <!-- MODAL: + NEW REQUISITION -->
+  <!-- ============================== -->
+  <div class="fixed inset-0 bg-nav-bg/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-space-md"
+    id="newReqModalOverlay">
+    <div
+      class="w-full max-w-3xl bg-surface-card rounded border border-border-subtle shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+      <!-- Modal Header -->
+      <div class="p-space-md bg-surface-secondary border-b border-border-subtle flex items-center justify-between">
+        <div class="flex items-center gap-space-xs">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[20px]">add_shopping_cart</span>
+          <div>
+            <h2 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Create Purchase Requisition
+            </h2>
+            <span class="font-caption text-caption text-text-muted">Statutory Multi-Currency &amp; Fund Commitment
+              Initiation</span>
+          </div>
+        </div>
+        <button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-card transition-colors"
+          onclick="closeReqModal()" type="button">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <!-- Modal Body Form -->
+      <form class="p-space-md overflow-y-auto space-y-space-md flex-1" id="requisitionForm"
+        onsubmit="submitRequisition(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+          <!-- Requesting Hub / Office -->
+          <div>
+            <label class="font-label-md text-label-md text-text-secondary block mb-1">Requesting Department / Office
+              Scope</label>
+            <select
+              class="w-full h-[34px] px-space-xs bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-primary"
+              id="modalOfficeScope">
+              <option>Accra Office • Hub (Country Head)</option>
+              <option>Tamale Field Hub (Northern Programs)</option>
+              <option>Volta Regional Health Post (Ho)</option>
+              <option>Kumasi Field Station</option>
+            </select>
+          </div>
+          <!-- Required By Date -->
+          <div>
+            <label class="font-label-md text-label-md text-text-secondary block mb-1">Required Delivery Date</label>
+            <input
+              class="w-full h-[34px] px-space-xs bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-primary"
+              type="date" value="2025-11-20" />
+          </div>
+          <!-- Linked Donor Grant -->
+          <div>
+            <label class="font-label-md text-label-md text-text-secondary block mb-1">Linked Donor Grant Agreement
+              *</label>
+            <select
+              class="w-full h-[34px] px-space-xs bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-primary"
+              id="modalGrantSelect">
+              <option value="Global Fund Malaria (GH-003)">Global Fund Malaria (GH-003)</option>
+              <option value="USAID Education Program (US-ED-19)">USAID Education Program (Northern Literacy)</option>
+              <option value="EU Climate Resilient Hub (EU-CRH-04)">EU Climate Resilient Hub (Savannah)</option>
+              <option value="DFID Rural Livelihoods (UK-RL-88)">DFID Rural Livelihoods Development</option>
+              <option value="Country Operational Pool (OPS-01)">INGO Core Operational Reserves (Unrestricted)</option>
+            </select>
+          </div>
+          <!-- Fund Restriction Category -->
+          <div>
+            <label class="font-label-md text-label-md text-text-secondary block mb-1">Dedicated Fund Class (Fiduciary
+              Lock)</label>
+            <select
+              class="w-full h-[34px] px-space-xs bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-primary"
+              id="modalFundClass">
+              <option value="Restricted">Permanently Restricted (Grant Restricted)</option>
+              <option value="Temporarily Restricted">Temporarily Restricted (Donor Designated)</option>
+              <option value="Unrestricted">Unrestricted (Board Allocated)</option>
+            </select>
+          </div>
+          <!-- Vendor / Counterparty -->
+          <div class="md:col-span-2">
+            <label class="font-label-md text-label-md text-text-secondary block mb-1">Preferred Vendor / Proposed
+              Supplier</label>
+            <input
+              class="w-full h-[34px] px-space-xs bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-primary"
+              id="modalVendorInput" placeholder="e.g. Volta Medical Logistics Ltd" required="" type="text"
+              value="Volta Medical Logistics Ltd" />
+          </div>
+          <!-- General Ledger Expense Account -->
+          <div class="md:col-span-2">
+            <label class="font-label-md text-label-md text-text-secondary block mb-1">Chart of Accounts - Ledger
+              Commitment Line</label>
+            <select
+              class="w-full h-[34px] px-space-xs bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-card">
+              <option>5210 - Medical Supplies &amp; Cold Storage Hardware</option>
+              <option>5220 - Educational Materials &amp; Textbooks</option>
+              <option>5230 - Renewable Energy &amp; Solar Pumping Equipment</option>
+              <option>5400 - Local Transport, Vehicle Logistics &amp; Fuel</option>
+            </select>
+          </div>
+        </div>
+        <!-- Line Item Calculator -->
+        <div class="p-space-sm rounded bg-surface-secondary border border-border-subtle">
+          <div class="flex items-center justify-between mb-space-xs">
+            <span class="font-title-sm text-title-sm text-text-primary font-semibold">Item Lines &amp; Pricing
+              Estimates</span>
+            <span class="font-caption text-caption text-text-secondary">Base Currency: Ghanaian Cedi (GH₵)</span>
+          </div>
+          <div class="space-y-space-xs">
+            <div class="grid grid-cols-12 gap-space-xs items-center">
+              <input
+                class="col-span-6 h-[34px] px-space-xs bg-surface-card border border-border-subtle text-text-primary rounded font-body-sm text-body-sm"
+                id="modalItemDesc" placeholder="Detailed Item Specification" type="text"
+                value="Solar Vaccine Cold Boxes (Grade A)" />
+              <input
+                class="col-span-2 h-[34px] px-space-xs bg-surface-card border border-border-subtle text-text-primary rounded font-body-sm text-body-sm text-right"
+                id="modalItemQty" oninput="calculateModalTotal()" type="number" value="4" />
+              <input
+                class="col-span-3 h-[34px] px-space-xs bg-surface-card border border-border-subtle text-text-primary rounded font-body-sm text-body-sm text-right"
+                id="modalItemPrice" oninput="calculateModalTotal()" type="number" value="12500" />
+              <button class="col-span-1 text-text-muted hover:text-status-critical flex justify-center" type="button">
+                <span class="material-symbols-outlined text-[17px]">delete</span>
+              </button>
+            </div>
+          </div>
+          <!-- Total Calculation Row -->
+          <div
+            class="flex items-center justify-between pt-space-xs mt-space-xs border-t border-border-subtle font-numeric-table-bold text-numeric-table-bold">
+            <span class="font-label-md text-label-md text-text-secondary uppercase">Estimated Total Requisition
+              Amount:</span>
+            <span class="font-headline-sm text-headline-sm text-fund-unrestricted font-bold" id="modalTotalDisplay">GH₵
+              50,000.00</span>
+          </div>
+        </div>
+        <!-- Justification & Quotations Upload -->
+        <div>
+          <label class="font-label-md text-label-md text-text-secondary block mb-1">Operational Justification &amp;
+            Field Need</label>
+          <textarea
+            class="w-full p-space-xs bg-surface-secondary border border-border-subtle text-text-primary rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-card"
+            placeholder="State project workplan objective, beneficiary group, and justification..." rows="2"></textarea>
+        </div>
+        <!-- Attachment Sourcing Prompt -->
+        <div
+          class="p-space-xs rounded bg-surface-container-low border border-border-subtle flex items-center justify-between font-body-sm text-body-sm">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">attach_file</span>
+            <span class="text-text-primary font-medium">Attach Quotations (PDF / Excel)</span>
+          </div>
+          <button
+            class="px-space-sm py-1 bg-surface-card border border-border-subtle rounded text-fund-unrestricted font-label-sm text-label-sm shadow-xs hover:bg-surface-secondary transition-colors"
+            type="button">Upload Files</button>
+        </div>
+      </form>
+      <!-- Modal Footer -->
+      <div class="p-space-sm bg-surface-secondary border-t border-border-subtle flex items-center justify-between">
+        <button
+          class="h-[34px] px-space-md text-text-secondary hover:text-text-primary font-title-sm text-title-sm font-semibold"
+          onclick="closeReqModal()" type="button">Cancel</button>
+        <div class="flex items-center gap-space-xs">
+          <button
+            class="h-[34px] px-space-md bg-surface-card border border-border-subtle text-text-primary hover:bg-surface-container rounded font-title-sm text-title-sm font-semibold shadow-xs transition-colors"
+            onclick="saveDraft()" type="button">Save Draft</button>
+          <button
+            class="h-[34px] px-space-md bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm font-semibold shadow-xs transition-colors"
+            form="requisitionForm" type="submit">Submit Requisition</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================== -->
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <!-- ============================== -->
+  <div
+    class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm p-space-sm rounded bg-surface-card border border-border-subtle shadow-2xl"
+    id="toastNotification">
+    <div class="w-7 h-7 rounded-full bg-status-success-bg text-status-success flex items-center justify-center shrink-0"
+      id="toastIconWrapper">
+      <span class="material-symbols-outlined text-[16px]">done</span>
+    </div>
+    <div class="flex flex-col">
+      <span class="font-title-sm text-title-sm text-text-primary font-semibold" id="toastTitle">Success</span>
+      <span class="font-body-sm text-body-sm text-text-secondary" id="toastMessage">Action completed
+        successfully.</span>
+    </div>
+  </div>
+  <!-- ============================== -->
+  <!-- CLIENT LOGIC & MICRO-INTERACTIONS -->
+  <!-- ============================== -->
+   <!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1b6b72);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl {
+      max-width: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+  <script>
+    const procurementRecords = [
+      {
+        ref: 'PR-2025-0142',
+        type: 'Requisition',
+        vendor: 'Volta Medical Logistics Ltd',
+        requester: 'Dr. Emmanuel Osei',
+        grant: 'Global Fund Malaria',
+        workplan: 'Rural Health Posts (GH-003)',
+        fund: 'Restricted',
+        fundBadgeClass: 'bg-fund-restricted-bg text-fund-restricted',
+        amountGhs: 'GH₵ 72,500.00',
+        numericVal: 72500,
+        step: 'Quotes',
+        stepLabel: '03. Quotes (3 Bids)',
+        status: 'Under Quote Review',
+        statusClass: 'bg-status-warning-bg text-status-warning',
+        statusDot: 'bg-status-warning',
+        date: '24 Oct 2025'
+      },
+      {
+        ref: 'PO-2025-0089',
+        type: 'Purchase Order',
+        vendor: 'Star Education Supplies Accra',
+        requester: 'Kwesi Appiah',
+        grant: 'USAID Education Program',
+        workplan: 'Northern Literacy (US-ED-19)',
+        fund: 'Temporarily Restricted',
+        fundBadgeClass: 'bg-fund-temp-restricted-bg text-fund-temp-restricted',
+        amountGhs: 'GH₵ 142,000.00',
+        numericVal: 142000,
+        step: 'Goods Receipt',
+        stepLabel: '05. Goods Receipt',
+        status: 'PO Issued / In Transit',
+        statusClass: 'bg-primary-tint text-fund-unrestricted',
+        statusDot: 'bg-fund-unrestricted',
+        date: '22 Oct 2025'
+      },
+      {
+        ref: 'GRN-2025-0054',
+        type: 'Goods Receipt',
+        vendor: 'SunPower Ghana Ltd',
+        requester: 'Sarah Mensah',
+        grant: 'EU Climate Resilient Hub',
+        workplan: 'Savannah Nursery Solar (EU-CRH-04)',
+        fund: 'Restricted',
+        fundBadgeClass: 'bg-fund-restricted-bg text-fund-restricted',
+        amountGhs: 'GH₵ 88,400.00',
+        numericVal: 88400,
+        step: 'Invoice Match',
+        stepLabel: '06. Invoice Match',
+        status: 'Goods Inspected',
+        statusClass: 'bg-status-success-bg text-status-success',
+        statusDot: 'bg-status-success',
+        date: '20 Oct 2025'
+      },
+      {
+        ref: 'INV-2025-0112',
+        type: 'Vendor Invoice',
+        vendor: 'Northern Agro Inputs Consortium',
+        requester: 'Hajia Amina Bello',
+        grant: 'DFID Rural Livelihoods',
+        workplan: 'Seedling Distribution (UK-RL-88)',
+        fund: 'Temporarily Restricted',
+        fundBadgeClass: 'bg-fund-temp-restricted-bg text-fund-temp-restricted',
+        amountGhs: 'GH₵ 34,900.00',
+        numericVal: 34900,
+        step: 'Invoice Match',
+        stepLabel: '06. Invoice Match',
+        status: '3-Way Matched',
+        statusClass: 'bg-status-success-bg text-status-success',
+        statusDot: 'bg-status-success',
+        date: '19 Oct 2025'
+      },
+      {
+        ref: 'PR-2025-0145',
+        type: 'Requisition',
+        vendor: 'Apex Fleet Solutions Ghana',
+        requester: 'Kwame Mensah',
+        grant: 'Country Operational Pool',
+        workplan: 'Accra Core Fleet Maint (OPS-01)',
+        fund: 'Unrestricted',
+        fundBadgeClass: 'bg-primary-tint text-fund-unrestricted',
+        amountGhs: 'GH₵ 16,800.00',
+        numericVal: 16800,
+        step: 'Approval',
+        stepLabel: '02. Approval',
+        status: 'Pending Approval',
+        statusClass: 'bg-status-warning-bg text-status-warning',
+        statusDot: 'bg-status-warning',
+        date: '18 Oct 2025'
+      },
+      {
+        ref: 'PO-2025-0072',
+        type: 'Purchase Order',
+        vendor: 'Zenith IT Infrastructure Hub',
+        requester: 'Sarah Mensah',
+        grant: 'USAID Education Program',
+        workplan: 'School Computer Labs (US-ED-24)',
+        fund: 'Temporarily Restricted',
+        fundBadgeClass: 'bg-fund-temp-restricted-bg text-fund-temp-restricted',
+        amountGhs: 'GH₵ 118,650.00',
+        numericVal: 118650,
+        step: 'Payment',
+        stepLabel: '08. Payment',
+        status: 'Approved for Pay',
+        statusClass: 'bg-status-success-bg text-status-success',
+        statusDot: 'bg-status-success',
+        date: '14 Oct 2025'
+      }
+    ];
+
+    let currentTab = 'ALL';
+    let activeStepFilter = '';
+
+    function renderTable(records) {
+      const tbody = document.getElementById('procurementTableBody');
+      const subtotalEl = document.getElementById('tableSubtotalAmount');
+      if (!tbody) return;
+
+      if (records.length === 0) {
+        tbody.innerHTML = `
+        <tr>
+          <td colspan="11" class="py-space-lg text-center text-text-muted">
+            <span class="material-symbols-outlined text-[32px] block mx-auto mb-space-xs text-text-muted">search_off</span>
+            <p class="font-body-sm text-body-sm">No procurement records match your active search and filter criteria.</p>
+          </td>
+        </tr>
+      `;
+        if (subtotalEl) subtotalEl.textContent = 'GH₵ 0.00';
+        return;
+      }
+
+      let totalVal = 0;
+      tbody.innerHTML = records.map(item => {
+        totalVal += (item.numericVal || 0);
+        return `
+        <tr class="hover:bg-primary-tint/20 transition-colors group cursor-pointer" onclick="openDrawer('${item.ref}')">
+          <td class="py-2.5 px-space-md font-numeric-table-bold text-numeric-table-bold text-fund-unrestricted">${item.ref}</td>
+          <td class="py-2.5 px-space-sm">
+            <span class="px-2 py-0.5 rounded ${item.type === 'Purchase Order' ? 'bg-primary-tint text-fund-unrestricted font-semibold' : item.type === 'Goods Receipt' ? 'bg-surface-container text-text-secondary font-medium' : 'bg-surface-secondary text-text-secondary font-medium'} font-label-sm text-label-sm">
+              ${item.type}
+            </span>
+          </td>
+          <td class="py-2.5 px-space-sm font-title-sm text-title-sm font-semibold text-text-primary">${item.vendor}</td>
+          <td class="py-2.5 px-space-sm text-text-secondary font-body-sm text-body-sm">${item.requester}</td>
+          <td class="py-2.5 px-space-sm">
+            <span class="text-text-primary font-numeric-table text-numeric-table truncate block max-w-[170px] font-medium">${item.grant}</span>
+            <span class="font-caption text-caption text-text-muted block truncate">${item.workplan}</span>
+          </td>
+          <td class="py-2.5 px-space-sm">
+            <span class="px-2 py-0.5 rounded ${item.fundBadgeClass} font-label-sm text-label-sm uppercase tracking-wide font-semibold">
+              ${item.fund}
+            </span>
+          </td>
+          <td class="py-2.5 px-space-sm text-right font-numeric-table text-numeric-table font-semibold text-text-primary whitespace-nowrap">${item.amountGhs}</td>
+          <td class="py-2.5 px-space-sm">
+            <span class="px-1.5 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption font-medium">${item.stepLabel}</span>
+          </td>
+          <td class="py-2.5 px-space-sm">
+            <span class="px-2 py-0.5 rounded ${item.statusClass} font-label-sm text-label-sm flex items-center gap-1 w-fit font-semibold">
+              <span class="w-1.5 h-1.5 rounded-full ${item.statusDot}"></span>
+              ${item.status}
+            </span>
+          </td>
+          <td class="py-2.5 px-space-sm font-caption text-caption text-text-muted">${item.date}</td>
+          <td class="py-2.5 px-space-md text-right">
+            <button type="button" class="px-2 py-1 text-fund-unrestricted group-hover:bg-surface-card rounded font-title-sm text-title-sm shadow-xs transition-colors border border-transparent group-hover:border-border-subtle font-semibold">
+              Inspect
+            </button>
+          </td>
+        </tr>
+      `;
+      }).join('');
+
+      if (subtotalEl) {
+        subtotalEl.textContent = 'GH₵ ' + totalVal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+    }
+
+    function handleFilterChange() {
+      const searchVal = (document.getElementById('registerSearchInput')?.value || document.getElementById('topSearchInput')?.value || '').toLowerCase();
+      const fundVal = document.getElementById('registerFundFilter')?.value || '';
+      const stepVal = document.getElementById('registerStepDropdown')?.value || '';
+
+      const filtered = procurementRecords.filter(item => {
+        const matchesTab = currentTab === 'ALL' || item.type === currentTab;
+        const matchesSearch = !searchVal ||
+          item.ref.toLowerCase().includes(searchVal) ||
+          item.vendor.toLowerCase().includes(searchVal) ||
+          item.requester.toLowerCase().includes(searchVal) ||
+          item.grant.toLowerCase().includes(searchVal);
+        const matchesFund = !fundVal || item.fund === fundVal;
+        const effectiveStep = stepVal || activeStepFilter;
+        const matchesStep = !effectiveStep || item.step === effectiveStep;
+
+        return matchesTab && matchesSearch && matchesFund && matchesStep;
+      });
+
+      renderTable(filtered);
+    }
+
+    function filterTab(tabType, btn) {
+      currentTab = tabType;
+      document.querySelectorAll('.tab-pill').forEach(el => {
+        el.classList.remove('bg-surface-card', 'text-fund-unrestricted', 'shadow-xs', 'font-semibold');
+        el.classList.add('text-text-secondary');
+      });
+      btn.classList.add('bg-surface-card', 'text-fund-unrestricted', 'shadow-xs', 'font-semibold');
+      btn.classList.remove('text-text-secondary');
+      handleFilterChange();
+    }
+
+    function selectStep(stepName, btn) {
+      document.querySelectorAll('.step-card').forEach(b => {
+        b.classList.remove('bg-primary-tint', 'border-fund-unrestricted');
+        b.classList.add('bg-surface-secondary', 'border-transparent');
+      });
+
+      if (activeStepFilter === stepName) {
+        activeStepFilter = '';
+        document.getElementById('activeStepIndicator').textContent = 'Showing: All 9 Workflow Stages';
+      } else {
+        activeStepFilter = stepName;
+        btn.classList.remove('bg-surface-secondary', 'border-transparent');
+        btn.classList.add('bg-primary-tint', 'border-fund-unrestricted');
+        document.getElementById('activeStepIndicator').textContent = `Filtered to Stage: ${stepName}`;
+      }
+
+      const stepDropdown = document.getElementById('registerStepDropdown');
+      if (stepDropdown) stepDropdown.value = activeStepFilter;
+
+      handleFilterChange();
+    }
+
+    function filterByKpi(kpiType) {
+      if (kpiType === 'Requisition') {
+        const pill = document.querySelectorAll('.tab-pill')[1];
+        if (pill) filterTab('Requisition', pill);
+      } else if (kpiType === 'Purchase Order') {
+        const pill = document.querySelectorAll('.tab-pill')[2];
+        if (pill) filterTab('Purchase Order', pill);
+      } else if (kpiType === 'Goods Receipt') {
+        const pill = document.querySelectorAll('.tab-pill')[3];
+        if (pill) filterTab('Goods Receipt', pill);
+      } else if (kpiType === 'Invoice Match') {
+        const stepDropdown = document.getElementById('registerStepDropdown');
+        if (stepDropdown) stepDropdown.value = 'Invoice Match';
+        handleFilterChange();
+      } else if (kpiType === 'Pending Approval') {
+        const searchInput = document.getElementById('registerSearchInput');
+        if (searchInput) {
+          searchInput.value = 'Approval';
+          handleFilterChange();
+        }
+      } else if (kpiType === 'Payment') {
+        const stepDropdown = document.getElementById('registerStepDropdown');
+        if (stepDropdown) stepDropdown.value = 'Payment';
+        handleFilterChange();
+      }
+      showToast('Filter Applied', `Displaying records for ${kpiType}`);
+    }
+
+    function resetAllFilters() {
+      currentTab = 'ALL';
+      activeStepFilter = '';
+      const sInput = document.getElementById('registerSearchInput');
+      const topSearch = document.getElementById('topSearchInput');
+      const fFilter = document.getElementById('registerFundFilter');
+      const sDropdown = document.getElementById('registerStepDropdown');
+      if (sInput) sInput.value = '';
+      if (topSearch) topSearch.value = '';
+      if (fFilter) fFilter.value = '';
+      if (sDropdown) sDropdown.value = '';
+
+      document.querySelectorAll('.tab-pill').forEach((el, idx) => {
+        if (idx === 0) {
+          el.classList.add('bg-surface-card', 'text-fund-unrestricted', 'shadow-xs', 'font-semibold');
+          el.classList.remove('text-text-secondary');
+        } else {
+          el.classList.remove('bg-surface-card', 'text-fund-unrestricted', 'shadow-xs', 'font-semibold');
+          el.classList.add('text-text-secondary');
+        }
+      });
+
+      document.querySelectorAll('.step-card').forEach(b => {
+        b.classList.remove('bg-primary-tint', 'border-fund-unrestricted');
+        b.classList.add('bg-surface-secondary', 'border-transparent');
+      });
+
+      document.getElementById('activeStepIndicator').textContent = 'Showing: All 9 Workflow Stages';
+      renderTable(procurementRecords);
+      showToast('Filters Reset', 'Displaying all 32 procurement transactions.');
+    }
+
+    function openDrawer(reference) {
+      const item = procurementRecords.find(r => r.ref === reference) || procurementRecords[0];
+
+      document.getElementById('drawerRef').textContent = item.ref;
+      document.getElementById('drawerTypeBadge').textContent = item.type;
+      document.getElementById('drawerStatusBadge').textContent = item.status;
+      document.getElementById('drawerVendor').textContent = item.vendor + ' • Requested by ' + item.requester;
+      document.getElementById('drawerAmount').textContent = item.amountGhs;
+      document.getElementById('drawerSubtotalAmount').textContent = item.amountGhs;
+      document.getElementById('drawerGrant').textContent = item.grant;
+      document.getElementById('drawerFundBadge').textContent = item.fund;
+      document.getElementById('drawerActivity').textContent = item.workplan;
+
+      const overlay = document.getElementById('inspectorDrawerOverlay');
+      const drawer = document.getElementById('inspectorDrawer');
+      overlay.classList.remove('hidden');
+      drawer.classList.remove('translate-x-full');
+    }
+
+    function closeDrawer() {
+      const overlay = document.getElementById('inspectorDrawerOverlay');
+      const drawer = document.getElementById('inspectorDrawer');
+      drawer.classList.add('translate-x-full');
+      setTimeout(() => overlay.classList.add('hidden'), 250);
+    }
+
+    function openReqModal() {
+      document.getElementById('newReqModalOverlay').classList.remove('hidden');
+    }
+
+    function closeReqModal() {
+      document.getElementById('newReqModalOverlay').classList.add('hidden');
+    }
+
+    function calculateModalTotal() {
+      const qty = parseFloat(document.getElementById('modalItemQty')?.value || 0);
+      const price = parseFloat(document.getElementById('modalItemPrice')?.value || 0);
+      const total = qty * price;
+      document.getElementById('modalTotalDisplay').textContent = 'GH₵ ' + total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function submitRequisition(event) {
+      event.preventDefault();
+      const vendor = document.getElementById('modalVendorInput')?.value || 'Volta Medical Logistics Ltd';
+      const grant = document.getElementById('modalGrantSelect')?.value || 'Global Fund Malaria';
+      const fund = document.getElementById('modalFundClass')?.value || 'Restricted';
+      const qty = parseFloat(document.getElementById('modalItemQty')?.value || 1);
+      const price = parseFloat(document.getElementById('modalItemPrice')?.value || 50000);
+      const totalNum = qty * price;
+      const refNum = 'PR-2025-0' + (146 + Math.floor(Math.random() * 50));
+
+      const newRecord = {
+        ref: refNum,
+        type: 'Requisition',
+        vendor: vendor,
+        requester: 'Ama Mensah',
+        grant: grant,
+        workplan: 'Procurement Initiative 2025',
+        fund: fund,
+        fundBadgeClass: fund === 'Restricted' ? 'bg-fund-restricted-bg text-fund-restricted' : fund === 'Temporarily Restricted' ? 'bg-fund-temp-restricted-bg text-fund-temp-restricted' : 'bg-primary-tint text-fund-unrestricted',
+        amountGhs: 'GH₵ ' + totalNum.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+        numericVal: totalNum,
+        step: 'Approval',
+        stepLabel: '02. Approval',
+        status: 'Pending Approval',
+        statusClass: 'bg-status-warning-bg text-status-warning',
+        statusDot: 'bg-status-warning',
+        date: 'Today'
+      };
+
+      procurementRecords.unshift(newRecord);
+      closeReqModal();
+      renderTable(procurementRecords);
+      showToast('Requisition Submitted', `${refNum} created and submitted for department & grant approval.`);
+    }
+
+    function saveDraft() {
+      closeReqModal();
+      showToast('Draft Saved', 'Draft requisition stored in local session register.');
+    }
+
+    function triggerApprovalToast() {
+      showToast('Stage Approved', 'Approval authenticated via Ama Mensah (Procurement Lead).');
+    }
+
+    function generatePoAction() {
+      closeDrawer();
+      showToast('Workflow Advanced', 'Purchase Order generated and sent to verified supplier.');
+    }
+
+    function showToast(title, message) {
+      const toast = document.getElementById('toastNotification');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastMsg = document.getElementById('toastMessage');
+      if (!toast) return;
+
+      toastTitle.textContent = title;
+      toastMsg.textContent = message;
+
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3500);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTable(procurementRecords);
+
+      const finBtn = document.getElementById('financeAccordionBtn');
+      const finSubmenu = document.getElementById('financeSubmenu');
+      const finChevron = document.getElementById('financeAccordionChevron');
+      if (finBtn && finSubmenu) {
+        finBtn.addEventListener('click', () => {
+          finSubmenu.classList.toggle('open');
+          finChevron.classList.toggle('rotate-180');
+        });
+      }
+
+
+      const btnHeader = document.getElementById('btnHeaderNewReq');
+      const btnPage = document.getElementById('btnNewReqPage');
+      if (btnHeader) btnHeader.addEventListener('click', openReqModal);
+      if (btnPage) btnPage.addEventListener('click', openReqModal);
+
+      const btnExport = document.getElementById('btnExportTop');
+      if (btnExport) {
+        btnExport.addEventListener('click', () => {
+          showToast('Export Initiated', 'Exporting IPSAS Procurement Register to Excel (.xlsx)...');
+        });
+      }
+
+      const topSearch = document.getElementById('topSearchInput');
+      if (topSearch) {
+        topSearch.addEventListener('keyup', (e) => {
+          const regSearch = document.getElementById('registerSearchInput');
+          if (regSearch) regSearch.value = e.target.value;
+          handleFilterChange();
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
