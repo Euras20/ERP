@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'status-success-tint': '#EAF5EC', 'border-focus': '#1B6B72', 'restricted-gold': '#B8860B', 'tertiary': '#614500', 'on-tertiary-container': '#ffd892', 'surface-tint': '#16686f', 'primary-hover': '#144F54', 'surface-card': '#FFFFFF', 'on-secondary-container': '#53667d', 'status-warning-tint': '#FEF3C7', 'surface-bright': '#f7f9ff', 'status-warning': '#D97706', 'on-error': '#ffffff', 'primary-container': '#1b6b72', 'background': '#f7f9ff', 'status-critical-tint': '#FEE2E2', 'on-secondary': '#ffffff', 'on-tertiary-fixed': '#271900', 'on-primary-fixed-variant': '#004f55', 'outline-variant': '#bec8c9', 'on-background': '#121c27', 'surface-container': '#e4effe', 'surface-variant': '#d9e3f2', 'secondary-container': '#d0e4ff', 'on-secondary-fixed-variant': '#35485e', 'on-primary-container': '#a1e9f1', 'status-critical': '#DC2626', 'text-muted': '#8A9BA8', 'surface-container-low': '#eef4ff', 'primary-tint': '#E4EFEF', 'status-info': '#2563EB', 'restricted-gold-tint': '#FAF4E8', 'inverse-primary': '#8bd2da', 'surface-subtle': '#F1F5F7', 'status-success': '#1E7E34', 'on-secondary-fixed': '#071d30', 'error': '#ba1a1a', 'on-tertiary-fixed-variant': '#5d4200', 'on-tertiary': '#ffffff', 'surface-container-highest': '#d9e3f2', 'secondary-fixed-dim': '#b5c8e2', 'text-primary': '#1A202C', 'tertiary-fixed-dim': '#f7bd48', 'surface-container-high': '#dfe9f8', 'surface-canvas': '#F8FAFB', 'surface-container-lowest': '#ffffff', 'on-error-container': '#93000a', 'on-primary-fixed': '#002022', 'text-secondary': '#5A6A7E', 'error-container': '#ffdad6', 'tertiary-container': '#7f5b00', 'inverse-surface': '#27313c', 'surface': '#f7f9ff', 'surface-dim': '#d1dbea', 'primary-fixed-dim': '#8bd2da', 'primary': '#005258', 'outline': '#6f797a', 'secondary-fixed': '#d0e4ff', 'on-primary': '#ffffff', 'status-info-tint': '#EFF6FF', 'tertiary-fixed': '#ffdea6', 'inverse-on-surface': '#e9f1ff', 'border-subtle': '#E2E8F0', 'on-surface-variant': '#3f484a', 'secondary': '#4d6076', 'primary-fixed': '#a7eef6', 'on-surface': '#121c27' }, 'borderRadius': { 'DEFAULT': '0.125rem', 'lg': '0.25rem', 'xl': '0.5rem', 'full': '0.75rem' }, 'spacing': { 'gutter': '1.5rem', 'space-xl': '2rem', 'space-sm': '0.5rem', 'gutter-mobile': '0.75rem', 'space-2xl': '3rem', 'space-lg': '1.5rem', 'space-xs': '0.25rem', 'margin': '2rem', 'space-md': '1rem', 'margin-mobile': '1rem' }, 'fontFamily': { 'headline-sm': ['Manrope'], 'kpi-metric-sm': ['Manrope'], 'table-header': ['Inter'], 'headline-lg-mobile': ['Manrope'], 'caption': ['Inter'], 'headline-lg': ['Manrope'], 'label-compact': ['Inter'], 'headline-md': ['Manrope'], 'body-sm': ['Inter'], 'title-sm': ['Inter'], 'financial-tabular': ['Inter'], 'title-md': ['Inter'], 'body-lg': ['Inter'], 'display-hero': ['Manrope'], 'body-md': ['Inter'], 'kpi-metric': ['Manrope'] }, 'fontSize': { 'headline-sm': ['20px', { 'lineHeight': '28px', 'fontWeight': '600' }], 'kpi-metric-sm': ['20px', { 'lineHeight': '28px', 'letterSpacing': '-0.01em', 'fontWeight': '700' }], 'table-header': ['12px', { 'lineHeight': '16px', 'letterSpacing': '0.03em', 'fontWeight': '600' }], 'headline-lg-mobile': ['26px', { 'lineHeight': '34px', 'letterSpacing': '-0.01em', 'fontWeight': '700' }], 'caption': ['12px', { 'lineHeight': '16px', 'fontWeight': '400' }], 'headline-lg': ['32px', { 'lineHeight': '40px', 'letterSpacing': '-0.015em', 'fontWeight': '700' }], 'label-compact': ['11px', { 'lineHeight': '14px', 'letterSpacing': '0.02em', 'fontWeight': '600' }], 'headline-md': ['24px', { 'lineHeight': '32px', 'letterSpacing': '-0.01em', 'fontWeight': '600' }], 'body-sm': ['13px', { 'lineHeight': '18px', 'fontWeight': '400' }], 'title-sm': ['14px', { 'lineHeight': '20px', 'fontWeight': '600' }], 'financial-tabular': ['14px', { 'lineHeight': '20px', 'fontWeight': '500' }], 'title-md': ['16px', { 'lineHeight': '24px', 'fontWeight': '600' }], 'body-lg': ['16px', { 'lineHeight': '24px', 'fontWeight': '400' }], 'display-hero': ['40px', { 'lineHeight': '48px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }], 'body-md': ['14px', { 'lineHeight': '20px', 'fontWeight': '400' }], 'kpi-metric': ['28px', { 'lineHeight': '36px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }] } } } };</script>
+</head>
+
+<body
+  class="min-h-screen bg-surface-canvas text-on-surface font-body-md text-body-md antialiased flex flex-col justify-between selection:bg-primary-tint selection:text-primary">
+  <header class="w-full pt-space-2xl pb-space-lg flex justify-center items-center">
+    <a
+      class="inline-flex items-center gap-space-sm focus:outline-none focus:ring-2 focus:ring-border-focus rounded-lg"
+      data-path="login" href="../../index.html">
+      <img alt="NGO ERP Logo" class="h-12 w-auto object-contain" src="../../assets/images/logo/Logo_Mode_Professionnel_Elégant_Simple-removebg-preview(1)(1).png"/>
+    </a>
+  </header>
+  <main class="w-full flex-1 flex flex-col items-center justify-center px-margin-mobile md:px-margin py-space-md">
+    <div class="w-full max-w-[500px] mx-auto">
+      <div class="flex flex-col w-full">
+        <div class="w-full bg-surface-card rounded-lg shadow-sm p-space-xl flex flex-col items-center">
+          <!-- Logo -->
+          <!-- Title & Subtitle -->
+          <div class="w-full text-center mb-space-xl">
+            <h1 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+              Sign in
+            </h1>
+            <p class="font-body-sm text-body-sm text-text-secondary mt-space-xs">
+              Enter your credentials to access your account.
+            </p>
+          </div>
+          <!-- Authentication Form -->
+          <form class="w-full flex flex-col gap-space-md" id="loginForm" onsubmit="handleLogin(event)">
+            <!-- Work Email Field -->
+            <div class="flex flex-col gap-space-xs text-left">
+              <label class="font-title-sm text-title-sm text-on-surface font-semibold" for="work-email">
+                Work email
+              </label>
+              <div class="relative flex items-center">
+                <span
+                  class="material-symbols-outlined absolute left-3 text-text-muted select-none pointer-events-none text-[18px]">
+                  mail
+                </span>
+                <input
+                  class="w-full h-10 pl-9 pr-3 text-on-surface bg-surface-card rounded-lg font-body-md text-body-md transition-shadow duration-150 ease-in-out shadow-sm placeholder:text-text-muted focus:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container"
+                  id="work-email" name="email" placeholder="name@organization.org" required="" type="email" />
+              </div>
+            </div>
+            <!-- Password Field -->
+            <div class="flex flex-col gap-space-xs text-left">
+              <label class="font-title-sm text-title-sm text-on-surface font-semibold" for="account-password">
+                Password
+              </label>
+              <div class="relative flex items-center">
+                <input
+                  class="w-full h-10 pl-3 pr-10 text-on-surface bg-surface-card rounded-lg font-body-md text-body-md transition-shadow duration-150 ease-in-out shadow-sm placeholder:text-text-muted focus:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container"
+                  id="account-password" name="password" placeholder="Enter your password" required="" type="password" />
+                <button aria-label="Toggle password visibility"
+                  class="absolute right-2.5 p-1 text-text-muted hover:text-on-surface flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-primary-container rounded"
+                  id="togglePassword" onclick="togglePasswordVisibility()" type="button">
+                  <span class="material-symbols-outlined text-[20px]" id="eyeIcon">
+                    visibility
+                  </span>
+                </button>
+              </div>
+            </div>
+            <!-- Remember & Forgot Password Row -->
+            <div class="flex items-center justify-between mt-space-xs">
+              <label class="inline-flex items-center gap-2 cursor-pointer select-none">
+                <input
+                  class="w-4 h-4 rounded text-primary-container focus:ring-primary-container focus:ring-offset-0 bg-surface-card shadow-sm cursor-pointer accent-primary-container"
+                  id="remember-device" name="remember" type="checkbox" />
+                <span class="font-body-sm text-body-sm text-text-secondary">
+                  Remember this device
+                </span>
+              </label>
+              <a class="font-title-sm text-title-sm text-primary-container hover:text-primary-hover font-semibold transition-colors focus:outline-none focus:underline"
+                data-path="forgot-password" href="forgot_password.html">
+                Forgot password?
+              </a>
+            </div>
+            <!-- Submit CTA Button -->
+            <div class="mt-space-sm">
+              <button
+                class="w-full h-10 bg-primary-container hover:bg-primary-hover active:bg-primary text-on-primary font-title-sm text-title-sm font-semibold rounded-lg shadow-sm flex items-center justify-center transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container"
+                id="submitButton" type="submit">
+                <span id="btnText">Sign in</span>
+                <svg class="hidden animate-spin ml-2 h-4 w-4 text-on-primary" fill="none" id="btnSpinner"
+                  viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+          <!-- Divider & Institutional Sign-up Prompt -->
+          <div class="w-full pt-space-lg mt-space-md text-center bg-surface-subtle/50 rounded-lg py-space-sm">
+            <p class="font-body-sm text-body-sm text-text-secondary">
+              Don't have an account?
+              <a class="text-primary-container hover:text-primary-hover font-semibold transition-colors ml-1 focus:outline-none focus:underline"
+                data-path="signup" href="../../signup.html">
+                Sign up
+              </a>
+            </p>
+          </div>
+        </div>
+        <!-- Minimal Institutional Micro-Footer -->
+      </div>
+      <script>
+        function togglePasswordVisibility() {
+          const passwordInput = document.getElementById('account-password');
+          const eyeIcon = document.getElementById('eyeIcon');
+          if (!passwordInput || !eyeIcon) return;
+
+          if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            eyeIcon.textContent = 'visibility_off';
+          } else {
+            passwordInput.type = 'password';
+            eyeIcon.textContent = 'visibility';
+          }
+        }
+        
+
+        function handleLogin(event) {
+          event.preventDefault();
+          const btnText = document.getElementById('btnText');
+          const btnSpinner = document.getElementById('btnSpinner');
+          const submitButton = document.getElementById('submitButton');
+
+          if (btnText && btnSpinner && submitButton) {
+  // 1. Enter loading state
+  btnText.textContent = 'Signing in...';
+  btnSpinner.classList.remove('hidden');
+  submitButton.disabled = true;
+  submitButton.classList.add('opacity-90', 'cursor-not-allowed');
+
+  // 2. Simulate delay then navigate
+  setTimeout(() => {
+    window.location.href = '../../org/omnis_overview_dashboard.html';
+  }, 1500);
+}
+        }
+      </script>
+    </div>
+  </main>
+  <footer class="w-full py-space-xl px-margin-mobile md:px-margin">
+   <div class="w-full text-center mt-space-lg">
+          <p class="font-caption text-caption text-text-muted">
+            © 2025 <strong style="color: #144f54;">OM</strong><strong style="color: #128893;">NIS</strong>. All rights reserved. •
+            <a class="hover:text-text-secondary transition-colors" data-path="privacy-policy" href="#">Privacy</a> •
+            <a class="hover:text-text-secondary transition-colors" data-path="terms-of-service" href="#">Terms</a> •
+            <a class="hover:text-text-secondary transition-colors" data-path="security-overview" href="#">Security</a>
+          </p>
+        </div>
+  </footer>
+</body>
+
+</html>
