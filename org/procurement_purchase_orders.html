@@ -150,50 +150,6 @@
       transition: max-height 0.35s ease-in;
     }
 
-    /* Top Layout mode override */
-    body.layout-top #appNav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100% !important;
-      height: 3.5rem !important;
-      flex-direction: row !important;
-      z-index: 50;
-      border-right: none !important;
-      border-bottom: 1px solid #1E3243;
-      padding: 0 1rem;
-    }
-
-    body.layout-top #appNav .nav-scroll-area {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 0.5rem;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 0;
-    }
-
-    body.layout-top #appNav .nav-section-title {
-      display: none;
-    }
-
-    body.layout-top #appNav .nav-office-scope,
-    body.layout-top #appNav .nav-user-footer {
-      display: none;
-    }
-
-    body.layout-top #appHeader {
-      left: 0 !important;
-      top: 3.5rem !important;
-      border-top: 1px solid #DCE3E8;
-    }
-
-    body.layout-top #appMain {
-      margin-left: 0 !important;
-      padding-top: 7.5rem !important;
-    }
   </style>
 </head>
 
@@ -208,7 +164,7 @@
         <div class="w-[26px]"></div>
       
         <!-- Centered Logo -->
-      <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
           src="../../assets/images/logo/DARK-LOGO.png" />
       
         <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
@@ -1498,7 +1454,7 @@
       padding-top: 128px;
     }
 
-    body.layout-top #appMain main .max-w-7xl {
+    body.layout-top #appMain main .max-w-\[80rem\] {
       max-width: 100%;
     }
   </style>
