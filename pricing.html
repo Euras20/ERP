@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Work+Sans:wght@400;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "status-danger-border": "#FECACA", "tertiary-fixed-dim": "#f7bd48", "on-tertiary-fixed": "#271900", "text-inverted": "#FFFFFF", "surface-card": "#FFFFFF", "secondary-fixed": "#b5ecf2", "surface-container-low": "#f0f3ff", "status-info-bg": "#F0F9FF", "surface-container": "#e7eeff", "surface-tint": "#16686f", "surface-bright": "#f9f9ff", "outline": "#6f797a", "surface-container-lowest": "#ffffff", "status-danger-bg": "#FEF2F2", "status-success-border": "#BBF7D0", "error": "#ba1a1a", "status-info-fg": "#0369A1", "on-primary-fixed": "#002022", "tertiary": "#614500", "background": "#f9f9ff", "text-secondary": "#475569", "tertiary-fixed": "#ffdea6", "on-background": "#111c2d", "status-danger-fg": "#B91C1C", "status-warning-border": "#FDE68A", "text-muted": "#94A3B8", "primary-fixed": "#a7eef6", "surface-container-highest": "#d8e3fb", "surface-navy": "#0B192C", "secondary-container": "#b5ecf2", "inverse-primary": "#8bd2da", "on-secondary": "#ffffff", "on-surface": "#111c2d", "border-subtle": "#E2E8F0", "status-info-border": "#BAE6FD", "on-tertiary-container": "#ffd892", "surface-dim": "#cfdaf2", "error-container": "#ffdad6", "inverse-on-surface": "#ecf1ff", "text-primary": "#0F172A", "on-secondary-container": "#376c71", "on-tertiary": "#ffffff", "surface-variant": "#d8e3fb", "tertiary-container": "#7f5b00", "border-strong": "#CBD5E1", "on-secondary-fixed-variant": "#134e53", "surface-container-high": "#dee8ff", "outline-variant": "#bec8c9", "primary-fixed-dim": "#8bd2da", "inverse-surface": "#263143", "on-primary-container": "#a1e9f1", "surface": "#f9f9ff", "canvas-bg": "#F8FAFB", "primary": "#005258", "on-error": "#ffffff", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#5d4200", "on-surface-variant": "#3f484a", "status-success-fg": "#15803D", "status-warning-fg": "#B45309", "status-warning-bg": "#FFFBEB", "on-primary-fixed-variant": "#004f55", "secondary-fixed-dim": "#9ad0d5", "status-success-bg": "#F0FDF4", "on-error-container": "#93000a", "primary-container": "#1b6b72", "surface-neutral-alt": "#F1F5F7", "on-secondary-fixed": "#002022", "secondary": "#30666b", "primary-tint": "#E4EFEF" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-2xl": "4rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-3xl": "6rem", "margin": "2rem", "gutter": "1.5rem", "space-xl": "2.5rem" }, fontFamily: { "headline-lg": ["Hanken Grotesk"], "label-eyebrow": ["Hanken Grotesk"], "headline-xl-mobile": ["Hanken Grotesk"], "body-sm": ["Work Sans"], "display-hero-mobile": ["Hanken Grotesk"], "label-badge": ["Hanken Grotesk"], "headline-xl": ["Hanken Grotesk"], "body-md": ["Work Sans"], "display-hero": ["Hanken Grotesk"], "body-lead": ["Work Sans"], "table-cell-amount": ["Work Sans"], "financial-display-lg": ["Hanken Grotesk"], "financial-metric-md": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "headline-sm": ["Hanken Grotesk"], "label-header": ["Hanken Grotesk"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-eyebrow": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }], "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }], "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lead": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "table-cell-amount": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "600" }], "financial-display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "financial-metric-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0", "fontWeight": "600" }], "label-header": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } }</script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+  <header
+    class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-gutter">
+      <div class="flex items-center gap-space-md shrink-0"><img alt="NGO ERP Logo" class="h-16
+         w-auto object-contain"
+          src="assets/images/logo/Logo_Mode_Professionnel_Elégant_Simple-removebg-preview(1)(1).png" /><span
+          class="font-headline-md text-headline-md tracking-tight text-text-primary uppercase"></span></div>
+      <nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-on-surface font-bold">
+        <div class="relative group py-space-sm"><button
+            class="flex items-center gap-space-xs font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+            type="button"><span>Features</span><span
+              class="material-symbols-outlined text-[16px]">expand_more</span></button>
+          <div class="absolute top-full left-0 hidden group-hover:block w-64 pt-space-xs">
+            <div
+              class="bg-surface-card rounded-lg p-space-sm shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08),0_4px_6px_-1px_rgba(15,23,42,0.04)] border border-border-subtle flex flex-col gap-space-xs">
+              <a class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="finance" href="#">Fund Accounting &amp; GL</a><a
+                class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="grants" href="#">Grant &amp; Donor Management</a><a
+                class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="ghana-payroll" href="#">Statutory Ghana Payroll</a><a
+                class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="procurement" href="#">Procurement &amp; Inventory</a><a
+                class="px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                data-path="field-operations" href="#">Field Operations &amp; M&amp;E</a></div>
+          </div>
+        </div><a
+          class="font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="why-ngo-erp" href="#">Why OMNIS</a><a
+          class="font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="solutions" href="#">Solutions</a><a
+          class="font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="pricing" href="#">Pricing</a><a
+          class="font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="documentation" href="#">Documentation</a>
+      </nav>
+      <div class="flex items-center gap-space-md shrink-0"><a
+          class="hidden sm:inline-block font-label-header text-label-header text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="login" href="auth/user/signin.html">Sign in</a><a
+          class="inline-flex items-center justify-center min-h-[44px] px-space-md py-space-xs rounded-lg bg-primary-container text-text-inverted font-label-header text-label-header hover:bg-primary transition-colors"
+          data-path="start-free" href="signup.html">Start for free</a>
+    </div>
+  </header>
+  <main class="w-full pt-16 flex-1 bg-surface">
+    <!-- Toast Notification for Dynamic Additions / Notices -->
+    <div
+      class="fixed top-20 right-6 z-50 transform -translate-y-28 opacity-0 transition-all duration-300 pointer-events-none max-w-md w-full bg-nav-bg text-nav-text-primary p-space-md rounded-xl shadow-2xl flex items-start gap-space-sm"
+      id="feedbackToast">
+      <span class="material-symbols-outlined text-fund-temp-restricted text-[22px] mt-0.5"
+        id="toastIcon">check_circle</span>
+      <div class="flex-1">
+        <p class="font-title-sm text-title-sm text-nav-text-primary" id="toastTitle">Configuration Updated</p>
+        <p class="font-caption text-caption text-nav-text-muted mt-space-xxs" id="toastMessage">Your module selection
+          was applied to the live stack.</p>
+      </div>
+      <button class="text-nav-text-muted hover:text-nav-text-primary p-space-xxs" onclick="dismissToast()"
+        type="button">
+        <span class="material-symbols-outlined text-[16px]">close</span>
+      </button>
+    </div>
+    <!-- MAIN CONTAINER -->
+    <section class="max-w-[80rem] mx-auto w-full px-margin py-space-xl">
+      <!-- ================================================================= -->
+      <!-- VIEW 1: PLANS & PRICING                                          -->
+      <!-- ================================================================= -->
+      <div class="space-y-space-xl transition-opacity duration-200" id="pricingView">
+        <!-- HEADER -->
+        <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-xl">
+          <h1 class="font-display-lg text-display-lg text-text-primary tracking-tight">Plans for every organization</h1>
+          <p class="font-body-lg text-body-lg text-text-secondary mt-space-xs">Compliant, donor-ready fund accounting
+            designed to scale from growing teams to global institutions.</p>
+          <!-- Billing Term Toggle -->
+          <div class="mt-space-lg flex items-center bg-surface-secondary p-space-xxs rounded-lg shadow-sm">
+            <button
+              class="px-space-md py-space-xs rounded font-label-md text-label-md transition-all bg-primary-container text-on-primary font-semibold"
+              id="btnMonthly" onclick="setBillingCycle('monthly')">Monthly</button>
+            <button
+              class="px-space-md py-space-xs rounded font-label-md text-label-md transition-all text-text-secondary hover:text-text-primary flex items-center gap-space-xs font-semibold"
+              id="btnAnnual" onclick="setBillingCycle('annual')">
+              <span>Annual</span>
+              <span
+                class="px-space-xs py-0.5 rounded-full bg-status-success-bg text-status-success font-label-sm text-[10px]">SAVE
+                20%</span>
+            </button>
+          </div>
+        </div>
+        <!-- 4 CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter items-stretch max-w-[76rem] mx-auto">
+          <!-- CARD 1: STARTER ($35/mo) -->
+          <div
+            class="bg-surface-card rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-all border border-border-subtle/70">
+            <div>
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-label-sm uppercase text-text-muted font-semibold tracking-wider">Starter</span>
+                <span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+              </div>
+              <h2 class="font-headline-md text-headline-md text-text-primary">Starter Core</h2>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-space-xxs min-h-[36px]">Essential fund ledger
+                and cash compliance for small teams.</p>
+              <div class="my-space-md py-space-sm">
+                <div class="flex items-baseline gap-space-xxs">
+                  <span class="font-display-lg text-display-lg text-text-primary" id="price-starter">$35</span>
+                  <span class="font-body-sm text-body-sm text-text-secondary">/month</span>
+                </div>
+                <p class="font-caption text-caption text-text-muted mt-space-xxs" id="billing-note-starter">Billed
+                  monthly</p>
+              </div>
+              <ul class="space-y-space-sm my-space-md">
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[18px]">check</span>
+                  <span>General Ledger &amp; IPSAS compliance</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[18px]">check</span>
+                  <span>Multi-currency conversion &amp; reports</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[18px]">check</span>
+                  <span>3 Grant fund project buckets</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[18px]">check</span>
+                  <span>Up to 5 team user licenses</span>
+                </li>
+              </ul>
+            </div>
+            <button
+              class="w-full mt-space-md py-space-xs px-space-md rounded bg-surface-secondary hover:bg-surface-tertiary text-text-primary font-title-sm text-title-sm transition-colors text-center border border-border-subtle"
+              onclick="choosePlan('starter')">
+              Choose Starter
+            </button>
+          </div>
+          <!-- CARD 2: STANDARD ($65/mo) - HIGHLIGHTED -->
+          <div
+            class="bg-surface-card rounded-xl p-space-lg flex flex-col justify-between shadow-md relative transform lg:-translate-y-2 hover:shadow-xl transition-all border-2 border-primary">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-space-sm py-0.5 rounded-full font-label-sm text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-space-xxs">
+              <span class="material-symbols-outlined text-[14px]">star</span> Most Popular
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-label-sm uppercase text-text-muted font-semibold  tracking-wider">Growth</span>
+                <span class="material-symbols-outlined text-primary text-[20px]">corporate_fare</span>
+              </div>
+              <h2 class="font-headline-md text-headline-md text-text-primary">Growth Field</h2>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-space-xxs min-h-[36px]">Complete ledger for
+                growing NGOs requiring grant milestone tracking.</p>
+              <div class="my-space-md py-space-sm bg-primary-tint/40 -mx-space-lg px-space-lg rounded">
+                <div class="flex items-baseline gap-space-xxs">
+                  <span class="font-display-lg text-display-lg text-primary" id="price-standard">$65</span>
+                  <span class="font-body-sm text-body-sm text-primary">/month</span>
+                </div>
+                <p class="font-caption text-caption text-text-secondary mt-space-xxs" id="billing-note-standard">Billed
+                  monthly</p>
+              </div>
+              <ul class="space-y-space-sm my-space-md">
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Everything in Starter included</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Automated bank &amp; card reconciliations</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Procurement &amp; 3-way voucher matching</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Automated payroll &amp; statutory taxes</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Tamper-evident audit trails</span>
+                </li>
+              </ul>
+            </div>
+            <button
+              class="w-full mt-space-md py-space-xs px-space-md rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm transition-colors text-center shadow-sm"
+              onclick="choosePlan('standard')">
+              Choose Growth
+            </button>
+          </div>
+          <!-- CARD 3: ENTERPRISE ($99/mo) -->
+          <div
+            class="bg-surface-card rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-all border border-border-subtle/70">
+            <div>
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-label-sm uppercase text-text-muted font-semibold tracking-wider">Enterprise</span>
+                <span class="material-symbols-outlined text-primary text-[20px]">domain_verification</span>
+              </div>
+              <h2 class="font-headline-md text-headline-md text-text-primary">Enterprise Core</h2>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-space-xxs min-h-[36px]">Multi-donor covenants,
+                international field stations, and external audit vaults.</p>
+              <div class="my-space-md py-space-sm">
+                <div class="flex items-baseline gap-space-xxs">
+                  <span class="font-display-lg text-display-lg text-text-primary" id="price-enterprise">$99</span>
+                  <span class="font-body-sm text-body-sm text-text-secondary">/month</span>
+                </div>
+                <p class="font-caption text-caption text-text-muted mt-space-xxs" id="billing-note-enterprise">Billed
+                  monthly</p>
+              </div>
+              <ul class="space-y-space-sm my-space-md">
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[18px]">check</span>
+                  <span>Unlimited multilateral consolidations</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[18px]">check</span>
+                  <span>USAID, EU &amp; UN compliance packs</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[18px]">check</span>
+                  <span>External auditor portal &amp; immutable vault</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[18px]">check</span>
+                  <span>Dedicated Technical Manager &amp; 99.99% SLA</span>
+                </li>
+              </ul>
+            </div>
+            <button
+              class="w-full mt-space-md py-space-xs px-space-md rounded bg-surface-secondary hover:bg-surface-tertiary text-text-primary font-title-sm text-title-sm transition-colors text-center border border-border-subtle"
+              onclick="choosePlan('enterprise')">
+              Choose Enterprise
+            </button>
+          </div>
+          <!-- CARD 4: CUSTOM / MODULAR -->
+          <div
+            class="bg-surface-secondary rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-all border border-border-subtle">
+            <div>
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-label-sm uppercase text-text-muted font-semibold tracking-wider">Tailored</span>
+                <span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+              </div>
+              <h2 class="font-headline-md text-headline-md text-text-primary">Custom Stack</h2>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-space-xxs min-h-[36px]">Configure only the
+                individual microservices your mandate requires.</p>
+              <div class="my-space-md py-space-sm">
+                <div class="flex items-baseline gap-space-xxs">
+                  <span class="font-display-lg text-display-lg text-text-primary">Custom</span>
+                </div>
+                <p class="font-caption text-caption text-text-muted mt-space-xxs">Pay per active operational module</p>
+              </div>
+              <ul class="space-y-space-sm my-space-md">
+                <li class="flex items-start gap-space-xs font-body-sm text-text-secondary">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Choose from 4 modular functional suites</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-secondary">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>Expandable service breakdown &amp; real-time sum</span>
+                </li>
+                <li class="flex items-start gap-space-xs font-body-sm text-text-secondary">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span>No locked-in contracts or idle seats</span>
+                </li>
+              </ul>
+            </div>
+            <button
+              class="w-full mt-space-md py-space-xs px-space-md rounded bg-nav-bg hover:bg-nav-surface text-nav-text-primary font-title-sm text-title-sm transition-colors text-center flex items-center justify-center gap-space-xs shadow-sm"
+              onclick="goToCustomConfigurator()">
+              <span>Configure Modules</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- ================================================================= -->
+      <!-- VIEW 2: EXPANDABLE CUSTOM MODULAR CONFIGURATOR                     -->
+      <!-- ================================================================= -->
+      <div class="hidden max-w-[76rem] mx-auto space-y-space-lg transition-opacity duration-200" id="customConfigView">
+        <!-- Top breadcrumb / navigation bar -->
+        <div
+          class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md border-b border-border-subtle gap-space-sm">
+          <div class="flex items-center gap-space-sm">
+            <button
+              class="text-text-secondary hover:text-text-primary font-title-sm flex items-center gap-space-xs transition-colors p-1"
+              onclick="goToPricing()">
+              <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+              <span>Back to Plans</span>
+            </button>
+            <span class="text-border-strong hidden sm:inline">|</span>
+            <div>
+              <h2 class="font-headline-sm text-headline-sm text-text-primary">Modular ERP Configurator</h2>
+              <p class="font-caption text-caption text-text-muted">Expand category accordions and handpick required
+                statutory subservices.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-xs bg-surface-secondary px-space-sm py-1 rounded-lg">
+            <span class="text-caption text-text-secondary">Current Billing:</span>
+            <span class="font-title-sm text-primary uppercase text-caption" id="configuratorCycleBadge">Monthly (Save
+              20% on Annual)</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+          <!-- LEFT 8 COLS: ACCORDIONS / CATEGORIES -->
+          <div class="lg:col-span-8 space-y-space-md">
+            <!-- MANDATORY BASE CORE NOTICE -->
+            <div
+              class="bg-surface-card rounded-xl p-space-md border border-border-subtle shadow-sm flex items-center justify-between">
+              <div class="flex items-center gap-space-sm">
+                <div class="w-8 h-8 rounded bg-primary-tint text-primary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">verified</span>
+                </div>
+                <div>
+                  <h4 class="font-title-sm text-text-primary">Foundational Accounting Core (Mandatory Base)</h4>
+                  <p class="font-caption text-caption text-text-secondary">General ledger, multi-currency journal, IPSAS
+                    statutory compliance baseline.</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="font-numeric-table font-title-sm text-primary">$20/mo</span>
+                <span class="block font-caption text-[10px] text-text-muted">Included</span>
+              </div>
+            </div>
+            <!-- ACCORDION 1: FINANCE & ACCOUNTING -->
+            <div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm overflow-hidden"
+              id="accordionGroup-finance">
+              <button
+                class="w-full p-space-md flex items-center justify-between hover:bg-surface-secondary/60 transition-colors text-left"
+                onclick="toggleAccordion('finance')" type="button">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-8 h-8 rounded bg-surface-secondary text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[20px]">account_balance</span>
+                  </div>
+                  <div>
+                    <h3 class="font-title-md text-text-primary">Finance &amp; Fund Accounting</h3>
+                    <p class="font-caption text-caption text-text-secondary">Direct banking reconciliation, grants,
+                      donor covenants, and payables</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <span class="text-caption text-primary font-semibold px-space-xs py-0.5 rounded bg-primary-tint"
+                    id="badge-finance">1 Active</span>
+                  <span class="material-symbols-outlined text-text-muted transition-transform duration-200"
+                    id="icon-finance">expand_less</span>
+                </div>
+              </button>
+              <div class="border-t border-border-subtle p-space-md space-y-space-sm bg-surface-bright/50"
+                id="content-finance">
+                <!-- Submodule 1: Banking & Cash -->
+                <label
+                  class="flex items-start justify-between p-space-sm rounded-lg bg-surface-card border border-border-subtle hover:border-primary/50 cursor-pointer transition-colors">
+                  <div class="flex items-start gap-space-sm">
+                    <input class="mt-1 w-4 h-4 text-primary rounded focus:ring-primary cursor-pointer" id="mod-banking"
+                      onchange="toggleModuleItem('banking', 'Banking &amp; Cash Management', 12, 'finance')"
+                      type="checkbox" />
+                    <div>
+                      <p class="font-title-sm text-text-primary">Banking &amp; Cash Management</p>
+                      <p class="font-caption text-caption text-text-secondary">Automated bank statement feeds, Mobile
+                        Money cash reconciliations, petty cash imprest.</p>
+                    </div>
+                  </div>
+                  <span
+                    class="font-numeric-table font-title-sm text-text-primary ml-space-sm whitespace-nowrap">+$12/mo</span>
+                </label>
+                <!-- Submodule 2: Accounts Payable & WHT -->
+                <label
+                  class="flex items-start justify-between p-space-sm rounded-lg bg-surface-card border border-border-subtle hover:border-primary/50 cursor-pointer transition-colors">
+                  <div class="flex items-start gap-space-sm">
+                    <input class="mt-1 w-4 h-4 text-primary rounded focus:ring-primary cursor-pointer" id="mod-payables"
+                      onchange="toggleModuleItem('payables', 'Accounts Payable &amp; WHT', 15, 'finance')"
+                      type="checkbox" />
+                    <div>
+                      <p class="font-title-sm text-text-primary">Accounts Payable &amp; Statutory WHT</p>
+                      <p class="font-caption text-caption text-text-secondary">Vendor invoice ledger, withholding tax
+                        deductions, and payment run authorization batches.</p>
+                    </div>
+                  </div>
+                  <span
+                    class="font-numeric-table font-title-sm text-text-primary ml-space-sm whitespace-nowrap">+$15/mo</span>
+                </label>
+                <!-- Submodule 3: Grants & Projects -->
+                <label
+                  class="flex items-start justify-between p-space-sm rounded-lg bg-surface-card border border-border-subtle hover:border-primary/50 cursor-pointer transition-colors">
+                  <div class="flex items-start gap-space-sm">
+                    <input class="mt-1 w-4 h-4 text-primary rounded focus:ring-primary cursor-pointer" id="mod-grants"
+                      onchange="toggleModuleItem('grants', 'Grants &amp; Donor Projects', 18, 'finance')"
+                      type="checkbox" />
+                    <div>
+                      <p class="font-title-sm text-text-primary">Grants &amp; Donor Projects Engine</p>
+                      <p class="font-caption text-caption text-text-secondary">Project-by-project ledger segregation,
+                        budget vs actual variance, donor milestone burn rates.</p>
+                    </div>
+                  </div>
+                  <span
+                    class="font-numeric-table font-title-sm text-text-primary ml-space-sm whitespace-nowrap">+$18/mo</span>
+                </label>
+              </div>
+            </div>
+            <!-- ACCORDION 2: OPERATIONS & LOGISTICS -->
+            <div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm overflow-hidden"
+              id="accordionGroup-ops">
+              <button
+                class="w-full p-space-md flex items-center justify-between hover:bg-surface-secondary/60 transition-colors text-left"
+                onclick="toggleAccordion('ops')" type="button">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-8 h-8 rounded bg-surface-secondary text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[20px]">local_shipping</span>
+                  </div>
+                  <div>
+                    <h3 class="font-title-md text-text-primary">Operations &amp; Logistics</h3>
+                    <p class="font-caption text-caption text-text-secondary">Procurement vouchers, inventory control,
+                      and remote field deployments</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <span class="text-caption text-text-muted px-space-xs py-0.5 rounded bg-surface-secondary"
+                    id="badge-ops">0 Active</span>
+                  <span class="material-symbols-outlined text-text-muted transition-transform duration-200"
+                    id="icon-ops">expand_more</span>
+                </div>
+              </button>
+              <div class="border-t border-border-subtle p-space-md space-y-space-sm bg-surface-bright/50 hidden"
+                id="content-ops">
+                <!-- Submodule 4: Procurement & 3-Way Match -->
+                <label
+                  class="flex items-start justify-between p-space-sm rounded-lg bg-surface-card border border-border-subtle hover:border-primary/50 cursor-pointer transition-colors">
+                  <div class="flex items-start gap-space-sm">
+                    <input class="mt-1 w-4 h-4 text-primary rounded focus:ring-primary cursor-pointer"
+                      id="mod-procurement"
+                      onchange="toggleModuleItem('procurement', 'Procurement &amp; 3-Way Match', 18, 'ops')"
+                      type="checkbox" />
+                    <div>
+                      <p class="font-title-sm text-text-primary">Procurement &amp; 3-Way Voucher Match</p>
+                      <p class="font-caption text-caption text-text-secondary">RFQ bidding workflows, purchase order
+                        validation, receiving vouchers, and contract limits.</p>
+                    </div>
+                  </div>
+                  <span
+                    class="font-numeric-table font-title-sm text-text-primary ml-space-sm whitespace-nowrap">+$18/mo</span>
+                </label>
+                <!-- Submodule 5: Inventory & Aid Relief -->
+                <label
+                  class="flex items-start justify-between p-space-sm rounded-lg bg-surface-card border border-border-subtle hover:border-primary/50 cursor-pointer transition-colors">
+                  <div class="flex items-start gap-space-sm">
+                    <input class="mt-1 w-4 h-4 text-primary rounded focus:ring-primary cursor-pointer"
+                      id="mod-inventory"
+                      onchange="toggleModuleItem('inventory', 'Inventory &amp; Relief Logistics', 15, 'ops')"
+                      type="checkbox" />
+                    <div>
+                      <p class="font-title-sm text-text-primary">Inventory &amp; Relief Logistics</p>
+                      <p class="font-caption text-caption text-text-secondary">Multi-warehouse stock balancing, batch
+                        expiry tracking, and relief donation dispatching.</p>
+                    </div>
+                  </div>
+                  <span
+                    class="font-numeric-table font-title-sm text-text-primary ml-space-sm whitespace-nowrap">+$15/mo</span>
+                </label>
+                <!-- Submodule 6: Remote Field Station Edge Sync -->
+                <label
+                  class="flex items-start justify-between p-space-sm rounded-lg bg-surface-card border border-border-subtle hover:border-primary/50 cursor-pointer transition-colors">
+                  <div class="flex items-start gap-space-sm">
+                    <input class="mt-1 w-4 h-4 text-primary rounded focus:ring-primary cursor-pointer" id="mod-field"
+                      onchange="toggleModuleItem('field', 'Field Station Offline Edge Sync', 14, 'ops')"
+                      type="checkbox" />
+                    <div>
+                      <p class="font-title-sm text-text-primary">Field Station Offline Edge Sync</p>
+                      <p class="font-caption text-caption text-text-secondary">Local caching for rural/low-connectivity
+                        offices with automatic conflict-free batch upload.</p>
+                    </div>
+                  </div>
+                  <span
+                    class="font-numeric-table font-title-sm text-text-primary ml-space-sm whitespace-nowrap">+$14/mo</span>
+                </label>
+              </div>
+            </div>
+            <!-- ACCORDION 3: HR, PEOPLE & PAYROLL -->
+            <div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm overflow-hidden"
+              id="accordionGroup-hr">
+              <button
+                class="w-full p-space-md flex items-center justify-between hover:bg-surface-secondary/60 transition-colors text-left"
+                onclick="toggleAccordion('hr')" type="button">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-8 h-8 rounded bg-surface-secondary text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[20px]">badge</span>
+                  </div>
+                  <div>
+                    <h3 class="font-title-md text-text-primary">HR, People &amp; Payroll</h3>
+                    <p class="font-caption text-caption text-text-secondary">Automated statutory wage processing,
+                      timesheets, and staff expense reporting</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <span class="text-caption text-text-muted px-space-xs py-0.5 rounded bg-surface-secondary"
+                    id="badge-hr">0 Active</span>
+                  <span class="material-symbols-outlined text-text-muted transition-transform duration-200"
+                    id="icon-hr">expand_more</span>
+                </div>
+              </button>
+              <div class="border-t border-border-subtle p-space-md space-y-space-sm bg-surface-bright/50 hidden"
+                id="content-hr">
+                <!-- Submodule 7: People & Payroll Core -->
+                <label
+                  class="flex items-start justify-between p-space-sm rounded-lg bg-surface-card border border-border-subtle hover:border-primary/50 cursor-pointer transition-colors">
+                  <div class="flex items-start gap-space-sm">
+                    <input class="mt-1 w-4 h-4 text-primary rounded focus:ring-primary cursor-pointer" id="mod-hr"
+                      onchange="toggleModuleItem('hr', 'Statutory Payroll &amp; People Core', 16, 'hr')"
+                      type="checkbox" />
+                    <div>
+                      <p class="font-title-sm text-text-primary">Statutory Payroll &amp; People Core</p>
+                      <p class="font-caption text-caption text-text-secondary">Ghana GRA PAYE calculation, SSNIT pension
+                        file generator, and bank batch transfer files.</p>
+                    </div>
+                  </div>
+                  <span
+                    class="font-numeric-table font-title-sm text-text-primary ml-space-sm whitespace-nowrap">+$16/mo</span>
+                </label>
+              </div>
+            </div>
+            <!-- ACCORDION 4: GOVERNANCE & AUDIT -->
+            <div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm overflow-hidden"
+              id="accordionGroup-gov">
+              <button
+                class="w-full p-space-md flex items-center justify-between hover:bg-surface-secondary/60 transition-colors text-left"
+                onclick="toggleAccordion('gov')" type="button">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-8 h-8 rounded bg-surface-secondary text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[20px]">shield</span>
+                  </div>
+                  <div>
+                    <h3 class="font-title-md text-text-primary">Governance &amp; Audit</h3>
+                    <p class="font-caption text-caption text-text-secondary">External auditor portals, tamper-evident
+                      logs, and multi-tier fiduciary signoffs</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <span class="text-caption text-text-muted px-space-xs py-0.5 rounded bg-surface-secondary"
+                    id="badge-gov">0 Active</span>
+                  <span class="material-symbols-outlined text-text-muted transition-transform duration-200"
+                    id="icon-gov">expand_more</span>
+                </div>
+              </button>
+              <div class="border-t border-border-subtle p-space-md space-y-space-sm bg-surface-bright/50 hidden"
+                id="content-gov">
+                <!-- Submodule 8: System Audit Portal Vault -->
+                <label
+                  class="flex items-start justify-between p-space-sm rounded-lg bg-surface-card border border-border-subtle hover:border-primary/50 cursor-pointer transition-colors">
+                  <div class="flex items-start gap-space-sm">
+                    <input class="mt-1 w-4 h-4 text-primary rounded focus:ring-primary cursor-pointer" id="mod-audit"
+                      onchange="toggleModuleItem('audit', 'External Auditor Vault &amp; Logs', 10, 'gov')"
+                      type="checkbox" />
+                    <div>
+                      <p class="font-title-sm text-text-primary">External Auditor Vault &amp; Immutable Logs</p>
+                      <p class="font-caption text-caption text-text-secondary">Isolated read-only auditor workspace,
+                        cryptographic hash chains, exportable audit trail.</p>
+                    </div>
+                  </div>
+                  <span
+                    class="font-numeric-table font-title-sm text-text-primary ml-space-sm whitespace-nowrap">+$10/mo</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- RIGHT 4 COLS: LIVE CONFIGURATION SUMMARY PANEL -->
+          <div
+            class="lg:col-span-4 bg-surface-card rounded-xl border border-border-subtle shadow-sm p-space-lg sticky top-24 space-y-space-md">
+            <div>
+              <span class="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-1">Live
+                Manifest</span>
+              <h3 class="font-title-md text-headline-sm text-text-primary">Selected Microservices</h3>
+              <p class="font-caption text-caption text-text-secondary">Dynamically recomputed for your organization.</p>
+            </div>
+            <!-- List of selected services -->
+            <div class="space-y-space-xs border-y border-border-subtle py-space-sm min-h-[140px]"
+              id="selectedServicesList">
+              <div class="flex items-center justify-between text-body-sm text-text-primary py-1">
+                <span class="flex items-center gap-space-xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Foundational Accounting Core
+                </span>
+                <span class="font-numeric-table font-semibold text-text-primary">$20.00</span>
+              </div>
+            </div>
+            <!-- Calculated Totals -->
+            <div class="space-y-space-xs pt-1">
+              <div class="flex justify-between text-body-sm text-text-secondary">
+                <span>Subtotal Monthly Rate</span>
+                <span class="font-numeric-table text-text-primary" id="configSubtotalRate">$20.00</span>
+              </div>
+              <div class="flex justify-between text-body-sm text-status-success hidden" id="configAnnualDiscountRow">
+                <span>Annual Term Savings (20%)</span>
+                <span class="font-numeric-table" id="configAnnualDiscountAmount">-$0.00</span>
+              </div>
+              <div class="flex items-baseline justify-between pt-space-xs border-t border-border-subtle">
+                <div>
+                  <span class="font-title-md text-text-primary block">Effective Monthly</span>
+                  <span class="font-caption text-caption text-text-muted" id="configBillingNote">Billed monthly</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-display-lg text-display-lg text-primary" id="configCalculatedTotal">$20</span>
+                  <span class="font-caption text-caption text-text-secondary">/mo</span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-full py-space-sm px-space-md rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm transition-all shadow flex items-center justify-center gap-space-xs"
+              onclick="proceedFromConfiguratorToCheckout()">
+              <span>Proceed to Checkout</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </button>
+            <div class="flex items-center justify-center gap-space-xs text-text-muted text-caption pt-space-xs">
+              <span class="material-symbols-outlined text-[15px] text-status-success">security</span>
+              <span>Modular configurations can be modified anytime.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ================================================================= -->
+      <!-- VIEW 3: ENRICHED CHECKOUT ORDER SUMMARY & PAYMENT                 -->
+      <!-- ================================================================= -->
+      <div class="hidden max-w-[76rem] mx-auto space-y-space-lg transition-opacity duration-200" id="checkoutView">
+        <!-- Breadcrumb / Back button -->
+        <div class="flex items-center justify-between pb-space-sm border-b border-border-subtle">
+          <button
+            class="text-text-secondary hover:text-text-primary font-title-sm flex items-center gap-space-xs transition-colors p-1"
+            onclick="handleCheckoutBack()">
+            <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+            <span id="checkoutBackLabel">Back to Plans</span>
+          </button>
+          <div class="flex items-center gap-space-xs text-text-muted font-caption">
+            <span class="w-2 h-2 rounded-full bg-status-success"></span>
+            <span>256-Bit SSL Secure Procurement Session</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+          <!-- LEFT 7 COLS: PROFESSIONAL CHECKOUT FORM -->
+          <div
+            class="lg:col-span-7 bg-surface-card rounded-xl p-space-xl shadow-sm border border-border-subtle space-y-space-md">
+            <div class="border-b border-border-subtle pb-space-sm">
+              <h3 class="font-headline-sm text-headline-sm text-text-primary">Fiduciary Billing &amp; Payment Details
+              </h3>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-space-xxs">Verify institutional entity data to
+                activate cloud core provisioning.</p>
+            </div>
+            <form class="space-y-space-md" onsubmit="event.preventDefault(); triggerSimulatedPayment();">
+              <!-- Organization & Billing Contact -->
+              <div class="space-y-space-sm">
+                <div class="space-y-space-xxs">
+                  <label class="font-label-md text-label-md text-text-secondary block" for="inpOrg">Institution /
+                    Organization Legal Name</label>
+                  <input
+                    class="w-full h-10 px-space-sm rounded bg-surface-secondary text-text-primary font-body-md focus:bg-surface-card focus:ring-2 focus:ring-primary focus:outline-none border border-border-subtle"
+                    id="inpOrg" required="" type="text" value="West Africa Health Initiative (WAHI)" />
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                  <div class="space-y-space-xxs">
+                    <label class="font-label-md text-label-md text-text-secondary block" for="inpName">Fiduciary Officer
+                      / Signatory</label>
+                    <input
+                      class="w-full h-10 px-space-sm rounded bg-surface-secondary text-text-primary font-body-md focus:bg-surface-card focus:ring-2 focus:ring-primary focus:outline-none border border-border-subtle"
+                      id="inpName" required="" type="text" value="Dr. Kwame Mensah" />
+                  </div>
+                  <div class="space-y-space-xxs">
+                    <label class="font-label-md text-label-md text-text-secondary block" for="inpEmail">Billing Official
+                      Email</label>
+                    <input
+                      class="w-full h-10 px-space-sm rounded bg-surface-secondary text-text-primary font-body-md focus:bg-surface-card focus:ring-2 focus:ring-primary focus:outline-none border border-border-subtle"
+                      id="inpEmail" required="" type="email" value="kwame@healthinitiative.org" />
+                  </div>
+                </div>
+                <div class="space-y-space-xxs">
+                  <label class="font-label-md text-label-md text-text-secondary block" for="inpCountry">Operating
+                    Country / Jurisdiction</label>
+                  <select
+                    class="w-full h-10 px-space-sm rounded bg-surface-secondary text-text-primary font-body-md focus:bg-surface-card focus:ring-2 focus:ring-primary focus:outline-none border border-border-subtle"
+                    id="inpCountry">
+                    <option value="gh">Ghana (GRA Statutory E-VAT integrated)</option>
+                    <option value="us">United States (USAID CFR 200 compliant)</option>
+                    <option value="ke">Kenya (KRA iTax compliant)</option>
+                    <option value="uk">United Kingdom (Charity Commission compliant)</option>
+                    <option value="eu">European Union (DG ECHO audit-ready)</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Payment Method Selection -->
+              <div class="pt-space-sm border-t border-border-subtle space-y-space-sm">
+                <div class="flex items-center justify-between">
+                  <span class="font-title-sm text-text-primary">Payment Instrument</span>
+                  <div class="flex items-center gap-1.5 text-text-muted text-caption">
+                    <span class="material-symbols-outlined text-[16px] text-status-success">lock</span>
+                    <span>PCI DSS Level 1 Compliant</span>
+                  </div>
+                </div>
+                <div class="space-y-space-xxs">
+                  <label class="font-label-md text-label-md text-text-secondary block" for="inpCardNumber">Card
+                    Number</label>
+                  <div class="relative">
+                    <input
+                      class="w-full h-10 pl-space-sm pr-11 rounded bg-surface-secondary text-text-primary font-body-md focus:bg-surface-card focus:ring-2 focus:ring-primary focus:outline-none border border-border-subtle tracking-wider"
+                      id="inpCardNumber" required="" type="text" value="4242 •••• •••• 4242" />
+                    <span
+                      class="material-symbols-outlined text-text-muted absolute right-3 top-2.5 text-[20px]">credit_card</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-space-sm">
+                  <div class="space-y-space-xxs">
+                    <label class="font-label-md text-label-md text-text-secondary block" for="inpExpiry">Expiration
+                      (MM/YY)</label>
+                    <input
+                      class="w-full h-10 px-space-sm rounded bg-surface-secondary text-text-primary font-body-md focus:bg-surface-card focus:ring-2 focus:ring-primary focus:outline-none border border-border-subtle"
+                      id="inpExpiry" required="" type="text" value="12 / 28" />
+                  </div>
+                  <div class="space-y-space-xxs">
+                    <label class="font-label-md text-label-md text-text-secondary block" for="inpCvc">CVC / Security
+                      Code</label>
+                    <input
+                      class="w-full h-10 px-space-sm rounded bg-surface-secondary text-text-primary font-body-md focus:bg-surface-card focus:ring-2 focus:ring-primary focus:outline-none border border-border-subtle"
+                      id="inpCvc" maxlength="4" required="" type="password" value="888" />
+                  </div>
+                </div>
+              </div>
+              <!-- Pay and Subscribe CTA Button -->
+              <div class="pt-space-xs">
+                <button
+                  class="w-full py-space-sm px-space-md rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm transition-all shadow-md flex items-center justify-center gap-space-xs"
+                  id="btnPay" type="submit">
+                  <span class="material-symbols-outlined text-[18px]">lock</span>
+                  <span id="btnPayText">Pay &amp; Subscribe</span>
+                </button>
+                <!-- Processing Simulated Loader -->
+                <div
+                  class="hidden p-space-sm rounded bg-surface-secondary items-center justify-center gap-space-sm text-body-sm text-text-primary mt-space-xs border border-border-subtle"
+                  id="paymentLoadingBar">
+                  <div class="w-4 h-4 rounded-full border-2 border-primary border-t-transparent animate-spin"></div>
+                  <span>Processing payment &amp; provisioning encrypted ledger...</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- RIGHT 5 COLS: ENRICHED ORDER SUMMARY CARD -->
+          <div
+            class="lg:col-span-5 bg-surface-card rounded-xl p-space-lg shadow-sm border border-border-subtle space-y-space-md sticky top-24">
+            <div class="border-b border-border-subtle pb-space-sm">
+              <div class="flex items-center justify-between">
+                <span
+                  class="px-space-xs py-0.5 rounded bg-primary-tint text-primary font-label-sm text-[11px] font-semibold"
+                  id="checkoutBadge">PLAN SUBSCRIPTION</span>
+                <span class="font-caption text-caption text-text-muted" id="checkoutTermBadge">Monthly Recurring</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-text-primary mt-space-xs" id="checkoutPlanTitle">
+                Growth Field Plan</h3>
+              <p class="font-body-sm text-body-sm text-text-secondary mt-space-xxs" id="checkoutPlanDescription">
+                Complete statutory ledger for growing NGOs requiring grant milestone tracking.</p>
+            </div>
+            <!-- Detailed Inclusions Breakdown -->
+            <div>
+              <p class="font-label-md text-label-md text-text-secondary mb-space-xs uppercase tracking-wide">Included
+                Features &amp; Active Modules</p>
+              <ul class="space-y-space-xs" id="checkoutInclusionsList">
+                <li class="flex items-start gap-space-xs text-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[17px] mt-0.5">check_circle</span>
+                  <span>General Ledger &amp; IPSAS Compliance</span>
+                </li>
+                <li class="flex items-start gap-space-xs text-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[17px] mt-0.5">check_circle</span>
+                  <span>Automated bank &amp; card reconciliations</span>
+                </li>
+                <li class="flex items-start gap-space-xs text-body-sm text-text-primary">
+                  <span class="material-symbols-outlined text-status-success text-[17px] mt-0.5">check_circle</span>
+                  <span>Procurement &amp; 3-way voucher matching</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Price Breakdown Calculation -->
+            <div class="pt-space-sm border-t border-border-subtle space-y-space-xs">
+              <div class="flex items-center justify-between text-body-sm text-text-secondary">
+                <span>Base Subscription</span>
+                <span class="font-numeric-table text-text-primary" id="checkoutSubtotal">$65.00</span>
+              </div>
+              <div class="flex items-center justify-between text-body-sm text-status-success hidden"
+                id="checkoutDiscountRow">
+                <span id="checkoutDiscountLabel">Annual Discount (20%)</span>
+                <span class="font-numeric-table" id="checkoutDiscount">-$13.00</span>
+              </div>
+              <div class="flex items-center justify-between text-body-sm text-text-secondary">
+                <span class="flex items-center gap-space-xxs">
+                  <span>Estimated Statutory Tax / Fees</span>
+                  <span class="material-symbols-outlined text-text-muted text-[15px]"
+                    title="Included in institutional invoice">help_outline</span>
+                </span>
+                <span class="font-numeric-table text-text-primary">$0.00</span>
+              </div>
+              <div class="flex items-center justify-between text-body-sm text-text-muted">
+                <span>Statutory Compliance Bundle</span>
+                <span class="text-status-success font-semibold text-[11px] uppercase">Included free</span>
+              </div>
+              <!-- Highlighted Total -->
+              <div class="flex items-center justify-between font-title-md pt-space-sm border-t border-border-subtle">
+                <div>
+                  <span class="text-text-primary font-headline-sm block">Total Due Today</span>
+                  <span class="font-caption text-caption text-text-muted" id="checkoutBillingCycleNote">Billed monthly •
+                    Renews automatically</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-primary font-display-lg text-[28px] font-bold" id="checkoutFinalTotal">$65.00</span>
+                </div>
+              </div>
+            </div>
+            <!-- Trust Badges & Guarantee -->
+            <div class="bg-surface-secondary/70 p-space-sm rounded-lg space-y-space-xs border border-border-subtle/80">
+              <div class="flex items-center gap-space-xs text-caption text-text-secondary">
+                <span class="material-symbols-outlined text-[16px] text-status-success">verified_user</span>
+                <span>256-bit SSL Encrypted Payment Processing</span>
+              </div>
+              <div class="flex items-center gap-space-xs text-caption text-text-secondary">
+                <span class="material-symbols-outlined text-[16px] text-primary">cloud_done</span>
+                <span>SOC 2 Type II &amp; ISO 27001 Certified Vault</span>
+              </div>
+              <div class="flex items-center gap-space-xs text-caption text-text-secondary">
+                <span class="material-symbols-outlined text-[16px] text-primary">published_with_changes</span>
+                <span>Cancel or reconfigure anytime with 1-click audit export</span>
+              </div>
+            </div>
+            <!-- Clear Return Link -->
+            <div class="text-center pt-space-xxs">
+              <button class="text-caption text-text-muted hover:text-text-primary underline"
+                onclick="handleCheckoutBack()" type="button">
+                Want to change your plan or configure modules? Click here
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================================================================= -->
+    <!-- MODAL: SIMULATED PAYMENT SUCCESS & WORKSPACE ACTIVATION                   -->
+    <!-- ========================================================================= -->
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-nav-bg/60 backdrop-blur-sm hidden p-margin"
+      id="successModal">
+      <div
+        class="bg-surface-card rounded-xl shadow-2xl max-w-md w-full p-space-xl text-center relative border border-border-subtle">
+        <div
+          class="w-14 h-14 rounded-full bg-status-success-bg text-status-success flex items-center justify-center mx-auto mb-space-md shadow-sm">
+          <span class="material-symbols-outlined text-[32px]">check_circle</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg text-text-primary mb-space-xs">Payment Successful!</h2>
+        <p class="font-body-md text-body-md text-text-secondary mb-space-lg">Your statutory ERP instance has been
+          initialized and provisioned with full audit logging.</p>
+        <div
+          class="bg-surface-secondary p-space-md rounded-lg space-y-space-xs mb-space-lg text-left border border-border-subtle">
+          <div class="flex justify-between text-body-sm">
+            <span class="text-text-secondary">Invoice Ref</span>
+            <span class="font-numeric-table font-semibold text-text-primary" id="successRefNum">INV-2025-8831</span>
+          </div>
+          <div class="flex justify-between text-body-sm">
+            <span class="text-text-secondary">Activated Stack</span>
+            <span class="font-title-sm text-text-primary" id="successPlanName">Standard Field Plan</span>
+          </div>
+          <div class="flex justify-between text-body-sm">
+            <span class="text-text-secondary">Billing Frequency</span>
+            <span class="font-body-sm text-text-primary" id="successFrequency">Monthly</span>
+          </div>
+          <div class="flex justify-between text-body-sm">
+            <span class="text-text-secondary">Amount Discharged</span>
+            <span class="font-numeric-table-bold text-text-primary text-[15px]" id="successAmount">$65.00</span>
+          </div>
+          <div class="flex justify-between text-body-sm pt-1 border-t border-border-subtle">
+            <span class="text-text-secondary">Ledger Status</span>
+            <span class="text-status-success font-title-sm flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-status-success"></span> Active &amp; Ready
+            </span>
+          </div>
+        </div>
+        <button
+          class="w-full py-space-sm px-space-md rounded bg-primary hover:bg-primary-hover text-on-primary font-title-sm transition-all shadow flex items-center justify-center gap-space-xs"
+          onclick="simulateWorkspaceLogin()">
+          <span>Log In to Workspace</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </main>
+  <!-- FOOTER -->
+    <footer class="w-full bg-surface-navy text-text-inverted pt-space-2xl pb-space-xl">
+    <div class="max-w-7xl mx-auto px-margin">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-2xl border-b border-white/10">
+        <div class="lg:col-span-2 flex flex-col gap-space-md">
+          <div class="flex items-center gap-space-sm">
+            <span
+              class="font-headline-sm text-headline-sm text-text-inverted uppercase tracking-tight"><strong style="color: #fff;">OM</strong><strong style="color: #128893;">NIS</strong></span>
+          </div>
+          <p class="font-body-sm text-body-sm text-text-muted max-w-sm">Fiduciary precision and audit-grade financial
+            controls engineered specifically for non-governmental organizations, USAID/FCDO bilateral grantees, and
+            Ghanaian statutory institutions.</p>
+          <div class="flex flex-wrap gap-space-xs"><span
+              class="px-space-sm py-space-xs rounded-full bg-white/5 text-text-inverted font-label-badge text-label-badge border border-white/10">GRA
+              PAYE Validated</span><span
+              class="px-space-sm py-space-xs rounded-full bg-white/5 text-text-inverted font-label-badge text-label-badge border border-white/10">SSNIT
+              Tier 1 &amp; 2 Compliant</span><span
+              class="px-space-sm py-space-xs rounded-full bg-white/5 text-text-inverted font-label-badge text-label-badge border border-white/10">2
+              CFR 200 Uniform Guidance</span></div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-label-eyebrow text-label-eyebrow text-text-muted uppercase">Product</h4>
+          <div class="flex flex-col gap-space-xs"><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="finance" href="#">Fund Accounting</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="grants" href="#">Grant Management</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="ghana-payroll" href="#">Statutory Ghana Payroll</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="procurement" href="#">Procurement &amp; Inventory</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="field-operations" href="#">Field Operations</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="finance" href="#">Multi-currency GL</a></div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-label-eyebrow text-label-eyebrow text-text-muted uppercase">Resources</h4>
+          <div class="flex flex-col gap-space-xs"><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="documentation" href="#">Documentation</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="compliance-guide" href="#">Donor Compliance Guide</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="security-audit" href="#">Security &amp; Audit</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="api-reference" href="#">API Reference</a></div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-label-eyebrow text-label-eyebrow text-text-muted uppercase">Company</h4>
+          <div class="flex flex-col gap-space-xs"><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="about-us" href="#">About Us</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="contact" href="#">Contact</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="careers" href="#">Careers</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="privacy-policy" href="#">Privacy Policy</a><a
+              class="font-body-sm text-body-sm text-text-inverted/80 hover:text-text-inverted transition-colors"
+              data-path="terms-of-service" href="#">Terms of Service</a></div>
+        </div>
+      </div>
+      <div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+        <div class="font-body-sm text-body-sm text-text-muted">© 2025 <strong style="color: #fff;">OM</strong><strong style="color: #128893;">NIS</strong> Ltd. Accra &amp; Global. Built for
+          fiduciary transparency.</div>
+        <div class="flex items-center gap-space-md text-text-muted font-body-sm text-body-sm">
+          <div class="flex items-center gap-space-xs"><span
+              class="material-symbols-outlined text-[16px] text-status-success-fg">verified_user</span><span>SOC 2 Type
+              II Certified</span></div>
+          <div class="flex items-center gap-space-xs"><span
+              class="material-symbols-outlined text-[16px] text-status-success-fg">encrypted</span><span>256-Bit
+              Financial Vault</span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ========================================================================= -->
+  <!-- SINGLE UNIFIED CONTROLLER JAVASCRIPT                                      -->
+  <!-- ========================================================================= -->
+  <script>
+    // State store
+    const appState = {
+      billingCycle: 'monthly', // 'monthly' | 'annual'
+      selectedPlanKey: 'standard', // 'starter' | 'standard' | 'enterprise' | 'custom'
+      checkoutOrigin: 'pricing', // 'pricing' | 'customizer'
+
+      // Fixed tier definitions
+      plans: {
+        starter: {
+          key: 'starter',
+          name: 'Starter Core',
+          badge: 'Starter Core Plan',
+          description: 'Essential fund ledger and cash compliance for small teams.',
+          monthlyPrice: 35,
+          annualPrice: 28,
+          features: [
+            'General Ledger & IPSAS statutory compliance',
+            'Multi-currency conversion & donor reports',
+            '3 Grant fund project accounting buckets',
+            'Up to 5 concurrent internal seat licenses'
+          ]
+        },
+        standard: {
+          key: 'standard',
+          name: 'Standard Field',
+          badge: 'Standard Field Plan',
+          description: 'Complete ledger for growing NGOs requiring grant milestone tracking.',
+          monthlyPrice: 65,
+          annualPrice: 52,
+          features: [
+            'General Ledger & IPSAS compliance baseline',
+            'Automated bank & card reconciliations',
+            'Procurement & 3-way voucher matching',
+            'Automated payroll & statutory taxes (GRA/PAYE)',
+            'Tamper-evident audit trails'
+          ]
+        },
+        enterprise: {
+          key: 'enterprise',
+          name: 'Enterprise Core',
+          badge: 'Enterprise Core Plan',
+          description: 'Multi-donor covenants, international field stations, and external audit vaults.',
+          monthlyPrice: 99,
+          annualPrice: 79,
+          features: [
+            'Unlimited multilateral consolidations',
+            'USAID, EU & UN compliance statutory packs',
+            'External auditor portal & immutable vault',
+            'Dedicated Technical Manager & 99.99% SLA guarantee'
+          ]
+        }
+      },
+
+      // Custom modular store
+      customConfig: {
+        basePrice: 20,
+        selectedModules: [
+          // e.g. { id: 'banking', name: 'Banking & Cash Management', price: 12, category: 'finance' }
+        ]
+      }
+    };
+
+    // --- ACCORDION TOGGLING ---
+    function toggleAccordion(catKey) {
+      const content = document.getElementById('content-' + catKey);
+      const icon = document.getElementById('icon-' + catKey);
+      if (!content || !icon) return;
+
+      const isHidden = content.classList.contains('hidden');
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.textContent = 'expand_less';
+      } else {
+        content.classList.add('hidden');
+        icon.textContent = 'expand_more';
+      }
+    }
+
+    // --- CUSTOM MODULE CHECK/UNCHECK ---
+    function toggleModuleItem(id, name, price, category) {
+      const checkbox = document.getElementById('mod-' + id);
+      const isChecked = checkbox && checkbox.checked;
+
+      if (isChecked) {
+        if (!appState.customConfig.selectedModules.some(m => m.id === id)) {
+          appState.customConfig.selectedModules.push({ id, name, price, category });
+        }
+        showToast('Module Activated', name + ' ($' + price + '/mo) added to custom stack.');
+      } else {
+        appState.customConfig.selectedModules = appState.customConfig.selectedModules.filter(m => m.id !== id);
+        showToast('Module Removed', name + ' removed from stack.');
+      }
+
+      updateCategoryBadges();
+      renderCustomSummary();
+    }
+
+    function updateCategoryBadges() {
+      const cats = ['finance', 'ops', 'hr', 'gov'];
+      cats.forEach(cat => {
+        const count = appState.customConfig.selectedModules.filter(m => m.category === cat).length;
+        const badge = document.getElementById('badge-' + cat);
+        if (badge) {
+          badge.textContent = count + ' Active';
+          if (count > 0) {
+            badge.className = "text-caption text-primary font-semibold px-space-xs py-0.5 rounded bg-primary-tint";
+          } else {
+            badge.className = "text-caption text-text-muted px-space-xs py-0.5 rounded bg-surface-secondary";
+          }
+        }
+      });
+    }
+
+    function renderCustomSummary() {
+      const listEl = document.getElementById('selectedServicesList');
+      if (!listEl) return;
+
+      let html = `
+        <div class="flex items-center justify-between text-body-sm text-text-primary py-1">
+          <span class="flex items-center gap-space-xs">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Foundational Accounting Core (Base)
+          </span>
+          <span class="font-numeric-table font-semibold text-text-primary">$20.00</span>
+        </div>
+      `;
+
+      let monthlySubtotal = appState.customConfig.basePrice;
+
+      appState.customConfig.selectedModules.forEach(mod => {
+        monthlySubtotal += mod.price;
+        html += `
+          <div class="flex items-center justify-between text-body-sm text-text-primary py-1">
+            <span class="flex items-center gap-space-xs truncate max-w-[210px]" title="${mod.name}">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-tint border border-primary"></span>
+              ${mod.name}
+            </span>
+            <span class="font-numeric-table font-semibold text-text-primary">+$${mod.price.toFixed(2)}</span>
+          </div>
+        `;
+      });
+
+      listEl.innerHTML = html;
+
+      const isAnnual = appState.billingCycle === 'annual';
+      const effectiveMonthly = isAnnual ? (monthlySubtotal * 0.8) : monthlySubtotal;
+      const discountRow = document.getElementById('configAnnualDiscountRow');
+
+      document.getElementById('configSubtotalRate').textContent = '$' + monthlySubtotal.toFixed(2);
+
+      if (isAnnual) {
+        if (discountRow) discountRow.classList.remove('hidden');
+        document.getElementById('configAnnualDiscountAmount').textContent = '-$' + (monthlySubtotal * 0.2).toFixed(2);
+        document.getElementById('configBillingNote').textContent = 'Billed annually with 20% savings';
+      } else {
+        if (discountRow) discountRow.classList.add('hidden');
+        document.getElementById('configBillingNote').textContent = 'Billed monthly';
+      }
+
+      document.getElementById('configCalculatedTotal').textContent = '$' + effectiveMonthly.toFixed(0);
+      document.getElementById('configuratorCycleBadge').textContent = isAnnual ? 'Annual (-20% Active)' : 'Monthly';
+    }
+
+    // --- NAVIGATION FLOWS ---
+    function goToPricing() {
+      document.getElementById('pricingView').classList.remove('hidden');
+      document.getElementById('customConfigView').classList.add('hidden');
+      document.getElementById('checkoutView').classList.add('hidden');
+
+      // Update Top Nav indicator
+      updateTopNavStyles('pricing');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToCustomConfigurator() {
+      document.getElementById('pricingView').classList.add('hidden');
+      document.getElementById('customConfigView').classList.remove('hidden');
+      document.getElementById('checkoutView').classList.add('hidden');
+
+      updateTopNavStyles('config');
+      renderCustomSummary();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function choosePlan(planKey) {
+      appState.selectedPlanKey = planKey;
+      appState.checkoutOrigin = 'pricing';
+      populateAndShowCheckout();
+    }
+
+    function proceedFromConfiguratorToCheckout() {
+      appState.selectedPlanKey = 'custom';
+      appState.checkoutOrigin = 'customizer';
+      populateAndShowCheckout();
+    }
+
+    function goToCheckoutCurrent() {
+      populateAndShowCheckout();
+    }
+
+    function handleCheckoutBack() {
+      if (appState.checkoutOrigin === 'customizer') {
+        goToCustomConfigurator();
+      } else {
+        goToPricing();
+      }
+    }
+
+    function updateTopNavStyles(activeSection) {
+      const pBtn = document.getElementById('navPricingBtn');
+      const cBtn = document.getElementById('navConfigBtn');
+      if (activeSection === 'pricing') {
+        pBtn.className = "px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary font-title-sm text-title-sm rounded";
+        cBtn.className = "px-space-sm py-space-xs font-title-sm text-title-sm text-nav-text-muted hover:text-nav-text-primary transition-colors";
+      } else if (activeSection === 'config') {
+        cBtn.className = "px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary font-title-sm text-title-sm rounded";
+        pBtn.className = "px-space-sm py-space-xs font-title-sm text-title-sm text-nav-text-muted hover:text-nav-text-primary transition-colors";
+      } else {
+        pBtn.className = "px-space-sm py-space-xs font-title-sm text-title-sm text-nav-text-muted hover:text-nav-text-primary transition-colors";
+        cBtn.className = "px-space-sm py-space-xs font-title-sm text-title-sm text-nav-text-muted hover:text-nav-text-primary transition-colors";
+      }
+    }
+
+    // --- POPULATE AND SHOW CHECKOUT SCREEN ---
+    function populateAndShowCheckout() {
+      document.getElementById('pricingView').classList.add('hidden');
+      document.getElementById('customConfigView').classList.add('hidden');
+      document.getElementById('checkoutView').classList.remove('hidden');
+
+      updateTopNavStyles('none');
+
+      const isAnnual = appState.billingCycle === 'annual';
+      const backLabel = document.getElementById('checkoutBackLabel');
+      backLabel.textContent = appState.checkoutOrigin === 'customizer' ? 'Back to Configurator' : 'Back to Plans';
+
+      let planTitle = '';
+      let badge = 'PLAN SUBSCRIPTION';
+      let description = '';
+      let subtotal = 0;
+      let finalTotal = 0;
+      let inclusions = [];
+
+      if (appState.selectedPlanKey === 'custom') {
+        badge = 'MODULAR SUITE';
+        planTitle = 'Custom Modular ERP';
+        description = 'Individually tailored operational services with isolated accounting core.';
+
+        // Base
+        let totalMonthly = appState.customConfig.basePrice;
+        inclusions.push('Foundational Accounting Core (IPSAS)');
+
+        appState.customConfig.selectedModules.forEach(m => {
+          totalMonthly += m.price;
+          inclusions.push(m.name);
+        });
+
+        subtotal = totalMonthly;
+        finalTotal = isAnnual ? (subtotal * 0.8) : subtotal;
+
+      } else {
+        const plan = appState.plans[appState.selectedPlanKey] || appState.plans.standard;
+        badge = plan.badge;
+        planTitle = plan.name;
+        description = plan.description;
+        subtotal = plan.monthlyPrice;
+        finalTotal = isAnnual ? plan.annualPrice : plan.monthlyPrice;
+        inclusions = [...plan.features];
+      }
+
+      // Populate text nodes
+      document.getElementById('checkoutBadge').textContent = badge.toUpperCase();
+      document.getElementById('checkoutPlanTitle').textContent = planTitle;
+      document.getElementById('checkoutPlanDescription').textContent = description;
+
+      document.getElementById('checkoutTermBadge').textContent = isAnnual ? 'Billed Annually (-20%)' : 'Monthly Recurring';
+      document.getElementById('checkoutBillingCycleNote').textContent = isAnnual ? 'Billed annually • Renews automatically' : 'Billed monthly • Renews automatically';
+
+      // Render inclusions list
+      const incListEl = document.getElementById('checkoutInclusionsList');
+      incListEl.innerHTML = inclusions.map(item => `
+        <li class="flex items-start gap-space-xs text-body-sm text-text-primary">
+          <span class="material-symbols-outlined text-status-success text-[17px] mt-0.5">check_circle</span>
+          <span>${item}</span>
+        </li>
+      `).join('');
+
+      // Render math
+      document.getElementById('checkoutSubtotal').textContent = '$' + subtotal.toFixed(2);
+
+      const discountRow = document.getElementById('checkoutDiscountRow');
+      if (isAnnual) {
+        discountRow.classList.remove('hidden');
+        const discAmount = subtotal - finalTotal;
+        document.getElementById('checkoutDiscount').textContent = '-$' + discAmount.toFixed(2);
+      } else {
+        discountRow.classList.add('hidden');
+      }
+
+      document.getElementById('checkoutFinalTotal').textContent = '$' + finalTotal.toFixed(2);
+
+      // Save into state for simulated success modal
+      appState.lastFinalTotal = '$' + finalTotal.toFixed(2);
+      appState.lastPlanTitle = planTitle;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // --- BILLING CYCLE TOGGLING ---
+    function setBillingCycle(cycle) {
+      appState.billingCycle = cycle;
+      const btnM = document.getElementById('btnMonthly');
+      const btnA = document.getElementById('btnAnnual');
+
+      if (cycle === 'monthly') {
+        btnM.className = "px-space-md py-space-xs rounded font-label-md text-label-md transition-all bg-primary-container text-on-primary font-semibold";
+        btnA.className = "px-space-md py-space-xs rounded font-label-md text-label-md transition-all text-text-secondary hover:text-text-primary flex items-center gap-space-xs font-semibold";
+      } else {
+        btnA.className = "px-space-md py-space-xs rounded font-label-md text-label-md transition-all bg-primary-container text-on-primary flex items-center gap-space-xs font-semibold";
+        btnM.className = "px-space-md py-space-xs rounded font-label-md text-label-md transition-all text-text-secondary hover:text-text-primary font-semibold";
+      }
+
+      renderPricingCards();
+      renderCustomSummary();
+
+      // If already on checkout, refresh view
+      if (!document.getElementById('checkoutView').classList.contains('hidden')) {
+        populateAndShowCheckout();
+      }
+    }
+
+    function renderPricingCards() {
+      const isAnnual = appState.billingCycle === 'annual';
+
+      document.getElementById('price-starter').textContent = '$' + (isAnnual ? appState.plans.starter.annualPrice : appState.plans.starter.monthlyPrice);
+      document.getElementById('price-standard').textContent = '$' + (isAnnual ? appState.plans.standard.annualPrice : appState.plans.standard.monthlyPrice);
+      document.getElementById('price-enterprise').textContent = '$' + (isAnnual ? appState.plans.enterprise.annualPrice : appState.plans.enterprise.monthlyPrice);
+
+      document.getElementById('billing-note-starter').textContent = isAnnual ? 'Billed annually ($336/yr)' : 'Billed monthly';
+      document.getElementById('billing-note-standard').textContent = isAnnual ? 'Billed annually ($624/yr)' : 'Billed monthly';
+      document.getElementById('billing-note-enterprise').textContent = isAnnual ? 'Billed annually ($948/yr)' : 'Billed monthly';
+    }
+
+    // --- SIMULATED PAYMENT PROCESSOR ---
+    function triggerSimulatedPayment() {
+      const btn = document.getElementById('btnPay');
+      const loader = document.getElementById('paymentLoadingBar');
+
+      btn.classList.add('hidden');
+      loader.classList.remove('hidden');
+      loader.classList.add('flex');
+
+      // Realistic 1.5-second processing feedback
+      setTimeout(function () {
+        loader.classList.add('hidden');
+        loader.classList.remove('flex');
+        btn.classList.remove('hidden');
+
+        // Populate Success Modal
+        const randomRef = 'INV-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('successRefNum').textContent = randomRef;
+        document.getElementById('successPlanName').textContent = appState.lastPlanTitle || 'Standard Field Plan';
+        document.getElementById('successFrequency').textContent = appState.billingCycle === 'annual' ? 'Annual Fiscal Cycle' : 'Monthly Recurring';
+        document.getElementById('successAmount').textContent = appState.lastFinalTotal || '$65.00';
+
+        // Reveal Modal
+        document.getElementById('successModal').classList.remove('hidden');
+      }, 1500);
+    }
+
+    function simulateWorkspaceLogin() {
+      document.getElementById('successModal').classList.add('hidden');
+      showToast('Workspace Active', 'Welcome to your provisioned Veritas Ledger Core.');
+      setTimeout(function () {
+        goToPricing();
+      }, 600);
+    }
+
+    // --- TOAST FEEDBACK ---
+    let toastTimer = null;
+    function showToast(title, message) {
+      const toast = document.getElementById('feedbackToast');
+      document.getElementById('toastTitle').textContent = title;
+      document.getElementById('toastMessage').textContent = message;
+
+      toast.classList.remove('-translate-y-28', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(dismissToast, 3500);
+    }
+
+    function dismissToast() {
+      const toast = document.getElementById('feedbackToast');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('-translate-y-28', 'opacity-0');
+    }
+
+    // Initialize on Load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPricingCards();
+      renderCustomSummary();
+    });
+  </script>
+</body>
+
+</html>
