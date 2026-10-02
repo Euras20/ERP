@@ -39,6 +39,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script
     id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f7f9ff", "on-tertiary": "#ffffff", "status-warning-bg": "#FEF3E6", "surface-dim": "#d1dbe7", "status-critical-bg": "#FDF0F0", "primary-fixed": "#a7eef6", "status-neutral-bg": "#ECEFF2", "secondary-container": "#d8e4ef", "status-success-border": "#9DD4B8", "inverse-primary": "#8bd2da", "on-tertiary-container": "#ffd892", "status-critical-border": "#F3A6A9", "nav-border": "#1E3243", "outline-variant": "#bec8c9", "text-muted": "#7B8C9A", "inverse-on-surface": "#e8f2fe", "secondary-fixed-dim": "#bcc8d3", "fund-temp-restricted": "#D99B00", "canvas-bg": "#F7F9FA", "tertiary-fixed": "#ffdea6", "surface-container-low": "#ecf4ff", "nav-text-primary": "#F4F7F9", "on-secondary": "#ffffff", "status-neutral-text": "#384551", "fund-restricted": "#B8860B", "surface-variant": "#d9e4ef", "inverse-surface": "#28313a", "status-success-text": "#0F6848", "on-primary-fixed": "#002022", "surface-container-highest": "#d9e4ef", "on-surface-variant": "#3f484a", "on-surface": "#131d25", "primary": "#005258", "on-error-container": "#93000a", "nav-text-muted": "#8EA2B4", "error-container": "#ffdad6", "outline": "#6f797a", "tertiary-fixed-dim": "#f7bd48", "nav-surface": "#152431", "status-success-bg": "#E8F5EE", "on-secondary-fixed-variant": "#3d4851", "error": "#ba1a1a", "on-secondary-fixed": "#121d25", "primary-fixed-dim": "#8bd2da", "on-primary-container": "#a1e9f1", "surface-secondary": "#F0F4F6", "status-critical-text": "#A81D24", "on-tertiary-fixed-variant": "#5d4200", "secondary-fixed": "#d8e4ef", "secondary": "#556069", "on-primary": "#ffffff", "surface-tint": "#16686f", "text-secondary": "#4E5D6A", "surface": "#f7f9ff", "on-primary-fixed-variant": "#004f55", "status-warning-text": "#914D03", "surface-container-high": "#dfe9f5", "tertiary-container": "#7f5b00", "status-warning-border": "#F6C88D", "tertiary": "#614500", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "text-primary": "#121A21", "border-subtle": "#DCE3E8", "surface-bright": "#f7f9ff", "on-secondary-container": "#5a666f", "surface-container": "#e5effb", "on-background": "#131d25", "border-strong": "#B8C4CE", "on-tertiary-fixed": "#271900", "primary-hover": "#144F54", "primary-container": "#1b6b72", "fund-unrestricted": "#1B6B72", "primary-tint": "#E4EFEF", "surface-card": "#FFFFFF", "status-neutral-border": "#CAD2D8", "nav-bg": "#0D1821" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1rem", "space-2xl": "2rem", "margin-compact": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-xxs": "0.125rem", "margin": "1.5rem", "space-xl": "1.5rem", "gutter-dense": "0.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "label-md": ["IBM Plex Sans"], "title-md": ["IBM Plex Sans"], "caption": ["IBM Plex Sans"], "headline-sm": ["IBM Plex Sans"], "body-sm": ["IBM Plex Sans"], "numeric-table": ["IBM Plex Sans"], "label-sm": ["IBM Plex Sans"], "numeric-table-bold": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "display-lg": ["IBM Plex Sans"], "title-sm": ["IBM Plex Sans"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "numeric-table-bold": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }] } } } };</script>
+
 </head>
 
 <body class="h-full bg-canvas-bg text-on-surface flex flex-col">
@@ -52,8 +53,8 @@
         <div class="w-[26px]"></div>
       
         <!-- Centered Logo -->
-       <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
-          src="../../assets/images/logo/DARK-LOGO.png" />
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
       
         <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
         <button id="layoutToggle" title="Switch to top navbar" type="button"
@@ -242,8 +243,10 @@
           <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span><span>FY 2025
             (Q2 Closed)</span></div>
         <div class="flex items-center px-space-xs py-space-xxs rounded bg-surface-secondary"><span
-            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm">GHS
-            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted">USD ($)</span>
+            class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm"
+              id="currencyGhs">GHS
+            (GH¢)</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 text-text-muted"
+              id="currencyUsd">USD ($)</span>
         </div><button
             class="h-[34px] px-space-md bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg flex items-center gap-space-xs transition-colors shadow-sm"
             onclick="openModal('addAccountModal')">
@@ -284,7 +287,8 @@
                   Statutory Reconciled (IPSAS-2)
                 </span>
               </div>
-              <p class="text-xs text-slate-500 mt-0.5">Fiduciary management of organizational bank accounts.</p>
+              <p class="text-xs text-slate-500 mt-0.5">Fiduciary management of organizational bank accounts, donor grant
+                escrow ledgers, multi-currency liquidity, and statutory cheque clearance across mission hubs.</p>
             </div>
             <!-- Action Controls Group -->
             <div class="flex items-center flex-wrap gap-2.5">
@@ -306,12 +310,23 @@
                 <span class="material-symbols-outlined text-[16px]">download</span>
                 <span>Export Register</span>
               </button>
-              <button
-                class="px-3 py-1.5 bg-primary hover:bg-primary-hover text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
-                onclick="openModal('addAccountModal')">
-                <span class="material-symbols-outlined text-[16px]">account_balance</span>
-                <span>+ Add Bank Account</span>
-              </button>
+              <div
+                class="flex items-center gap-1.5 bg-white border border-slate-300 rounded-lg px-2 py-1 shadow-xs">
+                <span class="material-symbols-outlined text-[16px] text-slate-500">calendar_month</span>
+                <input class="text-xs text-slate-700 bg-transparent focus:outline-none" id="filterPeriodStart"
+                  type="date" value="2025-06-01" />
+                <span class="text-slate-400">–</span>
+                <input class="text-xs text-slate-700 bg-transparent focus:outline-none" id="filterPeriodEnd"
+                  type="date" value="2025-06-30" />
+              </div>
+              <select
+                class="text-xs bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 font-medium text-slate-700 focus:outline-none focus:ring-1 focus:ring-primary shadow-xs">
+                <option>All Banks</option>
+                <option>Ecobank Ghana - Main Ops</option>
+                <option>Standard Chartered USD Treasury</option>
+                <option>Stanbic Bank GFATM</option>
+                <option>Consolidated Bank GH - Field Sub</option>
+              </select>
             </div>
           </div>
           <!-- END: Context Header Bar -->
@@ -1055,13 +1070,13 @@
               </div>
             </div>
             <!-- Two-Column Matching Workspace -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="reconWorkspace">
               <!-- LEFT COLUMN: Bank Statement Items -->
               <div class="bg-surface-card rounded-lg border border-border-subtle shadow-xs flex flex-col">
                 <div class="p-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
                   <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-slate-600 text-[18px]">receipt_long</span>
-                    <span class="text-xs font-bold text-slate-800 uppercase">Bank Statement Unmatched Lines (2)</span>
+                    <span class="text-xs font-bold text-slate-800 uppercase">Credit (3)</span>
                   </div>
                   <span class="text-[11px] text-slate-500">Feed: MT940 Swift Live</span>
                 </div>
@@ -1069,7 +1084,7 @@
                   <!-- Item 1 -->
                   <div
                     class="p-3 rounded-lg border border-amber-200 bg-amber-50/40 flex items-center justify-between hover:border-amber-400 transition-colors"
-                    id="stmt-item-1">
+                    id="stmt-item-1" data-pair="gl-item-1">
                     <div>
                       <div class="flex items-center gap-2">
                         <span class="font-mono text-xs font-bold text-slate-900">STC-FOREX-CHG</span>
@@ -1084,7 +1099,7 @@
                       <div class="font-mono font-bold text-slate-900 text-sm">GHS 850.00</div>
                       <button
                         class="mt-2 px-2.5 py-1 bg-primary text-white rounded text-[11px] font-semibold hover:bg-primary-hover transition-colors"
-                        onclick="matchSingleItem('stmt-item-1', 850)">
+                        onclick="matchPair('stmt-item-1', 850)">
                         Auto-Match
                       </button>
                     </div>
@@ -1092,7 +1107,7 @@
                   <!-- Item 2 -->
                   <div
                     class="p-3 rounded-lg border border-amber-200 bg-amber-50/40 flex items-center justify-between hover:border-amber-400 transition-colors"
-                    id="stmt-item-2">
+                    id="stmt-item-2" data-pair="gl-item-2">
                     <div>
                       <div class="flex items-center gap-2">
                         <span class="font-mono text-xs font-bold text-slate-900">ECO-TRX-0911</span>
@@ -1107,7 +1122,7 @@
                       <div class="font-mono font-bold text-slate-900 text-sm">GHS 1,420.00</div>
                       <button
                         class="mt-2 px-2.5 py-1 bg-primary text-white rounded text-[11px] font-semibold hover:bg-primary-hover transition-colors"
-                        onclick="matchSingleItem('stmt-item-2', 1420)">
+                        onclick="matchPair('stmt-item-2', 1420)">
                         Auto-Match
                       </button>
                     </div>
@@ -1115,7 +1130,7 @@
                   <!-- Item 3 -->
                   <div
                     class="p-3 rounded-lg border border-slate-200 bg-white flex items-center justify-between hover:border-slate-400 transition-colors"
-                    id="stmt-item-3">
+                    id="stmt-item-3" data-pair="gl-item-3">
                     <div>
                       <div class="flex items-center gap-2">
                         <span class="font-mono text-xs font-bold text-slate-900">DIRECT-DEP-994</span>
@@ -1131,7 +1146,7 @@
                       <div class="font-mono font-bold text-emerald-700 text-sm">GHS 16,180.00</div>
                       <button
                         class="mt-2 px-2.5 py-1 bg-primary text-white rounded text-[11px] font-semibold hover:bg-primary-hover transition-colors"
-                        onclick="matchSingleItem('stmt-item-3', 16180)">
+                        onclick="matchPair('stmt-item-3', 16180)">
                         Auto-Match
                       </button>
                     </div>
@@ -1143,13 +1158,13 @@
                 <div class="p-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
                   <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-slate-600 text-[18px]">menu_book</span>
-                    <span class="text-xs font-bold text-slate-800 uppercase">General Ledger Unmatched Vouchers</span>
+                    <span class="text-xs font-bold text-slate-800 uppercase">Debit (3)</span>
                   </div>
                   <span class="text-[11px] text-slate-500">Source: ERP Fiduciary GL</span>
                 </div>
                 <div class="p-4 space-y-3 flex-1">
                   <!-- GL Item 1 -->
-                  <div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center justify-between">
+                  <div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center justify-between" id="gl-item-1" data-pair="stmt-item-1">
                     <div>
                       <div class="flex items-center gap-2">
                         <span class="font-mono text-xs font-bold text-slate-900">PV-2025-0192</span>
@@ -1161,13 +1176,13 @@
                     </div>
                     <div class="text-right">
                       <div class="font-mono font-bold text-slate-900 text-sm">GHS 850.00</div>
-                      <span
-                        class="inline-block mt-2 text-[10px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded">Ready
-                        to pair</span>
+                      <button
+                        class="mt-2 px-2.5 py-1 bg-primary text-white rounded text-[11px] font-semibold hover:bg-primary-hover transition-colors"
+                        onclick="matchPair('gl-item-1', 850)">Auto-Match</button>
                     </div>
                   </div>
                   <!-- GL Item 2 -->
-                  <div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center justify-between">
+                  <div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center justify-between" id="gl-item-2" data-pair="stmt-item-2">
                     <div>
                       <div class="flex items-center gap-2">
                         <span class="font-mono text-xs font-bold text-slate-900">PV-2025-0188</span>
@@ -1179,13 +1194,13 @@
                     </div>
                     <div class="text-right">
                       <div class="font-mono font-bold text-slate-900 text-sm">GHS 1,420.00</div>
-                      <span
-                        class="inline-block mt-2 text-[10px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded">Ready
-                        to pair</span>
+                      <button
+                        class="mt-2 px-2.5 py-1 bg-primary text-white rounded text-[11px] font-semibold hover:bg-primary-hover transition-colors"
+                        onclick="matchPair('gl-item-2', 1420)">Auto-Match</button>
                     </div>
                   </div>
                   <!-- GL Item 3 -->
-                  <div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center justify-between">
+                  <div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center justify-between" id="gl-item-3" data-pair="stmt-item-3">
                     <div>
                       <div class="flex items-center gap-2">
                         <span class="font-mono text-xs font-bold text-slate-900">CR-2025-0041</span>
@@ -1197,14 +1212,73 @@
                     </div>
                     <div class="text-right">
                       <div class="font-mono font-bold text-emerald-700 text-sm">GHS 16,180.00</div>
-                      <span
-                        class="inline-block mt-2 text-[10px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded">Ready
-                        to pair</span>
+                      <button
+                        class="mt-2 px-2.5 py-1 bg-primary text-white rounded text-[11px] font-semibold hover:bg-primary-hover transition-colors"
+                        onclick="matchPair('gl-item-3', 16180)">Auto-Match</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- BEGIN: Review & Approval Workflow -->
+            <div class="bg-surface-card rounded-lg border border-border-subtle shadow-xs p-5" id="reviewPanel">
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Reconciliation Review &amp; Approval</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Once fully matched, the reconciliation is saved as a
+                    <span class="font-semibold">Draft</span>, reviewed by an assigned reviewer, then locked. Locked
+                    periods are read-only — an edit request is required to modify them.</p>
+                </div>
+                <span class="px-2.5 py-1 rounded text-[11px] font-bold bg-slate-100 text-slate-600 whitespace-nowrap"
+                  id="reconStatusBadge">In Progress</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-100">
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Reviewer <span
+                      class="font-normal text-slate-400">(Reconciliation Reviewer role)</span></label>
+                  <select class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-1 focus:ring-primary bg-white"
+                    id="reviewerSelect" onchange="handleSignatureSource()">
+                    <option value="">Select assigned reviewer...</option>
+                    <option value="kwame" data-signature="K. Boateng">Kwame Boateng — Finance Director</option>
+                    <option value="efua" data-signature="E. Asante">Efua Asante — Internal Audit Lead</option>
+                    <option value="yaw">Yaw Darko — Deputy Finance Director</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Digital Signature</label>
+                  <div class="hidden items-center justify-between gap-2 px-3 py-2 rounded-lg border border-emerald-200 bg-emerald-50/50"
+                    id="sigAuto">
+                    <span class="font-serif italic text-base text-slate-800" id="sigAutoText">K. Boateng</span>
+                    <span class="text-[10px] font-semibold text-emerald-700 whitespace-nowrap">On file —
+                      auto-filled</span>
+                  </div>
+                  <label class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border border-dashed border-slate-300 bg-slate-50 hover:bg-slate-100 cursor-pointer text-slate-500"
+                    id="sigUpload">
+                    <span class="material-symbols-outlined text-[16px]">upload</span>
+                    <span class="text-[11px] font-medium">Upload signature image</span>
+                    <input accept="image/*" class="hidden" onchange="handleSignatureUpload(this)" type="file" />
+                  </label>
+                </div>
+                <div class="flex items-end gap-2">
+                  <button class="flex-1 py-2 bg-sky-600 hover:bg-sky-700 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg text-xs font-semibold transition-colors"
+                    disabled="" id="submitReviewBtn" onclick="submitForReview()">Submit for Review</button>
+                  <button class="flex-1 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg text-xs font-semibold transition-colors"
+                    disabled="" id="approveLockBtn" onclick="approveAndLock()">Approve &amp; Lock</button>
+                </div>
+              </div>
+              <!-- Locked banner -->
+              <div class="hidden mt-4 p-3 rounded-lg bg-rose-50 border border-rose-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                id="lockedBanner">
+                <div class="flex items-center gap-2 text-rose-700 text-xs font-semibold">
+                  <span class="material-symbols-outlined text-[18px]">lock</span>
+                  <span>Reviewed &amp; locked — this reconciliation is read-only. Request edit access to make
+                    changes.</span>
+                </div>
+                <button class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-xs font-semibold transition-colors whitespace-nowrap"
+                  onclick="requestEditAccess()">Request Edit Access</button>
+              </div>
+            </div>
+            <!-- END: Review & Approval Workflow -->
           </div>
           <!-- ========================================================================= -->
           <!-- TAB 4: CASH ACCOUNTS (SAFES & PETTY CASH) -->
@@ -1217,6 +1291,12 @@
                   replenishment floats.</p>
               </div>
               <div class="flex gap-2">
+                <button
+                  class="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
+                  onclick="openModal('momoTransferModal')">
+                  <span class="material-symbols-outlined text-[16px]">send_money</span>
+                  <span>MoMo / Transfer</span>
+                </button>
                 <button
                   class="px-3 py-1.5 bg-primary text-white rounded-lg text-xs font-semibold hover:bg-primary-hover flex items-center gap-1.5 shadow-xs"
                   onclick="openCashCountModal()">
@@ -1517,14 +1597,8 @@
           </div>
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Bank Name *</label>
-            <select class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-1 focus:ring-primary text-xs">
-              <option>Ecobank Ghana</option>
-              <option>Standard Chartered Bank</option>
-              <option>Stanbic Bank Ghana</option>
-              <option>Consolidated Bank Ghana (CBG)</option>
-              <option>Absa Bank Ghana</option>
-              <option>GCB Bank</option>
-            </select>
+            <input class="w-full px-3 py-2 border border-slate-300 rounded-lg font-mono text-xs"
+              placeholder="e.g. Ecobank" required="" type="text" />
           </div>
         </div>
         <div class="grid grid-cols-2 gap-4">
@@ -1557,9 +1631,21 @@
         </div>
         <div class="grid grid-cols-2 gap-4">
           <div>
-            <label class="block font-semibold text-slate-700 mb-1">General Ledger Code *</label>
+            <label class="block font-semibold text-slate-700 mb-1">General Ledger Code (Optional)</label>
             <input class="w-full px-3 py-2 border border-slate-300 rounded-lg font-mono text-xs"
-              placeholder="1150-ACC-05" required="" type="text" />
+              placeholder="1150-ACC-05" type="text" />
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Sort Code</label>
+            <input class="w-full px-3 py-2 border border-slate-300 rounded-lg font-mono text-xs"
+              placeholder="e.g. 130100" type="text" />
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Opening Date</label>
+            <input class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs" type="date"
+              value="2025-06-01" />
           </div>
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Fiduciary Scope / Grant</label>
@@ -1584,7 +1670,7 @@
   <!-- BEGIN: Modal Dialog - Physical Cash Count -->
   <div class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs hidden items-center justify-center p-4"
     id="cashCountModal">
-    <div class="bg-surface-card rounded-xl border border-slate-200 shadow-xl max-w-md w-full overflow-hidden">
+    <div class="bg-surface-card rounded-xl border border-slate-200 shadow-xl max-w-2xl w-full overflow-hidden">
       <div class="px-5 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
         <div>
           <h3 class="text-sm font-bold text-slate-900" id="cashCountTitle">Perform Cash Count</h3>
@@ -1595,19 +1681,33 @@
         </button>
       </div>
       <div class="p-5 space-y-4 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Currency *</label>
+          <select class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-1 focus:ring-primary bg-white"
+            id="cashCurrencySelect" onchange="renderCashDenominations()">
+            <option value="GHS">GHS — Ghana Cedi (GH¢)</option>
+            <option value="USD">USD — US Dollar ($)</option>
+            <option value="GBP">GBP — Pound Sterling (£)</option>
+            <option value="EUR">EUR — Euro (€)</option>
+          </select>
+        </div>
         <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 flex justify-between items-center">
           <span class="text-slate-600 font-medium">System Expected Balance:</span>
-          <span class="font-mono font-bold text-slate-900 text-sm" id="expectedCashVal">GHS 25,400.00</span>
+          <span class="font-mono font-bold text-slate-900 text-sm"><span id="expectedCashCur">GH¢</span>
+            <span id="expectedCashVal">25,400.00</span></span>
         </div>
         <div>
-          <label class="block font-semibold text-slate-700 mb-1">Physical Count Amount (GHS) *</label>
-          <input
-            class="w-full px-3 py-2 border border-slate-300 rounded-lg font-mono text-sm font-bold text-slate-900 focus:ring-1 focus:ring-primary"
-            id="physicalCountInput" oninput="calculateVariance()" type="number" value="25400.00" />
+          <label class="block font-semibold text-slate-700 mb-1">Note Denominations — enter quantity counted</label>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-72 overflow-y-auto pr-1" id="denominationsList"></div>
         </div>
-        <div class="p-3 rounded-lg border flex justify-between items-center" id="varianceBox">
+        <div class="p-3 rounded-lg border border-slate-200 bg-slate-50 flex justify-between items-center">
+          <span class="text-slate-600 font-medium">Calculated Total:</span>
+          <span class="font-mono font-bold text-slate-900 text-sm" id="cashTotalText">GH¢ 0.00</span>
+        </div>
+        <div class="p-3 rounded-lg border border-emerald-200 bg-emerald-50/50 flex justify-between items-center"
+          id="varianceBox">
           <span class="text-slate-600 font-medium">Calculated Variance:</span>
-          <span class="font-mono font-bold text-emerald-600" id="cashVarianceText">GHS 0.00 (Balanced)</span>
+          <span class="font-mono font-bold text-emerald-600" id="cashVarianceText">GH¢ 0.00 (Balanced)</span>
         </div>
         <div>
           <label class="block font-semibold text-slate-700 mb-1">Co-Signer Custodian PIN / Token *</label>
@@ -1624,6 +1724,71 @@
     </div>
   </div>
   <!-- END: Modal Dialog - Physical Cash Count -->
+
+  <!-- BEGIN: Modal Dialog - MoMo / Transfer -->
+  <div class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs hidden items-center justify-center p-4"
+    id="momoTransferModal">
+    <div class="bg-surface-card rounded-xl border border-slate-200 shadow-xl max-w-md w-full overflow-hidden">
+      <div class="px-5 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div>
+          <h3 class="text-sm font-bold text-slate-900">MoMo / Transfer</h3>
+          <p class="text-[11px] text-slate-500">Send money from a safe float to a mobile money wallet</p>
+        </div>
+        <button class="text-slate-400 hover:text-slate-700" onclick="closeModal('momoTransferModal')">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <form class="p-5 space-y-4 text-xs" onsubmit="handleMomoTransfer(event)">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Source Safe / Float *</label>
+          <select class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white" required="">
+            <option>Accra HQ Vault — GHS 25,400.00</option>
+            <option>Tamale Field Safe — GHS 14,200.00</option>
+            <option>Kumasi Medical Float — GHS 8,500.00</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Network *</label>
+          <select class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white" required="">
+            <option>MTN Mobile Money</option>
+            <option>Vodafone Cash</option>
+            <option>AirtelTigo Money</option>
+            <option>Zeepay</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Recipient MoMo Number *</label>
+            <input class="w-full px-3 py-2 border border-slate-300 rounded-lg font-mono text-xs"
+              placeholder="024 000 0000" required="" type="tel" />
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Amount (GHS) *</label>
+            <input class="w-full px-3 py-2 border border-slate-300 rounded-lg font-mono text-xs" placeholder="0.00"
+              required="" step="0.01" type="number" />
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Account Name (as shown on recipient's screen)
+            *</label>
+          <input class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs"
+            placeholder="e.g. Ibrahim Mahama" required="" type="text" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Narration</label>
+          <input class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs"
+            placeholder="Reason for transfer..." type="text" />
+        </div>
+        <div class="pt-3 border-t border-slate-200 flex justify-end gap-2">
+          <button class="px-3 py-1.5 border border-slate-300 rounded text-slate-700"
+            onclick="closeModal('momoTransferModal')" type="button">Cancel</button>
+          <button class="px-3 py-1.5 bg-primary text-white rounded font-semibold hover:bg-primary-hover"
+            type="submit">Send Transfer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END: Modal Dialog - MoMo / Transfer -->
   <!-- BEGIN: Sliding Inspection Drawer for Transactions -->
   <div
     class="fixed inset-y-0 right-0 w-96 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-200 ease-in-out border-l border-slate-200 flex flex-col"
@@ -1992,33 +2157,65 @@
       }
     }
 
-    // Cash Count Modal
+    // =====================================================================
+    // Cash Count Modal — multi-currency denomination counting
+    // =====================================================================
     let expectedSafeAmount = 25400.00;
+    const cashDenominations = {
+      GHS: [{ v: 200 }, { v: 100 }, { v: 50 }, { v: 20 }, { v: 10 }, { v: 5 }, { v: 2 }, { v: 1 }],
+      USD: [{ v: 100 }, { v: 50 }, { v: 20 }, { v: 10 }, { v: 5 }, { v: 2 }, { v: 1 }],
+      GBP: [{ v: 50 }, { v: 20 }, { v: 10 }, { v: 5 }],
+      EUR: [{ v: 500 }, { v: 200 }, { v: 100 }, { v: 50 }, { v: 20 }, { v: 10 }, { v: 5 }]
+    };
+    const currencySymbols = { GHS: 'GH¢', USD: '$', GBP: '£', EUR: '€' };
+
     function openCashCountModal(safeName = 'Accra HQ Vault', amount = 25400.00) {
       expectedSafeAmount = amount;
       document.getElementById('cashCountTitle').textContent = `Perform Cash Count: ${safeName}`;
-      document.getElementById('expectedCashVal').textContent = `GHS ${amount.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
-      document.getElementById('physicalCountInput').value = amount.toFixed(2);
-      calculateVariance();
+      document.getElementById('cashCurrencySelect').value = 'GHS';
+      document.getElementById('expectedCashVal').textContent =
+        amount.toLocaleString('en-US', { minimumFractionDigits: 2 });
+      renderCashDenominations();
       openModal('cashCountModal');
     }
 
-    function calculateVariance() {
-      const entered = parseFloat(document.getElementById('physicalCountInput').value) || 0;
-      const variance = entered - expectedSafeAmount;
+    function renderCashDenominations() {
+      const cur = document.getElementById('cashCurrencySelect').value;
+      const sym = currencySymbols[cur];
+      document.getElementById('expectedCashCur').textContent = sym;
+      const list = document.getElementById('denominationsList');
+      list.innerHTML = cashDenominations[cur].map(d => `
+  <div class="flex items-center justify-between gap-2 p-2 rounded-lg border border-slate-200 bg-white">
+    <span class="font-mono font-bold text-slate-800 whitespace-nowrap">${sym}${d.v}</span>
+    <span class="text-slate-300 text-[11px]">×</span>
+    <input type="number" min="0" step="1" value="0" data-value="${d.v}" oninput="updateCashTotals()"
+      class="denom-qty w-16 px-2 py-1.5 border border-slate-300 rounded-lg font-mono text-xs text-right focus:ring-1 focus:ring-primary" placeholder="0" />
+  </div>`).join('');
+      updateCashTotals();
+    }
+
+    function updateCashTotals() {
+      const cur = document.getElementById('cashCurrencySelect').value;
+      const sym = currencySymbols[cur];
+      let total = 0;
+      document.querySelectorAll('#denominationsList .denom-qty').forEach(inp => {
+        total += (parseFloat(inp.value) || 0) * parseFloat(inp.getAttribute('data-value'));
+      });
+      document.getElementById('cashTotalText').textContent =
+        `${sym} ${total.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+      const variance = total - expectedSafeAmount;
       const vText = document.getElementById('cashVarianceText');
       const vBox = document.getElementById('varianceBox');
-
       if (variance === 0) {
-        vText.textContent = 'GHS 0.00 (Balanced)';
+        vText.textContent = `${sym} 0.00 (Balanced)`;
         vText.className = 'font-mono font-bold text-emerald-600';
         vBox.className = 'p-3 rounded-lg border border-emerald-200 bg-emerald-50/50 flex justify-between items-center';
       } else if (variance < 0) {
-        vText.textContent = `-GHS ${Math.abs(variance).toFixed(2)} (Deficit)`;
+        vText.textContent = `-${sym} ${Math.abs(variance).toFixed(2)} (Deficit)`;
         vText.className = 'font-mono font-bold text-rose-600';
         vBox.className = 'p-3 rounded-lg border border-rose-200 bg-rose-50/50 flex justify-between items-center';
       } else {
-        vText.textContent = `+GHS ${variance.toFixed(2)} (Surplus)`;
+        vText.textContent = `+${sym} ${variance.toFixed(2)} (Surplus)`;
         vText.className = 'font-mono font-bold text-amber-600';
         vBox.className = 'p-3 rounded-lg border border-amber-200 bg-amber-50/50 flex justify-between items-center';
       }
@@ -2029,31 +2226,166 @@
       triggerToast('Cash count verified and dual-custody certificate generated.');
     }
 
-    // Reconciliation matching actions
+    // =====================================================================
+    // MoMo / Transfer
+    // =====================================================================
+    function handleMomoTransfer(e) {
+      e.preventDefault();
+      closeModal('momoTransferModal');
+      triggerToast('Transfer initiated — pending network confirmation from recipient.');
+    }
+
+    // =====================================================================
+    // Reconciliation matching, review & locking workflow
+    // Status flow: in-progress → draft → pending-review → locked
+    // =====================================================================
     let remainingVariance = 18450.00;
-    function matchSingleItem(elementId, amount) {
+    let reconStatus = 'in-progress';
+    let reconPairCount = 0;
+    const reconTotalPairs = 3;
+
+    function setReconStatus(status) {
+      reconStatus = status;
+      const badge = document.getElementById('reconStatusBadge');
+      const submitBtn = document.getElementById('submitReviewBtn');
+      const approveBtn = document.getElementById('approveLockBtn');
+      const lockedBanner = document.getElementById('lockedBanner');
+      const reviewerSel = document.getElementById('reviewerSelect');
+      if (!badge) return;
+
+      if (status === 'in-progress') {
+        badge.textContent = 'In Progress';
+        badge.className = 'px-2.5 py-1 rounded text-[11px] font-bold bg-slate-100 text-slate-600 whitespace-nowrap';
+        submitBtn.disabled = true; approveBtn.disabled = true;
+        lockedBanner.classList.add('hidden');
+      } else if (status === 'draft') {
+        badge.textContent = 'Draft — Pending Review';
+        badge.className = 'px-2.5 py-1 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200 whitespace-nowrap';
+        submitBtn.disabled = false; approveBtn.disabled = true;
+        lockedBanner.classList.add('hidden');
+      } else if (status === 'pending-review') {
+        const name = reviewerSel && reviewerSel.value
+          ? reviewerSel.options[reviewerSel.selectedIndex].text.split('—')[0].trim() : 'Reviewer';
+        badge.textContent = `Pending Review — ${name}`;
+        badge.className = 'px-2.5 py-1 rounded text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200 whitespace-nowrap';
+        submitBtn.disabled = true; approveBtn.disabled = false;
+        lockedBanner.classList.add('hidden');
+      } else if (status === 'locked') {
+        badge.textContent = 'Reviewed & Locked';
+        badge.className = 'px-2.5 py-1 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 whitespace-nowrap';
+        submitBtn.disabled = true; approveBtn.disabled = true;
+        if (reviewerSel) reviewerSel.disabled = true;
+        lockedBanner.classList.remove('hidden');
+        const ws = document.getElementById('reconWorkspace');
+        if (ws) ws.classList.add('opacity-60', 'pointer-events-none');
+      }
+    }
+
+    // Match one Credit item with its Debit counterpart (and vice-versa)
+    function matchPair(elementId, amount) {
+      if (reconStatus === 'locked') {
+        triggerToast('Reconciliation is locked. Request edit access to modify.');
+        return;
+      }
       const el = document.getElementById(elementId);
-      if (el) {
-        el.style.opacity = '0.4';
-        el.style.pointerEvents = 'none';
-        remainingVariance -= amount;
-        if (remainingVariance < 0) remainingVariance = 0;
-        document.getElementById('reconVarianceText').textContent = `GHS ${remainingVariance.toFixed(2)}`;
-        triggerToast(`Matched item. Remaining variance: GHS ${remainingVariance.toFixed(2)}`);
+      if (!el || el.dataset.matched === '1') return;
+      el.dataset.matched = '1';
+      el.style.opacity = '0.4';
+      el.style.pointerEvents = 'none';
+
+      const counterpart = el.getAttribute('data-pair');
+      if (counterpart) {
+        const cp = document.getElementById(counterpart);
+        if (cp && cp.dataset.matched !== '1') {
+          cp.dataset.matched = '1';
+          cp.style.opacity = '0.4';
+          cp.style.pointerEvents = 'none';
+        }
+      }
+
+      remainingVariance -= amount;
+      if (remainingVariance < 0) remainingVariance = 0;
+      document.getElementById('reconVarianceText').textContent = `GHS ${remainingVariance.toFixed(2)}`;
+      reconPairCount++;
+
+      if (reconPairCount >= reconTotalPairs || remainingVariance === 0) {
+        document.getElementById('reconVarianceText').textContent = 'GHS 0.00';
+        document.getElementById('auditComplianceText').textContent = '100.0% IPSAS';
+        setReconStatus('draft');
+        triggerToast('All items matched. Reconciliation saved as Draft — awaiting review & approval.');
+      } else {
+        triggerToast(`Matched pair. Remaining variance: GHS ${remainingVariance.toFixed(2)}`);
       }
     }
 
     function autoMatchItems() {
-      document.getElementById('stmt-item-1').style.opacity = '0.4';
-      document.getElementById('stmt-item-2').style.opacity = '0.4';
-      document.getElementById('stmt-item-3').style.opacity = '0.4';
-      document.getElementById('reconVarianceText').textContent = 'GHS 0.00';
-      document.getElementById('auditComplianceText').textContent = '100.0% IPSAS';
-      triggerToast('Auto-matched 3 statement items to General Ledger successfully.');
+      if (reconStatus === 'locked') {
+        triggerToast('Reconciliation is locked. Request edit access to modify.');
+        return;
+      }
+      matchPair('stmt-item-1', 850);
+      matchPair('stmt-item-2', 1420);
+      matchPair('stmt-item-3', 16180);
     }
 
     function completeReconciliation() {
-      triggerToast('Bank reconciliation completed. June 2025 Statement locked.');
+      if (reconStatus === 'locked') {
+        triggerToast('Reconciliation is locked. Request edit access to modify.');
+        return;
+      }
+      if (remainingVariance > 0) {
+        triggerToast(`Cannot complete: unmatched items remain (GHS ${remainingVariance.toFixed(2)}).`);
+        return;
+      }
+      setReconStatus('draft');
+      const panel = document.getElementById('reviewPanel');
+      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      triggerToast('Reconciliation marked as Draft. Assign a reviewer to proceed.');
+    }
+
+    // Review & approval actions
+    function submitForReview() {
+      const sel = document.getElementById('reviewerSelect');
+      if (!sel || !sel.value) {
+        triggerToast('Please select an assigned reviewer before submitting.');
+        return;
+      }
+      setReconStatus('pending-review');
+      triggerToast(`Draft submitted for review to ${sel.options[sel.selectedIndex].text}.`);
+    }
+
+    function approveAndLock() {
+      setReconStatus('locked');
+      triggerToast('Reconciliation reviewed and locked. Period is now read-only.');
+    }
+
+    function requestEditAccess() {
+      triggerToast('Edit request submitted to the assigned reviewer for approval.');
+    }
+
+    // Digital signature: auto-fill from system or upload
+    function handleSignatureSource() {
+      const sel = document.getElementById('reviewerSelect');
+      const opt = sel.options[sel.selectedIndex];
+      const sig = opt ? opt.getAttribute('data-signature') : null;
+      const auto = document.getElementById('sigAuto');
+      const upload = document.getElementById('sigUpload');
+      if (sig) {
+        document.getElementById('sigAutoText').textContent = sig;
+        auto.classList.remove('hidden');
+        auto.classList.add('flex');
+        upload.classList.add('hidden');
+      } else {
+        auto.classList.add('hidden');
+        auto.classList.remove('flex');
+        upload.classList.remove('hidden');
+      }
+    }
+
+    function handleSignatureUpload(input) {
+      if (input.files && input.files[0]) {
+        triggerToast(`Signature uploaded: ${input.files[0].name}`);
+      }
     }
 
     // Transaction Drawer
