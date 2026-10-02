@@ -454,6 +454,280 @@
             </div>
           </div>
 
+           <!-- SECTION C: RECENT JOURNAL ENTRIES & PENDING ACCOUNTING APPROVALS -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            
+            <!-- LEFT 8 COLS: RECENT JOURNAL ENTRIES TABLE -->
+            <div class="lg:col-span-8 bg-surface-card rounded-lg border border-border-subtle shadow-xs overflow-hidden flex flex-col">
+              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border-subtle">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-sm font-bold text-text-primary flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[18px] text-primary">menu_book</span>
+                      Recent Journal Entries
+                    </h3>
+                    <span class="text-[11px] px-1.5 py-0.5 rounded-full bg-surface-secondary text-text-secondary font-semibold font-mono">Live Feed</span>
+                  </div>
+                  <p class="text-xs text-text-muted mt-0.5">Audit log of posted general ledger vouchers and donor grant disbursements</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="openQuickActionModal('New Journal Entry')"
+                    class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-white rounded text-xs font-semibold flex items-center gap-1 transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">add</span>
+                    <span>Post Voucher</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Entries Table -->
+              <div class="overflow-x-auto w-full">
+                <table class="w-full text-left border-collapse text-xs">
+                  <thead>
+                    <tr class="bg-surface-secondary font-semibold uppercase tracking-wider text-text-secondary border-b border-border-subtle select-none">
+                      <th class="py-2.5 px-3">Journal Ref &amp; Date</th>
+                      <th class="py-2.5 px-3">Description &amp; Payee</th>
+                      <th class="py-2.5 px-3">Fund / Grant</th>
+                      <th class="py-2.5 px-3 text-right">Debit / Credit (GHS)</th>
+                      <th class="py-2.5 px-3 text-center">Status</th>
+                      <th class="py-2.5 px-3 text-right">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="journalTableBody" class="divide-y divide-border-subtle/50 text-text-primary font-sans">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors">
+                      <td class="py-2.5 px-3 whitespace-nowrap">
+                        <div class="font-bold text-text-primary font-mono">JV-2025-0648</div>
+                        <div class="text-[11px] text-text-muted font-mono">24 Jun 2025</div>
+                      </td>
+                      <td class="py-2.5 px-3">
+                        <div class="font-semibold text-text-primary">Volta Logistics Ltd</div>
+                        <div class="text-[11px] text-text-muted truncate max-w-xs">Tamale mobile health cold-chain transport</div>
+                      </td>
+                      <td class="py-2.5 px-3 whitespace-nowrap">
+                        <span class="inline-block px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[10px] font-semibold">
+                          USAID-ED09
+                        </span>
+                      </td>
+                      <td class="py-2.5 px-3 text-right font-mono-num font-bold text-text-primary whitespace-nowrap">
+                        18,450.00
+                      </td>
+                      <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
+                          <span class="material-symbols-outlined text-[12px]">check</span> Posted
+                        </span>
+                      </td>
+                      <td class="py-2.5 px-3 text-right whitespace-nowrap">
+                        <button onclick="viewJournalDetail('JV-2025-0648', 'Volta Logistics Ltd', '18,450.00', 'USAID Education Program', 'Approved and reconciled with StanChart Escrow.')"
+                          class="text-primary hover:text-primary-hover font-semibold text-xs inline-flex items-center gap-0.5">
+                          Inspect <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors">
+                      <td class="py-2.5 px-3 whitespace-nowrap">
+                        <div class="font-bold text-text-primary font-mono">JV-2025-0647</div>
+                        <div class="text-[11px] text-text-muted font-mono">23 Jun 2025</div>
+                      </td>
+                      <td class="py-2.5 px-3">
+                        <div class="font-semibold text-text-primary">Electricity Company of Ghana (ECG)</div>
+                        <div class="text-[11px] text-text-muted">Tamale Hub utilities remittance</div>
+                      </td>
+                      <td class="py-2.5 px-3 whitespace-nowrap">
+                        <span class="inline-block px-1.5 py-0.5 rounded bg-primary-tint text-primary text-[10px] font-semibold">
+                          Core Unrestricted
+                        </span>
+                      </td>
+                      <td class="py-2.5 px-3 text-right font-mono-num font-bold text-text-primary whitespace-nowrap">
+                        4,220.00
+                      </td>
+                      <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
+                          <span class="material-symbols-outlined text-[12px]">check</span> Posted
+                        </span>
+                      </td>
+                      <td class="py-2.5 px-3 text-right whitespace-nowrap">
+                        <button onclick="viewJournalDetail('JV-2025-0647', 'Electricity Company of Ghana', '4,220.00', 'Core Administration', 'Monthly facility utility discharge.')"
+                          class="text-primary hover:text-primary-hover font-semibold text-xs inline-flex items-center gap-0.5">
+                          Inspect <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors">
+                      <td class="py-2.5 px-3 whitespace-nowrap">
+                        <div class="font-bold text-text-primary font-mono">JV-2025-0646</div>
+                        <div class="text-[11px] text-text-muted font-mono">22 Jun 2025</div>
+                      </td>
+                      <td class="py-2.5 px-3">
+                        <div class="font-semibold text-text-primary">Global Fund Replenishment Inflow</div>
+                        <div class="text-[11px] text-text-muted">Direct Escrow Transfer (Q2 Tranche)</div>
+                      </td>
+                      <td class="py-2.5 px-3 whitespace-nowrap">
+                        <span class="inline-block px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[10px] font-semibold">
+                          GF-MAL-2023
+                        </span>
+                      </td>
+                      <td class="py-2.5 px-3 text-right font-mono-num font-bold text-status-success-text whitespace-nowrap">
+                        +420,000.00
+                      </td>
+                      <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
+                          <span class="material-symbols-outlined text-[12px]">verified</span> Reconciled
+                        </span>
+                      </td>
+                      <td class="py-2.5 px-3 text-right whitespace-nowrap">
+                        <button onclick="viewJournalDetail('JV-2025-0646', 'Global Fund Tranche Receipt', '420,000.00', 'Global Fund Health II', 'Direct donor grant disbursement credited to Ecobank.')"
+                          class="text-primary hover:text-primary-hover font-semibold text-xs inline-flex items-center gap-0.5">
+                          Inspect <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr class="hover:bg-primary-tint/30 transition-colors">
+                      <td class="py-2.5 px-3 whitespace-nowrap">
+                        <div class="font-bold text-text-primary font-mono">JV-2025-0645</div>
+                        <div class="text-[11px] text-text-muted font-mono">21 Jun 2025</div>
+                      </td>
+                      <td class="py-2.5 px-3">
+                        <div class="font-semibold text-text-primary">Savannah Agro-Forestry Seedlings</div>
+                        <div class="text-[11px] text-text-muted">Community saplings purchase order</div>
+                      </td>
+                      <td class="py-2.5 px-3 whitespace-nowrap">
+                        <span class="inline-block px-1.5 py-0.5 rounded bg-[#FEF8E7] text-[#A07200] text-[10px] font-semibold">
+                          EU-CLIM-GH
+                        </span>
+                      </td>
+                      <td class="py-2.5 px-3 text-right font-mono-num font-bold text-text-primary whitespace-nowrap">
+                        34,500.00
+                      </td>
+                      <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning-text text-[11px] font-semibold">
+                          <span class="material-symbols-outlined text-[12px]">schedule</span> In Review
+                        </span>
+                      </td>
+                      <td class="py-2.5 px-3 text-right whitespace-nowrap">
+                        <button onclick="viewJournalDetail('JV-2025-0645', 'Savannah Seedlings Supply', '34,500.00', 'EU Climate Adaptation', 'Supporting delivery receipts attached. Awaiting final voucher sign-off.')"
+                          class="text-primary hover:text-primary-hover font-semibold text-xs inline-flex items-center gap-0.5">
+                          Inspect <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="p-2.5 bg-surface-secondary/60 border-t border-border-subtle flex items-center justify-between text-[11px] text-text-muted">
+                <span>Displaying 4 most recent of 128 vouchers posted in June 2025</span>
+                <a href="#" class="text-primary hover:text-primary-hover font-semibold inline-flex items-center gap-0.5">
+                  Access Full General Ledger <span class="material-symbols-outlined text-[12px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- RIGHT 4 COLS: PENDING APPROVALS & FIDUCIARY FAST-ACTIONS -->
+            <div class="lg:col-span-4 flex flex-col gap-4">
+              
+              <!-- Pending Accounting Approvals -->
+              <div class="bg-surface-card rounded-lg border border-border-subtle shadow-xs p-4 flex flex-col gap-3">
+                <div class="flex items-center justify-between pb-2 border-b border-border-subtle">
+                  <div class="flex items-center gap-1.5">
+                    <h3 class="text-sm font-bold text-text-primary">Pending Approvals</h3>
+                    <span class="w-5 h-5 rounded-full bg-status-warning-bg text-status-warning-text text-[11px] font-bold flex items-center justify-center border border-status-warning-border">
+                      3
+                    </span>
+                  </div>
+                  <span class="text-[11px] text-text-muted">Requires Sign-off</span>
+                </div>
+
+                <!-- Approval Items -->
+                <div class="flex flex-col gap-2.5">
+                  <!-- Approval 1 -->
+                  <div id="approvalItem1" class="p-2.5 rounded-lg border border-border-subtle bg-surface-secondary/40 flex flex-col gap-1.5 hover:border-primary transition-colors">
+                    <div class="flex items-start justify-between gap-1">
+                      <div class="flex flex-col">
+                        <span class="font-bold text-xs text-text-primary">PV-2025-0192 (Payment Voucher)</span>
+                        <span class="text-[11px] text-text-muted">Procurement: Solar Distribution Kits</span>
+                      </div>
+                      <span class="font-bold font-mono-num text-xs text-text-primary">GHS 72,500</span>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] text-text-secondary">
+                      <span>By: <strong class="text-text-primary font-medium">Kofi Antwi</strong> (Procurement)</span>
+                      <span class="px-1.5 py-0.2 rounded bg-[#FCF7E8] text-[#8A6507] font-semibold text-[10px]">USAID-ED</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-1 pt-1.5 border-t border-border-subtle/50">
+                      <button onclick="approveItem('approvalItem1', 'Payment Voucher PV-2025-0192 approved for GHS 72,500.00')"
+                        class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-white rounded text-xs font-semibold transition-colors shadow-xs">
+                        Approve
+                      </button>
+                      <button onclick="rejectItem('approvalItem1', 'Payment Voucher PV-2025-0192 returned with comments')"
+                        class="px-2 py-1 bg-surface-card hover:bg-surface-secondary text-text-secondary rounded text-xs font-medium border border-border-subtle transition-colors">
+                        Return
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Approval 2 -->
+                  <div id="approvalItem2" class="p-2.5 rounded-lg border border-border-subtle bg-surface-secondary/40 flex flex-col gap-1.5 hover:border-primary transition-colors">
+                    <div class="flex items-start justify-between gap-1">
+                      <div class="flex flex-col">
+                        <span class="font-bold text-xs text-text-primary">JV-ADJ-0044 (Budget Reallocation)</span>
+                        <span class="text-[11px] text-text-muted">Line transfer to maternal kit buffers</span>
+                      </div>
+                      <span class="font-bold font-mono-num text-xs text-text-primary">GHS 24,000</span>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] text-text-secondary">
+                      <span>By: <strong class="text-text-primary font-medium">Dr. Selorm K.</strong> (Program Lead)</span>
+                      <span class="px-1.5 py-0.2 rounded bg-[#FCF7E8] text-[#8A6507] font-semibold text-[10px]">GF-MAL</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-1 pt-1.5 border-t border-border-subtle/50">
+                      <button onclick="approveItem('approvalItem2', 'Journal Adjustment JV-ADJ-0044 approved')"
+                        class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-white rounded text-xs font-semibold transition-colors shadow-xs">
+                        Approve
+                      </button>
+                      <button onclick="rejectItem('approvalItem2', 'Journal Adjustment JV-ADJ-0044 returned for revision')"
+                        class="px-2 py-1 bg-surface-card hover:bg-surface-secondary text-text-secondary rounded text-xs font-medium border border-border-subtle transition-colors">
+                        Review
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Accounting Actions -->
+              <div class="bg-surface-card rounded-lg border border-border-subtle shadow-xs p-4 flex flex-col gap-2.5">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-text-muted">Accounting Fast-Track</h3>
+                <div class="grid grid-cols-2 gap-2">
+                  <button onclick="openQuickActionModal('New Journal Entry')"
+                    class="p-2.5 text-left rounded-lg bg-surface-secondary hover:bg-primary-tint border border-border-subtle hover:border-primary/40 transition-all flex flex-col gap-1 group">
+                    <span class="material-symbols-outlined text-[18px] text-primary">post_add</span>
+                    <span class="text-xs font-bold text-text-primary group-hover:text-primary">New Journal</span>
+                  </button>
+
+                  <button onclick="openQuickActionModal('Record Payment')"
+                    class="p-2.5 text-left rounded-lg bg-surface-secondary hover:bg-primary-tint border border-border-subtle hover:border-primary/40 transition-all flex flex-col gap-1 group">
+                    <span class="material-symbols-outlined text-[18px] text-primary">payments</span>
+                    <span class="text-xs font-bold text-text-primary group-hover:text-primary">Record Payment</span>
+                  </button>
+
+                  <button onclick="openQuickActionModal('Create Vendor Bill')"
+                    class="p-2.5 text-left rounded-lg bg-surface-secondary hover:bg-primary-tint border border-border-subtle hover:border-primary/40 transition-all flex flex-col gap-1 group">
+                    <span class="material-symbols-outlined text-[18px] text-primary">receipt</span>
+                    <span class="text-xs font-bold text-text-primary group-hover:text-primary">Create Bill</span>
+                  </button>
+
+                  <button onclick="openReconcileDrawer()"
+                    class="p-2.5 text-left rounded-lg bg-surface-secondary hover:bg-primary-tint border border-border-subtle hover:border-primary/40 transition-all flex flex-col gap-1 group">
+                    <span class="material-symbols-outlined text-[18px] text-primary">sync_alt</span>
+                    <span class="text-xs font-bold text-text-primary group-hover:text-primary">Reconcile Bank</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- SECTION B: TWO-COLUMN ANALYTICS (BUDGET VS ACTUAL + CASH FLOW & RECONCILIATION) -->
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
             
@@ -726,280 +1000,6 @@
                       </button>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- SECTION C: RECENT JOURNAL ENTRIES & PENDING ACCOUNTING APPROVALS -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-            
-            <!-- LEFT 8 COLS: RECENT JOURNAL ENTRIES TABLE -->
-            <div class="lg:col-span-8 bg-surface-card rounded-lg border border-border-subtle shadow-xs overflow-hidden flex flex-col">
-              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border-subtle">
-                <div>
-                  <div class="flex items-center gap-2">
-                    <h3 class="text-sm font-bold text-text-primary flex items-center gap-1.5">
-                      <span class="material-symbols-outlined text-[18px] text-primary">menu_book</span>
-                      Recent Journal Entries
-                    </h3>
-                    <span class="text-[11px] px-1.5 py-0.5 rounded-full bg-surface-secondary text-text-secondary font-semibold font-mono">Live Feed</span>
-                  </div>
-                  <p class="text-xs text-text-muted mt-0.5">Audit log of posted general ledger vouchers and donor grant disbursements</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <button onclick="openQuickActionModal('New Journal Entry')"
-                    class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-white rounded text-xs font-semibold flex items-center gap-1 transition-colors">
-                    <span class="material-symbols-outlined text-[14px]">add</span>
-                    <span>Post Voucher</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Entries Table -->
-              <div class="overflow-x-auto w-full">
-                <table class="w-full text-left border-collapse text-xs">
-                  <thead>
-                    <tr class="bg-surface-secondary font-semibold uppercase tracking-wider text-text-secondary border-b border-border-subtle select-none">
-                      <th class="py-2.5 px-3">Journal Ref &amp; Date</th>
-                      <th class="py-2.5 px-3">Description &amp; Payee</th>
-                      <th class="py-2.5 px-3">Fund / Grant</th>
-                      <th class="py-2.5 px-3 text-right">Debit / Credit (GHS)</th>
-                      <th class="py-2.5 px-3 text-center">Status</th>
-                      <th class="py-2.5 px-3 text-right">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody id="journalTableBody" class="divide-y divide-border-subtle/50 text-text-primary font-sans">
-                    <!-- Row 1 -->
-                    <tr class="hover:bg-primary-tint/30 transition-colors">
-                      <td class="py-2.5 px-3 whitespace-nowrap">
-                        <div class="font-bold text-text-primary font-mono">JV-2025-0648</div>
-                        <div class="text-[11px] text-text-muted font-mono">24 Jun 2025</div>
-                      </td>
-                      <td class="py-2.5 px-3">
-                        <div class="font-semibold text-text-primary">Volta Logistics Ltd</div>
-                        <div class="text-[11px] text-text-muted truncate max-w-xs">Tamale mobile health cold-chain transport</div>
-                      </td>
-                      <td class="py-2.5 px-3 whitespace-nowrap">
-                        <span class="inline-block px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[10px] font-semibold">
-                          USAID-ED09
-                        </span>
-                      </td>
-                      <td class="py-2.5 px-3 text-right font-mono-num font-bold text-text-primary whitespace-nowrap">
-                        18,450.00
-                      </td>
-                      <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
-                          <span class="material-symbols-outlined text-[12px]">check</span> Posted
-                        </span>
-                      </td>
-                      <td class="py-2.5 px-3 text-right whitespace-nowrap">
-                        <button onclick="viewJournalDetail('JV-2025-0648', 'Volta Logistics Ltd', '18,450.00', 'USAID Education Program', 'Approved and reconciled with StanChart Escrow.')"
-                          class="text-primary hover:text-primary-hover font-semibold text-xs inline-flex items-center gap-0.5">
-                          Inspect <span class="material-symbols-outlined text-[13px]">chevron_right</span>
-                        </button>
-                      </td>
-                    </tr>
-
-                    <!-- Row 2 -->
-                    <tr class="hover:bg-primary-tint/30 transition-colors">
-                      <td class="py-2.5 px-3 whitespace-nowrap">
-                        <div class="font-bold text-text-primary font-mono">JV-2025-0647</div>
-                        <div class="text-[11px] text-text-muted font-mono">23 Jun 2025</div>
-                      </td>
-                      <td class="py-2.5 px-3">
-                        <div class="font-semibold text-text-primary">Electricity Company of Ghana (ECG)</div>
-                        <div class="text-[11px] text-text-muted">Tamale Hub utilities remittance</div>
-                      </td>
-                      <td class="py-2.5 px-3 whitespace-nowrap">
-                        <span class="inline-block px-1.5 py-0.5 rounded bg-primary-tint text-primary text-[10px] font-semibold">
-                          Core Unrestricted
-                        </span>
-                      </td>
-                      <td class="py-2.5 px-3 text-right font-mono-num font-bold text-text-primary whitespace-nowrap">
-                        4,220.00
-                      </td>
-                      <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
-                          <span class="material-symbols-outlined text-[12px]">check</span> Posted
-                        </span>
-                      </td>
-                      <td class="py-2.5 px-3 text-right whitespace-nowrap">
-                        <button onclick="viewJournalDetail('JV-2025-0647', 'Electricity Company of Ghana', '4,220.00', 'Core Administration', 'Monthly facility utility discharge.')"
-                          class="text-primary hover:text-primary-hover font-semibold text-xs inline-flex items-center gap-0.5">
-                          Inspect <span class="material-symbols-outlined text-[13px]">chevron_right</span>
-                        </button>
-                      </td>
-                    </tr>
-
-                    <!-- Row 3 -->
-                    <tr class="hover:bg-primary-tint/30 transition-colors">
-                      <td class="py-2.5 px-3 whitespace-nowrap">
-                        <div class="font-bold text-text-primary font-mono">JV-2025-0646</div>
-                        <div class="text-[11px] text-text-muted font-mono">22 Jun 2025</div>
-                      </td>
-                      <td class="py-2.5 px-3">
-                        <div class="font-semibold text-text-primary">Global Fund Replenishment Inflow</div>
-                        <div class="text-[11px] text-text-muted">Direct Escrow Transfer (Q2 Tranche)</div>
-                      </td>
-                      <td class="py-2.5 px-3 whitespace-nowrap">
-                        <span class="inline-block px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] text-[10px] font-semibold">
-                          GF-MAL-2023
-                        </span>
-                      </td>
-                      <td class="py-2.5 px-3 text-right font-mono-num font-bold text-status-success-text whitespace-nowrap">
-                        +420,000.00
-                      </td>
-                      <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-status-success-bg text-status-success-text text-[11px] font-semibold">
-                          <span class="material-symbols-outlined text-[12px]">verified</span> Reconciled
-                        </span>
-                      </td>
-                      <td class="py-2.5 px-3 text-right whitespace-nowrap">
-                        <button onclick="viewJournalDetail('JV-2025-0646', 'Global Fund Tranche Receipt', '420,000.00', 'Global Fund Health II', 'Direct donor grant disbursement credited to Ecobank.')"
-                          class="text-primary hover:text-primary-hover font-semibold text-xs inline-flex items-center gap-0.5">
-                          Inspect <span class="material-symbols-outlined text-[13px]">chevron_right</span>
-                        </button>
-                      </td>
-                    </tr>
-
-                    <!-- Row 4 -->
-                    <tr class="hover:bg-primary-tint/30 transition-colors">
-                      <td class="py-2.5 px-3 whitespace-nowrap">
-                        <div class="font-bold text-text-primary font-mono">JV-2025-0645</div>
-                        <div class="text-[11px] text-text-muted font-mono">21 Jun 2025</div>
-                      </td>
-                      <td class="py-2.5 px-3">
-                        <div class="font-semibold text-text-primary">Savannah Agro-Forestry Seedlings</div>
-                        <div class="text-[11px] text-text-muted">Community saplings purchase order</div>
-                      </td>
-                      <td class="py-2.5 px-3 whitespace-nowrap">
-                        <span class="inline-block px-1.5 py-0.5 rounded bg-[#FEF8E7] text-[#A07200] text-[10px] font-semibold">
-                          EU-CLIM-GH
-                        </span>
-                      </td>
-                      <td class="py-2.5 px-3 text-right font-mono-num font-bold text-text-primary whitespace-nowrap">
-                        34,500.00
-                      </td>
-                      <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning-text text-[11px] font-semibold">
-                          <span class="material-symbols-outlined text-[12px]">schedule</span> In Review
-                        </span>
-                      </td>
-                      <td class="py-2.5 px-3 text-right whitespace-nowrap">
-                        <button onclick="viewJournalDetail('JV-2025-0645', 'Savannah Seedlings Supply', '34,500.00', 'EU Climate Adaptation', 'Supporting delivery receipts attached. Awaiting final voucher sign-off.')"
-                          class="text-primary hover:text-primary-hover font-semibold text-xs inline-flex items-center gap-0.5">
-                          Inspect <span class="material-symbols-outlined text-[13px]">chevron_right</span>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="p-2.5 bg-surface-secondary/60 border-t border-border-subtle flex items-center justify-between text-[11px] text-text-muted">
-                <span>Displaying 4 most recent of 128 vouchers posted in June 2025</span>
-                <a href="#" class="text-primary hover:text-primary-hover font-semibold inline-flex items-center gap-0.5">
-                  Access Full General Ledger <span class="material-symbols-outlined text-[12px]">arrow_forward</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- RIGHT 4 COLS: PENDING APPROVALS & FIDUCIARY FAST-ACTIONS -->
-            <div class="lg:col-span-4 flex flex-col gap-4">
-              
-              <!-- Pending Accounting Approvals -->
-              <div class="bg-surface-card rounded-lg border border-border-subtle shadow-xs p-4 flex flex-col gap-3">
-                <div class="flex items-center justify-between pb-2 border-b border-border-subtle">
-                  <div class="flex items-center gap-1.5">
-                    <h3 class="text-sm font-bold text-text-primary">Pending Approvals</h3>
-                    <span class="w-5 h-5 rounded-full bg-status-warning-bg text-status-warning-text text-[11px] font-bold flex items-center justify-center border border-status-warning-border">
-                      3
-                    </span>
-                  </div>
-                  <span class="text-[11px] text-text-muted">Requires Sign-off</span>
-                </div>
-
-                <!-- Approval Items -->
-                <div class="flex flex-col gap-2.5">
-                  <!-- Approval 1 -->
-                  <div id="approvalItem1" class="p-2.5 rounded-lg border border-border-subtle bg-surface-secondary/40 flex flex-col gap-1.5 hover:border-primary transition-colors">
-                    <div class="flex items-start justify-between gap-1">
-                      <div class="flex flex-col">
-                        <span class="font-bold text-xs text-text-primary">PV-2025-0192 (Payment Voucher)</span>
-                        <span class="text-[11px] text-text-muted">Procurement: Solar Distribution Kits</span>
-                      </div>
-                      <span class="font-bold font-mono-num text-xs text-text-primary">GHS 72,500</span>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] text-text-secondary">
-                      <span>By: <strong class="text-text-primary font-medium">Kofi Antwi</strong> (Procurement)</span>
-                      <span class="px-1.5 py-0.2 rounded bg-[#FCF7E8] text-[#8A6507] font-semibold text-[10px]">USAID-ED</span>
-                    </div>
-                    <div class="flex items-center gap-2 mt-1 pt-1.5 border-t border-border-subtle/50">
-                      <button onclick="approveItem('approvalItem1', 'Payment Voucher PV-2025-0192 approved for GHS 72,500.00')"
-                        class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-white rounded text-xs font-semibold transition-colors shadow-xs">
-                        Approve
-                      </button>
-                      <button onclick="rejectItem('approvalItem1', 'Payment Voucher PV-2025-0192 returned with comments')"
-                        class="px-2 py-1 bg-surface-card hover:bg-surface-secondary text-text-secondary rounded text-xs font-medium border border-border-subtle transition-colors">
-                        Return
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Approval 2 -->
-                  <div id="approvalItem2" class="p-2.5 rounded-lg border border-border-subtle bg-surface-secondary/40 flex flex-col gap-1.5 hover:border-primary transition-colors">
-                    <div class="flex items-start justify-between gap-1">
-                      <div class="flex flex-col">
-                        <span class="font-bold text-xs text-text-primary">JV-ADJ-0044 (Budget Reallocation)</span>
-                        <span class="text-[11px] text-text-muted">Line transfer to maternal kit buffers</span>
-                      </div>
-                      <span class="font-bold font-mono-num text-xs text-text-primary">GHS 24,000</span>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] text-text-secondary">
-                      <span>By: <strong class="text-text-primary font-medium">Dr. Selorm K.</strong> (Program Lead)</span>
-                      <span class="px-1.5 py-0.2 rounded bg-[#FCF7E8] text-[#8A6507] font-semibold text-[10px]">GF-MAL</span>
-                    </div>
-                    <div class="flex items-center gap-2 mt-1 pt-1.5 border-t border-border-subtle/50">
-                      <button onclick="approveItem('approvalItem2', 'Journal Adjustment JV-ADJ-0044 approved')"
-                        class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-white rounded text-xs font-semibold transition-colors shadow-xs">
-                        Approve
-                      </button>
-                      <button onclick="rejectItem('approvalItem2', 'Journal Adjustment JV-ADJ-0044 returned for revision')"
-                        class="px-2 py-1 bg-surface-card hover:bg-surface-secondary text-text-secondary rounded text-xs font-medium border border-border-subtle transition-colors">
-                        Review
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Quick Accounting Actions -->
-              <div class="bg-surface-card rounded-lg border border-border-subtle shadow-xs p-4 flex flex-col gap-2.5">
-                <h3 class="text-xs font-bold uppercase tracking-wider text-text-muted">Accounting Fast-Track</h3>
-                <div class="grid grid-cols-2 gap-2">
-                  <button onclick="openQuickActionModal('New Journal Entry')"
-                    class="p-2.5 text-left rounded-lg bg-surface-secondary hover:bg-primary-tint border border-border-subtle hover:border-primary/40 transition-all flex flex-col gap-1 group">
-                    <span class="material-symbols-outlined text-[18px] text-primary">post_add</span>
-                    <span class="text-xs font-bold text-text-primary group-hover:text-primary">New Journal</span>
-                  </button>
-
-                  <button onclick="openQuickActionModal('Record Payment')"
-                    class="p-2.5 text-left rounded-lg bg-surface-secondary hover:bg-primary-tint border border-border-subtle hover:border-primary/40 transition-all flex flex-col gap-1 group">
-                    <span class="material-symbols-outlined text-[18px] text-primary">payments</span>
-                    <span class="text-xs font-bold text-text-primary group-hover:text-primary">Record Payment</span>
-                  </button>
-
-                  <button onclick="openQuickActionModal('Create Vendor Bill')"
-                    class="p-2.5 text-left rounded-lg bg-surface-secondary hover:bg-primary-tint border border-border-subtle hover:border-primary/40 transition-all flex flex-col gap-1 group">
-                    <span class="material-symbols-outlined text-[18px] text-primary">receipt</span>
-                    <span class="text-xs font-bold text-text-primary group-hover:text-primary">Create Bill</span>
-                  </button>
-
-                  <button onclick="openReconcileDrawer()"
-                    class="p-2.5 text-left rounded-lg bg-surface-secondary hover:bg-primary-tint border border-border-subtle hover:border-primary/40 transition-all flex flex-col gap-1 group">
-                    <span class="material-symbols-outlined text-[18px] text-primary">sync_alt</span>
-                    <span class="text-xs font-bold text-text-primary group-hover:text-primary">Reconcile Bank</span>
-                  </button>
                 </div>
               </div>
             </div>
