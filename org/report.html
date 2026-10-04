@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Insights — Reports &amp; Report Center</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #CAD2D8;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7B8C9A;
+    }
+
+    .font-mono-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Canonical Navigation styles from Untitled-1.html */
+    .fin-submenu {
+      display: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .fin-submenu.open {
+      display: flex;
+    }
+
+    body.layout-top #appNav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 4rem;
+      flex-direction: row;
+      align-items: center;
+      z-index: 50;
+      border-right: none;
+      border-bottom: 1px solid #1E3243;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      overflow-y: visible;
+      overflow-x: auto;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      border-bottom: none;
+      border-right: 1px solid #1E3243;
+      padding-right: 1rem;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      padding: 0 1rem;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      border-top: none;
+      border-left: 1px solid #1E3243;
+      padding: 0.5rem 1rem;
+    }
+
+    body.layout-top #appHeader {
+      top: 4rem;
+      left: 0;
+    }
+
+    body.layout-top #appMain {
+      padding-left: 0;
+      padding-top: 4rem;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "status-success-bg": "#E8F5EE",
+            "surface-container": "#eceeef",
+            "secondary-container": "#d2e2f1",
+            "nav-border": "#1E3243",
+            "text-secondary": "#4E5D6A",
+            "secondary-fixed-dim": "#b9c8d8",
+            "surface-container-low": "#f2f4f5",
+            "tertiary": "#614500",
+            "primary-fixed-dim": "#8bd2da",
+            "on-tertiary-container": "#ffd892",
+            "primary-hover": "#144F54",
+            "on-background": "#191c1d",
+            "primary-fixed": "#a7eef6",
+            "secondary-fixed": "#d5e4f4",
+            "surface-bright": "#f8fafb",
+            "inverse-on-surface": "#eff1f2",
+            "primary-container": "#1b6b72",
+            "tertiary-container": "#7f5b00",
+            "fund-unrestricted": "#1B6B72",
+            "error": "#ba1a1a",
+            "status-critical-bg": "#FDF0F0",
+            "on-primary-container": "#a1e9f1",
+            "status-critical": "#A81D24",
+            "surface-card": "#FFFFFF",
+            "outline": "#6f797a",
+            "fund-temp-restricted": "#D99B00",
+            "surface-variant": "#e1e3e4",
+            "text-muted": "#7B8C9A",
+            "text-primary": "#121A21",
+            "status-warning": "#914D03",
+            "surface-secondary": "#F0F4F6",
+            "inverse-surface": "#2e3132",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#8bd2da",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#f7bd48",
+            "fund-restricted": "#B8860B",
+            "secondary": "#51606d",
+            "nav-bg": "#0D1821",
+            "on-secondary-fixed-variant": "#3a4855",
+            "on-primary-fixed": "#002022",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface": "#f8fafb",
+            "on-surface": "#191c1d",
+            "surface-container-high": "#e6e8e9",
+            "on-surface-variant": "#3f484a",
+            "fund-restricted-bg": "#FCF7E8",
+            "outline-variant": "#bec8c9",
+            "border-strong": "#B8C4CE",
+            "primary-tint": "#E4EFEF",
+            "surface-tint": "#16686f",
+            "tertiary-fixed": "#ffdea6",
+            "surface-dim": "#d8dadb",
+            "border-subtle": "#DCE3E8",
+            "primary": "#005258",
+            "surface-tertiary": "#ECEFF2",
+            "on-secondary": "#ffffff",
+            "nav-text-primary": "#F4F7F9",
+            "status-warning-bg": "#FEF3E6",
+            "on-primary-fixed-variant": "#004f55",
+            "on-tertiary-fixed-variant": "#5d4200",
+            "background": "#f8fafb",
+            "canvas-bg": "#F7F9FA",
+            "fund-temp-restricted-bg": "#FEF8E7",
+            "on-secondary-fixed": "#0e1d28",
+            "status-success": "#0F6848",
+            "nav-surface": "#152431",
+            "surface-container-highest": "#e1e3e4",
+            "on-secondary-container": "#556472",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "nav-text-muted": "#8EA2B4"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-xxs": "0.125rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "gutter": "1rem",
+            "gutter-dense": "0.5rem",
+            "margin-compact": "1rem",
+            "margin": "1.5rem"
+          },
+          fontFamily: {
+            sans: ["IBM Plex Sans", "sans-serif"],
+            mono: ["IBM Plex Mono", "monospace"],
+            "headline-lg": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "title-md": ["IBM Plex Sans"],
+            "title-sm": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "caption": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "numeric-table": ["IBM Plex Sans"],
+            "numeric-table-bold": ["IBM Plex Sans"]
+          },
+          fontSize: {
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }],
+            "title-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "600" }],
+            "title-sm": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "600" }],
+            "body-lg": ["15px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }],
+            "body-md": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }],
+            "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0em", fontWeight: "400" }],
+            "caption": ["11px", { lineHeight: "14px", letterSpacing: "0em", fontWeight: "400" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "numeric-table": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "500" }],
+            "numeric-table-bold": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-canvas-bg font-sans text-text-primary antialiased min-h-screen">
+  <!-- ================= CANONICAL SIDEBAR (Untitled-1.html) ================= -->
+  <aside id="appNav" class="fixed left-0 top-0 h-full w-64 bg-nav-bg z-50 flex flex-col justify-between select-none">
+    <div class="nav-inner flex flex-col flex-1 overflow-y-auto">
+      <div class="nav-logo h-16 px-space-md flex items-center justify-between shrink-0 bg-nav-surface/50 border-b border-nav-border/50">
+        <!-- Empty placeholder to force equal spacing for horizontal logo centering -->
+        <div class="w-[26px]"></div>
+      
+        <!-- Centered Logo -->
+        <img alt="Modern corporate emblem for an NGO Accounting and ERP platform" class="h-32 w-auto object-contain"
+          src="../../ERP/assets/images/logo/DARK-LOGO.png" />
+      
+        <!-- Layout Toggle Button (Aligned with Settings Icon below) -->
+        <button id="layoutToggle" title="Switch to top navbar" type="button"
+          class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary hover:bg-nav-border/40 transition-colors rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]" id="layoutToggleIcon">view_agenda</span>
+        </button>
+      </div>
+     
+      <div class="nav-office px-space-md py-space-sm">
+        <div class="px-space-sm py-space-xs rounded bg-nav-surface flex items-center justify-between">
+          <div class="flex items-center gap-space-xs min-w-0"><span
+              class="material-symbols-outlined text-fund-unrestricted text-[16px]">corporate_fare</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Accra Office • Hub</span></div><span
+            class="material-symbols-outlined text-nav-text-muted text-[16px]">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs"
+        data-active-classes="bg-primary-container text-on-primary font-title-sm rounded-lg">
+        <ul class="nav-list flex flex-col gap-space-xxs">
+          <li><a
+             class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+              data-path="overview" href="omnis_overview_dashboard.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Overview</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Ledgers &amp;
+                Fiduciary</span></div>
+          </li>
+          <li>
+            <div class="relative" id="finNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="finance-and-accounting" id="finToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">account_balance</span><span
+                    class="font-body-md text-body-md">Finance &amp; Accounting</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="finChevron">expand_more</span>
+              </a>
+              <ul id="finSubmenu" class="nav-submenu">
+                <li><a href="finance_accounting_overview.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">dashboard</span>Overview</a></li>
+                <li><a href="banking_bank_reconciliation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">account_balance</span>Banking &amp; Cash</a></li>
+                <li><a href="payables_operation.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">payments</span>Payables</a></li>
+                <li><a href="transactions_general_ledger.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">request_quote</span>Transactions</a></li>
+                <li><a href="funds_dimensions.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">query_stats</span>Funds &amp; Dimensions</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="relative" id="grantsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="grants-and-projects" id="grantsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">award_star</span><span
+                    class="font-body-md text-body-md">Grants &amp; Projects</span></div>
+                <div class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                    id="grantsChevron">expand_more</span></div>
+              </a>
+              <ul id="grantsSubmenu" class="nav-submenu">
+                <li><a href="grant_detail_budget.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">award_star</span>Grants</a></li>
+                <li><a href="projects_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">folder_open</span>Projects</a></li>
+                <li><a href="milestones_deliverables.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">flag</span>Milestones &amp; Deliverables</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Delivery &amp;
+                Teams</span></div>
+          </li>
+          <li>
+            <div class="relative" id="opsNavItem">
+              <a class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors cursor-pointer"
+                data-path="operations" id="opsToggle">
+                <div class="flex items-center gap-space-md"><span
+                    class="material-symbols-outlined text-[18px]">inventory_2</span><span
+                    class="font-body-md text-body-md">Operations</span></div>
+                <span class="material-symbols-outlined text-[16px] transition-transform duration-200"
+                  id="opsChevron">expand_more</span>
+              </a>
+              <ul id="opsSubmenu" class="nav-submenu">
+                <li><a href="procurement_purchase_orders.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">shopping_cart</span>Procurement</a></li>
+                <li><a href="inventory_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory_2</span>Inventory</a></li>
+                <li><a href="assets_management.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">inventory</span>Assets</a></li>
+                <li><a href="field_operations_offline_sync.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary font-body-md text-body-sm transition-colors"><span
+                      class="material-symbols-outlined text-[16px]">location_on</span>Field &amp; Operations</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="people" href="hr_payroll_statutory.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">badge</span><span
+                  class="font-body-md text-body-md">People &amp; Payroll</span></div>
+            </a></li>
+          <li><a
+             aria-current="page"
+              class="flex items-center justify-between px-space-md py-space-xs transition-colors bg-primary-container text-on-primary font-title-sm rounded-lg"
+              data-path="insights" href="report.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">monitoring</span><span
+                  class="font-body-md text-body-md">Insights</span></div>
+            </a></li>
+          <li>
+            <div class="nav-section-label pt-space-xs pb-space-xxs px-space-md"><span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-nav-text-muted/70">Governance</span>
+            </div>
+          </li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="workflow" href="system_administration_workflow.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">fact_check</span><span
+                  class="font-body-md text-body-md">Workflow</span></div>
+              <div class="flex items-center gap-1"><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-fund-temp-restricted text-nav-bg font-bold">12</span><span
+                  class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-critical-text text-on-error font-bold">3</span>
+              </div>
+            </a></li>
+          <li><a
+              class="flex items-center justify-between px-space-md py-space-xs rounded-lg text-nav-text-muted hover:bg-nav-surface hover:text-nav-text-primary transition-colors"
+              data-path="system" href="system_administration_users_role_permissions_matrix.html">
+              <div class="flex items-center gap-space-md"><span
+                  class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span
+                  class="font-body-md text-body-md">System &amp; Audit</span></div>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-user p-space-md bg-nav-surface shrink-0">
+      <div class="flex items-center justify-between gap-space-sm">
+        <div class="nav-profile flex items-center gap-space-sm min-w-0"><img alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W6ycryAAK6SNg5yBIT65pJtebH3U6B52_AVEVdCUTJhVyHAFJMk_YIHU6iZiNntWFwDQIjukGdNk1LOG3Cf4JnGZQWWRvN4uJGfCWBc2EBfn9S9vyRSBWgkAr7DZQCVRV7AZ9de3zn2BC0pW_DnGx4tBICn31QQ0__FRQPuQD1MaqQlL-YTfFvXntHwZ4oSo-mTCwJ2mzHsf8WJ-capCVKWYsd7iSO-6L2PjXgubCKElhKcR1AvfM0_rI" />
+          <div class="flex flex-col min-w-0"><span
+              class="font-title-sm text-title-sm text-nav-text-primary truncate">Ama Mensah</span><span
+              class="font-caption text-caption text-nav-text-muted truncate">Finance Manager</span></div>
+        </div><button class="p-space-xxs text-nav-text-muted hover:text-nav-text-primary transition-colors rounded"
+          type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+      </div>
+    </div>
+  </aside>
+  <!-- ================= MAIN APP WRAPPER ================= -->
+  <div class="pl-64 flex flex-col min-h-screen transition-all" id="appMain">
+    <!-- Canonical Top Header from Untitled-1.html -->
+    <header
+      class="fixed top-0 left-64 right-0 h-16 bg-surface-card z-40 px-space-lg flex items-center justify-between gap-space-md border-b border-border-subtle"
+      id="appHeader">
+      <div class="flex items-center flex-1 max-w-xl gap-space-md">
+        <div class="relative w-full flex items-center">
+          <span
+            class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span>
+          <input
+            class="w-full pl-9 pr-space-md py-space-xs bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary focus:bg-surface-card transition-all"
+            placeholder="Search transactions, grants, projects, vendors, staff..." type="text" />
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <!-- Fiscal Period Tag -->
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-1.5 rounded bg-surface-secondary text-text-secondary font-title-sm text-title-sm">
+          <span class="material-symbols-outlined text-fund-unrestricted text-[16px]">calendar_today</span>
+          <span class="font-medium">FY 2025 (Q2 Closed)</span>
+        </div>
+        <!-- Currency Switcher Toggle -->
+        <div class="flex items-center px-1 py-0.5 rounded bg-surface-secondary text-xs">
+          <button class="px-2 py-0.5 rounded bg-surface-card text-text-primary font-bold shadow-sm" type="button">GHS
+            (GH₵)</button>
+          <button class="px-2 py-0.5 text-text-muted hover:text-text-secondary transition-colors" type="button">USD
+            ($)</button>
+        </div>
+        <!-- Primary Action -->
+        <button
+          class="h-[34px] px-space-md bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg flex items-center gap-space-xs transition-colors shadow-sm"
+          onclick="openReportStudio('usaid-bva')" type="button">
+          <span class="material-symbols-outlined text-[16px]">add</span>
+          <span>+ Create</span>
+        </button>
+        <div class="h-5 w-px bg-surface-dim"></div>
+        <!-- Notifications -->
+        <button
+          class="relative p-1.5 rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          title="Notifications" type="button">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+          <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-status-critical"></span>
+        </button>
+        <!-- Help -->
+        <button
+          class="p-1.5 rounded text-text-secondary hover:text-text-primary hover:bg-surface-secondary transition-colors"
+          title="Documentation &amp; Support" type="button">
+          <span class="material-symbols-outlined text-[20px]">help</span>
+        </button>
+        <!-- Profile Avatar dropdown -->
+        <div class="flex items-center gap-1.5 pl-1 cursor-pointer">
+          <div
+            class="w-8 h-8 rounded-full bg-primary-tint text-primary font-bold text-xs flex items-center justify-center">
+            AM
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ================= MAIN CONTENT AREA ================= -->
+    <main class="w-full pt-16 bg-canvas-bg flex-1">
+      <div class="w-full max-w-[80rem] mx-auto px-space-xl py-space-xl flex flex-col gap-space-xl"
+        id="reportCenterRoot">
+        <!-- TOP CONTEXT HEADER BAR -->
+        <section class="flex flex-col gap-space-sm">
+          <nav class="flex items-center gap-space-xs text-text-muted">
+            <span class="font-caption text-caption uppercase tracking-wider text-text-secondary">Home</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="font-caption text-caption uppercase tracking-wider text-text-secondary">Insights</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="font-caption text-caption uppercase tracking-wider text-text-secondary">Reports</span>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="font-caption text-caption uppercase tracking-wider text-primary font-semibold">Central Report
+              Center</span>
+          </nav>
+          <div class="flex flex-wrap items-center justify-between gap-space-md mt-space-xxs">
+            <div class="flex flex-col">
+              <div class="flex items-center gap-space-sm">
+                <h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Reports</h1>
+                <span
+                  class="px-2 py-0.5 rounded bg-status-success-bg text-status-success font-label-sm text-label-sm font-semibold flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">verified</span> Audit Ready
+                </span>
+              </div>
+              <p class="font-body-md text-body-md text-text-secondary mt-space-xxs">
+                Generate, review, filter, save, and export reports across the organization.
+              </p>
+            </div>
+            <!-- Header Global Actions -->
+            <div class="flex items-center gap-space-xs flex-wrap">
+              <button
+                class="h-[36px] px-space-md bg-surface-card border border-border-subtle text-text-primary hover:bg-surface-secondary font-title-sm text-title-sm rounded-lg shadow-sm flex items-center gap-1.5 transition-all"
+                id="viewCatalogBtn" onclick="switchViewMode('catalog')" type="button">
+                <span class="material-symbols-outlined text-[18px] text-primary">folder_open</span>
+                <span>Report Directory</span>
+              </button>
+              <button
+                class="h-[36px] px-space-md bg-surface-card border border-border-subtle text-text-primary hover:bg-surface-secondary font-title-sm text-title-sm rounded-lg shadow-sm flex items-center gap-1.5 transition-all"
+                onclick="showToast('Showing 5 user-saved custom reports', 'success')" type="button">
+                <span class="material-symbols-outlined text-[18px] text-fund-restricted">bookmark_border</span>
+                <span>Saved Reports</span>
+                <span
+                  class="px-1.5 py-0.2 bg-primary/10 text-primary font-caption text-caption rounded-full font-bold">5</span>
+              </button>
+              <button
+                class="h-[36px] px-space-md bg-surface-card border border-border-subtle text-text-primary hover:bg-surface-secondary font-title-sm text-title-sm rounded-lg shadow-sm flex items-center gap-1.5 transition-all"
+                onclick="showToast('3 statutory dispatches scheduled for period closing', 'info')" type="button">
+                <span class="material-symbols-outlined text-[18px] text-text-muted">schedule</span>
+                <span>Scheduled (3)</span>
+              </button>
+              <button
+                class="h-[36px] px-space-md bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg shadow-sm flex items-center gap-1.5 transition-all"
+                onclick="openReportStudio('usaid-bva')" type="button">
+                <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                <span>Run Report</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- REPORT CATALOG VIEW (MODE A) -->
+        <div class="flex flex-col gap-space-lg" id="catalogViewSection">
+          <!-- FILTER & NAVIGATION TOOLBAR -->
+          <section
+            class="bg-surface-card rounded-lg p-space-lg border border-border-subtle shadow-sm flex flex-col gap-space-md">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-center">
+              <!-- Search Input -->
+              <div class="lg:col-span-5 relative flex items-center">
+                <span
+                  class="material-symbols-outlined absolute left-3 text-text-muted text-[18px] pointer-events-none">search</span>
+                <input
+                  class="w-full pl-9 pr-space-md h-[38px] bg-surface-secondary text-text-primary placeholder:text-text-muted font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-card transition-all"
+                  id="reportSearchInput" oninput="filterReportCatalog()"
+                  placeholder="Search reports by name, donor, or purpose..." type="text" />
+                <button class="absolute right-2.5 text-text-muted hover:text-text-primary hidden text-sm"
+                  id="clearSearchBtn" onclick="clearSearch()" title="Clear Search">
+                  <span class="material-symbols-outlined text-[16px]">close</span>
+                </button>
+              </div>
+              <!-- Date Range Selector -->
+              <div class="lg:col-span-4 flex items-center gap-space-xs">
+                <div class="relative w-full">
+                  <button
+                    class="w-full h-[38px] px-space-md bg-surface-secondary text-text-primary font-body-sm text-body-sm rounded-lg flex items-center justify-between hover:bg-surface-dim transition-colors"
+                    id="datePresetBtn" onclick="toggleDateDropdown()" type="button">
+                    <div class="flex items-center gap-space-xs min-w-0">
+                      <span class="material-symbols-outlined text-fund-unrestricted text-[18px] shrink-0">date_range</span>
+                      <span class="font-title-sm text-title-sm truncate" id="selectedDateLabel">01 Jan 2025 → 31 Mar 2025</span>
+                    </div>
+                    <span class="material-symbols-outlined text-text-muted text-[16px] shrink-0">arrow_drop_down</span>
+                  </button>
+                  <div
+                    class="hidden absolute top-full mt-1 left-0 w-80 bg-surface-card rounded-lg border border-border-subtle shadow-xl py-space-sm z-30"
+                    id="datePresetDropdown">
+                    <div
+                      class="px-space-md py-space-xs font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">
+                      Quick Ranges</div>
+                    <button
+                      class="w-full text-left px-space-md py-1.5 font-body-sm text-body-sm text-primary font-semibold bg-primary-tint/40"
+                      onclick="setDatePreset('01 Jan 2025 → 31 Mar 2025', '2025-01-01', '2025-03-31')" type="button">This Quarter (Q1 FY25)</button>
+                    <button
+                      class="w-full text-left px-space-md py-1.5 font-body-sm text-body-sm text-text-primary hover:bg-surface-secondary"
+                      onclick="setDatePreset('01 Jan 2025 → 31 Dec 2025', '2025-01-01', '2025-12-31')" type="button">This Year (FY 2025)</button>
+                    <button
+                      class="w-full text-left px-space-md py-1.5 font-body-sm text-body-sm text-text-primary hover:bg-surface-secondary"
+                      onclick="setDatePreset('01 Jan 2024 → 31 Dec 2024', '2024-01-01', '2024-12-31')" type="button">Previous Fiscal Year
+                      2024</button>
+                    <button
+                      class="w-full text-left px-space-md py-1.5 font-body-sm text-body-sm text-text-primary hover:bg-surface-secondary"
+                      onclick="setDatePreset('Grant Inception → Current', '2020-01-01', '')" type="button">Grant Inception →
+                      Current</button>
+                    <div class="border-t border-border-subtle my-space-xs"></div>
+                    <div
+                      class="px-space-md py-space-xs font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">
+                      Custom Date Range</div>
+                    <div class="px-space-md pb-space-sm flex flex-col gap-space-sm">
+                      <div class="flex items-center gap-space-xs">
+                        <label class="font-caption text-caption text-text-muted w-10 shrink-0" for="dateFromInput">From</label>
+                        <input
+                          class="flex-1 h-[34px] px-space-sm bg-surface-secondary text-text-primary font-body-sm text-body-sm rounded-lg border border-border-subtle focus:outline-none focus:ring-1 focus:ring-primary"
+                          id="dateFromInput" type="date" value="2025-01-01" />
+                      </div>
+                      <div class="flex items-center gap-space-xs">
+                        <label class="font-caption text-caption text-text-muted w-10 shrink-0" for="dateToInput">To</label>
+                        <input
+                          class="flex-1 h-[34px] px-space-sm bg-surface-secondary text-text-primary font-body-sm text-body-sm rounded-lg border border-border-subtle focus:outline-none focus:ring-1 focus:ring-primary"
+                          id="dateToInput" type="date" value="2025-03-31" />
+                      </div>
+                      <button
+                        class="w-full h-[34px] mt-space-xxs bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                        onclick="applyCustomDateRange()" type="button">
+                        <span class="material-symbols-outlined text-[16px]">check</span>
+                        Apply Range
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Context Filter: Fund / Restriction -->
+              <div class="lg:col-span-3 flex items-center justify-end gap-space-xs">
+                <select
+                  class="h-[38px] w-full px-space-md bg-surface-secondary text-text-primary font-body-sm text-body-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer border-none"
+                  id="fundScopeFilter" onchange="filterReportCatalog()">
+                  <option value="all">All Funds: Consolidated</option>
+                  <option value="unrestricted">Unrestricted (Core NGO)</option>
+                  <option selected="" value="temp-restricted">Temporarily Restricted (USAID / GF)</option>
+                  <option value="permanently-restricted">Permanently Restricted (Endowment)</option>
+                </select>
+              </div>
+            </div>
+            <!-- Section / Module Filter Tabs -->
+            <div
+              class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs border-t border-border-subtle/60">
+              <div class="flex items-center gap-1 overflow-x-auto pb-1 max-w-full">
+                <button
+                  class="cat-tab px-3 py-1.5 rounded-lg font-title-sm text-title-sm bg-primary text-on-primary transition-all shadow-sm"
+                  onclick="setCategoryTab('all', this)" type="button">
+                  All <span class="ml-1 px-1.5 py-0.2 rounded-full bg-white/20 text-caption font-caption"
+                    id="countAll">28</span>
+                </button>
+                <button
+                  class="cat-tab px-3 py-1.5 rounded-lg font-title-sm text-title-sm bg-surface-secondary text-text-secondary hover:text-text-primary hover:bg-surface-dim transition-all"
+                  onclick="setCategoryTab('financial', this)" type="button">
+                  Financial <span
+                    class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-card text-caption font-caption text-text-muted">7</span>
+                </button>
+                <button
+                  class="cat-tab px-3 py-1.5 rounded-lg font-title-sm text-title-sm bg-surface-secondary text-text-secondary hover:text-text-primary hover:bg-surface-dim transition-all"
+                  onclick="setCategoryTab('grants', this)" type="button">
+                  Grants &amp; Donors <span
+                    class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-card text-caption font-caption text-text-muted">6</span>
+                </button>
+                <button
+                  class="cat-tab px-3 py-1.5 rounded-lg font-title-sm text-title-sm bg-surface-secondary text-text-secondary hover:text-text-primary hover:bg-surface-dim transition-all"
+                  onclick="setCategoryTab('management', this)" type="button">
+                  Management <span
+                    class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-card text-caption font-caption text-text-muted">5</span>
+                </button>
+                <button
+                  class="cat-tab px-3 py-1.5 rounded-lg font-title-sm text-title-sm bg-surface-secondary text-text-secondary hover:text-text-primary hover:bg-surface-dim transition-all"
+                  onclick="setCategoryTab('operations', this)" type="button">
+                  Operations &amp; Assets <span
+                    class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-card text-caption font-caption text-text-muted">5</span>
+                </button>
+                <button
+                  class="cat-tab px-3 py-1.5 rounded-lg font-title-sm text-title-sm bg-surface-secondary text-text-secondary hover:text-text-primary hover:bg-surface-dim transition-all"
+                  onclick="setCategoryTab('hr', this)" type="button">
+                  HR &amp; Payroll <span
+                    class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-card text-caption font-caption text-text-muted">5</span>
+                </button>
+              </div>
+              <!-- Active Scope Filter Pills -->
+              <div class="flex items-center gap-space-xs text-xs">
+                <span class="font-caption text-caption text-text-muted uppercase tracking-wider">Context:</span>
+                <span
+                  class="px-2 py-0.5 rounded bg-primary-tint text-primary font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+                  USAID Ed Phase II
+                </span>
+                <span class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-label-sm text-label-sm">
+                  Accra Hub
+                </span>
+                <span
+                  class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-label-sm text-label-sm font-mono">
+                  GHS
+                </span>
+                <button
+                  class="text-text-muted hover:text-status-critical font-caption text-caption ml-1 underline transition-colors"
+                  onclick="resetFilters()" type="button">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- REPORT DIRECTORY CARDS / SECTIONS -->
+          <section class="flex flex-col gap-space-xl" id="reportCategoriesContainer">
+            <!-- CATEGORY 1: FINANCIAL REPORTS -->
+            <div class="report-section-group flex flex-col gap-space-md" data-category="financial">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-space-xs">
+                  <span class="material-symbols-outlined text-primary text-[20px]">account_balance</span>
+                  <h2 class="font-headline-sm text-headline-sm text-text-primary">1. Financial Reports</h2>
+                  <span
+                    class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption font-mono">IPSAS
+                    / GAAP Statutory</span>
+                </div>
+                <span class="font-caption text-caption text-text-muted">7 available reports</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+                <!-- Statement of Activities -->
+                <div
+                  class="report-card bg-surface-card rounded-lg p-space-lg border border-border-subtle shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+                  data-tags="statement of activities income expenditure surplus deficit ipsas"
+                  data-title="statement of activities">
+                  <div>
+                    <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                      <span
+                        class="px-2 py-0.5 rounded bg-primary-tint text-primary font-label-sm text-label-sm font-semibold">Statutory
+                        P&amp;L</span>
+                      <button class="text-text-muted hover:text-fund-restricted transition-colors"
+                        onclick="toggleFavorite(this)" title="Pin to quick access" type="button">
+                        <span class="material-symbols-outlined text-[18px]">star_outline</span>
+                      </button>
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors">
+                      Statement of Activities</h3>
+                    <p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+                      Summary of changes in net assets, categorized by donor restrictions (Without Donor Restrictions,
+                      With Donor Restrictions).
+                    </p>
+                    <div class="flex flex-wrap items-center gap-1.5 mt-space-md">
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">IPSAS
+                        1 Compliant</span>
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">Multi-Currency</span>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-space-lg pt-space-sm bg-surface-secondary/40 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-lg flex items-center justify-between border-t border-border-subtle/50">
+                    <span class="font-caption text-caption text-text-muted">Run Today 08:30 by AM</span>
+                    <div class="flex items-center gap-1">
+                      <button
+                        class="px-2.5 py-1 bg-surface-secondary hover:bg-surface-dim text-text-primary rounded font-title-sm text-title-sm transition-colors"
+                        onclick="openReportStudio('statement-activities')" type="button">
+                        Preview
+                      </button>
+                      <button
+                        class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors flex items-center gap-1 shadow-sm"
+                        onclick="openReportStudio('statement-activities')" type="button">
+                        <span class="material-symbols-outlined text-[14px]">play_arrow</span> Run Report
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- General Ledger Detail -->
+                <div
+                  class="report-card bg-surface-card rounded-lg p-space-lg border border-border-subtle shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+                  data-tags="general ledger gl voucher trial balance chart of accounts"
+                  data-title="general ledger detail register">
+                  <div>
+                    <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                      <span
+                        class="px-2 py-0.5 rounded bg-primary-tint text-primary font-label-sm text-label-sm font-semibold">Ledger
+                        Register</span>
+                      <button class="text-fund-restricted" onclick="toggleFavorite(this)" title="Pinned" type="button">
+                        <span class="material-symbols-outlined text-[18px]">star</span>
+                      </button>
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors">
+                      General Ledger Detail Register</h3>
+                    <p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+                      Chronological transaction register mapped to full 8-segment chart of accounts, fund codes, and
+                      donor reference vouchers.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-1.5 mt-space-md">
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">100%
+                        Audit Reconciled</span>
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">Batch
+                        Drilldown</span>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-space-lg pt-space-sm bg-surface-secondary/40 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-lg flex items-center justify-between border-t border-border-subtle/50">
+                    <span class="font-caption text-caption text-text-muted">Run Yesterday by KD</span>
+                    <div class="flex items-center gap-1">
+                      <button
+                        class="px-2.5 py-1 bg-surface-secondary hover:bg-surface-dim text-text-primary rounded font-title-sm text-title-sm transition-colors"
+                        onclick="openReportStudio('gl-detail')" type="button">
+                        Preview
+                      </button>
+                      <button
+                        class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors flex items-center gap-1 shadow-sm"
+                        onclick="openReportStudio('gl-detail')" type="button">
+                        <span class="material-symbols-outlined text-[14px]">play_arrow</span> Run Report
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Statement of Financial Position (Balance Sheet) -->
+                <div
+                  class="report-card bg-surface-card rounded-lg p-space-lg border border-border-subtle shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+                  data-tags="statement of financial position balance sheet assets liabilities equity net assets"
+                  data-title="statement of financial position balance sheet">
+                  <div>
+                    <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                      <span
+                        class="px-2 py-0.5 rounded bg-primary-tint text-primary font-label-sm text-label-sm font-semibold">Balance
+                        Sheet</span>
+                      <button class="text-text-muted hover:text-fund-restricted transition-colors"
+                        onclick="toggleFavorite(this)" type="button">
+                        <span class="material-symbols-outlined text-[18px]">star_outline</span>
+                      </button>
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors">
+                      Statement of Financial Position</h3>
+                    <p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+                      Consolidated fiduciary view of liquid cash, field advances, fixed property, donor payables, and
+                      net assets.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-1.5 mt-space-md">
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">Board
+                        Level</span>
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">Year-End
+                        Pack</span>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-space-lg pt-space-sm bg-surface-secondary/40 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-lg flex items-center justify-between border-t border-border-subtle/50">
+                    <span class="font-caption text-caption text-text-muted">Run 02 Jun by AM</span>
+                    <div class="flex items-center gap-1">
+                      <button
+                        class="px-2.5 py-1 bg-surface-secondary hover:bg-surface-dim text-text-primary rounded font-title-sm text-title-sm transition-colors"
+                        onclick="openReportStudio('balance-sheet')" type="button">
+                        Preview
+                      </button>
+                      <button
+                        class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors flex items-center gap-1 shadow-sm"
+                        onclick="openReportStudio('balance-sheet')" type="button">
+                        <span class="material-symbols-outlined text-[14px]">play_arrow</span> Run Report
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- CATEGORY 2: GRANT & DONOR REPORTS -->
+            <div class="report-section-group flex flex-col gap-space-md" data-category="grants">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-space-xs">
+                  <span class="material-symbols-outlined text-fund-restricted text-[20px]">award_star</span>
+                  <h2 class="font-headline-sm text-headline-sm text-text-primary">2. Grant &amp; Donor Reports</h2>
+                  <span
+                    class="px-2 py-0.5 rounded bg-fund-restricted-bg text-fund-restricted font-caption text-caption font-semibold">Strict
+                    Statutory Fiduciary</span>
+                </div>
+                <span class="font-caption text-caption text-text-muted">6 available reports</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+                <!-- USAID Budget vs Actual (Featured) -->
+                <div
+                  class="report-card bg-surface-card rounded-lg p-space-lg border-l-4 border-l-primary border-y border-r border-border-subtle shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+                  data-tags="usaid grant utilization budget vs actual bva burn rate compliance education pillar"
+                  data-title="usaid grant utilization budget vs actual bva">
+                  <div>
+                    <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                      <span
+                        class="px-2 py-0.5 rounded bg-fund-temp-restricted-bg text-fund-temp-restricted font-label-sm text-label-sm font-semibold">USAID
+                        Core Form 269</span>
+                      <button class="text-fund-restricted" onclick="toggleFavorite(this)" type="button">
+                        <span class="material-symbols-outlined text-[18px]">star</span>
+                      </button>
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors flex items-center gap-1.5">
+                      Grant Utilization &amp; Budget vs Actual (BvA)
+                      <span class="material-symbols-outlined text-status-success text-[16px]">verified</span>
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+                      Line-item comparison of approved USAID agreement budget vs. field expenditures, commit
+                      encumbrances, and burn percentages.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-1.5 mt-space-md">
+                      <span
+                        class="px-2 py-0.5 rounded bg-status-success-bg text-status-success font-caption text-caption font-medium">94.2%
+                        On-Target</span>
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">2
+                        CFR 200 Subpart E</span>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-space-lg pt-space-sm bg-surface-secondary/40 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-lg flex items-center justify-between border-t border-border-subtle/50">
+                    <span class="font-caption text-caption text-text-muted">Generated 10:45 AM (AM)</span>
+                    <div class="flex items-center gap-1">
+                      <button
+                        class="px-2.5 py-1 bg-surface-secondary hover:bg-surface-dim text-text-primary rounded font-title-sm text-title-sm transition-colors"
+                        onclick="openReportStudio('usaid-bva')" type="button">
+                        Preview
+                      </button>
+                      <button
+                        class="px-3 py-1 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors flex items-center gap-1 shadow-sm font-semibold"
+                        onclick="openReportStudio('usaid-bva')" type="button">
+                        <span class="material-symbols-outlined text-[15px]">play_arrow</span> Run Report
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Global Fund Progress Update (PU/DR) -->
+                <div
+                  class="report-card bg-surface-card rounded-lg p-space-lg border border-border-subtle shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+                  data-tags="global fund pu/dr malaria health disease expenditure sub-recipient"
+                  data-title="global fund progress update pudr">
+                  <div>
+                    <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                      <span
+                        class="px-2 py-0.5 rounded bg-fund-restricted-bg text-fund-restricted font-label-sm text-label-sm font-semibold">Global
+                        Fund PU/DR</span>
+                      <button class="text-text-muted hover:text-fund-restricted transition-colors"
+                        onclick="toggleFavorite(this)" type="button">
+                        <span class="material-symbols-outlined text-[18px]">star_outline</span>
+                      </button>
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors">
+                      Global Fund Progress Update (PU/DR)</h3>
+                    <p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+                      Periodic financial disbursement verification and programmatic delivery metric report for Principal
+                      Recipient signoff.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-1.5 mt-space-md">
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">Quarterly
+                        Filing</span>
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">EUR
+                        / GHS Forex</span>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-space-lg pt-space-sm bg-surface-secondary/40 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-lg flex items-center justify-between border-t border-border-subtle/50">
+                    <span class="font-caption text-caption text-text-muted">Due in 14 days</span>
+                    <div class="flex items-center gap-1">
+                      <button
+                        class="px-2.5 py-1 bg-surface-secondary hover:bg-surface-dim text-text-primary rounded font-title-sm text-title-sm transition-colors"
+                        onclick="openReportStudio('global-fund')" type="button">
+                        Preview
+                      </button>
+                      <button
+                        class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors flex items-center gap-1 shadow-sm"
+                        onclick="openReportStudio('global-fund')" type="button">
+                        <span class="material-symbols-outlined text-[14px]">play_arrow</span> Run Report
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- EU Final Financial & Closure Pack -->
+                <div
+                  class="report-card bg-surface-card rounded-lg p-space-lg border border-border-subtle shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+                  data-tags="eu horizon grant closure audit certificate final financial report co-financing"
+                  data-title="eu final financial and closure pack">
+                  <div>
+                    <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-label-sm text-label-sm font-semibold">EC
+                        Pillar Assessed</span>
+                      <button class="text-text-muted hover:text-fund-restricted transition-colors"
+                        onclick="toggleFavorite(this)" type="button">
+                        <span class="material-symbols-outlined text-[18px]">star_outline</span>
+                      </button>
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-text-primary group-hover:text-primary transition-colors">
+                      EU Final Financial &amp; Closure Pack</h3>
+                    <p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+                      Final consolidated reconciliation with co-financing ratio, eligible interest reconciliation, and
+                      asset disposition certificates.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-1.5 mt-space-md">
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">External
+                        Audit Ready</span>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-space-lg pt-space-sm bg-surface-secondary/40 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-lg flex items-center justify-between border-t border-border-subtle/50">
+                    <span class="font-caption text-caption text-text-muted">Draft Saved</span>
+                    <div class="flex items-center gap-1">
+                      <button
+                        class="px-2.5 py-1 bg-surface-secondary hover:bg-surface-dim text-text-primary rounded font-title-sm text-title-sm transition-colors"
+                        onclick="openReportStudio('eu-closure')" type="button">
+                        Preview
+                      </button>
+                      <button
+                        class="px-2.5 py-1 bg-primary hover:bg-primary-hover text-on-primary rounded font-title-sm text-title-sm transition-colors flex items-center gap-1 shadow-sm"
+                        onclick="openReportStudio('eu-closure')" type="button">
+                        <span class="material-symbols-outlined text-[14px]">play_arrow</span> Run Report
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- CATEGORY 3: MANAGEMENT & OPERATIONS (STRUCTURED LIST ROWS) -->
+            <div class="report-section-group flex flex-col gap-space-md" data-category="management">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-space-xs">
+                  <span class="material-symbols-outlined text-primary text-[20px]">insights</span>
+                  <h2 class="font-headline-sm text-headline-sm text-text-primary">3. Management &amp; Operational
+                    Oversight</h2>
+                  <span
+                    class="px-2 py-0.5 rounded bg-surface-secondary text-text-secondary font-caption text-caption">Internal
+                    Control</span>
+                </div>
+                <span class="font-caption text-caption text-text-muted">5 available reports</span>
+              </div>
+              <div
+                class="bg-surface-card rounded-lg overflow-hidden border border-border-subtle shadow-sm divide-y divide-border-subtle">
+                <!-- Cash Flow Forecast -->
+                <div
+                  class="report-card p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md hover:bg-surface-secondary/40 transition-colors"
+                  data-tags="treasury liquidity 90 days cash flow forecast donor tranche"
+                  data-title="90-day fiduciary cash flow and liquidity forecast">
+                  <div class="flex items-center gap-space-md min-w-0">
+                    <div class="w-9 h-9 rounded bg-primary-tint text-primary flex items-center justify-center shrink-0">
+                      <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="font-title-sm text-title-sm text-text-primary">90-Day Fiduciary Cash Flow &amp;
+                          Liquidity Forecast</span>
+                        <span
+                          class="px-2 py-0.2 bg-status-success-bg text-status-success font-caption text-caption rounded font-medium">Healthy
+                          Coverage (4.2 mo)</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-text-secondary truncate">
+                        Multi-account projection aggregating Accra, Tamale, and USD treasury holding accounts against
+                        committed procurements.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-md shrink-0 w-full md:w-auto justify-end">
+                    <span class="font-caption text-caption text-text-muted">Automated Daily</span>
+                    <button
+                      class="px-3 py-1.5 bg-surface-secondary hover:bg-surface-dim text-text-primary font-title-sm text-title-sm rounded-lg transition-colors flex items-center gap-1 border border-border-subtle"
+                      onclick="openReportStudio('cash-flow-forecast')" type="button">
+                      <span class="material-symbols-outlined text-[16px]">visibility</span> View Projection
+                    </button>
+                    <button
+                      class="px-3 py-1.5 bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg transition-colors flex items-center gap-1 shadow-sm"
+                      onclick="openReportStudio('cash-flow-forecast')" type="button">
+                      <span class="material-symbols-outlined text-[16px]">play_arrow</span> Run Report
+                    </button>
+                  </div>
+                </div>
+                <!-- Procurement Audit Exception -->
+                <div
+                  class="report-card p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md hover:bg-surface-secondary/40 transition-colors"
+                  data-tags="procurement audit 3-way match purchase order goods receipt invoice"
+                  data-title="procurement audit and 3-way voucher match exception log">
+                  <div class="flex items-center gap-space-md min-w-0">
+                    <div
+                      class="w-9 h-9 rounded bg-status-warning-bg text-status-warning flex items-center justify-center shrink-0">
+                      <span class="material-symbols-outlined text-[20px]">fact_check</span>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="font-title-sm text-title-sm text-text-primary">Procurement Audit &amp; 3-Way
+                          Voucher Match Exception Log</span>
+                        <span
+                          class="px-2 py-0.2 bg-status-warning-bg text-status-warning font-caption text-caption rounded font-medium">3
+                          Unmatched POs</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-text-secondary truncate">
+                        Purchase Order vs. Good Receipt Note (GRN) vs. Supplier Invoice verification report for
+                        procurement compliance.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-md shrink-0 w-full md:w-auto justify-end">
+                    <span class="font-caption text-caption text-text-muted">Updated 2h ago</span>
+                    <button
+                      class="px-3 py-1.5 bg-surface-secondary hover:bg-surface-dim text-text-primary font-title-sm text-title-sm rounded-lg transition-colors flex items-center gap-1 border border-border-subtle"
+                      onclick="showToast('Loading 3-way voucher audit register...', 'success')" type="button">
+                      <span class="material-symbols-outlined text-[16px]">fact_check</span> View Exceptions
+                    </button>
+                    <button
+                      class="px-3 py-1.5 bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg transition-colors flex items-center gap-1 shadow-sm"
+                      onclick="showToast('Generating procurement compliance package...', 'success')" type="button">
+                      <span class="material-symbols-outlined text-[16px]">play_arrow</span> Run Report
+                    </button>
+                  </div>
+                </div>
+                <!-- Staff Grant Allocation Matrix -->
+                <div
+                  class="report-card p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md hover:bg-surface-secondary/40 transition-colors"
+                  data-tags="payroll staff cost allocation timesheet grant split gra ssnit"
+                  data-title="staff grant allocation and statutory remittance matrix">
+                  <div class="flex items-center gap-space-md min-w-0">
+                    <div
+                      class="w-9 h-9 rounded bg-secondary-fixed text-secondary flex items-center justify-center shrink-0">
+                      <span class="material-symbols-outlined text-[20px]">badge</span>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="font-title-sm text-title-sm text-text-primary">Staff Grant Allocation &amp;
+                          Statutory Remittance Matrix</span>
+                        <span
+                          class="px-2 py-0.2 bg-surface-secondary text-text-secondary font-caption text-caption rounded">GRA
+                          PAYE &amp; SSNIT</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-text-secondary truncate">
+                        Payroll distribution mapped across 4 simultaneous donor projects based on approved digital
+                        timesheet effort tracking.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-md shrink-0 w-full md:w-auto justify-end">
+                    <span class="font-caption text-caption text-text-muted">Monthly (May Closed)</span>
+                    <button
+                      class="px-3 py-1.5 bg-surface-secondary hover:bg-surface-dim text-text-primary font-title-sm text-title-sm rounded-lg transition-colors flex items-center gap-1 border border-border-subtle"
+                      onclick="showToast('Loading payroll split ledger...', 'success')" type="button">
+                      <span class="material-symbols-outlined text-[16px]">visibility</span> View Splits
+                    </button>
+                    <button
+                      class="px-3 py-1.5 bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg transition-colors flex items-center gap-1 shadow-sm"
+                      onclick="showToast('Running monthly staff cost matrix...', 'success')" type="button">
+                      <span class="material-symbols-outlined text-[16px]">play_arrow</span> Run Report
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- No Results Fallback State -->
+          <div
+            class="hidden flex-col items-center justify-center py-space-2xl text-center bg-surface-card rounded-lg p-space-xl border border-border-subtle"
+            id="noResultsState">
+            <span class="material-symbols-outlined text-text-muted text-[48px] mb-space-sm">content_paste_off</span>
+            <h3 class="font-headline-sm text-headline-sm text-text-primary">No Matching Accounting Reports Found</h3>
+            <p class="font-body-md text-body-md text-text-secondary mt-1 max-w-md">
+              No report matched your query. Try searching for "USAID", "BvA", "Trial Balance", "Payroll", or clear
+              active filters.
+            </p>
+            <button
+              class="mt-space-md px-space-md py-1.5 bg-primary text-white font-title-sm text-title-sm rounded-lg hover:bg-primary-hover transition-colors shadow-sm"
+              onclick="resetFilters()" type="button">
+              Clear Search &amp; Scope
+            </button>
+          </div>
+        </div>
+        <!-- ================= INTERACTIVE REPORT RUNNER & AUDIT STUDIO (MODE B) ================= -->
+        <div class="hidden flex-col gap-space-lg" id="reportStudioSection">
+          <!-- Studio Control Bar & Navigation Backlink -->
+          <section
+            class="bg-surface-card rounded-lg p-space-md border border-border-subtle shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-sm">
+              <button
+                class="h-[34px] px-space-sm bg-surface-secondary hover:bg-surface-dim text-text-primary rounded-lg font-title-sm text-title-sm flex items-center gap-1 transition-colors border border-border-subtle"
+                onclick="switchViewMode('catalog')" type="button">
+                <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                <span>Back to Directory</span>
+              </button>
+              <div class="h-5 w-px bg-surface-dim hidden sm:block"></div>
+              <div class="flex items-center gap-space-xs">
+                <span class="w-2.5 h-2.5 rounded-full bg-status-success animate-pulse"></span>
+                <span class="font-caption text-caption text-text-muted font-mono">Live Fiduciary Run • V.4.2</span>
+              </div>
+            </div>
+            <!-- Export Actions Toolbar with Strict Canonical Feedback -->
+            <div class="flex items-center gap-space-xs flex-wrap">
+              <button
+                class="h-[34px] px-space-md bg-surface-secondary hover:bg-surface-dim text-text-primary font-title-sm text-title-sm rounded-lg flex items-center gap-1.5 transition-colors shadow-sm border border-border-subtle"
+                onclick="simulateExport('USAID_Grant_Utilization_Q1', 'PDF Document')" type="button">
+                <span class="material-symbols-outlined text-status-critical text-[16px]">picture_as_pdf</span>
+                <span>Export PDF</span>
+              </button>
+              <button
+                class="h-[34px] px-space-md bg-surface-secondary hover:bg-surface-dim text-text-primary font-title-sm text-title-sm rounded-lg flex items-center gap-1.5 transition-colors shadow-sm border border-border-subtle"
+                onclick="simulateExport('USAID_Grant_Utilization_Q1', 'Excel Spreadsheet (.xlsx)')" type="button">
+                <span class="material-symbols-outlined text-status-success text-[16px]">table_view</span>
+                <span>Export Excel</span>
+              </button>
+              <button
+                class="h-[34px] px-space-md bg-surface-secondary hover:bg-surface-dim text-text-primary font-title-sm text-title-sm rounded-lg flex items-center gap-1.5 transition-colors shadow-sm border border-border-subtle"
+                onclick="simulateExport('USAID_Grant_Utilization_Q1', 'CSV Flatfile')" type="button">
+                <span class="material-symbols-outlined text-text-secondary text-[16px]">dataset</span>
+                <span>Export CSV</span>
+              </button>
+              <button
+                class="h-[34px] w-[34px] bg-surface-secondary hover:bg-surface-dim text-text-primary rounded-lg flex items-center justify-center transition-colors shadow-sm border border-border-subtle"
+                onclick="window.print()" title="Print Official Ledger" type="button">
+                <span class="material-symbols-outlined text-[16px]">print</span>
+              </button>
+              <button
+                class="h-[34px] px-space-md bg-primary hover:bg-primary-hover text-on-primary font-title-sm text-title-sm rounded-lg flex items-center gap-1.5 transition-colors shadow-sm font-semibold"
+                onclick="showToast('Report layout configuration bookmarked to Ama Mensah\'s workspace.', 'success')"
+                type="button">
+                <span class="material-symbols-outlined text-[16px]">save</span>
+                <span>Save Configuration</span>
+              </button>
+            </div>
+          </section>
+          <!-- REPORT HERO METRIC & PARAMETER HEADER -->
+          <section
+            class="bg-surface-card rounded-lg p-space-xl border border-border-subtle shadow-sm flex flex-col gap-space-lg">
+            <div
+              class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md border-b border-border-subtle pb-space-lg">
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="px-2 py-0.5 rounded bg-fund-temp-restricted-bg text-fund-temp-restricted font-label-sm text-label-sm font-semibold">
+                    USAID Award Ref: 72064120CA00003
+                  </span>
+                  <span
+                    class="px-2 py-0.5 rounded bg-status-success-bg text-status-success font-caption text-caption font-semibold flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[12px]">check_circle</span> Reconciled to General Ledger
+                  </span>
+                </div>
+                <h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight" id="studioReportTitle">
+                  Grant Utilization &amp; Budget vs. Actual (BvA) Report
+                </h2>
+                <p class="font-body-md text-body-md text-text-secondary">
+                  Period: <span class="text-text-primary font-semibold">01 January 2025 → 31 March 2025</span> •
+                  Project: <span class="text-text-primary font-semibold">USAID Strengthening Literacy in Primary Schools
+                    (SLPS)</span> • Organization: <span class="text-text-primary font-semibold">Fiduciary Core Accra
+                    Hub</span>
+                </p>
+              </div>
+              <div class="flex flex-col items-start lg:items-end text-right">
+                <span class="font-caption text-caption text-text-muted">Generated by Ama Mensah (Finance Manager)</span>
+                <span class="font-mono text-caption text-text-secondary font-semibold">Run Date: 12 Jun 2025 • 10:45:18
+                  GMT</span>
+                <span class="font-caption text-caption text-text-muted mt-0.5">Statutory Basis: Modified Accrual (IPSAS
+                  24)</span>
+              </div>
+            </div>
+            <!-- Metric KPI Bento Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+              <div
+                class="bg-surface-secondary/50 rounded-lg p-space-md flex flex-col justify-between border border-border-subtle">
+                <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Total Approved
+                  Grant</span>
+                <div class="font-headline-md text-headline-md font-mono-num text-text-primary mt-1">GH₵ 3,850,000.00
+                </div>
+                <span class="font-body-sm text-body-sm text-text-secondary mt-1">Equivalent: $320,833.33 USD</span>
+              </div>
+              <div
+                class="bg-surface-secondary/50 rounded-lg p-space-md flex flex-col justify-between border border-border-subtle">
+                <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Total Spend +
+                  Commitments</span>
+                <div class="font-headline-md text-headline-md font-mono-num text-primary mt-1">GH₵ 1,482,450.00</div>
+                <span class="font-body-sm text-body-sm text-status-success font-medium mt-1 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">trending_up</span> 38.5% Burn Rate
+                </span>
+              </div>
+              <div
+                class="bg-surface-secondary/50 rounded-lg p-space-md flex flex-col justify-between border border-border-subtle">
+                <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Remaining Obligated
+                  Balance</span>
+                <div class="font-headline-md text-headline-md font-mono-num text-text-primary mt-1">GH₵ 2,367,550.00
+                </div>
+                <span class="font-body-sm text-body-sm text-text-secondary mt-1">Unencumbered field funds</span>
+              </div>
+              <div
+                class="bg-surface-secondary/50 rounded-lg p-space-md flex flex-col justify-between border border-border-subtle">
+                <span class="font-label-md text-label-md uppercase tracking-wider text-text-muted">Fiduciary Variance
+                  Threshold</span>
+                <div class="font-headline-md text-headline-md font-mono-num text-status-success mt-1">-3.4% Below
+                  Ceiling</div>
+                <span class="font-body-sm text-body-sm text-text-secondary mt-1">10% allowable re-budget cap</span>
+              </div>
+            </div>
+            <!-- Structured Detailed BvA Report Table -->
+            <div class="flex flex-col gap-space-sm overflow-x-auto">
+              <div class="flex items-center justify-between">
+                <span class="font-title-sm text-title-sm text-text-primary">USAID Agreement Line Breakdown (GHS)</span>
+                <div class="flex items-center gap-space-xs">
+                  <span class="font-caption text-caption text-text-muted">Sorted by Activity Code</span>
+                  <button class="text-primary hover:underline font-caption text-caption"
+                    onclick="showToast('Zero-balance accounts hidden from view', 'success')" type="button">Hide Zero
+                    Lines</button>
+                </div>
+              </div>
+              <table
+                class="w-full text-left border-collapse min-w-[960px] border border-border-subtle rounded-lg overflow-hidden">
+                <thead>
+                  <tr
+                    class="bg-surface-secondary text-text-secondary font-label-md text-label-md border-b border-border-subtle">
+                    <th class="py-2.5 px-3">Line &amp; Category</th>
+                    <th class="py-2.5 px-3">GL Ledger</th>
+                    <th class="py-2.5 px-3 text-right">Award Budget</th>
+                    <th class="py-2.5 px-3 text-right">Actual Spent</th>
+                    <th class="py-2.5 px-3 text-right">Commitments</th>
+                    <th class="py-2.5 px-3 text-right">Available Balance</th>
+                    <th class="py-2.5 px-3 text-center">Burn %</th>
+                    <th class="py-2.5 px-3 text-center">Audit Status</th>
+                  </tr>
+                </thead>
+                <tbody class="font-body-sm text-body-sm divide-y divide-border-subtle">
+                  <!-- Group 1 -->
+                  <tr class="bg-surface-secondary/40 font-title-sm text-title-sm text-text-primary">
+                    <td class="py-2 px-3 font-semibold text-primary" colspan="8">
+                      1.0 PERSONNEL &amp; FRINGE BENEFITS
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors group cursor-pointer"
+                    onclick="openDrilldownModal('Personnel: Field Literacy Coaches', 'GH₵ 128,450.00', '14 Monthly field vouchers. Validated by certified bi-monthly timesheets under USAID Annex A.')">
+                    <td class="py-2.5 px-3 font-medium text-text-primary flex items-center gap-1.5">
+                      <span
+                        class="material-symbols-outlined text-[14px] text-text-muted group-hover:text-primary">open_in_new</span>
+                      1.1 Field Literacy Coaches (Northern Region)
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">6010-US-NR</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">280,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold text-text-primary">128,450.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-secondary">15,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-status-success font-semibold">136,550.00</td>
+                    <td class="py-2.5 px-3 text-center font-mono-num">51.2%</td>
+                    <td class="py-2.5 px-3 text-center">
+                      <span
+                        class="px-2 py-0.5 rounded bg-status-success-bg text-status-success font-label-sm text-label-sm">Compliant</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors group cursor-pointer"
+                    onclick="openDrilldownModal('Key Personnel: Project Director (50% LoE)', 'GH₵ 86,000.00', 'Direct payroll allocation for Project Director. Split 50% USAID SLPS / 50% Core Admin.')">
+                    <td class="py-2.5 px-3 font-medium text-text-primary flex items-center gap-1.5">
+                      <span
+                        class="material-symbols-outlined text-[14px] text-text-muted group-hover:text-primary">open_in_new</span>
+                      1.2 Project Director (50% LoE Allocation)
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">6015-US-HQ</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">180,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold text-text-primary">86,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-secondary">0.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-status-success font-semibold">94,000.00</td>
+                    <td class="py-2.5 px-3 text-center font-mono-num">47.7%</td>
+                    <td class="py-2.5 px-3 text-center">
+                      <span
+                        class="px-2 py-0.5 rounded bg-status-success-bg text-status-success font-label-sm text-label-sm">Compliant</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors group cursor-pointer"
+                    onclick="openDrilldownModal('Statutory Fringe: SSNIT &amp; Tier 2 Remittance', 'GH₵ 34,000.00', 'Accra GRA PAYE and SSNIT employer contributions remitted monthly.')">
+                    <td class="py-2.5 px-3 font-medium text-text-primary flex items-center gap-1.5">
+                      <span
+                        class="material-symbols-outlined text-[14px] text-text-muted group-hover:text-primary">open_in_new</span>
+                      1.3 Statutory Fringe (SSNIT &amp; Tier 2 Remittance)
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">6050-US-ALL</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">75,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold text-text-primary">34,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-secondary">0.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-status-success font-semibold">41,000.00</td>
+                    <td class="py-2.5 px-3 text-center font-mono-num">45.3%</td>
+                    <td class="py-2.5 px-3 text-center">
+                      <span
+                        class="px-2 py-0.5 rounded bg-status-success-bg text-status-success font-label-sm text-label-sm">Compliant</span>
+                    </td>
+                  </tr>
+                  <!-- Group 2 -->
+                  <tr class="bg-surface-secondary/40 font-title-sm text-title-sm text-text-primary">
+                    <td class="py-2 px-3 font-semibold text-primary" colspan="8">
+                      2.0 TRAVEL, PER DIEM &amp; FIELD LOGISTICS
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors group cursor-pointer"
+                    onclick="openDrilldownModal('Teacher Monitoring Per Diems', 'GH₵ 142,500.00', 'Disbursed via Stanbic corporate mobile wallet to 68 district observers.')">
+                    <td class="py-2.5 px-3 font-medium text-text-primary flex items-center gap-1.5">
+                      <span
+                        class="material-symbols-outlined text-[14px] text-text-muted group-hover:text-primary">open_in_new</span>
+                      2.1 District School Cluster Monitoring &amp; DSA
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">6210-US-FLD</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">310,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold text-text-primary">142,500.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-secondary">22,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-status-success font-semibold">145,500.00</td>
+                    <td class="py-2.5 px-3 text-center font-mono-num">53.1%</td>
+                    <td class="py-2.5 px-3 text-center">
+                      <span
+                        class="px-2 py-0.5 rounded bg-status-success-bg text-status-success font-label-sm text-label-sm">Compliant</span>
+                    </td>
+                  </tr>
+                  <!-- Group 3 -->
+                  <tr class="bg-surface-secondary/40 font-title-sm text-title-sm text-text-primary">
+                    <td class="py-2 px-3 font-semibold text-primary" colspan="8">
+                      3.0 EQUIPMENT &amp; DIRECT EDUCATIONAL SUPPLIES
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors group cursor-pointer"
+                    onclick="openDrilldownModal('Early Literacy Decodable Readers Print Run', 'GH₵ 410,000.00', 'Batch print procurement under international competitive bidding. 3-way match complete.')">
+                    <td class="py-2.5 px-3 font-medium text-text-primary flex items-center gap-1.5">
+                      <span
+                        class="material-symbols-outlined text-[14px] text-text-muted group-hover:text-primary">open_in_new</span>
+                      3.1 Printing of Decodable Primers &amp; Storybooks
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">6410-US-PRNT</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">520,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold text-text-primary">410,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-secondary">45,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-status-warning font-semibold">65,000.00</td>
+                    <td class="py-2.5 px-3 text-center font-mono-num text-status-warning font-semibold">87.5%</td>
+                    <td class="py-2.5 px-3 text-center">
+                      <span
+                        class="px-2 py-0.5 rounded bg-status-warning-bg text-status-warning font-label-sm text-label-sm">Re-budget
+                        Alert</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors group cursor-pointer"
+                    onclick="openDrilldownModal('School Tablet Lab Kits', 'GH₵ 310,000.00', 'USAID waiver received for 120 digital coaching tablets with custom casing.')">
+                    <td class="py-2.5 px-3 font-medium text-text-primary flex items-center gap-1.5">
+                      <span
+                        class="material-symbols-outlined text-[14px] text-text-muted group-hover:text-primary">open_in_new</span>
+                      3.2 Mobile Tablet Coach Kits (USAID Waiver #41)
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">6450-US-TECH</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">340,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold text-text-primary">310,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-secondary">0.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-status-critical font-semibold">30,000.00</td>
+                    <td class="py-2.5 px-3 text-center font-mono-num text-status-critical font-semibold">91.1%</td>
+                    <td class="py-2.5 px-3 text-center">
+                      <span
+                        class="px-2 py-0.5 rounded bg-status-critical-bg text-status-critical font-label-sm text-label-sm">Near
+                        Ceiling</span>
+                    </td>
+                  </tr>
+                </tbody>
+                <!-- Table Summary Footer -->
+                <tfoot>
+                  <tr
+                    class="bg-surface-secondary/80 text-text-primary font-numeric-table-bold text-numeric-table-bold border-t-2 border-border-strong">
+                    <td class="py-3 px-3">CONSOLIDATED TOTAL (GHS)</td>
+                    <td class="py-3 px-3 font-mono text-xs">USAID-GH-ED</td>
+                    <td class="py-3 px-3 text-right font-mono-num">GH₵ 3,850,000.00</td>
+                    <td class="py-3 px-3 text-right font-mono-num text-primary">GH₵ 1,389,950.00</td>
+                    <td class="py-3 px-3 text-right font-mono-num">GH₵ 92,500.00</td>
+                    <td class="py-3 px-3 text-right font-mono-num text-status-success">GH₵ 2,367,550.00</td>
+                    <td class="py-3 px-3 text-center font-mono-num">38.5%</td>
+                    <td class="py-3 px-3 text-center">
+                      <span
+                        class="px-2 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-bold">In
+                        Target</span>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- Audit Sign-off Block -->
+            <div
+              class="bg-surface-secondary/40 rounded-lg p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md text-text-secondary text-caption font-caption border border-border-subtle">
+              <div class="flex flex-col gap-0.5">
+                <span class="font-semibold text-text-primary">Fiduciary Compliance Notice &amp; Audit Trail</span>
+                <p>Prepared in strict adherence to IPSAS 24 and USAID Standard Provisions for Non-U.S. Non-Governmental
+                  Organizations.</p>
+              </div>
+              <div class="flex items-center gap-space-md shrink-0">
+                <div class="flex flex-col text-right">
+                  <span class="text-text-primary font-semibold">Chief of Party / CFO Sign-off:</span>
+                  <span class="text-status-success font-mono font-bold">DIGITALLY SIGNED &amp; LOCKED</span>
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full bg-status-success-bg text-status-success flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">verified_user</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- ================= DRILL-DOWN MODAL ================= -->
+  <div class="fixed inset-0 z-50 bg-nav-bg/60 backdrop-blur-xs hidden items-center justify-center p-4"
+    id="drilldownModal">
+    <div
+      class="bg-surface-card rounded-lg border border-border-subtle shadow-xl max-w-lg w-full p-5 flex flex-col gap-4 animate-in fade-in duration-150">
+      <div class="flex items-center justify-between border-b border-border-subtle pb-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[20px]">manage_search</span>
+          <h3 class="font-title-md text-title-md text-text-primary" id="modalTitle">Financial Metric Drilldown</h3>
+        </div>
+        <button class="text-text-muted hover:text-text-primary rounded p-1" onclick="closeDrilldownModal()">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <div>
+        <span class="font-caption text-caption text-text-muted uppercase tracking-wider">Consolidated Ledger
+          Value</span>
+        <div class="font-headline-md text-headline-md font-mono-num text-text-primary mt-1" id="modalAmount">GH₵ 0.00
+        </div>
+        <p class="font-body-sm text-body-sm text-text-secondary mt-2 leading-relaxed bg-surface-secondary p-3 rounded-lg border border-border-subtle"
+          id="modalDescription">
+          Breakdown details
+        </p>
+      </div>
+      <div class="flex items-center justify-between pt-2 border-t border-border-subtle text-xs">
+        <span class="text-text-muted font-mono text-[11px]">Ledger Status: Reconciled</span>
+        <div class="flex items-center gap-2">
+          <button
+            class="px-3 py-1.5 rounded-lg bg-surface-secondary text-text-primary font-title-sm text-title-sm hover:bg-surface-dim transition-colors"
+            onclick="closeDrilldownModal()">
+            Close
+          </button>
+          <button
+            class="px-3 py-1.5 rounded-lg bg-primary text-white font-title-sm text-title-sm hover:bg-primary-hover transition-colors shadow-sm"
+            onclick="closeDrilldownModal(); showToast('Navigating to full voucher ledger account...', 'success')">
+            Open Account Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ================= TOAST NOTIFICATION CONTAINER ================= -->
+  <div class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none" id="toastContainer"></div>
+  <!-- ================= CLIENT JAVASCRIPT ================= -->
+
+   <!-- ===== Nav dropdowns (Finance & Accounting, Grants & Projects, Operations) ===== -->
+  <style>
+    .nav-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-submenu.open {
+      display: flex;
+    }
+
+    body:not(.layout-top) .nav-submenu {
+      margin: 2px 0 4px 1.35rem;
+      padding-left: 0.65rem;
+      border-left: 1px solid #1E3243;
+    }
+
+    body.layout-top .relative:hover>.nav-submenu {
+      display: flex;
+    }
+
+    body.layout-top .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 70;
+      min-width: 230px;
+      background: #0D1821;
+      border: 1px solid #1E3243;
+      border-radius: 8px;
+      padding: 6px;
+      margin: 0;
+      border-left: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    /* active states */
+    .nav-submenu a.nav-link-active {
+      background: var(--color-primary-container, #1d3a2b);
+      color: var(--color-on-primary, #fff);
+      font-weight: 600;
+    }
+
+    #appNav .nav-list>li>div>a.nav-parent-active,
+    #appNav .nav-list>li>a.nav-parent-active {
+      background: var(--color-primary-container, #1d3a2b);
+      color: var(--color-on-primary, #fff);
+    }
+  </style>
+
+  <!-- ===== Sidebar <-> Top Navbar layout toggle ===== -->
+  <style>
+    /* ---- Top navbar mode ---- */
+    body.layout-top #appNav {
+      width: 100%;
+      height: 64px;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    body.layout-top #appNav .nav-inner {
+      flex-direction: row;
+      align-items: center;
+      overflow: visible;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    body.layout-top #appNav .nav-logo {
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-office {
+      display: none;
+    }
+
+    body.layout-top #appNav nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: visible;
+      padding: 0 12px;
+    }
+
+    body.layout-top #appNav .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+    }
+
+    body.layout-top #appNav .nav-list>li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-submenu li {
+      white-space: nowrap;
+    }
+
+    body.layout-top #appNav .nav-section-label {
+      display: none;
+    }
+
+    body.layout-top #appNav .nav-user {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0 16px;
+    }
+
+    body.layout-top #appNav .nav-profile {
+      display: none;
+    }
+
+    /* shift content: no left offset, header slides below navbar */
+    body.layout-top #appMain {
+      padding-left: 0;
+    }
+
+    body.layout-top #appHeader {
+      left: 0;
+      top: 64px;
+    }
+
+    body.layout-top #appMain main {
+      padding-top: 128px;
+    }
+
+    body.layout-top #appMain main .max-w-7xl,
+    body.layout-top #appMain main #reportCenterRoot,
+    body.layout-top #appMain main [class*="max-w-"] {
+      max-width: 100% !important;
+    }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'al-layout';
+      function apply(m) {
+        document.body.classList.toggle('layout-top', m === 'navbar');
+        try { localStorage.setItem(KEY, m); } catch (e) { }
+        var icon = document.getElementById('layoutToggleIcon');
+        var btn = document.getElementById('layoutToggle');
+        if (icon) { icon.textContent = m === 'navbar' ? 'view_sidebar' : 'view_agenda'; }
+        if (btn) { btn.title = m === 'navbar' ? 'Switch to sidebar' : 'Switch to top navbar'; }
+      }
+      var mode = 'sidebar';
+      try { mode = localStorage.getItem(KEY) || 'sidebar'; } catch (e) { }
+
+      document.getElementById('layoutToggle').addEventListener('click', function () {
+        apply(document.body.classList.contains('layout-top') ? 'sidebar' : 'navbar');
+      });
+
+      // Nav dropdowns: Finance & Accounting, Grants & Projects, Operations
+      var dropdowns = [
+        { itemId: 'finNavItem', toggleId: 'finToggle', subId: 'finSubmenu', chevronId: 'finChevron' },
+        { itemId: 'grantsNavItem', toggleId: 'grantsToggle', subId: 'grantsSubmenu', chevronId: 'grantsChevron' },
+        { itemId: 'opsNavItem', toggleId: 'opsToggle', subId: 'opsSubmenu', chevronId: 'opsChevron' }
+      ].map(function (d) {
+        return {
+          item: document.getElementById(d.itemId),
+          toggle: document.getElementById(d.toggleId),
+          sub: document.getElementById(d.subId),
+          chevron: document.getElementById(d.chevronId)
+        };
+      });
+
+      function closeAllDropdowns(except) {
+        dropdowns.forEach(function (d) {
+          if (d === except) return;
+          d.sub.classList.remove('open');
+          d.chevron.style.transform = '';
+        });
+      }
+
+      dropdowns.forEach(function (d) {
+        d.toggle.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          var open = d.sub.classList.toggle('open');
+          d.chevron.style.transform = open ? 'rotate(180deg)' : '';
+          closeAllDropdowns(d);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) {
+          if (!d.item.contains(e.target)) {
+            d.sub.classList.remove('open');
+            d.chevron.style.transform = '';
+          }
+        });
+      });
+      // close dropdowns with Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDropdowns();
+      });
+
+      // Mark the current page's nav link (and its parent dropdown, if any) as active
+      (function markActiveNav() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        var allLinks = document.querySelectorAll('#appNav .nav-list a[href], #appNav .nav-submenu a[href]');
+        allLinks.forEach(function (link) {
+          var href = (link.getAttribute('href') || '').split('/').pop();
+          if (!href || href === '#') return;
+          if (href === current) {
+            link.classList.add('nav-link-active');
+            link.setAttribute('aria-current', 'page');
+            var parentSubmenu = link.closest('.nav-submenu');
+            if (parentSubmenu) {
+              // it's inside a dropdown: highlight the dropdown toggle and open it
+              var parentItem = parentSubmenu.closest('[id$="NavItem"]');
+              if (parentItem) {
+                var toggle = parentItem.querySelector('a[id$="Toggle"]');
+                if (toggle) toggle.classList.add('nav-parent-active');
+              }
+              parentSubmenu.classList.add('open');
+            }
+          }
+        });
+      })();
+
+      apply(mode);
+    })();
+  </script>
+  <script>
+
+    // View Mode Switcher: Directory vs Interactive Studio
+    function switchViewMode(mode) {
+      const catalog = document.getElementById('catalogViewSection');
+      const studio = document.getElementById('reportStudioSection');
+      const catalogBtn = document.getElementById('viewCatalogBtn');
+
+      if (mode === 'studio') {
+        catalog.classList.add('hidden');
+        studio.classList.remove('hidden');
+        studio.classList.add('flex');
+        if (catalogBtn) {
+          catalogBtn.classList.remove('bg-surface-card');
+          catalogBtn.classList.add('bg-primary-tint', 'text-primary');
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        studio.classList.add('hidden');
+        studio.classList.remove('flex');
+        catalog.classList.remove('hidden');
+        if (catalogBtn) {
+          catalogBtn.classList.add('bg-surface-card');
+          catalogBtn.classList.remove('bg-primary-tint', 'text-primary');
+        }
+      }
+    }
+
+    // Open Studio with specific report title
+    function openReportStudio(reportKey) {
+      const titleEl = document.getElementById('studioReportTitle');
+      if (reportKey === 'statement-activities') {
+        titleEl.textContent = 'Statement of Activities (Statutory Income & Expenditure)';
+      } else if (reportKey === 'gl-detail') {
+        titleEl.textContent = 'General Ledger Detail & Voucher Audit Register';
+      } else if (reportKey === 'balance-sheet') {
+        titleEl.textContent = 'Statement of Financial Position (Balance Sheet)';
+      } else if (reportKey === 'global-fund') {
+        titleEl.textContent = 'Global Fund PU/DR Progress Update & Financial Realignment';
+      } else if (reportKey === 'cash-flow-forecast') {
+        titleEl.textContent = '90-Day Rolling Treasury Cash Flow & Liquidity Forecast';
+      } else {
+        titleEl.textContent = 'Grant Utilization & Budget vs. Actual (BvA) Report';
+      }
+
+      switchViewMode('studio');
+      showToast(`Loaded live interactive report: ${titleEl.textContent}`, 'success');
+    }
+
+    // Live Catalog Filtering
+    let currentCategory = 'all';
+
+    function filterReportCatalog() {
+      const query = (document.getElementById('reportSearchInput').value || '').toLowerCase().trim();
+      const clearBtn = document.getElementById('clearSearchBtn');
+      const groups = document.querySelectorAll('.report-section-group');
+      const cards = document.querySelectorAll('.report-card');
+      const noResults = document.getElementById('noResultsState');
+      let visibleCount = 0;
+
+      if (query.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+
+      cards.forEach(card => {
+        const title = card.getAttribute('data-title') || '';
+        const tags = card.getAttribute('data-tags') || '';
+        const text = (title + ' ' + tags).toLowerCase();
+        const matchesQuery = query === '' || text.includes(query);
+
+        const parentGroup = card.closest('.report-section-group');
+        const groupCat = parentGroup ? parentGroup.getAttribute('data-category') : 'all';
+        const matchesCategory = (currentCategory === 'all') || (groupCat === currentCategory);
+
+        if (matchesQuery && matchesCategory) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      groups.forEach(group => {
+        const groupCat = group.getAttribute('data-category');
+        const hasVisibleChildren = Array.from(group.querySelectorAll('.report-card')).some(c => c.style.display !== 'none');
+        if (hasVisibleChildren && (currentCategory === 'all' || groupCat === currentCategory)) {
+          group.style.display = '';
+        } else {
+          group.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+        noResults.classList.add('flex');
+      } else {
+        noResults.classList.add('hidden');
+        noResults.classList.remove('flex');
+      }
+    }
+
+    function setCategoryTab(category, btnElement) {
+      currentCategory = category;
+      document.querySelectorAll('.cat-tab').forEach(tab => {
+        tab.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        tab.classList.add('bg-surface-secondary', 'text-text-secondary');
+      });
+
+      if (btnElement) {
+        btnElement.classList.remove('bg-surface-secondary', 'text-text-secondary');
+        btnElement.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      }
+
+      filterReportCatalog();
+    }
+
+    function clearSearch() {
+      document.getElementById('reportSearchInput').value = '';
+      filterReportCatalog();
+    }
+
+    function resetFilters() {
+      document.getElementById('reportSearchInput').value = '';
+      document.getElementById('fundScopeFilter').value = 'all';
+      currentCategory = 'all';
+      const allTabBtn = document.querySelector('.cat-tab');
+      if (allTabBtn) setCategoryTab('all', allTabBtn);
+      filterReportCatalog();
+      showToast('All search parameters and category filters have been reset', 'info');
+    }
+
+    // Date Range Popover + custom picker
+    function formatDisplayDate(iso) {
+      if (!iso) return 'Current';
+      const d = new Date(iso + 'T00:00:00');
+      if (isNaN(d.getTime())) return iso;
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const day = String(d.getDate()).padStart(2, '0');
+      return day + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+    }
+
+    function toggleDateDropdown() {
+      const dd = document.getElementById('datePresetDropdown');
+      dd.classList.toggle('hidden');
+    }
+
+    function setDatePreset(label, fromIso, toIso) {
+      document.getElementById('selectedDateLabel').textContent = label;
+      if (fromIso) document.getElementById('dateFromInput').value = fromIso;
+      if (toIso !== undefined && toIso !== null) {
+        document.getElementById('dateToInput').value = toIso || new Date().toISOString().slice(0, 10);
+      }
+      document.getElementById('datePresetDropdown').classList.add('hidden');
+      showToast('Reporting cycle period updated to: ' + label, 'success');
+    }
+
+    function applyCustomDateRange() {
+      const fromEl = document.getElementById('dateFromInput');
+      const toEl = document.getElementById('dateToInput');
+      const from = fromEl.value;
+      const to = toEl.value;
+      if (!from || !to) {
+        showToast('Please select both From and To dates', 'warning');
+        return;
+      }
+      if (from > to) {
+        showToast('From date must be on or before To date', 'warning');
+        return;
+      }
+      const label = formatDisplayDate(from) + ' → ' + formatDisplayDate(to);
+      document.getElementById('selectedDateLabel').textContent = label;
+      document.getElementById('datePresetDropdown').classList.add('hidden');
+      showToast('Custom reporting range applied: ' + label, 'success');
+    }
+
+    // Toggle favorite / starred
+    function toggleFavorite(btn) {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon.textContent === 'star') {
+        icon.textContent = 'star_outline';
+        btn.classList.remove('text-fund-restricted');
+        btn.classList.add('text-text-muted');
+        showToast('Removed from pinned favorites', 'info');
+      } else {
+        icon.textContent = 'star';
+        btn.classList.remove('text-text-muted');
+        btn.classList.add('text-fund-restricted');
+        showToast('Pinned to quick-access favorites', 'success');
+      }
+    }
+
+    // Drilldown modal
+    function openDrilldownModal(title, amount, desc) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalAmount').textContent = amount;
+      document.getElementById('modalDescription').textContent = desc;
+      const modal = document.getElementById('drilldownModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeDrilldownModal() {
+      const modal = document.getElementById('drilldownModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Simulate export with required message
+    function simulateExport(reportName, format) {
+      showToast(`Compiling ${format} for ${reportName}...`, 'info');
+      setTimeout(() => {
+        showToast('Report exported successfully.', 'success');
+      }, 1100);
+    }
+
+    // Global Toast Notifications
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      const bg = type === 'success'
+        ? 'bg-[#152431] text-white border-primary'
+        : type === 'warning'
+          ? 'bg-[#FEF3E6] text-[#914D03] border-[#F6C88D]'
+          : 'bg-[#152431] text-white border-border-subtle';
+      const icon = type === 'success' ? 'check_circle' : type === 'warning' ? 'warning' : 'info';
+      const iconColor = type === 'success' ? 'text-primary-fixed' : type === 'warning' ? 'text-[#914D03]' : 'text-primary-tint';
+
+      toast.className = `pointer-events-auto flex items-center gap-2 px-3.5 py-2.5 rounded-lg border shadow-lg text-xs transition-all duration-300 transform translate-y-2 opacity-0 ${bg}`;
+      toast.innerHTML = `
+      <span class="material-symbols-outlined ${iconColor} text-[18px]">${icon}</span>
+      <span class="font-medium">${message}</span>
+    `;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3200);
+    }
+
+    // Dismiss date dropdown on click outside
+    document.addEventListener('click', function (e) {
+      const dateBtn = document.getElementById('datePresetBtn');
+      const dateDropdown = document.getElementById('datePresetDropdown');
+      if (dateBtn && dateDropdown && !dateBtn.contains(e.target) && !dateDropdown.contains(e.target)) {
+        dateDropdown.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>
