@@ -1559,6 +1559,175 @@
                 </tfoot>
               </table>
             </div>
+
+            <!-- General Ledger Detail — voucher debit/credit register -->
+            <div class="hidden flex-col gap-space-sm overflow-x-auto" id="studioGlDetailBlock">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <div>
+                  <span class="font-title-sm text-title-sm text-text-primary">General Ledger Detail &amp; Voucher Audit Register</span>
+                  <p class="font-caption text-caption text-text-muted mt-0.5">Chronological postings • Source ledger GHS • Running balance after each voucher line</p>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span class="font-caption text-caption text-text-muted">Account filter: All • Fund: Consolidated</span>
+                  <button type="button" class="text-primary hover:underline font-caption text-caption"
+                    onclick="showToast('Drill-down by account segment available in full ledger module', 'info')">Filter accounts</button>
+                </div>
+              </div>
+              <table class="w-full text-left border-collapse min-w-[1100px] border border-border-subtle rounded-lg overflow-hidden" id="studioGlDetailTable">
+                <thead>
+                  <tr class="bg-surface-secondary text-text-secondary font-label-md text-label-md border-b border-border-subtle">
+                    <th class="py-2.5 px-3">Date</th>
+                    <th class="py-2.5 px-3">Voucher / Ref</th>
+                    <th class="py-2.5 px-3">Description</th>
+                    <th class="py-2.5 px-3">Account</th>
+                    <th class="py-2.5 px-3">Fund</th>
+                    <th class="py-2.5 px-3 text-right">Debit (GHS)</th>
+                    <th class="py-2.5 px-3 text-right">Credit (GHS)</th>
+                    <th class="py-2.5 px-3 text-right">Balance (GHS)</th>
+                    <th class="py-2.5 px-3 text-right relative" id="hdr-gl-balance-fx">
+                      <button type="button" id="glBalanceCurrencyBtn" onclick="toggleGlCurrencyMenu(event)"
+                        class="inline-flex items-center gap-0.5 hover:bg-primary-tint/60 rounded px-1 py-0.5 transition-colors cursor-pointer font-label-md text-label-md"
+                        title="Show running balance in foreign currency">
+                        Balance
+                        <span class="text-primary font-bold">(<span id="glBalanceCurrencyLabel">USD</span>)</span>
+                        <span class="material-symbols-outlined text-[14px] text-primary">expand_more</span>
+                      </button>
+                      <div id="glColumnCurrencyMenu"
+                        class="hidden absolute right-0 top-full mt-1 z-40 min-w-[140px] bg-surface-card border border-border-subtle rounded-lg shadow-xl py-1">
+                        <button type="button" class="w-full text-left px-3 py-1.5 font-body-sm text-body-sm hover:bg-primary-tint text-text-primary font-semibold bg-primary-tint/40" data-cur="USD" onclick="selectReportCurrency('USD')">USD ($)</button>
+                        <button type="button" class="w-full text-left px-3 py-1.5 font-body-sm text-body-sm hover:bg-primary-tint text-text-primary" data-cur="EUR" onclick="selectReportCurrency('EUR')">EUR (€)</button>
+                        <button type="button" class="w-full text-left px-3 py-1.5 font-body-sm text-body-sm hover:bg-primary-tint text-text-primary" data-cur="GBP" onclick="selectReportCurrency('GBP')">GBP (£)</button>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="font-body-sm text-body-sm divide-y divide-border-subtle">
+                  <tr class="hover:bg-primary-tint/30 transition-colors">
+                    <td class="py-2.5 px-3 font-mono text-text-secondary whitespace-nowrap">24 Jun 2025</td>
+                    <td class="py-2.5 px-3 font-mono text-primary font-semibold">TRX-2025-0842</td>
+                    <td class="py-2.5 px-3">
+                      <div class="font-medium text-text-primary">Volta Logistics Ltd — field monitoring charter</div>
+                      <div class="font-caption text-caption text-text-muted">AP bill settlement • USAID-ED09</div>
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">6120-US-FLD</td>
+                    <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-caption text-caption font-semibold">Restricted</span></td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">18,450.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-muted">—</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold" data-ghs="18450.00">18,450.00 Dr</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-primary font-semibold balance-fx-amt" data-ghs="18450.00" data-suffix="Dr">—</td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors">
+                    <td class="py-2.5 px-3 font-mono text-text-secondary whitespace-nowrap">24 Jun 2025</td>
+                    <td class="py-2.5 px-3 font-mono text-primary font-semibold">TRX-2025-0842</td>
+                    <td class="py-2.5 px-3">
+                      <div class="font-medium text-text-primary">Cash / Bank — Ecobank Operating</div>
+                      <div class="font-caption text-caption text-text-muted">Offset to AP settlement</div>
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">1000-OP-ACC</td>
+                    <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold">Unrestricted</span></td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-muted">—</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">18,450.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold" data-ghs="824050.00">824,050.00 Dr</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-primary font-semibold balance-fx-amt" data-ghs="824050.00" data-suffix="Dr">—</td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors">
+                    <td class="py-2.5 px-3 font-mono text-text-secondary whitespace-nowrap">23 Jun 2025</td>
+                    <td class="py-2.5 px-3 font-mono text-primary font-semibold">TRX-2025-0841</td>
+                    <td class="py-2.5 px-3">
+                      <div class="font-medium text-text-primary">ECG — Tamale regional office utilities</div>
+                      <div class="font-caption text-caption text-text-muted">Core admin occupancy</div>
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">6300-CORE</td>
+                    <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold">Unrestricted</span></td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">4,220.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-muted">—</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold" data-ghs="4220.00">4,220.00 Dr</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-primary font-semibold balance-fx-amt" data-ghs="4220.00" data-suffix="Dr">—</td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors">
+                    <td class="py-2.5 px-3 font-mono text-text-secondary whitespace-nowrap">23 Jun 2025</td>
+                    <td class="py-2.5 px-3 font-mono text-primary font-semibold">TRX-2025-0841</td>
+                    <td class="py-2.5 px-3">
+                      <div class="font-medium text-text-primary">Cash / Bank — Ecobank Operating</div>
+                      <div class="font-caption text-caption text-text-muted">Utility payment outflow</div>
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">1000-OP-ACC</td>
+                    <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold">Unrestricted</span></td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-muted">—</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">4,220.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold" data-ghs="819830.00">819,830.00 Dr</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-primary font-semibold balance-fx-amt" data-ghs="819830.00" data-suffix="Dr">—</td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors">
+                    <td class="py-2.5 px-3 font-mono text-text-secondary whitespace-nowrap">22 Jun 2025</td>
+                    <td class="py-2.5 px-3 font-mono text-status-success font-semibold">TRX-2025-0840</td>
+                    <td class="py-2.5 px-3">
+                      <div class="font-medium text-text-primary">Global Fund replenishment — escrow inflow</div>
+                      <div class="font-caption text-caption text-text-muted">Direct transfer GF-MAL-2023</div>
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">1050-ESC-USD</td>
+                    <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-caption text-caption font-semibold">Restricted</span></td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-status-success font-semibold">420,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-muted">—</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold" data-ghs="1054728.00">1,054,728.00 Dr</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-primary font-semibold balance-fx-amt" data-ghs="1054728.00" data-suffix="Dr">—</td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors">
+                    <td class="py-2.5 px-3 font-mono text-text-secondary whitespace-nowrap">22 Jun 2025</td>
+                    <td class="py-2.5 px-3 font-mono text-status-success font-semibold">TRX-2025-0840</td>
+                    <td class="py-2.5 px-3">
+                      <div class="font-medium text-text-primary">Grant revenue — Global Fund Phase II</div>
+                      <div class="font-caption text-caption text-text-muted">Revenue recognition on receipt</div>
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">4000-GF-REV</td>
+                    <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-[#FCF7E8] text-[#8A6507] font-caption text-caption font-semibold">Restricted</span></td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-muted">—</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">420,000.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold" data-ghs="2840000.00">2,840,000.00 Cr</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-primary font-semibold balance-fx-amt" data-ghs="2840000.00" data-suffix="Cr">—</td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors">
+                    <td class="py-2.5 px-3 font-mono text-text-secondary whitespace-nowrap">21 Jun 2025</td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary font-semibold">TRX-2025-0839</td>
+                    <td class="py-2.5 px-3">
+                      <div class="font-medium text-text-primary">Stanbic custody / forex reconciliation fee</div>
+                      <div class="font-caption text-caption text-text-muted">Bank charges • pending review</div>
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">6500-BANK</td>
+                    <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold">Unrestricted</span></td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">850.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-muted">—</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold" data-ghs="850.00">850.00 Dr</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-primary font-semibold balance-fx-amt" data-ghs="850.00" data-suffix="Dr">—</td>
+                  </tr>
+                  <tr class="hover:bg-primary-tint/30 transition-colors">
+                    <td class="py-2.5 px-3 font-mono text-text-secondary whitespace-nowrap">21 Jun 2025</td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary font-semibold">TRX-2025-0839</td>
+                    <td class="py-2.5 px-3">
+                      <div class="font-medium text-text-primary">Cash / Bank — Ecobank Operating</div>
+                      <div class="font-caption text-caption text-text-muted">Fee deduction</div>
+                    </td>
+                    <td class="py-2.5 px-3 font-mono text-text-secondary">1000-OP-ACC</td>
+                    <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-primary-tint text-primary font-caption text-caption font-semibold">Unrestricted</span></td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-text-muted">—</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num">850.00</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num font-semibold" data-ghs="818980.00">818,980.00 Dr</td>
+                    <td class="py-2.5 px-3 text-right font-mono-num text-primary font-semibold balance-fx-amt" data-ghs="818980.00" data-suffix="Dr">—</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr class="bg-surface-secondary/80 text-text-primary font-numeric-table-bold text-numeric-table-bold border-t-2 border-border-strong">
+                    <td class="py-3 px-3" colspan="5">Period movement (sample lines)</td>
+                    <td class="py-3 px-3 text-right font-mono-num">443,520.00</td>
+                    <td class="py-3 px-3 text-right font-mono-num">443,520.00</td>
+                    <td class="py-3 px-3 text-right font-mono-num text-status-success">Balanced</td>
+                    <td class="py-3 px-3 text-right font-mono-num text-status-success">—</td>
+                  </tr>
+                </tfoot>
+              </table>
+              <p class="font-caption text-caption text-text-muted">Debit and Credit columns are statutory GHS postings. Balance (GHS) is the account running balance after the line. Balance (FX) is an optional management view only — not a second ledger.</p>
+            </div>
+
             <!-- Trial Balance (shown for General Ledger Detail report) -->
             <div class="hidden flex-col gap-space-sm overflow-x-auto" id="studioTrialBalanceBlock">
               <div class="flex items-center justify-between">
@@ -2018,26 +2187,41 @@
     let currentStudioReportKey = 'usaid-bva';
     let reportDisplayCurrency = 'USD';
 
+    function hideAllCurrencyMenus() {
+      ['columnCurrencyMenu', 'tbColumnCurrencyMenu', 'glColumnCurrencyMenu'].forEach(id => {
+        const m = document.getElementById(id);
+        if (m) m.classList.add('hidden');
+      });
+    }
+
     function toggleColumnCurrencyMenu(e) {
       if (e) e.stopPropagation();
       const menu = document.getElementById('columnCurrencyMenu');
-      const tbMenu = document.getElementById('tbColumnCurrencyMenu');
-      if (tbMenu) tbMenu.classList.add('hidden');
-      if (menu) menu.classList.toggle('hidden');
+      const wasHidden = !menu || menu.classList.contains('hidden');
+      hideAllCurrencyMenus();
+      if (menu && wasHidden) menu.classList.remove('hidden');
     }
 
     function toggleTbCurrencyMenu(e) {
       if (e) e.stopPropagation();
       const menu = document.getElementById('tbColumnCurrencyMenu');
-      const bvaMenu = document.getElementById('columnCurrencyMenu');
-      if (bvaMenu) bvaMenu.classList.add('hidden');
-      if (menu) menu.classList.toggle('hidden');
+      const wasHidden = !menu || menu.classList.contains('hidden');
+      hideAllCurrencyMenus();
+      if (menu && wasHidden) menu.classList.remove('hidden');
+    }
+
+    function toggleGlCurrencyMenu(e) {
+      if (e) e.stopPropagation();
+      const menu = document.getElementById('glColumnCurrencyMenu');
+      const wasHidden = !menu || menu.classList.contains('hidden');
+      hideAllCurrencyMenus();
+      if (menu && wasHidden) menu.classList.remove('hidden');
     }
 
     function selectReportCurrency(currency) {
       if (!REPORT_FX[currency]) currency = 'USD';
       reportDisplayCurrency = currency;
-      ['columnCurrencyMenu', 'tbColumnCurrencyMenu'].forEach(id => {
+      ['columnCurrencyMenu', 'tbColumnCurrencyMenu', 'glColumnCurrencyMenu'].forEach(id => {
         const menu = document.getElementById(id);
         if (!menu) return;
         menu.classList.add('hidden');
@@ -2069,6 +2253,8 @@
       if (balLabel) balLabel.textContent = fx.label;
       const tbLabel = document.getElementById('tbBalanceCurrencyLabel');
       if (tbLabel) tbLabel.textContent = fx.label;
+      const glLabel = document.getElementById('glBalanceCurrencyLabel');
+      if (glLabel) glLabel.textContent = fx.label;
 
       if (!silent) {
         showToast('Available / Net Balance column showing ' + fx.label + ' (' + fx.symbol + ')', 'success');
@@ -2076,16 +2262,18 @@
     }
 
     document.addEventListener('click', function (e) {
-      const menu = document.getElementById('columnCurrencyMenu');
-      const btn = document.getElementById('balanceCurrencyBtn');
-      if (menu && !menu.classList.contains('hidden')) {
-        if (btn && !btn.contains(e.target) && !menu.contains(e.target)) menu.classList.add('hidden');
-      }
-      const tbMenu = document.getElementById('tbColumnCurrencyMenu');
-      const tbBtn = document.getElementById('tbBalanceCurrencyBtn');
-      if (tbMenu && !tbMenu.classList.contains('hidden')) {
-        if (tbBtn && !tbBtn.contains(e.target) && !tbMenu.contains(e.target)) tbMenu.classList.add('hidden');
-      }
+      const pairs = [
+        ['columnCurrencyMenu', 'balanceCurrencyBtn'],
+        ['tbColumnCurrencyMenu', 'tbBalanceCurrencyBtn'],
+        ['glColumnCurrencyMenu', 'glBalanceCurrencyBtn']
+      ];
+      pairs.forEach(([menuId, btnId]) => {
+        const menu = document.getElementById(menuId);
+        const btn = document.getElementById(btnId);
+        if (menu && !menu.classList.contains('hidden')) {
+          if (btn && !btn.contains(e.target) && !menu.contains(e.target)) menu.classList.add('hidden');
+        }
+      });
     });
 
     function printAllCurrenciesReport() {
@@ -2158,6 +2346,8 @@
       const titleEl = document.getElementById('studioReportTitle');
       const bvaBlock = document.getElementById('studioBvaBlock');
       const tbBlock = document.getElementById('studioTrialBalanceBlock');
+      const glBlock = document.getElementById('studioGlDetailBlock');
+      const kpiGrid = document.getElementById('studioKpiGrid');
 
       if (reportKey === 'statement-activities') {
         titleEl.textContent = 'Statement of Activities (Statutory Income & Expenditure)';
@@ -2175,19 +2365,20 @@
         titleEl.textContent = 'Grant Utilization & Budget vs. Actual (BvA) Report';
       }
 
-      // Trial Balance is its own report — show TB table only; other reports show BvA-style table
+      // Show the correct table body for each report type
+      if (bvaBlock) bvaBlock.classList.add('hidden');
+      if (tbBlock) { tbBlock.classList.add('hidden'); tbBlock.classList.remove('flex'); }
+      if (glBlock) { glBlock.classList.add('hidden'); glBlock.classList.remove('flex'); }
+
       if (reportKey === 'trial-balance') {
-        if (bvaBlock) bvaBlock.classList.add('hidden');
-        if (tbBlock) {
-          tbBlock.classList.remove('hidden');
-          tbBlock.classList.add('flex');
-        }
+        if (tbBlock) { tbBlock.classList.remove('hidden'); tbBlock.classList.add('flex'); }
+        if (kpiGrid) kpiGrid.classList.add('hidden');
+      } else if (reportKey === 'gl-detail') {
+        if (glBlock) { glBlock.classList.remove('hidden'); glBlock.classList.add('flex'); }
+        if (kpiGrid) kpiGrid.classList.add('hidden');
       } else {
         if (bvaBlock) bvaBlock.classList.remove('hidden');
-        if (tbBlock) {
-          tbBlock.classList.add('hidden');
-          tbBlock.classList.remove('flex');
-        }
+        if (kpiGrid) kpiGrid.classList.remove('hidden');
       }
 
       reportDisplayCurrency = 'USD';
